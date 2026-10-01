@@ -1,4 +1,4 @@
-"""Audited source-span boundary policy and constrained status repair."""
+"""evidence policy.py  Audited source-span boundary policy and constrained status repair."""
 
 import re
 from copy import deepcopy
@@ -112,7 +112,12 @@ def adapt_boundaries(decision: dict, source: dict) -> tuple[dict, dict]:
     return adjusted, audit
 
 
-def status_repair_contract(feedback: dict, source: dict):
+def status_repair_contract(
+    feedback: dict,
+    source: dict,
+    *,
+    candidates: dict | None = None,
+):
     """Build a repair contract only from independently validated evidence."""
     repair = feedback.get("status_repair")
     if not isinstance(repair, dict):
@@ -188,6 +193,16 @@ def status_repair_contract(feedback: dict, source: dict):
                 }
             )
 
+        # A validated null is permitted evidence absence, not proof that
+    # the source contains no component. Candidate selection remains optional.
+    if fields["component"] is None and candidates:
+        locked["component"] = {
+            "anyOf": [
+                {"type": "null"},
+                {"type": "string", "enum": list(candidates)},
+            ]
+        }
+
     schema["properties"]["fields"] = obj(locked)
     schema["properties"]["action_status"] = {
         "type": "string",
@@ -204,3 +219,38 @@ def status_repair_contract(feedback: dict, source: dict):
         deepcopy(fields),
         statuses,
     )
+
+
+def validate_status_repair(
+    decision: dict,
+    locked_fields: dict,
+    allowed_statuses: list[str],
+    candidates: dict,
+) -> None:
+    """Reject changed evidence, allowing candidate recovery of a null component."""
+    if not isinstance(decision, dict) or decision.get("tool") != "extract":
+        raise ValueError("status repair must return an extract decision")
+
+    args = decision.get("args")
+    if not isinstance(args, dict):
+        raise ValueError("status repair returned invalid arguments")
+
+    fields = args.get("fields")
+    if not isinstance(fields, dict) or set(fields) != set(locked_fields):
+        raise ValueError("status repair changed locked evidence")
+
+    if args.get("action_status") not in allowed_statuses:
+        raise ValueError("status repair returned unsupported status")
+
+    for name in ("problem", "action"):
+        if fields[name] != locked_fields[name]:
+            raise ValueError("status repair changed locked evidence")
+
+    choice = fields["component"]
+    if locked_fields["component"] is None and candidates:
+        if choice is not None and (
+            not isinstance(choice, str) or choice not in candidates
+        ):
+            raise ValueError("component must select a supplied candidate or null")
+    elif choice != locked_fields["component"]:
+        raise ValueError("status repair changed locked component")
