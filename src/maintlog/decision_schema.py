@@ -1,4 +1,4 @@
-"""Model input contract, separate from persisted evidence spans."""
+"""decision_schema  Model input contract, separate from persisted evidence spans."""
 
 from .extraction import STATUS_GUIDANCE
 

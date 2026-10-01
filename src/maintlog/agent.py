@@ -243,21 +243,18 @@ def run_agent(
 
         if extraction_candidates:
             extraction_target = extraction_candidates[0]
-            source_record = by_id[extraction_target]
-
+            source = by_id[extraction_target]
             decision_context = {
                 "extraction_record": {
                     "record_id": extraction_target,
-                    "component": source_record.component,
-                    "issue_raw": source_record.issue_raw,
-                    "action_raw": source_record.action_raw,
-                    "narrative_raw": source_record.narrative_raw,
+                    "component": source.component,
+                    "issue_raw": source.issue_raw,
+                    "action_raw": source.action_raw,
+                    "narrative_raw": source.narrative_raw,
                 }
             }
             decision_system = EXTRACTION_SYSTEM
 
-            # Preserve the latest relevant validation feedback without
-            # including unrelated records or the full workflow history.
             for observation in reversed(state["context"]["observations"]):
                 result = observation.get("result", {})
                 if not isinstance(result, dict) or "error" not in result:
@@ -307,6 +304,8 @@ def run_agent(
                     ),
                 }
             )
+            if response.get("extraction_audit") is not None:
+                trace[-1]["extraction_audit"] = response["extraction_audit"]
 
             if time.monotonic() >= deadline:
                 return {
@@ -530,8 +529,8 @@ def run_agent(
             trace[-1]["tool_result"] = output
 
             if tool == "extract":
-                # Computed evidence metadata stays in the report.
-                # Model feedback uses the original input span contract.
+                # Computed metadata remains in the report. Model feedback
+                # uses the existing input span contract.
                 output = {
                     "record_id": record_id,
                     "accepted_proposal": {
@@ -566,6 +565,27 @@ def run_agent(
                 ),
                 "repeated_invalid_decision": repeated,
             }
+
+            # Only status failures with independently valid source spans
+            # qualify for a constrained status-only repair.
+            if tool == "extract" and "action_status=" in str(exc):
+                try:
+                    validated = validate_fields(
+                        by_id[args["record_id"]],
+                        args["fields"],
+                        "unknown",
+                    )
+                except (ValueError, TypeError, KeyError):
+                    pass
+                else:
+                    output["status_repair"] = {
+                        "validated_fields": validated,
+                        "instruction": (
+                            "Preserve these source spans. Correct only "
+                            "action_status using explicit execution evidence."
+                        ),
+                    }
+
             trace[-1]["tool_error"] = str(exc)
             trace[-1]["repeated_invalid_decision"] = repeated
             status = "failed" if state["errors"] >= 1 else "running"
@@ -602,7 +622,6 @@ def run_agent(
         lambda state: "choose" if state["status"] == "running" else END,
     )
 
-    # Keep source data local even if shell tracing was enabled.
     with tracing_context(enabled=False, parent=False):
         result = graph.compile().invoke(
             {
