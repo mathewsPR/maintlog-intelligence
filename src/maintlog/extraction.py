@@ -40,10 +40,33 @@ CUES = {
     ),
     "verified": re.compile(r"\b(?:verified|confirmed|passed|validated)\b", re.I),
 }
-NEGATED_STATUS = re.compile(
-    r"\b(?:not|never|unconfirmed|unverified)\b|\bno\s+(?:successful\s+)?(?:repair|verification|confirmation)\b",
-    re.I,
-)
+
+
+def has_unnegated_status_cue(text: str, status: str) -> bool:
+    """Conservative clause-local check, not full semantic verification."""
+    for clause in re.split(r"[.;!?\n]", text):
+        for cue in CUES[status].finditer(clause):
+            prefix = clause[: cue.start()]
+            suffix = clause[cue.end() :]
+
+            negated_before = re.search(
+                r"\b(?:no|not|never|without|cannot|can't|couldn't|"
+                r"didn't|wasn't|weren't|hasn't|haven't|hadn't)"
+                r"\s+(?:\w+\s+){0,3}$",
+                prefix,
+                re.I,
+            )
+            negated_after = re.match(
+                r"\s+(?:(?:was|were|is|are|has|have|had)\s+)?"
+                r"(?:not|never)\b",
+                suffix,
+                re.I,
+            )
+
+            if not negated_before and not negated_after:
+                return True
+
+    return False
 
 
 def resolve_span(record: Record, span: dict | None, name: str) -> dict | None:
@@ -127,7 +150,7 @@ def validate_fields(
         raise ValueError("unsupported action must have unknown status")
     if status != "unknown" and not human_review:
         text = resolved["action"]["quote"]
-        if NEGATED_STATUS.search(text) or not CUES[status].search(text):
+        if not has_unnegated_status_cue(text, status):
             raise ValueError(
                 f"action_status={status!r} lacks unnegated explicit support in "
                 f"the selected action quote {text!r}; requires {STATUS_SUPPORT[status]}. "

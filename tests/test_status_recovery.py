@@ -7,7 +7,11 @@ from pathlib import Path
 from maintlog.agent import run_agent
 from maintlog.backends import Replay
 from maintlog.decision_schema import ARGS
-from maintlog.extraction import STATUS_GUIDANCE, validate_fields
+from maintlog.extraction import (
+    STATUS_GUIDANCE,
+    has_unnegated_status_cue,
+    validate_fields,
+)
 from maintlog.ingestion import load_csv, load_profile
 from maintlog.scope import Scope
 
@@ -109,3 +113,23 @@ class StatusRecoveryTests(unittest.TestCase):
         self.assertFalse(report["trace"][1]["repeated_invalid_decision"])
         self.assertTrue(report["trace"][2]["repeated_invalid_decision"])
         self.assertEqual(report["extraction_proposals"], [])
+
+    def test_clause_local_status_negation(self):
+
+        cases = [
+            ("Tried to tighten VLV-82; work could not be completed", "attempted", True),
+            (
+                "Tried to tighten VLV-82; work could not be completed",
+                "completed",
+                False,
+            ),
+            ("Did not attempt to tighten VLV-82", "attempted", False),
+            ("Never tried to tighten VLV-82", "attempted", False),
+            ("Did not replace PMP-55", "completed", False),
+            ("Replaced FAN-93; repair success not confirmed", "completed", True),
+            ("Replaced FAN-93; repair success not confirmed", "verified", False),
+            ("Replacement of FLT-64 verified by inspection", "verified", True),
+        ]
+        for text, status, expected in cases:
+            with self.subTest(text=text, status=status):
+                self.assertEqual(has_unnegated_status_cue(text, status), expected)
