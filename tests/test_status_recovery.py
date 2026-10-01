@@ -133,3 +133,42 @@ class StatusRecoveryTests(unittest.TestCase):
         for text, status, expected in cases:
             with self.subTest(text=text, status=status):
                 self.assertEqual(has_unnegated_status_cue(text, status), expected)
+
+    def test_empty_finish_progress_requires_history_aggregate(self):
+        report, contexts = self.run_decisions(
+            [
+                {"tool": "search", "args": {"query": "xyznotfound"}},
+                {"tool": "aggregate", "args": {}},
+                {"tool": "finish", "args": {"record_ids": []}},
+            ]
+        )
+        self.assertFalse(contexts[1]["workflow_progress"]["empty_finish_eligible"])
+        self.assertTrue(contexts[2]["workflow_progress"]["empty_finish_eligible"])
+        self.assertEqual(report["status"], "no_matches")
+
+    def test_progress_tracks_inspection_and_extraction(self):
+        report, contexts = self.run_decisions(
+            [
+                {"tool": "search", "args": {"query": "vibration"}},
+                {"tool": "record", "args": {"record_id": "WO-02"}},
+                self.extract("completed"),
+                {"tool": "abstain", "args": {"reason": "Regression fixture"}},
+            ]
+        )
+        self.assertIn(
+            "WO-02",
+            contexts[1]["workflow_progress"]["pending_candidate_inspection"],
+        )
+        self.assertNotIn(
+            "WO-02",
+            contexts[2]["workflow_progress"]["pending_candidate_inspection"],
+        )
+        self.assertIn(
+            "WO-02",
+            contexts[2]["workflow_progress"]["pending_candidate_extraction"],
+        )
+        self.assertNotIn(
+            "WO-02",
+            contexts[3]["workflow_progress"]["pending_candidate_extraction"],
+        )
+        self.assertEqual(report["status"], "abstained")
