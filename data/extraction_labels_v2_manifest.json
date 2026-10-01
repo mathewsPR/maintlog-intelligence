@@ -1,0 +1,101 @@
+{
+  "annotation_version": 2,
+  "contract_sha256": "3abbcd4e2bc421b9748d5a8cdb27cc37a993113e86cc5ce861615a945ce60b17",
+  "provenance": "Explicit contract-driven revisions of exposed synthetic development labels. Not independent annotation or holdout data.",
+  "runtime_changed": false,
+  "v1_release_gate_changed": false,
+  "suites": [
+    {
+      "input": "data/demo/comparison_cases.json",
+      "input_sha256": "2dbf8dbd3ca2b82d0a34a1dd45db03c914b110fc9178e38c9770bd0f3abb60b7",
+      "output": "data/demo/comparison_cases_v2.json",
+      "output_sha256": "b54134a41b3a317814056ab96305c4ad71fc87c4eedf600ff491d3da149dc3ea",
+      "source_identity": {
+        "csv": "company_export.csv",
+        "sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+        "profile": "company_profile.json",
+        "profile_sha256": "8bef714a5b6b5bbdac425c528d350dc7b627d2883f4b6eb01b093239d97cd211",
+        "data_kind": "synthetic"
+      },
+      "changes": [
+        {
+          "case_id": "bearing-actions",
+          "record_id": "WO-01",
+          "field": "component",
+          "before": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 3,
+            "quote": "brg",
+            "source_column": "Technician Notes"
+          },
+          "after": {
+            "field": "narrative_raw",
+            "quote": "BRG-204"
+          },
+          "reason": "Prefer the explicit identifier in the selected work statement."
+        },
+        {
+          "case_id": "bearing-actions",
+          "record_id": "WO-01",
+          "field": "action",
+          "before": {
+            "field": "narrative_raw",
+            "start": 14,
+            "end": 48,
+            "quote": "Plan to replace BRG-204 next week.",
+            "source_column": "Technician Notes"
+          },
+          "after": {
+            "field": "narrative_raw",
+            "quote": "Plan to replace BRG-204 next week"
+          },
+          "reason": "Exclude sentence-ending punctuation consistently."
+        },
+        {
+          "case_id": "bearing-actions",
+          "record_id": "WO-02",
+          "field": "action",
+          "before": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 17,
+            "quote": "Replaced BRG-204.",
+            "source_column": "Technician Notes"
+          },
+          "after": {
+            "field": "narrative_raw",
+            "quote": "Replaced BRG-204"
+          },
+          "reason": "Exclude sentence-ending punctuation consistently."
+        }
+      ]
+    },
+    {
+      "input": "data/release/cases.json",
+      "input_sha256": "5e4b0d1245bc71087599a6967349445896be80926cb4a96f1378c8c62f788981",
+      "output": "data/release/cases_v2.json",
+      "output_sha256": "0b29257c006964f59a808b5489703168ae0fe74d25e309d7921a3a2c56615563",
+      "source_identity": {
+        "csv": "records.csv",
+        "sha256": "f000534c1e4ef2884bc756f166c05d0f4691fd7221c68b28be445c0f8e81ce98",
+        "profile": "profile.json",
+        "profile_sha256": "8bef714a5b6b5bbdac425c528d350dc7b627d2883f4b6eb01b093239d97cd211",
+        "data_kind": "synthetic"
+      },
+      "changes": [
+        {
+          "case_id": "no-action",
+          "record_id": "RL-07",
+          "field": "component",
+          "before": null,
+          "after": {
+            "field": "narrative_raw",
+            "quote": "Compressor"
+          },
+          "reason": "The explicit equipment object qualifies under the broader v2 definition; hierarchy is not inferred from its name."
+        }
+      ]
+    }
+  ]
+}
