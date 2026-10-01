@@ -1,4 +1,4 @@
-"""Experimental vocabulary learned only from declared training labels."""
+"""vocabulary.py  Experimental vocabulary learned only from declared training labels."""
 
 import hashlib
 import json
