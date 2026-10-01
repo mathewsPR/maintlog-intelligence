@@ -1,0 +1,200 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Equipment history review</title><style>body{font:16px system-ui;max-width:960px;margin:32px auto;padding:0 20px;background:#f5f7fa;color:#182535}article,.panel{background:white;padding:24px;border:1px solid #d7dee7;border-radius:10px;margin:20px 0}pre,dd{white-space:pre-wrap;overflow-wrap:anywhere}pre{font-size:13px}table{width:100%;border-collapse:collapse}th,td{padding:10px;text-align:left;border-bottom:1px solid #d7dee7;overflow-wrap:anywhere}dt{font-weight:bold;margin-top:12px}dd{margin:4px 0}label{display:block;margin-top:16px}textarea{display:block;width:95%;min-height:60px}fieldset{margin-top:16px;border:1px solid #d7dee7}select,input,button{padding:8px;font:inherit}button{background:#173b63;color:white;border:0;border-radius:6px;cursor:pointer}.status{font-weight:bold}@media print{button,select,textarea{display:none}}</style>
+<h1>Equipment history review</h1><p class="status">ready_for_review · replay-fixture-no-model</p>
+<p>Review bearing vibration history</p><p>Scope: {&quot;asset_id&quot;: &quot;PUMP-001&quot;, &quot;start&quot;: null, &quot;end&quot;: null}. Selected records: 2.</p>
+<div class="panel">Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only.<p>Record acceptance does not approve individual fields. Reuse requires decisions on all three fields and action status. Acceptance records a human review decision. It does not confirm a diagnosis, repair success, or safety authorization.</p></div>
+<article data-record="WO-01"><h2>WO-01 · PUMP-001</h2>
+<p>2026-01-02 · company_export.csv · CSV row 2 · synthetic</p>
+<dl><dt>Component from input</dt><dd>Unknown</dd>
+<dt>Issue from input</dt><dd>Unknown</dd>
+<dt>Action from input</dt><dd>Unknown</dd>
+<dt>Raw narrative</dt><dd>brg vib high. Plan to replace BRG-204 next week.</dd></dl>
+<details><summary>Source hash and columns</summary><pre>{
+  &quot;source_file&quot;: &quot;company_export.csv&quot;,
+  &quot;source_sha256&quot;: &quot;98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da&quot;,
+  &quot;csv_row&quot;: 2,
+  &quot;data_kind&quot;: &quot;synthetic&quot;,
+  &quot;columns&quot;: {
+    &quot;record_id&quot;: &quot;Work Order&quot;,
+    &quot;event_date&quot;: &quot;Date&quot;,
+    &quot;asset_id&quot;: &quot;Equipment&quot;,
+    &quot;narrative&quot;: &quot;Technician Notes&quot;
+  }
+}</pre></details><h3>Review individual fields</h3><fieldset data-field-review="component"><legend>Component</legend>
+<p>Proposed excerpt: brg</p>
+<label>Field decision <select class="field-choice"><option value="unreviewed">Unreviewed</option><option value="accepted">Accept proposal</option><option value="rejected">Reject / mark unknown</option><option value="corrected">Correct excerpt</option></select></label>
+<div><label>Correction source <select class="source"><option value="component" >component</option><option value="issue_raw" >issue_raw</option><option value="action_raw" >action_raw</option><option value="narrative_raw" selected>narrative_raw</option></select></label><label>Exact corrected quote <textarea class="quote" maxlength="6000">brg</textarea></label>
+<label>For repeated quotes only: start <input class="start" type="number" min="0"> end <input class="end" type="number" min="1"></label></div></fieldset><fieldset data-field-review="problem"><legend>Problem</legend>
+<p>Proposed excerpt: vib high</p>
+<label>Field decision <select class="field-choice"><option value="unreviewed">Unreviewed</option><option value="accepted">Accept proposal</option><option value="rejected">Reject / mark unknown</option><option value="corrected">Correct excerpt</option></select></label>
+<div><label>Correction source <select class="source"><option value="component" >component</option><option value="issue_raw" >issue_raw</option><option value="action_raw" >action_raw</option><option value="narrative_raw" selected>narrative_raw</option></select></label><label>Exact corrected quote <textarea class="quote" maxlength="6000">vib high</textarea></label>
+<label>For repeated quotes only: start <input class="start" type="number" min="0"> end <input class="end" type="number" min="1"></label></div></fieldset><fieldset data-field-review="action"><legend>Action</legend>
+<p>Proposed excerpt: Plan to replace BRG-204 next week.</p>
+<label>Field decision <select class="field-choice"><option value="unreviewed">Unreviewed</option><option value="accepted">Accept proposal</option><option value="rejected">Reject / mark unknown</option><option value="corrected">Correct excerpt</option></select></label>
+<div><label>Correction source <select class="source"><option value="component" >component</option><option value="issue_raw" >issue_raw</option><option value="action_raw" >action_raw</option><option value="narrative_raw" selected>narrative_raw</option></select></label><label>Exact corrected quote <textarea class="quote" maxlength="6000">Plan to replace BRG-204 next week.</textarea></label>
+<label>For repeated quotes only: start <input class="start" type="number" min="0"> end <input class="end" type="number" min="1"></label></div></fieldset><fieldset class="status-review"><legend>Action status</legend><p>Proposed: planned</p><select class="status-choice"><option value="unreviewed">Unreviewed</option><option value="accepted">Accept proposal</option><option value="rejected">Reject / mark unknown</option><option value="corrected">Correct status</option></select><select class="status-value"><option value="unknown" >unknown</option><option value="planned" selected>planned</option><option value="attempted" >attempted</option><option value="completed" >completed</option><option value="verified" >verified</option></select></fieldset><details><summary>Proposed source spans</summary><pre>{
+  &quot;record_id&quot;: &quot;WO-01&quot;,
+  &quot;fields&quot;: {
+    &quot;component&quot;: {
+      &quot;field&quot;: &quot;narrative_raw&quot;,
+      &quot;start&quot;: 0,
+      &quot;end&quot;: 3,
+      &quot;quote&quot;: &quot;brg&quot;,
+      &quot;source_column&quot;: &quot;Technician Notes&quot;
+    },
+    &quot;problem&quot;: {
+      &quot;field&quot;: &quot;narrative_raw&quot;,
+      &quot;start&quot;: 4,
+      &quot;end&quot;: 12,
+      &quot;quote&quot;: &quot;vib high&quot;,
+      &quot;source_column&quot;: &quot;Technician Notes&quot;
+    },
+    &quot;action&quot;: {
+      &quot;field&quot;: &quot;narrative_raw&quot;,
+      &quot;start&quot;: 14,
+      &quot;end&quot;: 48,
+      &quot;quote&quot;: &quot;Plan to replace BRG-204 next week.&quot;,
+      &quot;source_column&quot;: &quot;Technician Notes&quot;
+    }
+  },
+  &quot;action_status_proposal&quot;: &quot;planned&quot;,
+  &quot;review_status&quot;: &quot;unreviewed&quot;,
+  &quot;source&quot;: {
+    &quot;source_file&quot;: &quot;company_export.csv&quot;,
+    &quot;source_sha256&quot;: &quot;98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da&quot;,
+    &quot;csv_row&quot;: 2,
+    &quot;data_kind&quot;: &quot;synthetic&quot;,
+    &quot;columns&quot;: {
+      &quot;record_id&quot;: &quot;Work Order&quot;,
+      &quot;event_date&quot;: &quot;Date&quot;,
+      &quot;asset_id&quot;: &quot;Equipment&quot;,
+      &quot;narrative&quot;: &quot;Technician Notes&quot;
+    }
+  },
+  &quot;validation&quot;: &quot;source_spans_and_conservative_constraints_not_semantic_correctness&quot;
+}</pre></details>
+<label>Review this selected record and its extraction proposal (if present)
+<select class="record-choice"><option value="unreviewed">Unreviewed</option><option value="accepted">Accept for this review</option><option value="rejected">Reject for this review</option></select></label>
+<label>Reviewer note <textarea class="review-note" maxlength="2000"></textarea></label></article><article data-record="WO-02"><h2>WO-02 · PUMP-001</h2>
+<p>2026-01-09 · company_export.csv · CSV row 3 · synthetic</p>
+<dl><dt>Component from input</dt><dd>Unknown</dd>
+<dt>Issue from input</dt><dd>Unknown</dd>
+<dt>Action from input</dt><dd>Unknown</dd>
+<dt>Raw narrative</dt><dd>Replaced BRG-204. Vibration still high; no successful repair confirmed.</dd></dl>
+<details><summary>Source hash and columns</summary><pre>{
+  &quot;source_file&quot;: &quot;company_export.csv&quot;,
+  &quot;source_sha256&quot;: &quot;98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da&quot;,
+  &quot;csv_row&quot;: 3,
+  &quot;data_kind&quot;: &quot;synthetic&quot;,
+  &quot;columns&quot;: {
+    &quot;record_id&quot;: &quot;Work Order&quot;,
+    &quot;event_date&quot;: &quot;Date&quot;,
+    &quot;asset_id&quot;: &quot;Equipment&quot;,
+    &quot;narrative&quot;: &quot;Technician Notes&quot;
+  }
+}</pre></details><h3>Review individual fields</h3><fieldset data-field-review="component"><legend>Component</legend>
+<p>Proposed excerpt: BRG-204</p>
+<label>Field decision <select class="field-choice"><option value="unreviewed">Unreviewed</option><option value="accepted">Accept proposal</option><option value="rejected">Reject / mark unknown</option><option value="corrected">Correct excerpt</option></select></label>
+<div><label>Correction source <select class="source"><option value="component" >component</option><option value="issue_raw" >issue_raw</option><option value="action_raw" >action_raw</option><option value="narrative_raw" selected>narrative_raw</option></select></label><label>Exact corrected quote <textarea class="quote" maxlength="6000">BRG-204</textarea></label>
+<label>For repeated quotes only: start <input class="start" type="number" min="0"> end <input class="end" type="number" min="1"></label></div></fieldset><fieldset data-field-review="problem"><legend>Problem</legend>
+<p>Proposed excerpt: Vibration still high</p>
+<label>Field decision <select class="field-choice"><option value="unreviewed">Unreviewed</option><option value="accepted">Accept proposal</option><option value="rejected">Reject / mark unknown</option><option value="corrected">Correct excerpt</option></select></label>
+<div><label>Correction source <select class="source"><option value="component" >component</option><option value="issue_raw" >issue_raw</option><option value="action_raw" >action_raw</option><option value="narrative_raw" selected>narrative_raw</option></select></label><label>Exact corrected quote <textarea class="quote" maxlength="6000">Vibration still high</textarea></label>
+<label>For repeated quotes only: start <input class="start" type="number" min="0"> end <input class="end" type="number" min="1"></label></div></fieldset><fieldset data-field-review="action"><legend>Action</legend>
+<p>Proposed excerpt: Replaced BRG-204.</p>
+<label>Field decision <select class="field-choice"><option value="unreviewed">Unreviewed</option><option value="accepted">Accept proposal</option><option value="rejected">Reject / mark unknown</option><option value="corrected">Correct excerpt</option></select></label>
+<div><label>Correction source <select class="source"><option value="component" >component</option><option value="issue_raw" >issue_raw</option><option value="action_raw" >action_raw</option><option value="narrative_raw" selected>narrative_raw</option></select></label><label>Exact corrected quote <textarea class="quote" maxlength="6000">Replaced BRG-204.</textarea></label>
+<label>For repeated quotes only: start <input class="start" type="number" min="0"> end <input class="end" type="number" min="1"></label></div></fieldset><fieldset class="status-review"><legend>Action status</legend><p>Proposed: completed</p><select class="status-choice"><option value="unreviewed">Unreviewed</option><option value="accepted">Accept proposal</option><option value="rejected">Reject / mark unknown</option><option value="corrected">Correct status</option></select><select class="status-value"><option value="unknown" >unknown</option><option value="planned" >planned</option><option value="attempted" >attempted</option><option value="completed" selected>completed</option><option value="verified" >verified</option></select></fieldset><details><summary>Proposed source spans</summary><pre>{
+  &quot;record_id&quot;: &quot;WO-02&quot;,
+  &quot;fields&quot;: {
+    &quot;component&quot;: {
+      &quot;field&quot;: &quot;narrative_raw&quot;,
+      &quot;start&quot;: 9,
+      &quot;end&quot;: 16,
+      &quot;quote&quot;: &quot;BRG-204&quot;,
+      &quot;source_column&quot;: &quot;Technician Notes&quot;
+    },
+    &quot;problem&quot;: {
+      &quot;field&quot;: &quot;narrative_raw&quot;,
+      &quot;start&quot;: 18,
+      &quot;end&quot;: 38,
+      &quot;quote&quot;: &quot;Vibration still high&quot;,
+      &quot;source_column&quot;: &quot;Technician Notes&quot;
+    },
+    &quot;action&quot;: {
+      &quot;field&quot;: &quot;narrative_raw&quot;,
+      &quot;start&quot;: 0,
+      &quot;end&quot;: 17,
+      &quot;quote&quot;: &quot;Replaced BRG-204.&quot;,
+      &quot;source_column&quot;: &quot;Technician Notes&quot;
+    }
+  },
+  &quot;action_status_proposal&quot;: &quot;completed&quot;,
+  &quot;review_status&quot;: &quot;unreviewed&quot;,
+  &quot;source&quot;: {
+    &quot;source_file&quot;: &quot;company_export.csv&quot;,
+    &quot;source_sha256&quot;: &quot;98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da&quot;,
+    &quot;csv_row&quot;: 3,
+    &quot;data_kind&quot;: &quot;synthetic&quot;,
+    &quot;columns&quot;: {
+      &quot;record_id&quot;: &quot;Work Order&quot;,
+      &quot;event_date&quot;: &quot;Date&quot;,
+      &quot;asset_id&quot;: &quot;Equipment&quot;,
+      &quot;narrative&quot;: &quot;Technician Notes&quot;
+    }
+  },
+  &quot;validation&quot;: &quot;source_spans_and_conservative_constraints_not_semantic_correctness&quot;
+}</pre></details>
+<label>Review this selected record and its extraction proposal (if present)
+<select class="record-choice"><option value="unreviewed">Unreviewed</option><option value="accepted">Accept for this review</option><option value="rejected">Reject for this review</option></select></label>
+<label>Reviewer note <textarea class="review-note" maxlength="2000"></textarea></label></article>
+<details class="panel"><summary>Full deterministic aggregate (if requested)</summary><pre>{
+  &quot;method&quot;: &quot;same_asset_component_and_normalized_issue_wording&quot;,
+  &quot;data_kinds&quot;: [
+    &quot;synthetic&quot;
+  ],
+  &quot;input_record_count&quot;: 2,
+  &quot;selected_record_count&quot;: 2,
+  &quot;start&quot;: null,
+  &quot;end&quot;: null,
+  &quot;asset_id&quot;: null,
+  &quot;unstructured_record_count&quot;: 2,
+  &quot;recurring_groups&quot;: [],
+  &quot;interpretation&quot;: &quot;Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only.&quot;
+}</pre></details>
+<div class="panel"><label>Reviewer name <input id="reviewer" maxlength="200" placeholder="Your name"></label><p>Choose a decision for each reviewed record. Download decisions, then import them with maintlog-review to preserve the audit history.</p><button id="download">Download review decisions</button><p id="message" role="status"></p></div>
+<script type="application/json" id="run-data">{"run_sha256": "d5aa54715308cbc173e202722333011419a7249afd8f6345ba281a7d4478a2ea", "record_ids": ["WO-01", "WO-02"]}</script><script>
+const run=JSON.parse(document.getElementById('run-data').textContent);
+document.getElementById('download').onclick=()=>{
+ const reviewer=document.getElementById('reviewer').value.trim();
+ if(!reviewer){document.getElementById('message').textContent='Enter a reviewer name.';return;}
+ const decisions=[];
+ for(const el of document.querySelectorAll('article[data-record]')){
+  const decision=el.querySelector('.record-choice').value;
+  if(decision==='unreviewed')continue;
+  const row={record_id:el.dataset.record,decision,note:el.querySelector('.review-note').value};
+  const fields={};
+  for(const box of el.querySelectorAll('[data-field-review]')){
+   const choice=box.querySelector('.field-choice').value;
+   if(choice==='unreviewed')continue;
+   const review={decision:choice};
+   if(choice==='corrected'){
+    const field=box.querySelector('.source').value;
+    const quote=box.querySelector('.quote').value;
+    const start=box.querySelector('.start').value,end=box.querySelector('.end').value;
+    if((start==='')!==(end==='')){document.getElementById('message').textContent='Enter both offsets or leave both blank.';return;}
+    review.span=start===''?{field,quote}:{field,start:Number(start),end:Number(end),quote};
+   }
+   fields[box.dataset.fieldReview]=review;
+  }
+  if(Object.keys(fields).length)row.fields=fields;
+  const statusChoice=el.querySelector('.status-choice').value;
+  if(statusChoice!=='unreviewed')row.action_status={decision:statusChoice,value:statusChoice==='rejected'?'unknown':el.querySelector('.status-value').value};
+  decisions.push(row);
+ }
+ const data={run_sha256:run.run_sha256,reviewer,decisions};
+ const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));
+ const a=document.createElement('a');a.href=url;a.download='review-decisions.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ document.getElementById('message').textContent='Downloaded '+decisions.length+' decisions. Import this file to save review history.';
+};
+</script></html>

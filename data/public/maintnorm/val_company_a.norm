@@ -1,0 +1,2488 @@
+OU089	<id>
+Replace	replace
+a/c	air conditioner
+fan	fan
+switch	switch
+
+OU089	<id>
+REP	repair
+LOW	low
+ENGINE	engine
+POWER	power
+FAULT	fault
+
+XH531	<id>
+REPLACE	replace
+L/H	left hand
+LIFT	lift
+CYLINDER	cylinder
+
+LEVEL	level
+SENSOR	sensor
+
+BF079	<id>
+PARK	park
+BRAKE	brake
+RELEASE	release
+FAULT	fault
+
+AN426	<id>
+REWELD	reweld
+BROKEN	broken
+BUCKET	bucket
+TOOTH	tooth
+LUG	lug
+
+PH639	<id>
+REPAIR	repair
+OIL	oil
+LEAK	leak
+REMOTE	remote
+FILTER	filter
+
+PH639	<id>
+REP	replace
+FULL	full
+SET	set
+OF	of
+WINDOWS	windows
+
+HF338	<id>
+INVESTAGATE	investigate
+24V	<num> V
+FAULT	fault
+
+MB119	<id>
+REPL	replace
+ALL	all
+BUCKET	bucket
+TEETH	teeth
+
+XH531	<id>
+REPLACE	replace
+BLOWN	blown
+STEERING	steering
+HOSE	hose
+
+OQ524	<id>
+REPLACE	replace
+BLOWN	blown
+HYDRAULIC	hydraulic
+HOSE	hose
+
+XH531	<id>
+REPAIR	repair
+PARKBRAKE	park brake
+FAULT	fault
+
+CC708	<id>
+repair	repair
+wiring	wiring
+to	to
+lights	lights
+
+PH639	<id>
+REPL	replace
+CAB	cabin
+PRESSURISER	pressurizer
+
+AN426	<id>
+REPAIR	repair
+AIR	air
+CON	conditioner
+FAULT	fault
+
+BF079	<id>
+RENEW	renew
+BOOM	boom
+LIGHTS	lights
+L/H	left hand
+
+MB119	<id>
+-	-
+Change	change
+Out	out
+Wiper	wiper
+Motor	motor
+and	and
+Arms	arms
+
+CC708	<id>
+6109	<num>
+HR	hour
+SERVICE	service
+
+MB119	<id>
+REP	repair
+SHUTDOWN	shutdown
+FAULT	fault
+
+XH531	<id>
+REPAIR	repair
+COOLANT	coolant
+LEAK	leak
+
+ZW767	<id>
+-	-
+Weekly	weekly
+Tyre	tyre
+Inspections	inspections
+
+PH639	<id>
+WELD	weld
+HEEL	heel
+BLOCKS	blocks
+TO	to
+WEAR	wear
+STRIPS	strips
+
+BP504	<id>
+REPLACE	replace
+BLOWN	blown
+MAIN	main
+STEER	steering
+HOSE	hose
+
+FA	<id>
+622	
+FIT	fit
+AND	and
+WELD	weld
+PROTECTOR	protector
+WINGS	wings
+
+PH639	<id>
+REPLACE	replace
+POS	position
+1&2	<num> and <num>
+TYRES	tyres
+
+AN426	<id>
+REPLACE	replace
+POS	position
+1	<num>
+
+CR871	<id>
+REPL	replace
+BUCKET	bucket
+ASSEMBLY	assembly
+
+BF079	<id>
+REPL	replace
+POS	position
+5	<num>
+TYRE	tyre
+HEAT	heat
+SEPARATION	separation
+
+ZW767	<id>
+REPL	replace
+BUCKET	bucket
+GROUSER	grouser
+BAR	bar
+
+ZW767	<id>
+TRANS	transmission
+OVERHEATING	overheating
+
+AN426	<id>
+REPLACE	replace
+BROKEN	broken
+ALT	alternator
+BOLT	bolt
+
+HF338	<id>
+reposition	reposition
+dog	dogbone
+bone	
+collets	collets
+
+OU089	<id>
+REPLACE	replace
+CAB	cabin
+DOOR	door
+WINDOW	window
+
+PH639	<id>
+OIL	oil
+LEAK	leak
+HYD	hydraulic
+
+MB119	<id>
+REPAIRS	repairs
+TO	to
+IMPLIMENT	implement
+VALVE	valve
+
+JP367	<id>
+REPLACE	replace
+DIFF	differential
+COOLING	cooling
+HOSE	hose
+
+CR871	<id>
+replace	replace
+steering	steering
+lock	lock
+lever	lever
+spring	spring
+
+CR871	<id>
+SOS	SOS
+SAMPLE	sample
+ENGINE	engine
+SEE	see
+LONG	long
+TEXT	text
+
+XH531	<id>
+REPAIR	repair
+ENGINE	engine
+ECM	ECM
+FAULT	fault
+
+XH531	<id>
+REPAIR	repair
+CRACKS	cracks
+AROUND	around
+BUCKET	bucket
+STOPS	stops
+
+BF079	<id>
+ORDER	order
+SPARE	spare
+9661	<id>
+TYRES	tyres
+FOR	for
+24	<id>
+V	
+
+BF079	<id>
+REP	replace
+BROKEN	broken
+HINGE	hinge
+ON	on
+POS	position
+7	<num>
+GUARD	guard
+
+CR871	<id>
+Refit	refit
+RHR	right hand rear
+mudguard	mudguard
+&	and
+rubber	rubber
+hinge	hinge
+
+WJ525	<id>
+REPLACE	replace
+WEEPING	weeping
+COOLER	cooler
+GASKET	gasket
+
+XH531	<id>
+REPAIR	repair
+FRONT	front
+LIGHTS	lights
+
+MB119	<id>
+REPLACE	replace
+CIRCUIT	circuit
+BREAKER	breaker
+
+CR871	<id>
+PUCHASE	purchase
+UP	updated
+DATED	
+ET	ET
+PROGRAMS	programs
+and	and
+a	a
+
+CR871	<id>
+REPLACE	replace
+STEERING	steering
+CYLINDER	cylinder
+
+GS690	<id>
+REPL	replace
+WORN	worn
+TURBO	turbo
+ASSY	assembly
+
+JP367	<id>
+LOW	low
+ENGINE	engine
+POWER	power
+
+CC708	<id>
+REPL	replace
+BLOWN	blown
+IMPLEMENT	implement
+HOSE	hose
+
+AN426	<id>
+Replace	replace
+A/Cond	air conditioner
+condensor	condensor
+fan	fan
+
+CC708	<id>
+PARK	park
+BRAKE	brake
+FAULT	fault
+
+MB119	<id>
+mob	mobile
+teleremote	Tele-Remote
+commissioning	commissioning
+161X	<id>
+
+MB119	<id>
+CHECK	check
+AND	and
+REPAIR	repair
+AUTO	auto-greaser
+GREASER	
+UNIT	unit
+
+CR871	<id>
+REAR	rear
+LIGHT	light
+FAULT	fault
+
+NI73	<id>
+REPLACE	replace
+POS	position
+3	<num>
+TYRE	tyre
+
+MB119	<id>
+REPLACE	replace
+CORNER	corner
+BUCKET	bucket
+TEETH	teeth
+
+HF338	<id>
+REPLACE	replace
+BRAKE	brake
+ACCUMULATOR	accumulator
+
+MB119	<id>
+REPL	replace
+BLOWN	blown
+IMP	implement
+VALVE	valve
+HOSE	hose
+
+CR871	<id>
+ORDER	order
+WEAR	wear
+BARS	bars
+FOR	for
+BUCKET	bucket
+
+MB119	<id>
+REPL	replace
+A/C	air conditioner
+EVAP	evaporator
+FAN	fan
+ASSY	assembly
+
+PH639	<id>
+REPLACE	replace
+WIPER	wiper
+BLADE	blade
+ASSEMBLY	assembly
+
+CC708	<id>
+-	-
+Reshim	reshim
+Centre	centre
+Hitch	hitch
+Bearings	bearings
+
+FIT	fit
+POS1+2	position <num> and <num>
+TYRES	tyres
+TO	to
+JACKS	<sensitive>
+HIRE	
+LOADER	loader
+
+AN426	<id>
+REPAIR	repair
+LIGHTS	lights
+
+CR871	<id>
+REPLACE	replace
+TRANSMISSION	transmission
+TBC	TBC
+
+AN426	<id>
+REPL	replace
+STEERING	steering
+CONTROL	control
+LEVER	lever
+
+ORDER	order
+RECOVERY	recovery
+STROP	strap
+KEVLAR	Kevlar
+
+CC708	<id>
+REP	replace
+WINDOW	window
+SPRAYS	sprays
+&	and
+BOTTLE	bottle
+
+CC708	<id>
+CHANGE	change
+OUT	out
+ALTERNATOR	alternator
+
+AN426	<id>
+replace	replace
+rear	rear
+1/4	quarter
+glass	glass
+and	and
+seal	seal
+
+CC708	<id>
+REPL	replace
+CRACKED	cracked
+PIPE	pipe
+ON	on
+IMPLEMENT	implement
+VLV	valve
+
+HF338	<id>
+REPL	replace
+1/2	half
+ARROW	arrow
+ON	on
+BUCKET	bucket
+
+GU245	<id>
+REPLACE	replace
+ENGINE	engine
+OIL	oil
+FILLER	filler
+CAP	cap
+
+AN426	<id>
+L/H	left hand
+STEER	steering
+CYL	cylinder
+/CO	/ change
+
+MB119	<id>
+REPLACE	replace
+CROWD	crowd
+HOSE	hose
+
+PH639	<id>
+-	-
+Change	change
+Out	out
+Tyre	tyre
+Pos	position
+9	<num>
+
+MB119	<id>
+REPLACE	replace
+AIR	air
+FILTER	filter
+BASE	base
+
+CR871	<id>
+REPLACE	replace
+AXLE	axle
+COOLING	cooling
+PRESSURE	pressure
+SWIT	switch
+
+GU245	<id>
+REPLACE	replace
+BROKEN	broken
+CAM	cam
+FOLLOWER	follower
+ASSEMB	assembly
+
+LNO	LNO
+MB119	<id>
+REPLACE	replace
+POS	position
+8	<num>
+TYRE	tyre
+
+CR871	<id>
+Replace	replace
+pos	position
+5	<num>
+tyre	tyre
+
+CJ3174	<id>
+-	-
+teleremote	Tele-Remote
+issues	issues
+
+CC708	<id>
+MIDLIFE	mid-life
+REBUILD	rebuild
+BOYES	Boyes
+MECHANICAL	mechanical
+
+HF338	<id>
+3484	<num>
+HOURS	hours
+SERVICE	service
+
+BF079	<id>
+REPL	replace
+POS	position
+7	<num>
+TYRE	tyre
+DAMAGE	damage
+
+WJ525	<id>
+REPL	replace
+BENT	bent
+RHS	right hand side
+LIFT	lift
+CYLINDER	cylinder
+
+HF338	<id>
+INSTALL	install
+BYF	<id>
+89	
+SELF	self-rescuer
+RESCUER	
+
+CR871	<id>
+Blown	blown
+brake	brake
+hose	hose
+
+XH531	<id>
+RESEAL	reseal
+RIDE	ride
+CONTROL	control
+ACCUMULATOR	accumulator
+
+CR871	<id>
+AIRCON	air conditioner
+FAULT	fault
+
+PH639	<id>
+replace	replace
+faulty	faulty
+isolater	isolator
+not	not
+turnin	turning
+
+XH531	<id>
+REPL	replace
+BLOWN	blown
+O'RING	o-ring
+ON	on
+LIFT	lift
+CIRCUIT	circuit
+
+CC708	<id>
+inv	investigate
+brake	brake
+drag	drag
+fault	fault
+
+MB119	<id>
+REMOVE	remove
+AND	and
+CLEAN	clean
+RADIATOR	radiator
+
+ORDER	order
+WHEEL	wheel
+CHOCKS	chocks
+FOR	for
+W/SHOP	workshop
+
+CR871	<id>
+REPL	replace
+BUCKET	bucket
+HEEL	heel
+SHROUDS	shrouds
+
+CC708	<id>
+REPAIR	repair
+CRACKS	cracks
+IN	in
+BUCKET	bucket
+
+OQ524	<id>
+REPAIR	repair
+WIRING	wiring
+FAULT	fault
+
+CR871	<id>
+REPLACE	replace
+REAR	rear
+AFFF	AFFF
+ACTIVATION	activation
+POIN	point
+
+OU089	<id>
+REPL	replace
+L/H	left hand
+STEER	steering
+CYL	cylinder
+DAMAGED	damaged
+FITTING	fitting
+
+CC708	<id>
+REPAIR	repair
+TRANS	transmission
+PRESSURE	pressure
+SWITCH	switch
+
+AN426	<id>
+REPLACE	replace
+AIR	air
+CONDENSOR	condensor
+FANS	fans
+
+CC708	<id>
+BOILERMAKER	boilermaker
+REPAIRS	repairs
+
+CC708	<id>
+-	-
+Straighten	straighten
+Guard	guard
+
+XH531	<id>
+-	-
+8	<num>
+Weekly	weekly
+Scheduled	scheduled
+Servicing	servicing
+TBC	TBC
+
+OU089	<id>
+REP	replace
+POS2	position <num>
+BRAKE	brake
+PACK	pack
+
+JP367	<id>
+RESAMPLE	resample
+AND	and
+CHANGE	change
+FRT	front
+DIFF	differential
+OIL	oil
+
+ZW767	<id>
+REPLACE	replace
+POS	position
+3	<num>
+FLAT	flat
+TYRE	tyre
+
+BF079	<id>
+REPAIR	repair
+RIDE	ride
+CONTROL	control
+
+MH27	<id>
+Fab	fabricate
+cover	cover
+for	for
+impliment	implement
+valve	valve
+
+AN426	<id>
+RECHARGE	recharge
+AFFF	AFFF
+SYSTEM	system
+
+PH639	<id>
+REPACE	replace
+CROUD	crowd
+CYL	cylinder
+HOSE	hose
+
+XH531	<id>
+change	change
+faulty	faulty
+isolater	isolator
+
+GS690	<id>
+REPAIR	repair
+POS	position
+4	<num>
+GUARD	guard
+DAMAGE	damage
+
+CR871	<id>
+REP	repair
+GREASE	grease
+LINE-FAN	line - fan
+PULLEY	pulley
+TEXT	text
+
+GS690	<id>
+REMOVE	remove
+FRONT	front
+DIFF	differential
+FOR	for
+O/HAUL	overhaul
+
+MB119	<id>
+Straighten	straighten
+Wheel	wheel
+Arch/Guard	arch / guard
+Pos	position
+0	<num>
+
+XH531	<id>
+REPL	replace
+LEAKING	leaking
+BRAKE	brake
+PRESSURE	pressure
+SWITCH	switch
+
+PH639	<id>
+REPLACE	replace
+BLOWN	blown
+STEERING	steering
+HOSE	hose
+
+CC708	<id>
+REPLACE	replace
+CENTRE	centre
+DRIVE	drive
+LINE	line
+ASSY	assembly
+
+JP367	<id>
+REPLACE	replace
+CENTER	centre
+BEARING	bearing
+core	core
+
+GS690	<id>
+-	-
+5	<num>
+Weekly	weekly
+Scheduled	scheduled
+Servicing	servicing
+
+LNO	LNO
+PH639	<id>
+REPLACE	replace
+ALL	all
+BUCKET	bucket
+TEETH	teeth
+
+HF338	<id>
+REPLACE	replace
+PARK	park
+BRAKE	brake
+COIL	coil
+
+PH639	<id>
+INVEST	investigate
+TRANS	transmission
+FILLING	filling
+WITH	with
+HYD	hydraulic
+OIL	oil
+
+PH639	<id>
+REPL	replace
+2x	<num> x
+BRAKE	brake
+RELEASE	release
+HOSE'S	hoses
+
+AJY70134	<id>
+REP	replace
+WIRELESS	wireless
+COMS	communications
+ADAPTERS	adapters
+X2	x <num>
+
+AN426	<id>
+REPL	replace
+BLOWN	blown
+HOSE	hose
+
+MB119	<id>
+C/O	change out
+BLOWN	blown
+O	o-ring
+RING	
+ON	on
+STEER	steering
+PUMP	pump
+
+PH639	<id>
+DAILY	daily
+PREVENTATIVE	preventative
+MAINTENANCE	maintenance
+
+PH639	<id>
+900	<num>
+HOUR	hour
+SERVICE	service
+TBC	TBC
+
+R/H	right hand
+Steering	steering
+Cyl	cylinder
+Pin	pin
+&	and
+Brg	bearing
+
+XH531	<id>
+-	-
+59	<num>
+Weekly	weekly
+Scheduled	scheduled
+Servicing	servicing
+
+CR871	<id>
+STEERING	steering
+CONTROL	control
+LEAKING	leaking
+
+CC708	<id>
+REPL	replace
+FAILED	failed
+IMPLEMENT	implement
+PUMP	pump
+
+CC708	<id>
+REPAIR	repair
+WINDOW	window
+WASHERS	washers
+
+AN426	<id>
+BUCKET	bucket
+TEETHS	teeth
+WORN	worn
+
+CC708	<id>
+REPAIR	repair
+OIL	oil
+LEAK	leak
+NEAR	near
+ISOLATOR	isolator
+
+MB119	<id>
+REPLACE	replace
+PROFILE	profile
+BAR	bar
+
+JP367	<id>
+REPLACE	replace
+MISSING	missing
+CORNER	corner
+TOOTH	tooth
+
+PH639	<id>
+REPL	replace
+ENGINE	engine
+CIRCUIT	circuit
+BREAKERS	breakers
+
+BP504	<id>
+REPAIR	repair
+ALTERNATOR	alternator
+WIRING	wiring
+
+ZW767	<id>
+REPLACE	replace
+BATTERYS	batteries
+
+IY74494	<id>
+REPLACE	replace
+COMP	compatible
+BUCKET	bucket
+TEETH	teeth
+
+CR871	<id>
+-	-
+REPLACE	replace
+TYRES	tyres
+
+XH531	<id>
+INSPECT	inspect
+OIL	oil
+LEAK	leak
+
+CR871	<id>
+REBUILD	rebuild
+BUCKET	bucket
+IN	in
+W/SHJOP	workshop
+
+MOB	mobilize
+AK	<id>
+38	
+remove	remove
+&	annd
+repair	repair
+remote	remote
+units	units
+
+BF079	<id>
+tighten	tighten
+and	and
+secure	secure
+all	all
+fuel	fuel
+hoses	hoses
+
+CC708	<id>
+REPLACE	replace
+STERING	steering
+FLOW	flow
+SWITCH	switch
+
+BF079	<id>
+Repair	repair
+cracks	cracks
+x	x
+5	<num>
+in	in
+bucket	bucket
+floor	floor
+
+BF079	<id>
+REPLACE	replace
+AUTO	autogreaser
+GREASER	
+VENT	vent
+VALVE	valve
+
+BP504	<id>
+REPAIR	repair
+ROCK	rock
+DAMAGED	damaged
+HOSES	hoses
+
+CC708	<id>
+REPL	replace
+POS	position
+8	<num>
+TYRE	tyre
+HEAT	heat
+SEPERATION	separation
+
+XH531	<id>
+1	<num>
+MONTHLY	monthly
+MHS	MHS
+AUDIT	audit
+
+PH639	<id>
+REPLACE	replace
+RADIATOR	radiator
+
+CC708	<id>
+REPLACE	replace
+ALTERNATOR	alternator
+PULLEY	pulley
+&	and
+BELT	belt
+
+AN426	<id>
+CHANGE	change
+OUT	out
+POS	position
+9	<num>
+WHEEL	wheel
+END	end
+
+BF079	<id>
+REPL	replace
+BLOWN	blown
+TILT	tilt
+HOSE	hose
+
+JP367	<id>
+regas	regas
+ride	ride
+control	control
+
+PH639	<id>
+REPLACE	replace
+ALLBUCKET	all bucket
+TEETH	teeth
+
+MB119	<id>
+REPLACE	replace
+BATTERYS	batteries
+
+OQ524	<id>
+REPAIR	repair
+AFFF	AFFF
+AND	and
+CLEAN	clean
+OFF	off
+MUD	mud
+
+CR871	<id>
+REPLACE	replace
+FAULTY	faulty
+ALTERNATOR	alternator
+
+GU245	<id>
+RESEAL	reseal
+FUEL	fuel
+RAIL	rail
+
+BF079	<id>
+REPLACE	replace
+POS	position
+0	<num>
+TYRE	tyre
+
+XH531	<id>
+ALL	all
+STANDUPS	stand ups
+ON	on
+BONET	bonnet
+TOBE	to be
+CUT	cut
+OFF	off
+
+CR871	<id>
+Mid-Life	mid-life
+Overhaul	overhaul
+TBC	TBC
+
+OU089	<id>
+ENGINE	engine
+DERATING	derating
+
+NI73	<id>
+REPL	replace
+GREASE	grease
+LINE	line
+REAR	rear
+CROWD	crowd
+CYL	cylinder
+PIN	pin
+
+JP367	<id>
+-	-
+Change	change
+Out	out
+Tyre	tyre
+Pos	position
+3	<num>
+
+MB119	<id>
+REPLACE	replace
+TURBO	turbo
+TBC	TBC
+16/01	<date>
+
+CC708	<id>
+REPL	replace
+PROFILE	profile
+BAR	bar
+ON	on
+BUCKET	bucket
+
+MB119	<id>
+BLOWN	blown
+STEERING	steering
+PUMP	pump
+HOSE	hose
+
+OU089	<id>
+Replace	replace
+ABA	ABA
+switch	switch
+
+BP504	<id>
+REPLACE	replace
+ELBOW	elbow
+PAD	pad
+ON	on
+DOOR	door
+
+XH531	<id>
+REPLACE	replace
+FAN	fan
+HUB	hub
+BEARINGS	bearings
+
+CR871	<id>
+REPLACE	replace
+PURIFIER	purifier
+TBC	TBC
+
+CC708	<id>
+REPL	replace
+EVAPORATOR	evaporator
+FAN	fan
+ASSY	assembly
+
+GU245	<id>
+MINESITE	minesite
+GLASS	glass
+REPAIRS	repairs
+
+XH531	<id>
+REP	repair
+LHS	left hand side
+CROSS	crossover
+OVER	
+PIPES	pipes
+DAMAGE	damage
+
+BF079	<id>
+DAILY	daily
+PREVENTATIVE	preventative
+MAINTENANCE	maintenance
+
+OU089	<id>
+REPLACE	replace
+R/H	right hand
+LIFT	lift
+CYL	cylinder
+LEAKING	leaking
+
+MB119	<id>
+REPL	replace
+WORN	worn
+CORNER	corner
+BUCKET	bucket
+TEETH	teeth
+
+XH335	<id>
+REPLACE	replace
+POS	position
+0	<num>
+TYRE	tyre
+
+XH531	<id>
+RECTIFY	rectify
+GEAR	gear
+SELECTION	selection
+FAULT	fault
+
+lb611	<id>
+temp	temperature
+repairs	repairs
+to	to
+air	air
+con	conditioner
+comp	compressor
+mount	mount
+
+CR871	<id>
+FIT	fit
+AND	and
+WELD	weld
+PROTECTOR	protector
+WINGS	wings
+
+GU245	<id>
+REPLACE	replace
+ATMOSPHERIC	atmospheric
+SENSOR	sensor
+
+PH639	<id>
+REPAIR	repair
+LEAK	leak
+AT	at
+HYD	hydraulic
+TANK	tank
+
+OU089	<id>
+Repair	repair
+oil	oil
+leaks	leaks
+remote	remote
+block	block
+fron	front
+
+CC708	<id>
+P/BRAKE	park brake
+FAULT	fault
+
+BF079	<id>
+124	<num>
+HR	hour
+SERVICE	service
+
+EX01	<id>
+REPAIR	repair
+OIL	oil
+TRANSFER	transfer
+FAULT	fault
+
+BF079	<id>
+REPLACE	replace
+BLOWN	blown
+IMPLEMENT	implement
+HOSE	hose
+
+AN426	<id>
+replace	replace
+charge	charge
+valve	valve
+switch	switch
+
+CR871	<id>
+REPLACE	replace
+LH	left hand
+LIFT	lift
+CYL	cylinder
+HOSE	hose
+
+PH639	<id>
+REPLACE	replace
+COOLANT	coolant
+LEVEL	level
+SENSOR	sensor
+
+AN426	<id>
+REPLACE	replace
+CORNER	corner
+BUCKET	bucket
+TEETH	teeth
+
+CC708	<id>
+REPLACE	replace
+DOGBONE	dogbone
+COLLET	collet
+BUNGS	bungs
+
+CR871	<id>
+AIR	air
+CON	conditioner
+INOP	inoperable
+
+MB119	<id>
+REPAIR	repair
+LIGHTS&WIRING	lights and wiring
+
+PH639	<id>
+CHECK/REP	check / repair
+ENGINE	engine
+OIL	oil
+PRESS	pressure
+FAULT	fault
+
+CR871	<id>
+REPAIR	repair
+A/CON	air conditioner
+FAULT	fault
+
+OQ524	<id>
+Replace	replace
+op	operators
+seat	seat
+
+CR871	<id>
+REAPLACE	replace
+BOTH	both
+CORNER	corner
+TEETH	teeth
+
+OU089	<id>
+REPAIR	repair
+LEAKING	leaking
+TURBO	turbo
+DRAIN	drain
+PIPE	pipe
+
+AN426	<id>
+REPLACE	replace
+PILOT	pilot
+PRESSURE	pressure
+CONTROL	control
+VLV	valve
+
+WJ525	<id>
+REPL	replace
+HYDRAULIC	hydraulic
+HOSE	hose
+
+CR871	<id>
+replace	replace
+cooler	cooler
+hoses	hoses
+
+WEEKLY	weekly
+LOADER	loader
+FLEET	fleet
+TYRE	tyre
+INSPECTION	inspection
+
+GU245	<id>
+REPLACE	replace
+ENGINE	engine
+
+CC708	<id>
+REP	replace
+NOISY	noisy
+LIFT	lift
+CYL	cylinder
+BEARINGS	bearings
+
+BP504	<id>
+REPLACE	replace
+CENTRE	centre
+Drive	driveline
+Line	
+
+WEEKLY	weekly
+LOADER	loader
+FLEET	fleet
+TYRE	tyre
+&	and
+RIM	rim
+REPAIRS	repairs
+
+CR871	<id>
+REPLACE	replace
+WIPER	wiper
+SWITCH	switch
+KNOBS	knobs
+
+BF079	<id>
+REPLACE	replace
+FAILED	failed
+UPPER	upper
+DRIVESHAFT	driveshaft
+
+LD05	<id>
+REPLACE	replace
+BRAKE	brake
+HOSE	hose
+
+HF338	<id>
+REP	repair
+OIL	oil
+LEAK	leak
+
+PH639	<id>
+REPLACE	replace
+BLOWN	blown
+HOSES	hoses
+
+JP367	<id>
+rep	repair
+throttle	throttle
+fault	fault
+
+ZW767	<id>
+RIDE	ride
+CONTROL	control
+FAULT	fault
+
+PH639	<id>
+REP	repair
+DAMAGED	damaged
+POS3	position <num>
+GAURD	guard
+
+PH639	<id>
+Inspect	inspect
+Centre	centre
+hitch	hitch
+for	for
+wear	wear
+
+OU089	<id>
+REPLACE	replace
+BONNET	bonnet
+HINGES	hinges
+
+AN426	<id>
+REPL	replace
+BLOWN	blown
+O'RING	o-ring
+ON	on
+IMPL	implement
+VALVE	valve
+
+MB119	<id>
+CHANGE	change
+OUT	out
+POS	position
+8	<num>
+TYRE	tyre
+
+HF338	<id>
+0	<num>
+Weekly	weekly
+Scheduled	scheduled
+Service	service
+
+AN426	<id>
+REPAIR	repair
+OIL	oil
+LEAK	leak
+
+XH531	<id>
+REPAIR	repair
+WIRING	wiring
+FAULT	fault
+WITH	with
+E	emergency-stop
+STOP	
+
+PH639	<id>
+REPL	replace
+A/C	air conditioner
+COMPRESSOR	compressor
+
+AN426	<id>
+Replace	replace
+Turbo	turbo
+feed	feed
+line	line
+
+PH639	<id>
+Damage	damage
+to	to
+pos	position
+7	<num>
+tyre	tyre
+
+XH531	<id>
+CHANGE	change
+OUT	out
+POS	position
+2	<num>
+WHEEL	wheel
+END	end
+
+PH639	<id>
+REPL	replace
+L/H	left hand
+LIFT	lift
+CYL	cylinder
+HOSE	hose
+
+CR871	<id>
+REPLACE	replace
+BRAKE	brake
+SWITCH	switch
+TEXT	text
+
+MB119	<id>
+Inspect	inspect
+brake	brake
+cooling	cooling
+filters	filters
+for	for
+
+MB119	<id>
+REPL	replace
+BOTH	both
+CORNER	corner
+TEETH	teeth
+
+CR871	<id>
+REPLACE	replace
+TRANS	transmission
+SHIFT	shift
+CONTROL	control
+
+BF079	<id>
+REPLACE	replace
+BLOWN	blown
+GREASE	grease
+LINE	line
+
+PH639	<id>
+REPAIR	repair
+ROCKFALL	rockfall
+DAMAGE	damage
+
+WJ525	<id>
+REPL	replace
+BLOWN	blown
+HOSE	hose
+
+PH639	<id>
+REPL	replace
+R/H	right hand
+LIFT	lift
+CYL	cylinder
+
+MB119	<id>
+Rep	replace
+leaking	leaking
+R/H	right hand
+steering	steering
+cylinder	cylinder
+
+MB119	<id>
+REPL	replace
+A/C	air conditioner
+COMPRESSOR	compressor
+
+CC708	<id>
+-	-
+42	<num>
+Weekly	weekly
+Scheduled	scheduled
+Servicing	servicing
+
+W/Q71	<id>
+1W	<num> week
+Remotes	remotes
+Maintenance	maintenance
+
+ALL	all
+ULO	ULO
+-INS	- install
+AFFF	AFFF
+PRESSURE	pressure
+SWITCHES	switches
+
+MB119	<id>
+REPAIR	repair
+OIL	oil
+LEAK	leak
+-	-
+DIFF	differential
+COOLER	cooler
+
+BF079	<id>
+INV	investigate
+PARK	park
+BRAKE	brake
+FAULT	fault
+
+AN426	<id>
+REPLACE	replace
+CAB	cabin
+BLOWER	blower
+FAN	fan
+
+XH531	<id>
+REPL	replace
+REAR	rear
+TRANS	transmission
+MOUNTS	mounts
+
+CC708	<id>
+REPAIR	repair
+PARK	park
+BRAKE	brake
+FAULT	fault
+
+BP504	<id>
+REPLACE	replace
+GET	GET
+
+ALG	<id>
+CC708	<id>
+RIDE	ride
+CONTROL	contrrol
+ACCUM	accumulator
+TBC	TBC
+
+CC708	<id>
+REPAIR	repair
+LOW	low
+HYD	hydraulic
+POWER	power
+FAULT	fault
+
+PH639	<id>
+REPAIR	repair
+TRANS	transmission
+TEMP	temperature
+SENDER	sender
+
+MB119	<id>
+REPL	replace
+RIDE	ride
+CONTROL	control
+ACCUMULATOR	accumulator
+
+AN426	<id>
+REPLACE	replace
+WIPER	wiper
+MOTOR	motor
+
+BF079	<id>
+REPLACE	replace
+LIFT	lift
+CYL	cylinder
+CROSS	crossover
+OVER	
+PIPES	pipes
+
+CR871	<id>
+REPL	replace
+POS	position
+8	<num>
+TYRE	tyre
+
+CR871	<id>
+L/H	left hand
+STEERING	steering
+CYL	cylinder
+LEAKING	leaking
+TBC	TBC
+
+MB119	<id>
+REPL	replace
+ARM	arm
+PAD	pad
+IN	in
+CAB	cabin
+
+mob	mobilize
+HF338	<id>
+commission	commission
+tele	Tele-Remotes
+remotes	
+
+CR871	<id>
+REPAIR	repair
+TRANS	transmission
+OIL	oil
+LEAK	leak
+
+PH639	<id>
+REPAIR	repair
+COOLANT	coolant
+LEVEL	level
+FAULT	fault
+
+XH531	<id>
+FIT	fit
+SHIM'S	shims
+REMOVE	remove
+LATERAL	lateral
+MOVEMENT	movement
+
+OQ524	<id>
+regas	regas
+ride	ride
+control	control
+
+OU089	<id>
+REPLACE	replace
+ALL	all
+9	<num>
+TYRES	tyres
+
+OQ524	<id>
+REPAIR	repair
+AIR	air
+CON	conditioner
+
+CR871	<id>
+REPLACE	replace
+WORN	worn
+CROUD	crowd
+CYLINDER	cylinder
+HOSE	hose
+
+CC708	<id>
+REPLACE	replace
+MAIN	main
+STEERING	steering
+PUMP	pump
+core	core
+re	return
+
+XH531	<id>
+INSPECT	inspect
+FUEL	fuel
+LINES	lines
+SEE	see
+TEXT	text
+
+CR871	<id>
+647	<num>
+HR	hour
+PREVENTATIVE	preventative
+MAINTENANCE	maintenance
+
+AN426	<id>
+REPL	replace
+STARTER	starter
+MOTOR	motor
+
+CC708	<id>
+REPL	replace
+WATER	water
+PUMP	pump
+BYPASS	bypass
+HOSE	hose
+TBC	TBC
+
+PH639	<id>
+Repl	replace
+Air	air
+intake	intake
+tube	tube
+and	and
+hoses	hoses
+
+OU089	<id>
+REPLACE	replace
+TURBO	turbo
+INLET	inlet
+HOSE	hose
+
+PH639	<id>
+REPLACE	replace
+TILT	tilt
+CYL	cylinder
+HOSE	hose
+
+AN426	<id>
+Radiator	radiator
+Mounts	mounts
+
+NL323	<id>
+REPLACE	replace
+ALTERNATOR	alternator
+
+BP504	<id>
+C/O	change out
+POS	position
+8	<num>
+TYRE	tyre
+
+XH531	<id>
+REPLACE	replace
+REAR	rear
+DOOR	door
+HINGE	hinge
+PINS	pins
+
+CC708	<id>
+REPLACE	replace
+ALTERNATOR	alternator
+
+MB119	<id>
+Replace	replace
+mud	mud
+flaps	flaps
+
+HF338	<id>
+9	<num>
+MONTHLY	monthly
+MHS	MHS
+AUDIT	audit
+
+AN426	<id>
+REP	repair
+LEAK	leak
+AT	at
+TRANSFER	transfer
+PUMP	pump
+
+AN426	<id>
+Replace	replace
+lift	lift
+cylinder	cylinder
+pins	pins
+&	and
+brgs	bearings
+
+OQ524	<id>
+TRANS	transmission
+OIL	oil
+BURNT	burnt
+
+CR871	<id>
+WELD	weld
+BLOCKS	blocks
+TO	to
+BUCKET	bucket
+HEELS	heels
+
+ANL	<id>
+0544	
+REPAIR/	repair /
+REP	replace
+FOX	<sensitive>
+ET	ET
+COMMUNICATOR	communicator
+
+CR871	<id>
+REPLACE	replace
+POS	position
+6	<num>
+TYRE	tyre
+
+XH531	<id>
+REPLACE	replace
+L/H	left hand
+FRONT	front
+WHEEL	wheel
+GROUP	group
+
+HF338	<id>
+remote	remote
+throttle	throttle
+fault	fault
+
+GS690	<id>
+REP	repair
+COOLANT	coolant
+LEAK	leak
+
+MB119	<id>
+REPAIR	repair
+TURBO	turbo
+OIL	oil
+SUPPLY	supply
+LINE	line
+
+PH639	<id>
+REPAIR	repair
+COVER	cover
+FOR	for
+HYDRALIC	hydraulic
+FILTERS	filters
+
+XH531	<id>
+REPAIR	repair
+LEAK	leak
+FROM	from
+TRANS	transmission
+
+BF079	<id>
+repair	repair
+z	Z-link
+link	
+grease	grease
+lines	lines
+
+SUPPLY	supply
+STICKERS	stickers
+FOR	for
+FRCP	FRCP
+ISOLATORS	isolators
+
+JP367	<id>
+REPAIR	repair
+POS	position
+7	<num>
+INNER	inner
+SKIN	skin
+
+JP367	<id>
+REPLACE	replace
+DAMAGED	damaged
+WINDOW	window
+
+BF079	<id>
+CHANGE	change
+OUT	out
+HYDRAULIC	hydraulic
+COOLER	cooler
+
+AN426	<id>
+REPLACE	replace
+HYDRAULIC	hydraulic
+TANK	tank
+SIGHT	sight
+GLASS	glass
+
+BF079	<id>
+CHANGE	change
+OUT	out
+RADIATOR`	radiator
+
+HF338	<id>
+REPIAR	repair
+WIRE	wire
+TO	to
+ALTERNATOR	alternator
+
+HF338	<id>
+REPL	replace
+REAR	rear
+GUARD	guard
+
+ZA339	<id>
+REPLACE	replace
+POS	position
+1	<num>
+TYRE	tyre
+
+WJ525	<id>
+CHECK/REP	check / repair
+ENGINE	engine
+OIL	oil
+LEAK	leak
+
+CR871	<id>
+REPLACE	replace
+ALTERNATOR	alternator
+BELTS	belts
+
+XH531	<id>
+CHANGE	change
+OUT	out
+TRUNNION	trunnion
+BEARINGS	bearings
+
+AN426	<id>
+REPLACE	replace
+UNI'S	universal joints
+ON	on
+REAR	rear
+DRIVELINE	driveline
+
+AN426	<id>
+-	-
+Scheduled	scheduled
+Servicing	servicing
+
+OQ524	<id>
+REPLACE	replace
+FAULTY	faulty
+STARTER	starter
+MOTOR	motor
+
+BF079	<id>
+QUOTE	quote
+FOR	for
+REPAIR	repair
+OF	of
+RIMS	rims
+
+MB119	<id>
+-	-
+Weekly	weekly
+Tyre	tyre
+&	and
+Rim	rim
+Repairs	repairs
+
+XH531	<id>
+REPLACE	replace
+TRANSMISSION	transmission
+
+WJ525	<id>
+REPL	replace
+RIDE	ride
+CONTROL	control
+ACCUMULATOR	accumulator
+
+ZW767	<id>
+REGAS	regas
+RIDE	ride
+CONTROL	control
+AND	and
+CHECK	check
+OPP	operation
+
+AN426	<id>
+-	-
+3	<num>
+Weekly	weekly
+PIPECO	<sensitive>
+Hose	hose
+Repairs	repairs
+
+XH531	<id>
+REPL	replace
+AIR	air
+FILTER	filter
+RESTRIC	restriction
+LIGHT	light
+ON	on
+
+CR871	<id>
+replace	replace
+blown	blown
+lift	lift
+'o'	o-ring
+ring	
+
+XH531	<id>
+REPAIR	repair
+HYDRAULIC	hydraulic
+OIL	oil
+LEAK	leak
+
+MB119	<id>
+ENGINE	engine
+FEUL	fuel
+TRANSFER	transfer
+PUMP	pump
+FAULT	fault
+
+CR871	<id>
+631	<num>
+HR	hour
+PREVENTATIVE	preventative
+MAINTENANCE	maintenance
+
+JP367	<id>
+REPL	replace
+DAMAGED	damaged
+QUARTER	quarter
+WINDOW	window
+
+CR871	<id>
+REPAIR	repair
+HYD	hydraulic
+LEAK	leak
+
+PH639	<id>
+REPLACE	replace
+AXLE	axle
+COOLING	cooling
+PRES	pressure
+SWITCH	switch
+
+MB119	<id>
+CHANGE	change
+OUT	out
+TRANSMISSION	transmission
+
+JP367	<id>
+AIR	air
+CON	conditioner
+NOT	not
+WORKING	working
+
+CR871	<id>
+REPL	replace
+LEAKING	leaking
+CAB	cabin
+STEERING	steering
+HOSES	hoses
+
+PH639	<id>
+R/H	right hand
+BUCKET	bucket
+PIN	pin
+WALKING	walking
+OUT	out
+
+XH531	<id>
+REPAIR	repair
+OIL	oil
+LEAK	leak
+IN	in
+ARTIC	Artic
+
+CR871	<id>
+REPAIR	repair
+R/H	right hand
+BUCKET	bucket
+CORNER	corner
+
+PH639	<id>
+DRILL	drill
+OUT	out
+BROKEN	broken
+BOLT	bolt
+SEE	see
+TEXT	text
+
+AN426	<id>
+Replace	replace
+Bucket	bucket
+Pins	pins
+&	and
+Bushes	bushes
+
+BF079	<id>
+INSTALL	install
+BYF	<id>
+89	
+SELF	self-rescuer
+RESCUER	
+
+CR871	<id>
+REPL	replace
+MOUNTING	mounting
+BOLTS	bolts
+FOR	for
+TRANS	transmission
+COOL	cooler
+
+GS690	<id>
+TJH	<id>
+9588	
+REP	repair
+CENTRE	centre
+DRIVE	driveline
+LINE	
+TBC	TBC
+
+ZW767	<id>
+REPAIR	repair
+START	start
+FAULT	fault
+
+OU089	<id>
+-	-
+4	<num>
+Weekly	weekly
+Scheduled	scheduled
+Servicing	servicing
+
+GS690	<id>
+865	<num>
+HR	hour
+PREVENTATIVE	preventative
+MAINTENANCE	maintenance
+
+XH531	<id>
+Setup	set-up
+auto	auto
+greasing	greasing
+system	system
+
+STEER	steering
+HOSES	hoses
+
+ZW767	<id>
+REPL	replace
+POS	position
+3	<num>
+TYRE	tyre
+SEPERATION	separation
+
+OV	<id>
+433	<id>
+REPLACE	replace
+HORN	horn
+
+HF338	<id>
+REPL	replace
+L/H	left hand
+LIFT	lift
+CYL	cylinder
+TUBE	tube
+
+WO539	<id>
+REPLACE	replace
+DAMAGED	damaged
+POS	position
+0	<num>
+TYRE	tyre
+
+CC708	<id>
+-	-
+SUPPLY	supply
+Q3782O	<id>
+TYRES	tyres
+
+BF079	<id>
+REPLACE	replace
+TRANS	transmission
+NUTRALISER	neutralizer
+SWITCH	switch
+
+MB119	<id>
+Replace	replace
+Bonnet	bonnet
+Hinge	hinge
+Rusted	rusted
+
+OU089	<id>
+REPL	replace
+BLOWN	blown
+HOSES	hoses
+FROM	from
+DOOR	door
+TO	to
+CAB	cabin
+
+BF079	<id>
+REPLACE	replace
+E	emergency-stop
+STOP	
+
+MB119	<id>
+-	-
+Replace	replace
+Leaking	leaking
+Steering	steering
+Cyl	cylinder
+
+CC708	<id>
+REPL	replace
+RIDE	ride
+CONTROL	control
+TRANSFER	transfer
+PIPE	pipe
+
+CR871	<id>
+TEST	test
+FOR	for
+ENG/OIL	engine / oil
+PRESSURE	pressure
+FAULT	fault
+
+CR871	<id>
+Replace	replace
+alternator	alternator
+belts	belts
+
+CR871	<id>
+REPLACE	replace
+L/H	left hand
+STEER	steering
+CYLINDER	cylinder
+
+JP367	<id>
+REPLACE	replace
+POS	position
+4	<num>
+TYRE	tyre
+
+CR871	<id>
+C/O	change out
+POS	position
+7	<num>
+TYRE	tyre
+
+XH531	<id>
+REPLACE	replace
+FAN	fan
+BELT	belt
+
+C/O	change out
+L/HS	left hand side
+STEERING	steering
+HOSE	hose
+
+CC708	<id>
+CUT	cut
+L/H	left hand
+BATWING	batwing
+OFF	off
+
+AN426	<id>
+REPLACE	replace
+CAB	cabin
+PRESSURISER	pressurizer
+
+PH639	<id>
+check	check
+why	why
+fan	fan
+belts	belts
+siezed	seized
+should	should
+
+CC708	<id>
+REPLACE	replace
+ALL	all
+TYRES	tyres
+TBC	TBC
+
+CC708	<id>
+REPAIR	repair
+DAMAGED	damaged
+POS	position
+7	<num>
+MUDGUARD	mudguard
+
+MB119	<id>
+REMOTE	remote
+SERVICING	servicing
+
+CR871	<id>
+REP	repair
+ELECTRICAL	electrical
+FAULT	fault
+
+CR871	<id>
+REPLACE	replace
+WORN	worn
+TEETH	teeth
+
+XH531	<id>
+REP	repair
+BROKEN	broken
+HANDLE	handle
+POS	position
+9	<num>
+GUARD	guard
+
+OU089	<id>
+-	-
+0	<num>
+Weekly	weekly
+PIPECO	<sensitive>
+Hose	hose
+Repairs	repairs
+
+CR871	<id>
+-	-
+1	<num>
+Weekly	weekly
+PIPECO	<sensitive>
+Hose	hose
+Repairs	repairs
+
+AN426	<id>
+REPLACE	replace
+BLOWN	blown
+ORING	o-ring
+IN	in
+CENTER	centre
+HITC	hitch
+
+OU089	<id>
+REPL	replace
+LOWER	lower
+RAD	radiator
+MOUNT	mount
+BOLTS	bolts
+
+PH639	<id>
+REPL	replace
+MANIFOLD	manifold
+ON	on
+IMPLEMENT	implement
+VALVE	valve
+
+BP504	<id>
+REPLACE	replace
+DAMAGED	damaged
+TYRE	tyre
+POS2	position <num>
+
+PH639	<id>
+WATER	water
+PUMP	pump
+
+OU089	<id>
+REPAIR	repair
+AIR/CON	air conditioner
+UNIT	unit
+
+CR871	<id>
+SECURE	secure
+EXHAUST	exhaust
+COVER	cover
+
+CC708	<id>
+MODEL	model
+LOADERS	loaders
+
+BF079	<id>
+REPL	replace
+LIFT	lift
+CYL	cylinder
+CROSS	crossover
+OVER	
+PIPES	pipes
+
+CR871	<id>
+TIGHTEN	tighten
+FITTING	fitting
+ON	on
+ACCUMULATOR	accumulator
+
+AN426	<id>
+FIT	fit
+UP	up
+KIDNEY	kidney
+LOOP	loop
+HOSING&FITTINGS	hoses and fittings
+
+MB119	<id>
+REPLACE	replace
+OIL	oil
+COOLER	cooler
+LOCK	lock
+PINS	pins
+
+ZW767	<id>
+REP	replace
+ELEC	electrical
+FEED	feed
+TO	to
+2WAY	two-way
+
+CC708	<id>
+-	-
+6	<num>
+Weekly	weekly
+Scheduled	scheduled
+Servicing	servicing
+
+MB119	<id>
+REPL	replace
+AUTO	auto-lube
+LUBE	
+
+AN426	<id>
+REPLACE	replace
+LH	left hand
+CRACKED	cracked
+1/4	quarter
+WINDOW	window
+
+PH639	<id>
+REPLACE	replace
+A/C	air conditioner
+CONDENSOR	condensor
+
+OQ524	<id>
+replace	replace
+air	air
+intake	intake
+pre-cleaner	pre-cleaner
+
+XH531	<id>
+REPLACE	replace
+CRNR	corner
+TEETH	teeth
+
+XH531	<id>
+-	-
+Change	change
+Out	out
+Bucket	bucket
+GET	GET
+
+OQ524	<id>
+RADIATOR	radiator
+FAN	fan
+REPAIR	repair
+
+MB119	<id>
+REPL	replace
+CROWD	crowd
+CYL	cylinder
+HOSE	hose
+
+CR871	<id>
+DAMAGED	damaged
+L/H	left hand
+REAR	rear
+MUD	mud
+GAURD	guard
+
+OU089	<id>
+TEST	test
+FOR	for
+ENGINE	engine
+MISFIRE	misfire
+

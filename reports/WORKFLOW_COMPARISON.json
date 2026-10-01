@@ -1,0 +1,5662 @@
+{
+  "schema_version": 1,
+  "python": "3.11.16",
+  "backend": "replay",
+  "evidence_kind": "synthetic_replay_mechanics",
+  "data_kind": "synthetic",
+  "source": {
+    "csv": "company_export.csv",
+    "sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+    "profile": "company_profile.json",
+    "profile_sha256": "8bef714a5b6b5bbdac425c528d350dc7b627d2883f4b6eb01b093239d97cd211",
+    "data_kind": "synthetic"
+  },
+  "label_provenance": "Handwritten synthetic development labels. Not a held-out model benchmark.",
+  "cases_sha256": "2dbf8dbd3ca2b82d0a34a1dd45db03c914b110fc9178e38c9770bd0f3abb60b7",
+  "trials": 3,
+  "model_configuration": null,
+  "limits": {
+    "max_steps": 20,
+    "timeout": 120
+  },
+  "results": [
+    {
+      "trial": 1,
+      "case_id": "bearing-actions",
+      "workflow": "deterministic",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 6,
+        "required_field_spans": 6,
+        "field_precision": null,
+        "field_recall": 0.0,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 2,
+        "labeled_task_success": false,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.00029207999978098087,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "status": "ready_for_review",
+        "records_for_review": [
+          {
+            "record_id": "WO-01",
+            "event_date": "2026-01-02",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+            "normalization_policy": "noun_alias_v1"
+          },
+          {
+            "record_id": "WO-02",
+            "event_date": "2026-01-09",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "trace": [],
+        "model_calls": 0,
+        "elapsed_seconds": 0.00029207999978098087,
+        "completion": {
+          "requirements_met": true
+        },
+        "backend": "deterministic-no-model"
+      }
+    },
+    {
+      "trial": 1,
+      "case_id": "bearing-actions",
+      "workflow": "fixed",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 6,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 6,
+        "field_precision": 1.0,
+        "field_recall": 1.0,
+        "correct_unknown_fields": 0,
+        "status_correct": 2,
+        "status_total": 2,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.009,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "ready_for_review",
+        "backend": "fixed-workflow/replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "history",
+          "initial_query": "bearing vibration",
+          "search_required": true,
+          "aggregate_required": true,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": true
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "evidence_selected",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Review bearing vibration history and reported actions",
+        "scope": {
+          "asset_id": "PUMP-001",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 2,
+        "steps": 7,
+        "model_calls": 0,
+        "elapsed_seconds": 0.009,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [
+          {
+            "record_id": "WO-01",
+            "event_date": "2026-01-02",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+            "normalization_policy": "noun_alias_v1"
+          },
+          {
+            "record_id": "WO-02",
+            "event_date": "2026-01-09",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [
+          {
+            "record_id": "WO-01",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 3,
+                "quote": "brg",
+                "source_column": "Technician Notes"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 4,
+                "end": 12,
+                "quote": "vib high",
+                "source_column": "Technician Notes"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 14,
+                "end": 48,
+                "quote": "Plan to replace BRG-204 next week.",
+                "source_column": "Technician Notes"
+              }
+            },
+            "action_status_proposal": "planned",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          },
+          {
+            "record_id": "WO-02",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 9,
+                "end": 16,
+                "quote": "BRG-204",
+                "source_column": "Technician Notes"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 18,
+                "end": 38,
+                "quote": "Vibration still high",
+                "source_column": "Technician Notes"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 17,
+                "quote": "Replaced BRG-204.",
+                "source_column": "Technician Notes"
+              }
+            },
+            "action_status_proposal": "completed",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          }
+        ],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "bearing vibration",
+                "top_k": 5
+              }
+            },
+            "usage": {},
+            "model_seconds": null,
+            "model_called": false,
+            "tool_result": {
+              "hits": [
+                {
+                  "record_id": "WO-01",
+                  "asset_id": "PUMP-001",
+                  "date": "2026-01-02",
+                  "score": 0.8754687373538999,
+                  "excerpt": "brg vib high. Plan to replace BRG-204 next week.",
+                  "excerpt_truncated": false
+                },
+                {
+                  "record_id": "WO-02",
+                  "asset_id": "PUMP-001",
+                  "date": "2026-01-09",
+                  "score": 0.1823215567939546,
+                  "excerpt": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+                  "excerpt_truncated": false
+                }
+              ],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-01"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-01",
+              "event_date": "2026-01-02",
+              "asset_id": "PUMP-001",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 2,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "WO-01",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 3
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 4,
+                    "end": 12
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 14,
+                    "end": 48
+                  }
+                },
+                "action_status": "planned"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-01",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 3,
+                  "quote": "brg",
+                  "source_column": "Technician Notes"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 4,
+                  "end": 12,
+                  "quote": "vib high",
+                  "source_column": "Technician Notes"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 14,
+                  "end": 48,
+                  "quote": "Plan to replace BRG-204 next week.",
+                  "source_column": "Technician Notes"
+                }
+              },
+              "action_status_proposal": "planned",
+              "review_status": "unreviewed",
+              "source": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 2,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+            }
+          },
+          {
+            "step": 4,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-02"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-02",
+              "event_date": "2026-01-09",
+              "asset_id": "PUMP-001",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 3,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 5,
+            "decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "WO-02",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "BRG-204"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "Vibration still high"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "Replaced BRG-204."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-02",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 9,
+                  "end": 16,
+                  "quote": "BRG-204",
+                  "source_column": "Technician Notes"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 18,
+                  "end": 38,
+                  "quote": "Vibration still high",
+                  "source_column": "Technician Notes"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 17,
+                  "quote": "Replaced BRG-204.",
+                  "source_column": "Technician Notes"
+                }
+              },
+              "action_status_proposal": "completed",
+              "review_status": "unreviewed",
+              "source": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 3,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+            }
+          },
+          {
+            "step": 6,
+            "decision": {
+              "tool": "aggregate",
+              "args": {}
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "selected_record_count": 2,
+              "unstructured_record_count": 2,
+              "total_recurring_groups": 0,
+              "groups": [],
+              "groups_truncated": false,
+              "method": "same_asset_component_and_normalized_issue_wording"
+            }
+          },
+          {
+            "step": 7,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": [
+                  "WO-01",
+                  "WO-02"
+                ]
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [
+                "WO-01",
+                "WO-02"
+              ],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 1,
+      "case_id": "bearing-actions",
+      "workflow": "agent",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 6,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 6,
+        "field_precision": 1.0,
+        "field_recall": 1.0,
+        "correct_unknown_fields": 0,
+        "status_correct": 2,
+        "status_total": 2,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.007,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "ready_for_review",
+        "backend": "replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "history",
+          "initial_query": "bearing vibration",
+          "search_required": true,
+          "aggregate_required": true,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": true
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "evidence_selected",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Review bearing vibration history and reported actions",
+        "scope": {
+          "asset_id": "PUMP-001",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 2,
+        "steps": 7,
+        "model_calls": 0,
+        "elapsed_seconds": 0.007,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [
+          {
+            "record_id": "WO-01",
+            "event_date": "2026-01-02",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+            "normalization_policy": "noun_alias_v1"
+          },
+          {
+            "record_id": "WO-02",
+            "event_date": "2026-01-09",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [
+          {
+            "record_id": "WO-01",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 3,
+                "quote": "brg",
+                "source_column": "Technician Notes"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 4,
+                "end": 12,
+                "quote": "vib high",
+                "source_column": "Technician Notes"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 14,
+                "end": 48,
+                "quote": "Plan to replace BRG-204 next week.",
+                "source_column": "Technician Notes"
+              }
+            },
+            "action_status_proposal": "planned",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          },
+          {
+            "record_id": "WO-02",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 9,
+                "end": 16,
+                "quote": "BRG-204",
+                "source_column": "Technician Notes"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 18,
+                "end": 38,
+                "quote": "Vibration still high",
+                "source_column": "Technician Notes"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 17,
+                "quote": "Replaced BRG-204.",
+                "source_column": "Technician Notes"
+              }
+            },
+            "action_status_proposal": "completed",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          }
+        ],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "brg vib",
+                "top_k": 5
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "hits": [
+                {
+                  "record_id": "WO-01",
+                  "asset_id": "PUMP-001",
+                  "date": "2026-01-02",
+                  "score": 0.8754687373538999,
+                  "excerpt": "brg vib high. Plan to replace BRG-204 next week.",
+                  "excerpt_truncated": false
+                },
+                {
+                  "record_id": "WO-02",
+                  "asset_id": "PUMP-001",
+                  "date": "2026-01-09",
+                  "score": 0.1823215567939546,
+                  "excerpt": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+                  "excerpt_truncated": false
+                }
+              ],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-01"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-01",
+              "event_date": "2026-01-02",
+              "asset_id": "PUMP-001",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 2,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "WO-01",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 3
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 4,
+                    "end": 12
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 14,
+                    "end": 48
+                  }
+                },
+                "action_status": "planned"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-01",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 3,
+                  "quote": "brg",
+                  "source_column": "Technician Notes"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 4,
+                  "end": 12,
+                  "quote": "vib high",
+                  "source_column": "Technician Notes"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 14,
+                  "end": 48,
+                  "quote": "Plan to replace BRG-204 next week.",
+                  "source_column": "Technician Notes"
+                }
+              },
+              "action_status_proposal": "planned",
+              "review_status": "unreviewed",
+              "source": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 2,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+            }
+          },
+          {
+            "step": 4,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-02"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-02",
+              "event_date": "2026-01-09",
+              "asset_id": "PUMP-001",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 3,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 5,
+            "decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "WO-02",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "BRG-204"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "Vibration still high"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "Replaced BRG-204."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-02",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 9,
+                  "end": 16,
+                  "quote": "BRG-204",
+                  "source_column": "Technician Notes"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 18,
+                  "end": 38,
+                  "quote": "Vibration still high",
+                  "source_column": "Technician Notes"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 17,
+                  "quote": "Replaced BRG-204.",
+                  "source_column": "Technician Notes"
+                }
+              },
+              "action_status_proposal": "completed",
+              "review_status": "unreviewed",
+              "source": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 3,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+            }
+          },
+          {
+            "step": 6,
+            "decision": {
+              "tool": "aggregate",
+              "args": {}
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "selected_record_count": 2,
+              "unstructured_record_count": 2,
+              "total_recurring_groups": 0,
+              "groups": [],
+              "groups_truncated": false,
+              "method": "same_asset_component_and_normalized_issue_wording"
+            }
+          },
+          {
+            "step": 7,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": [
+                  "WO-01",
+                  "WO-02"
+                ]
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [
+                "WO-01",
+                "WO-02"
+              ],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 1,
+      "case_id": "negated-leak",
+      "workflow": "deterministic",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": null,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 6.130099973233882e-05,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "status": "ready_for_review",
+        "records_for_review": [
+          {
+            "record_id": "WO-03",
+            "event_date": "2026-01-11",
+            "asset_id": "PUMP-002",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 4,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "No seal leak. Inspection completed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [],
+        "aggregate": null,
+        "trace": [],
+        "model_calls": 0,
+        "elapsed_seconds": 6.130099973233882e-05,
+        "completion": {
+          "requirements_met": true
+        },
+        "backend": "deterministic-no-model"
+      }
+    },
+    {
+      "trial": 1,
+      "case_id": "negated-leak",
+      "workflow": "fixed",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": null,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.005,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "ready_for_review",
+        "backend": "fixed-workflow/replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "search",
+          "initial_query": "no seal leak",
+          "search_required": true,
+          "aggregate_required": false,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": false
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "evidence_selected",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Find the record explicitly saying no seal leak",
+        "scope": {
+          "asset_id": "PUMP-002",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 1,
+        "steps": 3,
+        "model_calls": 0,
+        "elapsed_seconds": 0.005,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [
+          {
+            "record_id": "WO-03",
+            "event_date": "2026-01-11",
+            "asset_id": "PUMP-002",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 4,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "No seal leak. Inspection completed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [],
+        "aggregate": null,
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "no seal leak",
+                "top_k": 5
+              }
+            },
+            "usage": {},
+            "model_seconds": null,
+            "model_called": false,
+            "tool_result": {
+              "hits": [
+                {
+                  "record_id": "WO-03",
+                  "asset_id": "PUMP-002",
+                  "date": "2026-01-11",
+                  "score": 0.8630462173553426,
+                  "excerpt": "No seal leak. Inspection completed.",
+                  "excerpt_truncated": false
+                }
+              ],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-03"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-03",
+              "event_date": "2026-01-11",
+              "asset_id": "PUMP-002",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 4,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "No seal leak. Inspection completed.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": [
+                  "WO-03"
+                ]
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [
+                "WO-03"
+              ],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 1,
+      "case_id": "negated-leak",
+      "workflow": "agent",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": null,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.004,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "ready_for_review",
+        "backend": "replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "search",
+          "initial_query": "no seal leak",
+          "search_required": true,
+          "aggregate_required": false,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": false
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "evidence_selected",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Find the record explicitly saying no seal leak",
+        "scope": {
+          "asset_id": "PUMP-002",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 1,
+        "steps": 3,
+        "model_calls": 0,
+        "elapsed_seconds": 0.004,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [
+          {
+            "record_id": "WO-03",
+            "event_date": "2026-01-11",
+            "asset_id": "PUMP-002",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 4,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "No seal leak. Inspection completed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [],
+        "aggregate": null,
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "no seal leak"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "hits": [
+                {
+                  "record_id": "WO-03",
+                  "asset_id": "PUMP-002",
+                  "date": "2026-01-11",
+                  "score": 0.8630462173553426,
+                  "excerpt": "No seal leak. Inspection completed.",
+                  "excerpt_truncated": false
+                }
+              ],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-03"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-03",
+              "event_date": "2026-01-11",
+              "asset_id": "PUMP-002",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 4,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "No seal leak. Inspection completed.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": [
+                  "WO-03"
+                ]
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [
+                "WO-03"
+              ],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 1,
+      "case_id": "no-lexical-match",
+      "workflow": "deterministic",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "no_matches",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 4.888200055574998e-05,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "status": "no_matches",
+        "records_for_review": [],
+        "extraction_proposals": [],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "trace": [],
+        "model_calls": 0,
+        "elapsed_seconds": 4.888200055574998e-05,
+        "completion": {
+          "requirements_met": true
+        },
+        "backend": "deterministic-no-model"
+      }
+    },
+    {
+      "trial": 1,
+      "case_id": "no-lexical-match",
+      "workflow": "fixed",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "no_matches",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.005,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "no_matches",
+        "backend": "fixed-workflow/replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "history",
+          "initial_query": "xyznotfound",
+          "search_required": true,
+          "aggregate_required": true,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": true
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "no_lexical_matches",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Find xyznotfound records",
+        "scope": {
+          "asset_id": "PUMP-001",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 2,
+        "steps": 3,
+        "model_calls": 0,
+        "elapsed_seconds": 0.005,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [],
+        "extraction_proposals": [],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "xyznotfound",
+                "top_k": 5
+              }
+            },
+            "usage": {},
+            "model_seconds": null,
+            "model_called": false,
+            "tool_result": {
+              "hits": [],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "aggregate",
+              "args": {}
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "selected_record_count": 2,
+              "unstructured_record_count": 2,
+              "total_recurring_groups": 0,
+              "groups": [],
+              "groups_truncated": false,
+              "method": "same_asset_component_and_normalized_issue_wording"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": []
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 1,
+      "case_id": "no-lexical-match",
+      "workflow": "agent",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "no_matches",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.007,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "no_matches",
+        "backend": "replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "history",
+          "initial_query": "xyznotfound",
+          "search_required": true,
+          "aggregate_required": true,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": true
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "no_lexical_matches",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Find xyznotfound records",
+        "scope": {
+          "asset_id": "PUMP-001",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 2,
+        "steps": 3,
+        "model_calls": 0,
+        "elapsed_seconds": 0.007,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [],
+        "extraction_proposals": [],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "xyznotfound"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "hits": [],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "aggregate",
+              "args": {}
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "selected_record_count": 2,
+              "unstructured_record_count": 2,
+              "total_recurring_groups": 0,
+              "groups": [],
+              "groups_truncated": false,
+              "method": "same_asset_component_and_normalized_issue_wording"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": []
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 2,
+      "case_id": "bearing-actions",
+      "workflow": "fixed",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 6,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 6,
+        "field_precision": 1.0,
+        "field_recall": 1.0,
+        "correct_unknown_fields": 0,
+        "status_correct": 2,
+        "status_total": 2,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.008,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "ready_for_review",
+        "backend": "fixed-workflow/replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "history",
+          "initial_query": "bearing vibration",
+          "search_required": true,
+          "aggregate_required": true,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": true
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "evidence_selected",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Review bearing vibration history and reported actions",
+        "scope": {
+          "asset_id": "PUMP-001",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 2,
+        "steps": 7,
+        "model_calls": 0,
+        "elapsed_seconds": 0.008,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [
+          {
+            "record_id": "WO-01",
+            "event_date": "2026-01-02",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+            "normalization_policy": "noun_alias_v1"
+          },
+          {
+            "record_id": "WO-02",
+            "event_date": "2026-01-09",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [
+          {
+            "record_id": "WO-01",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 3,
+                "quote": "brg",
+                "source_column": "Technician Notes"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 4,
+                "end": 12,
+                "quote": "vib high",
+                "source_column": "Technician Notes"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 14,
+                "end": 48,
+                "quote": "Plan to replace BRG-204 next week.",
+                "source_column": "Technician Notes"
+              }
+            },
+            "action_status_proposal": "planned",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          },
+          {
+            "record_id": "WO-02",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 9,
+                "end": 16,
+                "quote": "BRG-204",
+                "source_column": "Technician Notes"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 18,
+                "end": 38,
+                "quote": "Vibration still high",
+                "source_column": "Technician Notes"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 17,
+                "quote": "Replaced BRG-204.",
+                "source_column": "Technician Notes"
+              }
+            },
+            "action_status_proposal": "completed",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          }
+        ],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "bearing vibration",
+                "top_k": 5
+              }
+            },
+            "usage": {},
+            "model_seconds": null,
+            "model_called": false,
+            "tool_result": {
+              "hits": [
+                {
+                  "record_id": "WO-01",
+                  "asset_id": "PUMP-001",
+                  "date": "2026-01-02",
+                  "score": 0.8754687373538999,
+                  "excerpt": "brg vib high. Plan to replace BRG-204 next week.",
+                  "excerpt_truncated": false
+                },
+                {
+                  "record_id": "WO-02",
+                  "asset_id": "PUMP-001",
+                  "date": "2026-01-09",
+                  "score": 0.1823215567939546,
+                  "excerpt": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+                  "excerpt_truncated": false
+                }
+              ],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-01"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-01",
+              "event_date": "2026-01-02",
+              "asset_id": "PUMP-001",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 2,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "WO-01",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 3
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 4,
+                    "end": 12
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 14,
+                    "end": 48
+                  }
+                },
+                "action_status": "planned"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-01",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 3,
+                  "quote": "brg",
+                  "source_column": "Technician Notes"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 4,
+                  "end": 12,
+                  "quote": "vib high",
+                  "source_column": "Technician Notes"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 14,
+                  "end": 48,
+                  "quote": "Plan to replace BRG-204 next week.",
+                  "source_column": "Technician Notes"
+                }
+              },
+              "action_status_proposal": "planned",
+              "review_status": "unreviewed",
+              "source": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 2,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+            }
+          },
+          {
+            "step": 4,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-02"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-02",
+              "event_date": "2026-01-09",
+              "asset_id": "PUMP-001",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 3,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 5,
+            "decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "WO-02",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "BRG-204"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "Vibration still high"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "Replaced BRG-204."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-02",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 9,
+                  "end": 16,
+                  "quote": "BRG-204",
+                  "source_column": "Technician Notes"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 18,
+                  "end": 38,
+                  "quote": "Vibration still high",
+                  "source_column": "Technician Notes"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 17,
+                  "quote": "Replaced BRG-204.",
+                  "source_column": "Technician Notes"
+                }
+              },
+              "action_status_proposal": "completed",
+              "review_status": "unreviewed",
+              "source": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 3,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+            }
+          },
+          {
+            "step": 6,
+            "decision": {
+              "tool": "aggregate",
+              "args": {}
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "selected_record_count": 2,
+              "unstructured_record_count": 2,
+              "total_recurring_groups": 0,
+              "groups": [],
+              "groups_truncated": false,
+              "method": "same_asset_component_and_normalized_issue_wording"
+            }
+          },
+          {
+            "step": 7,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": [
+                  "WO-01",
+                  "WO-02"
+                ]
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [
+                "WO-01",
+                "WO-02"
+              ],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 2,
+      "case_id": "bearing-actions",
+      "workflow": "agent",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 6,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 6,
+        "field_precision": 1.0,
+        "field_recall": 1.0,
+        "correct_unknown_fields": 0,
+        "status_correct": 2,
+        "status_total": 2,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.006,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "ready_for_review",
+        "backend": "replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "history",
+          "initial_query": "bearing vibration",
+          "search_required": true,
+          "aggregate_required": true,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": true
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "evidence_selected",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Review bearing vibration history and reported actions",
+        "scope": {
+          "asset_id": "PUMP-001",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 2,
+        "steps": 7,
+        "model_calls": 0,
+        "elapsed_seconds": 0.006,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [
+          {
+            "record_id": "WO-01",
+            "event_date": "2026-01-02",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+            "normalization_policy": "noun_alias_v1"
+          },
+          {
+            "record_id": "WO-02",
+            "event_date": "2026-01-09",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [
+          {
+            "record_id": "WO-01",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 3,
+                "quote": "brg",
+                "source_column": "Technician Notes"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 4,
+                "end": 12,
+                "quote": "vib high",
+                "source_column": "Technician Notes"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 14,
+                "end": 48,
+                "quote": "Plan to replace BRG-204 next week.",
+                "source_column": "Technician Notes"
+              }
+            },
+            "action_status_proposal": "planned",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          },
+          {
+            "record_id": "WO-02",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 9,
+                "end": 16,
+                "quote": "BRG-204",
+                "source_column": "Technician Notes"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 18,
+                "end": 38,
+                "quote": "Vibration still high",
+                "source_column": "Technician Notes"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 17,
+                "quote": "Replaced BRG-204.",
+                "source_column": "Technician Notes"
+              }
+            },
+            "action_status_proposal": "completed",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          }
+        ],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "brg vib",
+                "top_k": 5
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "hits": [
+                {
+                  "record_id": "WO-01",
+                  "asset_id": "PUMP-001",
+                  "date": "2026-01-02",
+                  "score": 0.8754687373538999,
+                  "excerpt": "brg vib high. Plan to replace BRG-204 next week.",
+                  "excerpt_truncated": false
+                },
+                {
+                  "record_id": "WO-02",
+                  "asset_id": "PUMP-001",
+                  "date": "2026-01-09",
+                  "score": 0.1823215567939546,
+                  "excerpt": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+                  "excerpt_truncated": false
+                }
+              ],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-01"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-01",
+              "event_date": "2026-01-02",
+              "asset_id": "PUMP-001",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 2,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "WO-01",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 3
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 4,
+                    "end": 12
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 14,
+                    "end": 48
+                  }
+                },
+                "action_status": "planned"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-01",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 3,
+                  "quote": "brg",
+                  "source_column": "Technician Notes"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 4,
+                  "end": 12,
+                  "quote": "vib high",
+                  "source_column": "Technician Notes"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 14,
+                  "end": 48,
+                  "quote": "Plan to replace BRG-204 next week.",
+                  "source_column": "Technician Notes"
+                }
+              },
+              "action_status_proposal": "planned",
+              "review_status": "unreviewed",
+              "source": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 2,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+            }
+          },
+          {
+            "step": 4,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-02"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-02",
+              "event_date": "2026-01-09",
+              "asset_id": "PUMP-001",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 3,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 5,
+            "decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "WO-02",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "BRG-204"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "Vibration still high"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "Replaced BRG-204."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-02",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 9,
+                  "end": 16,
+                  "quote": "BRG-204",
+                  "source_column": "Technician Notes"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 18,
+                  "end": 38,
+                  "quote": "Vibration still high",
+                  "source_column": "Technician Notes"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 17,
+                  "quote": "Replaced BRG-204.",
+                  "source_column": "Technician Notes"
+                }
+              },
+              "action_status_proposal": "completed",
+              "review_status": "unreviewed",
+              "source": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 3,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+            }
+          },
+          {
+            "step": 6,
+            "decision": {
+              "tool": "aggregate",
+              "args": {}
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "selected_record_count": 2,
+              "unstructured_record_count": 2,
+              "total_recurring_groups": 0,
+              "groups": [],
+              "groups_truncated": false,
+              "method": "same_asset_component_and_normalized_issue_wording"
+            }
+          },
+          {
+            "step": 7,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": [
+                  "WO-01",
+                  "WO-02"
+                ]
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [
+                "WO-01",
+                "WO-02"
+              ],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 2,
+      "case_id": "bearing-actions",
+      "workflow": "deterministic",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 6,
+        "required_field_spans": 6,
+        "field_precision": null,
+        "field_recall": 0.0,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 2,
+        "labeled_task_success": false,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 9.691299965197686e-05,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "status": "ready_for_review",
+        "records_for_review": [
+          {
+            "record_id": "WO-01",
+            "event_date": "2026-01-02",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+            "normalization_policy": "noun_alias_v1"
+          },
+          {
+            "record_id": "WO-02",
+            "event_date": "2026-01-09",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "trace": [],
+        "model_calls": 0,
+        "elapsed_seconds": 9.691299965197686e-05,
+        "completion": {
+          "requirements_met": true
+        },
+        "backend": "deterministic-no-model"
+      }
+    },
+    {
+      "trial": 2,
+      "case_id": "negated-leak",
+      "workflow": "fixed",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": null,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.005,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "ready_for_review",
+        "backend": "fixed-workflow/replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "search",
+          "initial_query": "no seal leak",
+          "search_required": true,
+          "aggregate_required": false,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": false
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "evidence_selected",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Find the record explicitly saying no seal leak",
+        "scope": {
+          "asset_id": "PUMP-002",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 1,
+        "steps": 3,
+        "model_calls": 0,
+        "elapsed_seconds": 0.005,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [
+          {
+            "record_id": "WO-03",
+            "event_date": "2026-01-11",
+            "asset_id": "PUMP-002",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 4,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "No seal leak. Inspection completed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [],
+        "aggregate": null,
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "no seal leak",
+                "top_k": 5
+              }
+            },
+            "usage": {},
+            "model_seconds": null,
+            "model_called": false,
+            "tool_result": {
+              "hits": [
+                {
+                  "record_id": "WO-03",
+                  "asset_id": "PUMP-002",
+                  "date": "2026-01-11",
+                  "score": 0.8630462173553426,
+                  "excerpt": "No seal leak. Inspection completed.",
+                  "excerpt_truncated": false
+                }
+              ],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-03"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-03",
+              "event_date": "2026-01-11",
+              "asset_id": "PUMP-002",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 4,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "No seal leak. Inspection completed.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": [
+                  "WO-03"
+                ]
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [
+                "WO-03"
+              ],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 2,
+      "case_id": "negated-leak",
+      "workflow": "agent",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": null,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.005,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "ready_for_review",
+        "backend": "replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "search",
+          "initial_query": "no seal leak",
+          "search_required": true,
+          "aggregate_required": false,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": false
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "evidence_selected",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Find the record explicitly saying no seal leak",
+        "scope": {
+          "asset_id": "PUMP-002",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 1,
+        "steps": 3,
+        "model_calls": 0,
+        "elapsed_seconds": 0.005,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [
+          {
+            "record_id": "WO-03",
+            "event_date": "2026-01-11",
+            "asset_id": "PUMP-002",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 4,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "No seal leak. Inspection completed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [],
+        "aggregate": null,
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "no seal leak"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "hits": [
+                {
+                  "record_id": "WO-03",
+                  "asset_id": "PUMP-002",
+                  "date": "2026-01-11",
+                  "score": 0.8630462173553426,
+                  "excerpt": "No seal leak. Inspection completed.",
+                  "excerpt_truncated": false
+                }
+              ],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-03"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-03",
+              "event_date": "2026-01-11",
+              "asset_id": "PUMP-002",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 4,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "No seal leak. Inspection completed.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": [
+                  "WO-03"
+                ]
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [
+                "WO-03"
+              ],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 2,
+      "case_id": "negated-leak",
+      "workflow": "deterministic",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": null,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 5.331800093699712e-05,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "status": "ready_for_review",
+        "records_for_review": [
+          {
+            "record_id": "WO-03",
+            "event_date": "2026-01-11",
+            "asset_id": "PUMP-002",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 4,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "No seal leak. Inspection completed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [],
+        "aggregate": null,
+        "trace": [],
+        "model_calls": 0,
+        "elapsed_seconds": 5.331800093699712e-05,
+        "completion": {
+          "requirements_met": true
+        },
+        "backend": "deterministic-no-model"
+      }
+    },
+    {
+      "trial": 2,
+      "case_id": "no-lexical-match",
+      "workflow": "fixed",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "no_matches",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.005,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "no_matches",
+        "backend": "fixed-workflow/replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "history",
+          "initial_query": "xyznotfound",
+          "search_required": true,
+          "aggregate_required": true,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": true
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "no_lexical_matches",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Find xyznotfound records",
+        "scope": {
+          "asset_id": "PUMP-001",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 2,
+        "steps": 3,
+        "model_calls": 0,
+        "elapsed_seconds": 0.005,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [],
+        "extraction_proposals": [],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "xyznotfound",
+                "top_k": 5
+              }
+            },
+            "usage": {},
+            "model_seconds": null,
+            "model_called": false,
+            "tool_result": {
+              "hits": [],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "aggregate",
+              "args": {}
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "selected_record_count": 2,
+              "unstructured_record_count": 2,
+              "total_recurring_groups": 0,
+              "groups": [],
+              "groups_truncated": false,
+              "method": "same_asset_component_and_normalized_issue_wording"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": []
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 2,
+      "case_id": "no-lexical-match",
+      "workflow": "agent",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "no_matches",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.005,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "no_matches",
+        "backend": "replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "history",
+          "initial_query": "xyznotfound",
+          "search_required": true,
+          "aggregate_required": true,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": true
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "no_lexical_matches",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Find xyznotfound records",
+        "scope": {
+          "asset_id": "PUMP-001",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 2,
+        "steps": 3,
+        "model_calls": 0,
+        "elapsed_seconds": 0.005,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [],
+        "extraction_proposals": [],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "xyznotfound"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "hits": [],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "aggregate",
+              "args": {}
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "selected_record_count": 2,
+              "unstructured_record_count": 2,
+              "total_recurring_groups": 0,
+              "groups": [],
+              "groups_truncated": false,
+              "method": "same_asset_component_and_normalized_issue_wording"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": []
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 2,
+      "case_id": "no-lexical-match",
+      "workflow": "deterministic",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "no_matches",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 4.5206001232145354e-05,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "status": "no_matches",
+        "records_for_review": [],
+        "extraction_proposals": [],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "trace": [],
+        "model_calls": 0,
+        "elapsed_seconds": 4.5206001232145354e-05,
+        "completion": {
+          "requirements_met": true
+        },
+        "backend": "deterministic-no-model"
+      }
+    },
+    {
+      "trial": 3,
+      "case_id": "bearing-actions",
+      "workflow": "agent",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 6,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 6,
+        "field_precision": 1.0,
+        "field_recall": 1.0,
+        "correct_unknown_fields": 0,
+        "status_correct": 2,
+        "status_total": 2,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.007,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "ready_for_review",
+        "backend": "replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "history",
+          "initial_query": "bearing vibration",
+          "search_required": true,
+          "aggregate_required": true,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": true
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "evidence_selected",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Review bearing vibration history and reported actions",
+        "scope": {
+          "asset_id": "PUMP-001",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 2,
+        "steps": 7,
+        "model_calls": 0,
+        "elapsed_seconds": 0.007,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [
+          {
+            "record_id": "WO-01",
+            "event_date": "2026-01-02",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+            "normalization_policy": "noun_alias_v1"
+          },
+          {
+            "record_id": "WO-02",
+            "event_date": "2026-01-09",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [
+          {
+            "record_id": "WO-01",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 3,
+                "quote": "brg",
+                "source_column": "Technician Notes"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 4,
+                "end": 12,
+                "quote": "vib high",
+                "source_column": "Technician Notes"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 14,
+                "end": 48,
+                "quote": "Plan to replace BRG-204 next week.",
+                "source_column": "Technician Notes"
+              }
+            },
+            "action_status_proposal": "planned",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          },
+          {
+            "record_id": "WO-02",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 9,
+                "end": 16,
+                "quote": "BRG-204",
+                "source_column": "Technician Notes"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 18,
+                "end": 38,
+                "quote": "Vibration still high",
+                "source_column": "Technician Notes"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 17,
+                "quote": "Replaced BRG-204.",
+                "source_column": "Technician Notes"
+              }
+            },
+            "action_status_proposal": "completed",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          }
+        ],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "brg vib",
+                "top_k": 5
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "hits": [
+                {
+                  "record_id": "WO-01",
+                  "asset_id": "PUMP-001",
+                  "date": "2026-01-02",
+                  "score": 0.8754687373538999,
+                  "excerpt": "brg vib high. Plan to replace BRG-204 next week.",
+                  "excerpt_truncated": false
+                },
+                {
+                  "record_id": "WO-02",
+                  "asset_id": "PUMP-001",
+                  "date": "2026-01-09",
+                  "score": 0.1823215567939546,
+                  "excerpt": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+                  "excerpt_truncated": false
+                }
+              ],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-01"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-01",
+              "event_date": "2026-01-02",
+              "asset_id": "PUMP-001",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 2,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "WO-01",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 3
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 4,
+                    "end": 12
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 14,
+                    "end": 48
+                  }
+                },
+                "action_status": "planned"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-01",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 3,
+                  "quote": "brg",
+                  "source_column": "Technician Notes"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 4,
+                  "end": 12,
+                  "quote": "vib high",
+                  "source_column": "Technician Notes"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 14,
+                  "end": 48,
+                  "quote": "Plan to replace BRG-204 next week.",
+                  "source_column": "Technician Notes"
+                }
+              },
+              "action_status_proposal": "planned",
+              "review_status": "unreviewed",
+              "source": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 2,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+            }
+          },
+          {
+            "step": 4,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-02"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-02",
+              "event_date": "2026-01-09",
+              "asset_id": "PUMP-001",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 3,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 5,
+            "decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "WO-02",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "BRG-204"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "Vibration still high"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "Replaced BRG-204."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-02",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 9,
+                  "end": 16,
+                  "quote": "BRG-204",
+                  "source_column": "Technician Notes"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 18,
+                  "end": 38,
+                  "quote": "Vibration still high",
+                  "source_column": "Technician Notes"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 17,
+                  "quote": "Replaced BRG-204.",
+                  "source_column": "Technician Notes"
+                }
+              },
+              "action_status_proposal": "completed",
+              "review_status": "unreviewed",
+              "source": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 3,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+            }
+          },
+          {
+            "step": 6,
+            "decision": {
+              "tool": "aggregate",
+              "args": {}
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "selected_record_count": 2,
+              "unstructured_record_count": 2,
+              "total_recurring_groups": 0,
+              "groups": [],
+              "groups_truncated": false,
+              "method": "same_asset_component_and_normalized_issue_wording"
+            }
+          },
+          {
+            "step": 7,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": [
+                  "WO-01",
+                  "WO-02"
+                ]
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [
+                "WO-01",
+                "WO-02"
+              ],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 3,
+      "case_id": "bearing-actions",
+      "workflow": "deterministic",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 6,
+        "required_field_spans": 6,
+        "field_precision": null,
+        "field_recall": 0.0,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 2,
+        "labeled_task_success": false,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 9.374799992656335e-05,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "status": "ready_for_review",
+        "records_for_review": [
+          {
+            "record_id": "WO-01",
+            "event_date": "2026-01-02",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+            "normalization_policy": "noun_alias_v1"
+          },
+          {
+            "record_id": "WO-02",
+            "event_date": "2026-01-09",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "trace": [],
+        "model_calls": 0,
+        "elapsed_seconds": 9.374799992656335e-05,
+        "completion": {
+          "requirements_met": true
+        },
+        "backend": "deterministic-no-model"
+      }
+    },
+    {
+      "trial": 3,
+      "case_id": "bearing-actions",
+      "workflow": "fixed",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 6,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 6,
+        "field_precision": 1.0,
+        "field_recall": 1.0,
+        "correct_unknown_fields": 0,
+        "status_correct": 2,
+        "status_total": 2,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.007,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "ready_for_review",
+        "backend": "fixed-workflow/replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "history",
+          "initial_query": "bearing vibration",
+          "search_required": true,
+          "aggregate_required": true,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": true
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "evidence_selected",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Review bearing vibration history and reported actions",
+        "scope": {
+          "asset_id": "PUMP-001",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 2,
+        "steps": 7,
+        "model_calls": 0,
+        "elapsed_seconds": 0.007,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [
+          {
+            "record_id": "WO-01",
+            "event_date": "2026-01-02",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+            "normalization_policy": "noun_alias_v1"
+          },
+          {
+            "record_id": "WO-02",
+            "event_date": "2026-01-09",
+            "asset_id": "PUMP-001",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [
+          {
+            "record_id": "WO-01",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 3,
+                "quote": "brg",
+                "source_column": "Technician Notes"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 4,
+                "end": 12,
+                "quote": "vib high",
+                "source_column": "Technician Notes"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 14,
+                "end": 48,
+                "quote": "Plan to replace BRG-204 next week.",
+                "source_column": "Technician Notes"
+              }
+            },
+            "action_status_proposal": "planned",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 2,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          },
+          {
+            "record_id": "WO-02",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 9,
+                "end": 16,
+                "quote": "BRG-204",
+                "source_column": "Technician Notes"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 18,
+                "end": 38,
+                "quote": "Vibration still high",
+                "source_column": "Technician Notes"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 17,
+                "quote": "Replaced BRG-204.",
+                "source_column": "Technician Notes"
+              }
+            },
+            "action_status_proposal": "completed",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 3,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          }
+        ],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "bearing vibration",
+                "top_k": 5
+              }
+            },
+            "usage": {},
+            "model_seconds": null,
+            "model_called": false,
+            "tool_result": {
+              "hits": [
+                {
+                  "record_id": "WO-01",
+                  "asset_id": "PUMP-001",
+                  "date": "2026-01-02",
+                  "score": 0.8754687373538999,
+                  "excerpt": "brg vib high. Plan to replace BRG-204 next week.",
+                  "excerpt_truncated": false
+                },
+                {
+                  "record_id": "WO-02",
+                  "asset_id": "PUMP-001",
+                  "date": "2026-01-09",
+                  "score": 0.1823215567939546,
+                  "excerpt": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+                  "excerpt_truncated": false
+                }
+              ],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-01"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-01",
+              "event_date": "2026-01-02",
+              "asset_id": "PUMP-001",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 2,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "brg vib high. Plan to replace BRG-204 next week.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "WO-01",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 3
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 4,
+                    "end": 12
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 14,
+                    "end": 48
+                  }
+                },
+                "action_status": "planned"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-01",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 3,
+                  "quote": "brg",
+                  "source_column": "Technician Notes"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 4,
+                  "end": 12,
+                  "quote": "vib high",
+                  "source_column": "Technician Notes"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 14,
+                  "end": 48,
+                  "quote": "Plan to replace BRG-204 next week.",
+                  "source_column": "Technician Notes"
+                }
+              },
+              "action_status_proposal": "planned",
+              "review_status": "unreviewed",
+              "source": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 2,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+            }
+          },
+          {
+            "step": 4,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-02"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-02",
+              "event_date": "2026-01-09",
+              "asset_id": "PUMP-001",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 3,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "Replaced BRG-204. Vibration still high; no successful repair confirmed.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 5,
+            "decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "WO-02",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "BRG-204"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "Vibration still high"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "Replaced BRG-204."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-02",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 9,
+                  "end": 16,
+                  "quote": "BRG-204",
+                  "source_column": "Technician Notes"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 18,
+                  "end": 38,
+                  "quote": "Vibration still high",
+                  "source_column": "Technician Notes"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 17,
+                  "quote": "Replaced BRG-204.",
+                  "source_column": "Technician Notes"
+                }
+              },
+              "action_status_proposal": "completed",
+              "review_status": "unreviewed",
+              "source": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 3,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+            }
+          },
+          {
+            "step": 6,
+            "decision": {
+              "tool": "aggregate",
+              "args": {}
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "selected_record_count": 2,
+              "unstructured_record_count": 2,
+              "total_recurring_groups": 0,
+              "groups": [],
+              "groups_truncated": false,
+              "method": "same_asset_component_and_normalized_issue_wording"
+            }
+          },
+          {
+            "step": 7,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": [
+                  "WO-01",
+                  "WO-02"
+                ]
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [
+                "WO-01",
+                "WO-02"
+              ],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 3,
+      "case_id": "negated-leak",
+      "workflow": "agent",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": null,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.004,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "ready_for_review",
+        "backend": "replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "search",
+          "initial_query": "no seal leak",
+          "search_required": true,
+          "aggregate_required": false,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": false
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "evidence_selected",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Find the record explicitly saying no seal leak",
+        "scope": {
+          "asset_id": "PUMP-002",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 1,
+        "steps": 3,
+        "model_calls": 0,
+        "elapsed_seconds": 0.004,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [
+          {
+            "record_id": "WO-03",
+            "event_date": "2026-01-11",
+            "asset_id": "PUMP-002",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 4,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "No seal leak. Inspection completed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [],
+        "aggregate": null,
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "no seal leak"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "hits": [
+                {
+                  "record_id": "WO-03",
+                  "asset_id": "PUMP-002",
+                  "date": "2026-01-11",
+                  "score": 0.8630462173553426,
+                  "excerpt": "No seal leak. Inspection completed.",
+                  "excerpt_truncated": false
+                }
+              ],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-03"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-03",
+              "event_date": "2026-01-11",
+              "asset_id": "PUMP-002",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 4,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "No seal leak. Inspection completed.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": [
+                  "WO-03"
+                ]
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [
+                "WO-03"
+              ],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 3,
+      "case_id": "negated-leak",
+      "workflow": "deterministic",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": null,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 5.283800055622123e-05,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "status": "ready_for_review",
+        "records_for_review": [
+          {
+            "record_id": "WO-03",
+            "event_date": "2026-01-11",
+            "asset_id": "PUMP-002",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 4,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "No seal leak. Inspection completed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [],
+        "aggregate": null,
+        "trace": [],
+        "model_calls": 0,
+        "elapsed_seconds": 5.283800055622123e-05,
+        "completion": {
+          "requirements_met": true
+        },
+        "backend": "deterministic-no-model"
+      }
+    },
+    {
+      "trial": 3,
+      "case_id": "negated-leak",
+      "workflow": "fixed",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": null,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "ready_for_review",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.005,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "ready_for_review",
+        "backend": "fixed-workflow/replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "search",
+          "initial_query": "no seal leak",
+          "search_required": true,
+          "aggregate_required": false,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": false
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "evidence_selected",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Find the record explicitly saying no seal leak",
+        "scope": {
+          "asset_id": "PUMP-002",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 1,
+        "steps": 3,
+        "model_calls": 0,
+        "elapsed_seconds": 0.005,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [
+          {
+            "record_id": "WO-03",
+            "event_date": "2026-01-11",
+            "asset_id": "PUMP-002",
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "issue_normalized": "",
+            "action_normalized": "",
+            "evidence": {
+              "source_file": "company_export.csv",
+              "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+              "csv_row": 4,
+              "data_kind": "synthetic",
+              "columns": {
+                "record_id": "Work Order",
+                "event_date": "Date",
+                "asset_id": "Equipment",
+                "narrative": "Technician Notes"
+              }
+            },
+            "narrative_raw": "No seal leak. Inspection completed.",
+            "normalization_policy": "noun_alias_v1"
+          }
+        ],
+        "extraction_proposals": [],
+        "aggregate": null,
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "no seal leak",
+                "top_k": 5
+              }
+            },
+            "usage": {},
+            "model_seconds": null,
+            "model_called": false,
+            "tool_result": {
+              "hits": [
+                {
+                  "record_id": "WO-03",
+                  "asset_id": "PUMP-002",
+                  "date": "2026-01-11",
+                  "score": 0.8630462173553426,
+                  "excerpt": "No seal leak. Inspection completed.",
+                  "excerpt_truncated": false
+                }
+              ],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "record",
+              "args": {
+                "record_id": "WO-03"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_id": "WO-03",
+              "event_date": "2026-01-11",
+              "asset_id": "PUMP-002",
+              "component": "",
+              "issue_raw": "",
+              "action_raw": "",
+              "issue_normalized": "",
+              "action_normalized": "",
+              "evidence": {
+                "source_file": "company_export.csv",
+                "source_sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+                "csv_row": 4,
+                "data_kind": "synthetic",
+                "columns": {
+                  "record_id": "Work Order",
+                  "event_date": "Date",
+                  "asset_id": "Equipment",
+                  "narrative": "Technician Notes"
+                }
+              },
+              "narrative_raw": "No seal leak. Inspection completed.",
+              "normalization_policy": "noun_alias_v1"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": [
+                  "WO-03"
+                ]
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [
+                "WO-03"
+              ],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 3,
+      "case_id": "no-lexical-match",
+      "workflow": "agent",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "no_matches",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.004,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "no_matches",
+        "backend": "replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "history",
+          "initial_query": "xyznotfound",
+          "search_required": true,
+          "aggregate_required": true,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": true
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "no_lexical_matches",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Find xyznotfound records",
+        "scope": {
+          "asset_id": "PUMP-001",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 2,
+        "steps": 3,
+        "model_calls": 0,
+        "elapsed_seconds": 0.004,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [],
+        "extraction_proposals": [],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "xyznotfound"
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "hits": [],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "aggregate",
+              "args": {}
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "selected_record_count": 2,
+              "unstructured_record_count": 2,
+              "total_recurring_groups": 0,
+              "groups": [],
+              "groups_truncated": false,
+              "method": "same_asset_component_and_normalized_issue_wording"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": []
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    },
+    {
+      "trial": 3,
+      "case_id": "no-lexical-match",
+      "workflow": "deterministic",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "no_matches",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 4.456599890545476e-05,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "status": "no_matches",
+        "records_for_review": [],
+        "extraction_proposals": [],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "trace": [],
+        "model_calls": 0,
+        "elapsed_seconds": 4.456599890545476e-05,
+        "completion": {
+          "requirements_met": true
+        },
+        "backend": "deterministic-no-model"
+      }
+    },
+    {
+      "trial": 3,
+      "case_id": "no-lexical-match",
+      "workflow": "fixed",
+      "metrics": {
+        "record_precision": 1.0,
+        "record_recall": 1.0,
+        "exact_record_set": true,
+        "aggregate_correct": true,
+        "field_tp": 0,
+        "field_fp": 0,
+        "field_fn": 0,
+        "required_field_spans": 0,
+        "field_precision": null,
+        "field_recall": null,
+        "correct_unknown_fields": 0,
+        "status_correct": 0,
+        "status_total": 0,
+        "labeled_task_success": true,
+        "workflow_complete": true,
+        "run_status": "no_matches",
+        "model_calls": 0,
+        "invalid_decisions": 0,
+        "elapsed_seconds": 0.004,
+        "reported_completion_tokens": 0,
+        "token_usage_available": false
+      },
+      "run": {
+        "schema_version": 2,
+        "status": "no_matches",
+        "backend": "fixed-workflow/replay-fixture-no-model",
+        "task_requirements": {
+          "mode": "history",
+          "initial_query": "xyznotfound",
+          "search_required": true,
+          "aggregate_required": true,
+          "inspect_every_final_record": true,
+          "extract_every_final_record": false,
+          "extract_final_narratives": true
+        },
+        "retrieval_normalization": "noun_alias_v1",
+        "vocabulary": null,
+        "completion": {
+          "requirements_met": true,
+          "missing": [],
+          "outcome": "no_lexical_matches",
+          "semantic_task_success": null,
+          "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+        },
+        "abstention": null,
+        "question": "Find xyznotfound records",
+        "scope": {
+          "asset_id": "PUMP-001",
+          "start": null,
+          "end": null
+        },
+        "input_record_count": 3,
+        "selected_record_count": 2,
+        "steps": 3,
+        "model_calls": 0,
+        "elapsed_seconds": 0.004,
+        "limits": {
+          "max_steps": 20,
+          "timeout_seconds": 120,
+          "max_context_chars": 10000
+        },
+        "records_for_review": [],
+        "extraction_proposals": [],
+        "aggregate": {
+          "method": "same_asset_component_and_normalized_issue_wording",
+          "data_kinds": [
+            "synthetic"
+          ],
+          "input_record_count": 2,
+          "selected_record_count": 2,
+          "start": null,
+          "end": null,
+          "asset_id": null,
+          "unstructured_record_count": 2,
+          "recurring_groups": [],
+          "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+        },
+        "clarification": null,
+        "trace": [
+          {
+            "step": 1,
+            "decision": {
+              "tool": "search",
+              "args": {
+                "query": "xyznotfound",
+                "top_k": 5
+              }
+            },
+            "usage": {},
+            "model_seconds": null,
+            "model_called": false,
+            "tool_result": {
+              "hits": [],
+              "method": "lexical_relevance_not_fault_confirmation"
+            }
+          },
+          {
+            "step": 2,
+            "decision": {
+              "tool": "aggregate",
+              "args": {}
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "selected_record_count": 2,
+              "unstructured_record_count": 2,
+              "total_recurring_groups": 0,
+              "groups": [],
+              "groups_truncated": false,
+              "method": "same_asset_component_and_normalized_issue_wording"
+            }
+          },
+          {
+            "step": 3,
+            "decision": {
+              "tool": "finish",
+              "args": {
+                "record_ids": []
+              }
+            },
+            "usage": {},
+            "model_seconds": 0,
+            "model_called": false,
+            "tool_result": {
+              "record_ids": [],
+              "review_status": "unreviewed"
+            }
+          }
+        ],
+        "review_status": "unreviewed",
+        "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+      }
+    }
+  ],
+  "interpretation": "Labels are never passed into model context. Replay scores validate fixture mechanics only. Exact record sets and source spans measure the declared tasks; they do not establish commercial value. Cost is unknown unless priced actual usage is supplied."
+}

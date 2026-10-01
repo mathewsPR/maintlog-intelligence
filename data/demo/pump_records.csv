@@ -1,0 +1,13 @@
+record_id,event_date,asset_id,component,issue,action
+DEMO-001,2026-01-03,PUMP-001,bearing,brg vib high,chk alignment
+DEMO-002,2026-01-08,PUMP-001,bearing,bearing vibration high,lub brg
+DEMO-003,2026-02-10,PUMP-001,bearing,brg vib high,repl BRG-204
+DEMO-004,2026-01-04,PUMP-002,seal,seal leak,chk seal
+DEMO-005,2026-01-13,PUMP-002,seal,seal leak,repl seal
+DEMO-006,2026-01-14,PUMP-003,motor,temp high,chk TEMP_01
+DEMO-007,2026-01-15,PUMP-003,motor,temp high,
+DEMO-008,2026-01-20,PUMP-004,bearing,brg vib high,chk alignment
+DEMO-009,2026-01-21,PUMP-004,seal,seal leak,repl seal
+DEMO-010,2026-01-22,PUMP-005,impeller,noise at load,inspection requested
+DEMO-011,2026-01-23,PUMP-005,motor,overcurrent trip,reset drive
+DEMO-012,2026-01-24,PUMP-006,seal,no seal leak observed,chk seal

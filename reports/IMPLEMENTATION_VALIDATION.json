@@ -1,0 +1,37 @@
+{
+  "project_version": "0.3.0",
+  "runtime": "3.11.16",
+  "tests_passed": 113,
+  "ruff_version": "0.16.9",
+  "lint": "passed",
+  "format": "passed",
+  "fresh_locked_linux_installation": "passed",
+  "installed_cli_structured_replay": "ready_for_review",
+  "installed_comparison_cli": "passed_synthetic_replay",
+  "live_model_inference": "not_run",
+  "windows_execution": "not_run",
+  "browser_visual_interaction": "not_verified_browser_download_failed",
+  "review_download_script": "Node DOM fixture passed; corrected field saved to SQLite and reused in reviewed brief",
+  "http_deadline": "stalled local HTTP request terminated; model-server cancellation not guaranteed",
+  "normalization_development": {
+    "split": "validation",
+    "not_fresh_holdout": true,
+    "training_documents": 9600,
+    "validation_documents": 1200,
+    "learned_entries": 84
+  },
+  "comparison": {
+    "evidence_kind": "synthetic_replay_mechanics",
+    "cases": 3,
+    "workflows": 3,
+    "replay_trials": 3,
+    "outcomes": 27
+  },
+  "artifact_sha256": {
+    "reports/test-results.txt": "d2cd9280b003b4a5b9286292bf4c4e8ddf362efe20620198defbd931e2ad8e89",
+    "requirements-agent.lock": "166f0679d31c9bea447d213b402251acd6f9789147dad7e1728527d93252dd3f",
+    "reports/NORMALIZATION_DEVELOPMENT.json": "62d1b47f30973f102e0a104d7286a2e8bc17c262d8a150305712722a326c8a67",
+    "reports/WORKFLOW_COMPARISON.json": "753194edf340f1fe06e720c06bf75f9b5f70746e515482e280f84706fa187e2e",
+    "data/demo/comparison_cases.json": "2dbf8dbd3ca2b82d0a34a1dd45db03c914b110fc9178e38c9770bd0f3abb60b7"
+  }
+}

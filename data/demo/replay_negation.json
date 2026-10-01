@@ -1,0 +1,22 @@
+[
+  {
+    "tool": "search",
+    "args": {
+      "query": "no seal leak"
+    }
+  },
+  {
+    "tool": "record",
+    "args": {
+      "record_id": "WO-03"
+    }
+  },
+  {
+    "tool": "finish",
+    "args": {
+      "record_ids": [
+        "WO-03"
+      ]
+    }
+  }
+]

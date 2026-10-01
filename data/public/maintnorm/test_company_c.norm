@@ -1,0 +1,2450 @@
+Hoist	hoist
+Brake	brake
+Switch	switch
+operation	operation
+
+Air	air
+Horn	horn
+Relocate	relocate
+14/10/0011	<date>
+
+Load	load
+P&H	P&H
+bucket	bucket
+4	<num>
+
+repair	repair
+lighting	lighting
+
+060	<id>
+boom	boom
+light	light
+24	<num>
+to	to
+check	check
+
+I	<id>
+LK621	<id>
+Rinachi	<sensitive>
+Services	services
+Plan	plan
+
+dragline	dragline
+5	<num>
+ylc2	<id>
+contactor	contactor
+errors	errors
+
+house	house
+lights	lights
+out	out
+
+check	check
+busbar	busbar
+connections	connections
+SCO8	<id>
+
+DMG	damage
+L/H	left hand
+dump	dump
+chain	chain
+worn	worn
+
+Wu3186	<id>
+Park	park
+Brake	brake
+Relay	relay
+valve	valve
+leaking	leaking
+
+5635	<id>
+HV	high voltage
+Maintenance	maintenance
+Electrical	electrical
+
+Left	left
+cab	cabin
+aircon	air conditioner
+e/leakage	earth leakage
+flt	fault
+
+Cable	cable
+work	work
+ll124	<id>
+04/05/0011	<date>
+
+Need	need
+to	to
+change	change
+brake	brake
+pads	pads
+Swing	swing
+1	<num>
+
+Exhaust	exhaust
+Fan	fan
+#6	number <num>
+Tripping	tripping
+c/b	circuit breaker
+
+Change	change
+oil	oil
+Drag	drag
+Box	box
+#1	number <num>
+
+complete	complete
+
+Flashing	flashing
+light	light
+U/S	unserviceable
+replaced	replaced
+
+adjust	adjust
+air	air
+con	conditioner
+vents	vents
+
+mech	mechanical
+protect	protect
+wiring	wiring
+around	around
+engine	engine
+
+8664	<id>
+NDT	NDT
+24WK	<num> week
+RHS	right hand side
+Prpl	propel
+Pinion	pinion
+Shaft	shaft
+Test	test
+
+060	<id>
+Tugger	tugger
+Winch	winch
+0	<num>
+-	-
+Rope	rope
+Req	required
+replacing	replacing
+
+keeper	keeper
+pin	pin
+fallen	fallen
+out	out
+on	on
+repair	repair
+link	link
+
+47	<num>
+monthly	monthly
+cabinet	cabinet
+inspections	inspections
+
+Services	services
+MCC	MCC
+tripping	tripping
+on	on
+O/Load	overload
+
+Inspect	inspect
+Ropes	ropes
+Prior	prior
+to	to
+Long	long
+Week	weekend
+End	
+
+a/c	air conditioner
+not	not
+cooling	cooling
+
+Replace	replace
+bucket	bucket
+060	<id>
+D/line	dragline
+7off	<num> off
+&8on	and <num> on
+
+replace	replace
+worn	worn
+pto	PTO
+driveshaft	driveshaft
+universal	universal joint
+
+snapped	snapped
+drag	drag
+chain	chain
+
+VistaCam	<sensitive>
+system	system
+not	not
+working	working
+
+New	new
+Dry	dry
+Air	air
+Hose	hose
+Reels	reels
+Needed	needed
+
+hm5190	<id>
+emergency	emergency
+ladder	ladder
+repairs	repairs
+
+grease	grease
+leaks	leaks
+on	on
+stick	stick
+
+5635	<id>
+Bucket	bucket
+Overhaul-Mechanical	overhaul - mechanical
+BKT	bucket
+#	number
+1	<num>
+
+Break	break
+cables	cables
+
+replace	replace
+invincible	invincible
+fitting	fitting
+over	over
+fridge	fridge
+&	and
+
+Dragline	dragline
+0	<num>
+Shutdown	shutdown
+AssistanceDragline	assistance dragline
+5	<num>
+
+deliver	deliver
+2	<num>
+kwik	Kwik
+tips	Tips
+
+RHS	right hand side
+ballast	ballast
+board	board
+smoke	smoke
+detector	detector
+U/S	unserviceable
+
+WASTE	waste
+OIL	oil
+HOSE	hose
+REEL	reel
+U/S	unserviceable
+
+CM	condition monitoring
+Inspection	inspection
+Excavator	excavator
+
+pos	position
+6	<num>
+tyre	tyre
+flat	flat
+
+MOBILE	mobile
+5H	<id>
+Internal	internal
+Labour	labour
+W44	week <num>
+
+ZH6907	<id>
+C/out	change out
+pos	position
+2	<num>
+tyre	tyre
+
+526	<id>
+Pre-shut	pre-shutdown
+tub	tub
+internal	internal
+inspection	inspection
+
+RHR	right hand rear
+tremmel	trammel
+wheel	wheel
+snapped	snapped
+off	off
+
+drag	drag
+rope	rope
+slipping	slipping
+throgh	through
+socket	socket
+
+Change	change
+Management	management
+for	for
+cable	cable
+winches	winches
+
+compressor	compressor
+not	not
+starting	starting
+
+Drag	drag
+gen	generator
+overvoltage	overvoltage
+alarm	alarm
+
+Remove	remove
+cable	cable
+from	from
+line	line
+
+rear	rear
+module	module
+work	work
+lights	lights
+loose	loose
+
+4	<num>
+boom	boom
+lights	lights
+out	out
+
+trace	trace
+&	and
+repair	repair
+hyd	hydraulic
+oil	oil
+leak	leak
+RH	right hand
+steer	steering
+ram	ram
+
+W/Place	workplace
+Insp	inspection
+Trucks	trucks
+Bays	bays
+North	north
+&	and
+South	south
+
+JH250	<id>
+fortnightly	fortnightly
+inspection	inspection
+
+Write	write
+testing	testing
+procedure	procedure
+for	for
+MG	motor generator
+sets	sets
+
+pair	pair
+link	link
+in	in
+the	the
+drag	drag
+chain	chain
+
+cable	cable
+work	work
+ll124	<id>
+08/07/0011	<date>
+
+assisted	assisted
+vistacam	<sensitive>
+
+Right	right
+A	A-frame
+frame	
+lights	lights
+out	out
+
+Weld	weld
+keepers	keepers
+in	in
+repair	repair
+link	link
+
+98	<num>
+Week	week
+Tool	tool
+Inspection	inspection
+'O'	<id>
+Crew	crew
+Trucks	trucks
+
+driver	driver
+seat	seat
+
+AM/FM	AM / FM
+radio	radio
+faulty	faulty
+replacement	replacement
+required	required
+
+Re-fit	refit
+Tool	tool
+to	to
+measure	measure
+foot	foot
+movement	movement
+
+Crop	crop
+41	<num>
+metres	metres
+out	out
+of	of
+drag	drag
+ropes	ropes
+
+RH	right hand
+DOOR	door
+OPENING	opening
+MECHANISM	mechanism
+FAULTY	faulty
+
+RHS	right hand side
+drag	drag
+chains	chains
+snapped	snapped
+
+C/O	change out
+upper	upper
+hoist	hoist
+chains	chains
+
+Coolant	coolant
+quick	quick
+fill	fill
+connector	connector
+U/S	unserviceable
+Replac	replace
+
+no	no
+power	power
+in	in
+cab	cabin
+
+NDT	NDT
+-	-
+A	A-frame
+Frame	
+Walkways	walkways
+VI	VI
+MT	MT
+
+526	<id>
+-	-
+Profile	profile
+both	both
+MG	MG
+Sets	sets
+As	as
+Reference	reference
+
+4SO134	<id>
+Changeout	change out
+YV4	<id>
+Thrust	thrust
+Bearing	bearing
+Oil	oil
+
+Auxillary	auxiliary
+Power	power
+Generator	generator
+
+propel	propel
+blower	blower
+motor	motor
+No	number
+5	<num>
+u/s	unserviceable
+
+Monitor	monitor
+CV9	<id>
+flashover	flashover
+and	and
+connections	connections
+
+hoist	hoist
+brake	brake
+fault	fault
+
+Take	take
+LH	left hand
+F/Drive	final drive
+Oil	oil
+Sample	sample
+
+Replace	replace
+both	both
+connecting	connecting
+ring	ring
+to	to
+link	link
+pin	pin
+
+`afe	safe
+Fabricate	fabricate
+winch	winch
+rope	rope
+bracket	bracket
+
+7897	<id>
+Drag	drag
+Drum	drum
+Flame	flame
+Hardening-Mech	hardening - mechanical
+
+walking	walking
+cam	cam
+lube	lube
+pump	pump
+u/s	unserviceable
+
+Replace	replace
+wear	wear
+blocks	blocks
+on	on
+rear	rear
+roller	roller
+frame	frame
+
+cable	cable
+re-route	reroute
+
+fuel	fuel
+injector	injector
+lines	lines
+lines	lines
+leaking	leaking
+
+Fortnightly	fortnightly
+clean	clean
+ll124	<id>
+sub	sub
+
+oil	oil
+leak	leak
+from	from
+r/h	right hand
+final	final
+drive	drive
+
+8664	<id>
+NDT	NDT
+48WK	<num> week
+M	M
+B	B
+Foot	foot
+Pins	pins
+Clevis	clevis
+Weld	weld
+
+Key	key
+broken	broken
+off	off
+in	in
+ignition	ignition
+
+REPLACE	replace
+BROKEN	broken
+DRIVERS	drivers
+DOOR	door
+HANDLE	handle
+
+5635	<id>
+Drag	drag
+Motor/Blower	motor / blower
+Connection	connection
+Insp	inspection
+
+Dove	<sensitive>
+742K	<id>
+-	-
+500	<num>
+Hr	hour
+Service	service
+
+heater	heater
+hoses	hoses
+at	at
+bottom	bottom
+front	front
+of	of
+cab	cabin
+u/s	unserviceable
+
+MOBILE	mobile
+Step-up	step-up
+Labour	labour
+W43	week <num>
+
+DIFFERENTIALS	differentials
+
+inspect	inspect
+drive	drive
+brakes	brakes
+getting	getting
+low	low
+
+track	track
+rollers	rollers
+8	<num>
+&	and
+8	<num>
+getting	getting
+hot	hot
+rhs	right hand side
+
+No	no
+power	power
+in	in
+cab	cabin
+-	-
+reset	reset
+
+Weld	weld
+up	up
+hoist	hoist
+rope	rope
+house	house
+sheave	sheave
+roller	roller
+s	side
+
+Cracking	cracking
+found	found
+on	on
+NDT	NDT
+48WK	<num> week
+Boom	boom
+Pt	point
+Shaft	shaft
+
+8664	<id>
+Drag	drag
+Rope	rope
+Change	change
+24/03	<date>
+
+Cable	cable
+move	move
+dragline	dragline
+003	<id>
+
+Clean/Inspect	clean / inspect
+PCR	PCR
+
+Repair	repair
+75mm	<num> mm
+Crack	crack
+to	to
+RHS	right hand side
+Lifting	lifting
+Hook	hook
+
+060	<id>
+LH	left hand
+drag	drag
+drum	drum
+brg	bearing
+sample	sample
+high	high
+Cu	copper
+
+RH	right hand
+TRACK	track
+ROLLERS	rollers
+FAILED	failed
+
+Reset	reset
+limits	limits
+and	and
+assist	assist
+VISTACAM	<sensitive>
+
+Bolts	bolts
+missing	missing
+r/h	right hand
+cam	cam
+frame	frame
+Nuts	nuts
+in	in
+060	<id>
+
+noise	noise
+in	in
+swing	swing
+pinon	pinion
+
+zero	zero
+shoe	shoe
+error	error
+
+replace	replace
+faulty	faulty
+rear	rear
+cable	cable
+winch	winch
+outlet	outlet
+
+L/H	left hand
+propel	propel
+cam	cam
+frame	frame
+grease	grease
+swivell	swivel
+miss	missing
+
+ladder	ladder
+pivot	pivot
+broken	broken
+
+COOLANT	coolant
+RESIVOR	reservoir
+LOW	low
+COOLANT	coolant
+SENSOR	sensor
+N/W	not working
+
+7897	<id>
+-	-
+Renew	renew
+Dump	dump
+Rope	rope
+
+Drag	drag
+Gen	generator
+6	<num>
+needs	needs
+to	to
+be	be
+skimmed	skimmed
+
+C/O	change out
+drag	drag
+chains	chains
+
+RHR	right hand rear
+A-Frame	A-frame
+leg	leg
+&	and
+deformed	deformed
+gridmesh	gridmesh
+
+replace	replace
+all	all
+engine	engine
+belts	belts
+
+7897	<id>
+Horiz	horizontal
+Fairleads	fairleads
+Sheave	sheave
+C/Out-Mech	change out - mechanical
+
+5635	<id>
+Hoist	hoist
+Chain	chain
+L/H/Upr	left hand upper
+Changeout-Mech	change out - mechanical
+
+Replace	replace
+GET	GET
+on	on
+Bkt	bucket
+#	number
+6	<num>
+526	<id>
+D/line	dragline
+
+Remove	remove
+544	<num>
+cables	cables
+from	from
+run	run
+
+Down	down
+with	with
+e-stop	emergency-stop
+probs	problems
+
+060	<id>
+Bucket	bucket
+#8	number <num>
+Requires	requires
+strip	strip
+for	for
+trans	transmission
+
+PTO	PTO
+shaft	shaft
+requires	requires
+replacing	replacing
+
+replace	replace
+alternator	alternator
+
+Assist	assist
+DCS	DCS
+with	with
+field	field
+loss	loss
+fault	fault
+finding	finding
+
+Hoist	hoist
+Gen	generator
+N0	number
+2	<num>
+Noisy	noisy
+/	/
+Sparking	sparking
+
+5	<num>
+monthly	monthly
+Rear	rear
+I/O	I/O
+Cabinet	cabinet
+Service	service
+
+FO678	<id>
+Boat	boat
+Inspection	inspection
+&	and
+Prep	preparation
+
+Change	change
+out	out
+the	the
+riser	riser
+shrouds	shrouds
+
+I	<id>
+CM	condition monitoring
+Wear	wear
+Debris	debris
+Analysis	analysis
+Dragline	dragline
+526	<id>
+
+Loose	loose
+Drivers	drivers
+Mirror	mirror
+Post	Post
+
+5H	<id>
+Lean	lean
+for	for
+Remington	<sensitive>
+Wksp	workshop
+WK	week
+98	<num>
+
+Swing	swing
+motor	motor
+temp	temperature
+alarm	alarm
+
+change	change
+bucket	bucket
+on	on
+KD208	<id>
+
+534	<id>
+Daily	daily
+Inspections	inspections
+
+Not	not
+starting	starting
+
+Bb6250	<id>
+blade	blade
+offset	offset
+switch	switch
+fault	fault
+
+078	<id>
+-	-
+500	<num>
+Hr	hour
+Service	service
+
+7897	<id>
+Intake	intake
+Fan	fan
+No13	number <num>
+Overhaul-Elec/Mech	overhaul - electrical / mechanical
+
+manhole	manhole
+cover	cover
+
+TIGHTEN	tighten
+LH	left hand
+STEER	steering
+U-BOLTS	U-bolts
+
+LR2095	<id>
+Trans	transmission
+hose	hose
+leaks	leaks
+
+8664	<id>
+Drag	drag
+Chain	chain
+change	change
+
+hoist	hoist
+slack	slack
+rope	rope
+sensor	sensor
+repairs	repairs
+improve	improve
+
+Argon	<sensitive>
+H14H	<id>
+-	-
+Rear	rear
+Diffidential	differential
+Changeout	change out
+
+5H	<id>
+Lean	lean
+for	for
+Remington	<sensitive>
+Wksp	workshop
+WK17	week <num>
+
+fill	fill
+and	and
+adjust	adjust
+boom	boom
+chord	chord
+air	air
+pressures	pressures
+
+Crack	crack
+at	at
+boom	boom
+point	point
+of	of
+526	<id>
+
+straighten	straighten
+or	or
+replace	replace
+bent	bent
+steering	steering
+arm	arm
+
+RH	right hand
+front	front
+drive	drive
+mudflap	mudflap
+holder	holder
+broken	broken
+
+Prep	prepare
+4X	<num> x
+dump	dump
+links	links
+for	for
+next	next
+use	use
+
+Excavator	excavator
+014	<id>
+Daily	daily
+Inspections	inspections
+
+7897	<id>
+Lube	lube
+Serv	service
+Aux	auxiliary
+Dove	<sensitive>
+Eng	engine
+-Mechanical	- mechanical
+
+8664	<id>
+4WK	<num> week
+Electrical	electrical
+Service	service
+
+perma	permalubes
+lubes	
+missing	missing
+
+8664	<id>
+24WK	<num> week
+415V	<num> V
+Distribution	distribution
+Service	service
+
+c/o	change out
+cam	cam
+lube	lube
+drum	drum
+
+DCS	DCS
+Boom	boom
+press	pressure
+monitoring	monitoring
+system	system
+improve	improve
+
+NDT	NDT
+IBS	IBS
+Rope	rope
+Clevis	clevis
+Weld	weld
+&	and
+Crank	crank
+Bolts	bolts
+
+BR8769	<id>
+oil	oil
+cap	cap
+missing	missing
+
+replace	replace
+PCB	PCB
+relays	relays
+
+NDT	NDT
+A	A-frame
+Frame	
+Clevis	clevis
+Weld	weld
+&	and
+Pin	pin
+VI	VI
+MT	MT
+UT	UT
+
+Lube	lube
+tank	tank
+shut	shut
+off	off
+valves	valves
+leaking	leaking
+
+replace	replace
+torn	torn
+mudflap	mudflap
+LHF	left hand front
+pos	position
+#1	number <num>
+wheel	wheel
+
+Pre	pre-summer
+Summer	
+Audit	audit
+A/Con	air conditioner
+units	units
+#348	number <num>
+
+hydraulic	hydraulic
+filters	filters
+need	need
+replacing	replacing
+
+Replace	replace
+various	various
+drak	drag
+shute	chute
+rollers	rollers
+
+Replace	replace
+GET	GET
+on	on
+BKt	bucket
+#	number
+1	<num>
+454D/I	<id>
+
+oil	oil
+leak	leak
+at	at
+the	the
+front	front
+of	of
+engine	engine
+
+Cable	cable
+work	work
+li648	<id>
+23/11	<date>
+
+Install	install
+Air	air
+Reels	reels
+to	to
+swing	swing
+Decks	decks
+
+REPORTED	reported
+DRAG	drag
+GEN	generator
+FAULT	fault
+
+EC7782	<id>
+Replace	replace
+r/h	right hand
+lower	lower
+blade	blade
+slide	slide
+
+Rotate	rotate
+dirt	dirt
+chute	chute
+rollers	rollers
+
+007	<id>
+Axton	<sensitive>
+Hire	hire
+Truck	truck
+-	-
+2000	<num>
+Hr	hour
+Service	service
+
+Tripped	tripped
+sub	sub
+outlet	outlet
+
+Hoist	hoist
+brake	brake
+#	number
+9	<num>
+microsw/s	micro-switches
+jammed	jammed
+closed	closed
+
+brocken	broken
+key	key
+in	in
+ignition	ignition
+switch	switch
+
+Air	air
+Leak	leak
+in	in
+Seat	seat
+Hose	hose
+
+Zone	zone
+72	<num>
+Fire	fire
+system	system
+sensor	sensor
+isolated	isolated
+
+oil	oil
+leak	leak
+swingbox	swingbox
+8	<num>
+
+526	<id>
+Audit	audit
+air	air
+fittings	fittings
+for	for
+non	non-compliance
+compliant	
+
+7897	<id>
+Drag	drag
+No2	number <num>
+Input	input
+Shft	shaft
+Frnt	front
+C/out-Mech	change out - mechanical
+
+TRACK	track
+ASSEMBLY	assembly
+-	-
+IDLER	idler
+PIN	pin
+COMING	coming
+OUT	out
+
+hv	high voltage
+reset	reset
+66kv	<num> kV
+sub	sub
+fault	fault
+
+replace	replace
+side	side
+engine	engine
+bay	bay
+door	door
+struts	struts
+
+LK621	<id>
+Engine	engine
+Midlife	midlife
+
+retarder	retarder
+lever	lever
+very	very
+sloppy	sloppy
+&	and
+u/s	unserviceable
+
+Map	map
+out	out
+Sx969	<id>
+cable	cable
+route	route
+
+Dropbox	dropbox
+Failure	failure
+
+7897	<id>
+High	high
+Voltage	voltage
+Maintenance	maintenance
+
+5635	<id>
+Hoist	hoist
+Mtr	motor
+/	/
+Blower	blower
+Connections	connections
+
+FRONT	front
+SWAYBAR	swaybar
+BUSHES	bushes
+
+engine	engine
+cuts	cuts
+out	out
+
+damaged	damaged
+cable	cable
+work	work
+
+replace	replace
+E-stop	emergency-stop
+switches	switches
+
+ripper	ripper
+boot	boot
+on	on
+bucket	bucket
+pick	pick
+missing	missing
+
+526	<id>
+lower	lower
+deflect	deflect
+twr	tower
+ladder	ladder
+loose	loose
+
+r/h/s	right hand side
+mirror	mirror
+loose	loose
+
+8664	<id>
+NDT	NDT
+Susp	suspension
+Rope	rope
+Radiography	radiography
+Locn	location
+7	<num>
+
+Replace	replace
+System	system
+'K'	<id>
+Pressure	pressure
+Switch	switch
+
+VM9436	<id>
+diff	differential
+lube	lube
+pump	pump
+leaking	leaking
+
+both	both
+rear	rear
+diff	differential
+oils	oils
+need	need
+replacing	replacing
+
+replace	replace
+209	<num>
+under	under
+bench	bench
+down	down
+light	light
+
+oil	oil
+evac	evacuate
+hose	hose
+u/s	unserviceable
+
+TRANSMISSION	transmission
+-	-
+CANT	can't
+CHANGE	change
+GEARS	gears
+
+Clean	clean
+filters	filters
+on	on
+electrical	electrical
+cabinets	cabinets
+
+5H	<id>
+MOBILE	mobile
+LABOUR	labour
+W/	with
+START	start
+4/8/8	date
+
+Replace	replace
+lower	lower
+Track	track
+Roller	roller
+
+Boom	boom
+Light	light
+on	on
+2nd	second
+crossover	crossover
+not	not
+working	working
+
+rear	rear
+wiper	wiper
+switch	switch
+handle	handle
+/	/
+knob	knob
+missing	missing
+
+Split	split
+cable	cable
+for	for
+shot	shot
+
+lhs	left hand side
+track	track
+broken	broken
+
+Swing	swing
+brakes	brakes
+coming	coming
+on	on
+now	now
+and	and
+then	then
+
+5635	<id>
+Weekly	weekly
+Inspection-Electrical	inspection - electrical
+
+L/H	left hand
+car	car
+worklight	worklight
+not	not
+working	working
+
+Cgantry	gantry
+chain	chain
+broken	broken
+
+statutory	statutory
+stickers	stickers
+missing	missing
+
+5635	<id>
+526	<id>
+Condition	condition
+Monitoring	monitoring
+Inspection	inspection
+
+3Month	<num> month
+Tool	tool
+Insp	inspection
+I	<id>
+Crew	crew
+-	-
+Trucks	trucks
+
+NDT	NDT
+-	-
+Drag	drag
+Bull	bull
+Gear	gear
+Teeth	teeth
+Rhs	right hand
+MT	MT
+
+Hoist	hoist
+hood	hood
+sheeves	sheaves
+repairs	repairs
+
+Broken	broken
+handrail	handrail
+RHS	right hand side
+boarding	boarding
+ladder	ladder
+
+air	air
+con	conditioner
+fans	fans
+not	not
+working	working
+
+remove	remove
+&	and
+spray	spray
+weeds	weeds
+at	at
+the	the
+sub	sub
+for	for
+NR2	<id>
+
+EG0635	<id>
+Pos	position
+6	<num>
+lip	lip
+shroud	shroud
+come	come
+off	off
+bucket	bucket
+
+dummy	dummy
+receiver	receiver
+for	for
+the	the
+banlaw	Banlaw
+721	<num>
+u/s	unserviceable
+
+No	no
+low	low
+beam	beam
+at	at
+all	all
+Has	has
+High	high
+and	and
+park	park
+
+Safety	safety
+-	-
+Hatch	hatch
+covers	covers
+for	for
+ext	extinguisher
+frame	frame
+
+Roof	roof
+light	light
+#5	number <num>
+out	out
+on	on
+LHS	left hand side
+of	of
+dragline	dragline
+
+Mast	mast
+pendant	pendant
+ropes	ropes
+replacment	replacement
+
+42347	<num>
+Monthly	monthly
+Ansul	Ansul
+System	system
+Service	service
+
+Elect	electrical
+MCC	MCC
+&	and
+Services	services
+Upgrade	upgrade
+
+Dump	dump
+block	block
+sheave	sheave
+locking	locking
+up	up
+
+LH	left hand
+travel	travel
+motor	motor
+U/S	unserviceable
+
+Check	check
+lh	left hand
+travel	travel
+motor	motor
+leaking	leaking
+oil	oil
+
+2	two-way
+way	
+cutting	cutting
+out	out
+
+Fire	fire
+Alarm	alarm
+LH	left hand
+Transfer	transfer
+Cabinet	cabinet
+BK9	<id>
+
+5635	<id>
+Exhaust	exhaust
+Fan	fan
+No2	number <num>
+Overhaul	overhaul
+Elec/Mech	electrical / mechanical
+
+5635	<id>
+Swing	swing
+Motor/Blower	motor / blower
+Connect	connect
+Inspect	inspect
+
+Resample	resample
+oil	oil
+on	on
+both	both
+compressors	compressors
+
+bucket	bucket
+teeth	teeth
+missing	missing
+
+7897	<id>
+IBS	IBS
+Ropes	ropes
+Changeout-Mechanical	change out - mechanical
+
+blowen	blown
+hose	hose
+on	on
+boom	boom
+
+Fire	fire
+ext	extinguisher
+out	out
+of	of
+date	date
+
+Carry	carry
+out	out
+general	general
+lighting	lighting
+repairs	repairs
+
+RHS	right hand side
+tooth	tooth
+&	and
+adaptor	adaptor
+missing	missing
+
+Check	check
+all	all
+brush	brush
+heights	heights
+motors	motors
+and	and
+MG's	MG's
+
+Refitted	refitted
+lh	left hand
+drag	drag
+chain	chain
+pin	pin
+
+replace	replace
+hose	hose
+to	to
+water	water
+pump	pump
+
+7897	<id>
+060	<id>
+Dragline	dragline
+CM	condition monitoring
+Shutdown	shutdown
+Inspection	inspection
+
+oil	oil
+leaking	leaking
+down	down
+swing	swing
+shafts	shafts
+4	<num>
+1	<num>
+&	and
+0	<num>
+
+Cracks	cracks
+in	in
+hitch	hitch
+
+movement	movement
+on	on
+steering	steering
+column	column
+
+Replace	replace
+3	<num>-way
+way	
+Hitch	hitch
+Ass	assembly
+060	<id>
+D/L	dragline
+
+7897	<id>
+DRAG	drag
+ROPE	rope
+Changeout-Mechanical	change out - mechanical
+
+will	will
+not	not
+start	start
+
+bracing	bracing
+cracked	cracked
+
+7897	<id>
+2	<num>
+Weekly	weekly
+Service-Electrical	service - electrical
+
+Slack	slack
+Rope	rope
+Detectors	detectors
+Maint	maintenance
+
+genset	generator set
+3	<num>
+current	current
+out	out
+of	of
+balance	balance
+
+dropped	dropped
+power	power
+at	at
+sub	sub
+
+Drag	drag
+loop	loop
+9	<num>
+Grd	ground
+Fault	fault
+
+Inact	inact
+5635	<id>
+Weekly	weekly
+Inspection-Mechanical	inspection - mechanical
+
+Hydraulic	hydraulic
+hose	hose
+leaking	leaking
+
+replace	replace
+both	both
+front	front
+headlight	headlight
+assemblies	assemblies
+
+Replace	replace
+brake	brake
+hose	hose
+
+NDT	NDT
+-	-
+Swing	swing
+Shaft	shaft
+#	number
+3	<num>
+UT	UT
+
+fan	fan
+belt	belt
+running	running
+off	off
+fan	fan
+belt	belt
+tensioner	tensioner
+
+Jump	jump-start
+start	
+machine	machine
+
+3	<num>
+monthly	monthly
+Lower	lower
+Disconnect	disconnect
+Service	service
+
+8	<num>
+monthly	monthly
+Left	left
+Transfer	transfer
+Cabinet	cabinet
+Service	service
+
+brake	brake
+booster	booster
+leaks	leaks
+when	when
+trailer	trailer
+brakes	brakes
+
+Check	check
+lube	lube
+to	to
+rear	rear
+L/H	left hand
+dirt	dirt
+chute	chute
+roller	roller
+
+H-link	H-link
+grease	grease
+hose	hose
+u/s	unserviceable
+
+Bucket	bucket
+work	work
+
+oil	oil
+leak	leak
+from	from
+around	around
+sump	sump
+area	area
+
+drag	drag
+guide	guide
+roller	roller
+fell	fell
+off	off
+
+8664	<id>
+NDT	NDT
+48WK	<num> week
+Hoist	hoist
+Intermediat	intermediate
+Shaft	shaft
+UT	UT
+
+Repair	repair
+RHS	right hand side
+top	top
+rail	rail
+crack	crack
+
+Shoes	shoes
+are	are
+out	out
+sync	synchronous
+
+compressor	compressor
+shutdown	shutdown
+
+rear	rear
+camera	camera
+not	not
+working	working
+
+swing	swing
+#5	number <num>
+lube	lube
+pump	pump
+motor	motor
+noisy	noisy
+
+Repair	repair
+hoist	hoist
+slack	slack
+rope	rope
+limit	limit
+bracket	bracket
+
+SAFE	safe
+secure	secure
+hyd	hydraulic
+pump	pump
+trolley	trolley
+Gus	<sensitive>
+
+set	set-up
+up	
+for	for
+cable	cable
+handleing	handling
+
+Change	change
+seperators	separators
+on	on
+both	both
+compressor	compressor
+
+coolent	coolant
+roll	roll
+
+IW3172	<id>
+Tray	tray
+minor	minor
+repairs	repairs
+
+Swing	swing
+generator	generator
+overvoltage	overvoltage
+alarm	alarm
+
+REAR	rear
+CABLE	cable
+HOIST	hoist
+RUN	run
+INTO	into
+ROCK	rock
+
+Iov	IOV
+fault	fault
+on	on
+sync	synchronous
+motor	motor
+package	package
+
+missing	missing
+bolts	bolts
+in	in
+dirt	dirt
+sheave	sheave
+pedestal	pedestal
+
+Seat	seat
+belt	belt
+u/s	unserviceable
+
+BRAKES	brakes
+SETTING	setting
+
+Cracked	cracked
+platform	platform
+support	support
+FLH	front left hand
+2nd	second
+level	level
+
+Replace	replace
+worn	worn
+GET	GET
+on	on
+Bkt	bucket
+#	number
+5	<num>
+060	<id>
+D/line	dragline
+
+TEST	test
+PORTS	ports
+TO	to
+BE	be
+FITTED	fitted
+TO	to
+MODULE	module
+
+Argon	<sensitive>
+GI4	<id>
+-	-
+2000	<num>
+Hr	hour
+Service	service
+
+RH	right hand
+Front	front
+Propel	propel
+Gearbox	gearbox
+oil	oil
+sample	sample
+
+060	<id>
+-	-
+Point	point
+Box	box
+External	external
+Crack-	crack -
+Vertica	vertical
+
+Exhaust	exhaust
+inlet	inlet
+broken	broken
+
+Hand	handrail
+rail	
+post	post
+crack	crack
+on	on
+A	A-frame
+Frame	
+platform	platform
+
+cable	cable
+plan	plan
+for	for
+526	<id>
+cable	cable
+move	move
+
+washers	washers
+not	not
+working	working
+
+Air	air
+Conditioning	conditioning
+9	<num>
+Wk	week
+Service	service
+
+7897	<id>
+Portable	portable
+Tools	tools
+&	and
+Equip	equipment
+Inspect	inspect
+
+engine	engine
+exh	exhaust
+flex	flex
+/	/
+pipe	pipe
+&	and
+rain	rain
+cap	cap
+u/s	unserviceable
+
+Cracks	cracks
+in	in
+fairleeds	fairleads
+
+slack	slack
+rope	rope
+eye	eye
+broken	broken
+off	off
+
+OR8	<id>
+monitor	monitor
+flash	flash
+clean	clean
+up	up
+DMG	damage
+
+8664	<id>
+NDT	NDT
+Tub	tub
+Compart	compartment
+Circum	circumference
+Dia	diaphragm
+Insp	inspection
+
+Remove	remove
+cover	cover
+&	and
+inspect	inspect
+L/H	left hand
+Bearing	bearing
+
+SA923	<id>
+December	December
+12	<num>
+Shutdown	shutdown
+labour	labour
+
+replace	replace
+broken	broken
+drain	drain
+taps	taps
+on	on
+air	air
+tanks	tanks
+
+7897	<id>
+Drag	drag
+Drum	drum
+Bearing	bearing
+Changeout-Mech	change out - mechanical
+
+5635	<id>
+MG	MG
+Set	set
+Bearing	bearing
+Pedestal-Clean	clean
+
+cutting	cutting
+edge	edge
+lose	lose
+
+Dragline	dragline
+003	<id>
+sub	sub
+inspections	inspections
+
+Motor	motor
+is	is
+Missing-Fit	missing - fit
+new	new
+Motor	motor
+
+BV2631	<id>
+engine	engine
+hard	hard
+to	to
+start	start
+
+Grease	grease
+L/H	left hand
+&	and
+R/H	right hand
+propels	propels
+
+engine	engine
+shutdown	shutdown
+
+Drag	drag
+g/box	gearbox
+output	output
+shaft	shaft
+leaking	leaking
+
+7897	<id>
+Pre-Service	pre-service
+Inspection-Mechanical	inspection - electrical
+
+Stauf	STAUFF
+clamps	clamps
+are	are
+missing	missing
+need	need
+replacing	replacing
+
+Banlaw	Banlaw
+to	to
+repair	repair
+defects	defects
+found	found
+on	on
+servic	service
+
+replaced	replaced
+3	<num>
+kwik	Kwik
+tips	Tips
+
+diesel	diesel
+quick	quick
+fill	fill
+leaking	leaking
+RH	right hand
+side	side
+
+Bucket	bucket
+pin	pin
+retainer	retainer
+bolt	bolt
+missing	missing
+
+hl6720	<id>
+grease	grease
+module	module
+on	on
+backboard	backboard
+broken	broken
+
+Close	close
+out	out
+electrical	electrical
+backlog	backlog
+
+7897	<id>
+Propel	propel
+Cam	cam
+LH	left hand
+Overhaul-Mechanical	overhaul - mechanical
+
+loose	loose
+fitting	fitting
+on	on
+propel	propel
+hose	hose
+under	under
+tub	tub
+
+refit	refit
+old	old
+air	air
+tank	tank
+removed	removed
+from	from
+246	<id>
+
+Replace	replace
+conduits	conduits
+on	on
+fan	fan
+motors	motors
+
+fit	fit
+limit	limit
+switches	switches
+to	to
+hoist	hoist
+brakes	brakes
+
+power	power
+supply	supply
+to	to
+the	the
+gui	GUI
+u/s	unserviceable
+
+Argon	<sensitive>
+GI4	<id>
+-	-
+Machine	machine
+Service	service
+1000hr	<num> hour
+
+replace	replace
+rear	rear
+cab	cabin
+latch	latch
+assemblies	assemblies
+
+7897	<id>
+Internal	internal
+Exam	examination
+of	of
+Fixed	fixed
+Equipment	equipment
+
+Tighten	tighten
+bolts	bolts
+on	on
+walking	walking
+cam	cam
+
+replace	replace
+missing	missing
+RH	right hand
+handrail	handrail
+bolt	bolt
+
+060	<id>
+-	-
+LHS	left hand side
+Boom	boom
+Foot	foot
+Crack	crack
+Repair	repair
+
+repair	repair
+gearshift	gearshift
+fault	fault
+not	not
+selecting	selecting
+
+top	top
+up	up
+pedestal	pedestal
+bearings	bearings
+oil	oil
+
+REMOVE	remove
+BROKEN	broken
+DIFF	differential
+ROD	rod
+BOLTS	bolts
+
+no	no
+a/c	air conditioner
+fans	fans
+
+missing	missing
+hoist	hoist
+rope	rope
+clamp	clamp
+
+blinker	blinker
+dipper	dipper
+switch	switch
+n/w	not working
+
+OIL	oil
+LEAK	leak
+UNDER	under
+BELLY	belly
+PLATE	plate
+
+DD1106	<id>
+Replace	replace
+lip	lip
+shroud	shroud
+
+C	<id>
+5542	
+Drag	drag
+Motor	motor
+Blower	blower
+Connections	connections
+
+Scope	scope
+potential	potential
+storage	storage
+on	on
+dragline	dragline
+
+noisy	noisy
+swing	swing
+motor	motor
+9	<num>
+
+Repair	repair
+GET	GET
+sled	sled
+door	door
+
+Ansul	Ansul
+system	system
+beeping	beeping
+No	no
+power	power
+to	to
+machin	machine
+
+hoist	hoist
+brake	brake
+control	control
+valve	valve
+leaking	leaking
+
+hose	hose
+on	on
+h	H-link
+link	
+
+Mark	mark
+up	up
+map	map
+of	of
+cable	cable
+run	run
+and	and
+positions	positions
+
+Air	air
+compressor	compressor
+outlet	outlet
+temp	temperature
+o/temp	overtemperature
+
+Major	major
+cable	cable
+reroute	reroute
+Ph742	<id>
+
+8664	<id>
+bucket	bucket
+change	change
+out	out
+
+Rinachi	<sensitive>
+Exc	excavator
+-	-
+Machine	machine
+1000hr	<num> hour
+Service	service
+
+FI463	<id>
+fortightly	fortnightly
+sub	sub
+inspection	inspection
+
+Grease	grease
+leak	leak
+-	-
+top	top
+of	of
+Grease	grease
+Pump	pump
+
+526	<id>
+#	number
+3	<num>
+air	air
+comp	compressor
+leaking	leaking
+from	from
+oil	oil
+cooler	cooler
+
+7897	<id>
+Repair	repair
+Walkways	walkways
+&	and
+Handrails	handrails
+
+control	control
+room	room
+recirc	recirculation
+fan	fan
+mounting	mounting
+loose	loose
+
+Retension	retension
+the	the
+GET	GET
+on	on
+dragline	dragline
+6	<num>
+
+Clean	clean
+out	out
+front	front
+of	of
+shoe	shoe
+
+NC	<id>
+797	
+fortnightly	fortnightly
+electrical	electrical
+inspection	inspection
+
+Replace	replace
+bonnet	bonnet
+components	components
+
+C/O	change out
+Drag	drag
+rope	rope
+sockets	sockets
+for	for
+trial	trial
+
+Fire	fire
+ext	extinguisher
+requires	requires
+service	service
+
+REPLACE	replace
+INTERCOOLER	intercooler
+HOSES	hoses
+
+Noise	noise
+in	in
+no	number
+4	<num>
+swing	swing
+g/box	gearbox
+coupling	coupling
+area	area
+
+Install	install
+wear	wear
+package	package
+on	on
+BKT	bucket
+0	<num>
+
+Drag	drag
+motor	motor
+6	<num>
+flash	flash
+over	over
+
+repair	repair
+damaged	damaged
+hoist	hoist
+drum	drum
+guard	guard
+
+APBCB	APBCB
+Tripped	tripped
+
+Install	install
+Air	air
+Cond	conditioner
+for	for
+VistaCam	<sensitive>
+Control	control
+Room	room
+
+LHS	left hand side
+rod	rod
+end	end
+1-2mm	<num>-<num> mm
+movement	movement
+
+trace	trace
+and	and
+repair	repair
+oil	oil
+evacuation	evacuation
+pump	pump
+n/w	not working
+
+I	<id>
+cutting	cutting
+edges	edges
+falling	falling
+off	off
+
+Borken	broken
+bolt	bolt
+on	on
+swing#5	swing number <num>
+pinion	pinion
+
+Batteries	batteries
+need	need
+replacing	replacing
+
+NDT	NDT
+-	-
+Fairlead	fairlead
+Swivel	swivel
+Frames	frames
+VI	VI
+MT	MT
+
+replace	replace
+bottom	bottom
+steer	steering
+shaft	shaft
+universal	universal joint
+
+Cable	cable
+Work	work
+27/01/0011	<date>
+
+5635	<id>
+Propel	propel
+Coupling	coupling
+Lube	lube
+&	and
+Inspection	inspection
+
+Fortnightly	fortnightly
+clean/inspection	clean / inspection
+ll124sub	<id> sub
+

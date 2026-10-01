@@ -1,0 +1,34 @@
+[
+  {
+    "tool": "search",
+    "args": {
+      "query": "bearing vibration",
+      "top_k": 2
+    }
+  },
+  {
+    "tool": "record",
+    "args": {
+      "record_id": "DEMO-001"
+    }
+  },
+  {
+    "tool": "record",
+    "args": {
+      "record_id": "DEMO-002"
+    }
+  },
+  {
+    "tool": "aggregate",
+    "args": {}
+  },
+  {
+    "tool": "finish",
+    "args": {
+      "record_ids": [
+        "DEMO-001",
+        "DEMO-002"
+      ]
+    }
+  }
+]

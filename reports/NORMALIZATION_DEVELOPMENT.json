@@ -1,0 +1,998 @@
+{
+  "split": "validation",
+  "purpose": "development_diagnostic_not_fresh_holdout",
+  "policy_sha256": "3e7a0f5440086379d23dbe8c9bb85c3e4caab17a741cacf109536f40fb1a0da6",
+  "dataset_manifest": {
+    "acquired_utc": "2026-09-30T12:15:53.127934+00:00",
+    "license": "MIT; original notices retained in dataset subdirectories",
+    "files": [
+      {
+        "relative_path": "maintie/LICENSE.md",
+        "source_url": "https://raw.githubusercontent.com/nlp-tlp/maintie/825e7710e4129598da997276a38b3cb40b200bc2/LICENSE.md",
+        "revision": "825e7710e4129598da997276a38b3cb40b200bc2",
+        "sha256": "a406579cd136771c705c521db86ca7d60a6f3de7c9b5460e6193a2df27861bde",
+        "size_bytes": 1068
+      },
+      {
+        "relative_path": "maintie/gold_release.json",
+        "source_url": "https://raw.githubusercontent.com/nlp-tlp/maintie/825e7710e4129598da997276a38b3cb40b200bc2/data/gold_release.json",
+        "revision": "825e7710e4129598da997276a38b3cb40b200bc2",
+        "sha256": "ef811cf4ffd0c90e6a13b1369e24e9d1d08f9a294d873ab4fb1a580096d7d6e0",
+        "size_bytes": 817880
+      },
+      {
+        "relative_path": "maintnorm/LICENSE.md",
+        "source_url": "https://raw.githubusercontent.com/nlp-tlp/maintnorm/main/LICENSE.md",
+        "revision": "main at acquisition; file hash retained",
+        "sha256": "6d10b76838d36d156e42c879b0712f7db0525104b1ea8e9beea0afe4e60203b3",
+        "size_bytes": 1074
+      },
+      {
+        "relative_path": "maintnorm/test_company_a.norm",
+        "source_url": "https://huggingface.co/datasets/nlp-tlp/MaintNorm/resolve/ff058a2d4944e2cae1353dbb8ff2145249bebce3/test_company_a.norm",
+        "revision": "ff058a2d4944e2cae1353dbb8ff2145249bebce3",
+        "sha256": "cf91bfcf4e7f934f9d9d1b09811822a529603049f0aaec1bef332f434d8a0529",
+        "size_bytes": 26874
+      },
+      {
+        "relative_path": "maintnorm/test_company_b.norm",
+        "source_url": "https://huggingface.co/datasets/nlp-tlp/MaintNorm/resolve/ff058a2d4944e2cae1353dbb8ff2145249bebce3/test_company_b.norm",
+        "revision": "ff058a2d4944e2cae1353dbb8ff2145249bebce3",
+        "sha256": "a564dea24ecce9ecdcd5a92ca146351c7e20c57c801a83dab03a370d5887a948",
+        "size_bytes": 29256
+      },
+      {
+        "relative_path": "maintnorm/test_company_c.norm",
+        "source_url": "https://huggingface.co/datasets/nlp-tlp/MaintNorm/resolve/ff058a2d4944e2cae1353dbb8ff2145249bebce3/test_company_c.norm",
+        "revision": "ff058a2d4944e2cae1353dbb8ff2145249bebce3",
+        "sha256": "fcfabb40697fa1eece6879b9d3ec68f689283b7cbcf08e2dc38889c9c49bbf41",
+        "size_bytes": 26549
+      },
+      {
+        "relative_path": "maintnorm/train_company_a.norm",
+        "source_url": "https://huggingface.co/datasets/nlp-tlp/MaintNorm/resolve/ff058a2d4944e2cae1353dbb8ff2145249bebce3/train_company_a.norm",
+        "revision": "ff058a2d4944e2cae1353dbb8ff2145249bebce3",
+        "sha256": "0cbd2efe0dca234891e0d4ec9a7560c65003359f9657132df05f115d37fa77ed",
+        "size_bytes": 215103
+      },
+      {
+        "relative_path": "maintnorm/train_company_b.norm",
+        "source_url": "https://huggingface.co/datasets/nlp-tlp/MaintNorm/resolve/ff058a2d4944e2cae1353dbb8ff2145249bebce3/train_company_b.norm",
+        "revision": "ff058a2d4944e2cae1353dbb8ff2145249bebce3",
+        "sha256": "41ca9c5053bb37867361b424ed5140f3b356c0a436f7e3c9a0fc2228b46835e4",
+        "size_bytes": 232547
+      },
+      {
+        "relative_path": "maintnorm/train_company_c.norm",
+        "source_url": "https://huggingface.co/datasets/nlp-tlp/MaintNorm/resolve/ff058a2d4944e2cae1353dbb8ff2145249bebce3/train_company_c.norm",
+        "revision": "ff058a2d4944e2cae1353dbb8ff2145249bebce3",
+        "sha256": "884b021847cf2250c5a14b5f33341cd2d3580021a6954b9e44e54d233e1b5149",
+        "size_bytes": 212599
+      },
+      {
+        "relative_path": "maintnorm/val_company_a.norm",
+        "source_url": "https://huggingface.co/datasets/nlp-tlp/MaintNorm/resolve/ff058a2d4944e2cae1353dbb8ff2145249bebce3/val_company_a.norm",
+        "revision": "ff058a2d4944e2cae1353dbb8ff2145249bebce3",
+        "sha256": "6b06cad2ab591ebf142c6e06afa41a74d5eb499d941b5ee8e9c9aca34b5528b0",
+        "size_bytes": 26781
+      },
+      {
+        "relative_path": "maintnorm/val_company_b.norm",
+        "source_url": "https://huggingface.co/datasets/nlp-tlp/MaintNorm/resolve/ff058a2d4944e2cae1353dbb8ff2145249bebce3/val_company_b.norm",
+        "revision": "ff058a2d4944e2cae1353dbb8ff2145249bebce3",
+        "sha256": "53c25e2760e459200b3dab421baf62b7c3fad3f860fbf82184d448ed1d4a755d",
+        "size_bytes": 29479
+      },
+      {
+        "relative_path": "maintnorm/val_company_c.norm",
+        "source_url": "https://huggingface.co/datasets/nlp-tlp/MaintNorm/resolve/ff058a2d4944e2cae1353dbb8ff2145249bebce3/val_company_c.norm",
+        "revision": "ff058a2d4944e2cae1353dbb8ff2145249bebce3",
+        "sha256": "e226fc23297108276e0343c07cedf5ca3be23281080445eae2d37644b5800a64",
+        "size_bytes": 26491
+      }
+    ]
+  },
+  "trained_lexicon": {
+    "method": "train_lexicon_v1",
+    "min_support": 5,
+    "minimum_confidence": 0.98,
+    "entries": {
+      "ass": {
+        "target": "assembly",
+        "support": 6,
+        "total": 6,
+        "confidence": 1.0
+      },
+      "assm": {
+        "target": "assembly",
+        "support": 8,
+        "total": 8,
+        "confidence": 1.0
+      },
+      "assy": {
+        "target": "assembly",
+        "support": 29,
+        "total": 29,
+        "confidence": 1.0
+      },
+      "batterys": {
+        "target": "batteries",
+        "support": 13,
+        "total": 13,
+        "confidence": 1.0
+      },
+      "boily": {
+        "target": "boilermaker",
+        "support": 10,
+        "total": 10,
+        "confidence": 1.0
+      },
+      "brg": {
+        "target": "bearing",
+        "support": 19,
+        "total": 19,
+        "confidence": 1.0
+      },
+      "brng": {
+        "target": "bearing",
+        "support": 7,
+        "total": 7,
+        "confidence": 1.0
+      },
+      "cab": {
+        "target": "cabin",
+        "support": 139,
+        "total": 139,
+        "confidence": 1.0
+      },
+      "center": {
+        "target": "centre",
+        "support": 11,
+        "total": 11,
+        "confidence": 1.0
+      },
+      "changeout": {
+        "target": "change out",
+        "support": 13,
+        "total": 13,
+        "confidence": 1.0
+      },
+      "comp": {
+        "target": "compressor",
+        "support": 20,
+        "total": 20,
+        "confidence": 1.0
+      },
+      "con": {
+        "target": "conditioner",
+        "support": 88,
+        "total": 88,
+        "confidence": 1.0
+      },
+      "cont": {
+        "target": "control",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "cyl": {
+        "target": "cylinder",
+        "support": 212,
+        "total": 212,
+        "confidence": 1.0
+      },
+      "diff": {
+        "target": "differential",
+        "support": 106,
+        "total": 106,
+        "confidence": 1.0
+      },
+      "dl": {
+        "target": "dragline",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "dmg": {
+        "target": "damage",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "dog": {
+        "target": "dogbone",
+        "support": 14,
+        "total": 14,
+        "confidence": 1.0
+      },
+      "drv": {
+        "target": "drive",
+        "support": 28,
+        "total": 28,
+        "confidence": 1.0
+      },
+      "duo": {
+        "target": "duo-cone",
+        "support": 10,
+        "total": 10,
+        "confidence": 1.0
+      },
+      "elect": {
+        "target": "electrical",
+        "support": 12,
+        "total": 12,
+        "confidence": 1.0
+      },
+      "eng": {
+        "target": "engine",
+        "support": 96,
+        "total": 96,
+        "confidence": 1.0
+      },
+      "enviro": {
+        "target": "environmental",
+        "support": 8,
+        "total": 8,
+        "confidence": 1.0
+      },
+      "equip": {
+        "target": "equipment",
+        "support": 6,
+        "total": 6,
+        "confidence": 1.0
+      },
+      "err": {
+        "target": "error",
+        "support": 22,
+        "total": 22,
+        "confidence": 1.0
+      },
+      "exam": {
+        "target": "examination",
+        "support": 6,
+        "total": 6,
+        "confidence": 1.0
+      },
+      "exc": {
+        "target": "excavator",
+        "support": 7,
+        "total": 7,
+        "confidence": 1.0
+      },
+      "frnt": {
+        "target": "front",
+        "support": 28,
+        "total": 28,
+        "confidence": 1.0
+      },
+      "gaurd": {
+        "target": "guard",
+        "support": 12,
+        "total": 12,
+        "confidence": 1.0
+      },
+      "gen": {
+        "target": "generator",
+        "support": 25,
+        "total": 25,
+        "confidence": 1.0
+      },
+      "genset": {
+        "target": "generator set",
+        "support": 6,
+        "total": 6,
+        "confidence": 1.0
+      },
+      "guage": {
+        "target": "gauge",
+        "support": 8,
+        "total": 8,
+        "confidence": 1.0
+      },
+      "hi": {
+        "target": "high",
+        "support": 6,
+        "total": 6,
+        "confidence": 1.0
+      },
+      "hr": {
+        "target": "hour",
+        "support": 76,
+        "total": 76,
+        "confidence": 1.0
+      },
+      "hv": {
+        "target": "high voltage",
+        "support": 24,
+        "total": 24,
+        "confidence": 1.0
+      },
+      "hyd": {
+        "target": "hydraulic",
+        "support": 271,
+        "total": 271,
+        "confidence": 1.0
+      },
+      "imp": {
+        "target": "implement",
+        "support": 12,
+        "total": 12,
+        "confidence": 1.0
+      },
+      "impliment": {
+        "target": "implement",
+        "support": 7,
+        "total": 7,
+        "confidence": 1.0
+      },
+      "inop": {
+        "target": "inoperable",
+        "support": 7,
+        "total": 7,
+        "confidence": 1.0
+      },
+      "inter": {
+        "target": "intermediate",
+        "support": 8,
+        "total": 8,
+        "confidence": 1.0
+      },
+      "lft": {
+        "target": "left",
+        "support": 43,
+        "total": 43,
+        "confidence": 1.0
+      },
+      "lh": {
+        "target": "left hand",
+        "support": 176,
+        "total": 178,
+        "confidence": 0.9887640449438202
+      },
+      "loc": {
+        "target": "location",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "maint": {
+        "target": "maintenance",
+        "support": 11,
+        "total": 11,
+        "confidence": 1.0
+      },
+      "mainten": {
+        "target": "maintenance",
+        "support": 6,
+        "total": 6,
+        "confidence": 1.0
+      },
+      "mech": {
+        "target": "mechanical",
+        "support": 518,
+        "total": 518,
+        "confidence": 1.0
+      },
+      "mtr": {
+        "target": "motor",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "noisey": {
+        "target": "noisy",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "oring": {
+        "target": "o-ring",
+        "support": 10,
+        "total": 10,
+        "confidence": 1.0
+      },
+      "overtemp": {
+        "target": "overtemperature",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "parkbrake": {
+        "target": "park brake",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "pluged": {
+        "target": "plugged",
+        "support": 7,
+        "total": 7,
+        "confidence": 1.0
+      },
+      "pos": {
+        "target": "position",
+        "support": 379,
+        "total": 379,
+        "confidence": 1.0
+      },
+      "precleaner": {
+        "target": "pre-cleaner",
+        "support": 18,
+        "total": 18,
+        "confidence": 1.0
+      },
+      "repalce": {
+        "target": "replace",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "repl": {
+        "target": "replace",
+        "support": 452,
+        "total": 453,
+        "confidence": 0.9977924944812362
+      },
+      "replacment": {
+        "target": "replacement",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "req": {
+        "target": "requires",
+        "support": 14,
+        "total": 14,
+        "confidence": 1.0
+      },
+      "rh": {
+        "target": "right hand",
+        "support": 190,
+        "total": 191,
+        "confidence": 0.9947643979057592
+      },
+      "rhr": {
+        "target": "right hand rear",
+        "support": 8,
+        "total": 8,
+        "confidence": 1.0
+      },
+      "rht": {
+        "target": "right",
+        "support": 53,
+        "total": 53,
+        "confidence": 1.0
+      },
+      "siezed": {
+        "target": "seized",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "speedo": {
+        "target": "speedometer",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "steer": {
+        "target": "steering",
+        "support": 69,
+        "total": 70,
+        "confidence": 0.9857142857142858
+      },
+      "stub": {
+        "target": "stud",
+        "support": 7,
+        "total": 7,
+        "confidence": 1.0
+      },
+      "stut": {
+        "target": "stud",
+        "support": 46,
+        "total": 46,
+        "confidence": 1.0
+      },
+      "supp": {
+        "target": "suppression",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "sus": {
+        "target": "suspension",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "susp": {
+        "target": "suspension",
+        "support": 5,
+        "total": 5,
+        "confidence": 1.0
+      },
+      "sw": {
+        "target": "switch",
+        "support": 10,
+        "total": 10,
+        "confidence": 1.0
+      },
+      "sync": {
+        "target": "synchronous",
+        "support": 9,
+        "total": 9,
+        "confidence": 1.0
+      },
+      "sys": {
+        "target": "system",
+        "support": 16,
+        "total": 16,
+        "confidence": 1.0
+      },
+      "tc": {
+        "target": "torque converter",
+        "support": 7,
+        "total": 7,
+        "confidence": 1.0
+      },
+      "teleremote": {
+        "target": "tele-remote",
+        "support": 11,
+        "total": 11,
+        "confidence": 1.0
+      },
+      "temp": {
+        "target": "temperature",
+        "support": 57,
+        "total": 57,
+        "confidence": 1.0
+      },
+      "tex": {
+        "target": "text",
+        "support": 6,
+        "total": 6,
+        "confidence": 1.0
+      },
+      "tranny": {
+        "target": "transmission",
+        "support": 22,
+        "total": 22,
+        "confidence": 1.0
+      },
+      "trk": {
+        "target": "track",
+        "support": 59,
+        "total": 59,
+        "confidence": 1.0
+      },
+      "us": {
+        "target": "unserviceable",
+        "support": 11,
+        "total": 11,
+        "confidence": 1.0
+      },
+      "vert": {
+        "target": "vertical",
+        "support": 6,
+        "total": 6,
+        "confidence": 1.0
+      },
+      "vlv": {
+        "target": "valve",
+        "support": 19,
+        "total": 19,
+        "confidence": 1.0
+      },
+      "wk": {
+        "target": "week",
+        "support": 38,
+        "total": 38,
+        "confidence": 1.0
+      },
+      "wksp": {
+        "target": "workshop",
+        "support": 19,
+        "total": 19,
+        "confidence": 1.0
+      },
+      "wtr": {
+        "target": "water",
+        "support": 13,
+        "total": 13,
+        "confidence": 1.0
+      }
+    },
+    "interpretation": "Training-label vocabulary for development experiments. Domain transfer and semantic correctness require evaluation; it is not enabled in company imports by default."
+  },
+  "scores": {
+    "identity": {
+      "casefold": true,
+      "documents": 1200,
+      "eligible_documents": 1200,
+      "lexical_units": 5091,
+      "correct_units": 3889,
+      "unit_accuracy": 0.7638970732665488,
+      "required_corrections": 1202,
+      "predicted_corrections": 0,
+      "correction_tp": 0,
+      "correction_fp": 0,
+      "correction_fn": 1202,
+      "correction_precision": null,
+      "correction_recall": 0.0,
+      "correction_f1": 0.0,
+      "error_reduction_vs_identity": 0.0,
+      "exact_documents": 489,
+      "document_exact_accuracy": 0.4075,
+      "document_exact_wilson95": [
+        0.3800366683949094,
+        0.4355536667165964
+      ],
+      "masked_units_excluded": 1235,
+      "mask_tag_counts": {
+        "date": 7,
+        "id": 914,
+        "num": 287,
+        "sensitive": 35
+      },
+      "masked_source_units_preserved": 1235,
+      "masked_source_preservation": 1.0,
+      "identifier_units": 914,
+      "identifier_units_preserved": 914,
+      "identifier_preservation": 1.0,
+      "most_frequent_errors": [
+        {
+          "source": "Mech",
+          "target": "mechanical",
+          "prediction": "Mech",
+          "count": 61
+        },
+        {
+          "source": "REPL",
+          "target": "replace",
+          "prediction": "REPL",
+          "count": 57
+        },
+        {
+          "source": "Insp",
+          "target": "inspection",
+          "prediction": "Insp",
+          "count": 44
+        },
+        {
+          "source": "POS",
+          "target": "position",
+          "prediction": "POS",
+          "count": 29
+        },
+        {
+          "source": "u/s",
+          "target": "unserviceable",
+          "prediction": "u/s",
+          "count": 29
+        },
+        {
+          "source": "Svce",
+          "target": "service",
+          "prediction": "Svce",
+          "count": 28
+        },
+        {
+          "source": "&",
+          "target": "and",
+          "prediction": "&",
+          "count": 24
+        },
+        {
+          "source": "RH",
+          "target": "right hand",
+          "prediction": "RH",
+          "count": 24
+        },
+        {
+          "source": "LH",
+          "target": "left hand",
+          "prediction": "LH",
+          "count": 23
+        },
+        {
+          "source": "C/O",
+          "target": "change out",
+          "prediction": "C/O",
+          "count": 20
+        }
+      ]
+    },
+    "dictionary_v0": {
+      "casefold": true,
+      "documents": 1200,
+      "eligible_documents": 1200,
+      "lexical_units": 5091,
+      "correct_units": 3900,
+      "unit_accuracy": 0.7660577489687684,
+      "required_corrections": 1202,
+      "predicted_corrections": 70,
+      "correction_tp": 11,
+      "correction_fp": 59,
+      "correction_fn": 1191,
+      "correction_precision": 0.15714285714285714,
+      "correction_recall": 0.009151414309484194,
+      "correction_f1": 0.01729559748427673,
+      "error_reduction_vs_identity": 0.009151414309484194,
+      "exact_documents": 490,
+      "document_exact_accuracy": 0.4083333333333333,
+      "document_exact_wilson95": [
+        0.38085855084060183,
+        0.43639313260323276
+      ],
+      "masked_units_excluded": 1235,
+      "mask_tag_counts": {
+        "date": 7,
+        "id": 914,
+        "num": 287,
+        "sensitive": 35
+      },
+      "masked_source_units_preserved": 1235,
+      "masked_source_preservation": 1.0,
+      "identifier_units": 914,
+      "identifier_units_preserved": 914,
+      "identifier_preservation": 1.0,
+      "most_frequent_errors": [
+        {
+          "source": "Mech",
+          "target": "mechanical",
+          "prediction": "Mech",
+          "count": 61
+        },
+        {
+          "source": "REPL",
+          "target": "replace",
+          "prediction": "replaced",
+          "count": 57
+        },
+        {
+          "source": "Insp",
+          "target": "inspection",
+          "prediction": "Insp",
+          "count": 44
+        },
+        {
+          "source": "POS",
+          "target": "position",
+          "prediction": "POS",
+          "count": 29
+        },
+        {
+          "source": "u/s",
+          "target": "unserviceable",
+          "prediction": "u/s",
+          "count": 29
+        },
+        {
+          "source": "Svce",
+          "target": "service",
+          "prediction": "Svce",
+          "count": 28
+        },
+        {
+          "source": "&",
+          "target": "and",
+          "prediction": "&",
+          "count": 24
+        },
+        {
+          "source": "RH",
+          "target": "right hand",
+          "prediction": "RH",
+          "count": 24
+        },
+        {
+          "source": "LH",
+          "target": "left hand",
+          "prediction": "LH",
+          "count": 23
+        },
+        {
+          "source": "C/O",
+          "target": "change out",
+          "prediction": "C/O",
+          "count": 20
+        }
+      ]
+    },
+    "noun_alias_v1": {
+      "casefold": true,
+      "documents": 1200,
+      "eligible_documents": 1200,
+      "lexical_units": 5091,
+      "correct_units": 3900,
+      "unit_accuracy": 0.7660577489687684,
+      "required_corrections": 1202,
+      "predicted_corrections": 11,
+      "correction_tp": 11,
+      "correction_fp": 0,
+      "correction_fn": 1191,
+      "correction_precision": 1.0,
+      "correction_recall": 0.009151414309484194,
+      "correction_f1": 0.018136850783182192,
+      "error_reduction_vs_identity": 0.009151414309484194,
+      "exact_documents": 490,
+      "document_exact_accuracy": 0.4083333333333333,
+      "document_exact_wilson95": [
+        0.38085855084060183,
+        0.43639313260323276
+      ],
+      "masked_units_excluded": 1235,
+      "mask_tag_counts": {
+        "date": 7,
+        "id": 914,
+        "num": 287,
+        "sensitive": 35
+      },
+      "masked_source_units_preserved": 1235,
+      "masked_source_preservation": 1.0,
+      "identifier_units": 914,
+      "identifier_units_preserved": 914,
+      "identifier_preservation": 1.0,
+      "most_frequent_errors": [
+        {
+          "source": "Mech",
+          "target": "mechanical",
+          "prediction": "Mech",
+          "count": 61
+        },
+        {
+          "source": "REPL",
+          "target": "replace",
+          "prediction": "REPL",
+          "count": 57
+        },
+        {
+          "source": "Insp",
+          "target": "inspection",
+          "prediction": "Insp",
+          "count": 44
+        },
+        {
+          "source": "POS",
+          "target": "position",
+          "prediction": "POS",
+          "count": 29
+        },
+        {
+          "source": "u/s",
+          "target": "unserviceable",
+          "prediction": "u/s",
+          "count": 29
+        },
+        {
+          "source": "Svce",
+          "target": "service",
+          "prediction": "Svce",
+          "count": 28
+        },
+        {
+          "source": "&",
+          "target": "and",
+          "prediction": "&",
+          "count": 24
+        },
+        {
+          "source": "RH",
+          "target": "right hand",
+          "prediction": "RH",
+          "count": 24
+        },
+        {
+          "source": "LH",
+          "target": "left hand",
+          "prediction": "LH",
+          "count": 23
+        },
+        {
+          "source": "C/O",
+          "target": "change out",
+          "prediction": "C/O",
+          "count": 20
+        }
+      ]
+    },
+    "train_lexicon_v1": {
+      "casefold": true,
+      "documents": 1200,
+      "eligible_documents": 1200,
+      "lexical_units": 5091,
+      "correct_units": 4384,
+      "unit_accuracy": 0.861127479866431,
+      "required_corrections": 1202,
+      "predicted_corrections": 499,
+      "correction_tp": 496,
+      "correction_fp": 3,
+      "correction_fn": 706,
+      "correction_precision": 0.9939879759519038,
+      "correction_recall": 0.41264559068219636,
+      "correction_f1": 0.5831863609641388,
+      "error_reduction_vs_identity": 0.4118136439267887,
+      "exact_documents": 682,
+      "document_exact_accuracy": 0.5683333333333334,
+      "document_exact_wilson95": [
+        0.5401349761018732,
+        0.5960955871490863
+      ],
+      "masked_units_excluded": 1235,
+      "mask_tag_counts": {
+        "date": 7,
+        "id": 914,
+        "num": 287,
+        "sensitive": 35
+      },
+      "masked_source_units_preserved": 1235,
+      "masked_source_preservation": 1.0,
+      "identifier_units": 914,
+      "identifier_units_preserved": 914,
+      "identifier_preservation": 1.0,
+      "most_frequent_errors": [
+        {
+          "source": "Insp",
+          "target": "inspection",
+          "prediction": "Insp",
+          "count": 44
+        },
+        {
+          "source": "u/s",
+          "target": "unserviceable",
+          "prediction": "u/s",
+          "count": 29
+        },
+        {
+          "source": "Svce",
+          "target": "service",
+          "prediction": "Svce",
+          "count": 28
+        },
+        {
+          "source": "&",
+          "target": "and",
+          "prediction": "&",
+          "count": 24
+        },
+        {
+          "source": "C/O",
+          "target": "change out",
+          "prediction": "C/O",
+          "count": 20
+        },
+        {
+          "source": "L/H",
+          "target": "left hand",
+          "prediction": "L/H",
+          "count": 15
+        },
+        {
+          "source": "REP",
+          "target": "repair",
+          "prediction": "REP",
+          "count": 11
+        },
+        {
+          "source": "TRANS",
+          "target": "transmission",
+          "prediction": "TRANS",
+          "count": 11
+        },
+        {
+          "source": "No",
+          "target": "number",
+          "prediction": "No",
+          "count": 10
+        },
+        {
+          "source": "Roll",
+          "target": "roller",
+          "prediction": "Roll",
+          "count": 10
+        }
+      ]
+    }
+  },
+  "interpretation": "Noun aliases avoid inventing action completion from repl/chk/lub. Vocabulary coverage remains narrow. Policy was changed after test errors were reviewed; this validation comparison is development evidence, not independent generalization proof or agent accuracy."
+}

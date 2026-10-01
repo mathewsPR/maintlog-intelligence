@@ -1,0 +1,94 @@
+{
+  "source": {
+    "csv": "company_export.csv",
+    "sha256": "98fe0a5d6f7ac6e98a3bc87a2eaf33119ebfccc387bcf0280ac2e4d165d198da",
+    "profile": "company_profile.json",
+    "profile_sha256": "8bef714a5b6b5bbdac425c528d350dc7b627d2883f4b6eb01b093239d97cd211",
+    "data_kind": "synthetic"
+  },
+  "label_provenance": "Handwritten synthetic development labels. Not a held-out model benchmark.",
+  "cases": [
+    {
+      "id": "bearing-actions",
+      "question": "Review bearing vibration history and reported actions",
+      "query": "bearing vibration",
+      "task": "history",
+      "scope": {
+        "asset_id": "PUMP-001"
+      },
+      "relevant_record_ids": [
+        "WO-01",
+        "WO-02"
+      ],
+      "expected_fields": {
+        "WO-01": {
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 3
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 4,
+              "end": 12
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 14,
+              "end": 48
+            }
+          },
+          "action_status": "planned"
+        },
+        "WO-02": {
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "quote": "BRG-204"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "quote": "Vibration still high"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "quote": "Replaced BRG-204."
+            }
+          },
+          "action_status": "completed"
+        }
+      },
+      "agent_replay": "replay_narrative.json",
+      "fixed_replay": "replay_fixed_extract.json",
+      "expected_aggregate_groups": []
+    },
+    {
+      "id": "negated-leak",
+      "question": "Find the record explicitly saying no seal leak",
+      "query": "no seal leak",
+      "task": "search",
+      "scope": {
+        "asset_id": "PUMP-002"
+      },
+      "relevant_record_ids": [
+        "WO-03"
+      ],
+      "agent_replay": "replay_negation.json",
+      "fixed_replay": "replay_no_model_calls.json"
+    },
+    {
+      "id": "no-lexical-match",
+      "question": "Find xyznotfound records",
+      "query": "xyznotfound",
+      "task": "history",
+      "scope": {
+        "asset_id": "PUMP-001"
+      },
+      "relevant_record_ids": [],
+      "agent_replay": "replay_empty.json",
+      "fixed_replay": "replay_no_model_calls.json",
+      "expected_aggregate_groups": []
+    }
+  ]
+}

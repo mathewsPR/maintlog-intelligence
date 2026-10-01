@@ -1,0 +1,18 @@
+[
+  {
+    "tool": "search",
+    "args": {
+      "query": "xyznotfound"
+    }
+  },
+  {
+    "tool": "aggregate",
+    "args": {}
+  },
+  {
+    "tool": "finish",
+    "args": {
+      "record_ids": []
+    }
+  }
+]

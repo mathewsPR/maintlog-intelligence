@@ -1,0 +1,47 @@
+[
+  {
+    "tool": "extract",
+    "args": {
+      "record_id": "WO-01",
+      "fields": {
+        "component": {
+          "field": "narrative_raw",
+          "start": 0,
+          "end": 3
+        },
+        "problem": {
+          "field": "narrative_raw",
+          "start": 4,
+          "end": 12
+        },
+        "action": {
+          "field": "narrative_raw",
+          "start": 14,
+          "end": 48
+        }
+      },
+      "action_status": "planned"
+    }
+  },
+  {
+    "tool": "extract",
+    "args": {
+      "record_id": "WO-02",
+      "fields": {
+        "component": {
+          "field": "narrative_raw",
+          "quote": "BRG-204"
+        },
+        "problem": {
+          "field": "narrative_raw",
+          "quote": "Vibration still high"
+        },
+        "action": {
+          "field": "narrative_raw",
+          "quote": "Replaced BRG-204."
+        }
+      },
+      "action_status": "completed"
+    }
+  }
+]
