@@ -88,7 +88,9 @@ class StatusRecoveryTests(unittest.TestCase):
                 {"tool": "finish", "args": {"record_ids": ["WO-02"]}},
             ]
         )
-        feedback = contexts[4]["observations"][-1]["result"]
+        self.assertIn("extraction_record", contexts[4])
+        self.assertIn("validation_feedback", contexts[4])
+        feedback = contexts[4]["validation_feedback"]
         self.assertEqual(feedback["rejected_decision"], rejected)
         self.assertIn("tried or attempted", feedback["error"])
         self.assertIn("Do not repeat", feedback["retry_instruction"])
@@ -155,20 +157,40 @@ class StatusRecoveryTests(unittest.TestCase):
                 {"tool": "abstain", "args": {"reason": "Regression fixture"}},
             ]
         )
-        self.assertIn(
-            "WO-02",
-            contexts[1]["workflow_progress"]["pending_candidate_inspection"],
+
+        # After retrieval, inspection and extraction are still pending.
+        progress = contexts[1]["workflow_progress"]
+        self.assertIn("WO-02", progress["pending_candidate_inspection"])
+        self.assertIn("WO-02", progress["pending_candidate_extraction"])
+
+        # Inspection schedules a focused extraction for this source record.
+        focused = contexts[2]
+        self.assertEqual(focused["extraction_record"]["record_id"], "WO-02")
+        source = next(record for record in self.records if record.record_id == "WO-02")
+        self.assertEqual(
+            focused["extraction_record"],
+            {
+                "record_id": source.record_id,
+                "component": source.component,
+                "issue_raw": source.issue_raw,
+                "action_raw": source.action_raw,
+                "narrative_raw": source.narrative_raw,
+            },
         )
-        self.assertNotIn(
-            "WO-02",
-            contexts[2]["workflow_progress"]["pending_candidate_inspection"],
-        )
-        self.assertIn(
-            "WO-02",
-            contexts[2]["workflow_progress"]["pending_candidate_extraction"],
-        )
-        self.assertNotIn(
-            "WO-02",
-            contexts[3]["workflow_progress"]["pending_candidate_extraction"],
-        )
+        self.assertNotIn("workflow_progress", focused)
+        self.assertNotIn("validation_feedback", focused)
+
+        # After acceptance, ordinary tool selection resumes.
+        progress = contexts[3]["workflow_progress"]
+        self.assertNotIn("WO-02", progress["pending_candidate_inspection"])
+        self.assertNotIn("WO-02", progress["pending_candidate_extraction"])
         self.assertEqual(report["status"], "abstained")
+        self.assertEqual(
+            [step["decision_stage"] for step in report["trace"]],
+            [
+                "tool_selection",
+                "tool_selection",
+                "focused_extraction",
+                "tool_selection",
+            ],
+        )

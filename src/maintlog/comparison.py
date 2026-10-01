@@ -1,4 +1,4 @@
-"""Paired workflow comparisons with labels kept outside model context."""
+"""comparison.py   Paired workflow comparisons with labels kept outside model context."""
 
 import argparse
 import hashlib
@@ -27,12 +27,50 @@ class FixedWorkflow:
         self.backend, self.query, self.mode = backend, query, mode
         self.label = "fixed-workflow/" + backend.label
         self.actions = None
+        self.pending_focused_record = None
 
     @property
     def request_count(self):
         return getattr(self.backend, "request_count", 0)
 
     def decide(self, system, context, timeout):
+        extraction_record = context.get("extraction_record")
+        if isinstance(extraction_record, dict):
+            record_id = extraction_record.get("record_id")
+            if not isinstance(record_id, str) or not record_id:
+                raise ValueError("focused extraction requires a record_id")
+
+            if self.pending_focused_record != record_id:
+                if self.actions is None:
+                    raise ValueError(
+                        "fixed extraction requested before workflow initialization"
+                    )
+
+                # Consume the scheduled extraction once. Retries for this
+                # record must not advance the remaining workflow actions.
+                scheduled = next(self.actions, None)
+                if scheduled != {
+                    "tool": "_maybe_extract",
+                    "args": {"record_id": record_id},
+                }:
+                    raise ValueError(
+                        "focused extraction does not match fixed workflow schedule"
+                    )
+
+                self.pending_focused_record = record_id
+
+            # Pass through the focused source and any validation feedback.
+            response = self.backend.decide(system, context, timeout)
+            value = response.get("decision", {})
+            if (
+                value.get("tool") != "extract"
+                or value.get("args", {}).get("record_id") != record_id
+            ):
+                raise ValueError("fixed extractor returned wrong tool or record")
+            return response
+
+        self.pending_focused_record = None
+
         observations = context["observations"]
         if observations and "error" in observations[-1]["result"]:
             decision = {

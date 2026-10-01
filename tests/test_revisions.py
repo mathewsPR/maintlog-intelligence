@@ -1,4 +1,4 @@
-"""Regression tests for review completion, corrections and comparison oracles."""
+"""test_revisions    Regression tests for review completion, corrections and comparison oracles."""
 
 import csv
 import importlib.util
@@ -381,7 +381,15 @@ class ComparisonTests(unittest.TestCase):
         self.assertEqual(len(result["results"]), 18)
         self.assertEqual(result["evidence_kind"], "synthetic_replay_mechanics")
         for row in result["results"]:
-            self.assertEqual(row["metrics"]["record_recall"], 1)
+            with self.subTest(
+                case_id=row["case_id"],
+                workflow=row["workflow"],
+            ):
+                self.assertEqual(
+                    row["metrics"]["record_recall"],
+                    1,
+                    msg=json.dumps(row, indent=2, default=str),
+                )
         bearing = [r for r in result["results"] if r["case_id"] == "bearing-actions"]
         self.assertTrue(
             all(
