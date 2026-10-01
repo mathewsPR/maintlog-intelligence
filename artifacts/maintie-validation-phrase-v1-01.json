@@ -1,0 +1,5169 @@
+{
+  "protocol": "maintie_project_top_level_entities_v1",
+  "split": "validation",
+  "official_split": false,
+  "dataset_sha256": "ef811cf4ffd0c90e6a13b1369e24e9d1d08f9a294d873ab4fb1a580096d7d6e0",
+  "manifest_sha256": "a88886fdd810a79601bbb5c5ac0affea7a885e55ca7a1f54fd315ed3011f8e74",
+  "wrapper_sha256": "bce12ebd7a586fef47f108a0e6d84eecc2503139fc10eea079828793a08b37b5",
+  "reference_run_sha256": "62ca60d8c2be4528d6905721089dcf4b498b84094e9e6cb3f6e1a93ff2986624",
+  "reference_run": "artifacts\\maintie-validation-train-examples-v3-01.json",
+  "training_records": 646,
+  "uses_evaluation_labels_for_selection": false,
+  "method": "training_phrase_dictionary_v1",
+  "model_calls_attempted": 0,
+  "minimum_support": 2,
+  "minimum_label_fraction": 0.9,
+  "dictionary_entries": 268,
+  "records": 215,
+  "failed_responses": 0,
+  "exact_record_matches": 37,
+  "micro": {
+    "tp": 446,
+    "fp": 121,
+    "fn": 226,
+    "precision": 0.7865961199294532,
+    "recall": 0.6636904761904762,
+    "f1": 0.7199354317998385
+  },
+  "per_class": {
+    "PhysicalObject": {
+      "tp": 239,
+      "fp": 50,
+      "fn": 155,
+      "precision": 0.8269896193771626,
+      "recall": 0.6065989847715736,
+      "f1": 0.6998535871156661
+    },
+    "State": {
+      "tp": 68,
+      "fp": 32,
+      "fn": 27,
+      "precision": 0.68,
+      "recall": 0.7157894736842105,
+      "f1": 0.6974358974358974
+    },
+    "Process": {
+      "tp": 17,
+      "fp": 0,
+      "fn": 3,
+      "precision": 1.0,
+      "recall": 0.85,
+      "f1": 0.918918918918919
+    },
+    "Activity": {
+      "tp": 115,
+      "fp": 39,
+      "fn": 39,
+      "precision": 0.7467532467532467,
+      "recall": 0.7467532467532467,
+      "f1": 0.7467532467532467
+    },
+    "Property": {
+      "tp": 7,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1.0,
+      "recall": 0.7777777777777778,
+      "f1": 0.875
+    }
+  },
+  "comparison_to_v3": {
+    "reference_f1": 0.6430155210643016,
+    "current_f1": 0.7199354317998385,
+    "micro_f1_change": 0.07691991073553694,
+    "improved_exact_records": 25,
+    "regressed_exact_records": 40,
+    "changed_exact_outcomes": [
+      {
+        "record_index": 2,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 22,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 35,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 48,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 60,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 70,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 71,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 73,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 77,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 89,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 98,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 101,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 102,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 109,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 129,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 231,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 236,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 241,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 264,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 267,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 273,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 276,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 297,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 310,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 332,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 346,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 354,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 367,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 421,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 424,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 425,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 429,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 447,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 452,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 478,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 483,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 514,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 525,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 530,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 531,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 540,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 602,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 631,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 646,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 678,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 701,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 711,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 717,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 785,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 788,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 810,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 833,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 853,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 873,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 908,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 915,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 948,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 953,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 963,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 967,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 1016,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 1018,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 1026,
+        "reference_exact": false,
+        "current_exact": true
+      },
+      {
+        "record_index": 1041,
+        "reference_exact": true,
+        "current_exact": false
+      },
+      {
+        "record_index": 1053,
+        "reference_exact": true,
+        "current_exact": false
+      }
+    ]
+  },
+  "rows": [
+    {
+      "record_index": 1,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 2,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 3,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 12,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 5,
+            "type": "State"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 14,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 18,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Process"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 19,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 7,
+            "end": 8,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 20,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 4,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 22,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 26,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 29,
+      "prediction": {
+        "entities": [
+          {
+            "start": 5,
+            "end": 6,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 35,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 48,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 51,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 57,
+      "prediction": {
+        "entities": []
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 60,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 63,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 64,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 70,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 71,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 72,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 73,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 76,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 77,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 81,
+      "prediction": {
+        "entities": [
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 89,
+      "prediction": {
+        "entities": [
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 7,
+            "end": 8,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 98,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 101,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 102,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 109,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 110,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 116,
+      "prediction": {
+        "entities": [
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 123,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 127,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 129,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 146,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 147,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 150,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Process"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 157,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 7,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 175,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 176,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 5,
+            "end": 7,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 180,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 6,
+            "end": 8,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 7,
+            "end": 8,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 189,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 195,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 199,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 201,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 203,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 210,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Process"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 214,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 224,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 231,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Property"
+          },
+          {
+            "start": 3,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 236,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 3,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 238,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 241,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 243,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 248,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 249,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 260,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 7,
+            "end": 8,
+            "type": "Activity"
+          },
+          {
+            "start": 7,
+            "end": 9,
+            "type": "Activity"
+          },
+          {
+            "start": 8,
+            "end": 9,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 262,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "Activity"
+          },
+          {
+            "start": 6,
+            "end": 8,
+            "type": "Activity"
+          },
+          {
+            "start": 7,
+            "end": 8,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 264,
+      "prediction": {
+        "entities": [
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 267,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 271,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 273,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 276,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 279,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Property"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 282,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "Property"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 289,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 290,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 297,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 307,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 310,
+      "prediction": {
+        "entities": []
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 332,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 336,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 346,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 354,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 4,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "Property"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 357,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Property"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 359,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 7,
+            "end": 9,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 8,
+            "end": 9,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 361,
+      "prediction": {
+        "entities": [
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 367,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 377,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 380,
+      "prediction": {
+        "entities": [
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 381,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 382,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 385,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Process"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 393,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 401,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 413,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 418,
+      "prediction": {
+        "entities": [
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 5,
+            "type": "Activity"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          },
+          {
+            "start": 5,
+            "end": 7,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 7,
+            "end": 8,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 9,
+            "end": 10,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 10,
+            "end": 11,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 421,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Process"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 423,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 424,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 425,
+      "prediction": {
+        "entities": [
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 429,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 431,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 440,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Process"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 447,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Process"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 452,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 453,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 454,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "State"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 461,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 467,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 471,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 472,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 478,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 483,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 486,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 490,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Process"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 492,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Process"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 496,
+      "prediction": {
+        "entities": [
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 498,
+      "prediction": {
+        "entities": [
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 514,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 520,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 525,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Process"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 526,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 530,
+      "prediction": {
+        "entities": [
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 531,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 532,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 7,
+            "end": 8,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 8,
+            "end": 9,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 540,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 542,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 554,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 564,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "Process"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 568,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 6,
+            "end": 8,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 7,
+            "end": 8,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 569,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 572,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 574,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 7,
+            "end": 8,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 581,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 582,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 588,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 589,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 600,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 602,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "Process"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 614,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 624,
+      "prediction": {
+        "entities": [
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Process"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 631,
+      "prediction": {
+        "entities": [
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "Process"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 633,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 637,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "State"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 645,
+      "prediction": {
+        "entities": [
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 4,
+            "end": 7,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 7,
+            "end": 8,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 646,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 666,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 667,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 8,
+            "end": 9,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 678,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 699,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 701,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 702,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 704,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 707,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 711,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 714,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 7,
+            "end": 8,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 717,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 725,
+      "prediction": {
+        "entities": [
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 726,
+      "prediction": {
+        "entities": [
+          {
+            "start": 7,
+            "end": 8,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 734,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "Process"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 743,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 746,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 754,
+      "prediction": {
+        "entities": [
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 755,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 781,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 785,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 786,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 788,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 805,
+      "prediction": {
+        "entities": [
+          {
+            "start": 5,
+            "end": 6,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 810,
+      "prediction": {
+        "entities": []
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 815,
+      "prediction": {
+        "entities": []
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 816,
+      "prediction": {
+        "entities": [
+          {
+            "start": 5,
+            "end": 6,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 817,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 822,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 824,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 828,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 833,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 834,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 839,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 0,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 842,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 853,
+      "prediction": {
+        "entities": []
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 871,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 873,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 879,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 7,
+            "end": 8,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 882,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 888,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 896,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 906,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 908,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 913,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 915,
+      "prediction": {
+        "entities": []
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 924,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 7,
+            "end": 8,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 929,
+      "prediction": {
+        "entities": [
+          {
+            "start": 3,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 930,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 931,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 936,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "Property"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 940,
+      "prediction": {
+        "entities": [
+          {
+            "start": 4,
+            "end": 5,
+            "type": "Process"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 948,
+      "prediction": {
+        "entities": []
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 953,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 962,
+      "prediction": {
+        "entities": [
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 963,
+      "prediction": {
+        "entities": []
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 967,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 970,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 982,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Property"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 984,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 4,
+            "end": 6,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 6,
+            "end": 7,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 990,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 991,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1007,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1016,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 5,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1017,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1018,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1026,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 1,
+            "end": 3,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": true
+    },
+    {
+      "record_index": 1031,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          },
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1037,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1040,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1041,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1047,
+      "prediction": {
+        "entities": [
+          {
+            "start": 4,
+            "end": 5,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1048,
+      "prediction": {
+        "entities": [
+          {
+            "start": 3,
+            "end": 4,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1052,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "PhysicalObject"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1053,
+      "prediction": {
+        "entities": [
+          {
+            "start": 1,
+            "end": 2,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1065,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 1,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "Activity"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1070,
+      "prediction": {
+        "entities": [
+          {
+            "start": 0,
+            "end": 2,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Process"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    },
+    {
+      "record_index": 1073,
+      "prediction": {
+        "entities": [
+          {
+            "start": 2,
+            "end": 3,
+            "type": "Activity"
+          },
+          {
+            "start": 4,
+            "end": 5,
+            "type": "PhysicalObject"
+          },
+          {
+            "start": 5,
+            "end": 6,
+            "type": "State"
+          }
+        ]
+      },
+      "error": null,
+      "exact_entity_set": false
+    }
+  ],
+  "interpretation": "Training-only phrase matching, with casefolded matching and original token offsets. Nested matches are retained. Label fractions measure annotated training occurrences, not semantic confidence. Unannotated phrase occurrences are not counted as negative training examples."
+}
