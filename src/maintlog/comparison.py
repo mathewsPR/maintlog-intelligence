@@ -215,6 +215,7 @@ def score_case(report: dict, case: dict) -> dict:
         "status_correct": status_correct,
         "status_total": status_total,
         "labeled_task_success": terminal
+        and report.get("completion", {}).get("requirements_met", False)
         and matches
         and fn == 0
         and fp == 0
