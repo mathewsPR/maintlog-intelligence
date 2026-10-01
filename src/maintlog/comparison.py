@@ -320,6 +320,9 @@ def compare(
     trials: int = 1,
     max_steps: int = 20,
     timeout: float = 120,
+    component_selection: bool = False,
+    boundary_adapter: bool = False,
+    focused_status_repair: bool = False,
 ):
     if not 1 <= trials <= 10:
         raise ValueError("trials must be between 1 and 10")
@@ -345,7 +348,13 @@ def compare(
                     report = deterministic(records, case, scope)
                 else:
                     provider = (
-                        LocalServer(base_url, model)
+                        LocalServer(
+                            base_url=base_url,
+                            model=model,
+                            component_selection=component_selection,
+                            boundary_adapter=boundary_adapter,
+                            focused_status_repair=focused_status_repair,
+                        )
                         if backend == "local"
                         else Replay.from_file(path.parent / case[workflow + "_replay"])
                     )
