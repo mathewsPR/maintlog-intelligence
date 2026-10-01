@@ -11,6 +11,8 @@ from pathlib import Path
 from typing import Protocol
 from urllib.parse import urlparse
 
+from .decision_schema import DECISION_SCHEMA, validate_decision
+
 
 class BackendError(ValueError):
     pass
@@ -56,7 +58,7 @@ class LocalServer:
             "model": self.model,
             "temperature": 0,
             "max_tokens": self.max_tokens,
-            "response_format": {"type": "json_object"},
+            "response_format": {"type": "json_object", "schema": DECISION_SCHEMA},
             "messages": [
                 {"role": "system", "content": system},
                 {"role": "user", "content": json.dumps(context, ensure_ascii=False)},
@@ -82,7 +84,7 @@ class LocalServer:
             decoded = json.loads(result.stdout)
             content = decoded["choices"][0]["message"]["content"]
             return {
-                "decision": json.loads(content),
+                "decision": validate_decision(json.loads(content)),
                 "usage": decoded.get("usage", {}),
                 "elapsed_seconds": round(time.monotonic() - started, 3),
                 "model_called": True,

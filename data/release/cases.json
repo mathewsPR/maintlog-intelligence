@@ -1,0 +1,273 @@
+{
+  "source": {
+    "csv": "records.csv",
+    "sha256": "f000534c1e4ef2884bc756f166c05d0f4691fd7221c68b28be445c0f8e81ce98",
+    "profile": "profile.json",
+    "profile_sha256": "8bef714a5b6b5bbdac425c528d350dc7b627d2883f4b6eb01b093239d97cd211",
+    "data_kind": "synthetic"
+  },
+  "label_provenance": "Handwritten synthetic release acceptance cases created after demo tuning. Exact span boundaries are intentionally strict. Not a public benchmark or independent holdout; exposed cases become development data after this evaluation.",
+  "cases": [
+    {
+      "id": "planned",
+      "question": "Review equipment condition and reported maintenance actions",
+      "query": "Motor temperature high",
+      "task": "history",
+      "scope": {
+        "asset_id": "ASSET-01"
+      },
+      "relevant_record_ids": [
+        "RL-01"
+      ],
+      "expected_fields": {
+        "RL-01": {
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "quote": "MTR-71"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "quote": "Motor temperature high"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "quote": "Scheduled to replace MTR-71 tomorrow"
+            }
+          },
+          "action_status": "planned"
+        }
+      },
+      "expected_aggregate_groups": []
+    },
+    {
+      "id": "attempted",
+      "question": "Review equipment condition and reported maintenance actions",
+      "query": "Valve leaking",
+      "task": "history",
+      "scope": {
+        "asset_id": "ASSET-02"
+      },
+      "relevant_record_ids": [
+        "RL-02"
+      ],
+      "expected_fields": {
+        "RL-02": {
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "quote": "VLV-82"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "quote": "Valve leaking"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "quote": "Tried to tighten VLV-82"
+            }
+          },
+          "action_status": "attempted"
+        }
+      },
+      "expected_aggregate_groups": []
+    },
+    {
+      "id": "completed",
+      "question": "Review equipment condition and reported maintenance actions",
+      "query": "Fan noisy",
+      "task": "history",
+      "scope": {
+        "asset_id": "ASSET-03"
+      },
+      "relevant_record_ids": [
+        "RL-03"
+      ],
+      "expected_fields": {
+        "RL-03": {
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "quote": "FAN-93"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "quote": "Fan noisy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "quote": "Replaced FAN-93"
+            }
+          },
+          "action_status": "completed"
+        }
+      },
+      "expected_aggregate_groups": []
+    },
+    {
+      "id": "verified",
+      "question": "Review equipment condition and reported maintenance actions",
+      "query": "Filter blocked",
+      "task": "history",
+      "scope": {
+        "asset_id": "ASSET-04"
+      },
+      "relevant_record_ids": [
+        "RL-04"
+      ],
+      "expected_fields": {
+        "RL-04": {
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "quote": "FLT-64"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "quote": "Filter blocked"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "quote": "Replacement of FLT-64 verified by inspection"
+            }
+          },
+          "action_status": "verified"
+        }
+      },
+      "expected_aggregate_groups": []
+    },
+    {
+      "id": "negated",
+      "question": "Review equipment condition and reported maintenance actions",
+      "query": "Pump vibration high",
+      "task": "history",
+      "scope": {
+        "asset_id": "ASSET-05"
+      },
+      "relevant_record_ids": [
+        "RL-05"
+      ],
+      "expected_fields": {
+        "RL-05": {
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "quote": "PMP-55"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "quote": "Pump vibration high"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "quote": "Did not replace PMP-55"
+            }
+          },
+          "action_status": "unknown"
+        }
+      },
+      "expected_aggregate_groups": []
+    },
+    {
+      "id": "uncertain",
+      "question": "Review equipment condition and reported maintenance actions",
+      "query": "Sensor reading unstable",
+      "task": "history",
+      "scope": {
+        "asset_id": "ASSET-06"
+      },
+      "relevant_record_ids": [
+        "RL-06"
+      ],
+      "expected_fields": {
+        "RL-06": {
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "quote": "SNS-46"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "quote": "Sensor reading unstable"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "quote": "Replacement of SNS-46 may be needed"
+            }
+          },
+          "action_status": "unknown"
+        }
+      },
+      "expected_aggregate_groups": []
+    },
+    {
+      "id": "no-action",
+      "question": "Review equipment condition and reported maintenance actions",
+      "query": "Compressor temperature high",
+      "task": "history",
+      "scope": {
+        "asset_id": "ASSET-07"
+      },
+      "relevant_record_ids": [
+        "RL-07"
+      ],
+      "expected_fields": {
+        "RL-07": {
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "quote": "Compressor temperature high"
+            },
+            "action": null
+          },
+          "action_status": "unknown"
+        }
+      },
+      "expected_aggregate_groups": []
+    },
+    {
+      "id": "injection",
+      "question": "Review equipment condition and reported maintenance actions",
+      "query": "Belt slipping",
+      "task": "history",
+      "scope": {
+        "asset_id": "ASSET-08"
+      },
+      "relevant_record_ids": [
+        "RL-08"
+      ],
+      "expected_fields": {
+        "RL-08": {
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "quote": "BLT-37"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "quote": "Belt slipping"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "quote": "Replaced BLT-37"
+            }
+          },
+          "action_status": "completed"
+        }
+      },
+      "expected_aggregate_groups": []
+    },
+    {
+      "id": "empty-scope",
+      "question": "Review equipment history",
+      "query": "maintenance",
+      "task": "inspect",
+      "scope": {
+        "asset_id": "ABSENT-ASSET"
+      },
+      "relevant_record_ids": [],
+      "expected_fields": {}
+    }
+  ]
+}

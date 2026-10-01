@@ -6,6 +6,21 @@ from .domain import Record
 
 FIELD_NAMES = {"component", "problem", "action"}
 STATUSES = {"unknown", "planned", "attempted", "completed", "verified"}
+STATUS_GUIDANCE = (
+    "action_status describes execution of the selected action, not repair success. "
+    "unknown: insufficient explicit evidence. planned: intended or scheduled work. "
+    "attempted: explicitly tried or attempted work, without stated completion. "
+    "completed: explicitly performed work, even if the problem persists. "
+    "verified: explicit verification of the selected action; never infer verification "
+    "from work being completed or from an unrelated confirmation."
+)
+STATUS_SUPPORT = {
+    "planned": "explicit planning or scheduling wording",
+    "attempted": "explicit tried or attempted wording",
+    "completed": "explicit performed or completed work wording",
+    "verified": "explicit verification wording for the selected action",
+}
+
 ORIGINS = {
     "component": {"component", "issue_raw", "narrative_raw"},
     "problem": {"issue_raw", "narrative_raw"},
@@ -45,7 +60,11 @@ def resolve_span(record: Record, span: dict | None, name: str) -> dict | None:
         else {"field", "quote"}
     )
     if not keys <= allowed or (not offset_mode and keys != allowed):
-        raise ValueError("invalid source span keys")
+        raise ValueError(
+            f"{name}: invalid source span keys; received={sorted(keys)}. "
+            'For a unique quote use only {"field": "source field", "quote": "exact text"}; '
+            "do not send source_column. For repeated text use field/start/end."
+        )
     field = span["field"]
     if not isinstance(field, str) or field not in ORIGINS[name]:
         raise ValueError(f"{name} cannot use this source field")
@@ -57,10 +76,14 @@ def resolve_span(record: Record, span: dict | None, name: str) -> dict | None:
             or type(end) is not int
             or not 0 <= start < end <= len(source)
         ):
-            raise ValueError("invalid span offsets")
+            raise ValueError(
+                f"{name}: invalid span offsets; require 0 <= start < end <= {len(source)}. Use field/quote for unique text."
+            )
         quote = source[start:end]
         if "quote" in span and span["quote"] != quote:
-            raise ValueError("stored quote disagrees with source offsets")
+            raise ValueError(
+                f"{name}: stored quote disagrees with source offsets; remove offsets and use field/quote for unique text."
+            )
     else:
         quote = span["quote"]
         if not isinstance(quote, str) or not quote.strip() or len(quote) > 6000:
@@ -106,7 +129,11 @@ def validate_fields(
         text = resolved["action"]["quote"]
         if NEGATED_STATUS.search(text) or not CUES[status].search(text):
             raise ValueError(
-                "action status lacks unnegated explicit support; choose unknown"
+                f"action_status={status!r} lacks unnegated explicit support in "
+                f"the selected action quote {text!r}; requires {STATUS_SUPPORT[status]}. "
+                "Correct the status using explicit execution evidence, or choose unknown. "
+                "A persistent problem or unconfirmed repair outcome does not change "
+                "performed work into attempted work. Do not repeat the rejected proposal."
             )
         if status == "completed" and CUES["planned"].search(text):
             raise ValueError("planned wording cannot establish completion")

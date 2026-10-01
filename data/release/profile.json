@@ -1,0 +1,8 @@
+{
+  "columns": {
+    "record_id": "Work Order",
+    "event_date": "Date",
+    "asset_id": "Equipment",
+    "narrative": "Technician Notes"
+  }
+}

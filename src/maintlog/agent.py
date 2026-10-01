@@ -8,7 +8,7 @@ from typing import TypedDict
 from .backends import DecisionBackend
 from .brief import recurring_brief
 from .domain import Record
-from .extraction import validate_fields
+from .extraction import STATUS_GUIDANCE, validate_fields
 from .retrieval import search
 from .scope import Scope
 from .tasks import TaskSpec, check_finish
@@ -23,11 +23,22 @@ search {"query":"words", "top_k":5}: lexical search, 1..5 hits. Refine if needed
 record {"record_id":"id"}: inspect full source narrative; IDs must be in scope.
 extract {"record_id":"id", "fields": {"component": span|null,
 "problem": span|null, "action": span|null}, "action_status":"unknown"}:
-propose fields from an inspected record. Prefer span={"field":"narrative_raw" OR
+propose fields from an inspected record. Model INPUT spans are separate from stored OUTPUT metadata. Never send source_column.
+Prefer span={"field":"narrative_raw" OR
 "issue_raw" OR "action_raw", "quote":"exact unique text copied from that field"}.
 If the quote occurs twice, use start/end character offsets instead (zero-based,
 end exclusive). Null means unsupported. action_status is
 unknown/planned/attempted/completed/verified, a proposal requiring human review.
+Extract each field separately, never the whole narrative into every field.
+component is only the object name or identifier, without action verbs.
+problem preserves relevant negation and uncertainty.
+action describes work planned, attempted or performed; repair outcome is separate.
+Completed replacement does not establish successful repair.
+For unique quotes send only field and quote, without offsets.
+Offsets are only for repeated quotes; send field/start/end without quote metadata.
+Every extract requires record_id, fields and action_status. Null is unsupported.
+aggregate accepts NO arguments: {"tool":"aggregate","args":{}}.
+After errors correct the identified issue. Once requirements are met call finish.
 aggregate {}: exact repeated wording over ALL scoped structured input records,
 never counts of search hits. Unstructured records remain unclassified; extracts
 are not added to aggregates before review.
@@ -40,6 +51,8 @@ is allowed only after no-hit search. abstain {"reason":"why evidence is insuffic
 stops incomplete work honestly. Source checks cannot prove task success.
 """
 
+SYSTEM += "\n" + STATUS_GUIDANCE + "\n"
+
 
 class State(TypedDict):
     context: dict
@@ -50,12 +63,18 @@ class State(TypedDict):
 
 
 def _keys(args: dict, required: set[str], optional: set[str] | None = None):
+    allowed = required | (optional or set())
     if (
         not isinstance(args, dict)
         or not required <= set(args)
-        or not set(args) <= required | (optional or set())
+        or not set(args) <= allowed
     ):
-        raise ValueError("invalid tool argument keys")
+        raise ValueError(
+            f"Invalid arguments: required={sorted(required)}, "
+            f"allowed={sorted(allowed)}, "
+            f"received={sorted(args) if isinstance(args, dict) else 'not an object'}. "
+            "Correct the arguments before retrying."
+        )
 
 
 def _string(value, name, limit=500):
@@ -321,9 +340,39 @@ def run_agent(
             else:
                 raise ValueError("unknown tool")
             trace[-1]["tool_result"] = output
+            if tool == "extract":
+                output = {
+                    "record_id": record_id,
+                    "accepted_proposal": {
+                        "fields": {
+                            name: {"field": span["field"], "quote": span["quote"]}
+                            if span is not None
+                            else None
+                            for name, span in spans.items()
+                        },
+                        "action_status": args["action_status"],
+                    },
+                    "review_status": "unreviewed",
+                    "note": "Stored evidence metadata is added by the application.",
+                }
+
         except (ValueError, TypeError, KeyError) as exc:
-            output = {"error": str(exc)}
+            repeated = any(
+                entry.get("tool_error") and entry.get("decision") == state["decision"]
+                for entry in trace[:-1]
+            )
+            output = {
+                "error": str(exc),
+                "rejected_decision": state["decision"],
+                "retry_instruction": (
+                    "Change the specific rejected argument using source evidence. "
+                    "Do not repeat this decision. If evidence is insufficient, use "
+                    "unknown for action_status, null for unsupported fields, or abstain."
+                ),
+                "repeated_invalid_decision": repeated,
+            }
             trace[-1]["tool_error"] = str(exc)
+            trace[-1]["repeated_invalid_decision"] = repeated
             status = "failed" if state["errors"] >= 1 else "running"
             return {
                 "context": {
