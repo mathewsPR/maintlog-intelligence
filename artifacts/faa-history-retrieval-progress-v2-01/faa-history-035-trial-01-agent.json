@@ -1,0 +1,506 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-035",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'BOOT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BOOT",
+  "input_record_ids": [
+    "QMLA2024021320016",
+    "QMLA2024021320017",
+    "QMLA2024081620101"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BOOT",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'BOOT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"PILATS\",\"129\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 6,
+    "model_calls": 6,
+    "elapsed_seconds": 6.625,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "QMLA2024021320016",
+          "date": "2024-01-26",
+          "asset_id": "FAA:[\"PILATS\",\"129\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 188,
+              "end": 207,
+              "quote": "LH TAIL DE-ICE BOOT",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 188,
+              "end": 230,
+              "quote": "LH TAIL DE-ICE BOOT HAD A LONG CRACK IN IT",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "citation": {
+            "record_id": "QMLA2024021320016",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 6433
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "DE-ICE BOOTS MALFUNCTION AS INDICATED ON \"CAWS\" PANEL. PILOT WROTE UP DISCREPANCY IN LOG BOOK. AIRCRAFT BOOTS WERE DEFERRED ON MEL AND THE AIRCRAFT WAS RETURNED TO BASE. MAINTENANCE FOUND LH TAIL DE-ICE BOOT HAD A LONG CRACK IN IT."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-01-26 | record QMLA2024021320016\nSource: SDR-2024.csv, CSV row 6433, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: LH TAIL DE-ICE BOOT [record=QMLA2024021320016; field=narrative_raw; offsets=188:207]\nproblem: LH TAIL DE-ICE BOOT HAD A LONG CRACK IN IT [record=QMLA2024021320016; field=narrative_raw; offsets=188:230]\naction: no extracted proposal\nAction status proposal: unknown\nFull source (narrative_raw, verbatim): DE-ICE BOOTS MALFUNCTION AS INDICATED ON \"CAWS\" PANEL. PILOT WROTE UP DISCREPANCY IN LOG BOOK. AIRCRAFT BOOTS WERE DEFERRED ON MEL AND THE AIRCRAFT WAS RETURNED TO BASE. MAINTENANCE FOUND LH TAIL DE-ICE BOOT HAD A LONG CRACK IN IT.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "QMLA2024021320016",
+        "event_date": "2024-01-26",
+        "asset_id": "FAA:[\"PILATS\",\"129\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 6433,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "DE-ICE BOOTS MALFUNCTION AS INDICATED ON \"CAWS\" PANEL. PILOT WROTE UP DISCREPANCY IN LOG BOOK. AIRCRAFT BOOTS WERE DEFERRED ON MEL AND THE AIRCRAFT WAS RETURNED TO BASE. MAINTENANCE FOUND LH TAIL DE-ICE BOOT HAD A LONG CRACK IN IT.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "QMLA2024021320016",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 188,
+            "end": 207,
+            "quote": "LH TAIL DE-ICE BOOT",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 188,
+            "end": 230,
+            "quote": "LH TAIL DE-ICE BOOT HAD A LONG CRACK IN IT",
+            "source_column": "Discrepancy"
+          },
+          "action": null
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 6433,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BOOT",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 23,
+          "prompt_tokens": 1106,
+          "total_tokens": 1129,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.656,
+        "model_called": true,
+        "working_context_chars": 5240,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "QMLA2024021320016",
+              "asset_id": "FAA:[\"PILATS\",\"129\"]",
+              "date": "2024-01-26",
+              "score": 1.097186980568871,
+              "excerpt": "DE-ICE BOOTS MALFUNCTION AS INDICATED ON \"CAWS\" PANEL. PILOT WROTE UP DISCREPANCY IN LOG BOOK. AIRCRAFT BOOTS WERE DEFERRED ON MEL AND THE AIRCRAFT WAS RETURNED TO BASE. MAINTENANCE FOUND LH TAIL DE-I",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1358,
+          "total_tokens": 1370,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.578,
+        "model_called": true,
+        "working_context_chars": 5807,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "QMLA2024021320016"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 1418,
+          "total_tokens": 1450,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.922,
+        "model_called": true,
+        "working_context_chars": 6034,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "QMLA2024021320016",
+          "event_date": "2024-01-26",
+          "asset_id": "FAA:[\"PILATS\",\"129\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 6433,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "DE-ICE BOOTS MALFUNCTION AS INDICATED ON \"CAWS\" PANEL. PILOT WROTE UP DISCREPANCY IN LOG BOOK. AIRCRAFT BOOTS WERE DEFERRED ON MEL AND THE AIRCRAFT WAS RETURNED TO BASE. MAINTENANCE FOUND LH TAIL DE-ICE BOOT HAD A LONG CRACK IN IT.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "QMLA2024021320016",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "LH TAIL DE-ICE BOOT"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "LH TAIL DE-ICE BOOT HAD A LONG CRACK IN IT"
+              },
+              "action": null
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 105,
+          "prompt_tokens": 1088,
+          "total_tokens": 1193,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.203,
+        "model_called": true,
+        "working_context_chars": 5186,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "QMLA2024021320016",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "LH TAIL DE-ICE BOOT"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "LH TAIL DE-ICE BOOT HAD A LONG CRACK IN IT"
+                },
+                "action": null
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "QMLA2024021320016",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "LH TAIL DE-ICE BOOT"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "LH TAIL DE-ICE BOOT HAD A LONG CRACK IN IT"
+                  },
+                  "action": null
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "QMLA2024021320016",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 188,
+              "end": 207,
+              "quote": "LH TAIL DE-ICE BOOT",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 188,
+              "end": 230,
+              "quote": "LH TAIL DE-ICE BOOT HAD A LONG CRACK IN IT",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 6433,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "QMLA2024021320016"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 1819,
+          "total_tokens": 1851,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.11,
+        "model_called": true,
+        "working_context_chars": 7153,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "QMLA2024021320016",
+          "event_date": "2024-01-26",
+          "asset_id": "FAA:[\"PILATS\",\"129\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 6433,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "DE-ICE BOOTS MALFUNCTION AS INDICATED ON \"CAWS\" PANEL. PILOT WROTE UP DISCREPANCY IN LOG BOOK. AIRCRAFT BOOTS WERE DEFERRED ON MEL AND THE AIRCRAFT WAS RETURNED TO BASE. MAINTENANCE FOUND LH TAIL DE-ICE BOOT HAD A LONG CRACK IN IT.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "QMLA2024021320016"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 33,
+          "prompt_tokens": 2198,
+          "total_tokens": 2231,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.156,
+        "model_called": true,
+        "working_context_chars": 8294,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "QMLA2024021320016"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "QMLA2024021320016"
+    ],
+    "proposal_count": 1,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 6,
+    "elapsed_seconds": 6.625,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 6,
+    "responses_received": 6,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 8987,
+    "known_output_tokens": 237,
+    "known_total_tokens": 9224,
+    "known_cached_input_tokens": 4927
+  }
+}

@@ -35,9 +35,24 @@ def compact_context(context: dict) -> dict:
                         for key in ("record_id", "asset_id", "event_date")
                         if key in result
                     },
-                    "note": "Full source is retained in the audit trace; accepted excerpts follow.",
+                }
+            elif "accepted_proposal" in result:
+                # These annotations are repeated for every record. Keep the
+                # complete accepted evidence contract, including exact quotes.
+                item = {
+                    "tool": item.get("tool", "extract"),
+                    "result": {
+                        key: result[key]
+                        for key in ("record_id", "accepted_proposal")
+                        if key in result
+                    },
                 }
         retained.append(item)
     compact["observations"] = retained
-    compact["working_context_policy"] = "resolved_history_v1"
+    compact["working_context_policy"] = "resolved_history_v2"
+    compact["working_context_notice"] = (
+        "Full sources and prior decisions remain in the audit. Accepted excerpts "
+        "are unreviewed proposals, not established facts. Use record to reread "
+        "source details when needed."
+    )
     return compact

@@ -1,0 +1,543 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-062",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'SKIN'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "SKIN",
+  "input_record_ids": [
+    "CALA2024052901599",
+    "CALA2024071602044",
+    "CALA2024071602045"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "abstained",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "SKIN",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": "The only retrieved record (CALA2024071602045) describes an inspection requirement for a skin panel repair but contains no reported symptoms, no evidence of the fault occurring, and no corrective work performed. The aggregate found zero recurring groups, and the single hit is a procedural instruction rather than a report of a skin issue. There is insufficient evidence to identify symptoms, corrective work, or distinguish performed work from repair success.",
+    "question": "Review this aircraft's reports concerning 'SKIN'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"AIRBUS\",\"489\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 8,
+    "model_calls": 8,
+    "elapsed_seconds": 12.39,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "CALA2024071602045",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 58,
+            "end": 63,
+            "quote": "FR4-6",
+            "source_column": "Discrepancy"
+          },
+          "problem": null,
+          "action": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 134,
+            "quote": "ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 32863,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "SKIN",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 1107,
+          "total_tokens": 1131,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.734,
+        "model_called": true,
+        "working_context_chars": 5240,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024071602045",
+              "asset_id": "FAA:[\"AIRBUS\",\"489\"]",
+              "date": "2024-07-14",
+              "score": 1.4879144934069313,
+              "excerpt": "ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240. 5311-03240 ON OR BEFORE 96,489 TOTAL AIRCRAFT FLIGHT CYCLES OR 2",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1373,
+          "total_tokens": 1385,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.531,
+        "model_called": true,
+        "working_context_chars": 5806,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024071602045"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1433,
+          "total_tokens": 1464,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.86,
+        "model_called": true,
+        "working_context_chars": 6033,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024071602045",
+          "event_date": "2024-07-14",
+          "asset_id": "FAA:[\"AIRBUS\",\"489\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 32863,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240. 5311-03240 ON OR BEFORE 96,489 TOTAL AIRCRAFT FLIGHT CYCLES OR 211,952 TOTAL AIRCRAFT FLIGHT HOURS, WHICHEVER OCCURS FIRST. ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA OKAY TO DIP TO ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD TOMC-APPROVAL FROM SC1ELBYC COMMENT FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240 ON OR BEFORE 96,489 TOTAL AIRCRAFT FLIGHT CYCLES OR 211,952 TOTAL AIRCRAFT FLIGHT HOURS, WHICHEVER OCCURS FIRST REF ECRA 5311-03240 REPAIRED PER ECRA 5311-03240 REG LOG PG 8609545 TOMC APPROVED: QC REVIEWED TOMC APPROVED: QC REVIEWED INSPECTIONS CREATED BY AUTODIP PENDING AIRCRAFT RECORDS REVIEW.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024071602045",
+            "fields": {
+              "component": null,
+              "problem": null,
+              "action": {
+                "field": "narrative_raw",
+                "quote": "ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240"
+              }
+            },
+            "action_status": "planned"
+          }
+        },
+        "usage": {
+          "completion_tokens": 120,
+          "prompt_tokens": 1675,
+          "total_tokens": 1795,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.828,
+        "model_called": true,
+        "working_context_chars": 5820,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024071602045",
+              "fields": {
+                "component": null,
+                "problem": null,
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240"
+                }
+              },
+              "action_status": "planned"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024071602045",
+                "fields": {
+                  "component": null,
+                  "problem": null,
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240"
+                  }
+                },
+                "action_status": "planned"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='planned' lacks unnegated explicit support in the selected action quote 'ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240'; requires explicit planning or scheduling wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024071602045",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 58,
+                "end": 63
+              },
+              "problem": null,
+              "action": {
+                "field": "narrative_raw",
+                "quote": "ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240"
+              }
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 122,
+          "prompt_tokens": 1248,
+          "total_tokens": 1370,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "model_seconds": 2.468,
+        "model_called": true,
+        "working_context_chars": 7369,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": true,
+          "component_recovery_used": true,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024071602045",
+              "fields": {
+                "component": "c1",
+                "problem": null,
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240"
+                }
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024071602045",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 58,
+                    "end": 63
+                  },
+                  "problem": null,
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240"
+                  }
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024071602045",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 58,
+              "end": 63,
+              "quote": "FR4-6",
+              "source_column": "Discrepancy"
+            },
+            "problem": null,
+            "action": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 134,
+              "quote": "ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 32863,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024071602045"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2556,
+          "total_tokens": 2587,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.344,
+        "model_called": true,
+        "working_context_chars": 9422,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024071602045",
+          "event_date": "2024-07-14",
+          "asset_id": "FAA:[\"AIRBUS\",\"489\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 32863,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240. 5311-03240 ON OR BEFORE 96,489 TOTAL AIRCRAFT FLIGHT CYCLES OR 211,952 TOTAL AIRCRAFT FLIGHT HOURS, WHICHEVER OCCURS FIRST. ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA OKAY TO DIP TO ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD TOMC-APPROVAL FROM SC1ELBYC COMMENT FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240 ON OR BEFORE 96,489 TOTAL AIRCRAFT FLIGHT CYCLES OR 211,952 TOTAL AIRCRAFT FLIGHT HOURS, WHICHEVER OCCURS FIRST REF ECRA 5311-03240 REPAIRED PER ECRA 5311-03240 REG LOG PG 8609545 TOMC APPROVED: QC REVIEWED TOMC APPROVED: QC REVIEWED INSPECTIONS CREATED BY AUTODIP PENDING AIRCRAFT RECORDS REVIEW.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "SKIN",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 2294,
+          "total_tokens": 2318,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.375,
+        "model_called": true,
+        "working_context_chars": 8544,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024071602045",
+              "asset_id": "FAA:[\"AIRBUS\",\"489\"]",
+              "date": "2024-07-14",
+              "score": 1.4879144934069313,
+              "excerpt": "ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240. 5311-03240 ON OR BEFORE 96,489 TOTAL AIRCRAFT FLIGHT CYCLES OR 2",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "abstain",
+          "args": {
+            "reason": "The only retrieved record (CALA2024071602045) describes an inspection requirement for a skin panel repair but contains no reported symptoms, no evidence of the fault occurring, and no corrective work performed. The aggregate found zero recurring groups, and the single hit is a procedural instruction rather than a report of a skin issue. There is insufficient evidence to identify symptoms, corrective work, or distinguish performed work from repair success."
+          }
+        },
+        "usage": {
+          "completion_tokens": 109,
+          "prompt_tokens": 1996,
+          "total_tokens": 2105,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 2.25,
+        "model_called": true,
+        "working_context_chars": 7760,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "reason": "The only retrieved record (CALA2024071602045) describes an inspection requirement for a skin panel repair but contains no reported symptoms, no evidence of the fault occurring, and no corrective work performed. The aggregate found zero recurring groups, and the single hit is a procedural instruction rather than a report of a skin issue. There is insufficient evidence to identify symptoms, corrective work, or distinguish performed work from repair success."
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "abstained",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 8,
+    "elapsed_seconds": 12.39,
+    "errors": [
+      {
+        "step": 4,
+        "error": "action_status='planned' lacks unnegated explicit support in the selected action quote 'ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240'; requires explicit planning or scheduling wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 8,
+    "responses_received": 8,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 13682,
+    "known_output_tokens": 473,
+    "known_total_tokens": 14155,
+    "known_cached_input_tokens": 5411
+  }
+}

@@ -1,0 +1,1344 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-033",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'LIGHT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "LIGHT",
+  "input_record_ids": [
+    "CALA2024051301451",
+    "CALA2024053101654",
+    "CALA2024053101655",
+    "CALA2024110401002"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "LIGHT",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'LIGHT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 12,
+    "model_calls": 12,
+    "elapsed_seconds": 22.266,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "CALA2024051301451",
+          "date": "2024-05-10",
+          "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 32,
+              "quote": "ENG 2 OVERHEAT DURING DEPARTURE.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 230,
+              "end": 306,
+              "quote": "REPLACED SEAL ON STAGE 9 DUCT AND SECURED, REF AMM TASK 75-21-01-400-801-F00",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "CALA2024051301451",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 22003
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "ENG 2 OVERHEAT DURING DEPARTURE. LIGHT EXT AFTER REDUCING POWER OPENED #2 ENGINE COWLING AND INSPECTED BLEED AIR DUCTING.  FOUND THE STAGE 9 INLET TUBE [23] TO THE HPTACC VALVE LOOSE AND COMBUSTION CASE FLANG AND SEAL BLOWN OUT.  REPLACED SEAL ON STAGE 9 DUCT AND SECURED, REF AMM TASK 75-21-01-400-801-F00.  ACTUATORS TEST AND IDLE TEST NORMAL."
+          }
+        },
+        {
+          "record_id": "CALA2024053101654",
+          "date": "2024-05-31",
+          "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 157,
+              "end": 232,
+              "quote": "FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 336,
+              "end": 369,
+              "quote": "REINSTALLED TRIM BENEATH SEAT 30A",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "CALA2024053101654",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25348
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - ROW 30ABC AISLE EPL INOP IDT C/W 30A EPL LIGHT OPC NORMAL REF GMM 09-10-05 BENEATH SEAT 30A, FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR IAW BOEING SWPM 20-42-01, CONNECTOR AISLE EPL LIGHT OPS CHECK OKAY / PARTS USED: 00-0366-3-2289,QTY :1 REINSTALLED TRIM BENEATH SEAT 30A, ALL TOOLING REMOVED AND GARBAGE DISPOSED"
+          }
+        },
+        {
+          "record_id": "CALA2024053101655",
+          "date": "2024-05-31",
+          "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 64,
+              "end": 125,
+              "quote": "DOOR 2R LOWER EMERGENCY EXIT SIGN CRACKED AND HALF BULBS INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 262,
+              "end": 357,
+              "quote": "REMOVED AND REPLACED DOOR 2R LOWER EMERGENCY EXIT SIGN ASSEMBLY WITH REFERENCE TO AMM 33-51-01.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "CALA2024053101655",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25349
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - DOOR 2R LOWER EMERGENCY EXIT SIGN CRACKED AND HALF BULBS INOP IDT C/W PROPER INSTALL AND OPS OF DOOR 2R LOWER EMERGENCY LIGHT REF GMM 09-10-05 UPON REMOVAL OF LENSE, FOUND COFFEE AND COFFEE GROUNDS REMOVED AND REPLACED DOOR 2R LOWER EMERGENCY EXIT SIGN ASSEMBLY WITH REFERENCE TO AMM 33-51-01. OPS CK GOOD.PARTS USED: 29-3351-3-0011,QTY :1 VERIFIED AREA IS CLEAN, ALL TOOLING REMOVED."
+          }
+        },
+        {
+          "record_id": "CALA2024110401002",
+          "date": "2024-11-02",
+          "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 64,
+              "end": 113,
+              "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 115,
+              "end": 172,
+              "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "citation": {
+            "record_id": "CALA2024110401002",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 53859
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN. R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11. OPS CHECK GOOD."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-05-10 | record CALA2024051301451\nSource: SDR-2024.csv, CSV row 22003, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: ENG 2 OVERHEAT DURING DEPARTURE. [record=CALA2024051301451; field=narrative_raw; offsets=0:32]\naction: REPLACED SEAL ON STAGE 9 DUCT AND SECURED, REF AMM TASK 75-21-01-400-801-F00 [record=CALA2024051301451; field=narrative_raw; offsets=230:306]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): ENG 2 OVERHEAT DURING DEPARTURE. LIGHT EXT AFTER REDUCING POWER OPENED #2 ENGINE COWLING AND INSPECTED BLEED AIR DUCTING.  FOUND THE STAGE 9 INLET TUBE [23] TO THE HPTACC VALVE LOOSE AND COMBUSTION CASE FLANG AND SEAL BLOWN OUT.  REPLACED SEAL ON STAGE 9 DUCT AND SECURED, REF AMM TASK 75-21-01-400-801-F00.  ACTUATORS TEST AND IDLE TEST NORMAL.\n\n2024-05-31 | record CALA2024053101654\nSource: SDR-2024.csv, CSV row 25348, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR [record=CALA2024053101654; field=narrative_raw; offsets=157:232]\naction: REINSTALLED TRIM BENEATH SEAT 30A [record=CALA2024053101654; field=narrative_raw; offsets=336:369]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - ROW 30ABC AISLE EPL INOP IDT C/W 30A EPL LIGHT OPC NORMAL REF GMM 09-10-05 BENEATH SEAT 30A, FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR IAW BOEING SWPM 20-42-01, CONNECTOR AISLE EPL LIGHT OPS CHECK OKAY / PARTS USED: 00-0366-3-2289,QTY :1 REINSTALLED TRIM BENEATH SEAT 30A, ALL TOOLING REMOVED AND GARBAGE DISPOSED\n\n2024-05-31 | record CALA2024053101655\nSource: SDR-2024.csv, CSV row 25349, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: DOOR 2R LOWER EMERGENCY EXIT SIGN CRACKED AND HALF BULBS INOP [record=CALA2024053101655; field=narrative_raw; offsets=64:125]\naction: REMOVED AND REPLACED DOOR 2R LOWER EMERGENCY EXIT SIGN ASSEMBLY WITH REFERENCE TO AMM 33-51-01. [record=CALA2024053101655; field=narrative_raw; offsets=262:357]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - DOOR 2R LOWER EMERGENCY EXIT SIGN CRACKED AND HALF BULBS INOP IDT C/W PROPER INSTALL AND OPS OF DOOR 2R LOWER EMERGENCY LIGHT REF GMM 09-10-05 UPON REMOVAL OF LENSE, FOUND COFFEE AND COFFEE GROUNDS REMOVED AND REPLACED DOOR 2R LOWER EMERGENCY EXIT SIGN ASSEMBLY WITH REFERENCE TO AMM 33-51-01. OPS CK GOOD.PARTS USED: 29-3351-3-0011,QTY :1 VERIFIED AREA IS CLEAN, ALL TOOLING REMOVED.\n\n2024-11-02 | record CALA2024110401002\nSource: SDR-2024.csv, CSV row 53859, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN [record=CALA2024110401002; field=narrative_raw; offsets=64:113]\naction: R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11 [record=CALA2024110401002; field=narrative_raw; offsets=115:172]\nAction status proposal: unknown\nFull source (narrative_raw, verbatim): EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN. R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11. OPS CHECK GOOD.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "CALA2024051301451",
+        "event_date": "2024-05-10",
+        "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 22003,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "ENG 2 OVERHEAT DURING DEPARTURE. LIGHT EXT AFTER REDUCING POWER OPENED #2 ENGINE COWLING AND INSPECTED BLEED AIR DUCTING.  FOUND THE STAGE 9 INLET TUBE [23] TO THE HPTACC VALVE LOOSE AND COMBUSTION CASE FLANG AND SEAL BLOWN OUT.  REPLACED SEAL ON STAGE 9 DUCT AND SECURED, REF AMM TASK 75-21-01-400-801-F00.  ACTUATORS TEST AND IDLE TEST NORMAL.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "CALA2024053101654",
+        "event_date": "2024-05-31",
+        "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 25348,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - ROW 30ABC AISLE EPL INOP IDT C/W 30A EPL LIGHT OPC NORMAL REF GMM 09-10-05 BENEATH SEAT 30A, FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR IAW BOEING SWPM 20-42-01, CONNECTOR AISLE EPL LIGHT OPS CHECK OKAY / PARTS USED: 00-0366-3-2289,QTY :1 REINSTALLED TRIM BENEATH SEAT 30A, ALL TOOLING REMOVED AND GARBAGE DISPOSED",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "CALA2024053101655",
+        "event_date": "2024-05-31",
+        "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 25349,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - DOOR 2R LOWER EMERGENCY EXIT SIGN CRACKED AND HALF BULBS INOP IDT C/W PROPER INSTALL AND OPS OF DOOR 2R LOWER EMERGENCY LIGHT REF GMM 09-10-05 UPON REMOVAL OF LENSE, FOUND COFFEE AND COFFEE GROUNDS REMOVED AND REPLACED DOOR 2R LOWER EMERGENCY EXIT SIGN ASSEMBLY WITH REFERENCE TO AMM 33-51-01. OPS CK GOOD.PARTS USED: 29-3351-3-0011,QTY :1 VERIFIED AREA IS CLEAN, ALL TOOLING REMOVED.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "CALA2024110401002",
+        "event_date": "2024-11-02",
+        "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 53859,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN. R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11. OPS CHECK GOOD.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "CALA2024110401002",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 64,
+            "end": 113,
+            "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 115,
+            "end": 172,
+            "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 53859,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "CALA2024053101654",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 157,
+            "end": 232,
+            "quote": "FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 336,
+            "end": 369,
+            "quote": "REINSTALLED TRIM BENEATH SEAT 30A",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 25348,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "CALA2024053101655",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 64,
+            "end": 125,
+            "quote": "DOOR 2R LOWER EMERGENCY EXIT SIGN CRACKED AND HALF BULBS INOP",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 262,
+            "end": 357,
+            "quote": "REMOVED AND REPLACED DOOR 2R LOWER EMERGENCY EXIT SIGN ASSEMBLY WITH REFERENCE TO AMM 33-51-01.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 25349,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "CALA2024051301451",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 32,
+            "quote": "ENG 2 OVERHEAT DURING DEPARTURE.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 230,
+            "end": 306,
+            "quote": "REPLACED SEAL ON STAGE 9 DUCT AND SECURED, REF AMM TASK 75-21-01-400-801-F00",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 22003,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 4,
+      "selected_record_count": 4,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 4,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "LIGHT",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 23,
+          "prompt_tokens": 1108,
+          "total_tokens": 1131,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.703,
+        "model_called": true,
+        "working_context_chars": 5244,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024110401002",
+              "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+              "date": "2024-11-02",
+              "score": 0.17839683427888267,
+              "excerpt": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN. R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11. OPS CHECK GOOD.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "CALA2024053101654",
+              "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+              "date": "2024-05-31",
+              "score": 0.14332974984964833,
+              "excerpt": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - ROW 30ABC AISLE EPL INOP IDT C/W 30A EPL LIGHT OPC NORMAL REF GMM 09-10-05 BENEATH SEAT 30A, FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIM",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "CALA2024051301451",
+              "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+              "date": "2024-05-10",
+              "score": 0.1032296288242973,
+              "excerpt": "ENG 2 OVERHEAT DURING DEPARTURE. LIGHT EXT AFTER REDUCING POWER OPENED #2 ENGINE COWLING AND INSPECTED BLEED AIR DUCTING.  FOUND THE STAGE 9 INLET TUBE [23] TO THE HPTACC VALVE LOOSE AND COMBUSTION CA",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "CALA2024053101655",
+              "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+              "date": "2024-05-31",
+              "score": 0.09340623185606405,
+              "excerpt": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - DOOR 2R LOWER EMERGENCY EXIT SIGN CRACKED AND HALF BULBS INOP IDT C/W PROPER INSTALL AND OPS OF DOOR 2R LOWER EMERGENCY LIGHT REF GMM 09",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024110401002"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2072,
+          "total_tokens": 2103,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.078,
+        "model_called": true,
+        "working_context_chars": 7170,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024110401002",
+          "event_date": "2024-11-02",
+          "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 53859,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN. R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11. OPS CHECK GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024110401002",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 121,
+          "prompt_tokens": 1348,
+          "total_tokens": 1469,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.781,
+        "model_called": true,
+        "working_context_chars": 5142,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024110401002",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024110401002",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024110401002",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11"
+              }
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 122,
+          "prompt_tokens": 928,
+          "total_tokens": 1050,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "model_seconds": 2.313,
+        "model_called": true,
+        "working_context_chars": 6696,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": true,
+          "component_recovery_used": true,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024110401002",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11"
+                }
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024110401002",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11"
+                  }
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024110401002",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 64,
+              "end": 113,
+              "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 115,
+              "end": 172,
+              "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 53859,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024053101654"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2926,
+          "total_tokens": 2957,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.437,
+        "model_called": true,
+        "working_context_chars": 9851,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024053101654",
+          "event_date": "2024-05-31",
+          "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25348,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - ROW 30ABC AISLE EPL INOP IDT C/W 30A EPL LIGHT OPC NORMAL REF GMM 09-10-05 BENEATH SEAT 30A, FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR IAW BOEING SWPM 20-42-01, CONNECTOR AISLE EPL LIGHT OPS CHECK OKAY / PARTS USED: 00-0366-3-2289,QTY :1 REINSTALLED TRIM BENEATH SEAT 30A, ALL TOOLING REMOVED AND GARBAGE DISPOSED",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024053101654",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REINSTALLED TRIM BENEATH SEAT 30A"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 118,
+          "prompt_tokens": 1450,
+          "total_tokens": 1568,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.469,
+        "model_called": true,
+        "working_context_chars": 5364,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024053101654",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REINSTALLED TRIM BENEATH SEAT 30A"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024053101654",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REINSTALLED TRIM BENEATH SEAT 30A"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024053101654",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 157,
+              "end": 232,
+              "quote": "FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 336,
+              "end": 369,
+              "quote": "REINSTALLED TRIM BENEATH SEAT 30A",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25348,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024053101655"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2462,
+          "total_tokens": 2493,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.297,
+        "model_called": true,
+        "working_context_chars": 8422,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024053101655",
+          "event_date": "2024-05-31",
+          "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25349,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - DOOR 2R LOWER EMERGENCY EXIT SIGN CRACKED AND HALF BULBS INOP IDT C/W PROPER INSTALL AND OPS OF DOOR 2R LOWER EMERGENCY LIGHT REF GMM 09-10-05 UPON REMOVAL OF LENSE, FOUND COFFEE AND COFFEE GROUNDS REMOVED AND REPLACED DOOR 2R LOWER EMERGENCY EXIT SIGN ASSEMBLY WITH REFERENCE TO AMM 33-51-01. OPS CK GOOD.PARTS USED: 29-3351-3-0011,QTY :1 VERIFIED AREA IS CLEAN, ALL TOOLING REMOVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024053101655",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "DOOR 2R LOWER EMERGENCY EXIT SIGN CRACKED AND HALF BULBS INOP"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED DOOR 2R LOWER EMERGENCY EXIT SIGN ASSEMBLY WITH REFERENCE TO AMM 33-51-01."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 137,
+          "prompt_tokens": 1451,
+          "total_tokens": 1588,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.812,
+        "model_called": true,
+        "working_context_chars": 5401,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024053101655",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "DOOR 2R LOWER EMERGENCY EXIT SIGN CRACKED AND HALF BULBS INOP"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED DOOR 2R LOWER EMERGENCY EXIT SIGN ASSEMBLY WITH REFERENCE TO AMM 33-51-01."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024053101655",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "DOOR 2R LOWER EMERGENCY EXIT SIGN CRACKED AND HALF BULBS INOP"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED DOOR 2R LOWER EMERGENCY EXIT SIGN ASSEMBLY WITH REFERENCE TO AMM 33-51-01."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024053101655",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 64,
+              "end": 125,
+              "quote": "DOOR 2R LOWER EMERGENCY EXIT SIGN CRACKED AND HALF BULBS INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 262,
+              "end": 357,
+              "quote": "REMOVED AND REPLACED DOOR 2R LOWER EMERGENCY EXIT SIGN ASSEMBLY WITH REFERENCE TO AMM 33-51-01.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25349,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024051301451"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2637,
+          "total_tokens": 2668,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.391,
+        "model_called": true,
+        "working_context_chars": 8926,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024051301451",
+          "event_date": "2024-05-10",
+          "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 22003,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ENG 2 OVERHEAT DURING DEPARTURE. LIGHT EXT AFTER REDUCING POWER OPENED #2 ENGINE COWLING AND INSPECTED BLEED AIR DUCTING.  FOUND THE STAGE 9 INLET TUBE [23] TO THE HPTACC VALVE LOOSE AND COMBUSTION CASE FLANG AND SEAL BLOWN OUT.  REPLACED SEAL ON STAGE 9 DUCT AND SECURED, REF AMM TASK 75-21-01-400-801-F00.  ACTUATORS TEST AND IDLE TEST NORMAL.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024051301451",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "ENG 2 OVERHEAT DURING DEPARTURE."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 230,
+                "end": 306
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 133,
+          "prompt_tokens": 1410,
+          "total_tokens": 1543,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.672,
+        "model_called": true,
+        "working_context_chars": 5298,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024051301451",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "ENG 2 OVERHEAT DURING DEPARTURE."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED SEAL ON STAGE 9 DUCT AND SECURED, REF AMM TASK 75-21-01-400-801-F00."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024051301451",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "ENG 2 OVERHEAT DURING DEPARTURE."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED SEAL ON STAGE 9 DUCT AND SECURED, REF AMM TASK 75-21-01-400-801-F00."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": [
+              {
+                "field_name": "action",
+                "before": {
+                  "field": "narrative_raw",
+                  "start": 230,
+                  "end": 307,
+                  "quote": "REPLACED SEAL ON STAGE 9 DUCT AND SECURED, REF AMM TASK 75-21-01-400-801-F00.",
+                  "source_column": null
+                },
+                "after": {
+                  "field": "narrative_raw",
+                  "start": 230,
+                  "end": 306,
+                  "quote": "REPLACED SEAL ON STAGE 9 DUCT AND SECURED, REF AMM TASK 75-21-01-400-801-F00",
+                  "source_column": null
+                }
+              }
+            ]
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024051301451",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 32,
+              "quote": "ENG 2 OVERHEAT DURING DEPARTURE.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 230,
+              "end": 306,
+              "quote": "REPLACED SEAL ON STAGE 9 DUCT AND SECURED, REF AMM TASK 75-21-01-400-801-F00",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 22003,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 11,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 2810,
+          "total_tokens": 2822,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.156,
+        "model_called": true,
+        "working_context_chars": 9386,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 4,
+          "unstructured_record_count": 4,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 12,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "CALA2024051301451",
+              "CALA2024053101654",
+              "CALA2024053101655",
+              "CALA2024110401002"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 83,
+          "prompt_tokens": 2847,
+          "total_tokens": 2930,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 2.141,
+        "model_called": true,
+        "working_context_chars": 9517,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "CALA2024051301451",
+            "CALA2024053101654",
+            "CALA2024053101655",
+            "CALA2024110401002"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "CALA2024051301451",
+      "CALA2024053101654",
+      "CALA2024053101655",
+      "CALA2024110401002"
+    ],
+    "proposal_count": 4,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 12,
+    "elapsed_seconds": 22.266,
+    "errors": [
+      {
+        "step": 3,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 12,
+    "responses_received": 12,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 23449,
+    "known_output_tokens": 873,
+    "known_total_tokens": 24322,
+    "known_cached_input_tokens": 9701
+  }
+}

@@ -1,0 +1,493 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-040",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'CONTROL UNIT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "CONTROL UNIT",
+  "input_record_ids": [
+    "DALA2024030603109",
+    "DALA2024052005361",
+    "DALA2024052105407",
+    "DALA2024081408136",
+    "DALA2024081508182",
+    "DALA2024101410063"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "CONTROL UNIT",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'CONTROL UNIT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"30397\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 6,
+    "selected_record_count": 6,
+    "steps": 5,
+    "model_calls": 5,
+    "elapsed_seconds": 6.453,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "DALA2024030603109",
+          "date": "2024-03-06",
+          "asset_id": "FAA:[\"BOEING\",\"30397\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 78,
+              "end": 150,
+              "quote": "#3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 48,
+              "quote": "SHIP 6705 -MISC/DE- ANTISKID MESSAGE ON APPROACH",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 69,
+              "end": 150,
+              "quote": "REPLACED #3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "DALA2024030603109",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 10529
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "SHIP 6705 -MISC/DE- ANTISKID MESSAGE ON APPROACH. CORRECTIVE ACTION: REPLACED #3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-03-06 | record DALA2024030603109\nSource: SDR-2024.csv, CSV row 10529, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: #3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT [record=DALA2024030603109; field=narrative_raw; offsets=78:150]\nproblem: SHIP 6705 -MISC/DE- ANTISKID MESSAGE ON APPROACH [record=DALA2024030603109; field=narrative_raw; offsets=0:48]\naction: REPLACED #3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT [record=DALA2024030603109; field=narrative_raw; offsets=69:150]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): SHIP 6705 -MISC/DE- ANTISKID MESSAGE ON APPROACH. CORRECTIVE ACTION: REPLACED #3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "DALA2024030603109",
+        "event_date": "2024-03-06",
+        "asset_id": "FAA:[\"BOEING\",\"30397\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 10529,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "SHIP 6705 -MISC/DE- ANTISKID MESSAGE ON APPROACH. CORRECTIVE ACTION: REPLACED #3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "DALA2024030603109",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 78,
+            "end": 150,
+            "quote": "#3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 48,
+            "quote": "SHIP 6705 -MISC/DE- ANTISKID MESSAGE ON APPROACH",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 69,
+            "end": 150,
+            "quote": "REPLACED #3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 10529,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 6,
+      "selected_record_count": 6,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 6,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "CONTROL UNIT",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 1110,
+          "total_tokens": 1134,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.672,
+        "model_called": true,
+        "working_context_chars": 5258,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "DALA2024030603109",
+              "asset_id": "FAA:[\"BOEING\",\"30397\"]",
+              "date": "2024-03-06",
+              "score": 3.706333933105922,
+              "excerpt": "SHIP 6705 -MISC/DE- ANTISKID MESSAGE ON APPROACH. CORRECTIVE ACTION: REPLACED #3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT.",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1346,
+          "total_tokens": 1358,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.547,
+        "model_called": true,
+        "working_context_chars": 5777,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 6,
+          "unstructured_record_count": 6,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DALA2024030603109"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1406,
+          "total_tokens": 1437,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.843,
+        "model_called": true,
+        "working_context_chars": 6004,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DALA2024030603109",
+          "event_date": "2024-03-06",
+          "asset_id": "FAA:[\"BOEING\",\"30397\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 10529,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "SHIP 6705 -MISC/DE- ANTISKID MESSAGE ON APPROACH. CORRECTIVE ACTION: REPLACED #3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024030603109",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "#3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "SHIP 6705 -MISC/DE- ANTISKID MESSAGE ON APPROACH"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACED #3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 165,
+          "prompt_tokens": 1064,
+          "total_tokens": 1229,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 3.282,
+        "model_called": true,
+        "working_context_chars": 5104,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024030603109",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "#3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "SHIP 6705 -MISC/DE- ANTISKID MESSAGE ON APPROACH"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED #3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024030603109",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "#3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "SHIP 6705 -MISC/DE- ANTISKID MESSAGE ON APPROACH"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED #3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "DALA2024030603109",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 78,
+              "end": 150,
+              "quote": "#3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 48,
+              "quote": "SHIP 6705 -MISC/DE- ANTISKID MESSAGE ON APPROACH",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 69,
+              "end": 150,
+              "quote": "REPLACED #3 ANTISKID TRANSDUCER, #3 TRANSDUCER HARNESS, AND ANTISKID CONTROL UNIT",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 10529,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "DALA2024030603109"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 1848,
+          "total_tokens": 1880,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.109,
+        "model_called": true,
+        "working_context_chars": 7221,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "DALA2024030603109"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "DALA2024030603109"
+    ],
+    "proposal_count": 1,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 5,
+    "elapsed_seconds": 6.453,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 5,
+    "responses_received": 5,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 6774,
+    "known_output_tokens": 264,
+    "known_total_tokens": 7038,
+    "known_cached_input_tokens": 3821
+  }
+}

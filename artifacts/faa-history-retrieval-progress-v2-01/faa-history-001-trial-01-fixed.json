@@ -1,0 +1,821 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-001",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'BATTERY PACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BATTERY PACK",
+  "input_record_ids": [
+    "CALA2024031800763",
+    "CALA2024031800764",
+    "CALA2024031800765",
+    "CALA2024031800766",
+    "CALA2024031800769",
+    "CALA2024031800770",
+    "CALA2024032600871"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BATTERY PACK",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'BATTERY PACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"30216\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 7,
+    "selected_record_count": 7,
+    "steps": 8,
+    "model_calls": 4,
+    "elapsed_seconds": 9.313,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "CALA2024032600871",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 30,
+            "end": 67,
+            "quote": "EMER LIGHT BATTERY CHARGER TEST FAIL.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 70,
+            "end": 144,
+            "quote": "EMER LIGHT BATTERY CHARGER REPLACED AND TESTED NORMAL AS PER AMM 33-51-06.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 13671,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "CALA2024031800769",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 96,
+            "end": 127,
+            "quote": "DR R2 M33401 EMER LIGHT BATTERY",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 28,
+            "end": 56,
+            "quote": "EMER LIGHT BATTERY TEST FAIL",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 96,
+            "end": 175,
+            "quote": "DR R2 M33401 EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 12378,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": null,
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BATTERY PACK",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5258,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024032600871",
+              "asset_id": "FAA:[\"BOEING\",\"30216\"]",
+              "date": "2024-03-18",
+              "score": 0.10315399486894626,
+              "excerpt": "B777-33-3-7019 - DR R1 M33094 EMER LIGHT BATTERY CHARGER TEST FAIL.   EMER LIGHT BATTERY CHARGER REPLACED AND TESTED NORMAL AS PER AMM 33-51-06.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "CALA2024031800769",
+              "asset_id": "FAA:[\"BOEING\",\"30216\"]",
+              "date": "2024-03-17",
+              "score": 0.09581319904238418,
+              "excerpt": "SUPPORT TASK - DR R2 M33401 EMER LIGHT BATTERY TEST FAIL TRANSFER TO WO.3007645 AND ORIGINATED  DR R2 M33401 EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "CALA2024031800770",
+              "asset_id": "FAA:[\"BOEING\",\"30216\"]",
+              "date": "2024-03-17",
+              "score": 0.09581319904238418,
+              "excerpt": "SUPPORT TASK - DR L2 M33096 EMER LIGHT BATTERY TEST FAIL TRANSFER TO WO.3007654 AND ORIGINATED DR L2 M33096 EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "CALA2024031800766",
+              "asset_id": "FAA:[\"BOEING\",\"30216\"]",
+              "date": "2024-03-16",
+              "score": 0.0903048508693011,
+              "excerpt": "B777-33-3-7019 - DR L3 M33406 EMER LIGHT BATTERY TEST FAIL TRANSFER REFER NON-ROUTINE WO.2913795 AND ORIGINATED BY  DR L3 M33406 EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM33-51-06 ATTACH",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "CALA2024031800764",
+              "asset_id": "FAA:[\"BOEING\",\"30216\"]",
+              "date": "2024-03-16",
+              "score": 0.08860683397487759,
+              "excerpt": "B777-33-3-7019 - DR L1 M33424 EMER LIGHT BATTERY TEST FAIL TRANSFER REFER NON-ROUTINE WO.2913807 AND ORIGINATED DR L1 M33424 EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PE R AMM 33-51-06 ATTACH F",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024032600871"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 7546,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024032600871",
+          "event_date": "2024-03-18",
+          "asset_id": "FAA:[\"BOEING\",\"30216\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 13671,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "B777-33-3-7019 - DR R1 M33094 EMER LIGHT BATTERY CHARGER TEST FAIL.   EMER LIGHT BATTERY CHARGER REPLACED AND TESTED NORMAL AS PER AMM 33-51-06.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024032600871",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "EMER LIGHT BATTERY CHARGER TEST FAIL."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "EMER LIGHT BATTERY CHARGER REPLACED AND TESTED NORMAL AS PER AMM 33-51-06."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 118,
+          "prompt_tokens": 1336,
+          "total_tokens": 1454,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.063,
+        "model_called": true,
+        "working_context_chars": 5097,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024032600871",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "EMER LIGHT BATTERY CHARGER TEST FAIL."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "EMER LIGHT BATTERY CHARGER REPLACED AND TESTED NORMAL AS PER AMM 33-51-06."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024032600871",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "EMER LIGHT BATTERY CHARGER TEST FAIL."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "EMER LIGHT BATTERY CHARGER REPLACED AND TESTED NORMAL AS PER AMM 33-51-06."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024032600871",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 30,
+              "end": 67,
+              "quote": "EMER LIGHT BATTERY CHARGER TEST FAIL.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 70,
+              "end": 144,
+              "quote": "EMER LIGHT BATTERY CHARGER REPLACED AND TESTED NORMAL AS PER AMM 33-51-06.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 13671,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024031800769"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 8627,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024031800769",
+          "event_date": "2024-03-17",
+          "asset_id": "FAA:[\"BOEING\",\"30216\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12378,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "SUPPORT TASK - DR R2 M33401 EMER LIGHT BATTERY TEST FAIL TRANSFER TO WO.3007645 AND ORIGINATED  DR R2 M33401 EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024031800769",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "DR R2 M33401 EMER LIGHT BATTERY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "EMER LIGHT BATTERY TEST FAIL"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "DR R2 M33401 EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 148,
+          "prompt_tokens": 1082,
+          "total_tokens": 1230,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.578,
+        "model_called": true,
+        "working_context_chars": 5128,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024031800769",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "DR R2 M33401 EMER LIGHT BATTERY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "EMER LIGHT BATTERY TEST FAIL"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "DR R2 M33401 EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024031800769",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "DR R2 M33401 EMER LIGHT BATTERY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "EMER LIGHT BATTERY TEST FAIL"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "DR R2 M33401 EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024031800769",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 96,
+                "end": 127
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 28,
+                "end": 56
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 96,
+                "end": 175
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 121,
+          "prompt_tokens": 1787,
+          "total_tokens": 1908,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.375,
+        "model_called": true,
+        "working_context_chars": 5900,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": {
+            "component": [
+              {
+                "field": "narrative_raw",
+                "start": 15,
+                "end": 46,
+                "quote": "DR R2 M33401 EMER LIGHT BATTERY",
+                "surrounding_text": "SUPPORT TASK - DR R2 M33401 EMER LIGHT BATTERY TEST FAIL TRANSFER TO WO.3007645 AND ORIGINATED  DR R2 M334"
+              },
+              {
+                "field": "narrative_raw",
+                "start": 96,
+                "end": 127,
+                "quote": "DR R2 M33401 EMER LIGHT BATTERY",
+                "surrounding_text": "HT BATTERY TEST FAIL TRANSFER TO WO.3007645 AND ORIGINATED  DR R2 M33401 EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06."
+              }
+            ],
+            "problem": [
+              {
+                "field": "narrative_raw",
+                "start": 28,
+                "end": 56,
+                "quote": "EMER LIGHT BATTERY TEST FAIL",
+                "surrounding_text": "SUPPORT TASK - DR R2 M33401 EMER LIGHT BATTERY TEST FAIL TRANSFER TO WO.3007645 AND ORIGINATED  DR R2 M33401 EMER LI"
+              }
+            ],
+            "action": [
+              {
+                "field": "narrative_raw",
+                "start": 96,
+                "end": 175,
+                "quote": "DR R2 M33401 EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06.",
+                "surrounding_text": "HT BATTERY TEST FAIL TRANSFER TO WO.3007645 AND ORIGINATED  DR R2 M33401 EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06."
+              }
+            ]
+          },
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024031800769",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 96,
+                  "end": 127
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 28,
+                  "end": 56
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 96,
+                  "end": 175
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024031800769",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 96,
+                    "end": 127
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 28,
+                    "end": 56
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 96,
+                    "end": 175
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024031800769",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 96,
+              "end": 127,
+              "quote": "DR R2 M33401 EMER LIGHT BATTERY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 28,
+              "end": 56,
+              "quote": "EMER LIGHT BATTERY TEST FAIL",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 96,
+              "end": 175,
+              "quote": "DR R2 M33401 EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12378,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024031800770"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 8870,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024031800770",
+          "event_date": "2024-03-17",
+          "asset_id": "FAA:[\"BOEING\",\"30216\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12379,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "SUPPORT TASK - DR L2 M33096 EMER LIGHT BATTERY TEST FAIL TRANSFER TO WO.3007654 AND ORIGINATED DR L2 M33096 EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024031800770",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "EMER LIGHT BATTERY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "EMER LIGHT BATTERY TEST FAIL"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 130,
+          "prompt_tokens": 1081,
+          "total_tokens": 1211,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.297,
+        "model_called": true,
+        "working_context_chars": 5127,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024031800770",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "EMER LIGHT BATTERY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "EMER LIGHT BATTERY TEST FAIL"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024031800770",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "EMER LIGHT BATTERY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "EMER LIGHT BATTERY TEST FAIL"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "EMER LIGHT BATTERY REPLACED AND TESTED NORMAL AS PER AMM 33-51-06."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 2,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 4,
+    "elapsed_seconds": 9.313,
+    "errors": [
+      {
+        "step": 5,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      },
+      {
+        "step": 8,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 4,
+    "responses_received": 4,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 5286,
+    "known_output_tokens": 517,
+    "known_total_tokens": 5803,
+    "known_cached_input_tokens": 3088
+  }
+}

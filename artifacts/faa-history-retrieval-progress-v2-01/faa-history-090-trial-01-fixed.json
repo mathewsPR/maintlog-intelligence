@@ -1,0 +1,686 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-090",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'BATTERY PACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BATTERY PACK",
+  "input_record_ids": [
+    "CALA2024072600286",
+    "CALA2024101100813",
+    "CALA2024121201479",
+    "CALA2024121201480"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BATTERY PACK",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'BATTERY PACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"28780\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 7,
+    "model_calls": 2,
+    "elapsed_seconds": 4.671,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "CALA2024121201479",
+          "date": "2024-12-09",
+          "asset_id": "FAA:[\"BOEING\",\"28780\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 86,
+              "end": 120,
+              "quote": "BATTERY M1670 FAILS CAPACITY CHECK",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 121,
+              "end": 198,
+              "quote": "REPLACED EMERG BATTERY PACK AT #M1670, OPS CHK GOOD PER MM# 33-51-06-960-805.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "CALA2024121201479",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 60076
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "EMERGENCY LIGHTING SYSTEM FUNCTIONAL CHECK (INTERIOR AND EXTERIOR) {MULT-33-3-0004} - BATTERY M1670 FAILS CAPACITY CHECK REPLACED EMERG BATTERY PACK AT #M1670, OPS CHK GOOD PER MM# 33-51-06-960-805."
+          }
+        },
+        {
+          "record_id": "CALA2024121201480",
+          "date": "2024-12-09",
+          "asset_id": "FAA:[\"BOEING\",\"28780\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 86,
+              "end": 120,
+              "quote": "M1672 BATTERY FAILS CAPACITY CHECK",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 121,
+              "end": 158,
+              "quote": "REPLACED EMERG BATTERY PACK AT #M1672",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "CALA2024121201480",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 60077
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "EMERGENCY LIGHTING SYSTEM FUNCTIONAL CHECK (INTERIOR AND EXTERIOR) {MULT-33-3-0004} - M1672 BATTERY FAILS CAPACITY CHECK REPLACED EMERG BATTERY PACK AT #M1672, OPS CHK GOOD PER MM# 33-51-06-960-805."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-12-09 | record CALA2024121201479\nSource: SDR-2024.csv, CSV row 60076, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: BATTERY M1670 FAILS CAPACITY CHECK [record=CALA2024121201479; field=narrative_raw; offsets=86:120]\naction: REPLACED EMERG BATTERY PACK AT #M1670, OPS CHK GOOD PER MM# 33-51-06-960-805. [record=CALA2024121201479; field=narrative_raw; offsets=121:198]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): EMERGENCY LIGHTING SYSTEM FUNCTIONAL CHECK (INTERIOR AND EXTERIOR) {MULT-33-3-0004} - BATTERY M1670 FAILS CAPACITY CHECK REPLACED EMERG BATTERY PACK AT #M1670, OPS CHK GOOD PER MM# 33-51-06-960-805.\n\n2024-12-09 | record CALA2024121201480\nSource: SDR-2024.csv, CSV row 60077, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: M1672 BATTERY FAILS CAPACITY CHECK [record=CALA2024121201480; field=narrative_raw; offsets=86:120]\naction: REPLACED EMERG BATTERY PACK AT #M1672 [record=CALA2024121201480; field=narrative_raw; offsets=121:158]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): EMERGENCY LIGHTING SYSTEM FUNCTIONAL CHECK (INTERIOR AND EXTERIOR) {MULT-33-3-0004} - M1672 BATTERY FAILS CAPACITY CHECK REPLACED EMERG BATTERY PACK AT #M1672, OPS CHK GOOD PER MM# 33-51-06-960-805.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "CALA2024121201479",
+        "event_date": "2024-12-09",
+        "asset_id": "FAA:[\"BOEING\",\"28780\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 60076,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "EMERGENCY LIGHTING SYSTEM FUNCTIONAL CHECK (INTERIOR AND EXTERIOR) {MULT-33-3-0004} - BATTERY M1670 FAILS CAPACITY CHECK REPLACED EMERG BATTERY PACK AT #M1670, OPS CHK GOOD PER MM# 33-51-06-960-805.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "CALA2024121201480",
+        "event_date": "2024-12-09",
+        "asset_id": "FAA:[\"BOEING\",\"28780\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 60077,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "EMERGENCY LIGHTING SYSTEM FUNCTIONAL CHECK (INTERIOR AND EXTERIOR) {MULT-33-3-0004} - M1672 BATTERY FAILS CAPACITY CHECK REPLACED EMERG BATTERY PACK AT #M1672, OPS CHK GOOD PER MM# 33-51-06-960-805.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "CALA2024121201479",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 86,
+            "end": 120,
+            "quote": "BATTERY M1670 FAILS CAPACITY CHECK",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 121,
+            "end": 198,
+            "quote": "REPLACED EMERG BATTERY PACK AT #M1670, OPS CHK GOOD PER MM# 33-51-06-960-805.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 60076,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "CALA2024121201480",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 86,
+            "end": 120,
+            "quote": "M1672 BATTERY FAILS CAPACITY CHECK",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 121,
+            "end": 158,
+            "quote": "REPLACED EMERG BATTERY PACK AT #M1672",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 60077,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 4,
+      "selected_record_count": 4,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 4,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BATTERY PACK",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5258,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024121201479",
+              "asset_id": "FAA:[\"BOEING\",\"28780\"]",
+              "date": "2024-12-09",
+              "score": 2.0695051987153064,
+              "excerpt": "EMERGENCY LIGHTING SYSTEM FUNCTIONAL CHECK (INTERIOR AND EXTERIOR) {MULT-33-3-0004} - BATTERY M1670 FAILS CAPACITY CHECK REPLACED EMERG BATTERY PACK AT #M1670, OPS CHK GOOD PER MM# 33-51-06-960-805.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "CALA2024121201480",
+              "asset_id": "FAA:[\"BOEING\",\"28780\"]",
+              "date": "2024-12-09",
+              "score": 2.0695051987153064,
+              "excerpt": "EMERGENCY LIGHTING SYSTEM FUNCTIONAL CHECK (INTERIOR AND EXTERIOR) {MULT-33-3-0004} - M1672 BATTERY FAILS CAPACITY CHECK REPLACED EMERG BATTERY PACK AT #M1672, OPS CHK GOOD PER MM# 33-51-06-960-805.",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024121201479"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 6279,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024121201479",
+          "event_date": "2024-12-09",
+          "asset_id": "FAA:[\"BOEING\",\"28780\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 60076,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EMERGENCY LIGHTING SYSTEM FUNCTIONAL CHECK (INTERIOR AND EXTERIOR) {MULT-33-3-0004} - BATTERY M1670 FAILS CAPACITY CHECK REPLACED EMERG BATTERY PACK AT #M1670, OPS CHK GOOD PER MM# 33-51-06-960-805.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024121201479",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "BATTERY M1670 FAILS CAPACITY CHECK"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACED EMERG BATTERY PACK AT #M1670, OPS CHK GOOD PER MM# 33-51-06-960-805."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 133,
+          "prompt_tokens": 1354,
+          "total_tokens": 1487,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.718,
+        "model_called": true,
+        "working_context_chars": 5151,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024121201479",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "BATTERY M1670 FAILS CAPACITY CHECK"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED EMERG BATTERY PACK AT #M1670, OPS CHK GOOD PER MM# 33-51-06-960-805."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024121201479",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "BATTERY M1670 FAILS CAPACITY CHECK"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED EMERG BATTERY PACK AT #M1670, OPS CHK GOOD PER MM# 33-51-06-960-805."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024121201479",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 86,
+              "end": 120,
+              "quote": "BATTERY M1670 FAILS CAPACITY CHECK",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 121,
+              "end": 198,
+              "quote": "REPLACED EMERG BATTERY PACK AT #M1670, OPS CHK GOOD PER MM# 33-51-06-960-805.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 60076,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024121201480"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 7414,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024121201480",
+          "event_date": "2024-12-09",
+          "asset_id": "FAA:[\"BOEING\",\"28780\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 60077,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EMERGENCY LIGHTING SYSTEM FUNCTIONAL CHECK (INTERIOR AND EXTERIOR) {MULT-33-3-0004} - M1672 BATTERY FAILS CAPACITY CHECK REPLACED EMERG BATTERY PACK AT #M1672, OPS CHK GOOD PER MM# 33-51-06-960-805.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024121201480",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "M1672 BATTERY FAILS CAPACITY CHECK"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACED EMERG BATTERY PACK AT #M1672"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 109,
+          "prompt_tokens": 1354,
+          "total_tokens": 1463,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 1.953,
+        "model_called": true,
+        "working_context_chars": 5151,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024121201480",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "M1672 BATTERY FAILS CAPACITY CHECK"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED EMERG BATTERY PACK AT #M1672"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024121201480",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "M1672 BATTERY FAILS CAPACITY CHECK"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED EMERG BATTERY PACK AT #M1672"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024121201480",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 86,
+              "end": 120,
+              "quote": "M1672 BATTERY FAILS CAPACITY CHECK",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 121,
+              "end": 158,
+              "quote": "REPLACED EMERG BATTERY PACK AT #M1672",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 60077,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 8513,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 4,
+          "unstructured_record_count": 4,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "CALA2024121201479",
+              "CALA2024121201480"
+            ]
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 8740,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "CALA2024121201479",
+            "CALA2024121201480"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "CALA2024121201479",
+      "CALA2024121201480"
+    ],
+    "proposal_count": 2,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 2,
+    "elapsed_seconds": 4.671,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 2,
+    "responses_received": 2,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 2708,
+    "known_output_tokens": 242,
+    "known_total_tokens": 2950,
+    "known_cached_input_tokens": 2330
+  }
+}

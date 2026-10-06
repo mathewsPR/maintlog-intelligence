@@ -1,0 +1,642 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-021",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'CHARGER'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "CHARGER",
+  "input_record_ids": [
+    "SWAA2024060597802",
+    "SWAA2024070909642",
+    "SWAA2024071611870",
+    "SWAA2024082612406",
+    "SWAA2024091235456"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "CHARGER",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'CHARGER'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"34479\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 5,
+    "selected_record_count": 5,
+    "steps": 6,
+    "model_calls": 6,
+    "elapsed_seconds": 9.469,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "SWAA2024091235456",
+          "date": "2024-09-08",
+          "asset_id": "FAA:[\"BOEING\",\"34479\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 182,
+              "end": 187,
+              "quote": "M1669",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 100,
+              "end": 156,
+              "quote": "THE EMERGENCY LIGHTS COMMON TO R/H OVERWING DOORS GO OUT",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 260,
+              "end": 378,
+              "quote": "REMOVED; REPLACED & PERFORMED GOOD INSTALLATION TEST OF EMERGENCY LIGHT BATTERY CHARGER M1669 PER AMM 33-51-06-960-806",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "SWAA2024091235456",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 43682
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "WHILE PERFORMING EMERGENCY LIGHTING OPS CHECK; WHEN LIGHTS ARE TURNED ON; AFTER APPROXIMATELY 5 SEC THE EMERGENCY LIGHTS COMMON TO R/H OVERWING DOORS GO OUT.   TROUBLESHOT AND FOUND M1669 TO BE BAD.   TROUBLESHOT AND FOUND M1669 CHARGER TO BE BAD, VERIFIED.   REMOVED; REPLACED & PERFORMED GOOD INSTALLATION TEST OF EMERGENCY LIGHT BATTERY CHARGER M1669 PER AMM 33-51-06-960-806.  VERIFIED CORRECTIVE ACTION COMPLETE."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-09-08 | record SWAA2024091235456\nSource: SDR-2024.csv, CSV row 43682, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: M1669 [record=SWAA2024091235456; field=narrative_raw; offsets=182:187]\nproblem: THE EMERGENCY LIGHTS COMMON TO R/H OVERWING DOORS GO OUT [record=SWAA2024091235456; field=narrative_raw; offsets=100:156]\naction: REMOVED; REPLACED & PERFORMED GOOD INSTALLATION TEST OF EMERGENCY LIGHT BATTERY CHARGER M1669 PER AMM 33-51-06-960-806 [record=SWAA2024091235456; field=narrative_raw; offsets=260:378]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): WHILE PERFORMING EMERGENCY LIGHTING OPS CHECK; WHEN LIGHTS ARE TURNED ON; AFTER APPROXIMATELY 5 SEC THE EMERGENCY LIGHTS COMMON TO R/H OVERWING DOORS GO OUT.   TROUBLESHOT AND FOUND M1669 TO BE BAD.   TROUBLESHOT AND FOUND M1669 CHARGER TO BE BAD, VERIFIED.   REMOVED; REPLACED & PERFORMED GOOD INSTALLATION TEST OF EMERGENCY LIGHT BATTERY CHARGER M1669 PER AMM 33-51-06-960-806.  VERIFIED CORRECTIVE ACTION COMPLETE.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "SWAA2024091235456",
+        "event_date": "2024-09-08",
+        "asset_id": "FAA:[\"BOEING\",\"34479\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 43682,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "WHILE PERFORMING EMERGENCY LIGHTING OPS CHECK; WHEN LIGHTS ARE TURNED ON; AFTER APPROXIMATELY 5 SEC THE EMERGENCY LIGHTS COMMON TO R/H OVERWING DOORS GO OUT.   TROUBLESHOT AND FOUND M1669 TO BE BAD.   TROUBLESHOT AND FOUND M1669 CHARGER TO BE BAD, VERIFIED.   REMOVED; REPLACED & PERFORMED GOOD INSTALLATION TEST OF EMERGENCY LIGHT BATTERY CHARGER M1669 PER AMM 33-51-06-960-806.  VERIFIED CORRECTIVE ACTION COMPLETE.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "SWAA2024091235456",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 182,
+            "end": 187,
+            "quote": "M1669",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 100,
+            "end": 156,
+            "quote": "THE EMERGENCY LIGHTS COMMON TO R/H OVERWING DOORS GO OUT",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 260,
+            "end": 378,
+            "quote": "REMOVED; REPLACED & PERFORMED GOOD INSTALLATION TEST OF EMERGENCY LIGHT BATTERY CHARGER M1669 PER AMM 33-51-06-960-806",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 43682,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 5,
+      "selected_record_count": 5,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 5,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "CHARGER",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 1110,
+          "total_tokens": 1134,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.875,
+        "model_called": true,
+        "working_context_chars": 5248,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "SWAA2024091235456",
+              "asset_id": "FAA:[\"BOEING\",\"34479\"]",
+              "date": "2024-09-08",
+              "score": 1.8187253307085796,
+              "excerpt": "WHILE PERFORMING EMERGENCY LIGHTING OPS CHECK; WHEN LIGHTS ARE TURNED ON; AFTER APPROXIMATELY 5 SEC THE EMERGENCY LIGHTS COMMON TO R/H OVERWING DOORS GO OUT.   TROUBLESHOT AND FOUND M1669 TO BE BAD.  ",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024091235456"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1358,
+          "total_tokens": 1389,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.828,
+        "model_called": true,
+        "working_context_chars": 5816,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024091235456",
+          "event_date": "2024-09-08",
+          "asset_id": "FAA:[\"BOEING\",\"34479\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 43682,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "WHILE PERFORMING EMERGENCY LIGHTING OPS CHECK; WHEN LIGHTS ARE TURNED ON; AFTER APPROXIMATELY 5 SEC THE EMERGENCY LIGHTS COMMON TO R/H OVERWING DOORS GO OUT.   TROUBLESHOT AND FOUND M1669 TO BE BAD.   TROUBLESHOT AND FOUND M1669 CHARGER TO BE BAD, VERIFIED.   REMOVED; REPLACED & PERFORMED GOOD INSTALLATION TEST OF EMERGENCY LIGHT BATTERY CHARGER M1669 PER AMM 33-51-06-960-806.  VERIFIED CORRECTIVE ACTION COMPLETE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024091235456",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "M1669"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "THE EMERGENCY LIGHTS COMMON TO R/H OVERWING DOORS GO OUT"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED; REPLACED & PERFORMED GOOD INSTALLATION TEST OF EMERGENCY LIGHT BATTERY CHARGER M1669 PER AMM 33-51-06-960-806"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 162,
+          "prompt_tokens": 1154,
+          "total_tokens": 1316,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 3.187,
+        "model_called": true,
+        "working_context_chars": 5370,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024091235456",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "M1669"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "THE EMERGENCY LIGHTS COMMON TO R/H OVERWING DOORS GO OUT"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED; REPLACED & PERFORMED GOOD INSTALLATION TEST OF EMERGENCY LIGHT BATTERY CHARGER M1669 PER AMM 33-51-06-960-806"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024091235456",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "M1669"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "THE EMERGENCY LIGHTS COMMON TO R/H OVERWING DOORS GO OUT"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED; REPLACED & PERFORMED GOOD INSTALLATION TEST OF EMERGENCY LIGHT BATTERY CHARGER M1669 PER AMM 33-51-06-960-806"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024091235456",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 182,
+                "end": 187
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 100,
+                "end": 156
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 260,
+                "end": 378
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 125,
+          "prompt_tokens": 2002,
+          "total_tokens": 2127,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.532,
+        "model_called": true,
+        "working_context_chars": 6183,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": {
+            "component": [
+              {
+                "field": "narrative_raw",
+                "start": 182,
+                "end": 187,
+                "quote": "M1669",
+                "surrounding_text": "OMMON TO R/H OVERWING DOORS GO OUT.   TROUBLESHOT AND FOUND M1669 TO BE BAD.   TROUBLESHOT AND FOUND M1669 CHARGER TO BE BAD,"
+              },
+              {
+                "field": "narrative_raw",
+                "start": 223,
+                "end": 228,
+                "quote": "M1669",
+                "surrounding_text": "UBLESHOT AND FOUND M1669 TO BE BAD.   TROUBLESHOT AND FOUND M1669 CHARGER TO BE BAD, VERIFIED.   REMOVED; REPLACED & PERFORME"
+              },
+              {
+                "field": "narrative_raw",
+                "start": 348,
+                "end": 353,
+                "quote": "M1669",
+                "surrounding_text": "D GOOD INSTALLATION TEST OF EMERGENCY LIGHT BATTERY CHARGER M1669 PER AMM 33-51-06-960-806.  VERIFIED CORRECTIVE ACTION COMPL"
+              }
+            ],
+            "problem": [
+              {
+                "field": "narrative_raw",
+                "start": 100,
+                "end": 156,
+                "quote": "THE EMERGENCY LIGHTS COMMON TO R/H OVERWING DOORS GO OUT",
+                "surrounding_text": "CHECK; WHEN LIGHTS ARE TURNED ON; AFTER APPROXIMATELY 5 SEC THE EMERGENCY LIGHTS COMMON TO R/H OVERWING DOORS GO OUT.   TROUBLESHOT AND FOUND M1669 TO BE BAD.   TROUBLESHOT AND"
+              }
+            ],
+            "action": [
+              {
+                "field": "narrative_raw",
+                "start": 260,
+                "end": 378,
+                "quote": "REMOVED; REPLACED & PERFORMED GOOD INSTALLATION TEST OF EMERGENCY LIGHT BATTERY CHARGER M1669 PER AMM 33-51-06-960-806",
+                "surrounding_text": " TROUBLESHOT AND FOUND M1669 CHARGER TO BE BAD, VERIFIED.   REMOVED; REPLACED & PERFORMED GOOD INSTALLATION TEST OF EMERGENCY LIGHT BATTERY CHARGER M1669 PER AMM 33-51-06-960-806.  VERIFIED CORRECTIVE ACTION COMPLETE."
+              }
+            ]
+          },
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024091235456",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 182,
+                  "end": 187
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 100,
+                  "end": 156
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 260,
+                  "end": 378
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024091235456",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 182,
+                    "end": 187
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 100,
+                    "end": 156
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 260,
+                    "end": 378
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024091235456",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 182,
+              "end": 187,
+              "quote": "M1669",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 100,
+              "end": 156,
+              "quote": "THE EMERGENCY LIGHTS COMMON TO R/H OVERWING DOORS GO OUT",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 260,
+              "end": 378,
+              "quote": "REMOVED; REPLACED & PERFORMED GOOD INSTALLATION TEST OF EMERGENCY LIGHT BATTERY CHARGER M1669 PER AMM 33-51-06-960-806",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 43682,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 2128,
+          "total_tokens": 2140,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.906,
+        "model_called": true,
+        "working_context_chars": 8098,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 5,
+          "unstructured_record_count": 5,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "SWAA2024091235456"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2187,
+          "total_tokens": 2219,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.141,
+        "model_called": true,
+        "working_context_chars": 8325,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "SWAA2024091235456"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "SWAA2024091235456"
+    ],
+    "proposal_count": 1,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 6,
+    "elapsed_seconds": 9.469,
+    "errors": [
+      {
+        "step": 3,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 6,
+    "responses_received": 6,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 9939,
+    "known_output_tokens": 386,
+    "known_total_tokens": 10325,
+    "known_cached_input_tokens": 4773
+  }
+}

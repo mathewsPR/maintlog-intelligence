@@ -38,6 +38,9 @@ Follow workflow_progress. For a completed no-hit task, perform any required
 aggregate and call finish with record_ids=[]; do not claim no maintenance exists.
 
 record {"record_id":"id"}: inspect a full source record. IDs must be in scope.
+After search, inspect retrieved candidates or reread previously inspected records.
+To explore other scoped records, refine search first. A retrieval hit is not proof
+of relevance; the model must still select final records using source evidence.
 Do not return extract during tool selection.
 Required extraction of inspected records is scheduled by the
 application with a focused extraction prompt.
@@ -151,6 +154,7 @@ def run_agent(
 
     seen: set[str] = set()
     inspected: set[str] = set()
+    record_reads: dict[str, int] = {}
     found: set[str] = set()
     trace: list[dict] = []
     proposals: dict[str, dict] = {}
@@ -317,6 +321,27 @@ def run_agent(
                 "abstain",
                 "finish",
             ]
+            blocked = {rid for rid, count in record_reads.items() if count >= 2}
+            if searches > 0 or blocked:
+                eligible = found | inspected if searches > 0 else set(by_id)
+                available = sorted(eligible - blocked)
+                if available:
+                    decision_context["record_available_ids"] = available
+                else:
+                    decision_context["allowed_tools"].remove("record")
+            if blocked:
+                decision_context["record_read_policy"] = {
+                    "max_reads_per_record": 2,
+                    "blocked_record_ids": sorted(blocked),
+                    "instruction": (
+                        "These unchanged records have already been read twice. "
+                        "Do not reread them. Inspect remaining candidates, refine "
+                        "search if justified, or finish using supported relevant "
+                        "records. Accepted null fields mean no supported excerpt "
+                        "was proposed; rereading does not schedule new extraction. "
+                        "Use abstain if the available evidence is insufficient."
+                    ),
+                }
 
         context_chars = len(decision_system) + len(
             json.dumps(decision_context, ensure_ascii=False)
@@ -474,6 +499,19 @@ def run_agent(
                 record_id = _string(args["record_id"], "record_id", 200)
                 if record_id not in by_id:
                     raise ValueError("record is outside the user scope or unknown")
+
+                if searches > 0 and record_id not in found | inspected:
+                    raise ValueError(
+                        "record is not a retrieved candidate; refine search first "
+                        "to explore additional scoped records"
+                    )
+
+                if record_reads.get(record_id, 0) >= 2:
+                    raise ValueError(
+                        "record read limit reached; unchanged source was read twice. "
+                        "Continue with remaining work, finish or abstain."
+                    )
+                record_reads[record_id] = record_reads.get(record_id, 0) + 1
 
                 record = by_id[record_id]
                 output = asdict(record)
@@ -811,6 +849,8 @@ def run_agent(
             "max_steps": max_steps,
             "timeout_seconds": timeout_seconds,
             "max_context_chars": max_context_chars,
+            "max_reads_per_record": 2,
+            "record_selection_policy": "retrieved_or_previously_inspected_after_search",
         },
         "evidence_revision_attempted": sorted(revision_attempted),
         "history_review": history_review,

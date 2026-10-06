@@ -1,0 +1,186 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-070",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'TEE ANGLE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "TEE ANGLE",
+  "input_record_ids": [
+    "FDEA202406050771",
+    "FDEA202406050772",
+    "FDEA202406060775",
+    "FDEA202410061440"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "no_matches",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "TEE ANGLE",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "no_lexical_matches",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'TEE ANGLE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"42716\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 3,
+    "model_calls": 3,
+    "elapsed_seconds": 1.797,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 4,
+      "selected_record_count": 4,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 4,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "TEE ANGLE",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 1112,
+          "total_tokens": 1137,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.782,
+        "model_called": true,
+        "working_context_chars": 5252,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1133,
+          "total_tokens": 1145,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.437,
+        "model_called": true,
+        "working_context_chars": 5337,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 4,
+          "unstructured_record_count": 4,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": []
+          }
+        },
+        "usage": {
+          "completion_tokens": 16,
+          "prompt_tokens": 1193,
+          "total_tokens": 1209,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.563,
+        "model_called": true,
+        "working_context_chars": 5563,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "no_matches",
+    "workflow_complete": true,
+    "selected_record_ids": [],
+    "proposal_count": 0,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 3,
+    "elapsed_seconds": 1.797,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 3,
+    "responses_received": 3,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 3438,
+    "known_output_tokens": 53,
+    "known_total_tokens": 3491,
+    "known_cached_input_tokens": 2385
+  }
+}

@@ -1,4 +1,4 @@
-"""Complete FAA history workflows with versioned budgets and safe resume."""
+"""run_faa_history_batch.pyComplete FAA history workflows with versioned budgets and safe resume."""
 
 import argparse
 import hashlib
@@ -17,8 +17,9 @@ from maintlog.comparison import FixedWorkflow
 from maintlog.domain import Evidence, Record
 from maintlog.scope import Scope
 from maintlog.tasks import TaskSpec
+from maintlog.token_log import summarize_usage
 
-VERSION = "faa-history-operational-v2"
+VERSION = "faa-history-operational-v3-token-log"
 ROOT = Path(__file__).resolve().parents[1]
 CONFIGURATION = {
     "component_selection": True,
@@ -165,6 +166,7 @@ def write_summary(output, rows, planned):
             "The v2 step budget differs from the earlier 12-step batch."
         ),
         "runs": rows,
+        "token_usage": summarize_usage(output / "token-usage.jsonl"),
     }
 
     for workflow in ("agent", "fixed"):
@@ -330,6 +332,8 @@ def main():
             provider = LocalServer(
                 base_url=args.base_url,
                 model=args.model,
+                token_log_path=str((args.output / "token-usage.jsonl").resolve()),
+                run_id=path.stem,
                 **CONFIGURATION,
             )
             chooser = (
@@ -367,6 +371,9 @@ def main():
                     "complete_task_success": None,
                 }
 
+            result["token_usage"] = summarize_usage(
+                args.output / "token-usage.jsonl", path.stem
+            )
             save_json(path, result)
             rows.append({**key, **result["summary"]})
             write_summary(args.output, rows, planned)

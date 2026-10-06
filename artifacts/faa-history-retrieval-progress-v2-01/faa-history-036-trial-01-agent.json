@@ -1,0 +1,514 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-036",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'BRACKET'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BRACKET",
+  "input_record_ids": [
+    "REXA2024060500410",
+    "REXA2024100400836",
+    "REXA2024100400837"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "abstained",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BRACKET",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": "The only retrieved record (REXA2024100400837) describes a bracket found incompatible with existing fastener holes during an SB incorporation, but provides no evidence of corrective work being performed, nor does it confirm repair success. The aggregate found zero recurring groups, and no other records matching the query exist in scope. The available evidence is insufficient to identify reported symptoms, corrective work, or repair success for the 'BRACKET' component.",
+    "question": "Review this aircraft's reports concerning 'BRACKET'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"CNDAIR\",\"15227\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 9,
+    "model_calls": 9,
+    "elapsed_seconds": 12.547,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "REXA2024100400837",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 150,
+            "quote": "WHILE INCORPORATING SB 670SH-53-043 REV C, R/H VOLUMETRIC FUSE BRACKET P/N: SH698-75355-1 FOUND TO NOT WORK WITH EXISTING A/C FASTENER HOLES (LOW ED).",
+            "source_column": "Discrepancy"
+          },
+          "action": null
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 47583,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BRACKET",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 1110,
+          "total_tokens": 1134,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.703,
+        "model_called": true,
+        "working_context_chars": 5248,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "REXA2024100400837",
+              "asset_id": "FAA:[\"CNDAIR\",\"15227\"]",
+              "date": "2024-09-17",
+              "score": 1.3846134752483916,
+              "excerpt": "WHILE INCORPORATING SB 670SH-53-043 REV C, R/H VOLUMETRIC FUSE BRACKET P/N: SH698-75355-1 FOUND TO NOT WORK WITH EXISTING A/C FASTENER HOLES (LOW ED).  COMPLIED WITH MHIRJ EO SH698-75355 SNIEO S10 ALL",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "REXA2024100400837"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1384,
+          "total_tokens": 1415,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.813,
+        "model_called": true,
+        "working_context_chars": 5816,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "REXA2024100400837",
+          "event_date": "2024-09-17",
+          "asset_id": "FAA:[\"CNDAIR\",\"15227\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 47583,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "WHILE INCORPORATING SB 670SH-53-043 REV C, R/H VOLUMETRIC FUSE BRACKET P/N: SH698-75355-1 FOUND TO NOT WORK WITH EXISTING A/C FASTENER HOLES (LOW ED).  COMPLIED WITH MHIRJ EO SH698-75355 SNIEO S10 ALL STEPS 1-5. STEP #3 IS NOT REQUIRED DUE TO THE PART BEING FABRICATED FROM PREFABRICATED MATERIAL CMS6144-14.  COMPLIED WITH ALL STEPS 1-3 FOR INSTALLATION OF THE NEW BRACKET IAW MHIRJ EO KSH670-35829 NIEO S87.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "REXA2024100400837",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "WHILE INCORPORATING SB 670SH-53-043 REV C, R/H VOLUMETRIC FUSE BRACKET P/N: SH698-75355-1 FOUND TO NOT WORK WITH EXISTING A/C FASTENER HOLES (LOW ED)."
+              },
+              "action": null
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 133,
+          "prompt_tokens": 1617,
+          "total_tokens": 1750,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.781,
+        "model_called": true,
+        "working_context_chars": 5362,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "REXA2024100400837",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "WHILE INCORPORATING SB 670SH-53-043 REV C, R/H VOLUMETRIC FUSE BRACKET P/N: SH698-75355-1 FOUND TO NOT WORK WITH EXISTING A/C FASTENER HOLES (LOW ED)."
+                },
+                "action": null
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "REXA2024100400837",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "WHILE INCORPORATING SB 670SH-53-043 REV C, R/H VOLUMETRIC FUSE BRACKET P/N: SH698-75355-1 FOUND TO NOT WORK WITH EXISTING A/C FASTENER HOLES (LOW ED)."
+                  },
+                  "action": null
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "REXA2024100400837",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 150,
+              "quote": "WHILE INCORPORATING SB 670SH-53-043 REV C, R/H VOLUMETRIC FUSE BRACKET P/N: SH698-75355-1 FOUND TO NOT WORK WITH EXISTING A/C FASTENER HOLES (LOW ED).",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 47583,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1911,
+          "total_tokens": 1923,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.906,
+        "model_called": true,
+        "working_context_chars": 7168,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "REXA2024100400837"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1970,
+          "total_tokens": 2001,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.031,
+        "model_called": true,
+        "working_context_chars": 7395,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "REXA2024100400837",
+          "event_date": "2024-09-17",
+          "asset_id": "FAA:[\"CNDAIR\",\"15227\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 47583,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "WHILE INCORPORATING SB 670SH-53-043 REV C, R/H VOLUMETRIC FUSE BRACKET P/N: SH698-75355-1 FOUND TO NOT WORK WITH EXISTING A/C FASTENER HOLES (LOW ED).  COMPLIED WITH MHIRJ EO SH698-75355 SNIEO S10 ALL STEPS 1-5. STEP #3 IS NOT REQUIRED DUE TO THE PART BEING FABRICATED FROM PREFABRICATED MATERIAL CMS6144-14.  COMPLIED WITH ALL STEPS 1-3 FOR INSTALLATION OF THE NEW BRACKET IAW MHIRJ EO KSH670-35829 NIEO S87.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BRACKET",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 2446,
+          "total_tokens": 2470,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.11,
+        "model_called": true,
+        "working_context_chars": 8715,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "REXA2024100400837",
+              "asset_id": "FAA:[\"CNDAIR\",\"15227\"]",
+              "date": "2024-09-17",
+              "score": 1.3846134752483916,
+              "excerpt": "WHILE INCORPORATING SB 670SH-53-043 REV C, R/H VOLUMETRIC FUSE BRACKET P/N: SH698-75355-1 FOUND TO NOT WORK WITH EXISTING A/C FASTENER HOLES (LOW ED).  COMPLIED WITH MHIRJ EO SH698-75355 SNIEO S10 ALL",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BRACKET",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 2651,
+          "total_tokens": 2675,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.203,
+        "model_called": true,
+        "working_context_chars": 9182,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "REXA2024100400837",
+              "asset_id": "FAA:[\"CNDAIR\",\"15227\"]",
+              "date": "2024-09-17",
+              "score": 1.3846134752483916,
+              "excerpt": "WHILE INCORPORATING SB 670SH-53-043 REV C, R/H VOLUMETRIC FUSE BRACKET P/N: SH698-75355-1 FOUND TO NOT WORK WITH EXISTING A/C FASTENER HOLES (LOW ED).  COMPLIED WITH MHIRJ EO SH698-75355 SNIEO S10 ALL",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BRACKET",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 2856,
+          "total_tokens": 2880,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.25,
+        "model_called": true,
+        "working_context_chars": 9649,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "REXA2024100400837",
+              "asset_id": "FAA:[\"CNDAIR\",\"15227\"]",
+              "date": "2024-09-17",
+              "score": 1.3846134752483916,
+              "excerpt": "WHILE INCORPORATING SB 670SH-53-043 REV C, R/H VOLUMETRIC FUSE BRACKET P/N: SH698-75355-1 FOUND TO NOT WORK WITH EXISTING A/C FASTENER HOLES (LOW ED).  COMPLIED WITH MHIRJ EO SH698-75355 SNIEO S10 ALL",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "abstain",
+          "args": {
+            "reason": "The only retrieved record (REXA2024100400837) describes a bracket found incompatible with existing fastener holes during an SB incorporation, but provides no evidence of corrective work being performed, nor does it confirm repair success. The aggregate found zero recurring groups, and no other records matching the query exist in scope. The available evidence is insufficient to identify reported symptoms, corrective work, or repair success for the 'BRACKET' component."
+          }
+        },
+        "usage": {
+          "completion_tokens": 112,
+          "prompt_tokens": 2428,
+          "total_tokens": 2540,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 2.75,
+        "model_called": true,
+        "working_context_chars": 8686,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "reason": "The only retrieved record (REXA2024100400837) describes a bracket found incompatible with existing fastener holes during an SB incorporation, but provides no evidence of corrective work being performed, nor does it confirm repair success. The aggregate found zero recurring groups, and no other records matching the query exist in scope. The available evidence is insufficient to identify reported symptoms, corrective work, or repair success for the 'BRACKET' component."
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "abstained",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 9,
+    "elapsed_seconds": 12.547,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 9,
+    "responses_received": 9,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 18373,
+    "known_output_tokens": 415,
+    "known_total_tokens": 18788,
+    "known_cached_input_tokens": 7525
+  }
+}

@@ -1,0 +1,699 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-010",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'HOOK AND LOOP'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "HOOK AND LOOP",
+  "input_record_ids": [
+    "SWAA2024011640849",
+    "SWAA2024041876190",
+    "SWAA2024101447342",
+    "SWAA2024101447343",
+    "SWAA2024101447344",
+    "SWAA2024101447345"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "HOOK AND LOOP",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'HOOK AND LOOP'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"34631\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 6,
+    "selected_record_count": 6,
+    "steps": 7,
+    "model_calls": 7,
+    "elapsed_seconds": 13.156,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "SWAA2024101447342",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 154,
+            "end": 173,
+            "quote": "FWD ENTRY DOOR GIRT",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 118,
+            "quote": "FORWARD ENTRY DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 200,
+            "end": 287,
+            "quote": "REPOSITIONED HOOK AND LOOP ON FWD ENTRY DOOR GIRT TO BACKING PAN SHELF PER MT 725-61-06",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 49985,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 6,
+      "selected_record_count": 6,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 6,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "HOOK AND LOOP",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 1112,
+          "total_tokens": 1137,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.782,
+        "model_called": true,
+        "working_context_chars": 5260,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "SWAA2024101447342",
+              "asset_id": "FAA:[\"BOEING\",\"34631\"]",
+              "date": "2024-10-11",
+              "score": 1.9085091179214702,
+              "excerpt": "FORWARD ENTRY DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF.<[01] REPOSITIONED HOOK AND LOOP ON FWD ENTRY DOOR GIRT TO BACKING PAN SHELF;[02] ",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "SWAA2024101447343",
+              "asset_id": "FAA:[\"BOEING\",\"34631\"]",
+              "date": "2024-10-11",
+              "score": 1.8904664897058259,
+              "excerpt": "FWD SERVICE DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF.<[01] REPOSITIONED FWD SERVICE DOOR HOOK AND LOOP STRIP ON GIRT TO BACKING PAN SHELF",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "SWAA2024101447344",
+              "asset_id": "FAA:[\"BOEING\",\"34631\"]",
+              "date": "2024-10-11",
+              "score": 1.8747126022916105,
+              "excerpt": "AFT ENTRY DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF.  REPOSITIONED AFT ENTRY DOOR SLIDE FOR HOOK AND LOOP ATTACHMENT TO BACKING PAN SHELF ",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "SWAA2024101447345",
+              "asset_id": "FAA:[\"BOEING\",\"34631\"]",
+              "date": "2024-10-11",
+              "score": 1.8630684246376255,
+              "excerpt": "AFT SERVICE DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF.<[01] REPOSITIONED AFT SERVICE DOOR SLIDE FOR HOOK AND LOOP ATTACHMENT TO PACKING PA",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "SWAA2024041876190",
+              "asset_id": "FAA:[\"BOEING\",\"34631\"]",
+              "date": "2024-04-17",
+              "score": 0.35014454710255977,
+              "excerpt": "CLIMBING THROUGH 5000 FEET; NOTICED #2 ENGINE EGT 944 DEG. RAN QRH ENGINE PARAMETERS RETURNED TO NORMAL.<[01] REMOVED AND REPLACED #2 ENGINE CORE HARNESS CJ10. PERFORMED ENGINE RUN AND OPS TEST. ALL T",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 2247,
+          "total_tokens": 2259,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.875,
+        "model_called": true,
+        "working_context_chars": 7649,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 6,
+          "unstructured_record_count": 6,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024101447342"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2307,
+          "total_tokens": 2338,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.14,
+        "model_called": true,
+        "working_context_chars": 7876,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024101447342",
+          "event_date": "2024-10-11",
+          "asset_id": "FAA:[\"BOEING\",\"34631\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 49985,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FORWARD ENTRY DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF.<[01] REPOSITIONED HOOK AND LOOP ON FWD ENTRY DOOR GIRT TO BACKING PAN SHELF;[02] REPOSITIONED HOOK AND LOOP ON FWD ENTRY DOOR GIRT TO BACKING PAN SHELF PER MT 725-61-06",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024101447342",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "FWD ENTRY DOOR GIRT"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FORWARD ENTRY DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPOSITIONED HOOK AND LOOP ON FWD ENTRY DOOR GIRT TO BACKING PAN SHELF PER MT 725-61-06"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 167,
+          "prompt_tokens": 1107,
+          "total_tokens": 1274,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 3.219,
+        "model_called": true,
+        "working_context_chars": 5240,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024101447342",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "FWD ENTRY DOOR GIRT"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FORWARD ENTRY DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPOSITIONED HOOK AND LOOP ON FWD ENTRY DOOR GIRT TO BACKING PAN SHELF PER MT 725-61-06"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024101447342",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "FWD ENTRY DOOR GIRT"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FORWARD ENTRY DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPOSITIONED HOOK AND LOOP ON FWD ENTRY DOOR GIRT TO BACKING PAN SHELF PER MT 725-61-06"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024101447342",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 154,
+                "end": 173
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 118
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 200,
+                "end": 287
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 123,
+          "prompt_tokens": 1844,
+          "total_tokens": 1967,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.422,
+        "model_called": true,
+        "working_context_chars": 6098,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": {
+            "component": [
+              {
+                "field": "narrative_raw",
+                "start": 154,
+                "end": 173,
+                "quote": "FWD ENTRY DOOR GIRT",
+                "surrounding_text": "N THE BACKING PAN SHELF.<[01] REPOSITIONED HOOK AND LOOP ON FWD ENTRY DOOR GIRT TO BACKING PAN SHELF;[02] REPOSITIONED HOOK AND LOOP ON FWD"
+              },
+              {
+                "field": "narrative_raw",
+                "start": 230,
+                "end": 249,
+                "quote": "FWD ENTRY DOOR GIRT",
+                "surrounding_text": "IRT TO BACKING PAN SHELF;[02] REPOSITIONED HOOK AND LOOP ON FWD ENTRY DOOR GIRT TO BACKING PAN SHELF PER MT 725-61-06"
+              }
+            ],
+            "problem": [
+              {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 118,
+                "quote": "FORWARD ENTRY DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF.",
+                "surrounding_text": "FORWARD ENTRY DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF.<[01] REPOSITIONED HOOK AND LOOP ON FWD ENTRY DOOR GIRT TO B"
+              }
+            ],
+            "action": [
+              {
+                "field": "narrative_raw",
+                "start": 200,
+                "end": 287,
+                "quote": "REPOSITIONED HOOK AND LOOP ON FWD ENTRY DOOR GIRT TO BACKING PAN SHELF PER MT 725-61-06",
+                "surrounding_text": "K AND LOOP ON FWD ENTRY DOOR GIRT TO BACKING PAN SHELF;[02] REPOSITIONED HOOK AND LOOP ON FWD ENTRY DOOR GIRT TO BACKING PAN SHELF PER MT 725-61-06"
+              }
+            ]
+          },
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024101447342",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 154,
+                  "end": 173
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 118
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 200,
+                  "end": 287
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024101447342",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 154,
+                    "end": 173
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 118
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 200,
+                    "end": 287
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024101447342",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 154,
+              "end": 173,
+              "quote": "FWD ENTRY DOOR GIRT",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 118,
+              "quote": "FORWARD ENTRY DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 200,
+              "end": 287,
+              "quote": "REPOSITIONED HOOK AND LOOP ON FWD ENTRY DOOR GIRT TO BACKING PAN SHELF PER MT 725-61-06",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 49985,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024101447343"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2586,
+          "total_tokens": 2617,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.312,
+        "model_called": true,
+        "working_context_chars": 8827,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024101447343",
+          "event_date": "2024-10-11",
+          "asset_id": "FAA:[\"BOEING\",\"34631\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 49984,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FWD SERVICE DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF.<[01] REPOSITIONED FWD SERVICE DOOR HOOK AND LOOP STRIP ON GIRT TO BACKING PAN SHELF;[02] REPOSITIONED FWD SERVICE DOOR HOOK AND LOOP STRIP ON GIRT TO BACKING PAN SHELF PER MT 725-61-06",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024101447343",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "FWD SERVICE DOOR HOOK AND LOOP STRIP ON GIRT"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FWD SERVICE DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPOSITIONED FWD SERVICE DOOR HOOK AND LOOP STRIP ON GIRT TO BACKING PAN SHELF PER MT 725-61-06"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 176,
+          "prompt_tokens": 1111,
+          "total_tokens": 1287,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 3.391,
+        "model_called": true,
+        "working_context_chars": 5254,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024101447343",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "FWD SERVICE DOOR HOOK AND LOOP STRIP ON GIRT"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FWD SERVICE DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPOSITIONED FWD SERVICE DOOR HOOK AND LOOP STRIP ON GIRT TO BACKING PAN SHELF PER MT 725-61-06"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024101447343",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "FWD SERVICE DOOR HOOK AND LOOP STRIP ON GIRT"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FWD SERVICE DOOR HOOK AND LOOP STRIPS ON THE GIRT ARE NOT ATTACHED TO HOOK AND LOOP STRIPS ON THE BACKING PAN SHELF."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPOSITIONED FWD SERVICE DOOR HOOK AND LOOP STRIP ON GIRT TO BACKING PAN SHELF PER MT 725-61-06"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 7,
+    "elapsed_seconds": 13.156,
+    "errors": [
+      {
+        "step": 4,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      },
+      {
+        "step": 7,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 7,
+    "responses_received": 7,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 12314,
+    "known_output_tokens": 565,
+    "known_total_tokens": 12879,
+    "known_cached_input_tokens": 5414
+  }
+}

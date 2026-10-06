@@ -1,0 +1,694 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-098",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'APU'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "APU",
+  "input_record_ids": [
+    "YENA2024071601002",
+    "YENA2024090301201",
+    "YENA2024120201523",
+    "YENA2024121801567"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "APU",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'APU'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"AIRBUS\",\"01528\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 7,
+    "model_calls": 7,
+    "elapsed_seconds": 12.891,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "YENA2024090301201",
+          "date": "2024-08-31",
+          "asset_id": "FAA:[\"AIRBUS\",\"01528\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 241,
+              "quote": "FLT#874, TPA-EWR. 'FUMES SMELT AFTER ENGINE START, VERY FAINT, DURING CRUISE FAINT, AND IN DESCENT VERY STRONG, COULD NOT DETERMINE WHICH PACK USING ISOLATION TECHNIQUE; C/W INFO NOTICE 2017- T015 SECTION B2. IDENTIFIED ODOR COMING FROM APU.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 242,
+              "end": 331,
+              "quote": "DECONTAMINATION LEVEL B WAS ACCOMPLISHED PER TSM 05-50-00-810-831-A . A/C IS OKJ FOR SVC.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "YENA2024090301201",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 41583
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "FLT#874, TPA-EWR. 'FUMES SMELT AFTER ENGINE START, VERY FAINT, DURING CRUISE FAINT, AND IN DESCENT VERY STRONG, COULD NOT DETERMINE WHICH PACK USING ISOLATION TECHNIQUE; C/W INFO NOTICE 2017- T015 SECTION B2. IDENTIFIED ODOR COMING FROM APU. DECONTAMINATION LEVEL B WAS ACCOMPLISHED PER TSM 05-50-00-810-831-A . A/C IS OKJ FOR SVC.'"
+          }
+        },
+        {
+          "record_id": "YENA2024121801567",
+          "date": "2024-12-17",
+          "asset_id": "FAA:[\"AIRBUS\",\"01528\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 360,
+              "quote": "FLT#2133, MCO-SJU. 'FUME  EVENT DURING DESCENT FROM 12,000 FT UNTIL AFTER LANDING , CA + FO + FWD + AFT FA'S SMELLED FUMES (DIRTY SOCK); COMPLIED WITH INFORMATION NOTICE 2017-T015,SECTION B2,FOUND APU TO BE THE SOURCE OF ODOR,DECONTAMINATION LEVEL A WAS ACCOMPLISHED PER TSM 05-50-00-810-813-A. AIRCRAFT IS OK FOR SERVICE. NO PREVIOUS HISTORY ON LAST 30 DAYS.'",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "citation": {
+            "record_id": "YENA2024121801567",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 61364
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "FLT#2133, MCO-SJU. 'FUME  EVENT DURING DESCENT FROM 12,000 FT UNTIL AFTER LANDING , CA + FO + FWD + AFT FA'S SMELLED FUMES (DIRTY SOCK); COMPLIED WITH INFORMATION NOTICE 2017-T015,SECTION B2,FOUND APU TO BE THE SOURCE OF ODOR,DECONTAMINATION LEVEL A WAS ACCOMPLISHED PER TSM 05-50-00-810-813-A. AIRCRAFT IS OK FOR SERVICE. NO PREVIOUS HISTORY ON LAST 30 DAYS.'"
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-08-31 | record YENA2024090301201\nSource: SDR-2024.csv, CSV row 41583, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: FLT#874, TPA-EWR. 'FUMES SMELT AFTER ENGINE START, VERY FAINT, DURING CRUISE FAINT, AND IN DESCENT VERY STRONG, COULD NOT DETERMINE WHICH PACK USING ISOLATION TECHNIQUE; C/W INFO NOTICE 2017- T015 SECTION B2. IDENTIFIED ODOR COMING FROM APU. [record=YENA2024090301201; field=narrative_raw; offsets=0:241]\naction: DECONTAMINATION LEVEL B WAS ACCOMPLISHED PER TSM 05-50-00-810-831-A . A/C IS OKJ FOR SVC. [record=YENA2024090301201; field=narrative_raw; offsets=242:331]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): FLT#874, TPA-EWR. 'FUMES SMELT AFTER ENGINE START, VERY FAINT, DURING CRUISE FAINT, AND IN DESCENT VERY STRONG, COULD NOT DETERMINE WHICH PACK USING ISOLATION TECHNIQUE; C/W INFO NOTICE 2017- T015 SECTION B2. IDENTIFIED ODOR COMING FROM APU. DECONTAMINATION LEVEL B WAS ACCOMPLISHED PER TSM 05-50-00-810-831-A . A/C IS OKJ FOR SVC.'\n\n2024-12-17 | record YENA2024121801567\nSource: SDR-2024.csv, CSV row 61364, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: FLT#2133, MCO-SJU. 'FUME  EVENT DURING DESCENT FROM 12,000 FT UNTIL AFTER LANDING , CA + FO + FWD + AFT FA'S SMELLED FUMES (DIRTY SOCK); COMPLIED WITH INFORMATION NOTICE 2017-T015,SECTION B2,FOUND APU TO BE THE SOURCE OF ODOR,DECONTAMINATION LEVEL A WAS ACCOMPLISHED PER TSM 05-50-00-810-813-A. AIRCRAFT IS OK FOR SERVICE. NO PREVIOUS HISTORY ON LAST 30 DAYS.' [record=YENA2024121801567; field=narrative_raw; offsets=0:360]\naction: no extracted proposal\nAction status proposal: unknown\nFull source (narrative_raw, verbatim): FLT#2133, MCO-SJU. 'FUME  EVENT DURING DESCENT FROM 12,000 FT UNTIL AFTER LANDING , CA + FO + FWD + AFT FA'S SMELLED FUMES (DIRTY SOCK); COMPLIED WITH INFORMATION NOTICE 2017-T015,SECTION B2,FOUND APU TO BE THE SOURCE OF ODOR,DECONTAMINATION LEVEL A WAS ACCOMPLISHED PER TSM 05-50-00-810-813-A. AIRCRAFT IS OK FOR SERVICE. NO PREVIOUS HISTORY ON LAST 30 DAYS.'\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "YENA2024090301201",
+        "event_date": "2024-08-31",
+        "asset_id": "FAA:[\"AIRBUS\",\"01528\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 41583,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "FLT#874, TPA-EWR. 'FUMES SMELT AFTER ENGINE START, VERY FAINT, DURING CRUISE FAINT, AND IN DESCENT VERY STRONG, COULD NOT DETERMINE WHICH PACK USING ISOLATION TECHNIQUE; C/W INFO NOTICE 2017- T015 SECTION B2. IDENTIFIED ODOR COMING FROM APU. DECONTAMINATION LEVEL B WAS ACCOMPLISHED PER TSM 05-50-00-810-831-A . A/C IS OKJ FOR SVC.'",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "YENA2024121801567",
+        "event_date": "2024-12-17",
+        "asset_id": "FAA:[\"AIRBUS\",\"01528\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 61364,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "FLT#2133, MCO-SJU. 'FUME  EVENT DURING DESCENT FROM 12,000 FT UNTIL AFTER LANDING , CA + FO + FWD + AFT FA'S SMELLED FUMES (DIRTY SOCK); COMPLIED WITH INFORMATION NOTICE 2017-T015,SECTION B2,FOUND APU TO BE THE SOURCE OF ODOR,DECONTAMINATION LEVEL A WAS ACCOMPLISHED PER TSM 05-50-00-810-813-A. AIRCRAFT IS OK FOR SERVICE. NO PREVIOUS HISTORY ON LAST 30 DAYS.'",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "YENA2024090301201",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 241,
+            "quote": "FLT#874, TPA-EWR. 'FUMES SMELT AFTER ENGINE START, VERY FAINT, DURING CRUISE FAINT, AND IN DESCENT VERY STRONG, COULD NOT DETERMINE WHICH PACK USING ISOLATION TECHNIQUE; C/W INFO NOTICE 2017- T015 SECTION B2. IDENTIFIED ODOR COMING FROM APU.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 242,
+            "end": 331,
+            "quote": "DECONTAMINATION LEVEL B WAS ACCOMPLISHED PER TSM 05-50-00-810-831-A . A/C IS OKJ FOR SVC.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 41583,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "YENA2024121801567",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 360,
+            "quote": "FLT#2133, MCO-SJU. 'FUME  EVENT DURING DESCENT FROM 12,000 FT UNTIL AFTER LANDING , CA + FO + FWD + AFT FA'S SMELLED FUMES (DIRTY SOCK); COMPLIED WITH INFORMATION NOTICE 2017-T015,SECTION B2,FOUND APU TO BE THE SOURCE OF ODOR,DECONTAMINATION LEVEL A WAS ACCOMPLISHED PER TSM 05-50-00-810-813-A. AIRCRAFT IS OK FOR SERVICE. NO PREVIOUS HISTORY ON LAST 30 DAYS.'",
+            "source_column": "Discrepancy"
+          },
+          "action": null
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 61364,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 4,
+      "selected_record_count": 4,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 4,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "APU",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 1109,
+          "total_tokens": 1133,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.672,
+        "model_called": true,
+        "working_context_chars": 5240,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "YENA2024090301201",
+              "asset_id": "FAA:[\"AIRBUS\",\"01528\"]",
+              "date": "2024-08-31",
+              "score": 0.7289584585452468,
+              "excerpt": "FLT#874, TPA-EWR. 'FUMES SMELT AFTER ENGINE START, VERY FAINT, DURING CRUISE FAINT, AND IN DESCENT VERY STRONG, COULD NOT DETERMINE WHICH PACK USING ISOLATION TECHNIQUE; C/W INFO NOTICE 2017- T015 SEC",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "YENA2024121801567",
+              "asset_id": "FAA:[\"AIRBUS\",\"01528\"]",
+              "date": "2024-12-17",
+              "score": 0.683741995900183,
+              "excerpt": "FLT#2133, MCO-SJU. 'FUME  EVENT DURING DESCENT FROM 12,000 FT UNTIL AFTER LANDING , CA + FO + FWD + AFT FA'S SMELLED FUMES (DIRTY SOCK); COMPLIED WITH INFORMATION NOTICE 2017-T015,SECTION B2,FOUND APU",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1603,
+          "total_tokens": 1615,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.657,
+        "model_called": true,
+        "working_context_chars": 6262,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 4,
+          "unstructured_record_count": 4,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024090301201"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1663,
+          "total_tokens": 1694,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.953,
+        "model_called": true,
+        "working_context_chars": 6489,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024090301201",
+          "event_date": "2024-08-31",
+          "asset_id": "FAA:[\"AIRBUS\",\"01528\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 41583,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#874, TPA-EWR. 'FUMES SMELT AFTER ENGINE START, VERY FAINT, DURING CRUISE FAINT, AND IN DESCENT VERY STRONG, COULD NOT DETERMINE WHICH PACK USING ISOLATION TECHNIQUE; C/W INFO NOTICE 2017- T015 SECTION B2. IDENTIFIED ODOR COMING FROM APU. DECONTAMINATION LEVEL B WAS ACCOMPLISHED PER TSM 05-50-00-810-831-A . A/C IS OKJ FOR SVC.'",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "YENA2024090301201",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FLT#874, TPA-EWR. 'FUMES SMELT AFTER ENGINE START, VERY FAINT, DURING CRUISE FAINT, AND IN DESCENT VERY STRONG, COULD NOT DETERMINE WHICH PACK USING ISOLATION TECHNIQUE; C/W INFO NOTICE 2017- T015 SECTION B2. IDENTIFIED ODOR COMING FROM APU."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "DECONTAMINATION LEVEL B WAS ACCOMPLISHED PER TSM 05-50-00-810-831-A . A/C IS OKJ FOR SVC."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 208,
+          "prompt_tokens": 1407,
+          "total_tokens": 1615,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 3.906,
+        "model_called": true,
+        "working_context_chars": 5285,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "YENA2024090301201",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FLT#874, TPA-EWR. 'FUMES SMELT AFTER ENGINE START, VERY FAINT, DURING CRUISE FAINT, AND IN DESCENT VERY STRONG, COULD NOT DETERMINE WHICH PACK USING ISOLATION TECHNIQUE; C/W INFO NOTICE 2017- T015 SECTION B2. IDENTIFIED ODOR COMING FROM APU."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "DECONTAMINATION LEVEL B WAS ACCOMPLISHED PER TSM 05-50-00-810-831-A . A/C IS OKJ FOR SVC."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "YENA2024090301201",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FLT#874, TPA-EWR. 'FUMES SMELT AFTER ENGINE START, VERY FAINT, DURING CRUISE FAINT, AND IN DESCENT VERY STRONG, COULD NOT DETERMINE WHICH PACK USING ISOLATION TECHNIQUE; C/W INFO NOTICE 2017- T015 SECTION B2. IDENTIFIED ODOR COMING FROM APU."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "DECONTAMINATION LEVEL B WAS ACCOMPLISHED PER TSM 05-50-00-810-831-A . A/C IS OKJ FOR SVC."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "YENA2024090301201",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 241,
+              "quote": "FLT#874, TPA-EWR. 'FUMES SMELT AFTER ENGINE START, VERY FAINT, DURING CRUISE FAINT, AND IN DESCENT VERY STRONG, COULD NOT DETERMINE WHICH PACK USING ISOLATION TECHNIQUE; C/W INFO NOTICE 2017- T015 SECTION B2. IDENTIFIED ODOR COMING FROM APU.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 242,
+              "end": 331,
+              "quote": "DECONTAMINATION LEVEL B WAS ACCOMPLISHED PER TSM 05-50-00-810-831-A . A/C IS OKJ FOR SVC.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 41583,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024121801567"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2220,
+          "total_tokens": 2251,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.203,
+        "model_called": true,
+        "working_context_chars": 7977,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024121801567",
+          "event_date": "2024-12-17",
+          "asset_id": "FAA:[\"AIRBUS\",\"01528\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 61364,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#2133, MCO-SJU. 'FUME  EVENT DURING DESCENT FROM 12,000 FT UNTIL AFTER LANDING , CA + FO + FWD + AFT FA'S SMELLED FUMES (DIRTY SOCK); COMPLIED WITH INFORMATION NOTICE 2017-T015,SECTION B2,FOUND APU TO BE THE SOURCE OF ODOR,DECONTAMINATION LEVEL A WAS ACCOMPLISHED PER TSM 05-50-00-810-813-A. AIRCRAFT IS OK FOR SERVICE. NO PREVIOUS HISTORY ON LAST 30 DAYS.'",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "YENA2024121801567",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FLT#2133, MCO-SJU. 'FUME  EVENT DURING DESCENT FROM 12,000 FT UNTIL AFTER LANDING , CA + FO + FWD + AFT FA'S SMELLED FUMES (DIRTY SOCK); COMPLIED WITH INFORMATION NOTICE 2017-T015,SECTION B2,FOUND APU TO BE THE SOURCE OF ODOR,DECONTAMINATION LEVEL A WAS ACCOMPLISHED PER TSM 05-50-00-810-813-A. AIRCRAFT IS OK FOR SERVICE. NO PREVIOUS HISTORY ON LAST 30 DAYS.'"
+              },
+              "action": null
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 208,
+          "prompt_tokens": 1461,
+          "total_tokens": 1669,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 3.766,
+        "model_called": true,
+        "working_context_chars": 5313,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "YENA2024121801567",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FLT#2133, MCO-SJU. 'FUME  EVENT DURING DESCENT FROM 12,000 FT UNTIL AFTER LANDING , CA + FO + FWD + AFT FA'S SMELLED FUMES (DIRTY SOCK); COMPLIED WITH INFORMATION NOTICE 2017-T015,SECTION B2,FOUND APU TO BE THE SOURCE OF ODOR,DECONTAMINATION LEVEL A WAS ACCOMPLISHED PER TSM 05-50-00-810-813-A. AIRCRAFT IS OK FOR SERVICE. NO PREVIOUS HISTORY ON LAST 30 DAYS.'"
+                },
+                "action": null
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "YENA2024121801567",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FLT#2133, MCO-SJU. 'FUME  EVENT DURING DESCENT FROM 12,000 FT UNTIL AFTER LANDING , CA + FO + FWD + AFT FA'S SMELLED FUMES (DIRTY SOCK); COMPLIED WITH INFORMATION NOTICE 2017-T015,SECTION B2,FOUND APU TO BE THE SOURCE OF ODOR,DECONTAMINATION LEVEL A WAS ACCOMPLISHED PER TSM 05-50-00-810-813-A. AIRCRAFT IS OK FOR SERVICE. NO PREVIOUS HISTORY ON LAST 30 DAYS.'"
+                  },
+                  "action": null
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "YENA2024121801567",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 360,
+              "quote": "FLT#2133, MCO-SJU. 'FUME  EVENT DURING DESCENT FROM 12,000 FT UNTIL AFTER LANDING , CA + FO + FWD + AFT FA'S SMELLED FUMES (DIRTY SOCK); COMPLIED WITH INFORMATION NOTICE 2017-T015,SECTION B2,FOUND APU TO BE THE SOURCE OF ODOR,DECONTAMINATION LEVEL A WAS ACCOMPLISHED PER TSM 05-50-00-810-813-A. AIRCRAFT IS OK FOR SERVICE. NO PREVIOUS HISTORY ON LAST 30 DAYS.'",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 61364,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "YENA2024090301201",
+              "YENA2024121801567"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 49,
+          "prompt_tokens": 2790,
+          "total_tokens": 2839,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.719,
+        "model_called": true,
+        "working_context_chars": 9490,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "YENA2024090301201",
+            "YENA2024121801567"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "YENA2024090301201",
+      "YENA2024121801567"
+    ],
+    "proposal_count": 2,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 7,
+    "elapsed_seconds": 12.891,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 7,
+    "responses_received": 7,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 12253,
+    "known_output_tokens": 563,
+    "known_total_tokens": 12816,
+    "known_cached_input_tokens": 5781
+  }
+}

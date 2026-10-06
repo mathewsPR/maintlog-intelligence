@@ -48,7 +48,8 @@ CUES = {
     ),
     "completed": re.compile(
         r"\b(?:completed|replaced|repaired|installed|removed|checked|inspected|"
-        r"lubricated|resecured|performed|drilled)\b",
+        r"lubricated|resecured|performed|drilled|accomplished|reseated|"
+        r"repositioned|serviced|cleaned|reinstalled|secured|adjusted|tightened|repacked)\b",
         re.I,
     ),
     "verified": re.compile(

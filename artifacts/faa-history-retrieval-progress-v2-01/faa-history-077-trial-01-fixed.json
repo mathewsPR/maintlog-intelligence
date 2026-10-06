@@ -1,0 +1,629 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-077",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'BATTERY PACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BATTERY PACK",
+  "input_record_ids": [
+    "SWAA2024052990712",
+    "SWAA2024070809232",
+    "SWAA2024070810379",
+    "SWAA2024090533706",
+    "SWAA2024090533707",
+    "SWAA2024112771843"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BATTERY PACK",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'BATTERY PACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"32543\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 6,
+    "selected_record_count": 6,
+    "steps": 6,
+    "model_calls": 3,
+    "elapsed_seconds": 6.719,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "SWAA2024090533706",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 27,
+            "end": 39,
+            "quote": "BATTERY PACK",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 62,
+            "quote": "FWD L/H EMERGENCY LIGHTING BATTERY PACK FAILED CAPACITY CHECK.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 68,
+            "end": 119,
+            "quote": "REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 42092,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": null,
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BATTERY PACK",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5258,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "SWAA2024090533706",
+              "asset_id": "FAA:[\"BOEING\",\"32543\"]",
+              "date": "2024-09-04",
+              "score": 1.3545418083855298,
+              "excerpt": "FWD L/H EMERGENCY LIGHTING BATTERY PACK FAILED CAPACITY CHECK.<[01] REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWAA2024090533707",
+              "asset_id": "FAA:[\"BOEING\",\"32543\"]",
+              "date": "2024-09-04",
+              "score": 1.3545418083855298,
+              "excerpt": "AFT R/H EMERGENCY LIGHTING BATTERY PACK FAILED CAPACITY CHECK.<[01] REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWAA2024070809232",
+              "asset_id": "FAA:[\"BOEING\",\"32543\"]",
+              "date": "2024-07-05",
+              "score": 0.8166082571632832,
+              "excerpt": "AFT ESCAPE SLIDE EMERGENCY LIGHT INOP<[01] REMOVED AND REPLACED M1673 BATTERY PACK AND POWER SUPPLY IN REFERENCE TO AMM 33-51-06 AND WDM 33-51-14. OPS CHECK GOOD.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWAA2024070810379",
+              "asset_id": "FAA:[\"BOEING\",\"32543\"]",
+              "date": "2024-07-05",
+              "score": 0.8166082571632832,
+              "excerpt": "AFT ESCAPE SLIDE EMERGENCY LIGHT INOP<[01] REMOVED AND REPLACED M1673 BATTERY PACK AND POWER SUPPLY IN REFERENCE TO AMM 33-51-06 AND WDM 33-51-14. OPS CHECK GOOD.",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024090533706"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 6957,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024090533706",
+          "event_date": "2024-09-04",
+          "asset_id": "FAA:[\"BOEING\",\"32543\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 42092,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FWD L/H EMERGENCY LIGHTING BATTERY PACK FAILED CAPACITY CHECK.<[01] REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024090533706",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "BATTERY PACK"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FWD L/H EMERGENCY LIGHTING BATTERY PACK FAILED CAPACITY CHECK."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 134,
+          "prompt_tokens": 1054,
+          "total_tokens": 1188,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.235,
+        "model_called": true,
+        "working_context_chars": 5072,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024090533706",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "BATTERY PACK"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FWD L/H EMERGENCY LIGHTING BATTERY PACK FAILED CAPACITY CHECK."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024090533706",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "BATTERY PACK"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FWD L/H EMERGENCY LIGHTING BATTERY PACK FAILED CAPACITY CHECK."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024090533706",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 27,
+                "end": 39
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 62
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 68,
+                "end": 119
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 119,
+          "prompt_tokens": 1661,
+          "total_tokens": 1780,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.265,
+        "model_called": true,
+        "working_context_chars": 5831,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": {
+            "component": [
+              {
+                "field": "narrative_raw",
+                "start": 27,
+                "end": 39,
+                "quote": "BATTERY PACK",
+                "surrounding_text": "FWD L/H EMERGENCY LIGHTING BATTERY PACK FAILED CAPACITY CHECK.<[01] REMOVED AND REPLACED BATTERY PA"
+              },
+              {
+                "field": "narrative_raw",
+                "start": 89,
+                "end": 101,
+                "quote": "BATTERY PACK",
+                "surrounding_text": "TTERY PACK FAILED CAPACITY CHECK.<[01] REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06."
+              }
+            ],
+            "problem": [
+              {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 62,
+                "quote": "FWD L/H EMERGENCY LIGHTING BATTERY PACK FAILED CAPACITY CHECK.",
+                "surrounding_text": "FWD L/H EMERGENCY LIGHTING BATTERY PACK FAILED CAPACITY CHECK.<[01] REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06."
+              }
+            ],
+            "action": [
+              {
+                "field": "narrative_raw",
+                "start": 68,
+                "end": 119,
+                "quote": "REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06.",
+                "surrounding_text": "EMERGENCY LIGHTING BATTERY PACK FAILED CAPACITY CHECK.<[01] REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06."
+              }
+            ]
+          },
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024090533706",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 27,
+                  "end": 39
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 62
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 68,
+                  "end": 119
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024090533706",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 27,
+                    "end": 39
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 62
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 68,
+                    "end": 119
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024090533706",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 27,
+              "end": 39,
+              "quote": "BATTERY PACK",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 62,
+              "quote": "FWD L/H EMERGENCY LIGHTING BATTERY PACK FAILED CAPACITY CHECK.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 68,
+              "end": 119,
+              "quote": "REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 42092,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024090533707"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 8829,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024090533707",
+          "event_date": "2024-09-04",
+          "asset_id": "FAA:[\"BOEING\",\"32543\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 42093,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AFT R/H EMERGENCY LIGHTING BATTERY PACK FAILED CAPACITY CHECK.<[01] REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024090533707",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "BATTERY PACK"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FAILED CAPACITY CHECK"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 121,
+          "prompt_tokens": 1054,
+          "total_tokens": 1175,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.219,
+        "model_called": true,
+        "working_context_chars": 5072,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024090533707",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "BATTERY PACK"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FAILED CAPACITY CHECK"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024090533707",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "BATTERY PACK"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FAILED CAPACITY CHECK"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED BATTERY PACK PER M/M 33-51-06."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 3,
+    "elapsed_seconds": 6.719,
+    "errors": [
+      {
+        "step": 3,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      },
+      {
+        "step": 6,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 3,
+    "responses_received": 3,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 3769,
+    "known_output_tokens": 374,
+    "known_total_tokens": 4143,
+    "known_cached_input_tokens": 2234
+  }
+}

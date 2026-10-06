@@ -1,0 +1,1172 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-081",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'FRAME'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "FRAME",
+  "input_record_ids": [
+    "IPXA2024013121327",
+    "IPXA2024020121327",
+    "IPXA2024051315576",
+    "IPXA2024051315578",
+    "IPXA2024052115578",
+    "IPXA2024052815576"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "FRAME",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'FRAME'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 6,
+    "selected_record_count": 6,
+    "steps": 11,
+    "model_calls": 4,
+    "elapsed_seconds": 9.5,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "IPXA2024051315576",
+          "date": "2024-05-10",
+          "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 7,
+              "end": 45,
+              "quote": "AFT CARGO PIT - FRAME STA 1460 RH SIDE",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 46,
+              "end": 82,
+              "quote": "HAS A DENT IN INNER CHORD AT STR 26R",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "citation": {
+            "record_id": "IPXA2024051315576",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 22091
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "FAULT: AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R VERIFIED DENT FOUND OUT OF LIMITS"
+          }
+        },
+        {
+          "record_id": "IPXA2024051315578",
+          "date": "2024-05-10",
+          "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 7,
+              "end": 161,
+              "quote": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R FRAME STA 1500 RH THE DAMAGE FOUND TO BE OUT OF LIMITS I.A.W SRM 53-00-07-1A-1",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "citation": {
+            "record_id": "IPXA2024051315578",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 22089
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "FAULT: AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R FRAME STA 1500 RH THE DAMAGE FOUND TO BE OUT OF LIMITS I.A.W SRM 53-00-07-1A-1."
+          }
+        },
+        {
+          "record_id": "IPXA2024052115578",
+          "date": "2024-05-10",
+          "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 75,
+              "quote": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "citation": {
+            "record_id": "IPXA2024052115578",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 24425
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R REQUIRED SUPPLEMENTAL INSPECTION DEFERRED IAW B757-200PF, REV 119.00, SRM 53-00-07-2R-5, TABLE #3, FOR ZONE #1. INSTALLED \"J\" SECTION I.A.W SRM 53-00-07-2R-5, DETAIL I AND SRM 51-40-02-0G"
+          }
+        },
+        {
+          "record_id": "IPXA2024052815576",
+          "date": "2024-05-10",
+          "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 111,
+              "quote": "AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R. VERIFIED DENT FOUND OUT OF LIMITS.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 111,
+              "end": 190,
+              "quote": "INSTALLED REPAIR J SECTION IAW SRM 53-00-07-2R-5 DETAIL I AND SRM 51-40-02-0G-0",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "IPXA2024052815576",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 24411
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R. VERIFIED DENT FOUND OUT OF LIMITS.INSTALLED REPAIR J SECTION IAW SRM 53-00-07-2R-5 DETAIL I AND SRM 51-40-02-0G-0."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-05-10 | record IPXA2024051315576\nSource: SDR-2024.csv, CSV row 22091, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: AFT CARGO PIT - FRAME STA 1460 RH SIDE [record=IPXA2024051315576; field=narrative_raw; offsets=7:45]\nproblem: HAS A DENT IN INNER CHORD AT STR 26R [record=IPXA2024051315576; field=narrative_raw; offsets=46:82]\naction: no extracted proposal\nAction status proposal: unknown\nFull source (narrative_raw, verbatim): FAULT: AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R VERIFIED DENT FOUND OUT OF LIMITS\n\n2024-05-10 | record IPXA2024051315578\nSource: SDR-2024.csv, CSV row 22089, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R FRAME STA 1500 RH THE DAMAGE FOUND TO BE OUT OF LIMITS I.A.W SRM 53-00-07-1A-1 [record=IPXA2024051315578; field=narrative_raw; offsets=7:161]\naction: no extracted proposal\nAction status proposal: unknown\nFull source (narrative_raw, verbatim): FAULT: AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R FRAME STA 1500 RH THE DAMAGE FOUND TO BE OUT OF LIMITS I.A.W SRM 53-00-07-1A-1.\n\n2024-05-10 | record IPXA2024052115578\nSource: SDR-2024.csv, CSV row 24425, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R [record=IPXA2024052115578; field=narrative_raw; offsets=0:75]\naction: no extracted proposal\nAction status proposal: unknown\nFull source (narrative_raw, verbatim): AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R REQUIRED SUPPLEMENTAL INSPECTION DEFERRED IAW B757-200PF, REV 119.00, SRM 53-00-07-2R-5, TABLE #3, FOR ZONE #1. INSTALLED \"J\" SECTION I.A.W SRM 53-00-07-2R-5, DETAIL I AND SRM 51-40-02-0G\n\n2024-05-10 | record IPXA2024052815576\nSource: SDR-2024.csv, CSV row 24411, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R. VERIFIED DENT FOUND OUT OF LIMITS. [record=IPXA2024052815576; field=narrative_raw; offsets=0:111]\naction: INSTALLED REPAIR J SECTION IAW SRM 53-00-07-2R-5 DETAIL I AND SRM 51-40-02-0G-0 [record=IPXA2024052815576; field=narrative_raw; offsets=111:190]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R. VERIFIED DENT FOUND OUT OF LIMITS.INSTALLED REPAIR J SECTION IAW SRM 53-00-07-2R-5 DETAIL I AND SRM 51-40-02-0G-0.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "IPXA2024051315578",
+        "event_date": "2024-05-10",
+        "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 22089,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "FAULT: AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R FRAME STA 1500 RH THE DAMAGE FOUND TO BE OUT OF LIMITS I.A.W SRM 53-00-07-1A-1.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "IPXA2024051315576",
+        "event_date": "2024-05-10",
+        "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 22091,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "FAULT: AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R VERIFIED DENT FOUND OUT OF LIMITS",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "IPXA2024052815576",
+        "event_date": "2024-05-10",
+        "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 24411,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R. VERIFIED DENT FOUND OUT OF LIMITS.INSTALLED REPAIR J SECTION IAW SRM 53-00-07-2R-5 DETAIL I AND SRM 51-40-02-0G-0.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "IPXA2024052115578",
+        "event_date": "2024-05-10",
+        "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 24425,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R REQUIRED SUPPLEMENTAL INSPECTION DEFERRED IAW B757-200PF, REV 119.00, SRM 53-00-07-2R-5, TABLE #3, FOR ZONE #1. INSTALLED \"J\" SECTION I.A.W SRM 53-00-07-2R-5, DETAIL I AND SRM 51-40-02-0G",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "IPXA2024051315578",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 7,
+            "end": 161,
+            "quote": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R FRAME STA 1500 RH THE DAMAGE FOUND TO BE OUT OF LIMITS I.A.W SRM 53-00-07-1A-1",
+            "source_column": "Discrepancy"
+          },
+          "action": null
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 22089,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "IPXA2024051315576",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 7,
+            "end": 45,
+            "quote": "AFT CARGO PIT - FRAME STA 1460 RH SIDE",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 46,
+            "end": 82,
+            "quote": "HAS A DENT IN INNER CHORD AT STR 26R",
+            "source_column": "Discrepancy"
+          },
+          "action": null
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 22091,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "IPXA2024052815576",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 111,
+            "quote": "AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R. VERIFIED DENT FOUND OUT OF LIMITS.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 111,
+            "end": 190,
+            "quote": "INSTALLED REPAIR J SECTION IAW SRM 53-00-07-2R-5 DETAIL I AND SRM 51-40-02-0G-0",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 24411,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "IPXA2024052115578",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 75,
+            "quote": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R",
+            "source_column": "Discrepancy"
+          },
+          "action": null
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 24425,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 6,
+      "selected_record_count": 6,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 6,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "FRAME",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5244,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "IPXA2024051315578",
+              "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+              "date": "2024-05-10",
+              "score": 0.6556511196456097,
+              "excerpt": "FAULT: AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R FRAME STA 1500 RH THE DAMAGE FOUND TO BE OUT OF LIMITS I.A.W SRM 53-00-07-1A-1.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "IPXA2024051315576",
+              "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+              "date": "2024-05-10",
+              "score": 0.5264390239920468,
+              "excerpt": "FAULT: AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R VERIFIED DENT FOUND OUT OF LIMITS",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "IPXA2024052815576",
+              "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+              "date": "2024-05-10",
+              "score": 0.46032807679304555,
+              "excerpt": "AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R. VERIFIED DENT FOUND OUT OF LIMITS.INSTALLED REPAIR J SECTION IAW SRM 53-00-07-2R-5 DETAIL I AND SRM 51-40-02-0G-0.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "IPXA2024052115578",
+              "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+              "date": "2024-05-10",
+              "score": 0.4135835207292302,
+              "excerpt": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R REQUIRED SUPPLEMENTAL INSPECTION DEFERRED IAW B757-200PF, REV 119.00, SRM 53-00-07-2R-5, TABLE #3, FOR ZONE #1. INSTALLED \"J",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "IPXA2024051315578"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 7051,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "IPXA2024051315578",
+          "event_date": "2024-05-10",
+          "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 22089,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FAULT: AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R FRAME STA 1500 RH THE DAMAGE FOUND TO BE OUT OF LIMITS I.A.W SRM 53-00-07-1A-1.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "IPXA2024051315578",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "start": 7,
+                "end": 161
+              },
+              "action": null
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 135,
+          "prompt_tokens": 1344,
+          "total_tokens": 1479,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.719,
+        "model_called": true,
+        "working_context_chars": 5115,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "IPXA2024051315578",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R FRAME STA 1500 RH THE DAMAGE FOUND TO BE OUT OF LIMITS I.A.W SRM 53-00-07-1A-1."
+                },
+                "action": null
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "IPXA2024051315578",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R FRAME STA 1500 RH THE DAMAGE FOUND TO BE OUT OF LIMITS I.A.W SRM 53-00-07-1A-1."
+                  },
+                  "action": null
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": [
+              {
+                "field_name": "problem",
+                "before": {
+                  "field": "narrative_raw",
+                  "start": 7,
+                  "end": 162,
+                  "quote": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R FRAME STA 1500 RH THE DAMAGE FOUND TO BE OUT OF LIMITS I.A.W SRM 53-00-07-1A-1.",
+                  "source_column": null
+                },
+                "after": {
+                  "field": "narrative_raw",
+                  "start": 7,
+                  "end": 161,
+                  "quote": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R FRAME STA 1500 RH THE DAMAGE FOUND TO BE OUT OF LIMITS I.A.W SRM 53-00-07-1A-1",
+                  "source_column": null
+                }
+              }
+            ]
+          }
+        },
+        "tool_result": {
+          "record_id": "IPXA2024051315578",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 7,
+              "end": 161,
+              "quote": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R FRAME STA 1500 RH THE DAMAGE FOUND TO BE OUT OF LIMITS I.A.W SRM 53-00-07-1A-1",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 22089,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "IPXA2024051315576"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 8156,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "IPXA2024051315576",
+          "event_date": "2024-05-10",
+          "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 22091,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FAULT: AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R VERIFIED DENT FOUND OUT OF LIMITS",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "IPXA2024051315576",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "AFT CARGO PIT - FRAME STA 1460 RH SIDE"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "HAS A DENT IN INNER CHORD AT STR 26R"
+              },
+              "action": null
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 110,
+          "prompt_tokens": 1051,
+          "total_tokens": 1161,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 1.984,
+        "model_called": true,
+        "working_context_chars": 5069,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "IPXA2024051315576",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "AFT CARGO PIT - FRAME STA 1460 RH SIDE"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "HAS A DENT IN INNER CHORD AT STR 26R"
+                },
+                "action": null
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "IPXA2024051315576",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "AFT CARGO PIT - FRAME STA 1460 RH SIDE"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "HAS A DENT IN INNER CHORD AT STR 26R"
+                  },
+                  "action": null
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "IPXA2024051315576",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 7,
+              "end": 45,
+              "quote": "AFT CARGO PIT - FRAME STA 1460 RH SIDE",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 46,
+              "end": 82,
+              "quote": "HAS A DENT IN INNER CHORD AT STR 26R",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 22091,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "IPXA2024052815576"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9170,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "IPXA2024052815576",
+          "event_date": "2024-05-10",
+          "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 24411,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R. VERIFIED DENT FOUND OUT OF LIMITS.INSTALLED REPAIR J SECTION IAW SRM 53-00-07-2R-5 DETAIL I AND SRM 51-40-02-0G-0.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "IPXA2024052815576",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R. VERIFIED DENT FOUND OUT OF LIMITS."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 111,
+                "end": 190
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 166,
+          "prompt_tokens": 1408,
+          "total_tokens": 1574,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.969,
+        "model_called": true,
+        "working_context_chars": 5144,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "IPXA2024052815576",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R. VERIFIED DENT FOUND OUT OF LIMITS."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "INSTALLED REPAIR J SECTION IAW SRM 53-00-07-2R-5 DETAIL I AND SRM 51-40-02-0G-0."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "IPXA2024052815576",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R. VERIFIED DENT FOUND OUT OF LIMITS."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "INSTALLED REPAIR J SECTION IAW SRM 53-00-07-2R-5 DETAIL I AND SRM 51-40-02-0G-0."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": [
+              {
+                "field_name": "action",
+                "before": {
+                  "field": "narrative_raw",
+                  "start": 111,
+                  "end": 191,
+                  "quote": "INSTALLED REPAIR J SECTION IAW SRM 53-00-07-2R-5 DETAIL I AND SRM 51-40-02-0G-0.",
+                  "source_column": null
+                },
+                "after": {
+                  "field": "narrative_raw",
+                  "start": 111,
+                  "end": 190,
+                  "quote": "INSTALLED REPAIR J SECTION IAW SRM 53-00-07-2R-5 DETAIL I AND SRM 51-40-02-0G-0",
+                  "source_column": null
+                }
+              }
+            ]
+          }
+        },
+        "tool_result": {
+          "record_id": "IPXA2024052815576",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 111,
+              "quote": "AFT CARGO PIT - FRAME STA 1460 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R. VERIFIED DENT FOUND OUT OF LIMITS.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 111,
+              "end": 190,
+              "quote": "INSTALLED REPAIR J SECTION IAW SRM 53-00-07-2R-5 DETAIL I AND SRM 51-40-02-0G-0",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 24411,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "IPXA2024052115578"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 8818,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "IPXA2024052115578",
+          "event_date": "2024-05-10",
+          "asset_id": "FAA:[\"BOEING\",\"23852\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 24425,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R REQUIRED SUPPLEMENTAL INSPECTION DEFERRED IAW B757-200PF, REV 119.00, SRM 53-00-07-2R-5, TABLE #3, FOR ZONE #1. INSTALLED \"J\" SECTION I.A.W SRM 53-00-07-2R-5, DETAIL I AND SRM 51-40-02-0G",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "IPXA2024052115578",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R"
+              },
+              "action": null
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 98,
+          "prompt_tokens": 1542,
+          "total_tokens": 1640,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 1.828,
+        "model_called": true,
+        "working_context_chars": 5218,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "IPXA2024052115578",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R"
+                },
+                "action": null
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "IPXA2024052115578",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R"
+                  },
+                  "action": null
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "IPXA2024052115578",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 75,
+              "quote": "AFT CARGO PIT - FRAME STA 1500 RH SIDE HAS A DENT IN INNER CHORD AT STR 26R",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 24425,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9208,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 6,
+          "unstructured_record_count": 6,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 11,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "IPXA2024051315578",
+              "IPXA2024051315576",
+              "IPXA2024052815576",
+              "IPXA2024052115578"
+            ]
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9339,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "IPXA2024051315578",
+            "IPXA2024051315576",
+            "IPXA2024052815576",
+            "IPXA2024052115578"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "IPXA2024051315578",
+      "IPXA2024051315576",
+      "IPXA2024052815576",
+      "IPXA2024052115578"
+    ],
+    "proposal_count": 4,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 4,
+    "elapsed_seconds": 9.5,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 4,
+    "responses_received": 4,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 5345,
+    "known_output_tokens": 509,
+    "known_total_tokens": 5854,
+    "known_cached_input_tokens": 3612
+  }
+}

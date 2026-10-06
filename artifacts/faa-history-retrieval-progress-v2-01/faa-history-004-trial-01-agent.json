@@ -1,0 +1,512 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-004",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'ACTUATOR'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "ACTUATOR",
+  "input_record_ids": [
+    "CALA2024042501237",
+    "CALA2024042301200",
+    "CALA2024060401687",
+    "CALA2024112001217",
+    "CALA2024122601663"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "context_limit",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "ACTUATOR",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'ACTUATOR'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"31649\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 5,
+    "selected_record_count": 5,
+    "steps": 8,
+    "model_calls": 8,
+    "elapsed_seconds": 11.406,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "CALA2024042301200",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 682,
+            "end": 788,
+            "quote": "SPEED BRAKE LEVER ACTUATOR M359 SHOWING BOTH EXTENDED AND HISTORY. RETRACTED INDICATIONS AT THE SAME TIME.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 846,
+            "end": 1055,
+            "quote": "REMOVED AUTO SPEED BREAK ACTUATOR IAW AMM 27-62-31-000-801. ACTUATOR REQUIRES INSTALLATION WITH AMM 27-62-23-400-801. ADD EMP:406328 INSTALLED AUTO SPEEDBRAKE ACTUATOR PER AMM 27-62-23-400-801 OPS CHECK SATIS.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 18810,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 5,
+      "selected_record_count": 5,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 5,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "ACTUATOR",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 1112,
+          "total_tokens": 1137,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.781,
+        "model_called": true,
+        "working_context_chars": 5250,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024042301200",
+              "asset_id": "FAA:[\"BOEING\",\"31649\"]",
+              "date": "2024-04-22",
+              "score": 2.1695000804679165,
+              "excerpt": "REJECTED TAKEOFF DUE SPEEDBRAKE DO NOT ARM LIGHT ON AT 95KTS NO TAKEOFF WARNING HORN PERFORMED FIM 32-42 TASK 801, 27-62 TASK 801 AND FIM 27-62 TASK ILLUMINATE. THIS IS A 2ND WRITE UP. REF LOG 7615172",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042301200"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1385,
+          "total_tokens": 1416,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.828,
+        "model_called": true,
+        "working_context_chars": 5818,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042301200",
+          "event_date": "2024-04-22",
+          "asset_id": "FAA:[\"BOEING\",\"31649\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 18810,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "REJECTED TAKEOFF DUE SPEEDBRAKE DO NOT ARM LIGHT ON AT 95KTS NO TAKEOFF WARNING HORN PERFORMED FIM 32-42 TASK 801, 27-62 TASK 801 AND FIM 27-62 TASK ILLUMINATE. THIS IS A 2ND WRITE UP. REF LOG 7615172. REQUIRES SCHEDULING. REQUESTING MEL 2707F. 802, NO FAULTS FOUND ON AACU AND DS1/DS2 ON SPEED BRAKE MODULE FURTHER TROUBLSHOOTING. NO TIME TO FURTHER WORK DUE TO FLIGHT MEL 2707F DUE TO PREVIOUS HISTORY AND POSSIBLE CREW REFUSAL DUE TO REVERSER ALSO ON MEL. PLEASE FIX. LOCKED FOR POSITIVE FIX. PERFORMED FIM 27-62-TASK802 STEP E (INITIAL EVALUATION) (3) TROUBLESHOT PER SSM 27-62-11-102 AND FIM 27-62 TASK 802. FOUND ,TEST PASSED OK ,SYSTEM NEEDS FURTHER THROUBLE SHOOTING DUE TO SPEED BRAKE LEVER ACTUATOR M359 SHOWING BOTH EXTENDED AND HISTORY. RETRACTED INDICATIONS AT THE SAME TIME. NEEDS NEW M359 IN STOCK AT EWR. UNLOCKED LP FOR SIGNOFF. REMOVED AUTO SPEED BREAK ACTUATOR IAW AMM 27-62-31-000-801. ACTUATOR REQUIRES INSTALLATION WITH AMM 27-62-23-400-801. ADD EMP:406328 INSTALLED AUTO SPEEDBRAKE ACTUATOR PER AMM 27-62-23-400-801 OPS CHECK SATIS.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024042301200",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "SPEED BRAKE LEVER ACTUATOR M359 SHOWING BOTH EXTENDED AND HISTORY. RETRACTED INDICATIONS AT THE SAME TIME."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AUTO SPEED BREAK ACTUATOR IAW AMM 27-62-31-000-801. ACTUATOR REQUIRES INSTALLATION WITH AMM 27-62-23-400-801. ADD EMP:406328 INSTALLED AUTO SPEEDBRAKE ACTUATOR PER AMM 27-62-23-400-801 OPS CHECK SATIS."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 213,
+          "prompt_tokens": 1706,
+          "total_tokens": 1919,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 4.032,
+        "model_called": true,
+        "working_context_chars": 6008,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024042301200",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "SPEED BRAKE LEVER ACTUATOR M359 SHOWING BOTH EXTENDED AND HISTORY. RETRACTED INDICATIONS AT THE SAME TIME."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AUTO SPEED BREAK ACTUATOR IAW AMM 27-62-31-000-801. ACTUATOR REQUIRES INSTALLATION WITH AMM 27-62-23-400-801. ADD EMP:406328 INSTALLED AUTO SPEEDBRAKE ACTUATOR PER AMM 27-62-23-400-801 OPS CHECK SATIS."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024042301200",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "SPEED BRAKE LEVER ACTUATOR M359 SHOWING BOTH EXTENDED AND HISTORY. RETRACTED INDICATIONS AT THE SAME TIME."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AUTO SPEED BREAK ACTUATOR IAW AMM 27-62-31-000-801. ACTUATOR REQUIRES INSTALLATION WITH AMM 27-62-23-400-801. ADD EMP:406328 INSTALLED AUTO SPEEDBRAKE ACTUATOR PER AMM 27-62-23-400-801 OPS CHECK SATIS."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024042301200",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 682,
+              "end": 788,
+              "quote": "SPEED BRAKE LEVER ACTUATOR M359 SHOWING BOTH EXTENDED AND HISTORY. RETRACTED INDICATIONS AT THE SAME TIME.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 846,
+              "end": 1055,
+              "quote": "REMOVED AUTO SPEED BREAK ACTUATOR IAW AMM 27-62-31-000-801. ACTUATOR REQUIRES INSTALLATION WITH AMM 27-62-23-400-801. ADD EMP:406328 INSTALLED AUTO SPEEDBRAKE ACTUATOR PER AMM 27-62-23-400-801 OPS CHECK SATIS.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 18810,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 2255,
+          "total_tokens": 2267,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.921,
+        "model_called": true,
+        "working_context_chars": 8018,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 5,
+          "unstructured_record_count": 5,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "ACTUATOR",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 2314,
+          "total_tokens": 2339,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.079,
+        "model_called": true,
+        "working_context_chars": 8245,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024042301200",
+              "asset_id": "FAA:[\"BOEING\",\"31649\"]",
+              "date": "2024-04-22",
+              "score": 2.1695000804679165,
+              "excerpt": "REJECTED TAKEOFF DUE SPEEDBRAKE DO NOT ARM LIGHT ON AT 95KTS NO TAKEOFF WARNING HORN PERFORMED FIM 32-42 TASK 801, 27-62 TASK 801 AND FIM 27-62 TASK ILLUMINATE. THIS IS A 2ND WRITE UP. REF LOG 7615172",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "ACTUATOR",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 2518,
+          "total_tokens": 2543,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.14,
+        "model_called": true,
+        "working_context_chars": 8712,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024042301200",
+              "asset_id": "FAA:[\"BOEING\",\"31649\"]",
+              "date": "2024-04-22",
+              "score": 2.1695000804679165,
+              "excerpt": "REJECTED TAKEOFF DUE SPEEDBRAKE DO NOT ARM LIGHT ON AT 95KTS NO TAKEOFF WARNING HORN PERFORMED FIM 32-42 TASK 801, 27-62 TASK 801 AND FIM 27-62 TASK ILLUMINATE. THIS IS A 2ND WRITE UP. REF LOG 7615172",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "ACTUATOR",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 2722,
+          "total_tokens": 2747,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.235,
+        "model_called": true,
+        "working_context_chars": 9179,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024042301200",
+              "asset_id": "FAA:[\"BOEING\",\"31649\"]",
+              "date": "2024-04-22",
+              "score": 2.1695000804679165,
+              "excerpt": "REJECTED TAKEOFF DUE SPEEDBRAKE DO NOT ARM LIGHT ON AT 95KTS NO TAKEOFF WARNING HORN PERFORMED FIM 32-42 TASK 801, 27-62 TASK 801 AND FIM 27-62 TASK ILLUMINATE. THIS IS A 2ND WRITE UP. REF LOG 7615172",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042301200"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2926,
+          "total_tokens": 2957,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.39,
+        "model_called": true,
+        "working_context_chars": 9646,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042301200",
+          "event_date": "2024-04-22",
+          "asset_id": "FAA:[\"BOEING\",\"31649\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 18810,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "REJECTED TAKEOFF DUE SPEEDBRAKE DO NOT ARM LIGHT ON AT 95KTS NO TAKEOFF WARNING HORN PERFORMED FIM 32-42 TASK 801, 27-62 TASK 801 AND FIM 27-62 TASK ILLUMINATE. THIS IS A 2ND WRITE UP. REF LOG 7615172. REQUIRES SCHEDULING. REQUESTING MEL 2707F. 802, NO FAULTS FOUND ON AACU AND DS1/DS2 ON SPEED BRAKE MODULE FURTHER TROUBLSHOOTING. NO TIME TO FURTHER WORK DUE TO FLIGHT MEL 2707F DUE TO PREVIOUS HISTORY AND POSSIBLE CREW REFUSAL DUE TO REVERSER ALSO ON MEL. PLEASE FIX. LOCKED FOR POSITIVE FIX. PERFORMED FIM 27-62-TASK802 STEP E (INITIAL EVALUATION) (3) TROUBLESHOT PER SSM 27-62-11-102 AND FIM 27-62 TASK 802. FOUND ,TEST PASSED OK ,SYSTEM NEEDS FURTHER THROUBLE SHOOTING DUE TO SPEED BRAKE LEVER ACTUATOR M359 SHOWING BOTH EXTENDED AND HISTORY. RETRACTED INDICATIONS AT THE SAME TIME. NEEDS NEW M359 IN STOCK AT EWR. UNLOCKED LP FOR SIGNOFF. REMOVED AUTO SPEED BREAK ACTUATOR IAW AMM 27-62-31-000-801. ACTUATOR REQUIRES INSTALLATION WITH AMM 27-62-23-400-801. ADD EMP:406328 INSTALLED AUTO SPEEDBRAKE ACTUATOR PER AMM 27-62-23-400-801 OPS CHECK SATIS.",
+          "normalization_policy": "dictionary_v0"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "context_limit",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 8,
+    "elapsed_seconds": 11.406,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 8,
+    "responses_received": 8,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 16938,
+    "known_output_tokens": 387,
+    "known_total_tokens": 17325,
+    "known_cached_input_tokens": 6206
+  }
+}

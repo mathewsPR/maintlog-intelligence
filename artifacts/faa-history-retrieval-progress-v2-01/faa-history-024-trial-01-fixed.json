@@ -1,0 +1,409 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-024",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'TRANSITION PANEL'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "TRANSITION PANEL",
+  "input_record_ids": [
+    "ASAA2024071451026",
+    "ASAA2024091752958",
+    "ASAA2024091752959",
+    "ASAA2024091752960",
+    "ASAA2024091752961",
+    "ASAA2024100352963",
+    "ASAA2024100953055"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "TRANSITION PANEL",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'TRANSITION PANEL'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"36347\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 7,
+    "selected_record_count": 7,
+    "steps": 4,
+    "model_calls": 2,
+    "elapsed_seconds": 9.078,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [],
+    "aggregate": null,
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "TRANSITION PANEL",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5266,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "ASAA2024091752958",
+              "asset_id": "FAA:[\"BOEING\",\"36347\"]",
+              "date": "2024-09-17",
+              "score": 1.0018959242484735,
+              "excerpt": "AFT CARGO TRANSITION PROFILE L/S STA 727A-727I. GROUNDED - YES. REMOVED DAMAGE FROM AFT CARGO TRANSITION PROFILE 727-727I, ORIGINAL: .040, REMOVED: .40, REMAINING: .000 + IS FOUND TO BE OUT OF LIMITS ",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "ASAA2024091752961",
+              "asset_id": "FAA:[\"BOEING\",\"36347\"]",
+              "date": "2024-09-17",
+              "score": 0.9845040545157041,
+              "excerpt": "AFT CARGO TRANSITION PROFILE L/S STA 727I-807 MULTIPLE AREAS OF CORROSION. GROUNDED - YES. REMOVED DAMAGE FROM L/H TRANSITION STA 727I-807, ORIGINAL: .040, REMOVED: .040, REMAINING: .000 & IS FOUND TO",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "ASAA2024091752959",
+              "asset_id": "FAA:[\"BOEING\",\"36347\"]",
+              "date": "2024-09-17",
+              "score": 0.9802500246505127,
+              "excerpt": "AFT CARGO TRANSITION PROFILE R/S STA 727A-727I MULTIPLE AREAS OF CORROSION. GROUNDED - YES. REMOVED DAMAGE FROM R/H TRANSITION STA 727 - STA 727I, ORIGINAL: .040, REMOVED: .040, REMAINING: .000 & IS F",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "ASAA2024091752960",
+              "asset_id": "FAA:[\"BOEING\",\"36347\"]",
+              "date": "2024-09-17",
+              "score": 0.9802500246505127,
+              "excerpt": "AFT CARGO TRANSITION PROFILE R/S STA 727I-767 MULTIPLE AREAS OF CORROSION. GROUNDED - YES. REMOVED DAMAGE FROM R/H TRANSITION STA 721I-767, ORIGINAL: .040, REMOVED: .040, REMAINING: .000 + IS FOUND TO",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "ASAA2024091752958"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 7199,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "ASAA2024091752958",
+          "event_date": "2024-09-17",
+          "asset_id": "FAA:[\"BOEING\",\"36347\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 47955,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AFT CARGO TRANSITION PROFILE L/S STA 727A-727I. GROUNDED - YES. REMOVED DAMAGE FROM AFT CARGO TRANSITION PROFILE 727-727I, ORIGINAL: .040, REMOVED: .40, REMAINING: .000 + IS FOUND TO BE OUT OF LIMITS IAW B737-900ER SRM 53-00-53-1A-2. REMOVED DAMAGE TRANSITION 727-727I, FABRICATED, ALODINED, PRIMED AND INSTALLED REPAIR PARTS IAW B737-900ER SRM 53-00-53-2R-5.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "ASAA2024091752958",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "AFT CARGO TRANSITION PROFILE L/S STA 727A-727I. GROUNDED - YES."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 64,
+                "end": 358
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 252,
+          "prompt_tokens": 1706,
+          "total_tokens": 1958,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 4.234,
+        "model_called": true,
+        "working_context_chars": 5312,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "ASAA2024091752958",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "AFT CARGO TRANSITION PROFILE L/S STA 727A-727I. GROUNDED - YES."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED DAMAGE FROM AFT CARGO TRANSITION PROFILE 727-727I, ORIGINAL: .040, REMOVED: .40, REMAINING: .000 + IS FOUND TO BE OUT OF LIMITS IAW B737-900ER SRM 53-00-53-1A-2. REMOVED DAMAGE TRANSITION 727-727I, FABRICATED, ALODINED, PRIMED AND INSTALLED REPAIR PARTS IAW B737-900ER SRM 53-00-53-2R-5."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "ASAA2024091752958",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "AFT CARGO TRANSITION PROFILE L/S STA 727A-727I. GROUNDED - YES."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED DAMAGE FROM AFT CARGO TRANSITION PROFILE 727-727I, ORIGINAL: .040, REMOVED: .40, REMAINING: .000 + IS FOUND TO BE OUT OF LIMITS IAW B737-900ER SRM 53-00-53-1A-2. REMOVED DAMAGE TRANSITION 727-727I, FABRICATED, ALODINED, PRIMED AND INSTALLED REPAIR PARTS IAW B737-900ER SRM 53-00-53-2R-5."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": [
+              {
+                "field_name": "action",
+                "before": {
+                  "field": "narrative_raw",
+                  "start": 64,
+                  "end": 359,
+                  "quote": "REMOVED DAMAGE FROM AFT CARGO TRANSITION PROFILE 727-727I, ORIGINAL: .040, REMOVED: .40, REMAINING: .000 + IS FOUND TO BE OUT OF LIMITS IAW B737-900ER SRM 53-00-53-1A-2. REMOVED DAMAGE TRANSITION 727-727I, FABRICATED, ALODINED, PRIMED AND INSTALLED REPAIR PARTS IAW B737-900ER SRM 53-00-53-2R-5.",
+                  "source_column": null
+                },
+                "after": {
+                  "field": "narrative_raw",
+                  "start": 64,
+                  "end": 358,
+                  "quote": "REMOVED DAMAGE FROM AFT CARGO TRANSITION PROFILE 727-727I, ORIGINAL: .040, REMOVED: .40, REMAINING: .000 + IS FOUND TO BE OUT OF LIMITS IAW B737-900ER SRM 53-00-53-1A-2. REMOVED DAMAGE TRANSITION 727-727I, FABRICATED, ALODINED, PRIMED AND INSTALLED REPAIR PARTS IAW B737-900ER SRM 53-00-53-2R-5",
+                  "source_column": null
+                }
+              }
+            ]
+          }
+        },
+        "tool_error": "planned wording cannot establish completion",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "ASAA2024091752958",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 37,
+                "end": 46
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "AFT CARGO TRANSITION PROFILE L/S STA 727A-727I. GROUNDED - YES."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 64,
+                "end": 358
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 295,
+          "prompt_tokens": 1922,
+          "total_tokens": 2217,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 4.844,
+        "model_called": true,
+        "working_context_chars": 5969,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "ASAA2024091752958",
+              "fields": {
+                "component": "c1",
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "AFT CARGO TRANSITION PROFILE L/S STA 727A-727I. GROUNDED - YES."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED DAMAGE FROM AFT CARGO TRANSITION PROFILE 727-727I, ORIGINAL: .040, REMOVED: .40, REMAINING: .000 + IS FOUND TO BE OUT OF LIMITS IAW B737-900ER SRM 53-00-53-1A-2. REMOVED DAMAGE TRANSITION 727-727I, FABRICATED, ALODINED, PRIMED AND INSTALLED REPAIR PARTS IAW B737-900ER SRM 53-00-53-2R-5."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "ASAA2024091752958",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 37,
+                    "end": 46
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "AFT CARGO TRANSITION PROFILE L/S STA 727A-727I. GROUNDED - YES."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED DAMAGE FROM AFT CARGO TRANSITION PROFILE 727-727I, ORIGINAL: .040, REMOVED: .40, REMAINING: .000 + IS FOUND TO BE OUT OF LIMITS IAW B737-900ER SRM 53-00-53-1A-2. REMOVED DAMAGE TRANSITION 727-727I, FABRICATED, ALODINED, PRIMED AND INSTALLED REPAIR PARTS IAW B737-900ER SRM 53-00-53-2R-5."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": [
+              {
+                "field_name": "action",
+                "before": {
+                  "field": "narrative_raw",
+                  "start": 64,
+                  "end": 359,
+                  "quote": "REMOVED DAMAGE FROM AFT CARGO TRANSITION PROFILE 727-727I, ORIGINAL: .040, REMOVED: .40, REMAINING: .000 + IS FOUND TO BE OUT OF LIMITS IAW B737-900ER SRM 53-00-53-1A-2. REMOVED DAMAGE TRANSITION 727-727I, FABRICATED, ALODINED, PRIMED AND INSTALLED REPAIR PARTS IAW B737-900ER SRM 53-00-53-2R-5.",
+                  "source_column": null
+                },
+                "after": {
+                  "field": "narrative_raw",
+                  "start": 64,
+                  "end": 358,
+                  "quote": "REMOVED DAMAGE FROM AFT CARGO TRANSITION PROFILE 727-727I, ORIGINAL: .040, REMOVED: .40, REMAINING: .000 + IS FOUND TO BE OUT OF LIMITS IAW B737-900ER SRM 53-00-53-1A-2. REMOVED DAMAGE TRANSITION 727-727I, FABRICATED, ALODINED, PRIMED AND INSTALLED REPAIR PARTS IAW B737-900ER SRM 53-00-53-2R-5",
+                  "source_column": null
+                }
+              }
+            ]
+          }
+        },
+        "tool_error": "planned wording cannot establish completion",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 0,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 2,
+    "elapsed_seconds": 9.078,
+    "errors": [
+      {
+        "step": 3,
+        "error": "planned wording cannot establish completion"
+      },
+      {
+        "step": 4,
+        "error": "planned wording cannot establish completion"
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 2,
+    "responses_received": 2,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 3628,
+    "known_output_tokens": 547,
+    "known_total_tokens": 4175,
+    "known_cached_input_tokens": 2330
+  }
+}

@@ -148,6 +148,8 @@ class LocalServer:
     component_selection: bool = True
     boundary_adapter: bool = True
     focused_status_repair: bool = True
+    token_log_path: str | None = None
+    run_id: str | None = None
     request_count: int = field(default=0, init=False)
 
     def __post_init__(self):
@@ -190,6 +192,23 @@ class LocalServer:
                     for name in allowed
                 ]
             }
+            if "record_available_ids" in context and "record" in allowed:
+                available = context["record_available_ids"]
+                if (
+                    not isinstance(available, list)
+                    or not available
+                    or any(not isinstance(rid, str) or not rid for rid in available)
+                    or len(set(available)) != len(available)
+                ):
+                    raise BackendError("invalid record_available_ids contract")
+                for branch in response_schema["anyOf"]:
+                    if branch["properties"]["tool"]["enum"] == ["record"]:
+                        args = deepcopy(ARGS["record"])
+                        args["properties"]["record_id"] = {
+                            "type": "string",
+                            "enum": available,
+                        }
+                        branch["properties"]["args"] = args
         candidates = {}
         repair_contract = None
 
@@ -444,6 +463,19 @@ planning, verification, or the action's object.
                         "base_url": self.base_url,
                         "body": body,
                         "timeout": timeout,
+                        "token_log_path": self.token_log_path,
+                        "run_id": self.run_id,
+                        "request_number": self.request_count,
+                        "stage": (
+                            "evidence_revision"
+                            if revision
+                            else "extraction"
+                            if isinstance(extraction_record, dict)
+                            else "tool_selection"
+                        ),
+                        "record_id": extraction_record.get("record_id")
+                        if isinstance(extraction_record, dict)
+                        else None,
                     }
                 ),
                 capture_output=True,

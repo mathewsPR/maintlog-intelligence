@@ -1,0 +1,713 @@
+{
+  "batch_id": "58202a8ef4334ab0f665289fbc513f086bb85de8990fc22b008e058e5f23082f",
+  "candidate_id": "faa-history-063",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'BEAM'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BEAM",
+  "input_record_ids": [
+    "R61A2024010300773",
+    "R61A2024010300774",
+    "R61A2024010300775",
+    "R61A2024010300776"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BEAM",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'BEAM'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"EMB\",\"17000243\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 7,
+    "model_calls": 2,
+    "elapsed_seconds": 5.735,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "R61A2024010300774",
+          "date": "2024-01-03",
+          "asset_id": "FAA:[\"EMB\",\"17000243\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 189,
+              "end": 216,
+              "quote": "AFT SERVICE DOOR LOWER BEAM",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 118,
+              "end": 165,
+              "quote": "SIGNS OF CORROSION ON BOTTOM SIDE OF LOWER BEAM",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 168,
+              "end": 270,
+              "quote": "REMOVED AND REPLACED AFT SERVICE DOOR LOWER BEAM AND AFT EVACUATION SLIDE FITTING FWD NUT HOLDER PLATE",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "R61A2024010300774",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 153
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "WHILE IN HEAVY CHECK - AFT SERVICE DOOR AFT EVACUATION SLIDE FITTING SERRATED SLIDE SHIM FORWARD NUT HOLDER PLATE HAS SIGNS OF CORROSION ON BOTTOM SIDE OF LOWER BEAM.  REMOVED AND REPLACED AFT SERVICE DOOR LOWER BEAM AND AFT EVACUATION SLIDE FITTING FWD NUT HOLDER PLATE."
+          }
+        },
+        {
+          "record_id": "R61A2024010300775",
+          "date": "2024-01-03",
+          "asset_id": "FAA:[\"EMB\",\"17000243\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 23,
+              "end": 152,
+              "quote": "MAIN CABIN AFT WET AREA RIGHT SIDE FR 84 CROSS BEAM FLOOR STRUCTURE HAS (2) CORROSION SPOTS AND (2) CORRODED FASTENERS AS MARKED.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 154,
+              "end": 234,
+              "quote": "PERFORMED L ANGLE SPLICE REPAIR ON MAIN CABIN AFT WET AREA R/H FR 84 CROSS BEAM.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "R61A2024010300775",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 152
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "WHILE IN HEAVY CHECK - MAIN CABIN AFT WET AREA RIGHT SIDE FR 84 CROSS BEAM FLOOR STRUCTURE HAS (2) CORROSION SPOTS AND (2) CORRODED FASTENERS AS MARKED.  PERFORMED L ANGLE SPLICE REPAIR ON MAIN CABIN AFT WET AREA R/H FR 84 CROSS BEAM.  REF: SRM ETD2023-170-031600"
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-01-03 | record R61A2024010300774\nSource: SDR-2024.csv, CSV row 153, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: AFT SERVICE DOOR LOWER BEAM [record=R61A2024010300774; field=narrative_raw; offsets=189:216]\nproblem: SIGNS OF CORROSION ON BOTTOM SIDE OF LOWER BEAM [record=R61A2024010300774; field=narrative_raw; offsets=118:165]\naction: REMOVED AND REPLACED AFT SERVICE DOOR LOWER BEAM AND AFT EVACUATION SLIDE FITTING FWD NUT HOLDER PLATE [record=R61A2024010300774; field=narrative_raw; offsets=168:270]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): WHILE IN HEAVY CHECK - AFT SERVICE DOOR AFT EVACUATION SLIDE FITTING SERRATED SLIDE SHIM FORWARD NUT HOLDER PLATE HAS SIGNS OF CORROSION ON BOTTOM SIDE OF LOWER BEAM.  REMOVED AND REPLACED AFT SERVICE DOOR LOWER BEAM AND AFT EVACUATION SLIDE FITTING FWD NUT HOLDER PLATE.\n\n2024-01-03 | record R61A2024010300775\nSource: SDR-2024.csv, CSV row 152, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: MAIN CABIN AFT WET AREA RIGHT SIDE FR 84 CROSS BEAM FLOOR STRUCTURE HAS (2) CORROSION SPOTS AND (2) CORRODED FASTENERS AS MARKED. [record=R61A2024010300775; field=narrative_raw; offsets=23:152]\naction: PERFORMED L ANGLE SPLICE REPAIR ON MAIN CABIN AFT WET AREA R/H FR 84 CROSS BEAM. [record=R61A2024010300775; field=narrative_raw; offsets=154:234]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): WHILE IN HEAVY CHECK - MAIN CABIN AFT WET AREA RIGHT SIDE FR 84 CROSS BEAM FLOOR STRUCTURE HAS (2) CORROSION SPOTS AND (2) CORRODED FASTENERS AS MARKED.  PERFORMED L ANGLE SPLICE REPAIR ON MAIN CABIN AFT WET AREA R/H FR 84 CROSS BEAM.  REF: SRM ETD2023-170-031600\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "R61A2024010300774",
+        "event_date": "2024-01-03",
+        "asset_id": "FAA:[\"EMB\",\"17000243\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 153,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "WHILE IN HEAVY CHECK - AFT SERVICE DOOR AFT EVACUATION SLIDE FITTING SERRATED SLIDE SHIM FORWARD NUT HOLDER PLATE HAS SIGNS OF CORROSION ON BOTTOM SIDE OF LOWER BEAM.  REMOVED AND REPLACED AFT SERVICE DOOR LOWER BEAM AND AFT EVACUATION SLIDE FITTING FWD NUT HOLDER PLATE.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "R61A2024010300775",
+        "event_date": "2024-01-03",
+        "asset_id": "FAA:[\"EMB\",\"17000243\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 152,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "WHILE IN HEAVY CHECK - MAIN CABIN AFT WET AREA RIGHT SIDE FR 84 CROSS BEAM FLOOR STRUCTURE HAS (2) CORROSION SPOTS AND (2) CORRODED FASTENERS AS MARKED.  PERFORMED L ANGLE SPLICE REPAIR ON MAIN CABIN AFT WET AREA R/H FR 84 CROSS BEAM.  REF: SRM ETD2023-170-031600",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "R61A2024010300774",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 189,
+            "end": 216,
+            "quote": "AFT SERVICE DOOR LOWER BEAM",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 118,
+            "end": 165,
+            "quote": "SIGNS OF CORROSION ON BOTTOM SIDE OF LOWER BEAM",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 168,
+            "end": 270,
+            "quote": "REMOVED AND REPLACED AFT SERVICE DOOR LOWER BEAM AND AFT EVACUATION SLIDE FITTING FWD NUT HOLDER PLATE",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 153,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "R61A2024010300775",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 23,
+            "end": 152,
+            "quote": "MAIN CABIN AFT WET AREA RIGHT SIDE FR 84 CROSS BEAM FLOOR STRUCTURE HAS (2) CORROSION SPOTS AND (2) CORRODED FASTENERS AS MARKED.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 154,
+            "end": 234,
+            "quote": "PERFORMED L ANGLE SPLICE REPAIR ON MAIN CABIN AFT WET AREA R/H FR 84 CROSS BEAM.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 152,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 4,
+      "selected_record_count": 4,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 4,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BEAM",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5242,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "R61A2024010300774",
+              "asset_id": "FAA:[\"EMB\",\"17000243\"]",
+              "date": "2024-01-03",
+              "score": 0.9519617930437018,
+              "excerpt": "WHILE IN HEAVY CHECK - AFT SERVICE DOOR AFT EVACUATION SLIDE FITTING SERRATED SLIDE SHIM FORWARD NUT HOLDER PLATE HAS SIGNS OF CORROSION ON BOTTOM SIDE OF LOWER BEAM.  REMOVED AND REPLACED AFT SERVICE",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "R61A2024010300775",
+              "asset_id": "FAA:[\"EMB\",\"17000243\"]",
+              "date": "2024-01-03",
+              "score": 0.9446639598772678,
+              "excerpt": "WHILE IN HEAVY CHECK - MAIN CABIN AFT WET AREA RIGHT SIDE FR 84 CROSS BEAM FLOOR STRUCTURE HAS (2) CORROSION SPOTS AND (2) CORRODED FASTENERS AS MARKED.  PERFORMED L ANGLE SPLICE REPAIR ON MAIN CABIN ",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "R61A2024010300774"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 6265,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "R61A2024010300774",
+          "event_date": "2024-01-03",
+          "asset_id": "FAA:[\"EMB\",\"17000243\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 153,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "WHILE IN HEAVY CHECK - AFT SERVICE DOOR AFT EVACUATION SLIDE FITTING SERRATED SLIDE SHIM FORWARD NUT HOLDER PLATE HAS SIGNS OF CORROSION ON BOTTOM SIDE OF LOWER BEAM.  REMOVED AND REPLACED AFT SERVICE DOOR LOWER BEAM AND AFT EVACUATION SLIDE FITTING FWD NUT HOLDER PLATE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "R61A2024010300774",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "AFT SERVICE DOOR LOWER BEAM"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "SIGNS OF CORROSION ON BOTTOM SIDE OF LOWER BEAM"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED AFT SERVICE DOOR LOWER BEAM AND AFT EVACUATION SLIDE FITTING FWD NUT HOLDER PLATE"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 148,
+          "prompt_tokens": 1098,
+          "total_tokens": 1246,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.953,
+        "model_called": true,
+        "working_context_chars": 5224,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "R61A2024010300774",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "AFT SERVICE DOOR LOWER BEAM"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "SIGNS OF CORROSION ON BOTTOM SIDE OF LOWER BEAM"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED AFT SERVICE DOOR LOWER BEAM AND AFT EVACUATION SLIDE FITTING FWD NUT HOLDER PLATE"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "R61A2024010300774",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "AFT SERVICE DOOR LOWER BEAM"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "SIGNS OF CORROSION ON BOTTOM SIDE OF LOWER BEAM"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED AFT SERVICE DOOR LOWER BEAM AND AFT EVACUATION SLIDE FITTING FWD NUT HOLDER PLATE"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "R61A2024010300774",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 189,
+              "end": 216,
+              "quote": "AFT SERVICE DOOR LOWER BEAM",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 118,
+              "end": 165,
+              "quote": "SIGNS OF CORROSION ON BOTTOM SIDE OF LOWER BEAM",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 168,
+              "end": 270,
+              "quote": "REMOVED AND REPLACED AFT SERVICE DOOR LOWER BEAM AND AFT EVACUATION SLIDE FITTING FWD NUT HOLDER PLATE",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 153,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "R61A2024010300775"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 7571,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "R61A2024010300775",
+          "event_date": "2024-01-03",
+          "asset_id": "FAA:[\"EMB\",\"17000243\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 152,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "WHILE IN HEAVY CHECK - MAIN CABIN AFT WET AREA RIGHT SIDE FR 84 CROSS BEAM FLOOR STRUCTURE HAS (2) CORROSION SPOTS AND (2) CORRODED FASTENERS AS MARKED.  PERFORMED L ANGLE SPLICE REPAIR ON MAIN CABIN AFT WET AREA R/H FR 84 CROSS BEAM.  REF: SRM ETD2023-170-031600",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "R61A2024010300775",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "MAIN CABIN AFT WET AREA RIGHT SIDE FR 84 CROSS BEAM FLOOR STRUCTURE HAS (2) CORROSION SPOTS AND (2) CORRODED FASTENERS AS MARKED."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "PERFORMED L ANGLE SPLICE REPAIR ON MAIN CABIN AFT WET AREA R/H FR 84 CROSS BEAM."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 155,
+          "prompt_tokens": 1385,
+          "total_tokens": 1540,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.75,
+        "model_called": true,
+        "working_context_chars": 5216,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "R61A2024010300775",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "MAIN CABIN AFT WET AREA RIGHT SIDE FR 84 CROSS BEAM FLOOR STRUCTURE HAS (2) CORROSION SPOTS AND (2) CORRODED FASTENERS AS MARKED."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "PERFORMED L ANGLE SPLICE REPAIR ON MAIN CABIN AFT WET AREA R/H FR 84 CROSS BEAM."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "R61A2024010300775",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "MAIN CABIN AFT WET AREA RIGHT SIDE FR 84 CROSS BEAM FLOOR STRUCTURE HAS (2) CORROSION SPOTS AND (2) CORRODED FASTENERS AS MARKED."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "PERFORMED L ANGLE SPLICE REPAIR ON MAIN CABIN AFT WET AREA R/H FR 84 CROSS BEAM."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "R61A2024010300775",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 23,
+              "end": 152,
+              "quote": "MAIN CABIN AFT WET AREA RIGHT SIDE FR 84 CROSS BEAM FLOOR STRUCTURE HAS (2) CORROSION SPOTS AND (2) CORRODED FASTENERS AS MARKED.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 154,
+              "end": 234,
+              "quote": "PERFORMED L ANGLE SPLICE REPAIR ON MAIN CABIN AFT WET AREA R/H FR 84 CROSS BEAM.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 152,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 8871,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 4,
+          "unstructured_record_count": 4,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "R61A2024010300774",
+              "R61A2024010300775"
+            ]
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9098,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "R61A2024010300774",
+            "R61A2024010300775"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "R61A2024010300774",
+      "R61A2024010300775"
+    ],
+    "proposal_count": 2,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 2,
+    "elapsed_seconds": 5.735,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 2,
+    "responses_received": 2,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 2483,
+    "known_output_tokens": 303,
+    "known_total_tokens": 2786,
+    "known_cached_input_tokens": 1282
+  }
+}
