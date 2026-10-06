@@ -1,0 +1,700 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-051",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'FRAME'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "FRAME",
+  "input_record_ids": [
+    "DALA2024061806195",
+    "DALA2024061806189",
+    "DALA2024121011566",
+    "DALA2024121611723",
+    "DALA2024121611724",
+    "DALA2024121611727"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "FRAME",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'FRAME'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"39608\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 6,
+    "selected_record_count": 6,
+    "steps": 7,
+    "model_calls": 7,
+    "elapsed_seconds": 10.594,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "DALA2024121611723",
+          "date": "2024-12-13",
+          "asset_id": "FAA:[\"BOEING\",\"39608\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 33,
+              "end": 102,
+              "quote": "DENT ON FRAME UPPER STRUCTURE STA 500D AND STA 500C BTWN S25 L APROX.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 103,
+              "end": 212,
+              "quote": "FRAME UPPER STRUCTURE STA 500D AND STA 500C BETWEEN S25 L APPROX WERE REPAIRED PER B737-800 SRM 53-30-07-2R-1",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "DALA2024121611723",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 60855
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "(LOG 0707610) INITIAL INSPECTION:DENT ON FRAME UPPER STRUCTURE STA 500D AND STA 500C BTWN S25 L APROX. FRAME UPPER STRUCTURE STA 500D AND STA 500C BETWEEN S25 L APPROX WERE REPAIRED PER B737-800 SRM 53-30-07-2R-1."
+          }
+        },
+        {
+          "record_id": "DALA2024121611727",
+          "date": "2024-12-13",
+          "asset_id": "FAA:[\"BOEING\",\"39608\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 80,
+              "quote": "CORROSION AROUND BULKHEAD FRAME SETTLEMENT BTW STA 500I S18L TO S18R APPROX. C1.",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "citation": {
+            "record_id": "DALA2024121611727",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 60862
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "CORROSION AROUND BULKHEAD FRAME SETTLEMENT BTW STA 500I S18L TO S18R APPROX. C1. BULKHEAD FRAME SETTLEMENT BTW STA 500I S26L TO S26R WAS FABRICATED PER DGW 143A9485 REV. B AND REPLACED PER B737-800 SRM 51-40-02-0G PAR 4.B / B737-800 SRM 51-40-02-0G."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-12-13 | record DALA2024121611723\nSource: SDR-2024.csv, CSV row 60855, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: DENT ON FRAME UPPER STRUCTURE STA 500D AND STA 500C BTWN S25 L APROX. [record=DALA2024121611723; field=narrative_raw; offsets=33:102]\naction: FRAME UPPER STRUCTURE STA 500D AND STA 500C BETWEEN S25 L APPROX WERE REPAIRED PER B737-800 SRM 53-30-07-2R-1 [record=DALA2024121611723; field=narrative_raw; offsets=103:212]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): (LOG 0707610) INITIAL INSPECTION:DENT ON FRAME UPPER STRUCTURE STA 500D AND STA 500C BTWN S25 L APROX. FRAME UPPER STRUCTURE STA 500D AND STA 500C BETWEEN S25 L APPROX WERE REPAIRED PER B737-800 SRM 53-30-07-2R-1.\n\n2024-12-13 | record DALA2024121611727\nSource: SDR-2024.csv, CSV row 60862, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: CORROSION AROUND BULKHEAD FRAME SETTLEMENT BTW STA 500I S18L TO S18R APPROX. C1. [record=DALA2024121611727; field=narrative_raw; offsets=0:80]\naction: no extracted proposal\nAction status proposal: unknown\nFull source (narrative_raw, verbatim): CORROSION AROUND BULKHEAD FRAME SETTLEMENT BTW STA 500I S18L TO S18R APPROX. C1. BULKHEAD FRAME SETTLEMENT BTW STA 500I S26L TO S26R WAS FABRICATED PER DGW 143A9485 REV. B AND REPLACED PER B737-800 SRM 51-40-02-0G PAR 4.B / B737-800 SRM 51-40-02-0G.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "DALA2024121611723",
+        "event_date": "2024-12-13",
+        "asset_id": "FAA:[\"BOEING\",\"39608\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 60855,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "(LOG 0707610) INITIAL INSPECTION:DENT ON FRAME UPPER STRUCTURE STA 500D AND STA 500C BTWN S25 L APROX. FRAME UPPER STRUCTURE STA 500D AND STA 500C BETWEEN S25 L APPROX WERE REPAIRED PER B737-800 SRM 53-30-07-2R-1.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "DALA2024121611727",
+        "event_date": "2024-12-13",
+        "asset_id": "FAA:[\"BOEING\",\"39608\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 60862,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "CORROSION AROUND BULKHEAD FRAME SETTLEMENT BTW STA 500I S18L TO S18R APPROX. C1. BULKHEAD FRAME SETTLEMENT BTW STA 500I S26L TO S26R WAS FABRICATED PER DGW 143A9485 REV. B AND REPLACED PER B737-800 SRM 51-40-02-0G PAR 4.B / B737-800 SRM 51-40-02-0G.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "DALA2024121611723",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 33,
+            "end": 102,
+            "quote": "DENT ON FRAME UPPER STRUCTURE STA 500D AND STA 500C BTWN S25 L APROX.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 103,
+            "end": 212,
+            "quote": "FRAME UPPER STRUCTURE STA 500D AND STA 500C BETWEEN S25 L APPROX WERE REPAIRED PER B737-800 SRM 53-30-07-2R-1",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 60855,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "DALA2024121611727",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 80,
+            "quote": "CORROSION AROUND BULKHEAD FRAME SETTLEMENT BTW STA 500I S18L TO S18R APPROX. C1.",
+            "source_column": "Discrepancy"
+          },
+          "action": null
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 60862,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 6,
+      "selected_record_count": 6,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 6,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "FRAME",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 23,
+          "prompt_tokens": 1061,
+          "total_tokens": 1084,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.625,
+        "model_called": true,
+        "working_context_chars": 4999,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "DALA2024121611723",
+              "asset_id": "FAA:[\"BOEING\",\"39608\"]",
+              "date": "2024-12-13",
+              "score": 1.5234967836003686,
+              "excerpt": "(LOG 0707610) INITIAL INSPECTION:DENT ON FRAME UPPER STRUCTURE STA 500D AND STA 500C BTWN S25 L APROX. FRAME UPPER STRUCTURE STA 500D AND STA 500C BETWEEN S25 L APPROX WERE REPAIRED PER B737-800 SRM 5",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "DALA2024121611727",
+              "asset_id": "FAA:[\"BOEING\",\"39608\"]",
+              "date": "2024-12-13",
+              "score": 1.4748025981523545,
+              "excerpt": "CORROSION AROUND BULKHEAD FRAME SETTLEMENT BTW STA 500I S18L TO S18R APPROX. C1. BULKHEAD FRAME SETTLEMENT BTW STA 500I S26L TO S26R WAS FABRICATED PER DGW 143A9485 REV. B AND REPLACED PER B737-800 SR",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1542,
+          "total_tokens": 1554,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.609,
+        "model_called": true,
+        "working_context_chars": 5954,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 6,
+          "unstructured_record_count": 6,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DALA2024121611723"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1602,
+          "total_tokens": 1633,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.922,
+        "model_called": true,
+        "working_context_chars": 6181,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DALA2024121611723",
+          "event_date": "2024-12-13",
+          "asset_id": "FAA:[\"BOEING\",\"39608\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 60855,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "(LOG 0707610) INITIAL INSPECTION:DENT ON FRAME UPPER STRUCTURE STA 500D AND STA 500C BTWN S25 L APROX. FRAME UPPER STRUCTURE STA 500D AND STA 500C BETWEEN S25 L APPROX WERE REPAIRED PER B737-800 SRM 53-30-07-2R-1.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024121611723",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "DENT ON FRAME UPPER STRUCTURE STA 500D AND STA 500C BTWN S25 L APROX."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 103,
+                "end": 212
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 166,
+          "prompt_tokens": 1417,
+          "total_tokens": 1583,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 3.11,
+        "model_called": true,
+        "working_context_chars": 5166,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024121611723",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "DENT ON FRAME UPPER STRUCTURE STA 500D AND STA 500C BTWN S25 L APROX."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "FRAME UPPER STRUCTURE STA 500D AND STA 500C BETWEEN S25 L APPROX WERE REPAIRED PER B737-800 SRM 53-30-07-2R-1."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024121611723",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "DENT ON FRAME UPPER STRUCTURE STA 500D AND STA 500C BTWN S25 L APROX."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "FRAME UPPER STRUCTURE STA 500D AND STA 500C BETWEEN S25 L APPROX WERE REPAIRED PER B737-800 SRM 53-30-07-2R-1."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": [
+              {
+                "field_name": "action",
+                "before": {
+                  "field": "narrative_raw",
+                  "start": 103,
+                  "end": 213,
+                  "quote": "FRAME UPPER STRUCTURE STA 500D AND STA 500C BETWEEN S25 L APPROX WERE REPAIRED PER B737-800 SRM 53-30-07-2R-1.",
+                  "source_column": null
+                },
+                "after": {
+                  "field": "narrative_raw",
+                  "start": 103,
+                  "end": 212,
+                  "quote": "FRAME UPPER STRUCTURE STA 500D AND STA 500C BETWEEN S25 L APPROX WERE REPAIRED PER B737-800 SRM 53-30-07-2R-1",
+                  "source_column": null
+                }
+              }
+            ]
+          }
+        },
+        "tool_result": {
+          "record_id": "DALA2024121611723",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 33,
+              "end": 102,
+              "quote": "DENT ON FRAME UPPER STRUCTURE STA 500D AND STA 500C BTWN S25 L APROX.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 103,
+              "end": 212,
+              "quote": "FRAME UPPER STRUCTURE STA 500D AND STA 500C BETWEEN S25 L APPROX WERE REPAIRED PER B737-800 SRM 53-30-07-2R-1",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 60855,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DALA2024121611727"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2089,
+          "total_tokens": 2120,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.328,
+        "model_called": true,
+        "working_context_chars": 7398,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DALA2024121611727",
+          "event_date": "2024-12-13",
+          "asset_id": "FAA:[\"BOEING\",\"39608\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 60862,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CORROSION AROUND BULKHEAD FRAME SETTLEMENT BTW STA 500I S18L TO S18R APPROX. C1. BULKHEAD FRAME SETTLEMENT BTW STA 500I S26L TO S26R WAS FABRICATED PER DGW 143A9485 REV. B AND REPLACED PER B737-800 SRM 51-40-02-0G PAR 4.B / B737-800 SRM 51-40-02-0G.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024121611727",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "CORROSION AROUND BULKHEAD FRAME SETTLEMENT BTW STA 500I S18L TO S18R APPROX. C1."
+              },
+              "action": null
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 102,
+          "prompt_tokens": 1533,
+          "total_tokens": 1635,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.203,
+        "model_called": true,
+        "working_context_chars": 5202,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024121611727",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "CORROSION AROUND BULKHEAD FRAME SETTLEMENT BTW STA 500I S18L TO S18R APPROX. C1."
+                },
+                "action": null
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024121611727",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "CORROSION AROUND BULKHEAD FRAME SETTLEMENT BTW STA 500I S18L TO S18R APPROX. C1."
+                  },
+                  "action": null
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "DALA2024121611727",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 80,
+              "quote": "CORROSION AROUND BULKHEAD FRAME SETTLEMENT BTW STA 500I S18L TO S18R APPROX. C1.",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 60862,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "DALA2024121611723",
+              "DALA2024121611727"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 49,
+          "prompt_tokens": 2544,
+          "total_tokens": 2593,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.797,
+        "model_called": true,
+        "working_context_chars": 8520,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "DALA2024121611723",
+            "DALA2024121611727"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "DALA2024121611723",
+      "DALA2024121611727"
+    ],
+    "proposal_count": 2,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 7,
+    "elapsed_seconds": 10.594,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

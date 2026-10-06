@@ -1,0 +1,110 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "identity": {
+    "protocol": "faa-history-operational-v2",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+    "candidate_sha256": "8a209a32a93927801a1bdc3fa5f9f4f8f9f643c52fabe9cf8ca48c3ac5a257cf",
+    "runner_sha256": "6dd06b399d4d9cbdb8ad3aaae383e365a77009f4ee0fa194096bf9e704757422",
+    "implementation_sha256": {
+      "__init__.py": "f5ba1aeb61071044d33225f3f6296499505ede902c5f13ab8938aa651bee0865",
+      "agent.py": "fc6ae12ca42d2a67b9b653c82629f86df0811e20e4e1a0a8039c41867cd6390e",
+      "backends.py": "03e7fab0ccb1d850e76c95334cb6d511edc0fd856f83339c00fe629ec285ea2c",
+      "brief.py": "4acf9951ef6ddae8456c4267350c734134d585806b4e2cca9db40a625180c2d9",
+      "cli.py": "039e70766341fbd8cb5641bb91e8586438b8a32d03742d2cf07ea729459f5ae3",
+      "comparison.py": "38bc543830cffb439569daa329d71c080674b84cf39c316e9d66c4375b965b9c",
+      "component_selection.py": "aea6f0f0627969bae697fd0c8ab292b02231aba655ca5663f84890e2b33feea3",
+      "decision_schema.py": "4d3f5eb37d726dd723c3e1984e923f979b3b7466afbb0fbdcd54411bbbbd18c9",
+      "domain.py": "6d35007e1ccfbcaa7e401604adb5bd1d6c523099e57b93ae669f8b941875678c",
+      "evaluation.py": "4689690f6d59fe89bd41e3de6153594545407afe700c3e6c98399eeed524645a",
+      "evidence_policy.py": "80f176f6595a7425e8877ccba863365c4662fbf2b94fbb85eb4afc2f3999c7eb",
+      "evidence_review.py": "6194f1f8218baf9b81a959ccd5322eb252326e9757496bc35e0239db0c445d14",
+      "extraction.py": "9716e4dd659d4a41060650c516e947264acaad539d8872b3a6377814e03085ea",
+      "history_review.py": "47b2415a3f6352dd5c4598dd301536a327ad963eb78f3fbb24801b562617513c",
+      "http_worker.py": "73e021787599e67ba6a18b99f715fe43c592373f8c46b1f53be98cf92437d4ab",
+      "ingestion.py": "1cc969f8b46421ba39e5387b59ce22808e4942dea68932b406f6e5ab2bf102a2",
+      "maintie_benchmark.py": "7599e270ddb70306b96547d52ec9f1daf8b8d1d3e3f722742aac850a1578ded7",
+      "normalization.py": "8347b4a0271243b4908c5751a74e47bc27b4307c5aa36b488bab64bca8e51347",
+      "normalization_probe.py": "03d4a3892c2a7c5c3d2dc365ae8e9be43e4404947864e352e43ad4539b1b0e33",
+      "occurrence_repair.py": "d15500dbf5d17ba4d0a508a27dbf69f92ef721c9495255c5833e999ef8c1585b",
+      "retrieval.py": "3c56af406942d56b478fb3b6b939672c170f1d87274cf5deb14d18ea59a77e05",
+      "review.py": "979e39b26939dd1695ffbea8d6a592c70c396c112a54b108c67305cd9ff9faed",
+      "review_store.py": "62f42a86ce9fbc7514de5ee4f81050a31a921b396f16493fad924d6661f92ee5",
+      "revision_component.py": "617b5eab2c2cb3f1b73112b19ecbf4cf1b885dcaf11cda3582ba8af46aa0eb3c",
+      "revision_evidence.py": "d8e300a11223791f62d8cfbf5da046dd382a545edd30922ece34fbb218370ccb",
+      "scope.py": "0c8d4ce0b3e7ab7cf5e91013209ab4ee542b99a8d288bdb3fca28238ead138e5",
+      "tasks.py": "1d92e26001d07bc19cba08dc280560b4b7c0de1afa231f30335efe5583bed463",
+      "vocabulary.py": "39e8b84c61b2e807594f5633eabc219ec63301c3f1bd6c2de3a672450b86fec2",
+      "working_context.py": "3f8318704dfc21fdc0429a79e398761bf8100448d4fc6fa74c50cc4c4c28ec48"
+    },
+    "model": "qwen35-4b",
+    "base_url": "http://127.0.0.1:8081/v1",
+    "configuration": {
+      "component_selection": true,
+      "boundary_adapter": true,
+      "focused_status_repair": true
+    },
+    "budgets": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "trials": 3,
+    "histories": 100
+  },
+  "planned_runs": 600,
+  "server_models_response": {
+    "models": [
+      {
+        "name": "qwen35-4b",
+        "model": "qwen35-4b",
+        "modified_at": "",
+        "size": "",
+        "digest": "",
+        "type": "model",
+        "description": "",
+        "tags": [
+          ""
+        ],
+        "capabilities": [
+          "completion"
+        ],
+        "parameters": "",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "",
+          "families": [
+            ""
+          ],
+          "parameter_size": "",
+          "quantization_level": ""
+        }
+      }
+    ],
+    "object": "list",
+    "data": [
+      {
+        "id": "qwen35-4b",
+        "aliases": [
+          "qwen35-4b"
+        ],
+        "tags": [],
+        "object": "model",
+        "created": 1791275169,
+        "owned_by": "llamacpp",
+        "meta": {
+          "vocab_type": 2,
+          "n_vocab": 248320,
+          "n_ctx": 4096,
+          "n_ctx_train": 262144,
+          "n_embd": 2560,
+          "n_params": 4205751296,
+          "size": 2729969664,
+          "ftype": "Q4_K - Medium"
+        }
+      }
+    ]
+  },
+  "limitations": "Server alias does not prove loaded model-file identity. Questions are source-derived; relevance and semantic correctness have no reviewed labels."
+}

@@ -1,0 +1,1036 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-018",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'ANTI-ICE VALVE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "ANTI-ICE VALVE",
+  "input_record_ids": [
+    "AALA202406030664",
+    "AALA202406189290",
+    "AALA202407232363"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "context_limit",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "ANTI-ICE VALVE",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'ANTI-ICE VALVE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 19,
+    "model_calls": 19,
+    "elapsed_seconds": 25.688,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "AALA202406030664",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 61,
+            "end": 95,
+            "quote": "COWL VALVE FAILURE ON BOTH ENGINES",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 202,
+            "end": 335,
+            "quote": "ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 25660,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "ANTI-ICE VALVE",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 27,
+          "prompt_tokens": 1069,
+          "total_tokens": 1096,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.703,
+        "model_called": true,
+        "working_context_chars": 5017,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "AALA202406030664",
+              "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+              "date": "2024-06-02",
+              "score": 1.7427957801448033,
+              "excerpt": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1291,
+          "total_tokens": 1303,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.563,
+        "model_called": true,
+        "working_context_chars": 5534,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 1351,
+          "total_tokens": 1381,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.812,
+        "model_called": true,
+        "working_context_chars": 5761,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "AALA202406030664",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "COWL VALVE FAILURE ON BOTH ENGINES"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 141,
+          "prompt_tokens": 1126,
+          "total_tokens": 1267,
+          "prompt_tokens_details": {
+            "cached_tokens": 587
+          }
+        },
+        "model_seconds": 2.844,
+        "model_called": true,
+        "working_context_chars": 5287,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "AALA202406030664",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "COWL VALVE FAILURE ON BOTH ENGINES"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "AALA202406030664",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "COWL VALVE FAILURE ON BOTH ENGINES"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "AALA202406030664",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "COWL VALVE FAILURE ON BOTH ENGINES"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE."
+              }
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 183,
+          "prompt_tokens": 936,
+          "total_tokens": 1119,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "model_seconds": 3.234,
+        "model_called": true,
+        "working_context_chars": 7037,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": true,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "AALA202406030664",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "COWL VALVE FAILURE ON BOTH ENGINES"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE."
+                }
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "AALA202406030664",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "COWL VALVE FAILURE ON BOTH ENGINES"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE."
+                  }
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 61,
+              "end": 95,
+              "quote": "COWL VALVE FAILURE ON BOTH ENGINES",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 202,
+              "end": 335,
+              "quote": "ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2334,
+          "total_tokens": 2364,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.235,
+        "model_called": true,
+        "working_context_chars": 8849,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2676,
+          "total_tokens": 2706,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.328,
+        "model_called": true,
+        "working_context_chars": 9701,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2009,
+          "total_tokens": 2039,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.375,
+        "model_called": true,
+        "working_context_chars": 7572,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2092,
+          "total_tokens": 2122,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.094,
+        "model_called": true,
+        "working_context_chars": 7788,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2175,
+          "total_tokens": 2205,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.093,
+        "model_called": true,
+        "working_context_chars": 8004,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 11,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2258,
+          "total_tokens": 2288,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.157,
+        "model_called": true,
+        "working_context_chars": 8220,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 12,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2341,
+          "total_tokens": 2371,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.172,
+        "model_called": true,
+        "working_context_chars": 8436,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 13,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2424,
+          "total_tokens": 2454,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.203,
+        "model_called": true,
+        "working_context_chars": 8652,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 14,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2507,
+          "total_tokens": 2537,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.218,
+        "model_called": true,
+        "working_context_chars": 8868,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 15,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2590,
+          "total_tokens": 2620,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.282,
+        "model_called": true,
+        "working_context_chars": 9084,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 16,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2673,
+          "total_tokens": 2703,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.297,
+        "model_called": true,
+        "working_context_chars": 9300,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 17,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2756,
+          "total_tokens": 2786,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.343,
+        "model_called": true,
+        "working_context_chars": 9516,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 18,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2839,
+          "total_tokens": 2869,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.344,
+        "model_called": true,
+        "working_context_chars": 9732,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 19,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202406030664"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2922,
+          "total_tokens": 2952,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.391,
+        "model_called": true,
+        "working_context_chars": 9948,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202406030664",
+          "event_date": "2024-06-02",
+          "asset_id": "FAA:[\"BOEING\",\"67991\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25660,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED DUE TO: COWL VALVE FAILURE ON BOTH ENGINES AT CRUISE WHEN ATTEMPTING TO USE ENG ANTI-ICE; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA. ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "context_limit",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 19,
+    "elapsed_seconds": 25.688,
+    "errors": [
+      {
+        "step": 4,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'ACCOMPLISHED ANTI ICE GROUND TEST FOR BOTH ENGINES PER AMM 30-21-11-400-801, NO FAULTS NOTED, NO HISTORY, GOOD FOR RETURN TO SERVICE.'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

@@ -1,0 +1,990 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-086",
+  "trial": 2,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'HOUSING'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "HOUSING",
+  "input_record_ids": [
+    "CALA2024040300960",
+    "CALA2024111802880",
+    "CALA2024120601430",
+    "CALA2024121001463"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "context_limit",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "HOUSING",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'HOUSING'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 19,
+    "model_calls": 19,
+    "elapsed_seconds": 24.796,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "CALA2024120601430",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 33,
+            "quote": "56F EMERGENCY LIGHT HOUSIMG BROKE",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 34,
+            "end": 130,
+            "quote": "REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 59109,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 4,
+      "selected_record_count": 4,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 4,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "HOUSING",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 1065,
+          "total_tokens": 1090,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.891,
+        "model_called": true,
+        "working_context_chars": 5003,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024120601430",
+              "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+              "date": "2024-12-04",
+              "score": 1.8700715958920435,
+              "excerpt": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1299,
+          "total_tokens": 1311,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.516,
+        "model_called": true,
+        "working_context_chars": 5455,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 4,
+          "unstructured_record_count": 4,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1359,
+          "total_tokens": 1390,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.828,
+        "model_called": true,
+        "working_context_chars": 5682,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024120601430",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "56F EMERGENCY LIGHT HOUSIMG BROKE"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 154,
+          "prompt_tokens": 1358,
+          "total_tokens": 1512,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.938,
+        "model_called": true,
+        "working_context_chars": 5083,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024120601430",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "56F EMERGENCY LIGHT HOUSIMG BROKE"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024120601430",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "56F EMERGENCY LIGHT HOUSIMG BROKE"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 33,
+              "quote": "56F EMERGENCY LIGHT HOUSIMG BROKE",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 34,
+              "end": 130,
+              "quote": "REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1809,
+          "total_tokens": 1840,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.297,
+        "model_called": true,
+        "working_context_chars": 6771,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2108,
+          "total_tokens": 2139,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.093,
+        "model_called": true,
+        "working_context_chars": 7419,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2408,
+          "total_tokens": 2439,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.188,
+        "model_called": true,
+        "working_context_chars": 8067,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2708,
+          "total_tokens": 2739,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.312,
+        "model_called": true,
+        "working_context_chars": 8715,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 3008,
+          "total_tokens": 3039,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.438,
+        "model_called": true,
+        "working_context_chars": 9363,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2239,
+          "total_tokens": 2270,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.516,
+        "model_called": true,
+        "working_context_chars": 7905,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 11,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2323,
+          "total_tokens": 2354,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.172,
+        "model_called": true,
+        "working_context_chars": 8122,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 12,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2407,
+          "total_tokens": 2438,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.203,
+        "model_called": true,
+        "working_context_chars": 8339,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 13,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2491,
+          "total_tokens": 2522,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.25,
+        "model_called": true,
+        "working_context_chars": 8556,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 14,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2575,
+          "total_tokens": 2606,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.281,
+        "model_called": true,
+        "working_context_chars": 8773,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 15,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2659,
+          "total_tokens": 2690,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.281,
+        "model_called": true,
+        "working_context_chars": 8990,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 16,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2743,
+          "total_tokens": 2774,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.328,
+        "model_called": true,
+        "working_context_chars": 9207,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 17,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2827,
+          "total_tokens": 2858,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.375,
+        "model_called": true,
+        "working_context_chars": 9424,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 18,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2911,
+          "total_tokens": 2942,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.375,
+        "model_called": true,
+        "working_context_chars": 9641,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 19,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024120601430"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2995,
+          "total_tokens": 3026,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.438,
+        "model_called": true,
+        "working_context_chars": 9858,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024120601430",
+          "event_date": "2024-12-04",
+          "asset_id": "FAA:[\"BOEING\",\"37813\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 59109,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "56F EMERGENCY LIGHT HOUSIMG BROKE REPLACED LIGHT HOUSING REF IPD DMC-B787-A-25-25-11-080-941A-D PARTS USED:  58-2523-3-0048,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "context_limit",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 19,
+    "elapsed_seconds": 24.796,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

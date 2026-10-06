@@ -1,0 +1,1004 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-094",
+  "trial": 3,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'TRANSITION PANEL'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "TRANSITION PANEL",
+  "input_record_ids": [
+    "ASAA2024012348621",
+    "ASAA2024012547993",
+    "ASAA2024012547995",
+    "ASAA2024012547996",
+    "ASAA2024012648622",
+    "ASAA2024013148624",
+    "ASAA2024020948623"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "TRANSITION PANEL",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'TRANSITION PANEL'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"41732\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 7,
+    "selected_record_count": 7,
+    "steps": 9,
+    "model_calls": 9,
+    "elapsed_seconds": 17.015,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "ASAA2024012547993",
+          "date": "2024-01-25",
+          "asset_id": "FAA:[\"BOEING\",\"41732\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 61,
+              "quote": "FWD CARGO BAY RH TRANSITION HAS CORR FROM FS 500E TO FS 500L.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 78,
+              "end": 184,
+              "quote": "REMOVED CORRODED SECTION OF RH TRANSITION PNL & INSTALLED NEW TRANSTION PNL IAW B737-900 SRM 53-00-53-2R-5",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "ASAA2024012547993",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 8233
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "FWD CARGO BAY RH TRANSITION HAS CORR FROM FS 500E TO FS 500L. GROUNDED - YES. REMOVED CORRODED SECTION OF RH TRANSITION PNL & INSTALLED NEW TRANSTION PNL IAW B737-900 SRM 53-00-53-2R-5."
+          }
+        },
+        {
+          "record_id": "ASAA2024012547995",
+          "date": "2024-01-25",
+          "asset_id": "FAA:[\"BOEING\",\"41732\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 78,
+              "quote": "AFT CARGO LH TRANSITION PNL CORRODED IN MULIPLTE AREAS STA 727I+10 TO STA 847.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 95,
+              "end": 177,
+              "quote": "REPAIRED TRANSITION PNL FROM STA 727I+10 TO STA 847 IAW B737-900 SRM 53-00-53-2R-5",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "ASAA2024012547995",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 8234
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "AFT CARGO LH TRANSITION PNL CORRODED IN MULIPLTE AREAS STA 727I+10 TO STA 847. GROUNDED - YES. REPAIRED TRANSITION PNL FROM STA 727I+10 TO STA 847 IAW B737-900 SRM 53-00-53-2R-5."
+          }
+        },
+        {
+          "record_id": "ASAA2024012547996",
+          "date": "2024-01-25",
+          "asset_id": "FAA:[\"BOEING\",\"41732\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 88,
+              "quote": "AFT CARGO LH TRANSITION PNL CORRODED IN MULITPLE AREAS BETWEEN STA 727+4 TO STA 7271+10.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 105,
+              "end": 193,
+              "quote": "REPAIRED TRANSITION PNL LH FROM STA 727+4 TO STA 727I +10 IAW B737-900 SRM 53-00-53-2R5.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "ASAA2024012547996",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 8235
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "AFT CARGO LH TRANSITION PNL CORRODED IN MULITPLE AREAS BETWEEN STA 727+4 TO STA 7271+10. GROUNDED - YES. REPAIRED TRANSITION PNL LH FROM STA 727+4 TO STA 727I +10 IAW B737-900 SRM 53-00-53-2R5."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-01-25 | record ASAA2024012547993\nSource: SDR-2024.csv, CSV row 8233, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: FWD CARGO BAY RH TRANSITION HAS CORR FROM FS 500E TO FS 500L. [record=ASAA2024012547993; field=narrative_raw; offsets=0:61]\naction: REMOVED CORRODED SECTION OF RH TRANSITION PNL & INSTALLED NEW TRANSTION PNL IAW B737-900 SRM 53-00-53-2R-5 [record=ASAA2024012547993; field=narrative_raw; offsets=78:184]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): FWD CARGO BAY RH TRANSITION HAS CORR FROM FS 500E TO FS 500L. GROUNDED - YES. REMOVED CORRODED SECTION OF RH TRANSITION PNL & INSTALLED NEW TRANSTION PNL IAW B737-900 SRM 53-00-53-2R-5.\n\n2024-01-25 | record ASAA2024012547995\nSource: SDR-2024.csv, CSV row 8234, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: AFT CARGO LH TRANSITION PNL CORRODED IN MULIPLTE AREAS STA 727I+10 TO STA 847. [record=ASAA2024012547995; field=narrative_raw; offsets=0:78]\naction: REPAIRED TRANSITION PNL FROM STA 727I+10 TO STA 847 IAW B737-900 SRM 53-00-53-2R-5 [record=ASAA2024012547995; field=narrative_raw; offsets=95:177]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): AFT CARGO LH TRANSITION PNL CORRODED IN MULIPLTE AREAS STA 727I+10 TO STA 847. GROUNDED - YES. REPAIRED TRANSITION PNL FROM STA 727I+10 TO STA 847 IAW B737-900 SRM 53-00-53-2R-5.\n\n2024-01-25 | record ASAA2024012547996\nSource: SDR-2024.csv, CSV row 8235, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: AFT CARGO LH TRANSITION PNL CORRODED IN MULITPLE AREAS BETWEEN STA 727+4 TO STA 7271+10. [record=ASAA2024012547996; field=narrative_raw; offsets=0:88]\naction: REPAIRED TRANSITION PNL LH FROM STA 727+4 TO STA 727I +10 IAW B737-900 SRM 53-00-53-2R5. [record=ASAA2024012547996; field=narrative_raw; offsets=105:193]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): AFT CARGO LH TRANSITION PNL CORRODED IN MULITPLE AREAS BETWEEN STA 727+4 TO STA 7271+10. GROUNDED - YES. REPAIRED TRANSITION PNL LH FROM STA 727+4 TO STA 727I +10 IAW B737-900 SRM 53-00-53-2R5.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "ASAA2024012547993",
+        "event_date": "2024-01-25",
+        "asset_id": "FAA:[\"BOEING\",\"41732\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 8233,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "FWD CARGO BAY RH TRANSITION HAS CORR FROM FS 500E TO FS 500L. GROUNDED - YES. REMOVED CORRODED SECTION OF RH TRANSITION PNL & INSTALLED NEW TRANSTION PNL IAW B737-900 SRM 53-00-53-2R-5.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "ASAA2024012547995",
+        "event_date": "2024-01-25",
+        "asset_id": "FAA:[\"BOEING\",\"41732\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 8234,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "AFT CARGO LH TRANSITION PNL CORRODED IN MULIPLTE AREAS STA 727I+10 TO STA 847. GROUNDED - YES. REPAIRED TRANSITION PNL FROM STA 727I+10 TO STA 847 IAW B737-900 SRM 53-00-53-2R-5.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "ASAA2024012547996",
+        "event_date": "2024-01-25",
+        "asset_id": "FAA:[\"BOEING\",\"41732\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 8235,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "AFT CARGO LH TRANSITION PNL CORRODED IN MULITPLE AREAS BETWEEN STA 727+4 TO STA 7271+10. GROUNDED - YES. REPAIRED TRANSITION PNL LH FROM STA 727+4 TO STA 727I +10 IAW B737-900 SRM 53-00-53-2R5.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "ASAA2024012547993",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 61,
+            "quote": "FWD CARGO BAY RH TRANSITION HAS CORR FROM FS 500E TO FS 500L.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 78,
+            "end": 184,
+            "quote": "REMOVED CORRODED SECTION OF RH TRANSITION PNL & INSTALLED NEW TRANSTION PNL IAW B737-900 SRM 53-00-53-2R-5",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 8233,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "ASAA2024012547995",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 78,
+            "quote": "AFT CARGO LH TRANSITION PNL CORRODED IN MULIPLTE AREAS STA 727I+10 TO STA 847.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 95,
+            "end": 177,
+            "quote": "REPAIRED TRANSITION PNL FROM STA 727I+10 TO STA 847 IAW B737-900 SRM 53-00-53-2R-5",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 8234,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "ASAA2024012547996",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 88,
+            "quote": "AFT CARGO LH TRANSITION PNL CORRODED IN MULITPLE AREAS BETWEEN STA 727+4 TO STA 7271+10.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 105,
+            "end": 193,
+            "quote": "REPAIRED TRANSITION PNL LH FROM STA 727+4 TO STA 727I +10 IAW B737-900 SRM 53-00-53-2R5.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 8235,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 7,
+      "selected_record_count": 7,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 7,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "TRANSITION PANEL",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 1065,
+          "total_tokens": 1090,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.0,
+        "model_called": true,
+        "working_context_chars": 5021,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "ASAA2024012547993",
+              "asset_id": "FAA:[\"BOEING\",\"41732\"]",
+              "date": "2024-01-25",
+              "score": 1.222781839171361,
+              "excerpt": "FWD CARGO BAY RH TRANSITION HAS CORR FROM FS 500E TO FS 500L. GROUNDED - YES. REMOVED CORRODED SECTION OF RH TRANSITION PNL & INSTALLED NEW TRANSTION PNL IAW B737-900 SRM 53-00-53-2R-5.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "ASAA2024012547995",
+              "asset_id": "FAA:[\"BOEING\",\"41732\"]",
+              "date": "2024-01-25",
+              "score": 1.2107788388803364,
+              "excerpt": "AFT CARGO LH TRANSITION PNL CORRODED IN MULIPLTE AREAS STA 727I+10 TO STA 847. GROUNDED - YES. REPAIRED TRANSITION PNL FROM STA 727I+10 TO STA 847 IAW B737-900 SRM 53-00-53-2R-5.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "ASAA2024012547996",
+              "asset_id": "FAA:[\"BOEING\",\"41732\"]",
+              "date": "2024-01-25",
+              "score": 1.1650342710545725,
+              "excerpt": "AFT CARGO LH TRANSITION PNL CORRODED IN MULITPLE AREAS BETWEEN STA 727+4 TO STA 7271+10. GROUNDED - YES. REPAIRED TRANSITION PNL LH FROM STA 727+4 TO STA 727I +10 IAW B737-900 SRM 53-00-53-2R5.",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1779,
+          "total_tokens": 1791,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.734,
+        "model_called": true,
+        "working_context_chars": 6368,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 7,
+          "unstructured_record_count": 7,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "ASAA2024012547993"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1839,
+          "total_tokens": 1870,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.0,
+        "model_called": true,
+        "working_context_chars": 6595,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "ASAA2024012547993",
+          "event_date": "2024-01-25",
+          "asset_id": "FAA:[\"BOEING\",\"41732\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 8233,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FWD CARGO BAY RH TRANSITION HAS CORR FROM FS 500E TO FS 500L. GROUNDED - YES. REMOVED CORRODED SECTION OF RH TRANSITION PNL & INSTALLED NEW TRANSTION PNL IAW B737-900 SRM 53-00-53-2R-5.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "ASAA2024012547993",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FWD CARGO BAY RH TRANSITION HAS CORR FROM FS 500E TO FS 500L."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 78,
+                "end": 184
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 155,
+          "prompt_tokens": 1399,
+          "total_tokens": 1554,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.953,
+        "model_called": true,
+        "working_context_chars": 5138,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "ASAA2024012547993",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FWD CARGO BAY RH TRANSITION HAS CORR FROM FS 500E TO FS 500L."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED CORRODED SECTION OF RH TRANSITION PNL & INSTALLED NEW TRANSTION PNL IAW B737-900 SRM 53-00-53-2R-5."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "ASAA2024012547993",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FWD CARGO BAY RH TRANSITION HAS CORR FROM FS 500E TO FS 500L."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED CORRODED SECTION OF RH TRANSITION PNL & INSTALLED NEW TRANSTION PNL IAW B737-900 SRM 53-00-53-2R-5."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": [
+              {
+                "field_name": "action",
+                "before": {
+                  "field": "narrative_raw",
+                  "start": 78,
+                  "end": 185,
+                  "quote": "REMOVED CORRODED SECTION OF RH TRANSITION PNL & INSTALLED NEW TRANSTION PNL IAW B737-900 SRM 53-00-53-2R-5.",
+                  "source_column": null
+                },
+                "after": {
+                  "field": "narrative_raw",
+                  "start": 78,
+                  "end": 184,
+                  "quote": "REMOVED CORRODED SECTION OF RH TRANSITION PNL & INSTALLED NEW TRANSTION PNL IAW B737-900 SRM 53-00-53-2R-5",
+                  "source_column": null
+                }
+              }
+            ]
+          }
+        },
+        "tool_result": {
+          "record_id": "ASAA2024012547993",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 61,
+              "quote": "FWD CARGO BAY RH TRANSITION HAS CORR FROM FS 500E TO FS 500L.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 78,
+              "end": 184,
+              "quote": "REMOVED CORRODED SECTION OF RH TRANSITION PNL & INSTALLED NEW TRANSTION PNL IAW B737-900 SRM 53-00-53-2R-5",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 8233,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "ASAA2024012547995"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2296,
+          "total_tokens": 2327,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.391,
+        "model_called": true,
+        "working_context_chars": 7772,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "ASAA2024012547995",
+          "event_date": "2024-01-25",
+          "asset_id": "FAA:[\"BOEING\",\"41732\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 8234,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AFT CARGO LH TRANSITION PNL CORRODED IN MULIPLTE AREAS STA 727I+10 TO STA 847. GROUNDED - YES. REPAIRED TRANSITION PNL FROM STA 727I+10 TO STA 847 IAW B737-900 SRM 53-00-53-2R-5.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "ASAA2024012547995",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "AFT CARGO LH TRANSITION PNL CORRODED IN MULIPLTE AREAS STA 727I+10 TO STA 847."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 95,
+                "end": 177
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 167,
+          "prompt_tokens": 1410,
+          "total_tokens": 1577,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 3.14,
+        "model_called": true,
+        "working_context_chars": 5131,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "ASAA2024012547995",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "AFT CARGO LH TRANSITION PNL CORRODED IN MULIPLTE AREAS STA 727I+10 TO STA 847."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPAIRED TRANSITION PNL FROM STA 727I+10 TO STA 847 IAW B737-900 SRM 53-00-53-2R-5."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "ASAA2024012547995",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "AFT CARGO LH TRANSITION PNL CORRODED IN MULIPLTE AREAS STA 727I+10 TO STA 847."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPAIRED TRANSITION PNL FROM STA 727I+10 TO STA 847 IAW B737-900 SRM 53-00-53-2R-5."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": [
+              {
+                "field_name": "action",
+                "before": {
+                  "field": "narrative_raw",
+                  "start": 95,
+                  "end": 178,
+                  "quote": "REPAIRED TRANSITION PNL FROM STA 727I+10 TO STA 847 IAW B737-900 SRM 53-00-53-2R-5.",
+                  "source_column": null
+                },
+                "after": {
+                  "field": "narrative_raw",
+                  "start": 95,
+                  "end": 177,
+                  "quote": "REPAIRED TRANSITION PNL FROM STA 727I+10 TO STA 847 IAW B737-900 SRM 53-00-53-2R-5",
+                  "source_column": null
+                }
+              }
+            ]
+          }
+        },
+        "tool_result": {
+          "record_id": "ASAA2024012547995",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 78,
+              "quote": "AFT CARGO LH TRANSITION PNL CORRODED IN MULIPLTE AREAS STA 727I+10 TO STA 847.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 95,
+              "end": 177,
+              "quote": "REPAIRED TRANSITION PNL FROM STA 727I+10 TO STA 847 IAW B737-900 SRM 53-00-53-2R-5",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 8234,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "ASAA2024012547996"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2775,
+          "total_tokens": 2806,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.532,
+        "model_called": true,
+        "working_context_chars": 8935,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "ASAA2024012547996",
+          "event_date": "2024-01-25",
+          "asset_id": "FAA:[\"BOEING\",\"41732\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 8235,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AFT CARGO LH TRANSITION PNL CORRODED IN MULITPLE AREAS BETWEEN STA 727+4 TO STA 7271+10. GROUNDED - YES. REPAIRED TRANSITION PNL LH FROM STA 727+4 TO STA 727I +10 IAW B737-900 SRM 53-00-53-2R5.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "ASAA2024012547996",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "AFT CARGO LH TRANSITION PNL CORRODED IN MULITPLE AREAS BETWEEN STA 727+4 TO STA 7271+10."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPAIRED TRANSITION PNL LH FROM STA 727+4 TO STA 727I +10 IAW B737-900 SRM 53-00-53-2R5."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 171,
+          "prompt_tokens": 1413,
+          "total_tokens": 1584,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 3.25,
+        "model_called": true,
+        "working_context_chars": 5146,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "ASAA2024012547996",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "AFT CARGO LH TRANSITION PNL CORRODED IN MULITPLE AREAS BETWEEN STA 727+4 TO STA 7271+10."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPAIRED TRANSITION PNL LH FROM STA 727+4 TO STA 727I +10 IAW B737-900 SRM 53-00-53-2R5."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "ASAA2024012547996",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "AFT CARGO LH TRANSITION PNL CORRODED IN MULITPLE AREAS BETWEEN STA 727+4 TO STA 7271+10."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPAIRED TRANSITION PNL LH FROM STA 727+4 TO STA 727I +10 IAW B737-900 SRM 53-00-53-2R5."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "ASAA2024012547996",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 88,
+              "quote": "AFT CARGO LH TRANSITION PNL CORRODED IN MULITPLE AREAS BETWEEN STA 727+4 TO STA 7271+10.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 105,
+              "end": 193,
+              "quote": "REPAIRED TRANSITION PNL LH FROM STA 727+4 TO STA 727I +10 IAW B737-900 SRM 53-00-53-2R5.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 8235,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "ASAA2024012547993",
+              "ASAA2024012547995",
+              "ASAA2024012547996"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 66,
+          "prompt_tokens": 2577,
+          "total_tokens": 2643,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 2.015,
+        "model_called": true,
+        "working_context_chars": 8726,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "ASAA2024012547993",
+            "ASAA2024012547995",
+            "ASAA2024012547996"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "ASAA2024012547993",
+      "ASAA2024012547995",
+      "ASAA2024012547996"
+    ],
+    "proposal_count": 3,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 9,
+    "elapsed_seconds": 17.015,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

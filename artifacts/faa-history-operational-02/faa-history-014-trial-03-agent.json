@@ -1,0 +1,659 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-014",
+  "trial": 3,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'WINDOW'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "WINDOW",
+  "input_record_ids": [
+    "IPXA2024011917735",
+    "IPXA2024012217735",
+    "IPXA2024061895317",
+    "IPXA2024070460913",
+    "IPXA2024072614999"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "WINDOW",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'WINDOW'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"DOUG\",\"48803\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 5,
+    "selected_record_count": 5,
+    "steps": 7,
+    "model_calls": 7,
+    "elapsed_seconds": 11.672,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "IPXA2024012217735",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 9,
+            "quote": "L1 WINDOW",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 76,
+            "quote": "L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 78,
+            "end": 130,
+            "quote": "COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 2502,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 5,
+      "selected_record_count": 5,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 5,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "WINDOW",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 23,
+          "prompt_tokens": 1060,
+          "total_tokens": 1083,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.687,
+        "model_called": true,
+        "working_context_chars": 4999,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "IPXA2024012217735",
+              "asset_id": "FAA:[\"DOUG\",\"48803\"]",
+              "date": "2024-01-18",
+              "score": 1.3771418340398425,
+              "excerpt": "L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801. COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05. OPEN",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "IPXA2024011917735",
+              "asset_id": "FAA:[\"DOUG\",\"48803\"]",
+              "date": "2024-01-18",
+              "score": 1.3462025516974598,
+              "excerpt": "*** SDR FILED OPEN *** L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801. COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05.",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1482,
+          "total_tokens": 1494,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.61,
+        "model_called": true,
+        "working_context_chars": 5842,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 5,
+          "unstructured_record_count": 5,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "IPXA2024012217735"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1542,
+          "total_tokens": 1573,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.922,
+        "model_called": true,
+        "working_context_chars": 6069,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "IPXA2024012217735",
+          "event_date": "2024-01-18",
+          "asset_id": "FAA:[\"DOUG\",\"48803\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 2502,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801. COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05. OPEN",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "IPXA2024012217735",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "L1 WINDOW"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 151,
+          "prompt_tokens": 1068,
+          "total_tokens": 1219,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.89,
+        "model_called": true,
+        "working_context_chars": 5089,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "IPXA2024012217735",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "L1 WINDOW"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "IPXA2024012217735",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "L1 WINDOW"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "IPXA2024012217735",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 9
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 76
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 78,
+                "end": 130
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 117,
+          "prompt_tokens": 1745,
+          "total_tokens": 1862,
+          "prompt_tokens_details": {
+            "cached_tokens": 587
+          }
+        },
+        "model_seconds": 2.328,
+        "model_called": true,
+        "working_context_chars": 5860,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": {
+            "component": [
+              {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 9,
+                "quote": "L1 WINDOW",
+                "surrounding_text": "L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-"
+              },
+              {
+                "field": "narrative_raw",
+                "start": 104,
+                "end": 113,
+                "quote": "L1 WINDOW",
+                "surrounding_text": "MITS AS PER AMM 56-11-01-200-801. COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05. OPEN"
+              }
+            ],
+            "problem": [
+              {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 76,
+                "quote": "L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801",
+                "surrounding_text": "L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801. COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05. OPEN"
+              }
+            ],
+            "action": [
+              {
+                "field": "narrative_raw",
+                "start": 78,
+                "end": 130,
+                "quote": "COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05",
+                "surrounding_text": "MINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801. COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05. OPEN"
+              }
+            ]
+          },
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "IPXA2024012217735",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 9
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 76
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 78,
+                  "end": 130
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "IPXA2024012217735",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 9
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 76
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 78,
+                    "end": 130
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "IPXA2024012217735",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 9,
+              "quote": "L1 WINDOW",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 76,
+              "quote": "L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 78,
+              "end": 130,
+              "quote": "COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 2502,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "IPXA2024011917735"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2199,
+          "total_tokens": 2230,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.203,
+        "model_called": true,
+        "working_context_chars": 7979,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "IPXA2024011917735",
+          "event_date": "2024-01-18",
+          "asset_id": "FAA:[\"DOUG\",\"48803\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 2259,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "*** SDR FILED OPEN *** L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801. COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "IPXA2024011917735",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "L1 WINDOW"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 151,
+          "prompt_tokens": 1073,
+          "total_tokens": 1224,
+          "prompt_tokens_details": {
+            "cached_tokens": 587
+          }
+        },
+        "model_seconds": 3.016,
+        "model_called": true,
+        "working_context_chars": 5107,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "IPXA2024011917735",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "L1 WINDOW"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "IPXA2024011917735",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "L1 WINDOW"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "L1 WINDOW HAD DELAMINATION THAT IS OUT OF LIMITS AS PER AMM 56-11-01-200-801"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "COMPLETED INSTALLATION OF L1 WINDOW REF AMM 56-11-05"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 7,
+    "elapsed_seconds": 11.672,
+    "errors": [
+      {
+        "step": 4,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      },
+      {
+        "step": 7,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

@@ -1,0 +1,1098 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-096",
+  "trial": 2,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'ROLLER'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "ROLLER",
+  "input_record_ids": [
+    "SWIA202412261014",
+    "SWIA202501071014",
+    "SWIA202412261023",
+    "SWIA202412301023",
+    "SWIA20241024",
+    "SWIA202412261024"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "ROLLER",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'ROLLER'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"CNDAIR\",\"10169\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 6,
+    "selected_record_count": 6,
+    "steps": 11,
+    "model_calls": 11,
+    "elapsed_seconds": 21.093,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "SWIA20241024",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 29,
+            "quote": "LH ROLLER ON SLATS 3-2 FWD 1B",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 30,
+            "end": 47,
+            "quote": "FAILED INSPECTION",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 112,
+            "end": 187,
+            "quote": "REMOVED AND REPLACED LH ROLLER ON SLAT 3-2 FWD IB IAW CRJ 700 AMM 27-81-44.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 63313,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "SWIA202412261024",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 29,
+            "quote": "LH ROLLER ON SLATS 3-2 FWD 1B",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 30,
+            "end": 47,
+            "quote": "FAILED INSPECTION",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 110,
+            "end": 185,
+            "quote": "REMOVED AND REPLACED LH ROLLER ON SLAT 3-2 FWD IB IAW CRJ 700 AMM 27-81-44.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 62888,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "SWIA202412261023",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 140,
+            "end": 174,
+            "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 58,
+            "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 119,
+            "end": 192,
+            "quote": "REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 62887,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 6,
+      "selected_record_count": 6,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 6,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "ROLLER",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 23,
+          "prompt_tokens": 1061,
+          "total_tokens": 1084,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.703,
+        "model_called": true,
+        "working_context_chars": 5001,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "SWIA20241024",
+              "asset_id": "FAA:[\"CNDAIR\",\"10169\"]",
+              "date": "2024-10-24",
+              "score": 0.6632116687454737,
+              "excerpt": "LH ROLLER ON SLATS 3-2 FWD 1B FAILED INSPECTION (C-CHECK RO 12/24/2024) (FILED CLOSED)OK, TO INSTALL. PA. 911290REMOVED AND REPLACED LH ROLLER ON SLAT 3-2 FWD IB IAW CRJ 700 AMM 27-81-44.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWIA202412261024",
+              "asset_id": "FAA:[\"CNDAIR\",\"10169\"]",
+              "date": "2024-10-24",
+              "score": 0.6632116687454737,
+              "excerpt": "LH ROLLER ON SLATS 3-2 FWD 1B FAILED INSPECTION (C-CHECK RO 12/24/2024) (FILED OPEN)OK, TO INSTALL. PA. 911290REMOVED AND REPLACED LH ROLLER ON SLAT 3-2 FWD IB IAW CRJ 700 AMM 27-81-44.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWIA202412261023",
+              "asset_id": "FAA:[\"CNDAIR\",\"10169\"]",
+              "date": "2024-10-23",
+              "score": 0.6574934138975963,
+              "excerpt": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS (C-CHECK RO 12/24/2024) (FILED OPEN) OK TO INSTALL PA911290 REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWIA202412301023",
+              "asset_id": "FAA:[\"CNDAIR\",\"10169\"]",
+              "date": "2024-10-23",
+              "score": 0.6574934138975963,
+              "excerpt": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS (C-CHECK RO 12/24/2024) (FILED CLOSED) OK TO INSTALL PA911290 REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44.",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1989,
+          "total_tokens": 2001,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.797,
+        "model_called": true,
+        "working_context_chars": 6754,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 6,
+          "unstructured_record_count": 6,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWIA20241024"
+          }
+        },
+        "usage": {
+          "completion_tokens": 26,
+          "prompt_tokens": 2049,
+          "total_tokens": 2075,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.0,
+        "model_called": true,
+        "working_context_chars": 6981,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWIA20241024",
+          "event_date": "2024-10-24",
+          "asset_id": "FAA:[\"CNDAIR\",\"10169\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 63313,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "LH ROLLER ON SLATS 3-2 FWD 1B FAILED INSPECTION (C-CHECK RO 12/24/2024) (FILED CLOSED)OK, TO INSTALL. PA. 911290REMOVED AND REPLACED LH ROLLER ON SLAT 3-2 FWD IB IAW CRJ 700 AMM 27-81-44.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWIA20241024",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "LH ROLLER ON SLATS 3-2 FWD 1B"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FAILED INSPECTION"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED LH ROLLER ON SLAT 3-2 FWD IB IAW CRJ 700 AMM 27-81-44."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 148,
+          "prompt_tokens": 1102,
+          "total_tokens": 1250,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.86,
+        "model_called": true,
+        "working_context_chars": 5135,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWIA20241024",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "LH ROLLER ON SLATS 3-2 FWD 1B"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FAILED INSPECTION"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED LH ROLLER ON SLAT 3-2 FWD IB IAW CRJ 700 AMM 27-81-44."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWIA20241024",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "LH ROLLER ON SLATS 3-2 FWD 1B"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FAILED INSPECTION"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED LH ROLLER ON SLAT 3-2 FWD IB IAW CRJ 700 AMM 27-81-44."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWIA20241024",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 29,
+              "quote": "LH ROLLER ON SLATS 3-2 FWD 1B",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 30,
+              "end": 47,
+              "quote": "FAILED INSPECTION",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 112,
+              "end": 187,
+              "quote": "REMOVED AND REPLACED LH ROLLER ON SLAT 3-2 FWD IB IAW CRJ 700 AMM 27-81-44.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 63313,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWIA202412261024"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2520,
+          "total_tokens": 2550,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.296,
+        "model_called": true,
+        "working_context_chars": 8150,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWIA202412261024",
+          "event_date": "2024-10-24",
+          "asset_id": "FAA:[\"CNDAIR\",\"10169\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 62888,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "LH ROLLER ON SLATS 3-2 FWD 1B FAILED INSPECTION (C-CHECK RO 12/24/2024) (FILED OPEN)OK, TO INSTALL. PA. 911290REMOVED AND REPLACED LH ROLLER ON SLAT 3-2 FWD IB IAW CRJ 700 AMM 27-81-44.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWIA202412261024",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "LH ROLLER ON SLATS 3-2 FWD 1B"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FAILED INSPECTION"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED LH ROLLER ON SLAT 3-2 FWD IB IAW CRJ 700 AMM 27-81-44."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 152,
+          "prompt_tokens": 1106,
+          "total_tokens": 1258,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.891,
+        "model_called": true,
+        "working_context_chars": 5137,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWIA202412261024",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "LH ROLLER ON SLATS 3-2 FWD 1B"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FAILED INSPECTION"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED LH ROLLER ON SLAT 3-2 FWD IB IAW CRJ 700 AMM 27-81-44."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWIA202412261024",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "LH ROLLER ON SLATS 3-2 FWD 1B"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FAILED INSPECTION"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED LH ROLLER ON SLAT 3-2 FWD IB IAW CRJ 700 AMM 27-81-44."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWIA202412261024",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 29,
+              "quote": "LH ROLLER ON SLATS 3-2 FWD 1B",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 30,
+              "end": 47,
+              "quote": "FAILED INSPECTION",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 110,
+              "end": 185,
+              "quote": "REMOVED AND REPLACED LH ROLLER ON SLAT 3-2 FWD IB IAW CRJ 700 AMM 27-81-44.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 62888,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWIA202412261023"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2990,
+          "total_tokens": 3020,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.484,
+        "model_called": true,
+        "working_context_chars": 9317,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWIA202412261023",
+          "event_date": "2024-10-23",
+          "asset_id": "FAA:[\"CNDAIR\",\"10169\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 62887,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS (C-CHECK RO 12/24/2024) (FILED OPEN) OK TO INSTALL PA911290 REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWIA202412261023",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 164,
+          "prompt_tokens": 1100,
+          "total_tokens": 1264,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 3.11,
+        "model_called": true,
+        "working_context_chars": 5144,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWIA202412261023",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWIA202412261023",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWIA202412261023",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 140,
+                "end": 174
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 58
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 119,
+                "end": 192
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 121,
+          "prompt_tokens": 1851,
+          "total_tokens": 1972,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.406,
+        "model_called": true,
+        "working_context_chars": 5942,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": {
+            "component": [
+              {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 34,
+                "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD",
+                "surrounding_text": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS (C-CHECK RO 12/24/2024) (FILED OPEN"
+              },
+              {
+                "field": "narrative_raw",
+                "start": 140,
+                "end": 174,
+                "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD",
+                "surrounding_text": "4) (FILED OPEN) OK TO INSTALL PA911290 REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44."
+              }
+            ],
+            "problem": [
+              {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 58,
+                "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS",
+                "surrounding_text": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS (C-CHECK RO 12/24/2024) (FILED OPEN) OK TO INSTALL PA911290"
+              }
+            ],
+            "action": [
+              {
+                "field": "narrative_raw",
+                "start": 119,
+                "end": 192,
+                "quote": "REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44.",
+                "surrounding_text": "(C-CHECK RO 12/24/2024) (FILED OPEN) OK TO INSTALL PA911290 REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44."
+              }
+            ]
+          },
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWIA202412261023",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 140,
+                  "end": 174
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 58
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 119,
+                  "end": 192
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWIA202412261023",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 140,
+                    "end": 174
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 58
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 119,
+                    "end": 192
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWIA202412261023",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 140,
+              "end": 174,
+              "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 58,
+              "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 119,
+              "end": 192,
+              "quote": "REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 62887,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWIA202412301023"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2763,
+          "total_tokens": 2793,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.313,
+        "model_called": true,
+        "working_context_chars": 9117,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWIA202412301023",
+          "event_date": "2024-10-23",
+          "asset_id": "FAA:[\"CNDAIR\",\"10169\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 63312,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS (C-CHECK RO 12/24/2024) (FILED CLOSED) OK TO INSTALL PA911290 REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 11,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWIA202412301023",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 164,
+          "prompt_tokens": 1100,
+          "total_tokens": 1264,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 3.218,
+        "model_called": true,
+        "working_context_chars": 5146,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWIA202412301023",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWIA202412301023",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "RH SLAT TRACK ROLLER 1-2 AFT OUTBD FLAT SPOT OUT OF LIMITS"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED RH SLAT TRACK ROLLER 1-2 AFT OUTBD IAW AMM 27-81-44."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 3,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 11,
+    "elapsed_seconds": 21.093,
+    "errors": [
+      {
+        "step": 8,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      },
+      {
+        "step": 11,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

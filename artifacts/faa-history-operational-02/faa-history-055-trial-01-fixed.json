@@ -1,0 +1,512 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-055",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'CABLE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "CABLE",
+  "input_record_ids": [
+    "DALA2024122011882",
+    "DALA2024122411987",
+    "DALA2024122411988"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "CABLE",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'CABLE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"AIRBUS\",\"0673\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 6,
+    "model_calls": 3,
+    "elapsed_seconds": 6.828,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "DALA2024122411988",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 44,
+            "quote": "SEAT MOUNTED EMERGENCY LIGHTS 5A AND 7A INOP",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 46,
+            "end": 138,
+            "quote": "R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 62551,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": null,
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "CABLE",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 4998,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "DALA2024122411988",
+              "asset_id": "FAA:[\"AIRBUS\",\"0673\"]",
+              "date": "2024-12-19",
+              "score": 0.8374050716033314,
+              "excerpt": "SEAT MOUNTED EMERGENCY LIGHTS 5A AND 7A INOP. R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE. WILL REQUIRE FURTHER TROUBLE SHOOTING. WORKING HIGHER PRIORIT",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "DALA2024122411987",
+              "asset_id": "FAA:[\"AIRBUS\",\"0673\"]",
+              "date": "2024-12-19",
+              "score": 0.7694097068719417,
+              "excerpt": "SEAT MOUNTED EMERGENCY LIGHT INOP AT SEAT LOCATION 2A. R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE. T/S PER CMM FAULT ISOLATION 33-52-20 PAGE 1006 RANG ",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DALA2024122411988"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 5951,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DALA2024122411988",
+          "event_date": "2024-12-19",
+          "asset_id": "FAA:[\"AIRBUS\",\"0673\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 62551,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "SEAT MOUNTED EMERGENCY LIGHTS 5A AND 7A INOP. R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE. WILL REQUIRE FURTHER TROUBLE SHOOTING. WORKING HIGHER PRIORITY A/C. OK TO CONT ON MEL 33-50-07A. (LP# 6626477)",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024122411988",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "SEAT MOUNTED EMERGENCY LIGHTS 5A AND 7A INOP"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE."
+              }
+            },
+            "action_status": "attempted"
+          }
+        },
+        "usage": {
+          "completion_tokens": 133,
+          "prompt_tokens": 1374,
+          "total_tokens": 1507,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.328,
+        "model_called": true,
+        "working_context_chars": 5202,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024122411988",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "SEAT MOUNTED EMERGENCY LIGHTS 5A AND 7A INOP"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE."
+                }
+              },
+              "action_status": "attempted"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024122411988",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "SEAT MOUNTED EMERGENCY LIGHTS 5A AND 7A INOP"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE."
+                  }
+                },
+                "action_status": "attempted"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='attempted' lacks unnegated explicit support in the selected action quote 'R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE.'; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024122411988",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "SEAT MOUNTED EMERGENCY LIGHTS 5A AND 7A INOP"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE."
+              }
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 132,
+          "prompt_tokens": 989,
+          "total_tokens": 1121,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "model_seconds": 2.515,
+        "model_called": true,
+        "working_context_chars": 6839,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": true,
+          "component_recovery_used": true,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024122411988",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "SEAT MOUNTED EMERGENCY LIGHTS 5A AND 7A INOP"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE."
+                }
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024122411988",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "SEAT MOUNTED EMERGENCY LIGHTS 5A AND 7A INOP"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE."
+                  }
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "DALA2024122411988",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 44,
+              "quote": "SEAT MOUNTED EMERGENCY LIGHTS 5A AND 7A INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 46,
+              "end": 138,
+              "quote": "R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 62551,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DALA2024122411987"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 8804,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DALA2024122411987",
+          "event_date": "2024-12-19",
+          "asset_id": "FAA:[\"AIRBUS\",\"0673\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 62550,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "SEAT MOUNTED EMERGENCY LIGHT INOP AT SEAT LOCATION 2A. R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE. T/S PER CMM FAULT ISOLATION 33-52-20 PAGE 1006 RANG PIN 1 AND 3 SUPPOSE TO READ BETWEEN 25-30 VDC, READINGS WAY BELOW. WILL REQUIRE FURTHER TROUBLE SHOOTING. WORKING HIGHER PRIORITY A/C. OK TO CONT ON MEL 33-50-07A. (LP# 6626475)",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024122411987",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "SEAT MOUNTED EMERGENCY LIGHT INOP AT SEAT LOCATION 2A"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REINSTALLED ORIGINAL LIGHT AND CABLE"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 106,
+          "prompt_tokens": 1425,
+          "total_tokens": 1531,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 1.969,
+        "model_called": true,
+        "working_context_chars": 5330,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024122411987",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "SEAT MOUNTED EMERGENCY LIGHT INOP AT SEAT LOCATION 2A"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REINSTALLED ORIGINAL LIGHT AND CABLE"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024122411987",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "SEAT MOUNTED EMERGENCY LIGHT INOP AT SEAT LOCATION 2A"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REINSTALLED ORIGINAL LIGHT AND CABLE"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'REINSTALLED ORIGINAL LIGHT AND CABLE'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 3,
+    "elapsed_seconds": 6.828,
+    "errors": [
+      {
+        "step": 3,
+        "error": "action_status='attempted' lacks unnegated explicit support in the selected action quote 'R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE.'; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      },
+      {
+        "step": 6,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'REINSTALLED ORIGINAL LIGHT AND CABLE'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

@@ -1,0 +1,968 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-085",
+  "trial": 2,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'APU'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "APU",
+  "input_record_ids": [
+    "YENA2024011000021",
+    "YENA2024011600041",
+    "YENA2024082101131"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "context_limit",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "APU",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'APU'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 19,
+    "model_calls": 19,
+    "elapsed_seconds": 23.64,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "YENA2024011600041",
+        "fields": {
+          "component": null,
+          "problem": null,
+          "action": {
+            "field": "narrative_raw",
+            "start": 34,
+            "end": 78,
+            "quote": "PERFORMED THE STEPS IN TSM 49-00-00-200-811A",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 1546,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "APU",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 1062,
+          "total_tokens": 1086,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.828,
+        "model_called": true,
+        "working_context_chars": 4995,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "YENA2024011600041",
+              "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+              "date": "2024-01-13",
+              "score": 1.2726236832404234,
+              "excerpt": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1308,
+          "total_tokens": 1320,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.532,
+        "model_called": true,
+        "working_context_chars": 5516,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1368,
+          "total_tokens": 1399,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.843,
+        "model_called": true,
+        "working_context_chars": 5743,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "YENA2024011600041",
+            "fields": {
+              "component": null,
+              "problem": null,
+              "action": {
+                "field": "narrative_raw",
+                "quote": "PERFORMED THE STEPS IN TSM 49-00-00-200-811A"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 95,
+          "prompt_tokens": 1389,
+          "total_tokens": 1484,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.094,
+        "model_called": true,
+        "working_context_chars": 5229,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "YENA2024011600041",
+              "fields": {
+                "component": null,
+                "problem": null,
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "PERFORMED THE STEPS IN TSM 49-00-00-200-811A"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "YENA2024011600041",
+                "fields": {
+                  "component": null,
+                  "problem": null,
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "PERFORMED THE STEPS IN TSM 49-00-00-200-811A"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "fields": {
+            "component": null,
+            "problem": null,
+            "action": {
+              "field": "narrative_raw",
+              "start": 34,
+              "end": 78,
+              "quote": "PERFORMED THE STEPS IN TSM 49-00-00-200-811A",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1797,
+          "total_tokens": 1828,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.203,
+        "model_called": true,
+        "working_context_chars": 6857,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2133,
+          "total_tokens": 2164,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.11,
+        "model_called": true,
+        "working_context_chars": 7650,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2470,
+          "total_tokens": 2501,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.234,
+        "model_called": true,
+        "working_context_chars": 8443,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2807,
+          "total_tokens": 2838,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.359,
+        "model_called": true,
+        "working_context_chars": 9236,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2139,
+          "total_tokens": 2170,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.532,
+        "model_called": true,
+        "working_context_chars": 7774,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2222,
+          "total_tokens": 2253,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.156,
+        "model_called": true,
+        "working_context_chars": 7991,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 11,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2305,
+          "total_tokens": 2336,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.187,
+        "model_called": true,
+        "working_context_chars": 8208,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 12,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2388,
+          "total_tokens": 2419,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.203,
+        "model_called": true,
+        "working_context_chars": 8425,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 13,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2471,
+          "total_tokens": 2502,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.235,
+        "model_called": true,
+        "working_context_chars": 8642,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 14,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2554,
+          "total_tokens": 2585,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.265,
+        "model_called": true,
+        "working_context_chars": 8859,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 15,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2637,
+          "total_tokens": 2668,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.297,
+        "model_called": true,
+        "working_context_chars": 9076,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 16,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2720,
+          "total_tokens": 2751,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.328,
+        "model_called": true,
+        "working_context_chars": 9293,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 17,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2803,
+          "total_tokens": 2834,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.375,
+        "model_called": true,
+        "working_context_chars": 9510,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 18,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2886,
+          "total_tokens": 2917,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.391,
+        "model_called": true,
+        "working_context_chars": 9727,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 19,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "YENA2024011600041"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2969,
+          "total_tokens": 3000,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.422,
+        "model_called": true,
+        "working_context_chars": 9944,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "YENA2024011600041",
+          "event_date": "2024-01-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"05783\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1546,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLT#1193, BOS-MBJ. '(APU SYSTEM); PERFORMED THE STEPS IN TSM 49-00-00-200-811A. FOUND NO LEAKS FROM LOAD COMPRESSOR DRAIN LINE. NO VISIBLE OIL LEAKS NOTED. RAN APU AND BLEED FOR A TOTAL OF 3 HOURS AND NO ODORS PRESENT. MDDR CLEARED. PLACARD REMOVED. MX4 UPDATED. MCC NOTIFIED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "context_limit",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 19,
+    "elapsed_seconds": 23.64,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

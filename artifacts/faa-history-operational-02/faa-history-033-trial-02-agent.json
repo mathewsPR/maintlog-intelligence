@@ -1,0 +1,591 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-033",
+  "trial": 2,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'LIGHT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "LIGHT",
+  "input_record_ids": [
+    "CALA2024051301451",
+    "CALA2024053101654",
+    "CALA2024053101655",
+    "CALA2024110401002"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "LIGHT",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'LIGHT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 7,
+    "model_calls": 7,
+    "elapsed_seconds": 11.484,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "CALA2024110401002",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 64,
+            "end": 113,
+            "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 115,
+            "end": 172,
+            "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 53859,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 4,
+      "selected_record_count": 4,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 4,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "LIGHT",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 23,
+          "prompt_tokens": 1061,
+          "total_tokens": 1084,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.718,
+        "model_called": true,
+        "working_context_chars": 4999,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024110401002",
+              "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+              "date": "2024-11-02",
+              "score": 0.17839683427888267,
+              "excerpt": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN. R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11. OPS CHECK GOOD.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "CALA2024053101654",
+              "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+              "date": "2024-05-31",
+              "score": 0.14332974984964833,
+              "excerpt": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - ROW 30ABC AISLE EPL INOP IDT C/W 30A EPL LIGHT OPC NORMAL REF GMM 09-10-05 BENEATH SEAT 30A, FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIM",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "CALA2024051301451",
+              "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+              "date": "2024-05-10",
+              "score": 0.1032296288242973,
+              "excerpt": "ENG 2 OVERHEAT DURING DEPARTURE. LIGHT EXT AFTER REDUCING POWER OPENED #2 ENGINE COWLING AND INSPECTED BLEED AIR DUCTING.  FOUND THE STAGE 9 INLET TUBE [23] TO THE HPTACC VALVE LOOSE AND COMBUSTION CA",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "CALA2024053101655",
+              "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+              "date": "2024-05-31",
+              "score": 0.09340623185606405,
+              "excerpt": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - DOOR 2R LOWER EMERGENCY EXIT SIGN CRACKED AND HALF BULBS INOP IDT C/W PROPER INSTALL AND OPS OF DOOR 2R LOWER EMERGENCY LIGHT REF GMM 09",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1952,
+          "total_tokens": 1964,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.782,
+        "model_called": true,
+        "working_context_chars": 6815,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 4,
+          "unstructured_record_count": 4,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024110401002"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2012,
+          "total_tokens": 2043,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.047,
+        "model_called": true,
+        "working_context_chars": 7042,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024110401002",
+          "event_date": "2024-11-02",
+          "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 53859,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN. R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11. OPS CHECK GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024110401002",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 121,
+          "prompt_tokens": 1348,
+          "total_tokens": 1469,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.625,
+        "model_called": true,
+        "working_context_chars": 5142,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024110401002",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024110401002",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024110401002",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11"
+              }
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 122,
+          "prompt_tokens": 928,
+          "total_tokens": 1050,
+          "prompt_tokens_details": {
+            "cached_tokens": 222
+          }
+        },
+        "model_seconds": 2.36,
+        "model_called": true,
+        "working_context_chars": 6696,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": true,
+          "component_recovery_used": true,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024110401002",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11"
+                }
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024110401002",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11"
+                  }
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024110401002",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 64,
+              "end": 113,
+              "quote": "WHITE EMERGENCY EXIT FLOOR LIGHT ROW 14ABC BROKEN",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 115,
+              "end": 172,
+              "quote": "R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 53859,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024053101654"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2866,
+          "total_tokens": 2897,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.484,
+        "model_called": true,
+        "working_context_chars": 9723,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024053101654",
+          "event_date": "2024-05-31",
+          "asset_id": "FAA:[\"BOEING\",\"44565\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 25348,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EMERGENCY LIGHTING SYSTEM OPERATIONAL CHECK  {B737-33-3-0235} - ROW 30ABC AISLE EPL INOP IDT C/W 30A EPL LIGHT OPC NORMAL REF GMM 09-10-05 BENEATH SEAT 30A, FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR IAW BOEING SWPM 20-42-01, CONNECTOR AISLE EPL LIGHT OPS CHECK OKAY / PARTS USED: 00-0366-3-2289,QTY :1 REINSTALLED TRIM BENEATH SEAT 30A, ALL TOOLING REMOVED AND GARBAGE DISPOSED",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024053101654",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REINSTALLED TRIM BENEATH SEAT 30A"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 118,
+          "prompt_tokens": 1450,
+          "total_tokens": 1568,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.453,
+        "model_called": true,
+        "working_context_chars": 5364,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024053101654",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REINSTALLED TRIM BENEATH SEAT 30A"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024053101654",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FOUND SEAT SIDE BLACK WIRE BROKEN FROM CRIMPED NEW MATE-N-LOK PIN CONNECTOR"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REINSTALLED TRIM BENEATH SEAT 30A"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'REINSTALLED TRIM BENEATH SEAT 30A'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 7,
+    "elapsed_seconds": 11.484,
+    "errors": [
+      {
+        "step": 4,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      },
+      {
+        "step": 7,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'REINSTALLED TRIM BENEATH SEAT 30A'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

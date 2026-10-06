@@ -1,0 +1,1174 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-100",
+  "trial": 2,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'PANEL'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "PANEL",
+  "input_record_ids": [
+    "SWAA2024012544413",
+    "SWAA2024043080877",
+    "SWAA2024082729853",
+    "SWAA2024082729854",
+    "SWAA2024082729855",
+    "SWAA2024082729856",
+    "SWAA2024092440324"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "PANEL",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'PANEL'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 7,
+    "selected_record_count": 7,
+    "steps": 11,
+    "model_calls": 4,
+    "elapsed_seconds": 9.594,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "SWAA2024082729853",
+          "date": "2024-08-24",
+          "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 63,
+              "quote": "AFT CARGO PANEL 141FW HAS A CRACK WITHIN TWO INCHES OF THE EDGE",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 69,
+              "end": 122,
+              "quote": "REPAIRED AFT CARGO PANEL 141FW IAW EA M-21-125-00-669",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "SWAA2024082729853",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 40579
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "AFT CARGO PANEL 141FW HAS A CRACK WITHIN TWO INCHES OF THE EDGE<[01] REPAIRED AFT CARGO PANEL 141FW IAW EA M-21-125-00-669"
+          }
+        },
+        {
+          "record_id": "SWAA2024082729854",
+          "date": "2024-08-24",
+          "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 70,
+              "quote": "AFT CARGO PANEL 141DW HAS MULTIPLE CRACKS WITHIN 2 INCHES OF THE EDGE.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 76,
+              "end": 128,
+              "quote": "REPAIRED AFT CARGO PANEL 14DW IAW EA M-21-125-00-669",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "SWAA2024082729854",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 40578
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "AFT CARGO PANEL 141DW HAS MULTIPLE CRACKS WITHIN 2 INCHES OF THE EDGE.<[01] REPAIRED AFT CARGO PANEL 14DW IAW EA M-21-125-00-669"
+          }
+        },
+        {
+          "record_id": "SWAA2024082729855",
+          "date": "2024-08-24",
+          "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 91,
+              "quote": "FWD CARGO PANEL 121CW HAS TWO CRACKS WITHIN TWO INCHES OF THE EDGE (SEPARATED BY 12 INCHES)",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 97,
+              "end": 150,
+              "quote": "REPAIRED FWD CARGO PANEL 121CW IAW EA M-21-125-00-669",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "SWAA2024082729855",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 40545
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "FWD CARGO PANEL 121CW HAS TWO CRACKS WITHIN TWO INCHES OF THE EDGE (SEPARATED BY 12 INCHES)<[01] REPAIRED FWD CARGO PANEL 121CW IAW EA M-21-125-00-669"
+          }
+        },
+        {
+          "record_id": "SWAA2024082729856",
+          "date": "2024-08-24",
+          "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 61,
+              "quote": "AFT CARGO PANEL 142DW HAS A CRACK WITHIN 2INCHES OF THE EDGE.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 67,
+              "end": 120,
+              "quote": "REPAIRED AFT CARGO PANEL 142DW IAW EA M-21-125-00-669",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "SWAA2024082729856",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 40577
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "AFT CARGO PANEL 142DW HAS A CRACK WITHIN 2INCHES OF THE EDGE.<[01] REPAIRED AFT CARGO PANEL 142DW IAW EA M-21-125-00-669"
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-08-24 | record SWAA2024082729853\nSource: SDR-2024.csv, CSV row 40579, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: AFT CARGO PANEL 141FW HAS A CRACK WITHIN TWO INCHES OF THE EDGE [record=SWAA2024082729853; field=narrative_raw; offsets=0:63]\naction: REPAIRED AFT CARGO PANEL 141FW IAW EA M-21-125-00-669 [record=SWAA2024082729853; field=narrative_raw; offsets=69:122]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): AFT CARGO PANEL 141FW HAS A CRACK WITHIN TWO INCHES OF THE EDGE<[01] REPAIRED AFT CARGO PANEL 141FW IAW EA M-21-125-00-669\n\n2024-08-24 | record SWAA2024082729854\nSource: SDR-2024.csv, CSV row 40578, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: AFT CARGO PANEL 141DW HAS MULTIPLE CRACKS WITHIN 2 INCHES OF THE EDGE. [record=SWAA2024082729854; field=narrative_raw; offsets=0:70]\naction: REPAIRED AFT CARGO PANEL 14DW IAW EA M-21-125-00-669 [record=SWAA2024082729854; field=narrative_raw; offsets=76:128]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): AFT CARGO PANEL 141DW HAS MULTIPLE CRACKS WITHIN 2 INCHES OF THE EDGE.<[01] REPAIRED AFT CARGO PANEL 14DW IAW EA M-21-125-00-669\n\n2024-08-24 | record SWAA2024082729855\nSource: SDR-2024.csv, CSV row 40545, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: FWD CARGO PANEL 121CW HAS TWO CRACKS WITHIN TWO INCHES OF THE EDGE (SEPARATED BY 12 INCHES) [record=SWAA2024082729855; field=narrative_raw; offsets=0:91]\naction: REPAIRED FWD CARGO PANEL 121CW IAW EA M-21-125-00-669 [record=SWAA2024082729855; field=narrative_raw; offsets=97:150]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): FWD CARGO PANEL 121CW HAS TWO CRACKS WITHIN TWO INCHES OF THE EDGE (SEPARATED BY 12 INCHES)<[01] REPAIRED FWD CARGO PANEL 121CW IAW EA M-21-125-00-669\n\n2024-08-24 | record SWAA2024082729856\nSource: SDR-2024.csv, CSV row 40577, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: AFT CARGO PANEL 142DW HAS A CRACK WITHIN 2INCHES OF THE EDGE. [record=SWAA2024082729856; field=narrative_raw; offsets=0:61]\naction: REPAIRED AFT CARGO PANEL 142DW IAW EA M-21-125-00-669 [record=SWAA2024082729856; field=narrative_raw; offsets=67:120]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): AFT CARGO PANEL 142DW HAS A CRACK WITHIN 2INCHES OF THE EDGE.<[01] REPAIRED AFT CARGO PANEL 142DW IAW EA M-21-125-00-669\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "SWAA2024082729856",
+        "event_date": "2024-08-24",
+        "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 40577,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "AFT CARGO PANEL 142DW HAS A CRACK WITHIN 2INCHES OF THE EDGE.<[01] REPAIRED AFT CARGO PANEL 142DW IAW EA M-21-125-00-669",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "SWAA2024082729853",
+        "event_date": "2024-08-24",
+        "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 40579,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "AFT CARGO PANEL 141FW HAS A CRACK WITHIN TWO INCHES OF THE EDGE<[01] REPAIRED AFT CARGO PANEL 141FW IAW EA M-21-125-00-669",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "SWAA2024082729854",
+        "event_date": "2024-08-24",
+        "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 40578,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "AFT CARGO PANEL 141DW HAS MULTIPLE CRACKS WITHIN 2 INCHES OF THE EDGE.<[01] REPAIRED AFT CARGO PANEL 14DW IAW EA M-21-125-00-669",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "SWAA2024082729855",
+        "event_date": "2024-08-24",
+        "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 40545,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "FWD CARGO PANEL 121CW HAS TWO CRACKS WITHIN TWO INCHES OF THE EDGE (SEPARATED BY 12 INCHES)<[01] REPAIRED FWD CARGO PANEL 121CW IAW EA M-21-125-00-669",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "SWAA2024082729856",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 61,
+            "quote": "AFT CARGO PANEL 142DW HAS A CRACK WITHIN 2INCHES OF THE EDGE.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 67,
+            "end": 120,
+            "quote": "REPAIRED AFT CARGO PANEL 142DW IAW EA M-21-125-00-669",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 40577,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "SWAA2024082729853",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 63,
+            "quote": "AFT CARGO PANEL 141FW HAS A CRACK WITHIN TWO INCHES OF THE EDGE",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 69,
+            "end": 122,
+            "quote": "REPAIRED AFT CARGO PANEL 141FW IAW EA M-21-125-00-669",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 40579,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "SWAA2024082729854",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 70,
+            "quote": "AFT CARGO PANEL 141DW HAS MULTIPLE CRACKS WITHIN 2 INCHES OF THE EDGE.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 76,
+            "end": 128,
+            "quote": "REPAIRED AFT CARGO PANEL 14DW IAW EA M-21-125-00-669",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 40578,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "SWAA2024082729855",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 91,
+            "quote": "FWD CARGO PANEL 121CW HAS TWO CRACKS WITHIN TWO INCHES OF THE EDGE (SEPARATED BY 12 INCHES)",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 97,
+            "end": 150,
+            "quote": "REPAIRED FWD CARGO PANEL 121CW IAW EA M-21-125-00-669",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 40545,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 7,
+      "selected_record_count": 7,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 7,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "PANEL",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 4999,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "SWAA2024082729856",
+              "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+              "date": "2024-08-24",
+              "score": 0.8455830883566722,
+              "excerpt": "AFT CARGO PANEL 142DW HAS A CRACK WITHIN 2INCHES OF THE EDGE.<[01] REPAIRED AFT CARGO PANEL 142DW IAW EA M-21-125-00-669",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWAA2024082729853",
+              "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+              "date": "2024-08-24",
+              "score": 0.833598446159491,
+              "excerpt": "AFT CARGO PANEL 141FW HAS A CRACK WITHIN TWO INCHES OF THE EDGE<[01] REPAIRED AFT CARGO PANEL 141FW IAW EA M-21-125-00-669",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWAA2024082729854",
+              "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+              "date": "2024-08-24",
+              "score": 0.833598446159491,
+              "excerpt": "AFT CARGO PANEL 141DW HAS MULTIPLE CRACKS WITHIN 2 INCHES OF THE EDGE.<[01] REPAIRED AFT CARGO PANEL 14DW IAW EA M-21-125-00-669",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWAA2024082729855",
+              "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+              "date": "2024-08-24",
+              "score": 0.7888748335488477,
+              "excerpt": "FWD CARGO PANEL 121CW HAS TWO CRACKS WITHIN TWO INCHES OF THE EDGE (SEPARATED BY 12 INCHES)<[01] REPAIRED FWD CARGO PANEL 121CW IAW EA M-21-125-00-669",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082729856"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 6544,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082729856",
+          "event_date": "2024-08-24",
+          "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 40577,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AFT CARGO PANEL 142DW HAS A CRACK WITHIN 2INCHES OF THE EDGE.<[01] REPAIRED AFT CARGO PANEL 142DW IAW EA M-21-125-00-669",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024082729856",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "AFT CARGO PANEL 142DW HAS A CRACK WITHIN 2INCHES OF THE EDGE."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPAIRED AFT CARGO PANEL 142DW IAW EA M-21-125-00-669"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 140,
+          "prompt_tokens": 1340,
+          "total_tokens": 1480,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.375,
+        "model_called": true,
+        "working_context_chars": 5073,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024082729856",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "AFT CARGO PANEL 142DW HAS A CRACK WITHIN 2INCHES OF THE EDGE."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPAIRED AFT CARGO PANEL 142DW IAW EA M-21-125-00-669"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024082729856",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "AFT CARGO PANEL 142DW HAS A CRACK WITHIN 2INCHES OF THE EDGE."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPAIRED AFT CARGO PANEL 142DW IAW EA M-21-125-00-669"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024082729856",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 61,
+              "quote": "AFT CARGO PANEL 142DW HAS A CRACK WITHIN 2INCHES OF THE EDGE.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 67,
+              "end": 120,
+              "quote": "REPAIRED AFT CARGO PANEL 142DW IAW EA M-21-125-00-669",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 40577,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082729853"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 7604,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082729853",
+          "event_date": "2024-08-24",
+          "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 40579,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AFT CARGO PANEL 141FW HAS A CRACK WITHIN TWO INCHES OF THE EDGE<[01] REPAIRED AFT CARGO PANEL 141FW IAW EA M-21-125-00-669",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024082729853",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "AFT CARGO PANEL 141FW HAS A CRACK WITHIN TWO INCHES OF THE EDGE"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPAIRED AFT CARGO PANEL 141FW IAW EA M-21-125-00-669"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 138,
+          "prompt_tokens": 1338,
+          "total_tokens": 1476,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.312,
+        "model_called": true,
+        "working_context_chars": 5075,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024082729853",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "AFT CARGO PANEL 141FW HAS A CRACK WITHIN TWO INCHES OF THE EDGE"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPAIRED AFT CARGO PANEL 141FW IAW EA M-21-125-00-669"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024082729853",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "AFT CARGO PANEL 141FW HAS A CRACK WITHIN TWO INCHES OF THE EDGE"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPAIRED AFT CARGO PANEL 141FW IAW EA M-21-125-00-669"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024082729853",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 63,
+              "quote": "AFT CARGO PANEL 141FW HAS A CRACK WITHIN TWO INCHES OF THE EDGE",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 69,
+              "end": 122,
+              "quote": "REPAIRED AFT CARGO PANEL 141FW IAW EA M-21-125-00-669",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 40579,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082729854"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 8668,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082729854",
+          "event_date": "2024-08-24",
+          "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 40578,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AFT CARGO PANEL 141DW HAS MULTIPLE CRACKS WITHIN 2 INCHES OF THE EDGE.<[01] REPAIRED AFT CARGO PANEL 14DW IAW EA M-21-125-00-669",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024082729854",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "AFT CARGO PANEL 141DW HAS MULTIPLE CRACKS WITHIN 2 INCHES OF THE EDGE."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPAIRED AFT CARGO PANEL 14DW IAW EA M-21-125-00-669"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 141,
+          "prompt_tokens": 1341,
+          "total_tokens": 1482,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.375,
+        "model_called": true,
+        "working_context_chars": 5081,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024082729854",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "AFT CARGO PANEL 141DW HAS MULTIPLE CRACKS WITHIN 2 INCHES OF THE EDGE."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPAIRED AFT CARGO PANEL 14DW IAW EA M-21-125-00-669"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024082729854",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "AFT CARGO PANEL 141DW HAS MULTIPLE CRACKS WITHIN 2 INCHES OF THE EDGE."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPAIRED AFT CARGO PANEL 14DW IAW EA M-21-125-00-669"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024082729854",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 70,
+              "quote": "AFT CARGO PANEL 141DW HAS MULTIPLE CRACKS WITHIN 2 INCHES OF THE EDGE.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 76,
+              "end": 128,
+              "quote": "REPAIRED AFT CARGO PANEL 14DW IAW EA M-21-125-00-669",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 40578,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082729855"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9744,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082729855",
+          "event_date": "2024-08-24",
+          "asset_id": "FAA:[\"BOEING\",\"60652\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 40545,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FWD CARGO PANEL 121CW HAS TWO CRACKS WITHIN TWO INCHES OF THE EDGE (SEPARATED BY 12 INCHES)<[01] REPAIRED FWD CARGO PANEL 121CW IAW EA M-21-125-00-669",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024082729855",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FWD CARGO PANEL 121CW HAS TWO CRACKS WITHIN TWO INCHES OF THE EDGE (SEPARATED BY 12 INCHES)"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPAIRED FWD CARGO PANEL 121CW IAW EA M-21-125-00-669"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 151,
+          "prompt_tokens": 1351,
+          "total_tokens": 1502,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.5,
+        "model_called": true,
+        "working_context_chars": 5103,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024082729855",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FWD CARGO PANEL 121CW HAS TWO CRACKS WITHIN TWO INCHES OF THE EDGE (SEPARATED BY 12 INCHES)"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPAIRED FWD CARGO PANEL 121CW IAW EA M-21-125-00-669"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024082729855",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FWD CARGO PANEL 121CW HAS TWO CRACKS WITHIN TWO INCHES OF THE EDGE (SEPARATED BY 12 INCHES)"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPAIRED FWD CARGO PANEL 121CW IAW EA M-21-125-00-669"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024082729855",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 91,
+              "quote": "FWD CARGO PANEL 121CW HAS TWO CRACKS WITHIN TWO INCHES OF THE EDGE (SEPARATED BY 12 INCHES)",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 97,
+              "end": 150,
+              "quote": "REPAIRED FWD CARGO PANEL 121CW IAW EA M-21-125-00-669",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 40545,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9193,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 7,
+          "unstructured_record_count": 7,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 11,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "SWAA2024082729856",
+              "SWAA2024082729853",
+              "SWAA2024082729854",
+              "SWAA2024082729855"
+            ]
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9420,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "SWAA2024082729856",
+            "SWAA2024082729853",
+            "SWAA2024082729854",
+            "SWAA2024082729855"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "SWAA2024082729856",
+      "SWAA2024082729853",
+      "SWAA2024082729854",
+      "SWAA2024082729855"
+    ],
+    "proposal_count": 4,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 4,
+    "elapsed_seconds": 9.594,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

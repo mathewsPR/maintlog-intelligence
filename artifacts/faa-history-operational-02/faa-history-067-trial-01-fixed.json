@@ -1,0 +1,554 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-067",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'LAMP'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "LAMP",
+  "input_record_ids": [
+    "SWAA2024011137148",
+    "SWAA2024022053500",
+    "SWAA2024031159732",
+    "SWAA2024031463523",
+    "SWAA2024041071925",
+    "SWAA2024093041828"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "LAMP",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'LAMP'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"38807\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 6,
+    "selected_record_count": 6,
+    "steps": 6,
+    "model_calls": 3,
+    "elapsed_seconds": 7.844,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "SWAA2024031463523",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 58,
+            "end": 71,
+            "quote": "R&R LAMP ASSY",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 52,
+            "quote": "FIRST OFFICER SIDE AFT EMERGENCY EXIT ROW LIGHT INOP",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 58,
+            "end": 88,
+            "quote": "R&R LAMP ASSY PER M/M 33-51-01",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 11977,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": null,
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "LAMP",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 4997,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "SWAA2024031463523",
+              "asset_id": "FAA:[\"BOEING\",\"38807\"]",
+              "date": "2024-03-14",
+              "score": 1.2556334355867784,
+              "excerpt": "FIRST OFFICER SIDE AFT EMERGENCY EXIT ROW LIGHT INOP<[01] R&R LAMP ASSY PER M/M 33-51-01",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWAA2024022053500",
+              "asset_id": "FAA:[\"BOEING\",\"38807\"]",
+              "date": "2024-02-18",
+              "score": 1.087175782116751,
+              "excerpt": "FORWARD RIGHT EXTERIOR OVERWING EMERGENCY LIGHT IS INOP.<[01] REMOVED AND REPLACED FORWARD RIGHT EXTERIOR OVERWING EMERGENCY LIGHT LAMP. IAW AMM 33-51-04. OPS CHECK GOOD.",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024031463523"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 5811,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024031463523",
+          "event_date": "2024-03-14",
+          "asset_id": "FAA:[\"BOEING\",\"38807\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 11977,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FIRST OFFICER SIDE AFT EMERGENCY EXIT ROW LIGHT INOP<[01] R&R LAMP ASSY PER M/M 33-51-01",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024031463523",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "R&R LAMP ASSY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FIRST OFFICER SIDE AFT EMERGENCY EXIT ROW LIGHT INOP"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "R&R LAMP ASSY PER M/M 33-51-01"
+              }
+            },
+            "action_status": "attempted"
+          }
+        },
+        "usage": {
+          "completion_tokens": 133,
+          "prompt_tokens": 1047,
+          "total_tokens": 1180,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.234,
+        "model_called": true,
+        "working_context_chars": 5041,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024031463523",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "R&R LAMP ASSY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FIRST OFFICER SIDE AFT EMERGENCY EXIT ROW LIGHT INOP"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "R&R LAMP ASSY PER M/M 33-51-01"
+                }
+              },
+              "action_status": "attempted"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024031463523",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "R&R LAMP ASSY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FIRST OFFICER SIDE AFT EMERGENCY EXIT ROW LIGHT INOP"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "R&R LAMP ASSY PER M/M 33-51-01"
+                  }
+                },
+                "action_status": "attempted"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='attempted' lacks unnegated explicit support in the selected action quote 'R&R LAMP ASSY PER M/M 33-51-01'; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024031463523",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "R&R LAMP ASSY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FIRST OFFICER SIDE AFT EMERGENCY EXIT ROW LIGHT INOP"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "R&R LAMP ASSY PER M/M 33-51-01"
+              }
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 182,
+          "prompt_tokens": 816,
+          "total_tokens": 998,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "model_seconds": 3.156,
+        "model_called": true,
+        "working_context_chars": 6659,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": true,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024031463523",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "R&R LAMP ASSY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FIRST OFFICER SIDE AFT EMERGENCY EXIT ROW LIGHT INOP"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "R&R LAMP ASSY PER M/M 33-51-01"
+                }
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024031463523",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "R&R LAMP ASSY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FIRST OFFICER SIDE AFT EMERGENCY EXIT ROW LIGHT INOP"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "R&R LAMP ASSY PER M/M 33-51-01"
+                  }
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024031463523",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 58,
+              "end": 71,
+              "quote": "R&R LAMP ASSY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 52,
+              "quote": "FIRST OFFICER SIDE AFT EMERGENCY EXIT ROW LIGHT INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 58,
+              "end": 88,
+              "quote": "R&R LAMP ASSY PER M/M 33-51-01",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 11977,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024022053500"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 8479,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024022053500",
+          "event_date": "2024-02-18",
+          "asset_id": "FAA:[\"BOEING\",\"38807\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 7637,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FORWARD RIGHT EXTERIOR OVERWING EMERGENCY LIGHT IS INOP.<[01] REMOVED AND REPLACED FORWARD RIGHT EXTERIOR OVERWING EMERGENCY LIGHT LAMP. IAW AMM 33-51-04. OPS CHECK GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024022053500",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "FORWARD RIGHT EXTERIOR OVERWING EMERGENCY LIGHT"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FORWARD RIGHT EXTERIOR OVERWING EMERGENCY LIGHT IS INOP."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED FORWARD RIGHT EXTERIOR OVERWING EMERGENCY LIGHT LAMP"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 143,
+          "prompt_tokens": 1071,
+          "total_tokens": 1214,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.438,
+        "model_called": true,
+        "working_context_chars": 5123,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024022053500",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "FORWARD RIGHT EXTERIOR OVERWING EMERGENCY LIGHT"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FORWARD RIGHT EXTERIOR OVERWING EMERGENCY LIGHT IS INOP."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED FORWARD RIGHT EXTERIOR OVERWING EMERGENCY LIGHT LAMP"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024022053500",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "FORWARD RIGHT EXTERIOR OVERWING EMERGENCY LIGHT"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FORWARD RIGHT EXTERIOR OVERWING EMERGENCY LIGHT IS INOP."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED FORWARD RIGHT EXTERIOR OVERWING EMERGENCY LIGHT LAMP"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 3,
+    "elapsed_seconds": 7.844,
+    "errors": [
+      {
+        "step": 3,
+        "error": "action_status='attempted' lacks unnegated explicit support in the selected action quote 'R&R LAMP ASSY PER M/M 33-51-01'; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      },
+      {
+        "step": 6,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

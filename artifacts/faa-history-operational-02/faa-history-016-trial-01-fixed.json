@@ -1,0 +1,385 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-016",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'BOTTLE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BOTTLE",
+  "input_record_ids": [
+    "AALA202401290403",
+    "AALA202401306205",
+    "AALA202405222895",
+    "AALA202405225493",
+    "AALA202410042512",
+    "AALA202412179321"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BOTTLE",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'BOTTLE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"AIRBUS\",\"7131\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 6,
+    "selected_record_count": 6,
+    "steps": 4,
+    "model_calls": 2,
+    "elapsed_seconds": 4.86,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [],
+    "aggregate": null,
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BOTTLE",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5000,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "AALA202410042512",
+              "asset_id": "FAA:[\"AIRBUS\",\"7131\"]",
+              "date": "2024-10-03",
+              "score": 2.0877995757364656,
+              "excerpt": "AIRCRAFT WAS NOT GROUNDED: LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE PRESSURE IS LOW. SERVICED LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE.",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202410042512"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 5452,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202410042512",
+          "event_date": "2024-10-03",
+          "asset_id": "FAA:[\"AIRBUS\",\"7131\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 47612,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE PRESSURE IS LOW. SERVICED LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "AALA202410042512",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE PRESSURE IS LOW"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "SERVICED LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 140,
+          "prompt_tokens": 1053,
+          "total_tokens": 1193,
+          "prompt_tokens_details": {
+            "cached_tokens": 587
+          }
+        },
+        "model_seconds": 2.485,
+        "model_called": true,
+        "working_context_chars": 5087,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "AALA202410042512",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE PRESSURE IS LOW"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "SERVICED LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "AALA202410042512",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE PRESSURE IS LOW"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "SERVICED LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "AALA202410042512",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 27,
+                "end": 67
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 27,
+                "end": 83
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 85,
+                "end": 134
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 119,
+          "prompt_tokens": 1686,
+          "total_tokens": 1805,
+          "prompt_tokens_details": {
+            "cached_tokens": 587
+          }
+        },
+        "model_seconds": 2.375,
+        "model_called": true,
+        "working_context_chars": 5865,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": {
+            "component": [
+              {
+                "field": "narrative_raw",
+                "start": 27,
+                "end": 67,
+                "quote": "LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE",
+                "surrounding_text": "AIRCRAFT WAS NOT GROUNDED: LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE PRESSURE IS LOW. SERVICED LH FWD EMERGENCY EXIT DOOR ASSIST"
+              },
+              {
+                "field": "narrative_raw",
+                "start": 94,
+                "end": 134,
+                "quote": "LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE",
+                "surrounding_text": "EMERGENCY EXIT DOOR ASSIST BOTTLE PRESSURE IS LOW. SERVICED LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE."
+              }
+            ],
+            "problem": [
+              {
+                "field": "narrative_raw",
+                "start": 27,
+                "end": 83,
+                "quote": "LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE PRESSURE IS LOW",
+                "surrounding_text": "AIRCRAFT WAS NOT GROUNDED: LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE PRESSURE IS LOW. SERVICED LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE."
+              }
+            ],
+            "action": [
+              {
+                "field": "narrative_raw",
+                "start": 85,
+                "end": 134,
+                "quote": "SERVICED LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE",
+                "surrounding_text": ": LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE PRESSURE IS LOW. SERVICED LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE."
+              }
+            ]
+          },
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "AALA202410042512",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 27,
+                  "end": 67
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 27,
+                  "end": 83
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 85,
+                  "end": 134
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "AALA202410042512",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 27,
+                    "end": 67
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 27,
+                    "end": 83
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 85,
+                    "end": 134
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'SERVICED LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 0,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 2,
+    "elapsed_seconds": 4.86,
+    "errors": [
+      {
+        "step": 3,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      },
+      {
+        "step": 4,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'SERVICED LH FWD EMERGENCY EXIT DOOR ASSIST BOTTLE'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

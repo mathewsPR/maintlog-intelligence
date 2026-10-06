@@ -1,0 +1,831 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-087",
+  "trial": 2,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'CONTROL LEVER'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "CONTROL LEVER",
+  "input_record_ids": [
+    "QXEA2024100300227",
+    "QXEA2024100900233",
+    "QXEA2024120200284"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "CONTROL LEVER",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'CONTROL LEVER'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"EMB\",\"17000718\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 8,
+    "model_calls": 8,
+    "elapsed_seconds": 13.953,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "QXEA2024100300227",
+          "date": "2024-09-30",
+          "asset_id": "FAA:[\"EMB\",\"17000718\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 13,
+              "end": 58,
+              "quote": "LANDING GEAR LEVER DISAG WARNING LIGHT ON T/O",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 92,
+              "end": 231,
+              "quote": "REMOVED FROM SERVICE. FAULT CODE 32600148. REF W/O 345204, N/R-00001 FOR REPLACEMENT OF THE LANDING GEAR SELECTOR VALVE AND WORK PERFORMED.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "QXEA2024100300227",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 47353
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "FLIGHT 2411. LANDING GEAR LEVER DISAG WARNING LIGHT ON T/O. RAN CHECKLIST. WARNING CLEARED. REMOVED FROM SERVICE. FAULT CODE 32600148. REF W/O 345204, N/R-00001 FOR REPLACEMENT OF THE LANDING GEAR SELECTOR VALVE AND WORK PERFORMED. CHECKS GOOD. RETURNED TO SERVICE."
+          }
+        },
+        {
+          "record_id": "QXEA2024100900233",
+          "date": "2024-10-07",
+          "asset_id": "FAA:[\"EMB\",\"17000718\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 237,
+              "end": 282,
+              "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 82,
+              "quote": "MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 237,
+              "end": 317,
+              "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "citation": {
+            "record_id": "QXEA2024100900233",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 48530
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE. CONDUCTED LG LEVER DISAG CHECKLIST IN IRM. AFTER CYCLING GEAR HANDLE GEAR RETRACTED NORMALLY. GEAR EXTENDED NORMALLY UPON ARRIVAL. REMOVED FROM SERVICE. REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-09-30 | record QXEA2024100300227\nSource: SDR-2024.csv, CSV row 47353, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: LANDING GEAR LEVER DISAG WARNING LIGHT ON T/O [record=QXEA2024100300227; field=narrative_raw; offsets=13:58]\naction: REMOVED FROM SERVICE. FAULT CODE 32600148. REF W/O 345204, N/R-00001 FOR REPLACEMENT OF THE LANDING GEAR SELECTOR VALVE AND WORK PERFORMED. [record=QXEA2024100300227; field=narrative_raw; offsets=92:231]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): FLIGHT 2411. LANDING GEAR LEVER DISAG WARNING LIGHT ON T/O. RAN CHECKLIST. WARNING CLEARED. REMOVED FROM SERVICE. FAULT CODE 32600148. REF W/O 345204, N/R-00001 FOR REPLACEMENT OF THE LANDING GEAR SELECTOR VALVE AND WORK PERFORMED. CHECKS GOOD. RETURNED TO SERVICE.\n\n2024-10-07 | record QXEA2024100900233\nSource: SDR-2024.csv, CSV row 48530, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: REPLACEMENT OF THE LANDING GEAR CONTROL LEVER [record=QXEA2024100900233; field=narrative_raw; offsets=237:282]\nproblem: MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE [record=QXEA2024100900233; field=narrative_raw; offsets=0:82]\naction: REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE. [record=QXEA2024100900233; field=narrative_raw; offsets=237:317]\nAction status proposal: unknown\nFull source (narrative_raw, verbatim): MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE. CONDUCTED LG LEVER DISAG CHECKLIST IN IRM. AFTER CYCLING GEAR HANDLE GEAR RETRACTED NORMALLY. GEAR EXTENDED NORMALLY UPON ARRIVAL. REMOVED FROM SERVICE. REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "QXEA2024100300227",
+        "event_date": "2024-09-30",
+        "asset_id": "FAA:[\"EMB\",\"17000718\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 47353,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "FLIGHT 2411. LANDING GEAR LEVER DISAG WARNING LIGHT ON T/O. RAN CHECKLIST. WARNING CLEARED. REMOVED FROM SERVICE. FAULT CODE 32600148. REF W/O 345204, N/R-00001 FOR REPLACEMENT OF THE LANDING GEAR SELECTOR VALVE AND WORK PERFORMED. CHECKS GOOD. RETURNED TO SERVICE.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "QXEA2024100900233",
+        "event_date": "2024-10-07",
+        "asset_id": "FAA:[\"EMB\",\"17000718\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 48530,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE. CONDUCTED LG LEVER DISAG CHECKLIST IN IRM. AFTER CYCLING GEAR HANDLE GEAR RETRACTED NORMALLY. GEAR EXTENDED NORMALLY UPON ARRIVAL. REMOVED FROM SERVICE. REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "QXEA2024100300227",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 13,
+            "end": 58,
+            "quote": "LANDING GEAR LEVER DISAG WARNING LIGHT ON T/O",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 92,
+            "end": 231,
+            "quote": "REMOVED FROM SERVICE. FAULT CODE 32600148. REF W/O 345204, N/R-00001 FOR REPLACEMENT OF THE LANDING GEAR SELECTOR VALVE AND WORK PERFORMED.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 47353,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "QXEA2024100900233",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 237,
+            "end": 282,
+            "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 82,
+            "quote": "MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 237,
+            "end": 317,
+            "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 48530,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "CONTROL LEVER",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 1066,
+          "total_tokens": 1091,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.719,
+        "model_called": true,
+        "working_context_chars": 5015,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "QXEA2024100900233",
+              "asset_id": "FAA:[\"EMB\",\"17000718\"]",
+              "date": "2024-10-07",
+              "score": 1.583816377379669,
+              "excerpt": "MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE. CONDUCTED LG LEVER DISAG CHECKLIST IN IRM. AFTER CYCLING GEAR HANDLE GEAR RETRACTED NORMALLY. GEAR EXTENDED NORMALLY",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "QXEA2024100300227",
+              "asset_id": "FAA:[\"EMB\",\"17000718\"]",
+              "date": "2024-09-30",
+              "score": 0.4456392408444281,
+              "excerpt": "FLIGHT 2411. LANDING GEAR LEVER DISAG WARNING LIGHT ON T/O. RAN CHECKLIST. WARNING CLEARED. REMOVED FROM SERVICE. FAULT CODE 32600148. REF W/O 345204, N/R-00001 FOR REPLACEMENT OF THE LANDING GEAR SEL",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1518,
+          "total_tokens": 1530,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.641,
+        "model_called": true,
+        "working_context_chars": 5969,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "QXEA2024100300227"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 1578,
+          "total_tokens": 1610,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.937,
+        "model_called": true,
+        "working_context_chars": 6196,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "QXEA2024100300227",
+          "event_date": "2024-09-30",
+          "asset_id": "FAA:[\"EMB\",\"17000718\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 47353,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLIGHT 2411. LANDING GEAR LEVER DISAG WARNING LIGHT ON T/O. RAN CHECKLIST. WARNING CLEARED. REMOVED FROM SERVICE. FAULT CODE 32600148. REF W/O 345204, N/R-00001 FOR REPLACEMENT OF THE LANDING GEAR SELECTOR VALVE AND WORK PERFORMED. CHECKS GOOD. RETURNED TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "QXEA2024100300227",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "LANDING GEAR LEVER DISAG WARNING LIGHT ON T/O"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED FROM SERVICE. FAULT CODE 32600148. REF W/O 345204, N/R-00001 FOR REPLACEMENT OF THE LANDING GEAR SELECTOR VALVE AND WORK PERFORMED."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 150,
+          "prompt_tokens": 1368,
+          "total_tokens": 1518,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 3.031,
+        "model_called": true,
+        "working_context_chars": 5218,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "QXEA2024100300227",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "LANDING GEAR LEVER DISAG WARNING LIGHT ON T/O"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED FROM SERVICE. FAULT CODE 32600148. REF W/O 345204, N/R-00001 FOR REPLACEMENT OF THE LANDING GEAR SELECTOR VALVE AND WORK PERFORMED."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "QXEA2024100300227",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "LANDING GEAR LEVER DISAG WARNING LIGHT ON T/O"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED FROM SERVICE. FAULT CODE 32600148. REF W/O 345204, N/R-00001 FOR REPLACEMENT OF THE LANDING GEAR SELECTOR VALVE AND WORK PERFORMED."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "QXEA2024100300227",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 13,
+              "end": 58,
+              "quote": "LANDING GEAR LEVER DISAG WARNING LIGHT ON T/O",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 92,
+              "end": 231,
+              "quote": "REMOVED FROM SERVICE. FAULT CODE 32600148. REF W/O 345204, N/R-00001 FOR REPLACEMENT OF THE LANDING GEAR SELECTOR VALVE AND WORK PERFORMED.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 47353,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "QXEA2024100900233"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2047,
+          "total_tokens": 2079,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.219,
+        "model_called": true,
+        "working_context_chars": 7471,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "QXEA2024100900233",
+          "event_date": "2024-10-07",
+          "asset_id": "FAA:[\"EMB\",\"17000718\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 48530,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE. CONDUCTED LG LEVER DISAG CHECKLIST IN IRM. AFTER CYCLING GEAR HANDLE GEAR RETRACTED NORMALLY. GEAR EXTENDED NORMALLY UPON ARRIVAL. REMOVED FROM SERVICE. REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "QXEA2024100900233",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 150,
+          "prompt_tokens": 1102,
+          "total_tokens": 1252,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 3.125,
+        "model_called": true,
+        "working_context_chars": 5270,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "QXEA2024100900233",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "QXEA2024100900233",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE.'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "QXEA2024100900233",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE."
+              }
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 150,
+          "prompt_tokens": 930,
+          "total_tokens": 1080,
+          "prompt_tokens_details": {
+            "cached_tokens": 155
+          }
+        },
+        "model_seconds": 2.766,
+        "model_called": true,
+        "working_context_chars": 7175,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": true,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "QXEA2024100900233",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE."
+                }
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "QXEA2024100900233",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE."
+                  }
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "QXEA2024100900233",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 237,
+              "end": 282,
+              "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 82,
+              "quote": "MASTER WARNING LG LEVER DISAG APPEARED WHILE RETRACTING GEAR ON DEPARTURE FROM PAE",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 237,
+              "end": 317,
+              "quote": "REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 48530,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "QXEA2024100300227",
+              "QXEA2024100900233"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 51,
+          "prompt_tokens": 2046,
+          "total_tokens": 2097,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.5,
+        "model_called": true,
+        "working_context_chars": 7723,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "QXEA2024100300227",
+            "QXEA2024100900233"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "QXEA2024100300227",
+      "QXEA2024100900233"
+    ],
+    "proposal_count": 2,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 8,
+    "elapsed_seconds": 13.953,
+    "errors": [
+      {
+        "step": 6,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE.'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

@@ -1,0 +1,449 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-025",
+  "trial": 2,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'HANDLE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "HANDLE",
+  "input_record_ids": [
+    "SWAA2024061401162",
+    "SWAA2024061401165",
+    "SWAA2024061401167",
+    "SWAA2024091637915",
+    "SWAA2024121777330"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "HANDLE",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'HANDLE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"29824\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 5,
+    "selected_record_count": 5,
+    "steps": 5,
+    "model_calls": 1,
+    "elapsed_seconds": 2.578,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "SWAA2024091637915",
+          "date": "2024-09-14",
+          "asset_id": "FAA:[\"BOEING\",\"29824\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 49,
+              "quote": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 55,
+              "quote": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR LOOSE",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 61,
+              "end": 141,
+              "quote": "RESECURED DOOR ASSIST HANDLE ON FWD ENTRY DOOR PER AMM 52-11-31 OPS CHECK NORMAL",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "SWAA2024091637915",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 45118
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR LOOSE<[01] RESECURED DOOR ASSIST HANDLE ON FWD ENTRY DOOR PER AMM 52-11-31 OPS CHECK NORMAL"
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-09-14 | record SWAA2024091637915\nSource: SDR-2024.csv, CSV row 45118, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR [record=SWAA2024091637915; field=narrative_raw; offsets=0:49]\nproblem: PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR LOOSE [record=SWAA2024091637915; field=narrative_raw; offsets=0:55]\naction: RESECURED DOOR ASSIST HANDLE ON FWD ENTRY DOOR PER AMM 52-11-31 OPS CHECK NORMAL [record=SWAA2024091637915; field=narrative_raw; offsets=61:141]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR LOOSE<[01] RESECURED DOOR ASSIST HANDLE ON FWD ENTRY DOOR PER AMM 52-11-31 OPS CHECK NORMAL\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "SWAA2024091637915",
+        "event_date": "2024-09-14",
+        "asset_id": "FAA:[\"BOEING\",\"29824\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 45118,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR LOOSE<[01] RESECURED DOOR ASSIST HANDLE ON FWD ENTRY DOOR PER AMM 52-11-31 OPS CHECK NORMAL",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "SWAA2024091637915",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 49,
+            "quote": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 55,
+            "quote": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR LOOSE",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 61,
+            "end": 141,
+            "quote": "RESECURED DOOR ASSIST HANDLE ON FWD ENTRY DOOR PER AMM 52-11-31 OPS CHECK NORMAL",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 45118,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 5,
+      "selected_record_count": 5,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 5,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "HANDLE",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5001,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "SWAA2024091637915",
+              "asset_id": "FAA:[\"BOEING\",\"29824\"]",
+              "date": "2024-09-14",
+              "score": 2.0466799383501306,
+              "excerpt": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR LOOSE<[01] RESECURED DOOR ASSIST HANDLE ON FWD ENTRY DOOR PER AMM 52-11-31 OPS CHECK NORMAL",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024091637915"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 5464,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024091637915",
+          "event_date": "2024-09-14",
+          "asset_id": "FAA:[\"BOEING\",\"29824\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 45118,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR LOOSE<[01] RESECURED DOOR ASSIST HANDLE ON FWD ENTRY DOOR PER AMM 52-11-31 OPS CHECK NORMAL",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024091637915",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR LOOSE"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "RESECURED DOOR ASSIST HANDLE ON FWD ENTRY DOOR PER AMM 52-11-31 OPS CHECK NORMAL"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 151,
+          "prompt_tokens": 1058,
+          "total_tokens": 1209,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.578,
+        "model_called": true,
+        "working_context_chars": 5094,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024091637915",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR LOOSE"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "RESECURED DOOR ASSIST HANDLE ON FWD ENTRY DOOR PER AMM 52-11-31 OPS CHECK NORMAL"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024091637915",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR LOOSE"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "RESECURED DOOR ASSIST HANDLE ON FWD ENTRY DOOR PER AMM 52-11-31 OPS CHECK NORMAL"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024091637915",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 49,
+              "quote": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 55,
+              "quote": "PLASTIC ASSIST HANDLE ON INSIDE OF FWD ENTRY DOOR LOOSE",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 61,
+              "end": 141,
+              "quote": "RESECURED DOOR ASSIST HANDLE ON FWD ENTRY DOOR PER AMM 52-11-31 OPS CHECK NORMAL",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 45118,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 6654,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 5,
+          "unstructured_record_count": 5,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "SWAA2024091637915"
+            ]
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 6881,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "SWAA2024091637915"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "SWAA2024091637915"
+    ],
+    "proposal_count": 1,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 1,
+    "elapsed_seconds": 2.578,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

@@ -1,0 +1,1011 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-011",
+  "trial": 3,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'LIGHT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "LIGHT",
+  "input_record_ids": [
+    "SIMA20240505001",
+    "SIMA20240611001",
+    "SIMA20240722001"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "budget_exhausted",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "LIGHT",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'LIGHT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 20,
+    "model_calls": 20,
+    "elapsed_seconds": 23.437,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "SIMA20240505001",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 70,
+            "quote": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED.",
+            "source_column": "Discrepancy"
+          },
+          "action": null
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 20683,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "LIGHT",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 23,
+          "prompt_tokens": 1062,
+          "total_tokens": 1085,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.953,
+        "model_called": true,
+        "working_context_chars": 4999,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "SIMA20240505001",
+              "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+              "date": "2024-05-05",
+              "score": 1.1255417657511613,
+              "excerpt": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1273,
+          "total_tokens": 1285,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.562,
+        "model_called": true,
+        "working_context_chars": 5461,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 1333,
+          "total_tokens": 1362,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.797,
+        "model_called": true,
+        "working_context_chars": 5688,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SIMA20240505001",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED."
+              },
+              "action": null
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 89,
+          "prompt_tokens": 1065,
+          "total_tokens": 1154,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 1.641,
+        "model_called": true,
+        "working_context_chars": 5099,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SIMA20240505001",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED."
+                },
+                "action": null
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SIMA20240505001",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED."
+                  },
+                  "action": null
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 70,
+              "quote": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED.",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 1705,
+          "total_tokens": 1734,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.016,
+        "model_called": true,
+        "working_context_chars": 6699,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 1987,
+          "total_tokens": 2016,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.046,
+        "model_called": true,
+        "working_context_chars": 7363,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2270,
+          "total_tokens": 2299,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.157,
+        "model_called": true,
+        "working_context_chars": 8027,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2553,
+          "total_tokens": 2582,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.265,
+        "model_called": true,
+        "working_context_chars": 8691,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2836,
+          "total_tokens": 2865,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.36,
+        "model_called": true,
+        "working_context_chars": 9355,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2130,
+          "total_tokens": 2159,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.14,
+        "model_called": true,
+        "working_context_chars": 7823,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 11,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2213,
+          "total_tokens": 2242,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.11,
+        "model_called": true,
+        "working_context_chars": 8038,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 12,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2296,
+          "total_tokens": 2325,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.172,
+        "model_called": true,
+        "working_context_chars": 8253,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 13,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2379,
+          "total_tokens": 2408,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.14,
+        "model_called": true,
+        "working_context_chars": 8468,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 14,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2462,
+          "total_tokens": 2491,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.219,
+        "model_called": true,
+        "working_context_chars": 8683,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 15,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2545,
+          "total_tokens": 2574,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.234,
+        "model_called": true,
+        "working_context_chars": 8898,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 16,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2628,
+          "total_tokens": 2657,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.282,
+        "model_called": true,
+        "working_context_chars": 9113,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 17,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2711,
+          "total_tokens": 2740,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.312,
+        "model_called": true,
+        "working_context_chars": 9328,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 18,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2794,
+          "total_tokens": 2823,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.313,
+        "model_called": true,
+        "working_context_chars": 9543,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 19,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2877,
+          "total_tokens": 2906,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.359,
+        "model_called": true,
+        "working_context_chars": 9758,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 20,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240505001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2960,
+          "total_tokens": 2989,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.359,
+        "model_called": true,
+        "working_context_chars": 9973,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240505001",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"EMB\",\"17000770\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20683,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FOUND EMERGENCY PHOTOLUMINESCENT LIGHT STRIP BY FWD CREW CLOSET FADED. RAR EMERGENCY PHOTOLUMINESCENT LIGHTSTRIP IAW AMM 33-50-21. NO DEFECTS NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "budget_exhausted",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 20,
+    "elapsed_seconds": 23.437,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

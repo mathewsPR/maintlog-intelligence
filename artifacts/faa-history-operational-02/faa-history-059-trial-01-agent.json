@@ -1,0 +1,477 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-059",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'COVER'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "COVER",
+  "input_record_ids": [
+    "ASAA2024020147713",
+    "ASAA2024100252920",
+    "ASAA2024101153106",
+    "ASAA2024112154026",
+    "ASAA2024120354256"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "COVER",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'COVER'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"30015\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 5,
+    "selected_record_count": 5,
+    "steps": 5,
+    "model_calls": 5,
+    "elapsed_seconds": 6.093,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "ASAA2024101153106",
+          "date": "2024-10-11",
+          "asset_id": "FAA:[\"BOEING\",\"30015\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 81,
+              "end": 108,
+              "quote": "L2 DOOR EMER EXIT SIGN ASSY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 42,
+              "quote": "L2 DOOR LIGHTED EXIT SIGN COVER IS MISSING",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 60,
+              "end": 148,
+              "quote": "REMOVED AND REPLACED L2 DOOR EMER EXIT SIGN ASSY OPS CK NORMAL REF AMM 33-25-00-960-802.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "ASAA2024101153106",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 48957
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "L2 DOOR LIGHTED EXIT SIGN COVER IS MISSING. GROUNDED - YES. REMOVED AND REPLACED L2 DOOR EMER EXIT SIGN ASSY OPS CK NORMAL REF AMM 33-25-00-960-802."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-10-11 | record ASAA2024101153106\nSource: SDR-2024.csv, CSV row 48957, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: L2 DOOR EMER EXIT SIGN ASSY [record=ASAA2024101153106; field=narrative_raw; offsets=81:108]\nproblem: L2 DOOR LIGHTED EXIT SIGN COVER IS MISSING [record=ASAA2024101153106; field=narrative_raw; offsets=0:42]\naction: REMOVED AND REPLACED L2 DOOR EMER EXIT SIGN ASSY OPS CK NORMAL REF AMM 33-25-00-960-802. [record=ASAA2024101153106; field=narrative_raw; offsets=60:148]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): L2 DOOR LIGHTED EXIT SIGN COVER IS MISSING. GROUNDED - YES. REMOVED AND REPLACED L2 DOOR EMER EXIT SIGN ASSY OPS CK NORMAL REF AMM 33-25-00-960-802.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "ASAA2024101153106",
+        "event_date": "2024-10-11",
+        "asset_id": "FAA:[\"BOEING\",\"30015\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 48957,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "L2 DOOR LIGHTED EXIT SIGN COVER IS MISSING. GROUNDED - YES. REMOVED AND REPLACED L2 DOOR EMER EXIT SIGN ASSY OPS CK NORMAL REF AMM 33-25-00-960-802.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "ASAA2024101153106",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 81,
+            "end": 108,
+            "quote": "L2 DOOR EMER EXIT SIGN ASSY",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 42,
+            "quote": "L2 DOOR LIGHTED EXIT SIGN COVER IS MISSING",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 60,
+            "end": 148,
+            "quote": "REMOVED AND REPLACED L2 DOOR EMER EXIT SIGN ASSY OPS CK NORMAL REF AMM 33-25-00-960-802.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 48957,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 5,
+      "selected_record_count": 5,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 5,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "COVER",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 23,
+          "prompt_tokens": 1061,
+          "total_tokens": 1084,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.687,
+        "model_called": true,
+        "working_context_chars": 4999,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "ASAA2024101153106",
+              "asset_id": "FAA:[\"BOEING\",\"30015\"]",
+              "date": "2024-10-11",
+              "score": 1.778230986776823,
+              "excerpt": "L2 DOOR LIGHTED EXIT SIGN COVER IS MISSING. GROUNDED - YES. REMOVED AND REPLACED L2 DOOR EMER EXIT SIGN ASSY OPS CK NORMAL REF AMM 33-25-00-960-802.",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1280,
+          "total_tokens": 1292,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.516,
+        "model_called": true,
+        "working_context_chars": 5468,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 5,
+          "unstructured_record_count": 5,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "ASAA2024101153106"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1340,
+          "total_tokens": 1371,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.797,
+        "model_called": true,
+        "working_context_chars": 5695,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "ASAA2024101153106",
+          "event_date": "2024-10-11",
+          "asset_id": "FAA:[\"BOEING\",\"30015\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 48957,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "L2 DOOR LIGHTED EXIT SIGN COVER IS MISSING. GROUNDED - YES. REMOVED AND REPLACED L2 DOOR EMER EXIT SIGN ASSY OPS CK NORMAL REF AMM 33-25-00-960-802.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "ASAA2024101153106",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "L2 DOOR EMER EXIT SIGN ASSY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "L2 DOOR LIGHTED EXIT SIGN COVER IS MISSING"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED L2 DOOR EMER EXIT SIGN ASSY OPS CK NORMAL REF AMM 33-25-00-960-802."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 153,
+          "prompt_tokens": 1069,
+          "total_tokens": 1222,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 3.0,
+        "model_called": true,
+        "working_context_chars": 5101,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "ASAA2024101153106",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "L2 DOOR EMER EXIT SIGN ASSY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "L2 DOOR LIGHTED EXIT SIGN COVER IS MISSING"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED L2 DOOR EMER EXIT SIGN ASSY OPS CK NORMAL REF AMM 33-25-00-960-802."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "ASAA2024101153106",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "L2 DOOR EMER EXIT SIGN ASSY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "L2 DOOR LIGHTED EXIT SIGN COVER IS MISSING"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED L2 DOOR EMER EXIT SIGN ASSY OPS CK NORMAL REF AMM 33-25-00-960-802."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "ASAA2024101153106",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 81,
+              "end": 108,
+              "quote": "L2 DOOR EMER EXIT SIGN ASSY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 42,
+              "quote": "L2 DOOR LIGHTED EXIT SIGN COVER IS MISSING",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 60,
+              "end": 148,
+              "quote": "REMOVED AND REPLACED L2 DOOR EMER EXIT SIGN ASSY OPS CK NORMAL REF AMM 33-25-00-960-802.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 48957,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "ASAA2024101153106"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 1775,
+          "total_tokens": 1807,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.093,
+        "model_called": true,
+        "working_context_chars": 6865,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "ASAA2024101153106"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "ASAA2024101153106"
+    ],
+    "proposal_count": 1,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 5,
+    "elapsed_seconds": 6.093,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

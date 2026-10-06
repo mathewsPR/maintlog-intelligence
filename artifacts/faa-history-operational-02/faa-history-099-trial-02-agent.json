@@ -1,0 +1,403 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-099",
+  "trial": 2,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'CONTROLLER'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "CONTROLLER",
+  "input_record_ids": [
+    "FDEA202407090974",
+    "FDEA202407161024",
+    "FDEA202407311075",
+    "FDEA202410101473"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "CONTROLLER",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'CONTROLLER'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"24738\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 5,
+    "model_calls": 5,
+    "elapsed_seconds": 7.031,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 4,
+      "selected_record_count": 4,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 4,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "CONTROLLER",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 1063,
+          "total_tokens": 1087,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.735,
+        "model_called": true,
+        "working_context_chars": 5009,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "FDEA202407311075",
+              "asset_id": "FAA:[\"BOEING\",\"24738\"]",
+              "date": "2024-07-31",
+              "score": 1.4827857096907777,
+              "excerpt": "AT FL390 APPROXIMATELY 20 MINUTES AFTER LEVEL OFF  RECEIVED CABIN ALTITUDE WARNING. CABIN ALTITUDE  READ 10,000  AND SLOWLY INCREASED TO APPROXIMATELY  12,000 . OXYGEN MASKS WERE DONNED. CABIN ALTITUD",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1302,
+          "total_tokens": 1314,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.547,
+        "model_called": true,
+        "working_context_chars": 5526,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 4,
+          "unstructured_record_count": 4,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "FDEA202407311075"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1362,
+          "total_tokens": 1393,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.844,
+        "model_called": true,
+        "working_context_chars": 5753,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "FDEA202407311075",
+          "event_date": "2024-07-31",
+          "asset_id": "FAA:[\"BOEING\",\"24738\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 35611,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AT FL390 APPROXIMATELY 20 MINUTES AFTER LEVEL OFF  RECEIVED CABIN ALTITUDE WARNING. CABIN ALTITUDE  READ 10,000  AND SLOWLY INCREASED TO APPROXIMATELY  12,000 . OXYGEN MASKS WERE DONNED. CABIN ALTITUDE  REMAINED ABOVE 10,000 UNTIL DESCENDING THRU  APPROXIMATELY 15,000 .   FOUND CABIN MODE SELECTED TO # 1, REMOVED AND  REPLACED  # 1 AUTOMATIC PRESSURE CONTROLLER  REF  AMM 21-31-02-4. OPS CHECKS GOOD GOOD. ALSO  PERFORMED OPS CHECKS OF # 2 AUTOMATIC PRESSURE  CONTROLLER   ALSO CHECKS GOOD REF AMM 21-31-02-4.  AC OK FOR SERVICE",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "FDEA202407311075",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "# 1 AUTOMATIC PRESSURE CONTROLLER"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "CABIN ALTITUDE WARNING"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED # 1 AUTOMATIC PRESSURE CONTROLLER REF AMM 21-31-02-4"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 135,
+          "prompt_tokens": 1213,
+          "total_tokens": 1348,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.734,
+        "model_called": true,
+        "working_context_chars": 5482,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "FDEA202407311075",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "# 1 AUTOMATIC PRESSURE CONTROLLER"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "CABIN ALTITUDE WARNING"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED # 1 AUTOMATIC PRESSURE CONTROLLER REF AMM 21-31-02-4"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "FDEA202407311075",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "# 1 AUTOMATIC PRESSURE CONTROLLER"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "CABIN ALTITUDE WARNING"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED # 1 AUTOMATIC PRESSURE CONTROLLER REF AMM 21-31-02-4"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "FDEA202407311075",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 188,
+                "end": 224
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 42,
+                "end": 64
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 108,
+                "end": 156
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 123,
+          "prompt_tokens": 1421,
+          "total_tokens": 1544,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.141,
+        "model_called": true,
+        "working_context_chars": 6243,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "FDEA202407311075",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 188,
+                  "end": 224
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 42,
+                  "end": 64
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 108,
+                  "end": 156
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "FDEA202407311075",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 188,
+                    "end": 224
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 42,
+                    "end": 64
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 108,
+                    "end": 156
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote '000  AND SLOWLY INCREASED TO APPROXIMATELY  12,0'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 0,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 5,
+    "elapsed_seconds": 7.031,
+    "errors": [
+      {
+        "step": 4,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      },
+      {
+        "step": 5,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote '000  AND SLOWLY INCREASED TO APPROXIMATELY  12,0'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

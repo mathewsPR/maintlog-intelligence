@@ -1,0 +1,521 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-065",
+  "trial": 2,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'BATTERY'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BATTERY",
+  "input_record_ids": [
+    "CALA2024021900451",
+    "CALA2024071001989",
+    "CALA2024102100881",
+    "CALA2024112501278"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BATTERY",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'BATTERY'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"26919\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 6,
+    "model_calls": 3,
+    "elapsed_seconds": 7.86,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "CALA2024021900451",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 68,
+            "quote": "B777-33-3-7019 - RH NO.2 DR FWD EMER LT BATTERY M33097 CAPACITY LOW.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 70,
+            "end": 147,
+            "quote": "RH NO.2 DR FWD EMER LT BATTERY M33097 REPLACED AND TEST OKAY IAW AMM 33-51-06",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 7268,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": null,
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BATTERY",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5003,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024021900451",
+              "asset_id": "FAA:[\"BOEING\",\"26919\"]",
+              "date": "2024-02-16",
+              "score": 1.0294696954823606,
+              "excerpt": "B777-33-3-7019 - RH NO.2 DR FWD EMER LT BATTERY M33097 CAPACITY LOW.  RH NO.2 DR FWD EMER LT BATTERY M33097 REPLACED AND TEST OKAY IAW AMM 33-51-06",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "CALA2024102100881",
+              "asset_id": "FAA:[\"BOEING\",\"26919\"]",
+              "date": "2024-10-20",
+              "score": 0.6580158270802378,
+              "excerpt": "EMERGENCY LIGHTS - OPERATIONAL TEST WITH THE TEST SWITCHES PROCEDURE - EMERGENCY AISLE AREA LIGHTS INOP IN FIRST CLASS SECTION RIGHT SIDE REPLACED M33093 BATTERY PER AMM 33-51-06-960-802 TEST OK PARTS",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024021900451"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 5906,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024021900451",
+          "event_date": "2024-02-16",
+          "asset_id": "FAA:[\"BOEING\",\"26919\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 7268,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "B777-33-3-7019 - RH NO.2 DR FWD EMER LT BATTERY M33097 CAPACITY LOW.  RH NO.2 DR FWD EMER LT BATTERY M33097 REPLACED AND TEST OKAY IAW AMM 33-51-06",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024021900451",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "B777-33-3-7019 - RH NO.2 DR FWD EMER LT BATTERY M33097 CAPACITY LOW."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "RH NO.2 DR FWD EMER LT BATTERY M33097 REPLACED AND TEST OKAY IAW AMM 33-51-06"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 156,
+          "prompt_tokens": 1349,
+          "total_tokens": 1505,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.641,
+        "model_called": true,
+        "working_context_chars": 5100,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024021900451",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "B777-33-3-7019 - RH NO.2 DR FWD EMER LT BATTERY M33097 CAPACITY LOW."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "RH NO.2 DR FWD EMER LT BATTERY M33097 REPLACED AND TEST OKAY IAW AMM 33-51-06"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024021900451",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "B777-33-3-7019 - RH NO.2 DR FWD EMER LT BATTERY M33097 CAPACITY LOW."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "RH NO.2 DR FWD EMER LT BATTERY M33097 REPLACED AND TEST OKAY IAW AMM 33-51-06"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024021900451",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 68,
+              "quote": "B777-33-3-7019 - RH NO.2 DR FWD EMER LT BATTERY M33097 CAPACITY LOW.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 70,
+              "end": 147,
+              "quote": "RH NO.2 DR FWD EMER LT BATTERY M33097 REPLACED AND TEST OKAY IAW AMM 33-51-06",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 7268,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024102100881"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 7023,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024102100881",
+          "event_date": "2024-10-20",
+          "asset_id": "FAA:[\"BOEING\",\"26919\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 50605,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EMERGENCY LIGHTS - OPERATIONAL TEST WITH THE TEST SWITCHES PROCEDURE - EMERGENCY AISLE AREA LIGHTS INOP IN FIRST CLASS SECTION RIGHT SIDE REPLACED M33093 BATTERY PER AMM 33-51-06-960-802 TEST OK PARTS USED:  AD-D717-01-100,QTY :1",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024102100881",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "EMERGENCY AISLE AREA LIGHTS INOP IN FIRST CLASS SECTION RIGHT SIDE"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACED M33093 BATTERY PER AMM 33-51-06-960-802 TEST OK PARTS USED: AD-D717-01-100,QTY :1"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 151,
+          "prompt_tokens": 1361,
+          "total_tokens": 1512,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.609,
+        "model_called": true,
+        "working_context_chars": 5182,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024102100881",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "EMERGENCY AISLE AREA LIGHTS INOP IN FIRST CLASS SECTION RIGHT SIDE"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED M33093 BATTERY PER AMM 33-51-06-960-802 TEST OK PARTS USED: AD-D717-01-100,QTY :1"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024102100881",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "EMERGENCY AISLE AREA LIGHTS INOP IN FIRST CLASS SECTION RIGHT SIDE"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED M33093 BATTERY PER AMM 33-51-06-960-802 TEST OK PARTS USED: AD-D717-01-100,QTY :1"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024102100881",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 208,
+                "end": 222
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "EMERGENCY AISLE AREA LIGHTS INOP IN FIRST CLASS SECTION RIGHT SIDE"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACED M33093 BATTERY PER AMM 33-51-06-960-802 TEST OK PARTS USED: AD-D717-01-100,QTY :1"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 153,
+          "prompt_tokens": 1615,
+          "total_tokens": 1768,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.594,
+        "model_called": true,
+        "working_context_chars": 5937,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024102100881",
+              "fields": {
+                "component": "c1",
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "EMERGENCY AISLE AREA LIGHTS INOP IN FIRST CLASS SECTION RIGHT SIDE"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED M33093 BATTERY PER AMM 33-51-06-960-802 TEST OK PARTS USED: AD-D717-01-100,QTY :1"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024102100881",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 208,
+                    "end": 222
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "EMERGENCY AISLE AREA LIGHTS INOP IN FIRST CLASS SECTION RIGHT SIDE"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED M33093 BATTERY PER AMM 33-51-06-960-802 TEST OK PARTS USED: AD-D717-01-100,QTY :1"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 3,
+    "elapsed_seconds": 7.86,
+    "errors": [
+      {
+        "step": 5,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      },
+      {
+        "step": 6,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

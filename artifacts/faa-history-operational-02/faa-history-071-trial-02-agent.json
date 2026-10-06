@@ -1,0 +1,1110 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-071",
+  "trial": 2,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'COVER'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "COVER",
+  "input_record_ids": [
+    "SWAA2024062705426",
+    "SWAA2024071511044",
+    "SWAA2024072214632",
+    "SWAA2024082227643"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "budget_exhausted",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "COVER",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'COVER'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 20,
+    "model_calls": 20,
+    "elapsed_seconds": 25.922,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "SWAA2024082227643",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 54,
+            "end": 74,
+            "quote": "AFT DOOR SLIDE COVER",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 37,
+            "quote": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 43,
+            "end": 82,
+            "quote": "RESECURRED AFT DOOR SLIDE COVER PER SIP",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 39791,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 4,
+      "selected_record_count": 4,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 4,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "COVER",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 23,
+          "prompt_tokens": 1061,
+          "total_tokens": 1084,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.688,
+        "model_called": true,
+        "working_context_chars": 4999,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "SWAA2024082227643",
+              "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+              "date": "2024-08-19",
+              "score": 1.8101020456779555,
+              "excerpt": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1252,
+          "total_tokens": 1264,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.531,
+        "model_called": true,
+        "working_context_chars": 5403,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 4,
+          "unstructured_record_count": 4,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1312,
+          "total_tokens": 1343,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.859,
+        "model_called": true,
+        "working_context_chars": 5630,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024082227643",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "AFT DOOR SLIDE COVER"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "RESECURRED AFT DOOR SLIDE COVER PER SIP"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 125,
+          "prompt_tokens": 1039,
+          "total_tokens": 1164,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.547,
+        "model_called": true,
+        "working_context_chars": 5035,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024082227643",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "AFT DOOR SLIDE COVER"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "RESECURRED AFT DOOR SLIDE COVER PER SIP"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024082227643",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "AFT DOOR SLIDE COVER"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "RESECURRED AFT DOOR SLIDE COVER PER SIP"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'RESECURRED AFT DOOR SLIDE COVER PER SIP'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024082227643",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "AFT DOOR SLIDE COVER"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "RESECURRED AFT DOOR SLIDE COVER PER SIP"
+              }
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 125,
+          "prompt_tokens": 780,
+          "total_tokens": 905,
+          "prompt_tokens_details": {
+            "cached_tokens": 155
+          }
+        },
+        "model_seconds": 2.406,
+        "model_called": true,
+        "working_context_chars": 6673,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": true,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024082227643",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "AFT DOOR SLIDE COVER"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "RESECURRED AFT DOOR SLIDE COVER PER SIP"
+                }
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024082227643",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "AFT DOOR SLIDE COVER"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "RESECURRED AFT DOOR SLIDE COVER PER SIP"
+                  }
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 54,
+              "end": 74,
+              "quote": "AFT DOOR SLIDE COVER",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 37,
+              "quote": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 43,
+              "end": 82,
+              "quote": "RESECURRED AFT DOOR SLIDE COVER PER SIP",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2139,
+          "total_tokens": 2170,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.25,
+        "model_called": true,
+        "working_context_chars": 8317,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2395,
+          "total_tokens": 2426,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.235,
+        "model_called": true,
+        "working_context_chars": 8917,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2652,
+          "total_tokens": 2683,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.359,
+        "model_called": true,
+        "working_context_chars": 9517,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1952,
+          "total_tokens": 1983,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.469,
+        "model_called": true,
+        "working_context_chars": 7371,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2036,
+          "total_tokens": 2067,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.109,
+        "model_called": true,
+        "working_context_chars": 7588,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 11,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2120,
+          "total_tokens": 2151,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.125,
+        "model_called": true,
+        "working_context_chars": 7805,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 12,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2204,
+          "total_tokens": 2235,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.141,
+        "model_called": true,
+        "working_context_chars": 8022,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 13,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2288,
+          "total_tokens": 2319,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.172,
+        "model_called": true,
+        "working_context_chars": 8239,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 14,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2372,
+          "total_tokens": 2403,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.203,
+        "model_called": true,
+        "working_context_chars": 8456,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 15,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2456,
+          "total_tokens": 2487,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.235,
+        "model_called": true,
+        "working_context_chars": 8673,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 16,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2540,
+          "total_tokens": 2571,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.235,
+        "model_called": true,
+        "working_context_chars": 8890,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 17,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2624,
+          "total_tokens": 2655,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.281,
+        "model_called": true,
+        "working_context_chars": 9107,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 18,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2708,
+          "total_tokens": 2739,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.297,
+        "model_called": true,
+        "working_context_chars": 9324,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 19,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2792,
+          "total_tokens": 2823,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.344,
+        "model_called": true,
+        "working_context_chars": 9541,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 20,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024082227643"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2876,
+          "total_tokens": 2907,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.39,
+        "model_called": true,
+        "working_context_chars": 9758,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024082227643",
+          "event_date": "2024-08-19",
+          "asset_id": "FAA:[\"BOEING\",\"67795\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39791,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CAPT. SIDE AFT SLIDE DOOR COVER LOOSE<[01] RESECURRED AFT DOOR SLIDE COVER PER SIP",
+          "normalization_policy": "dictionary_v0"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "budget_exhausted",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 20,
+    "elapsed_seconds": 25.922,
+    "errors": [
+      {
+        "step": 4,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'RESECURRED AFT DOOR SLIDE COVER PER SIP'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

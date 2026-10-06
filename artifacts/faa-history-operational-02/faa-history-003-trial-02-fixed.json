@@ -1,0 +1,1002 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-003",
+  "trial": 2,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'LIGHT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "LIGHT",
+  "input_record_ids": [
+    "DALA2024022102434",
+    "DALA2024032503741",
+    "DALA2024091709083",
+    "DALA2024101110002"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "LIGHT",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'LIGHT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"AIRBUS\",\"0620\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 9,
+    "model_calls": 3,
+    "elapsed_seconds": 7.234,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "DALA2024022102434",
+          "date": "2024-02-16",
+          "asset_id": "FAA:[\"AIRBUS\",\"0620\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 88,
+              "end": 98,
+              "quote": "LIGHT ASSY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 59,
+              "quote": "SHIP 3354 EMERGENCY FLOOR PROX FLOOR LIGHTS INOP @48/49 JH.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 79,
+              "end": 118,
+              "quote": "REPLACED LIGHT ASSY IAW A330 AMM 33-51.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "DALA2024022102434",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 7781
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "SHIP 3354 EMERGENCY FLOOR PROX FLOOR LIGHTS INOP @48/49 JH. CORRECTIVE ACTION: REPLACED LIGHT ASSY IAW A330 AMM 33-51. OPS CHECK NORMAL. MEL/PLAC REMOVED. (5736879)"
+          }
+        },
+        {
+          "record_id": "DALA2024032503741",
+          "date": "2024-03-24",
+          "asset_id": "FAA:[\"AIRBUS\",\"0620\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 93,
+              "end": 113,
+              "quote": "EMER LIGHT CONNECTOR",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 41,
+              "quote": "SHIP 3354 ESCAPE PATH LIGHT AT 38(B) INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 62,
+              "end": 113,
+              "quote": "PER A330 AWM 33-51-23 REPLACED EMER LIGHT CONNECTOR",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "DALA2024032503741",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 13521
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "SHIP 3354 ESCAPE PATH LIGHT AT 38(B) INOP. CORRECTIVE ACTION: PER A330 AWM 33-51-23 REPLACED EMER LIGHT CONNECTOR. OPS NORMAL. (5431388)"
+          }
+        },
+        {
+          "record_id": "DALA2024101110002",
+          "date": "2024-10-10",
+          "asset_id": "FAA:[\"AIRBUS\",\"0620\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 77,
+              "end": 87,
+              "quote": "LIGHT ASSY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 15,
+              "end": 47,
+              "quote": "ESCAPE PATH EMERGENCY LIGHT INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 68,
+              "end": 117,
+              "quote": "REPLACED LIGHT ASSY PER A330 AMM 33-51. (6396108)",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "DALA2024101110002",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 49022
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "SHIP 3354 32AB ESCAPE PATH EMERGENCY LIGHT INOP. CORRECTIVE ACTION: REPLACED LIGHT ASSY PER A330 AMM 33-51. (6396108)"
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-02-16 | record DALA2024022102434\nSource: SDR-2024.csv, CSV row 7781, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: LIGHT ASSY [record=DALA2024022102434; field=narrative_raw; offsets=88:98]\nproblem: SHIP 3354 EMERGENCY FLOOR PROX FLOOR LIGHTS INOP @48/49 JH. [record=DALA2024022102434; field=narrative_raw; offsets=0:59]\naction: REPLACED LIGHT ASSY IAW A330 AMM 33-51. [record=DALA2024022102434; field=narrative_raw; offsets=79:118]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): SHIP 3354 EMERGENCY FLOOR PROX FLOOR LIGHTS INOP @48/49 JH. CORRECTIVE ACTION: REPLACED LIGHT ASSY IAW A330 AMM 33-51. OPS CHECK NORMAL. MEL/PLAC REMOVED. (5736879)\n\n2024-03-24 | record DALA2024032503741\nSource: SDR-2024.csv, CSV row 13521, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: EMER LIGHT CONNECTOR [record=DALA2024032503741; field=narrative_raw; offsets=93:113]\nproblem: SHIP 3354 ESCAPE PATH LIGHT AT 38(B) INOP [record=DALA2024032503741; field=narrative_raw; offsets=0:41]\naction: PER A330 AWM 33-51-23 REPLACED EMER LIGHT CONNECTOR [record=DALA2024032503741; field=narrative_raw; offsets=62:113]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): SHIP 3354 ESCAPE PATH LIGHT AT 38(B) INOP. CORRECTIVE ACTION: PER A330 AWM 33-51-23 REPLACED EMER LIGHT CONNECTOR. OPS NORMAL. (5431388)\n\n2024-10-10 | record DALA2024101110002\nSource: SDR-2024.csv, CSV row 49022, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: LIGHT ASSY [record=DALA2024101110002; field=narrative_raw; offsets=77:87]\nproblem: ESCAPE PATH EMERGENCY LIGHT INOP [record=DALA2024101110002; field=narrative_raw; offsets=15:47]\naction: REPLACED LIGHT ASSY PER A330 AMM 33-51. (6396108) [record=DALA2024101110002; field=narrative_raw; offsets=68:117]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): SHIP 3354 32AB ESCAPE PATH EMERGENCY LIGHT INOP. CORRECTIVE ACTION: REPLACED LIGHT ASSY PER A330 AMM 33-51. (6396108)\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "DALA2024101110002",
+        "event_date": "2024-10-10",
+        "asset_id": "FAA:[\"AIRBUS\",\"0620\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 49022,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "SHIP 3354 32AB ESCAPE PATH EMERGENCY LIGHT INOP. CORRECTIVE ACTION: REPLACED LIGHT ASSY PER A330 AMM 33-51. (6396108)",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "DALA2024032503741",
+        "event_date": "2024-03-24",
+        "asset_id": "FAA:[\"AIRBUS\",\"0620\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 13521,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "SHIP 3354 ESCAPE PATH LIGHT AT 38(B) INOP. CORRECTIVE ACTION: PER A330 AWM 33-51-23 REPLACED EMER LIGHT CONNECTOR. OPS NORMAL. (5431388)",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "DALA2024022102434",
+        "event_date": "2024-02-16",
+        "asset_id": "FAA:[\"AIRBUS\",\"0620\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 7781,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "SHIP 3354 EMERGENCY FLOOR PROX FLOOR LIGHTS INOP @48/49 JH. CORRECTIVE ACTION: REPLACED LIGHT ASSY IAW A330 AMM 33-51. OPS CHECK NORMAL. MEL/PLAC REMOVED. (5736879)",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "DALA2024101110002",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 77,
+            "end": 87,
+            "quote": "LIGHT ASSY",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 15,
+            "end": 47,
+            "quote": "ESCAPE PATH EMERGENCY LIGHT INOP",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 68,
+            "end": 117,
+            "quote": "REPLACED LIGHT ASSY PER A330 AMM 33-51. (6396108)",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 49022,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "DALA2024032503741",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 93,
+            "end": 113,
+            "quote": "EMER LIGHT CONNECTOR",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 41,
+            "quote": "SHIP 3354 ESCAPE PATH LIGHT AT 38(B) INOP",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 62,
+            "end": 113,
+            "quote": "PER A330 AWM 33-51-23 REPLACED EMER LIGHT CONNECTOR",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 13521,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "DALA2024022102434",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 88,
+            "end": 98,
+            "quote": "LIGHT ASSY",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 59,
+            "quote": "SHIP 3354 EMERGENCY FLOOR PROX FLOOR LIGHTS INOP @48/49 JH.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 79,
+            "end": 118,
+            "quote": "REPLACED LIGHT ASSY IAW A330 AMM 33-51.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 7781,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 4,
+      "selected_record_count": 4,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 4,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "LIGHT",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 4998,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "DALA2024101110002",
+              "asset_id": "FAA:[\"AIRBUS\",\"0620\"]",
+              "date": "2024-10-10",
+              "score": 0.5428656692697252,
+              "excerpt": "SHIP 3354 32AB ESCAPE PATH EMERGENCY LIGHT INOP. CORRECTIVE ACTION: REPLACED LIGHT ASSY PER A330 AMM 33-51. (6396108)",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "DALA2024032503741",
+              "asset_id": "FAA:[\"AIRBUS\",\"0620\"]",
+              "date": "2024-03-24",
+              "score": 0.511382521313688,
+              "excerpt": "SHIP 3354 ESCAPE PATH LIGHT AT 38(B) INOP. CORRECTIVE ACTION: PER A330 AWM 33-51-23 REPLACED EMER LIGHT CONNECTOR. OPS NORMAL. (5431388)",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "DALA2024022102434",
+              "asset_id": "FAA:[\"AIRBUS\",\"0620\"]",
+              "date": "2024-02-16",
+              "score": 0.3378825972383947,
+              "excerpt": "SHIP 3354 EMERGENCY FLOOR PROX FLOOR LIGHTS INOP @48/49 JH. CORRECTIVE ACTION: REPLACED LIGHT ASSY IAW A330 AMM 33-51. OPS CHECK NORMAL. MEL/PLAC REMOVED. (5736879)",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DALA2024101110002"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 6203,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DALA2024101110002",
+          "event_date": "2024-10-10",
+          "asset_id": "FAA:[\"AIRBUS\",\"0620\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 49022,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "SHIP 3354 32AB ESCAPE PATH EMERGENCY LIGHT INOP. CORRECTIVE ACTION: REPLACED LIGHT ASSY PER A330 AMM 33-51. (6396108)",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024101110002",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "LIGHT ASSY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "ESCAPE PATH EMERGENCY LIGHT INOP"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACED LIGHT ASSY PER A330 AMM 33-51. (6396108)"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 134,
+          "prompt_tokens": 1064,
+          "total_tokens": 1198,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.344,
+        "model_called": true,
+        "working_context_chars": 5070,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024101110002",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "LIGHT ASSY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "ESCAPE PATH EMERGENCY LIGHT INOP"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED LIGHT ASSY PER A330 AMM 33-51. (6396108)"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024101110002",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "LIGHT ASSY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "ESCAPE PATH EMERGENCY LIGHT INOP"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED LIGHT ASSY PER A330 AMM 33-51. (6396108)"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "DALA2024101110002",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 77,
+              "end": 87,
+              "quote": "LIGHT ASSY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 15,
+              "end": 47,
+              "quote": "ESCAPE PATH EMERGENCY LIGHT INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 68,
+              "end": 117,
+              "quote": "REPLACED LIGHT ASSY PER A330 AMM 33-51. (6396108)",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 49022,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DALA2024032503741"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 7271,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DALA2024032503741",
+          "event_date": "2024-03-24",
+          "asset_id": "FAA:[\"AIRBUS\",\"0620\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 13521,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "SHIP 3354 ESCAPE PATH LIGHT AT 38(B) INOP. CORRECTIVE ACTION: PER A330 AWM 33-51-23 REPLACED EMER LIGHT CONNECTOR. OPS NORMAL. (5431388)",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024032503741",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "EMER LIGHT CONNECTOR"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "SHIP 3354 ESCAPE PATH LIGHT AT 38(B) INOP"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "PER A330 AWM 33-51-23 REPLACED EMER LIGHT CONNECTOR"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 140,
+          "prompt_tokens": 1071,
+          "total_tokens": 1211,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.391,
+        "model_called": true,
+        "working_context_chars": 5089,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024032503741",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "EMER LIGHT CONNECTOR"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "SHIP 3354 ESCAPE PATH LIGHT AT 38(B) INOP"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "PER A330 AWM 33-51-23 REPLACED EMER LIGHT CONNECTOR"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024032503741",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "EMER LIGHT CONNECTOR"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "SHIP 3354 ESCAPE PATH LIGHT AT 38(B) INOP"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "PER A330 AWM 33-51-23 REPLACED EMER LIGHT CONNECTOR"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "DALA2024032503741",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 93,
+              "end": 113,
+              "quote": "EMER LIGHT CONNECTOR",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 41,
+              "quote": "SHIP 3354 ESCAPE PATH LIGHT AT 38(B) INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 62,
+              "end": 113,
+              "quote": "PER A330 AWM 33-51-23 REPLACED EMER LIGHT CONNECTOR",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 13521,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DALA2024022102434"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 8379,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DALA2024022102434",
+          "event_date": "2024-02-16",
+          "asset_id": "FAA:[\"AIRBUS\",\"0620\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 7781,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "SHIP 3354 EMERGENCY FLOOR PROX FLOOR LIGHTS INOP @48/49 JH. CORRECTIVE ACTION: REPLACED LIGHT ASSY IAW A330 AMM 33-51. OPS CHECK NORMAL. MEL/PLAC REMOVED. (5736879)",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024022102434",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "LIGHT ASSY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "SHIP 3354 EMERGENCY FLOOR PROX FLOOR LIGHTS INOP @48/49 JH."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACED LIGHT ASSY IAW A330 AMM 33-51."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 145,
+          "prompt_tokens": 1085,
+          "total_tokens": 1230,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.468,
+        "model_called": true,
+        "working_context_chars": 5117,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024022102434",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "LIGHT ASSY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "SHIP 3354 EMERGENCY FLOOR PROX FLOOR LIGHTS INOP @48/49 JH."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED LIGHT ASSY IAW A330 AMM 33-51."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024022102434",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "LIGHT ASSY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "SHIP 3354 EMERGENCY FLOOR PROX FLOOR LIGHTS INOP @48/49 JH."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED LIGHT ASSY IAW A330 AMM 33-51."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "DALA2024022102434",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 88,
+              "end": 98,
+              "quote": "LIGHT ASSY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 59,
+              "quote": "SHIP 3354 EMERGENCY FLOOR PROX FLOOR LIGHTS INOP @48/49 JH.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 79,
+              "end": 118,
+              "quote": "REPLACED LIGHT ASSY IAW A330 AMM 33-51.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 7781,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9514,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 4,
+          "unstructured_record_count": 4,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "DALA2024101110002",
+              "DALA2024032503741",
+              "DALA2024022102434"
+            ]
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9741,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "DALA2024101110002",
+            "DALA2024032503741",
+            "DALA2024022102434"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "DALA2024101110002",
+      "DALA2024032503741",
+      "DALA2024022102434"
+    ],
+    "proposal_count": 3,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 3,
+    "elapsed_seconds": 7.234,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

@@ -1,0 +1,882 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-038",
+  "trial": 3,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'LAMP'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "LAMP",
+  "input_record_ids": [
+    "CALA2024042901254",
+    "CALA2024053001629",
+    "CALA2024122201613"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "context_limit",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "LAMP",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'LAMP'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 17,
+    "model_calls": 17,
+    "elapsed_seconds": 20.203,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "CALA2024042901254",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 43,
+            "end": 98,
+            "quote": "RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING",
+            "source_column": "Discrepancy"
+          },
+          "action": null
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 19441,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "LAMP",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 1060,
+          "total_tokens": 1084,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.985,
+        "model_called": true,
+        "working_context_chars": 4995,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024042901254",
+              "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+              "date": "2024-04-28",
+              "score": 1.2018065945993484,
+              "excerpt": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FO",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1291,
+          "total_tokens": 1303,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.547,
+        "model_called": true,
+        "working_context_chars": 5514,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042901254"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1351,
+          "total_tokens": 1382,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.844,
+        "model_called": true,
+        "working_context_chars": 5741,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "event_date": "2024-04-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FOND RH LANDING LIGHT MISSING. THE WIRE EXPOSED. TOMC NOTIFIED AND SDR FILED IAW GMM 02-30-95. RH RETRACTABLE LANDING LIGHT HAS BEEN DEACTIVATED IAW AMM 33-42-00-040-001-A AND GMM 05-30-05. CBS AT T06 AND T07 HAS BEEN PULLED AND COLLARED. REQUEST CDL 33G FOR MISSING LANDING LIGHT LAMP. COMPLIED WITH CDL AND PLACARD INSTALLED. DISPATCH DESK: 18 NAME: AP DATE: 28-APR-24- APPROVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024042901254",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING"
+              },
+              "action": null
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 82,
+          "prompt_tokens": 1506,
+          "total_tokens": 1588,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 1.594,
+        "model_called": true,
+        "working_context_chars": 5532,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024042901254",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING"
+                },
+                "action": null
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024042901254",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING"
+                  },
+                  "action": null
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 43,
+              "end": 98,
+              "quote": "RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042901254"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1880,
+          "total_tokens": 1911,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.109,
+        "model_called": true,
+        "working_context_chars": 7166,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "event_date": "2024-04-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FOND RH LANDING LIGHT MISSING. THE WIRE EXPOSED. TOMC NOTIFIED AND SDR FILED IAW GMM 02-30-95. RH RETRACTABLE LANDING LIGHT HAS BEEN DEACTIVATED IAW AMM 33-42-00-040-001-A AND GMM 05-30-05. CBS AT T06 AND T07 HAS BEEN PULLED AND COLLARED. REQUEST CDL 33G FOR MISSING LANDING LIGHT LAMP. COMPLIED WITH CDL AND PLACARD INSTALLED. DISPATCH DESK: 18 NAME: AP DATE: 28-APR-24- APPROVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042901254"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2330,
+          "total_tokens": 2361,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.219,
+        "model_called": true,
+        "working_context_chars": 8261,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "event_date": "2024-04-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FOND RH LANDING LIGHT MISSING. THE WIRE EXPOSED. TOMC NOTIFIED AND SDR FILED IAW GMM 02-30-95. RH RETRACTABLE LANDING LIGHT HAS BEEN DEACTIVATED IAW AMM 33-42-00-040-001-A AND GMM 05-30-05. CBS AT T06 AND T07 HAS BEEN PULLED AND COLLARED. REQUEST CDL 33G FOR MISSING LANDING LIGHT LAMP. COMPLIED WITH CDL AND PLACARD INSTALLED. DISPATCH DESK: 18 NAME: AP DATE: 28-APR-24- APPROVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042901254"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2781,
+          "total_tokens": 2812,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.375,
+        "model_called": true,
+        "working_context_chars": 9356,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "event_date": "2024-04-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FOND RH LANDING LIGHT MISSING. THE WIRE EXPOSED. TOMC NOTIFIED AND SDR FILED IAW GMM 02-30-95. RH RETRACTABLE LANDING LIGHT HAS BEEN DEACTIVATED IAW AMM 33-42-00-040-001-A AND GMM 05-30-05. CBS AT T06 AND T07 HAS BEEN PULLED AND COLLARED. REQUEST CDL 33G FOR MISSING LANDING LIGHT LAMP. COMPLIED WITH CDL AND PLACARD INSTALLED. DISPATCH DESK: 18 NAME: AP DATE: 28-APR-24- APPROVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042901254"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2133,
+          "total_tokens": 2164,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.156,
+        "model_called": true,
+        "working_context_chars": 7860,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "event_date": "2024-04-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FOND RH LANDING LIGHT MISSING. THE WIRE EXPOSED. TOMC NOTIFIED AND SDR FILED IAW GMM 02-30-95. RH RETRACTABLE LANDING LIGHT HAS BEEN DEACTIVATED IAW AMM 33-42-00-040-001-A AND GMM 05-30-05. CBS AT T06 AND T07 HAS BEEN PULLED AND COLLARED. REQUEST CDL 33G FOR MISSING LANDING LIGHT LAMP. COMPLIED WITH CDL AND PLACARD INSTALLED. DISPATCH DESK: 18 NAME: AP DATE: 28-APR-24- APPROVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042901254"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2214,
+          "total_tokens": 2245,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.125,
+        "model_called": true,
+        "working_context_chars": 8075,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "event_date": "2024-04-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FOND RH LANDING LIGHT MISSING. THE WIRE EXPOSED. TOMC NOTIFIED AND SDR FILED IAW GMM 02-30-95. RH RETRACTABLE LANDING LIGHT HAS BEEN DEACTIVATED IAW AMM 33-42-00-040-001-A AND GMM 05-30-05. CBS AT T06 AND T07 HAS BEEN PULLED AND COLLARED. REQUEST CDL 33G FOR MISSING LANDING LIGHT LAMP. COMPLIED WITH CDL AND PLACARD INSTALLED. DISPATCH DESK: 18 NAME: AP DATE: 28-APR-24- APPROVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042901254"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2295,
+          "total_tokens": 2326,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.172,
+        "model_called": true,
+        "working_context_chars": 8290,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "event_date": "2024-04-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FOND RH LANDING LIGHT MISSING. THE WIRE EXPOSED. TOMC NOTIFIED AND SDR FILED IAW GMM 02-30-95. RH RETRACTABLE LANDING LIGHT HAS BEEN DEACTIVATED IAW AMM 33-42-00-040-001-A AND GMM 05-30-05. CBS AT T06 AND T07 HAS BEEN PULLED AND COLLARED. REQUEST CDL 33G FOR MISSING LANDING LIGHT LAMP. COMPLIED WITH CDL AND PLACARD INSTALLED. DISPATCH DESK: 18 NAME: AP DATE: 28-APR-24- APPROVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 11,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042901254"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2376,
+          "total_tokens": 2407,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.187,
+        "model_called": true,
+        "working_context_chars": 8505,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "event_date": "2024-04-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FOND RH LANDING LIGHT MISSING. THE WIRE EXPOSED. TOMC NOTIFIED AND SDR FILED IAW GMM 02-30-95. RH RETRACTABLE LANDING LIGHT HAS BEEN DEACTIVATED IAW AMM 33-42-00-040-001-A AND GMM 05-30-05. CBS AT T06 AND T07 HAS BEEN PULLED AND COLLARED. REQUEST CDL 33G FOR MISSING LANDING LIGHT LAMP. COMPLIED WITH CDL AND PLACARD INSTALLED. DISPATCH DESK: 18 NAME: AP DATE: 28-APR-24- APPROVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 12,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042901254"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2457,
+          "total_tokens": 2488,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.219,
+        "model_called": true,
+        "working_context_chars": 8720,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "event_date": "2024-04-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FOND RH LANDING LIGHT MISSING. THE WIRE EXPOSED. TOMC NOTIFIED AND SDR FILED IAW GMM 02-30-95. RH RETRACTABLE LANDING LIGHT HAS BEEN DEACTIVATED IAW AMM 33-42-00-040-001-A AND GMM 05-30-05. CBS AT T06 AND T07 HAS BEEN PULLED AND COLLARED. REQUEST CDL 33G FOR MISSING LANDING LIGHT LAMP. COMPLIED WITH CDL AND PLACARD INSTALLED. DISPATCH DESK: 18 NAME: AP DATE: 28-APR-24- APPROVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 13,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042901254"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2538,
+          "total_tokens": 2569,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.25,
+        "model_called": true,
+        "working_context_chars": 8935,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "event_date": "2024-04-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FOND RH LANDING LIGHT MISSING. THE WIRE EXPOSED. TOMC NOTIFIED AND SDR FILED IAW GMM 02-30-95. RH RETRACTABLE LANDING LIGHT HAS BEEN DEACTIVATED IAW AMM 33-42-00-040-001-A AND GMM 05-30-05. CBS AT T06 AND T07 HAS BEEN PULLED AND COLLARED. REQUEST CDL 33G FOR MISSING LANDING LIGHT LAMP. COMPLIED WITH CDL AND PLACARD INSTALLED. DISPATCH DESK: 18 NAME: AP DATE: 28-APR-24- APPROVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 14,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042901254"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2619,
+          "total_tokens": 2650,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.313,
+        "model_called": true,
+        "working_context_chars": 9150,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "event_date": "2024-04-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FOND RH LANDING LIGHT MISSING. THE WIRE EXPOSED. TOMC NOTIFIED AND SDR FILED IAW GMM 02-30-95. RH RETRACTABLE LANDING LIGHT HAS BEEN DEACTIVATED IAW AMM 33-42-00-040-001-A AND GMM 05-30-05. CBS AT T06 AND T07 HAS BEEN PULLED AND COLLARED. REQUEST CDL 33G FOR MISSING LANDING LIGHT LAMP. COMPLIED WITH CDL AND PLACARD INSTALLED. DISPATCH DESK: 18 NAME: AP DATE: 28-APR-24- APPROVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 15,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042901254"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2700,
+          "total_tokens": 2731,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.359,
+        "model_called": true,
+        "working_context_chars": 9365,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "event_date": "2024-04-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FOND RH LANDING LIGHT MISSING. THE WIRE EXPOSED. TOMC NOTIFIED AND SDR FILED IAW GMM 02-30-95. RH RETRACTABLE LANDING LIGHT HAS BEEN DEACTIVATED IAW AMM 33-42-00-040-001-A AND GMM 05-30-05. CBS AT T06 AND T07 HAS BEEN PULLED AND COLLARED. REQUEST CDL 33G FOR MISSING LANDING LIGHT LAMP. COMPLIED WITH CDL AND PLACARD INSTALLED. DISPATCH DESK: 18 NAME: AP DATE: 28-APR-24- APPROVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 16,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042901254"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2781,
+          "total_tokens": 2812,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.375,
+        "model_called": true,
+        "working_context_chars": 9580,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "event_date": "2024-04-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FOND RH LANDING LIGHT MISSING. THE WIRE EXPOSED. TOMC NOTIFIED AND SDR FILED IAW GMM 02-30-95. RH RETRACTABLE LANDING LIGHT HAS BEEN DEACTIVATED IAW AMM 33-42-00-040-001-A AND GMM 05-30-05. CBS AT T06 AND T07 HAS BEEN PULLED AND COLLARED. REQUEST CDL 33G FOR MISSING LANDING LIGHT LAMP. COMPLIED WITH CDL AND PLACARD INSTALLED. DISPATCH DESK: 18 NAME: AP DATE: 28-APR-24- APPROVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 17,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024042901254"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2862,
+          "total_tokens": 2893,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.359,
+        "model_called": true,
+        "working_context_chars": 9795,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024042901254",
+          "event_date": "2024-04-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"836\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19441,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "PDA 2 AIRCRAFT ARRIVED AND TECH DISCOVERED RH RETRACTABLE LANDING LIGHT AND RETAINING RING MISSING. ITEM IS CLASS 2 PDA AND LAMP WEIGHT IS 2.0LBS. SDR REPORT # 1035963 SUBMITTED. TOMC MX CNTL HILL. FOND RH LANDING LIGHT MISSING. THE WIRE EXPOSED. TOMC NOTIFIED AND SDR FILED IAW GMM 02-30-95. RH RETRACTABLE LANDING LIGHT HAS BEEN DEACTIVATED IAW AMM 33-42-00-040-001-A AND GMM 05-30-05. CBS AT T06 AND T07 HAS BEEN PULLED AND COLLARED. REQUEST CDL 33G FOR MISSING LANDING LIGHT LAMP. COMPLIED WITH CDL AND PLACARD INSTALLED. DISPATCH DESK: 18 NAME: AP DATE: 28-APR-24- APPROVED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "context_limit",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 17,
+    "elapsed_seconds": 20.203,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

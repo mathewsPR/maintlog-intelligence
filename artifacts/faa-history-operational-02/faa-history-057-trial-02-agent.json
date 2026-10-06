@@ -1,0 +1,993 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-057",
+  "trial": 2,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'CONTROLLER'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "CONTROLLER",
+  "input_record_ids": [
+    "HNAA2024042900325",
+    "HNAA2024081200662",
+    "HNAA2024093000883"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "context_limit",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "CONTROLLER",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'CONTROLLER'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 18,
+    "model_calls": 18,
+    "elapsed_seconds": 25.75,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "HNAA2024081200662",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 76,
+            "quote": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 308,
+            "end": 440,
+            "quote": "TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 37163,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "CONTROLLER",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 1064,
+          "total_tokens": 1088,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.734,
+        "model_called": true,
+        "working_context_chars": 5009,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "HNAA2024081200662",
+              "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+              "date": "2024-08-10",
+              "score": 0.7834099464949892,
+              "excerpt": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JU",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1290,
+          "total_tokens": 1302,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.516,
+        "model_called": true,
+        "working_context_chars": 5532,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "HNAA2024081200662"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1350,
+          "total_tokens": 1381,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.844,
+        "model_called": true,
+        "working_context_chars": 5759,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "event_date": "2024-08-10",
+          "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JUST RTF.  MEL   10AUG24  18:20  CLT  C22321  21-12-3 PRESS CONTROL AUTO AND MANUAL FACT  12AUG24  04:41  SBY TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR MEL 21-12-3",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "HNAA2024081200662",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR"
+              }
+            },
+            "action_status": "attempted"
+          }
+        },
+        "usage": {
+          "completion_tokens": 165,
+          "prompt_tokens": 1472,
+          "total_tokens": 1637,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 3.25,
+        "model_called": true,
+        "working_context_chars": 5407,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "HNAA2024081200662",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR"
+                }
+              },
+              "action_status": "attempted"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "HNAA2024081200662",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR"
+                  }
+                },
+                "action_status": "attempted"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='attempted' lacks unnegated explicit support in the selected action quote \"TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR\"; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "HNAA2024081200662",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR"
+              }
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 207,
+          "prompt_tokens": 1212,
+          "total_tokens": 1419,
+          "prompt_tokens_details": {
+            "cached_tokens": 222
+          }
+        },
+        "model_seconds": 3.844,
+        "model_called": true,
+        "working_context_chars": 7231,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": true,
+          "component_recovery_used": true,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "HNAA2024081200662",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR"
+                }
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "HNAA2024081200662",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR"
+                  }
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 76,
+              "quote": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 308,
+              "end": 440,
+              "quote": "TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "HNAA2024081200662"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2487,
+          "total_tokens": 2518,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.375,
+        "model_called": true,
+        "working_context_chars": 9081,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "event_date": "2024-08-10",
+          "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JUST RTF.  MEL   10AUG24  18:20  CLT  C22321  21-12-3 PRESS CONTROL AUTO AND MANUAL FACT  12AUG24  04:41  SBY TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR MEL 21-12-3",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "HNAA2024081200662"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2028,
+          "total_tokens": 2059,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.406,
+        "model_called": true,
+        "working_context_chars": 7515,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "event_date": "2024-08-10",
+          "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JUST RTF.  MEL   10AUG24  18:20  CLT  C22321  21-12-3 PRESS CONTROL AUTO AND MANUAL FACT  12AUG24  04:41  SBY TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR MEL 21-12-3",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "HNAA2024081200662"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2113,
+          "total_tokens": 2144,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.094,
+        "model_called": true,
+        "working_context_chars": 7732,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "event_date": "2024-08-10",
+          "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JUST RTF.  MEL   10AUG24  18:20  CLT  C22321  21-12-3 PRESS CONTROL AUTO AND MANUAL FACT  12AUG24  04:41  SBY TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR MEL 21-12-3",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "HNAA2024081200662"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2198,
+          "total_tokens": 2229,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.14,
+        "model_called": true,
+        "working_context_chars": 7949,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "event_date": "2024-08-10",
+          "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JUST RTF.  MEL   10AUG24  18:20  CLT  C22321  21-12-3 PRESS CONTROL AUTO AND MANUAL FACT  12AUG24  04:41  SBY TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR MEL 21-12-3",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "HNAA2024081200662"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2283,
+          "total_tokens": 2314,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.156,
+        "model_called": true,
+        "working_context_chars": 8166,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "event_date": "2024-08-10",
+          "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JUST RTF.  MEL   10AUG24  18:20  CLT  C22321  21-12-3 PRESS CONTROL AUTO AND MANUAL FACT  12AUG24  04:41  SBY TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR MEL 21-12-3",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 11,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "HNAA2024081200662"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2368,
+          "total_tokens": 2399,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.172,
+        "model_called": true,
+        "working_context_chars": 8383,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "event_date": "2024-08-10",
+          "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JUST RTF.  MEL   10AUG24  18:20  CLT  C22321  21-12-3 PRESS CONTROL AUTO AND MANUAL FACT  12AUG24  04:41  SBY TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR MEL 21-12-3",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 12,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "HNAA2024081200662"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2453,
+          "total_tokens": 2484,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.219,
+        "model_called": true,
+        "working_context_chars": 8600,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "event_date": "2024-08-10",
+          "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JUST RTF.  MEL   10AUG24  18:20  CLT  C22321  21-12-3 PRESS CONTROL AUTO AND MANUAL FACT  12AUG24  04:41  SBY TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR MEL 21-12-3",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 13,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "HNAA2024081200662"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2538,
+          "total_tokens": 2569,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.266,
+        "model_called": true,
+        "working_context_chars": 8817,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "event_date": "2024-08-10",
+          "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JUST RTF.  MEL   10AUG24  18:20  CLT  C22321  21-12-3 PRESS CONTROL AUTO AND MANUAL FACT  12AUG24  04:41  SBY TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR MEL 21-12-3",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 14,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "HNAA2024081200662"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2623,
+          "total_tokens": 2654,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.281,
+        "model_called": true,
+        "working_context_chars": 9034,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "event_date": "2024-08-10",
+          "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JUST RTF.  MEL   10AUG24  18:20  CLT  C22321  21-12-3 PRESS CONTROL AUTO AND MANUAL FACT  12AUG24  04:41  SBY TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR MEL 21-12-3",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 15,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "HNAA2024081200662"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2708,
+          "total_tokens": 2739,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.312,
+        "model_called": true,
+        "working_context_chars": 9251,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "event_date": "2024-08-10",
+          "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JUST RTF.  MEL   10AUG24  18:20  CLT  C22321  21-12-3 PRESS CONTROL AUTO AND MANUAL FACT  12AUG24  04:41  SBY TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR MEL 21-12-3",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 16,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "HNAA2024081200662"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2793,
+          "total_tokens": 2824,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.344,
+        "model_called": true,
+        "working_context_chars": 9468,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "event_date": "2024-08-10",
+          "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JUST RTF.  MEL   10AUG24  18:20  CLT  C22321  21-12-3 PRESS CONTROL AUTO AND MANUAL FACT  12AUG24  04:41  SBY TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR MEL 21-12-3",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 17,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "HNAA2024081200662"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2878,
+          "total_tokens": 2909,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.375,
+        "model_called": true,
+        "working_context_chars": 9685,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "event_date": "2024-08-10",
+          "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JUST RTF.  MEL   10AUG24  18:20  CLT  C22321  21-12-3 PRESS CONTROL AUTO AND MANUAL FACT  12AUG24  04:41  SBY TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR MEL 21-12-3",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 18,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "HNAA2024081200662"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2963,
+          "total_tokens": 2994,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.406,
+        "model_called": true,
+        "working_context_chars": 9902,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "HNAA2024081200662",
+          "event_date": "2024-08-10",
+          "asset_id": "FAA:[\"EMB\",\"14500883\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 37163,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON CLIMBOUT CABIN DID NOT PRESSURIZE REACHED 10,000 FT AND RETURNED TO FIELD----CREW DID NOT SPECIFY IF THEY TRIED BOTH  AUTO AND MANUAL MODE BECAUSE THERE WAS TOO MUCH GOING ON \"THEIR WORDS\"  THEY JUST RTF.  MEL   10AUG24  18:20  CLT  C22321  21-12-3 PRESS CONTROL AUTO AND MANUAL FACT  12AUG24  04:41  SBY TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR MEL 21-12-3",
+          "normalization_policy": "dictionary_v0"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "context_limit",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 18,
+    "elapsed_seconds": 25.75,
+    "errors": [
+      {
+        "step": 4,
+        "error": "action_status='attempted' lacks unnegated explicit support in the selected action quote \"TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR\"; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

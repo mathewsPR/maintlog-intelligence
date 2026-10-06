@@ -1,0 +1,903 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-045",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'MOTOR'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "MOTOR",
+  "input_record_ids": [
+    "DXTA2024080700122",
+    "DXTA2024110400999",
+    "DXTA2024111201103"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "context_limit",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "MOTOR",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'MOTOR'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 17,
+    "model_calls": 17,
+    "elapsed_seconds": 22.031,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "DXTA2024080700122",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 33,
+            "end": 150,
+            "quote": "MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 152,
+            "end": 326,
+            "quote": "INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 36484,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "MOTOR",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 1062,
+          "total_tokens": 1086,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.719,
+        "model_called": true,
+        "working_context_chars": 4998,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "DXTA2024080700122",
+              "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+              "date": "2024-08-06",
+              "score": 1.8515056388990772,
+              "excerpt": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES C",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1288,
+          "total_tokens": 1300,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.531,
+        "model_called": true,
+        "working_context_chars": 5518,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024080700122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 1348,
+          "total_tokens": 1380,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.844,
+        "model_called": true,
+        "working_context_chars": 5745,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "event_date": "2024-08-06",
+          "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES. MOTOR SEEM TO WORK PROPERLY IN ALL TIMES. WORK PERFORMED IAW GL-6000 AMM 52Â·11Â·00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DXTA2024080700122",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 167,
+          "prompt_tokens": 1405,
+          "total_tokens": 1572,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 3.344,
+        "model_called": true,
+        "working_context_chars": 5364,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DXTA2024080700122",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DXTA2024080700122",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 33,
+              "end": 150,
+              "quote": "MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 152,
+              "end": 326,
+              "quote": "INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024080700122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 1872,
+          "total_tokens": 1904,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.094,
+        "model_called": true,
+        "working_context_chars": 7276,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "event_date": "2024-08-06",
+          "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES. MOTOR SEEM TO WORK PROPERLY IN ALL TIMES. WORK PERFORMED IAW GL-6000 AMM 52Â·11Â·00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024080700122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2234,
+          "total_tokens": 2266,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.188,
+        "model_called": true,
+        "working_context_chars": 8204,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "event_date": "2024-08-06",
+          "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES. MOTOR SEEM TO WORK PROPERLY IN ALL TIMES. WORK PERFORMED IAW GL-6000 AMM 52Â·11Â·00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024080700122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2597,
+          "total_tokens": 2629,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.312,
+        "model_called": true,
+        "working_context_chars": 9132,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "event_date": "2024-08-06",
+          "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES. MOTOR SEEM TO WORK PROPERLY IN ALL TIMES. WORK PERFORMED IAW GL-6000 AMM 52Â·11Â·00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024080700122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2134,
+          "total_tokens": 2166,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.438,
+        "model_called": true,
+        "working_context_chars": 7973,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "event_date": "2024-08-06",
+          "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES. MOTOR SEEM TO WORK PROPERLY IN ALL TIMES. WORK PERFORMED IAW GL-6000 AMM 52Â·11Â·00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024080700122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2218,
+          "total_tokens": 2250,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.14,
+        "model_called": true,
+        "working_context_chars": 8189,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "event_date": "2024-08-06",
+          "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES. MOTOR SEEM TO WORK PROPERLY IN ALL TIMES. WORK PERFORMED IAW GL-6000 AMM 52Â·11Â·00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024080700122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2302,
+          "total_tokens": 2334,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.188,
+        "model_called": true,
+        "working_context_chars": 8405,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "event_date": "2024-08-06",
+          "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES. MOTOR SEEM TO WORK PROPERLY IN ALL TIMES. WORK PERFORMED IAW GL-6000 AMM 52Â·11Â·00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 11,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024080700122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2386,
+          "total_tokens": 2418,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.25,
+        "model_called": true,
+        "working_context_chars": 8621,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "event_date": "2024-08-06",
+          "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES. MOTOR SEEM TO WORK PROPERLY IN ALL TIMES. WORK PERFORMED IAW GL-6000 AMM 52Â·11Â·00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 12,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024080700122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2470,
+          "total_tokens": 2502,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.234,
+        "model_called": true,
+        "working_context_chars": 8837,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "event_date": "2024-08-06",
+          "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES. MOTOR SEEM TO WORK PROPERLY IN ALL TIMES. WORK PERFORMED IAW GL-6000 AMM 52Â·11Â·00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 13,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024080700122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2554,
+          "total_tokens": 2586,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.281,
+        "model_called": true,
+        "working_context_chars": 9053,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "event_date": "2024-08-06",
+          "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES. MOTOR SEEM TO WORK PROPERLY IN ALL TIMES. WORK PERFORMED IAW GL-6000 AMM 52Â·11Â·00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 14,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024080700122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2638,
+          "total_tokens": 2670,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.313,
+        "model_called": true,
+        "working_context_chars": 9269,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "event_date": "2024-08-06",
+          "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES. MOTOR SEEM TO WORK PROPERLY IN ALL TIMES. WORK PERFORMED IAW GL-6000 AMM 52Â·11Â·00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 15,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024080700122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2722,
+          "total_tokens": 2754,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.328,
+        "model_called": true,
+        "working_context_chars": 9485,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "event_date": "2024-08-06",
+          "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES. MOTOR SEEM TO WORK PROPERLY IN ALL TIMES. WORK PERFORMED IAW GL-6000 AMM 52Â·11Â·00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 16,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024080700122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2806,
+          "total_tokens": 2838,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.406,
+        "model_called": true,
+        "working_context_chars": 9701,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "event_date": "2024-08-06",
+          "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES. MOTOR SEEM TO WORK PROPERLY IN ALL TIMES. WORK PERFORMED IAW GL-6000 AMM 52Â·11Â·00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 17,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024080700122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2890,
+          "total_tokens": 2922,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.391,
+        "model_called": true,
+        "working_context_chars": 9917,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024080700122",
+          "event_date": "2024-08-06",
+          "asset_id": "FAA:[\"BOMBDR\",\"9648\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36484,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EVALUATE MAIN CABIN DOOR MOTOR.  MOTOR DOESN'T SEEM TO PROBIDE ENOUGH TENSION ON THE DOOR TO BE ABLE TO MOVE THE LOCK HANDLE INTO THE LOCKED POSITION.  INSPECTED MAIN CABIN DOOR, PERFORMED MULTIPLES CYCLES FROM OUTSIDE IN MANUAL AND AUTO. FROM INSIDE PERFORMED MULTIPLES CYCLES AND LOCK HADLE OPERATE SMOOTHLY FROM BOTH SIDES. MOTOR SEEM TO WORK PROPERLY IN ALL TIMES. WORK PERFORMED IAW GL-6000 AMM 52Â·11Â·00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "context_limit",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 17,
+    "elapsed_seconds": 22.031,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

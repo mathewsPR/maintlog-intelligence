@@ -1,4 +1,4 @@
-"""extraction.py    Shared source-span validation and conservative classification constraints."""
+"""Shared source-span validation and conservative classification constraints."""
 
 import re
 
@@ -6,6 +6,7 @@ from .domain import Record
 
 FIELD_NAMES = {"component", "problem", "action"}
 STATUSES = {"unknown", "planned", "attempted", "completed", "verified"}
+
 STATUS_GUIDANCE = (
     "action_status describes execution of the selected action, not repair success. "
     "unknown: insufficient explicit evidence. planned: intended or scheduled work. "
@@ -14,6 +15,7 @@ STATUS_GUIDANCE = (
     "verified: explicit verification of the selected action; never infer verification "
     "from work being completed or from an unrelated confirmation."
 )
+
 STATUS_SUPPORT = {
     "planned": "explicit planning or scheduling wording",
     "attempted": "explicit tried or attempted wording",
@@ -26,19 +28,33 @@ ORIGINS = {
     "problem": {"issue_raw", "narrative_raw"},
     "action": {"action_raw", "narrative_raw"},
 }
+
 # These rules reject a few clear contradictions, not all semantic errors.
 ACTION_PREFIX = re.compile(
-    r"^(?:(?:plan(?:ned)?\s+to\s+)?(?:repl|replace|replaced|lubricated|checked|repaired|installed|removed|found|resecured|performed))\b",
+    r"^(?:(?:plan(?:ned)?\s+to\s+)?"
+    r"(?:repl|replace|replaced|lubricated|checked|repaired|installed|"
+    r"removed|found|resecured|performed))\b",
     re.I,
 )
+
 CUES = {
-    "planned": re.compile(r"\b(?:plan(?:ned)?|scheduled|will|to be)\b", re.I),
-    "attempted": re.compile(r"\b(?:attempt(?:ed)?|tried)\b", re.I),
-    "completed": re.compile(
-        r"\b(?:completed|replaced|repaired|installed|removed|checked|inspected|lubricated|resecured|performed)\b",
+    "planned": re.compile(
+        r"\b(?:plan(?:ned)?|scheduled|will|to be)\b",
         re.I,
     ),
-    "verified": re.compile(r"\b(?:verified|confirmed|passed|validated)\b", re.I),
+    "attempted": re.compile(
+        r"\b(?:attempt(?:ed)?|tried)\b",
+        re.I,
+    ),
+    "completed": re.compile(
+        r"\b(?:completed|replaced|repaired|installed|removed|checked|inspected|"
+        r"lubricated|resecured|performed|drilled)\b",
+        re.I,
+    ),
+    "verified": re.compile(
+        r"\b(?:verified|confirmed|passed|validated)\b",
+        re.I,
+    ),
 }
 
 
@@ -74,6 +90,7 @@ def resolve_span(record: Record, span: dict | None, name: str) -> dict | None:
         return None
     if not isinstance(span, dict):
         raise ValueError("invalid source span")
+
     # Stored spans may carry computed quote/column metadata. Never trust it.
     keys = set(span)
     offset_mode = {"field", "start", "end"} <= keys
@@ -82,16 +99,20 @@ def resolve_span(record: Record, span: dict | None, name: str) -> dict | None:
         if offset_mode
         else {"field", "quote"}
     )
+
     if not keys <= allowed or (not offset_mode and keys != allowed):
         raise ValueError(
             f"{name}: invalid source span keys; received={sorted(keys)}. "
             'For a unique quote use only {"field": "source field", "quote": "exact text"}; '
             "do not send source_column. For repeated text use field/start/end."
         )
+
     field = span["field"]
     if not isinstance(field, str) or field not in ORIGINS[name]:
         raise ValueError(f"{name} cannot use this source field")
+
     source = getattr(record, field)
+
     if offset_mode:
         start, end = span["start"], span["end"]
         if (
@@ -100,35 +121,44 @@ def resolve_span(record: Record, span: dict | None, name: str) -> dict | None:
             or not 0 <= start < end <= len(source)
         ):
             raise ValueError(
-                f"{name}: invalid span offsets; require 0 <= start < end <= {len(source)}. Use field/quote for unique text."
+                f"{name}: invalid span offsets; "
+                f"require 0 <= start < end <= {len(source)}. "
+                "Use field/quote for unique text."
             )
+
         quote = source[start:end]
         if "quote" in span and span["quote"] != quote:
             raise ValueError(
-                f"{name}: stored quote disagrees with source offsets; remove offsets and use field/quote for unique text."
+                f"{name}: stored quote disagrees with source offsets; "
+                "remove offsets and use field/quote for unique text."
             )
     else:
         quote = span["quote"]
         if not isinstance(quote, str) or not quote.strip() or len(quote) > 6000:
             raise ValueError("invalid quote")
+
         start = source.find(quote)
         if start < 0 or source.find(quote, start + 1) >= 0:
             raise ValueError(
                 "quote must occur exactly once; use offsets for repeated text"
             )
         end = start + len(quote)
+
     if name in {"problem", "action"} and re.search(
         r"\b(?:no|not|without)\s+(?:\w+\s+){0,2}$",
         source[max(0, start - 30) : start],
         re.I,
     ):
         raise ValueError("source span omits nearby negation; include it in the excerpt")
+
     if not quote.strip():
         raise ValueError("empty source span")
+
     if name == "component" and ACTION_PREFIX.search(quote.strip()):
         raise ValueError(
             "component starts with an action phrase; select the object only"
         )
+
     return {
         "field": field,
         "start": start,
@@ -139,25 +169,39 @@ def resolve_span(record: Record, span: dict | None, name: str) -> dict | None:
 
 
 def validate_fields(
-    record: Record, fields: dict, status: str, *, human_review: bool = False
+    record: Record,
+    fields: dict,
+    status: str,
+    *,
+    human_review: bool = False,
 ) -> dict:
     if not isinstance(fields, dict) or set(fields) != FIELD_NAMES:
         raise ValueError("fields must contain component, problem and action")
+
     if not isinstance(status, str) or status not in STATUSES:
         raise ValueError("invalid action status")
+
     resolved = {name: resolve_span(record, span, name) for name, span in fields.items()}
+
     if resolved["action"] is None and status != "unknown":
         raise ValueError("unsupported action must have unknown status")
+
     if status != "unknown" and not human_review:
         text = resolved["action"]["quote"]
+
         if not has_unnegated_status_cue(text, status):
             raise ValueError(
                 f"action_status={status!r} lacks unnegated explicit support in "
-                f"the selected action quote {text!r}; requires {STATUS_SUPPORT[status]}. "
-                "Correct the status using explicit execution evidence, or choose unknown. "
-                "A persistent problem or unconfirmed repair outcome does not change "
-                "performed work into attempted work. Do not repeat the rejected proposal."
+                f"the selected action quote {text!r}; "
+                f"requires {STATUS_SUPPORT[status]}. "
+                "Correct the status using explicit execution evidence, "
+                "or choose unknown. "
+                "A persistent problem or unconfirmed repair outcome does not "
+                "change performed work into attempted work. "
+                "Do not repeat the rejected proposal."
             )
+
         if status == "completed" and CUES["planned"].search(text):
             raise ValueError("planned wording cannot establish completion")
+
     return resolved

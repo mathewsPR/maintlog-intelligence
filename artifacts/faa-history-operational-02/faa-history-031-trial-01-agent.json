@@ -1,0 +1,706 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-031",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'BATTERY'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BATTERY",
+  "input_record_ids": [
+    "SIMA20240125002",
+    "SIMA20240420001",
+    "SIMA20240624001",
+    "SIMA20240822001",
+    "SIMA20241001001",
+    "SIMA20241229001"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BATTERY",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'BATTERY'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"EMB\",\"17000494\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 6,
+    "selected_record_count": 6,
+    "steps": 9,
+    "model_calls": 9,
+    "elapsed_seconds": 12.219,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "SIMA20240125002",
+          "date": "2024-01-25",
+          "asset_id": "FAA:[\"EMB\",\"17000494\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 91,
+              "end": 126,
+              "quote": "AFT LH EMERGENCY FLASHLIGHT BATTERY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 60,
+              "quote": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 145,
+              "end": 159,
+              "quote": "OPS CHECK GOOD",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "citation": {
+            "record_id": "SIMA20240125002",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 3300
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY. FOUND IAW PS2 CHECK.-C/A-RAR AFT LH EMERGENCY FLASHLIGHT BATTERY IAW AMM 33-51-01. OPS CHECK GOOD."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-01-25 | record SIMA20240125002\nSource: SDR-2024.csv, CSV row 3300, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: AFT LH EMERGENCY FLASHLIGHT BATTERY [record=SIMA20240125002; field=narrative_raw; offsets=91:126]\nproblem: AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY [record=SIMA20240125002; field=narrative_raw; offsets=0:60]\naction: OPS CHECK GOOD [record=SIMA20240125002; field=narrative_raw; offsets=145:159]\nAction status proposal: unknown\nFull source (narrative_raw, verbatim): AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY. FOUND IAW PS2 CHECK.-C/A-RAR AFT LH EMERGENCY FLASHLIGHT BATTERY IAW AMM 33-51-01. OPS CHECK GOOD.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "SIMA20240125002",
+        "event_date": "2024-01-25",
+        "asset_id": "FAA:[\"EMB\",\"17000494\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 3300,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY. FOUND IAW PS2 CHECK.-C/A-RAR AFT LH EMERGENCY FLASHLIGHT BATTERY IAW AMM 33-51-01. OPS CHECK GOOD.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "SIMA20240125002",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 91,
+            "end": 126,
+            "quote": "AFT LH EMERGENCY FLASHLIGHT BATTERY",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 60,
+            "quote": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 145,
+            "end": 159,
+            "quote": "OPS CHECK GOOD",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 3300,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 6,
+      "selected_record_count": 6,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 6,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BATTERY",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 1064,
+          "total_tokens": 1088,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.718,
+        "model_called": true,
+        "working_context_chars": 5003,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "SIMA20240125002",
+              "asset_id": "FAA:[\"EMB\",\"17000494\"]",
+              "date": "2024-01-25",
+              "score": 2.102613184309211,
+              "excerpt": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY. FOUND IAW PS2 CHECK.-C/A-RAR AFT LH EMERGENCY FLASHLIGHT BATTERY IAW AMM 33-51-01. OPS CHECK GOOD.",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1274,
+          "total_tokens": 1286,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.547,
+        "model_called": true,
+        "working_context_chars": 5476,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 6,
+          "unstructured_record_count": 6,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240125002"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 1334,
+          "total_tokens": 1363,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.813,
+        "model_called": true,
+        "working_context_chars": 5703,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240125002",
+          "event_date": "2024-01-25",
+          "asset_id": "FAA:[\"EMB\",\"17000494\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 3300,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY. FOUND IAW PS2 CHECK.-C/A-RAR AFT LH EMERGENCY FLASHLIGHT BATTERY IAW AMM 33-51-01. OPS CHECK GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SIMA20240125002",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "AFT LH EMERGENCY FLASHLIGHT BATTERY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "OPS CHECK GOOD"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 121,
+          "prompt_tokens": 1065,
+          "total_tokens": 1186,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.547,
+        "model_called": true,
+        "working_context_chars": 5111,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SIMA20240125002",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "AFT LH EMERGENCY FLASHLIGHT BATTERY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "OPS CHECK GOOD"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SIMA20240125002",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "AFT LH EMERGENCY FLASHLIGHT BATTERY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "OPS CHECK GOOD"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'OPS CHECK GOOD'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SIMA20240125002",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "AFT LH EMERGENCY FLASHLIGHT BATTERY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "OPS CHECK GOOD"
+              }
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 121,
+          "prompt_tokens": 792,
+          "total_tokens": 913,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "model_seconds": 2.406,
+        "model_called": true,
+        "working_context_chars": 6751,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": true,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SIMA20240125002",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "AFT LH EMERGENCY FLASHLIGHT BATTERY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "OPS CHECK GOOD"
+                }
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SIMA20240125002",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "AFT LH EMERGENCY FLASHLIGHT BATTERY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "OPS CHECK GOOD"
+                  }
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SIMA20240125002",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 91,
+              "end": 126,
+              "quote": "AFT LH EMERGENCY FLASHLIGHT BATTERY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 60,
+              "quote": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 145,
+              "end": 159,
+              "quote": "OPS CHECK GOOD",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 3300,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240125002"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2174,
+          "total_tokens": 2203,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.172,
+        "model_called": true,
+        "working_context_chars": 8482,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240125002",
+          "event_date": "2024-01-25",
+          "asset_id": "FAA:[\"EMB\",\"17000494\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 3300,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY. FOUND IAW PS2 CHECK.-C/A-RAR AFT LH EMERGENCY FLASHLIGHT BATTERY IAW AMM 33-51-01. OPS CHECK GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240125002"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2455,
+          "total_tokens": 2484,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.25,
+        "model_called": true,
+        "working_context_chars": 9157,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240125002",
+          "event_date": "2024-01-25",
+          "asset_id": "FAA:[\"EMB\",\"17000494\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 3300,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY. FOUND IAW PS2 CHECK.-C/A-RAR AFT LH EMERGENCY FLASHLIGHT BATTERY IAW AMM 33-51-01. OPS CHECK GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SIMA20240125002"
+          }
+        },
+        "usage": {
+          "completion_tokens": 29,
+          "prompt_tokens": 2737,
+          "total_tokens": 2766,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.36,
+        "model_called": true,
+        "working_context_chars": 9832,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SIMA20240125002",
+          "event_date": "2024-01-25",
+          "asset_id": "FAA:[\"EMB\",\"17000494\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 3300,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AFT LH FLIGHT CREW EMERGENCY FLASHLIGHT REQUIRES NEW BATTERY. FOUND IAW PS2 CHECK.-C/A-RAR AFT LH EMERGENCY FLASHLIGHT BATTERY IAW AMM 33-51-01. OPS CHECK GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "SIMA20240125002"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 1996,
+          "total_tokens": 2026,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.375,
+        "model_called": true,
+        "working_context_chars": 7528,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "SIMA20240125002"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "SIMA20240125002"
+    ],
+    "proposal_count": 1,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 9,
+    "elapsed_seconds": 12.219,
+    "errors": [
+      {
+        "step": 4,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'OPS CHECK GOOD'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

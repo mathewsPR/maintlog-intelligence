@@ -1,0 +1,670 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-084",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'ANTI-ICE VALVE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "ANTI-ICE VALVE",
+  "input_record_ids": [
+    "CALA2024070900178",
+    "CALA2024070101930",
+    "CALA2024122701682"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "ANTI-ICE VALVE",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'ANTI-ICE VALVE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"AIRBUS\",\"508\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 7,
+    "model_calls": 2,
+    "elapsed_seconds": 7.938,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "CALA2024070900178",
+          "date": "2024-06-27",
+          "asset_id": "FAA:[\"AIRBUS\",\"508\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 57,
+              "end": 121,
+              "quote": "DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 489,
+              "quote": "REPLACED LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401, DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM 21-61-41-400-001-A.  PURGED THE REMOVED SENSE LINES,  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A, NO FAULTS NOTED.  LEAK CHECK GOOD.   ABLE TO CONTROL CABIN TEMPS UP & DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCHING.   NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH OVHT CONDITIONS ENCOUNTERED.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "CALA2024070900178",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 31814
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "REPLACED LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401, DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM 21-61-41-400-001-A.  PURGED THE REMOVED SENSE LINES,  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A, NO FAULTS NOTED.  LEAK CHECK GOOD.   ABLE TO CONTROL CABIN TEMPS UP & DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCHING.   NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH OVHT CONDITIONS ENCOUNTERED."
+          }
+        },
+        {
+          "record_id": "CALA2024070101930",
+          "date": "2024-06-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"508\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 66,
+              "end": 123,
+              "quote": "PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 220,
+              "end": 341,
+              "quote": "REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM PURGED THE REMOVED SENSE LINES USING COMPRESSED AIR 21-61-41-400-001-A",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "CALA2024070101930",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 30635
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "REPLACE THE LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401 DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.ALSO PURGE THE REMOVED SENSE LINES USING COMPRESSED AIR TO REMOVE POSSIBLE DEBRIS OR BLOCKAGE.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM PURGED THE REMOVED SENSE LINES USING COMPRESSED AIR 21-61-41-400-001-A.  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A OVHT CONDITIONS ENCOUNTERED. WITH NO FAULTS NOTED.LEAK CHECKS ALSO GOOD.WAS ABLE TO CONTROL CABIN TEMPS UP AND DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCH ING.ALSO NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH VALVE, PACK TEM  OFF 31-2161-9-9001 1274 ON 31-2161-9-9001 3110."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-06-27 | record CALA2024070900178\nSource: SDR-2024.csv, CSV row 31814, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING [record=CALA2024070900178; field=narrative_raw; offsets=57:121]\naction: REPLACED LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401, DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM 21-61-41-400-001-A.  PURGED THE REMOVED SENSE LINES,  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A, NO FAULTS NOTED.  LEAK CHECK GOOD.   ABLE TO CONTROL CABIN TEMPS UP & DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCHING.   NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH OVHT CONDITIONS ENCOUNTERED. [record=CALA2024070900178; field=narrative_raw; offsets=0:489]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): REPLACED LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401, DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM 21-61-41-400-001-A.  PURGED THE REMOVED SENSE LINES,  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A, NO FAULTS NOTED.  LEAK CHECK GOOD.   ABLE TO CONTROL CABIN TEMPS UP & DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCHING.   NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH OVHT CONDITIONS ENCOUNTERED.\n\n2024-06-28 | record CALA2024070101930\nSource: SDR-2024.csv, CSV row 30635, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING [record=CALA2024070101930; field=narrative_raw; offsets=66:123]\naction: REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM PURGED THE REMOVED SENSE LINES USING COMPRESSED AIR 21-61-41-400-001-A [record=CALA2024070101930; field=narrative_raw; offsets=220:341]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): REPLACE THE LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401 DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.ALSO PURGE THE REMOVED SENSE LINES USING COMPRESSED AIR TO REMOVE POSSIBLE DEBRIS OR BLOCKAGE.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM PURGED THE REMOVED SENSE LINES USING COMPRESSED AIR 21-61-41-400-001-A.  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A OVHT CONDITIONS ENCOUNTERED. WITH NO FAULTS NOTED.LEAK CHECKS ALSO GOOD.WAS ABLE TO CONTROL CABIN TEMPS UP AND DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCH ING.ALSO NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH VALVE, PACK TEM  OFF 31-2161-9-9001 1274 ON 31-2161-9-9001 3110.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "CALA2024070900178",
+        "event_date": "2024-06-27",
+        "asset_id": "FAA:[\"AIRBUS\",\"508\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 31814,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "REPLACED LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401, DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM 21-61-41-400-001-A.  PURGED THE REMOVED SENSE LINES,  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A, NO FAULTS NOTED.  LEAK CHECK GOOD.   ABLE TO CONTROL CABIN TEMPS UP & DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCHING.   NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH OVHT CONDITIONS ENCOUNTERED.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "CALA2024070101930",
+        "event_date": "2024-06-28",
+        "asset_id": "FAA:[\"AIRBUS\",\"508\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 30635,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "REPLACE THE LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401 DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.ALSO PURGE THE REMOVED SENSE LINES USING COMPRESSED AIR TO REMOVE POSSIBLE DEBRIS OR BLOCKAGE.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM PURGED THE REMOVED SENSE LINES USING COMPRESSED AIR 21-61-41-400-001-A.  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A OVHT CONDITIONS ENCOUNTERED. WITH NO FAULTS NOTED.LEAK CHECKS ALSO GOOD.WAS ABLE TO CONTROL CABIN TEMPS UP AND DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCH ING.ALSO NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH VALVE, PACK TEM  OFF 31-2161-9-9001 1274 ON 31-2161-9-9001 3110.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "CALA2024070900178",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 57,
+            "end": 121,
+            "quote": "DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 489,
+            "quote": "REPLACED LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401, DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM 21-61-41-400-001-A.  PURGED THE REMOVED SENSE LINES,  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A, NO FAULTS NOTED.  LEAK CHECK GOOD.   ABLE TO CONTROL CABIN TEMPS UP & DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCHING.   NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH OVHT CONDITIONS ENCOUNTERED.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 31814,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "CALA2024070101930",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 66,
+            "end": 123,
+            "quote": "PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 220,
+            "end": 341,
+            "quote": "REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM PURGED THE REMOVED SENSE LINES USING COMPRESSED AIR 21-61-41-400-001-A",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 30635,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "ANTI-ICE VALVE",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5015,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024070900178",
+              "asset_id": "FAA:[\"AIRBUS\",\"508\"]",
+              "date": "2024-06-27",
+              "score": 1.3617338992820562,
+              "excerpt": "REPLACED LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401, DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM 21-61-41-400-001-A.  PURG",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "CALA2024070101930",
+              "asset_id": "FAA:[\"AIRBUS\",\"508\"]",
+              "date": "2024-06-28",
+              "score": 1.3256088469710732,
+              "excerpt": "REPLACE THE LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401 DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.ALSO PURGE THE REMOVED SENSE LINES USING COMPRESSED AIR TO REMOVE POSSIBLE D",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024070900178"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 5966,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024070900178",
+          "event_date": "2024-06-27",
+          "asset_id": "FAA:[\"AIRBUS\",\"508\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 31814,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "REPLACED LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401, DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM 21-61-41-400-001-A.  PURGED THE REMOVED SENSE LINES,  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A, NO FAULTS NOTED.  LEAK CHECK GOOD.   ABLE TO CONTROL CABIN TEMPS UP & DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCHING.   NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH OVHT CONDITIONS ENCOUNTERED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024070900178",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACED LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401, DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM 21-61-41-400-001-A.  PURGED THE REMOVED SENSE LINES,  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A, NO FAULTS NOTED.  LEAK CHECK GOOD.   ABLE TO CONTROL CABIN TEMPS UP & DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCHING.   NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH OVHT CONDITIONS ENCOUNTERED."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 287,
+          "prompt_tokens": 1522,
+          "total_tokens": 1809,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 5.203,
+        "model_called": true,
+        "working_context_chars": 5442,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024070900178",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401, DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM 21-61-41-400-001-A.  PURGED THE REMOVED SENSE LINES,  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A, NO FAULTS NOTED.  LEAK CHECK GOOD.   ABLE TO CONTROL CABIN TEMPS UP & DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCHING.   NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH OVHT CONDITIONS ENCOUNTERED."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024070900178",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401, DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM 21-61-41-400-001-A.  PURGED THE REMOVED SENSE LINES,  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A, NO FAULTS NOTED.  LEAK CHECK GOOD.   ABLE TO CONTROL CABIN TEMPS UP & DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCHING.   NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH OVHT CONDITIONS ENCOUNTERED."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024070900178",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 57,
+              "end": 121,
+              "quote": "DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 489,
+              "quote": "REPLACED LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401, DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM 21-61-41-400-001-A.  PURGED THE REMOVED SENSE LINES,  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A, NO FAULTS NOTED.  LEAK CHECK GOOD.   ABLE TO CONTROL CABIN TEMPS UP & DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCHING.   NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH OVHT CONDITIONS ENCOUNTERED.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 31814,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024070101930"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 7832,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024070101930",
+          "event_date": "2024-06-28",
+          "asset_id": "FAA:[\"AIRBUS\",\"508\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 30635,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "REPLACE THE LT PACK ANTI-ICE VALVE IAW AMM 21-61-41 PB.401 DUE TO PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING.ALSO PURGE THE REMOVED SENSE LINES USING COMPRESSED AIR TO REMOVE POSSIBLE DEBRIS OR BLOCKAGE.  REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM PURGED THE REMOVED SENSE LINES USING COMPRESSED AIR 21-61-41-400-001-A.  ACCOMPLISHED PACK OPS TEST IAW AMM 21-61-00-710-001-A OVHT CONDITIONS ENCOUNTERED. WITH NO FAULTS NOTED.LEAK CHECKS ALSO GOOD.WAS ABLE TO CONTROL CABIN TEMPS UP AND DOWN WITH PACK OUT TEMPS FOR BOTH SIDES MATCH ING.ALSO NOTED THAT COMP DISCHARGE TEMPS STAYED BELOW 190C WITH VALVE, PACK TEM  OFF 31-2161-9-9001 1274 ON 31-2161-9-9001 3110.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024070101930",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM PURGED THE REMOVED SENSE LINES USING COMPRESSED AIR 21-61-41-400-001-A"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 141,
+          "prompt_tokens": 1599,
+          "total_tokens": 1740,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.703,
+        "model_called": true,
+        "working_context_chars": 5636,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024070101930",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM PURGED THE REMOVED SENSE LINES USING COMPRESSED AIR 21-61-41-400-001-A"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024070101930",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM PURGED THE REMOVED SENSE LINES USING COMPRESSED AIR 21-61-41-400-001-A"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024070101930",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 66,
+              "end": 123,
+              "quote": "PACK OUTPUT TEMP INDICATION ALWAYS SHOWING BELOW FREEZING",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 220,
+              "end": 341,
+              "quote": "REMOVED AND REPLACED LH PAC ANTI-ICE VALVE REF AMM PURGED THE REMOVED SENSE LINES USING COMPRESSED AIR 21-61-41-400-001-A",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 30635,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9521,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "CALA2024070900178",
+              "CALA2024070101930"
+            ]
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9748,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "CALA2024070900178",
+            "CALA2024070101930"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "CALA2024070900178",
+      "CALA2024070101930"
+    ],
+    "proposal_count": 2,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 2,
+    "elapsed_seconds": 7.938,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

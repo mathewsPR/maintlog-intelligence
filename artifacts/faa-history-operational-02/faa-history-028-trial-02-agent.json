@@ -1,0 +1,625 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-028",
+  "trial": 2,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'DPU'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "DPU",
+  "input_record_ids": [
+    "G1IA20240725064",
+    "G1IA20241015072",
+    "G1IA20241116075"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "DPU",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'DPU'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BEECH\",\"LJ1597\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 6,
+    "model_calls": 6,
+    "elapsed_seconds": 9.032,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "G1IA20241015072",
+          "date": "2024-10-15",
+          "asset_id": "FAA:[\"BEECH\",\"LJ1597\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 262,
+              "end": 265,
+              "quote": "DPU",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 13,
+              "end": 234,
+              "quote": "SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER THE FAILURE INDICATIONS RESOLVED.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 254,
+              "end": 313,
+              "quote": "REMOVED DPU AND CLEANED CONNECTORS, OPS CHECK SATISFACTORY.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "G1IA20241015072",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 51053
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "DISCREPANCY: SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER THE FAILURE INDICATIONS RESOLVED. CORRECTIVE ACTION: REMOVED DPU AND CLEANED CONNECTORS, OPS CHECK SATISFACTORY."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-10-15 | record G1IA20241015072\nSource: SDR-2024.csv, CSV row 51053, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: DPU [record=G1IA20241015072; field=narrative_raw; offsets=262:265]\nproblem: SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER THE FAILURE INDICATIONS RESOLVED. [record=G1IA20241015072; field=narrative_raw; offsets=13:234]\naction: REMOVED DPU AND CLEANED CONNECTORS, OPS CHECK SATISFACTORY. [record=G1IA20241015072; field=narrative_raw; offsets=254:313]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): DISCREPANCY: SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER THE FAILURE INDICATIONS RESOLVED. CORRECTIVE ACTION: REMOVED DPU AND CLEANED CONNECTORS, OPS CHECK SATISFACTORY.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "G1IA20241015072",
+        "event_date": "2024-10-15",
+        "asset_id": "FAA:[\"BEECH\",\"LJ1597\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 51053,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "DISCREPANCY: SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER THE FAILURE INDICATIONS RESOLVED. CORRECTIVE ACTION: REMOVED DPU AND CLEANED CONNECTORS, OPS CHECK SATISFACTORY.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "G1IA20241015072",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 262,
+            "end": 265,
+            "quote": "DPU",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 13,
+            "end": 234,
+            "quote": "SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER THE FAILURE INDICATIONS RESOLVED.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 254,
+            "end": 313,
+            "quote": "REMOVED DPU AND CLEANED CONNECTORS, OPS CHECK SATISFACTORY.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 51053,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "DPU",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 1064,
+          "total_tokens": 1088,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.672,
+        "model_called": true,
+        "working_context_chars": 4995,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "G1IA20241015072",
+              "asset_id": "FAA:[\"BEECH\",\"LJ1597\"]",
+              "date": "2024-10-15",
+              "score": 1.9431522937024768,
+              "excerpt": "DISCREPANCY: SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1279,
+          "total_tokens": 1291,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.547,
+        "model_called": true,
+        "working_context_chars": 5508,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "G1IA20241015072"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 1339,
+          "total_tokens": 1369,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.828,
+        "model_called": true,
+        "working_context_chars": 5735,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "G1IA20241015072",
+          "event_date": "2024-10-15",
+          "asset_id": "FAA:[\"BEECH\",\"LJ1597\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 51053,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "DISCREPANCY: SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER THE FAILURE INDICATIONS RESOLVED. CORRECTIVE ACTION: REMOVED DPU AND CLEANED CONNECTORS, OPS CHECK SATISFACTORY.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "G1IA20241015072",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "DPU"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER THE FAILURE INDICATIONS RESOLVED."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED DPU AND CLEANED CONNECTORS, OPS CHECK SATISFACTORY."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 169,
+          "prompt_tokens": 1097,
+          "total_tokens": 1266,
+          "prompt_tokens_details": {
+            "cached_tokens": 638
+          }
+        },
+        "model_seconds": 3.312,
+        "model_called": true,
+        "working_context_chars": 5264,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "G1IA20241015072",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "DPU"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER THE FAILURE INDICATIONS RESOLVED."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED DPU AND CLEANED CONNECTORS, OPS CHECK SATISFACTORY."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "G1IA20241015072",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "DPU"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER THE FAILURE INDICATIONS RESOLVED."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED DPU AND CLEANED CONNECTORS, OPS CHECK SATISFACTORY."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "G1IA20241015072",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 262,
+                "end": 265
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 13,
+                "end": 234
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 254,
+                "end": 313
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 123,
+          "prompt_tokens": 1878,
+          "total_tokens": 2001,
+          "prompt_tokens_details": {
+            "cached_tokens": 638
+          }
+        },
+        "model_seconds": 2.485,
+        "model_called": true,
+        "working_context_chars": 6179,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": {
+            "component": [
+              {
+                "field": "narrative_raw",
+                "start": 36,
+                "end": 39,
+                "quote": "DPU",
+                "surrounding_text": "DISCREPANCY: SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW "
+              },
+              {
+                "field": "narrative_raw",
+                "start": 159,
+                "end": 162,
+                "quote": "DPU",
+                "surrounding_text": "SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER THE FAILURE INDICATIO"
+              },
+              {
+                "field": "narrative_raw",
+                "start": 262,
+                "end": 265,
+                "quote": "DPU",
+                "surrounding_text": "HE FAILURE INDICATIONS RESOLVED. CORRECTIVE ACTION: REMOVED DPU AND CLEANED CONNECTORS, OPS CHECK SATISFACTORY."
+              }
+            ],
+            "problem": [
+              {
+                "field": "narrative_raw",
+                "start": 13,
+                "end": 234,
+                "quote": "SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER THE FAILURE INDICATIONS RESOLVED.",
+                "surrounding_text": "DISCREPANCY: SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER THE FAILURE INDICATIONS RESOLVED. CORRECTIVE ACTION: REMOVED DPU AND CLEANED CONNECTORS, OPS "
+              }
+            ],
+            "action": [
+              {
+                "field": "narrative_raw",
+                "start": 254,
+                "end": 313,
+                "quote": "REMOVED DPU AND CLEANED CONNECTORS, OPS CHECK SATISFACTORY.",
+                "surrounding_text": " LATER THE FAILURE INDICATIONS RESOLVED. CORRECTIVE ACTION: REMOVED DPU AND CLEANED CONNECTORS, OPS CHECK SATISFACTORY."
+              }
+            ]
+          },
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "G1IA20241015072",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 262,
+                  "end": 265
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 13,
+                  "end": 234
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 254,
+                  "end": 313
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "G1IA20241015072",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 262,
+                    "end": 265
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 13,
+                    "end": 234
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 254,
+                    "end": 313
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "G1IA20241015072",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 262,
+              "end": 265,
+              "quote": "DPU",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 13,
+              "end": 234,
+              "quote": "SHORTLY AFTER TAKE OFF DPU FAIL INDICATION DISPLAYED ON BOTH EFIS SCREENS, THEN A FEW SECONDS LATER BOTH SCREENS WENT COMPLETELY BLANK EXCEPT FOR DPU FAIL MESSAGE. ABOUT TEN SECONDS LATER THE FAILURE INDICATIONS RESOLVED.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 254,
+              "end": 313,
+              "quote": "REMOVED DPU AND CLEANED CONNECTORS, OPS CHECK SATISFACTORY.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 51053,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "G1IA20241015072"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2067,
+          "total_tokens": 2098,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.172,
+        "model_called": true,
+        "working_context_chars": 8119,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "G1IA20241015072"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "G1IA20241015072"
+    ],
+    "proposal_count": 1,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 6,
+    "elapsed_seconds": 9.032,
+    "errors": [
+      {
+        "step": 4,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

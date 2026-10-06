@@ -1,0 +1,1451 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-029",
+  "trial": 3,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'SHEAR TIE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "SHEAR TIE",
+  "input_record_ids": [
+    "R61A2024031700114",
+    "R61A2024031700115",
+    "R61A2024031700116",
+    "R61A2024031700117",
+    "R61A2024031700118",
+    "R61A2024031700119",
+    "R61A2024032800131",
+    "R61A2024032800132"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "SHEAR TIE",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'SHEAR TIE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 8,
+    "selected_record_count": 8,
+    "steps": 12,
+    "model_calls": 12,
+    "elapsed_seconds": 23.578,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "R61A2024031700115",
+          "date": "2024-03-09",
+          "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 32,
+              "end": 80,
+              "quote": "SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 23,
+              "end": 80,
+              "quote": "CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 83,
+              "end": 174,
+              "quote": "REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "R61A2024031700115",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12258
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08."
+          }
+        },
+        {
+          "record_id": "R61A2024031700116",
+          "date": "2024-03-09",
+          "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 23,
+              "end": 81,
+              "quote": "CORRODED SHEAR CLIP FRAME 87 BETWEEN STRINGER 27R AND 28R.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 83,
+              "end": 144,
+              "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 87 BETWEEN STGR 27R-28R",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "R61A2024031700116",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12259
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 87 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 87 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08."
+          }
+        },
+        {
+          "record_id": "R61A2024031700117",
+          "date": "2024-03-09",
+          "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 23,
+              "end": 81,
+              "quote": "CORRODED SHEAR CLIP FRAME 88 BETWEEN STRINGER 27R AND 28R.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 83,
+              "end": 144,
+              "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 88 BETWEEN STGR 27R-28R",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "R61A2024031700117",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12260
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 88 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 88 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08."
+          }
+        },
+        {
+          "record_id": "R61A2024031700119",
+          "date": "2024-03-09",
+          "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 23,
+              "end": 81,
+              "quote": "CORRODED SHEAR CLIP FRAME 84 BETWEEN STRINGER 27R AND 28R.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 83,
+              "end": 144,
+              "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 84 BETWEEN STGR 27R-28R",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "R61A2024031700119",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12262
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 84 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 84 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-03-09 | record R61A2024031700115\nSource: SDR-2024.csv, CSV row 12258, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R [record=R61A2024031700115; field=narrative_raw; offsets=32:80]\nproblem: CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R [record=R61A2024031700115; field=narrative_raw; offsets=23:80]\naction: REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08. [record=R61A2024031700115; field=narrative_raw; offsets=83:174]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08.\n\n2024-03-09 | record R61A2024031700116\nSource: SDR-2024.csv, CSV row 12259, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: CORRODED SHEAR CLIP FRAME 87 BETWEEN STRINGER 27R AND 28R. [record=R61A2024031700116; field=narrative_raw; offsets=23:81]\naction: REMOVED AND REPLACED SHEAR CLIP AT FR 87 BETWEEN STGR 27R-28R [record=R61A2024031700116; field=narrative_raw; offsets=83:144]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 87 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 87 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08.\n\n2024-03-09 | record R61A2024031700117\nSource: SDR-2024.csv, CSV row 12260, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: CORRODED SHEAR CLIP FRAME 88 BETWEEN STRINGER 27R AND 28R. [record=R61A2024031700117; field=narrative_raw; offsets=23:81]\naction: REMOVED AND REPLACED SHEAR CLIP AT FR 88 BETWEEN STGR 27R-28R [record=R61A2024031700117; field=narrative_raw; offsets=83:144]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 88 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 88 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08.\n\n2024-03-09 | record R61A2024031700119\nSource: SDR-2024.csv, CSV row 12262, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: CORRODED SHEAR CLIP FRAME 84 BETWEEN STRINGER 27R AND 28R. [record=R61A2024031700119; field=narrative_raw; offsets=23:81]\naction: REMOVED AND REPLACED SHEAR CLIP AT FR 84 BETWEEN STGR 27R-28R [record=R61A2024031700119; field=narrative_raw; offsets=83:144]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 84 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 84 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "R61A2024031700115",
+        "event_date": "2024-03-09",
+        "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 12258,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "R61A2024031700116",
+        "event_date": "2024-03-09",
+        "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 12259,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 87 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 87 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "R61A2024031700117",
+        "event_date": "2024-03-09",
+        "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 12260,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 88 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 88 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "R61A2024031700119",
+        "event_date": "2024-03-09",
+        "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 12262,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 84 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 84 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "R61A2024031700115",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 32,
+            "end": 80,
+            "quote": "SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 23,
+            "end": 80,
+            "quote": "CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 83,
+            "end": 174,
+            "quote": "REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 12258,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "R61A2024031700116",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 23,
+            "end": 81,
+            "quote": "CORRODED SHEAR CLIP FRAME 87 BETWEEN STRINGER 27R AND 28R.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 83,
+            "end": 144,
+            "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 87 BETWEEN STGR 27R-28R",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 12259,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "R61A2024031700117",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 23,
+            "end": 81,
+            "quote": "CORRODED SHEAR CLIP FRAME 88 BETWEEN STRINGER 27R AND 28R.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 83,
+            "end": 144,
+            "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 88 BETWEEN STGR 27R-28R",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 12260,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "R61A2024031700119",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 23,
+            "end": 81,
+            "quote": "CORRODED SHEAR CLIP FRAME 84 BETWEEN STRINGER 27R AND 28R.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 83,
+            "end": 144,
+            "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 84 BETWEEN STGR 27R-28R",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 12262,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 8,
+      "selected_record_count": 8,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 8,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "SHEAR TIE",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 27,
+          "prompt_tokens": 1070,
+          "total_tokens": 1097,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.031,
+        "model_called": true,
+        "working_context_chars": 5007,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "R61A2024031700116",
+              "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+              "date": "2024-03-09",
+              "score": 1.0257158050403288,
+              "excerpt": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 87 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 87 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "R61A2024031700117",
+              "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+              "date": "2024-03-09",
+              "score": 1.0257158050403288,
+              "excerpt": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 88 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 88 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "R61A2024031700119",
+              "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+              "date": "2024-03-09",
+              "score": 1.0257158050403288,
+              "excerpt": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 84 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 84 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "R61A2024031700115",
+              "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+              "date": "2024-03-09",
+              "score": 1.0153141799751313,
+              "excerpt": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08.",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1993,
+          "total_tokens": 2005,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.765,
+        "model_called": true,
+        "working_context_chars": 6709,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 8,
+          "unstructured_record_count": 8,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "R61A2024031700115"
+          }
+        },
+        "usage": {
+          "completion_tokens": 33,
+          "prompt_tokens": 2053,
+          "total_tokens": 2086,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.094,
+        "model_called": true,
+        "working_context_chars": 6936,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "R61A2024031700115",
+          "event_date": "2024-03-09",
+          "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12258,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "R61A2024031700115",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 179,
+          "prompt_tokens": 1087,
+          "total_tokens": 1266,
+          "prompt_tokens_details": {
+            "cached_tokens": 638
+          }
+        },
+        "model_seconds": 3.469,
+        "model_called": true,
+        "working_context_chars": 5127,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "R61A2024031700115",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "R61A2024031700115",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "R61A2024031700115",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 32,
+                "end": 80
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 23,
+                "end": 80
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 83,
+                "end": 174
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 122,
+          "prompt_tokens": 1883,
+          "total_tokens": 2005,
+          "prompt_tokens_details": {
+            "cached_tokens": 638
+          }
+        },
+        "model_seconds": 2.437,
+        "model_called": true,
+        "working_context_chars": 5957,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": {
+            "component": [
+              {
+                "field": "narrative_raw",
+                "start": 32,
+                "end": 80,
+                "quote": "SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R",
+                "surrounding_text": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER"
+              },
+              {
+                "field": "narrative_raw",
+                "start": 104,
+                "end": 152,
+                "quote": "SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R",
+                "surrounding_text": "RAME 85 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08."
+              }
+            ],
+            "problem": [
+              {
+                "field": "narrative_raw",
+                "start": 23,
+                "end": 80,
+                "quote": "CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R",
+                "surrounding_text": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER"
+              }
+            ],
+            "action": [
+              {
+                "field": "narrative_raw",
+                "start": 83,
+                "end": 174,
+                "quote": "REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08.",
+                "surrounding_text": "CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08."
+              }
+            ]
+          },
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "R61A2024031700115",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 32,
+                  "end": 80
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 23,
+                  "end": 80
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 83,
+                  "end": 174
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "R61A2024031700115",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 32,
+                    "end": 80
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 23,
+                    "end": 80
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 83,
+                    "end": 174
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "R61A2024031700115",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 32,
+              "end": 80,
+              "quote": "SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 23,
+              "end": 80,
+              "quote": "CORRODED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 83,
+              "end": 174,
+              "quote": "REMOVED AND REPLACED SHEAR CLIP FRAME 85 BETWEEN STRINGER 27R AND 28R REF EMB SRM 51-40-08.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12258,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "R61A2024031700116"
+          }
+        },
+        "usage": {
+          "completion_tokens": 33,
+          "prompt_tokens": 2783,
+          "total_tokens": 2816,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.454,
+        "model_called": true,
+        "working_context_chars": 9005,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "R61A2024031700116",
+          "event_date": "2024-03-09",
+          "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12259,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 87 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 87 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "R61A2024031700116",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "CORRODED SHEAR CLIP FRAME 87 BETWEEN STRINGER 27R AND 28R."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 83,
+                "end": 144
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 133,
+          "prompt_tokens": 1347,
+          "total_tokens": 1480,
+          "prompt_tokens_details": {
+            "cached_tokens": 638
+          }
+        },
+        "model_seconds": 2.843,
+        "model_called": true,
+        "working_context_chars": 5120,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "R61A2024031700116",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "CORRODED SHEAR CLIP FRAME 87 BETWEEN STRINGER 27R AND 28R."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 87 BETWEEN STGR 27R-28R."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "R61A2024031700116",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "CORRODED SHEAR CLIP FRAME 87 BETWEEN STRINGER 27R AND 28R."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 87 BETWEEN STGR 27R-28R."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": [
+              {
+                "field_name": "action",
+                "before": {
+                  "field": "narrative_raw",
+                  "start": 83,
+                  "end": 145,
+                  "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 87 BETWEEN STGR 27R-28R.",
+                  "source_column": null
+                },
+                "after": {
+                  "field": "narrative_raw",
+                  "start": 83,
+                  "end": 144,
+                  "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 87 BETWEEN STGR 27R-28R",
+                  "source_column": null
+                }
+              }
+            ]
+          }
+        },
+        "tool_result": {
+          "record_id": "R61A2024031700116",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 23,
+              "end": 81,
+              "quote": "CORRODED SHEAR CLIP FRAME 87 BETWEEN STRINGER 27R AND 28R.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 83,
+              "end": 144,
+              "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 87 BETWEEN STGR 27R-28R",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12259,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "R61A2024031700117"
+          }
+        },
+        "usage": {
+          "completion_tokens": 33,
+          "prompt_tokens": 2529,
+          "total_tokens": 2562,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.344,
+        "model_called": true,
+        "working_context_chars": 8385,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "R61A2024031700117",
+          "event_date": "2024-03-09",
+          "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12260,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 88 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 88 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "R61A2024031700117",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "CORRODED SHEAR CLIP FRAME 88 BETWEEN STRINGER 27R AND 28R."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 83,
+                "end": 144
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 133,
+          "prompt_tokens": 1347,
+          "total_tokens": 1480,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.641,
+        "model_called": true,
+        "working_context_chars": 5120,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "R61A2024031700117",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "CORRODED SHEAR CLIP FRAME 88 BETWEEN STRINGER 27R AND 28R."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 88 BETWEEN STGR 27R-28R."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "R61A2024031700117",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "CORRODED SHEAR CLIP FRAME 88 BETWEEN STRINGER 27R AND 28R."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 88 BETWEEN STGR 27R-28R."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": [
+              {
+                "field_name": "action",
+                "before": {
+                  "field": "narrative_raw",
+                  "start": 83,
+                  "end": 145,
+                  "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 88 BETWEEN STGR 27R-28R.",
+                  "source_column": null
+                },
+                "after": {
+                  "field": "narrative_raw",
+                  "start": 83,
+                  "end": 144,
+                  "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 88 BETWEEN STGR 27R-28R",
+                  "source_column": null
+                }
+              }
+            ]
+          }
+        },
+        "tool_result": {
+          "record_id": "R61A2024031700117",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 23,
+              "end": 81,
+              "quote": "CORRODED SHEAR CLIP FRAME 88 BETWEEN STRINGER 27R AND 28R.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 83,
+              "end": 144,
+              "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 88 BETWEEN STGR 27R-28R",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12260,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "R61A2024031700119"
+          }
+        },
+        "usage": {
+          "completion_tokens": 33,
+          "prompt_tokens": 2738,
+          "total_tokens": 2771,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.453,
+        "model_called": true,
+        "working_context_chars": 9029,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "R61A2024031700119",
+          "event_date": "2024-03-09",
+          "asset_id": "FAA:[\"EMB\",\"17000253\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12262,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "WHILE IN HEAVY CHECK - CORRODED SHEAR CLIP FRAME 84 BETWEEN STRINGER 27R AND 28R.  REMOVED AND REPLACED SHEAR CLIP AT FR 84 BETWEEN STGR 27R-28R. REF EMB SRM 51-40-08.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 11,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "R61A2024031700119",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "CORRODED SHEAR CLIP FRAME 84 BETWEEN STRINGER 27R AND 28R."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 83,
+                "end": 144
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 133,
+          "prompt_tokens": 1347,
+          "total_tokens": 1480,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.672,
+        "model_called": true,
+        "working_context_chars": 5120,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "R61A2024031700119",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "CORRODED SHEAR CLIP FRAME 84 BETWEEN STRINGER 27R AND 28R."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 84 BETWEEN STGR 27R-28R."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "R61A2024031700119",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "CORRODED SHEAR CLIP FRAME 84 BETWEEN STRINGER 27R AND 28R."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 84 BETWEEN STGR 27R-28R."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": [
+              {
+                "field_name": "action",
+                "before": {
+                  "field": "narrative_raw",
+                  "start": 83,
+                  "end": 145,
+                  "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 84 BETWEEN STGR 27R-28R.",
+                  "source_column": null
+                },
+                "after": {
+                  "field": "narrative_raw",
+                  "start": 83,
+                  "end": 144,
+                  "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 84 BETWEEN STGR 27R-28R",
+                  "source_column": null
+                }
+              }
+            ]
+          }
+        },
+        "tool_result": {
+          "record_id": "R61A2024031700119",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 23,
+              "end": 81,
+              "quote": "CORRODED SHEAR CLIP FRAME 84 BETWEEN STRINGER 27R AND 28R.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 83,
+              "end": 144,
+              "quote": "REMOVED AND REPLACED SHEAR CLIP AT FR 84 BETWEEN STGR 27R-28R",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 12262,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 12,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "R61A2024031700115",
+              "R61A2024031700116",
+              "R61A2024031700117",
+              "R61A2024031700119"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 91,
+          "prompt_tokens": 2949,
+          "total_tokens": 3040,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 2.375,
+        "model_called": true,
+        "working_context_chars": 9677,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "R61A2024031700115",
+            "R61A2024031700116",
+            "R61A2024031700117",
+            "R61A2024031700119"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "R61A2024031700115",
+      "R61A2024031700116",
+      "R61A2024031700117",
+      "R61A2024031700119"
+    ],
+    "proposal_count": 4,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 12,
+    "elapsed_seconds": 23.578,
+    "errors": [
+      {
+        "step": 4,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

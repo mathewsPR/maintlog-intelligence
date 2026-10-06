@@ -1,0 +1,513 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-046",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'A/C PACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "A/C PACK",
+  "input_record_ids": [
+    "AALA202402287978",
+    "AALA202402297978",
+    "AALA202409054008",
+    "AALA202409059375"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "A/C PACK",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'A/C PACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"AIRBUS\",\"1710\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 6,
+    "model_calls": 3,
+    "elapsed_seconds": 8.985,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "AALA202409054008",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 169,
+            "end": 227,
+            "quote": "PACK 1 FAILED AND AIR PACK 1 AND 2 FAULT MESSAGE DISPLAYED",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 618,
+            "end": 747,
+            "quote": "MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 42051,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": null,
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "A/C PACK",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5004,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "AALA202409054008",
+              "asset_id": "FAA:[\"AIRBUS\",\"1710\"]",
+              "date": "2024-09-03",
+              "score": 1.2518668737065544,
+              "excerpt": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED INTO SAT. THE AIRCRAFT WAS DISPATCHED WITH PACK 2 INOPERATIVE AND DURING DESCENT INTO SAT AT APPROXIMATELY 14000 FT PACK 1 FAILED AND AIR PACK 1 AN",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "AALA202409059375",
+              "asset_id": "FAA:[\"AIRBUS\",\"1710\"]",
+              "date": "2024-09-03",
+              "score": 1.2518668737065544,
+              "excerpt": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED INTO SAT. THE AIRCRAFT WAS DISPATCHED WITH PACK 2 INOPERATIVE AND DURING DESCENT INTO SAT AT APPROXIMATELY 14000 FT PACK 1 FAILED AND AIR PACK 1 AN",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202409054008"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 5949,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202409054008",
+          "event_date": "2024-09-03",
+          "asset_id": "FAA:[\"AIRBUS\",\"1710\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 42051,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED INTO SAT. THE AIRCRAFT WAS DISPATCHED WITH PACK 2 INOPERATIVE AND DURING DESCENT INTO SAT AT APPROXIMATELY 14000 FT PACK 1 FAILED AND AIR PACK 1 AND 2 FAULT MESSAGE DISPLAYED. THE FLIGHT CREW ACCOMPLISHED THE ECAM PROCEDURES AND CHECKED THE PRESSURIZATION STATUS, WITH THE OUTFLOW VALVE CLOSED THE CABIN ALTITUDE WAS CLIMBING SLOWLY. THE AIRCRAFT DESCENDED TO 8000 FT, ONCE THE RAM AIR WAS SET TO ON WHILE PERFORMING THE ECAM PROCEDURES THE CABIN DEPRESSURIZED TO CURRENT ALTITUDE OF APPROXIMATELY 6000 FT. THE AIRCRAFT LANDED SAFELY AT SAT WITHOUT FURTHER ISSUES. MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED. (AALA202409054008). MAINTENANCE TROUBLE SHOT THE PACK 2 ISSUE AND FOUND THE FLOW CONTROL VALVE FOR THE #2 PACK WAS DEFECTIVE AND REPLACED IT PER AMM 21-51-51. (AALA202409059375) A SATISFACTORY OPERATIONAL CHECK WAS ACCOMPLISHED WITH NO ISSUES NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "AALA202409054008",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "PACK 1 FAILED AND AIR PACK 1 AND 2 FAULT MESSAGE DISPLAYED"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 148,
+          "prompt_tokens": 1618,
+          "total_tokens": 1766,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.656,
+        "model_called": true,
+        "working_context_chars": 5950,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "AALA202409054008",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "PACK 1 FAILED AND AIR PACK 1 AND 2 FAULT MESSAGE DISPLAYED"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "AALA202409054008",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "PACK 1 FAILED AND AIR PACK 1 AND 2 FAULT MESSAGE DISPLAYED"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "AALA202409054008",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "PACK 1 FAILED AND AIR PACK 1 AND 2 FAULT MESSAGE DISPLAYED"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED"
+              }
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 190,
+          "prompt_tokens": 1304,
+          "total_tokens": 1494,
+          "prompt_tokens_details": {
+            "cached_tokens": 222
+          }
+        },
+        "model_seconds": 3.594,
+        "model_called": true,
+        "working_context_chars": 7738,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": true,
+          "component_recovery_used": true,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "AALA202409054008",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "PACK 1 FAILED AND AIR PACK 1 AND 2 FAULT MESSAGE DISPLAYED"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED"
+                }
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "AALA202409054008",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "PACK 1 FAILED AND AIR PACK 1 AND 2 FAULT MESSAGE DISPLAYED"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED"
+                  }
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "AALA202409054008",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 169,
+              "end": 227,
+              "quote": "PACK 1 FAILED AND AIR PACK 1 AND 2 FAULT MESSAGE DISPLAYED",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 618,
+              "end": 747,
+              "quote": "MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 42051,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202409059375"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9753,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202409059375",
+          "event_date": "2024-09-03",
+          "asset_id": "FAA:[\"AIRBUS\",\"1710\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 42052,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: AN EMERGENCY WAS DECLARED INTO SAT. THE AIRCRAFT WAS DISPATCHED WITH PACK 2 INOPERATIVE AND DURING DESCENT INTO SAT AT APPROXIMATELY 14000 FT PACK 1 FAILED AND AIR PACK 1 AND 2 FAULT MESSAGE DISPLAYED. THE FLIGHT CREW ACCOMPLISHED THE ECAM PROCEDURES AND CHECKED THE PRESSURIZATION STATUS, WITH THE OUTFLOW VALVE CLOSED THE CABIN ALTITUDE WAS CLIMBING SLOWLY. THE AIRCRAFT DESCENDED TO 8000 FT, ONCE THE RAM AIR WAS SET TO ON WHILE PERFORMING THE ECAM PROCEDURES THE CABIN DEPRESSURIZED TO CURRENT ALTITUDE OF APPROXIMATELY 6000 FT. THE AIRCRAFT LANDED SAFELY AT SAT WITHOUT FURTHER ISSUES. MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED. (AALA202409054008). MAINTENANCE TROUBLE SHOT THE PACK 2 ISSUE AND FOUND THE FLOW CONTROL VALVE FOR THE #2 PACK WAS DEFECTIVE AND REPLACED IT PER AMM 21-51-51. (AALA202409059375) A SATISFACTORY OPERATIONAL CHECK WAS ACCOMPLISHED WITH NO ISSUES NOTED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "AALA202409059375",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "PACK 1 FAILED AND AIR PACK 1 AND 2 FAULT MESSAGE DISPLAYED"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 148,
+          "prompt_tokens": 1618,
+          "total_tokens": 1766,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.719,
+        "model_called": true,
+        "working_context_chars": 5950,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "AALA202409059375",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "PACK 1 FAILED AND AIR PACK 1 AND 2 FAULT MESSAGE DISPLAYED"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "AALA202409059375",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "PACK 1 FAILED AND AIR PACK 1 AND 2 FAULT MESSAGE DISPLAYED"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 1,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 3,
+    "elapsed_seconds": 8.985,
+    "errors": [
+      {
+        "step": 3,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      },
+      {
+        "step": 6,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'MAINTENANCE ACCOMPLISHED TSM 21-60-00-810-824-A AND ACCOMPLISHED A SATISFACTORY OPERATIONAL CHECK FOR PACK 1 WITH NO ISSUES NOTED'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}

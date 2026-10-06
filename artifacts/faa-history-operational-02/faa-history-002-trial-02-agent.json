@@ -1,0 +1,728 @@
+{
+  "batch_id": "a46644f75cb2d1d1a5dd37effb93356484542b74cd05af078c9179a692599d4c",
+  "candidate_id": "faa-history-002",
+  "trial": 2,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'CREASE BEAM'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "CREASE BEAM",
+  "input_record_ids": [
+    "IPXA2024020576243",
+    "IPXA2024081881749",
+    "IPXA2024081881799",
+    "IPXA2024082088154",
+    "IPXA2024082088175",
+    "IPXA2024082186362",
+    "IPXA2024082186392"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "CREASE BEAM",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'CREASE BEAM'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"AIRBUS\",\"0831\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 7,
+    "selected_record_count": 7,
+    "steps": 7,
+    "model_calls": 7,
+    "elapsed_seconds": 11.218,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "IPXA2024081881749",
+          "date": "2024-08-15",
+          "asset_id": "FAA:[\"AIRBUS\",\"0831\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 76,
+              "quote": "MAIN CARGO DECK, CREASE BEAM AT R/H COMMON TO FR 74 SHOWS EVIDENCE OF CRACK.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 89,
+              "end": 151,
+              "quote": "LOCATED AND DRILLED NEW CREASE BEAM IAW A300-600 SRM 51-41-21.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "IPXA2024081881749",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39005
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "MAIN CARGO DECK, CREASE BEAM AT R/H COMMON TO FR 74 SHOWS EVIDENCE OF CRACK. DOT 72-006. LOCATED AND DRILLED NEW CREASE BEAM IAW A300-600 SRM 51-41-21. VERIFIED INSTALLED Z-PROFILE AT FR 74 R/H WITH RIVETS P/N: MS20426AD5-5. BTCH: 4234229. IAW SRM A300-600 SRM 51-40-21."
+          }
+        },
+        {
+          "record_id": "IPXA2024081881799",
+          "date": "2024-08-15",
+          "asset_id": "FAA:[\"AIRBUS\",\"0831\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 85,
+              "quote": "MAIN CARGO DECK, CREASE BEAM AT L/H COMMON TO FR 74/75 SHOWS EVIDENCE OF CRACKS (2PL)",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 99,
+              "end": 232,
+              "quote": "LOCATED AND DRLLED NEW CREASE BEAM IAW A300-600 SRM 51-40-44. VERIFIED INSTALLED Z-PROFILE AT FR 75 L/H WITH RIVETS P/N: MS20426AD5-5",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "IPXA2024081881799",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 38999
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "MAIN CARGO DECK, CREASE BEAM AT L/H COMMON TO FR 74/75 SHOWS EVIDENCE OF CRACKS (2PL). DOT 72-007. LOCATED AND DRLLED NEW CREASE BEAM IAW A300-600 SRM 51-40-44. VERIFIED INSTALLED Z-PROFILE AT FR 75 L/H WITH RIVETS P/N: MS20426AD5-5. BTCH: 4234229. IAW SRM A300-600 SRM 51-40-21. R"
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-08-15 | record IPXA2024081881749\nSource: SDR-2024.csv, CSV row 39005, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: MAIN CARGO DECK, CREASE BEAM AT R/H COMMON TO FR 74 SHOWS EVIDENCE OF CRACK. [record=IPXA2024081881749; field=narrative_raw; offsets=0:76]\naction: LOCATED AND DRILLED NEW CREASE BEAM IAW A300-600 SRM 51-41-21. [record=IPXA2024081881749; field=narrative_raw; offsets=89:151]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): MAIN CARGO DECK, CREASE BEAM AT R/H COMMON TO FR 74 SHOWS EVIDENCE OF CRACK. DOT 72-006. LOCATED AND DRILLED NEW CREASE BEAM IAW A300-600 SRM 51-41-21. VERIFIED INSTALLED Z-PROFILE AT FR 74 R/H WITH RIVETS P/N: MS20426AD5-5. BTCH: 4234229. IAW SRM A300-600 SRM 51-40-21.\n\n2024-08-15 | record IPXA2024081881799\nSource: SDR-2024.csv, CSV row 38999, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: MAIN CARGO DECK, CREASE BEAM AT L/H COMMON TO FR 74/75 SHOWS EVIDENCE OF CRACKS (2PL) [record=IPXA2024081881799; field=narrative_raw; offsets=0:85]\naction: LOCATED AND DRLLED NEW CREASE BEAM IAW A300-600 SRM 51-40-44. VERIFIED INSTALLED Z-PROFILE AT FR 75 L/H WITH RIVETS P/N: MS20426AD5-5 [record=IPXA2024081881799; field=narrative_raw; offsets=99:232]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): MAIN CARGO DECK, CREASE BEAM AT L/H COMMON TO FR 74/75 SHOWS EVIDENCE OF CRACKS (2PL). DOT 72-007. LOCATED AND DRLLED NEW CREASE BEAM IAW A300-600 SRM 51-40-44. VERIFIED INSTALLED Z-PROFILE AT FR 75 L/H WITH RIVETS P/N: MS20426AD5-5. BTCH: 4234229. IAW SRM A300-600 SRM 51-40-21. R\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "IPXA2024081881749",
+        "event_date": "2024-08-15",
+        "asset_id": "FAA:[\"AIRBUS\",\"0831\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 39005,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "MAIN CARGO DECK, CREASE BEAM AT R/H COMMON TO FR 74 SHOWS EVIDENCE OF CRACK. DOT 72-006. LOCATED AND DRILLED NEW CREASE BEAM IAW A300-600 SRM 51-41-21. VERIFIED INSTALLED Z-PROFILE AT FR 74 R/H WITH RIVETS P/N: MS20426AD5-5. BTCH: 4234229. IAW SRM A300-600 SRM 51-40-21.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "IPXA2024081881799",
+        "event_date": "2024-08-15",
+        "asset_id": "FAA:[\"AIRBUS\",\"0831\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 38999,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "MAIN CARGO DECK, CREASE BEAM AT L/H COMMON TO FR 74/75 SHOWS EVIDENCE OF CRACKS (2PL). DOT 72-007. LOCATED AND DRLLED NEW CREASE BEAM IAW A300-600 SRM 51-40-44. VERIFIED INSTALLED Z-PROFILE AT FR 75 L/H WITH RIVETS P/N: MS20426AD5-5. BTCH: 4234229. IAW SRM A300-600 SRM 51-40-21. R",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "IPXA2024081881749",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 76,
+            "quote": "MAIN CARGO DECK, CREASE BEAM AT R/H COMMON TO FR 74 SHOWS EVIDENCE OF CRACK.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 89,
+            "end": 151,
+            "quote": "LOCATED AND DRILLED NEW CREASE BEAM IAW A300-600 SRM 51-41-21.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 39005,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "IPXA2024081881799",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 85,
+            "quote": "MAIN CARGO DECK, CREASE BEAM AT L/H COMMON TO FR 74/75 SHOWS EVIDENCE OF CRACKS (2PL)",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 99,
+            "end": 232,
+            "quote": "LOCATED AND DRLLED NEW CREASE BEAM IAW A300-600 SRM 51-40-44. VERIFIED INSTALLED Z-PROFILE AT FR 75 L/H WITH RIVETS P/N: MS20426AD5-5",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 38999,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 7,
+      "selected_record_count": 7,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 7,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "CREASE BEAM",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 1063,
+          "total_tokens": 1088,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.656,
+        "model_called": true,
+        "working_context_chars": 5010,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "IPXA2024081881749",
+              "asset_id": "FAA:[\"AIRBUS\",\"0831\"]",
+              "date": "2024-08-15",
+              "score": 2.96021637656699,
+              "excerpt": "MAIN CARGO DECK, CREASE BEAM AT R/H COMMON TO FR 74 SHOWS EVIDENCE OF CRACK. DOT 72-006. LOCATED AND DRILLED NEW CREASE BEAM IAW A300-600 SRM 51-41-21. VERIFIED INSTALLED Z-PROFILE AT FR 74 R/H WITH R",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "IPXA2024081881799",
+              "asset_id": "FAA:[\"AIRBUS\",\"0831\"]",
+              "date": "2024-08-15",
+              "score": 2.9090731894769806,
+              "excerpt": "MAIN CARGO DECK, CREASE BEAM AT L/H COMMON TO FR 74/75 SHOWS EVIDENCE OF CRACKS (2PL). DOT 72-007. LOCATED AND DRLLED NEW CREASE BEAM IAW A300-600 SRM 51-40-44. VERIFIED INSTALLED Z-PROFILE AT FR 75 L",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1538,
+          "total_tokens": 1550,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.61,
+        "model_called": true,
+        "working_context_chars": 5961,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 7,
+          "unstructured_record_count": 7,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "IPXA2024081881749"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1598,
+          "total_tokens": 1629,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.922,
+        "model_called": true,
+        "working_context_chars": 6188,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "IPXA2024081881749",
+          "event_date": "2024-08-15",
+          "asset_id": "FAA:[\"AIRBUS\",\"0831\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39005,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "MAIN CARGO DECK, CREASE BEAM AT R/H COMMON TO FR 74 SHOWS EVIDENCE OF CRACK. DOT 72-006. LOCATED AND DRILLED NEW CREASE BEAM IAW A300-600 SRM 51-41-21. VERIFIED INSTALLED Z-PROFILE AT FR 74 R/H WITH RIVETS P/N: MS20426AD5-5. BTCH: 4234229. IAW SRM A300-600 SRM 51-40-21.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "IPXA2024081881749",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "MAIN CARGO DECK, CREASE BEAM AT R/H COMMON TO FR 74 SHOWS EVIDENCE OF CRACK."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "LOCATED AND DRILLED NEW CREASE BEAM IAW A300-600 SRM 51-41-21."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 141,
+          "prompt_tokens": 1494,
+          "total_tokens": 1635,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.765,
+        "model_called": true,
+        "working_context_chars": 5223,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "IPXA2024081881749",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "MAIN CARGO DECK, CREASE BEAM AT R/H COMMON TO FR 74 SHOWS EVIDENCE OF CRACK."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "LOCATED AND DRILLED NEW CREASE BEAM IAW A300-600 SRM 51-41-21."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "IPXA2024081881749",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "MAIN CARGO DECK, CREASE BEAM AT R/H COMMON TO FR 74 SHOWS EVIDENCE OF CRACK."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "LOCATED AND DRILLED NEW CREASE BEAM IAW A300-600 SRM 51-41-21."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "IPXA2024081881749",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 76,
+              "quote": "MAIN CARGO DECK, CREASE BEAM AT R/H COMMON TO FR 74 SHOWS EVIDENCE OF CRACK.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 89,
+              "end": 151,
+              "quote": "LOCATED AND DRILLED NEW CREASE BEAM IAW A300-600 SRM 51-41-21.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 39005,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "IPXA2024081881799"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2096,
+          "total_tokens": 2127,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.172,
+        "model_called": true,
+        "working_context_chars": 7421,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "IPXA2024081881799",
+          "event_date": "2024-08-15",
+          "asset_id": "FAA:[\"AIRBUS\",\"0831\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 38999,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "MAIN CARGO DECK, CREASE BEAM AT L/H COMMON TO FR 74/75 SHOWS EVIDENCE OF CRACKS (2PL). DOT 72-007. LOCATED AND DRLLED NEW CREASE BEAM IAW A300-600 SRM 51-40-44. VERIFIED INSTALLED Z-PROFILE AT FR 75 L/H WITH RIVETS P/N: MS20426AD5-5. BTCH: 4234229. IAW SRM A300-600 SRM 51-40-21. R",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "IPXA2024081881799",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "MAIN CARGO DECK, CREASE BEAM AT L/H COMMON TO FR 74/75 SHOWS EVIDENCE OF CRACKS (2PL)"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 99,
+                "end": 232
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 181,
+          "prompt_tokens": 1503,
+          "total_tokens": 1684,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 3.438,
+        "model_called": true,
+        "working_context_chars": 5234,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "IPXA2024081881799",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "MAIN CARGO DECK, CREASE BEAM AT L/H COMMON TO FR 74/75 SHOWS EVIDENCE OF CRACKS (2PL)"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "LOCATED AND DRLLED NEW CREASE BEAM IAW A300-600 SRM 51-40-44. VERIFIED INSTALLED Z-PROFILE AT FR 75 L/H WITH RIVETS P/N: MS20426AD5-5."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "IPXA2024081881799",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "MAIN CARGO DECK, CREASE BEAM AT L/H COMMON TO FR 74/75 SHOWS EVIDENCE OF CRACKS (2PL)"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "LOCATED AND DRLLED NEW CREASE BEAM IAW A300-600 SRM 51-40-44. VERIFIED INSTALLED Z-PROFILE AT FR 75 L/H WITH RIVETS P/N: MS20426AD5-5."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": [
+              {
+                "field_name": "action",
+                "before": {
+                  "field": "narrative_raw",
+                  "start": 99,
+                  "end": 233,
+                  "quote": "LOCATED AND DRLLED NEW CREASE BEAM IAW A300-600 SRM 51-40-44. VERIFIED INSTALLED Z-PROFILE AT FR 75 L/H WITH RIVETS P/N: MS20426AD5-5.",
+                  "source_column": null
+                },
+                "after": {
+                  "field": "narrative_raw",
+                  "start": 99,
+                  "end": 232,
+                  "quote": "LOCATED AND DRLLED NEW CREASE BEAM IAW A300-600 SRM 51-40-44. VERIFIED INSTALLED Z-PROFILE AT FR 75 L/H WITH RIVETS P/N: MS20426AD5-5",
+                  "source_column": null
+                }
+              }
+            ]
+          }
+        },
+        "tool_result": {
+          "record_id": "IPXA2024081881799",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 85,
+              "quote": "MAIN CARGO DECK, CREASE BEAM AT L/H COMMON TO FR 74/75 SHOWS EVIDENCE OF CRACKS (2PL)",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 99,
+              "end": 232,
+              "quote": "LOCATED AND DRLLED NEW CREASE BEAM IAW A300-600 SRM 51-40-44. VERIFIED INSTALLED Z-PROFILE AT FR 75 L/H WITH RIVETS P/N: MS20426AD5-5",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 38999,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "IPXA2024081881749",
+              "IPXA2024081881799"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 49,
+          "prompt_tokens": 2645,
+          "total_tokens": 2694,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.64,
+        "model_called": true,
+        "working_context_chars": 8749,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "IPXA2024081881749",
+            "IPXA2024081881799"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "IPXA2024081881749",
+      "IPXA2024081881799"
+    ],
+    "proposal_count": 2,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 7,
+    "elapsed_seconds": 11.218,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  }
+}
