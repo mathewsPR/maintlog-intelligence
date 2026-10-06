@@ -1,0 +1,1059 @@
+{
+  "batch_id": "283cd43f51c83af58ec9fb06b82aaeefa1be4dd5972cb57137b0fb1258852caa",
+  "candidate_id": "faa-history-019",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'BATTERY PACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BATTERY PACK",
+  "input_record_ids": [
+    "SWAA2024043080503",
+    "SWAA2024043080504",
+    "SWAA2024052990111",
+    "SWAA2024070207284"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BATTERY PACK",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'BATTERY PACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"36943\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 9,
+    "model_calls": 9,
+    "elapsed_seconds": 16.14,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v2",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "SWAA2024043080503",
+          "date": "2024-04-29",
+          "asset_id": "FAA:[\"BOEING\",\"36943\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 46,
+              "end": 76,
+              "quote": "AFT L/H & R/H EMERGENCY LIGHTS",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 31,
+              "end": 81,
+              "quote": "FOUND INTERIOR AFT L/H & R/H EMERGENCY LIGHTS INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 88,
+              "end": 167,
+              "quote": "REMOVED AND REPLACED BATTERY PACK FOR BOTH AFT L/H AND AFT R/H PER AMM 33-51-06",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "SWAA2024043080503",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19971
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "DURING EMERGENCY LIGHTS CHECK; FOUND INTERIOR AFT L/H & R/H EMERGENCY LIGHTS INOP.<[01] REMOVED AND REPLACED BATTERY PACK FOR BOTH AFT L/H AND AFT R/H PER AMM 33-51-06. OPS CHECK GOOD."
+          }
+        },
+        {
+          "record_id": "SWAA2024043080504",
+          "date": "2024-04-29",
+          "asset_id": "FAA:[\"BOEING\",\"36943\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 41,
+              "quote": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 46,
+              "quote": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 52,
+              "end": 140,
+              "quote": "REMOVED AND REPLACED BATTERY PACK AND CHARGER ASSEMBLY PER AMM 33-51-06. OPS CHECK GOOD.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "SWAA2024043080504",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19977
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC INOP<[01] REMOVED AND REPLACED BATTERY PACK AND CHARGER ASSEMBLY PER AMM 33-51-06. OPS CHECK GOOD."
+          }
+        },
+        {
+          "record_id": "SWAA2024070207284",
+          "date": "2024-06-29",
+          "asset_id": "FAA:[\"BOEING\",\"36943\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 49,
+              "end": 84,
+              "quote": "FLIGHT ATTENDANT FLASHLIGHT BATTERY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 4,
+              "end": 30,
+              "quote": "F/A FLASHLIGHT NOT TESTING",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 36,
+              "end": 107,
+              "quote": "REPLACED # 1 FLIGHT ATTENDANT FLASHLIGHT BATTERY IAW AMM CHPT. 25-64-00",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "SWAA2024070207284",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 30786
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "# 1 F/A FLASHLIGHT NOT TESTING<[01] REPLACED # 1 FLIGHT ATTENDANT FLASHLIGHT BATTERY IAW AMM CHPT. 25-64-00"
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-04-29 | record SWAA2024043080503\nSource: SDR-2024.csv, CSV row 19971, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: AFT L/H & R/H EMERGENCY LIGHTS [record=SWAA2024043080503; field=narrative_raw; offsets=46:76]\nproblem: FOUND INTERIOR AFT L/H & R/H EMERGENCY LIGHTS INOP [record=SWAA2024043080503; field=narrative_raw; offsets=31:81]\naction: REMOVED AND REPLACED BATTERY PACK FOR BOTH AFT L/H AND AFT R/H PER AMM 33-51-06 [record=SWAA2024043080503; field=narrative_raw; offsets=88:167]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): DURING EMERGENCY LIGHTS CHECK; FOUND INTERIOR AFT L/H & R/H EMERGENCY LIGHTS INOP.<[01] REMOVED AND REPLACED BATTERY PACK FOR BOTH AFT L/H AND AFT R/H PER AMM 33-51-06. OPS CHECK GOOD.\n\n2024-04-29 | record SWAA2024043080504\nSource: SDR-2024.csv, CSV row 19977, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC [record=SWAA2024043080504; field=narrative_raw; offsets=0:41]\nproblem: EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC INOP [record=SWAA2024043080504; field=narrative_raw; offsets=0:46]\naction: REMOVED AND REPLACED BATTERY PACK AND CHARGER ASSEMBLY PER AMM 33-51-06. OPS CHECK GOOD. [record=SWAA2024043080504; field=narrative_raw; offsets=52:140]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC INOP<[01] REMOVED AND REPLACED BATTERY PACK AND CHARGER ASSEMBLY PER AMM 33-51-06. OPS CHECK GOOD.\n\n2024-06-29 | record SWAA2024070207284\nSource: SDR-2024.csv, CSV row 30786, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: FLIGHT ATTENDANT FLASHLIGHT BATTERY [record=SWAA2024070207284; field=narrative_raw; offsets=49:84]\nproblem: F/A FLASHLIGHT NOT TESTING [record=SWAA2024070207284; field=narrative_raw; offsets=4:30]\naction: REPLACED # 1 FLIGHT ATTENDANT FLASHLIGHT BATTERY IAW AMM CHPT. 25-64-00 [record=SWAA2024070207284; field=narrative_raw; offsets=36:107]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): # 1 F/A FLASHLIGHT NOT TESTING<[01] REPLACED # 1 FLIGHT ATTENDANT FLASHLIGHT BATTERY IAW AMM CHPT. 25-64-00\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "SWAA2024043080503",
+        "event_date": "2024-04-29",
+        "asset_id": "FAA:[\"BOEING\",\"36943\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 19971,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "DURING EMERGENCY LIGHTS CHECK; FOUND INTERIOR AFT L/H & R/H EMERGENCY LIGHTS INOP.<[01] REMOVED AND REPLACED BATTERY PACK FOR BOTH AFT L/H AND AFT R/H PER AMM 33-51-06. OPS CHECK GOOD.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "SWAA2024043080504",
+        "event_date": "2024-04-29",
+        "asset_id": "FAA:[\"BOEING\",\"36943\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 19977,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC INOP<[01] REMOVED AND REPLACED BATTERY PACK AND CHARGER ASSEMBLY PER AMM 33-51-06. OPS CHECK GOOD.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "SWAA2024070207284",
+        "event_date": "2024-06-29",
+        "asset_id": "FAA:[\"BOEING\",\"36943\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 30786,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "# 1 F/A FLASHLIGHT NOT TESTING<[01] REPLACED # 1 FLIGHT ATTENDANT FLASHLIGHT BATTERY IAW AMM CHPT. 25-64-00",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "SWAA2024043080503",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 46,
+            "end": 76,
+            "quote": "AFT L/H & R/H EMERGENCY LIGHTS",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 31,
+            "end": 81,
+            "quote": "FOUND INTERIOR AFT L/H & R/H EMERGENCY LIGHTS INOP",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 88,
+            "end": 167,
+            "quote": "REMOVED AND REPLACED BATTERY PACK FOR BOTH AFT L/H AND AFT R/H PER AMM 33-51-06",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 19971,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "SWAA2024043080504",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 41,
+            "quote": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 46,
+            "quote": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC INOP",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 52,
+            "end": 140,
+            "quote": "REMOVED AND REPLACED BATTERY PACK AND CHARGER ASSEMBLY PER AMM 33-51-06. OPS CHECK GOOD.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 19977,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "SWAA2024070207284",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 49,
+            "end": 84,
+            "quote": "FLIGHT ATTENDANT FLASHLIGHT BATTERY",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 4,
+            "end": 30,
+            "quote": "F/A FLASHLIGHT NOT TESTING",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 36,
+            "end": 107,
+            "quote": "REPLACED # 1 FLIGHT ATTENDANT FLASHLIGHT BATTERY IAW AMM CHPT. 25-64-00",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 30786,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 4,
+      "selected_record_count": 4,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 4,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BATTERY PACK",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 1112,
+          "total_tokens": 1137,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.75,
+        "model_called": true,
+        "working_context_chars": 5258,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "SWAA2024043080504",
+              "asset_id": "FAA:[\"BOEING\",\"36943\"]",
+              "date": "2024-04-29",
+              "score": 0.9893611644490157,
+              "excerpt": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC INOP<[01] REMOVED AND REPLACED BATTERY PACK AND CHARGER ASSEMBLY PER AMM 33-51-06. OPS CHECK GOOD.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWAA2024043080503",
+              "asset_id": "FAA:[\"BOEING\",\"36943\"]",
+              "date": "2024-04-29",
+              "score": 0.8473900556491568,
+              "excerpt": "DURING EMERGENCY LIGHTS CHECK; FOUND INTERIOR AFT L/H & R/H EMERGENCY LIGHTS INOP.<[01] REMOVED AND REPLACED BATTERY PACK FOR BOTH AFT L/H AND AFT R/H PER AMM 33-51-06. OPS CHECK GOOD.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWAA2024070207284",
+              "asset_id": "FAA:[\"BOEING\",\"36943\"]",
+              "date": "2024-06-29",
+              "score": 0.3938741712206861,
+              "excerpt": "# 1 F/A FLASHLIGHT NOT TESTING<[01] REPLACED # 1 FLIGHT ATTENDANT FLASHLIGHT BATTERY IAW AMM CHPT. 25-64-00",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024043080503"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1782,
+          "total_tokens": 1813,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.969,
+        "model_called": true,
+        "working_context_chars": 6570,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024043080503",
+          "event_date": "2024-04-29",
+          "asset_id": "FAA:[\"BOEING\",\"36943\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19971,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "DURING EMERGENCY LIGHTS CHECK; FOUND INTERIOR AFT L/H & R/H EMERGENCY LIGHTS INOP.<[01] REMOVED AND REPLACED BATTERY PACK FOR BOTH AFT L/H AND AFT R/H PER AMM 33-51-06. OPS CHECK GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024043080503",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "AFT L/H & R/H EMERGENCY LIGHTS"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FOUND INTERIOR AFT L/H & R/H EMERGENCY LIGHTS INOP"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED BATTERY PACK FOR BOTH AFT L/H AND AFT R/H PER AMM 33-51-06"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 153,
+          "prompt_tokens": 1079,
+          "total_tokens": 1232,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 3.016,
+        "model_called": true,
+        "working_context_chars": 5137,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024043080503",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "AFT L/H & R/H EMERGENCY LIGHTS"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FOUND INTERIOR AFT L/H & R/H EMERGENCY LIGHTS INOP"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED BATTERY PACK FOR BOTH AFT L/H AND AFT R/H PER AMM 33-51-06"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024043080503",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "AFT L/H & R/H EMERGENCY LIGHTS"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FOUND INTERIOR AFT L/H & R/H EMERGENCY LIGHTS INOP"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED BATTERY PACK FOR BOTH AFT L/H AND AFT R/H PER AMM 33-51-06"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024043080503",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 46,
+              "end": 76,
+              "quote": "AFT L/H & R/H EMERGENCY LIGHTS",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 31,
+              "end": 81,
+              "quote": "FOUND INTERIOR AFT L/H & R/H EMERGENCY LIGHTS INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 88,
+              "end": 167,
+              "quote": "REMOVED AND REPLACED BATTERY PACK FOR BOTH AFT L/H AND AFT R/H PER AMM 33-51-06",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19971,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024043080504"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2226,
+          "total_tokens": 2257,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.203,
+        "model_called": true,
+        "working_context_chars": 7774,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024043080504",
+          "event_date": "2024-04-29",
+          "asset_id": "FAA:[\"BOEING\",\"36943\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19977,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC INOP<[01] REMOVED AND REPLACED BATTERY PACK AND CHARGER ASSEMBLY PER AMM 33-51-06. OPS CHECK GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024043080504",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC INOP"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED BATTERY PACK AND CHARGER ASSEMBLY PER AMM 33-51-06. OPS CHECK GOOD."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 164,
+          "prompt_tokens": 1068,
+          "total_tokens": 1232,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 3.172,
+        "model_called": true,
+        "working_context_chars": 5093,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024043080504",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC INOP"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED BATTERY PACK AND CHARGER ASSEMBLY PER AMM 33-51-06. OPS CHECK GOOD."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024043080504",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC INOP"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED BATTERY PACK AND CHARGER ASSEMBLY PER AMM 33-51-06. OPS CHECK GOOD."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024043080504",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 41,
+              "quote": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 46,
+              "quote": "EMERGENCY LIGHTS ON ROW 5ABC; 8ABC; 12ABC INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 52,
+              "end": 140,
+              "quote": "REMOVED AND REPLACED BATTERY PACK AND CHARGER ASSEMBLY PER AMM 33-51-06. OPS CHECK GOOD.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19977,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024070207284"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2668,
+          "total_tokens": 2699,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.39,
+        "model_called": true,
+        "working_context_chars": 8950,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024070207284",
+          "event_date": "2024-06-29",
+          "asset_id": "FAA:[\"BOEING\",\"36943\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 30786,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "# 1 F/A FLASHLIGHT NOT TESTING<[01] REPLACED # 1 FLIGHT ATTENDANT FLASHLIGHT BATTERY IAW AMM CHPT. 25-64-00",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024070207284",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "FLIGHT ATTENDANT FLASHLIGHT BATTERY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "F/A FLASHLIGHT NOT TESTING"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACED # 1 FLIGHT ATTENDANT FLASHLIGHT BATTERY IAW AMM CHPT. 25-64-00"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 140,
+          "prompt_tokens": 1053,
+          "total_tokens": 1193,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.813,
+        "model_called": true,
+        "working_context_chars": 5060,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024070207284",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "FLIGHT ATTENDANT FLASHLIGHT BATTERY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "F/A FLASHLIGHT NOT TESTING"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED # 1 FLIGHT ATTENDANT FLASHLIGHT BATTERY IAW AMM CHPT. 25-64-00"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024070207284",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "FLIGHT ATTENDANT FLASHLIGHT BATTERY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "F/A FLASHLIGHT NOT TESTING"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED # 1 FLIGHT ATTENDANT FLASHLIGHT BATTERY IAW AMM CHPT. 25-64-00"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024070207284",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 49,
+              "end": 84,
+              "quote": "FLIGHT ATTENDANT FLASHLIGHT BATTERY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 4,
+              "end": 30,
+              "quote": "F/A FLASHLIGHT NOT TESTING",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 36,
+              "end": 107,
+              "quote": "REPLACED # 1 FLIGHT ATTENDANT FLASHLIGHT BATTERY IAW AMM CHPT. 25-64-00",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 30786,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 2430,
+          "total_tokens": 2442,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.047,
+        "model_called": true,
+        "working_context_chars": 8533,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 4,
+          "unstructured_record_count": 4,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "SWAA2024043080503",
+              "SWAA2024043080504",
+              "SWAA2024070207284"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 66,
+          "prompt_tokens": 2467,
+          "total_tokens": 2533,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.765,
+        "model_called": true,
+        "working_context_chars": 8664,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "SWAA2024043080503",
+            "SWAA2024043080504",
+            "SWAA2024070207284"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "SWAA2024043080503",
+      "SWAA2024043080504",
+      "SWAA2024070207284"
+    ],
+    "proposal_count": 3,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 9,
+    "elapsed_seconds": 16.14,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 9,
+    "responses_received": 9,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 15885,
+    "known_output_tokens": 653,
+    "known_total_tokens": 16538,
+    "known_cached_input_tokens": 7626
+  }
+}

@@ -1,0 +1,1300 @@
+{
+  "batch_id": "283cd43f51c83af58ec9fb06b82aaeefa1be4dd5972cb57137b0fb1258852caa",
+  "candidate_id": "faa-history-064",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'LIGHT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "LIGHT",
+  "input_record_ids": [
+    "DALA2024010300097",
+    "DALA2024011200543",
+    "DALA2024020201498",
+    "DALA2024030803160",
+    "DALA2024051405212",
+    "DALA2024061406104",
+    "DALA2024083008590",
+    "DALA2024102810472"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "context_limit",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "LIGHT",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'LIGHT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"28453\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 8,
+    "selected_record_count": 8,
+    "steps": 12,
+    "model_calls": 6,
+    "elapsed_seconds": 15.078,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "DALA2024011200543",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 9,
+            "end": 18,
+            "quote": "SEAT 51GF",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 19,
+            "end": 41,
+            "quote": "EMERGENCY LIGHT BROKEN",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 62,
+            "end": 128,
+            "quote": "REPLACED EMERGENCY LIGHT SHROUD AT SEAT 51GFIAW B767 AMM 33-51- 10",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 1325,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "DALA2024102810472",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 90,
+            "end": 137,
+            "quote": "ROW 34 RT SIDE SEATS ESCAPE PATH LIGHT ASSEMBLY",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 48,
+            "quote": "SHIP 196 ROW 34 RT SEAT EMER LIGHT MISSING BULBS",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 69,
+            "end": 159,
+            "quote": "REMOVED AND REPLACED ROW 34 RT SIDE SEATS ESCAPE PATH LIGHT ASSEMBLY PER B767 AMM 33-51-10",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 51947,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "DALA2024010300097",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 40,
+            "quote": "SHIP 196 1R DOOR SLIDE ARMED LIGHT INOP.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 60,
+            "end": 127,
+            "quote": "FOUND CONNECTOR UNATTACHED. RESECURED, OPS NML B767-300 AMM 52- 73.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 96,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "DALA2024083008590",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 102,
+            "end": 112,
+            "quote": "LIGHT ASSY",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 9,
+            "end": 55,
+            "quote": "EMERGENCY SEAT MOUNTED LIGHTING DAMAGED / INOP",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 92,
+            "end": 124,
+            "quote": "RESECURED LIGHT ASSY AT SEAT 32F",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 41155,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "DALA2024030803160",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 89,
+            "end": 124,
+            "quote": "48F FLOOR PROX EMERGENCY LIGHT ASSY",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 60,
+            "quote": "SHIP 196 48F EMERGENCY FLOOR LIGHTING DAMAGED OR INOPERATIVE",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 81,
+            "end": 167,
+            "quote": "SECURED 48F FLOOR PROX EMERGENCY LIGHT ASSY AND CHKED NML PER B767 AMM 33-51 (5292705)",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 10889,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": null,
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "LIGHT",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5244,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "DALA2024011200543",
+              "asset_id": "FAA:[\"BOEING\",\"28453\"]",
+              "date": "2024-01-09",
+              "score": 0.48663332973627516,
+              "excerpt": "SHIP 196 SEAT 51GF EMERGENCY LIGHT BROKEN. CORRECTIVE ACTION: REPLACED EMERGENCY LIGHT SHROUD AT SEAT 51GFIAW B767 AMM 33-51- 10. OPS CHECK OK (5037816)",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "DALA2024102810472",
+              "asset_id": "FAA:[\"BOEING\",\"28453\"]",
+              "date": "2024-10-28",
+              "score": 0.4389487088880813,
+              "excerpt": "SHIP 196 ROW 34 RT SEAT EMER LIGHT MISSING BULBS. CORRECTIVE ACTION: REMOVED AND REPLACED ROW 34 RT SIDE SEATS ESCAPE PATH LIGHT ASSEMBLY PER B767 AMM 33-51-10. OP'S TEST GOOD. (6459560)",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "DALA2024010300097",
+              "asset_id": "FAA:[\"BOEING\",\"28453\"]",
+              "date": "2024-01-01",
+              "score": 0.3660489043980935,
+              "excerpt": "SHIP 196 1R DOOR SLIDE ARMED LIGHT INOP. CORRECTIVE ACTION: FOUND CONNECTOR UNATTACHED. RESECURED, OPS NML B767-300 AMM 52- 73. (5036464)",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "DALA2024083008590",
+              "asset_id": "FAA:[\"BOEING\",\"28453\"]",
+              "date": "2024-08-29",
+              "score": 0.35952041266743634,
+              "excerpt": "SHIP 196 EMERGENCY SEAT MOUNTED LIGHTING DAMAGED / INOP / LOCATIONS:32F. CORRECTIVE ACTION: RESECURED LIGHT ASSY AT SEAT 32F,OPS CKS NML. (0528243)",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "DALA2024030803160",
+              "asset_id": "FAA:[\"BOEING\",\"28453\"]",
+              "date": "2024-03-08",
+              "score": 0.335580093858599,
+              "excerpt": "SHIP 196 48F EMERGENCY FLOOR LIGHTING DAMAGED OR INOPERATIVE. CORRECTIVE ACTION: SECURED 48F FLOOR PROX EMERGENCY LIGHT ASSY AND CHKED NML PER B767 AMM 33-51 (5292705)",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DALA2024011200543"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 7427,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DALA2024011200543",
+          "event_date": "2024-01-09",
+          "asset_id": "FAA:[\"BOEING\",\"28453\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1325,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "SHIP 196 SEAT 51GF EMERGENCY LIGHT BROKEN. CORRECTIVE ACTION: REPLACED EMERGENCY LIGHT SHROUD AT SEAT 51GFIAW B767 AMM 33-51- 10. OPS CHECK OK (5037816)",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024011200543",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "SEAT 51GF"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "EMERGENCY LIGHT BROKEN"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACED EMERGENCY LIGHT SHROUD AT SEAT 51GFIAW B767 AMM 33-51- 10"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 140,
+          "prompt_tokens": 1081,
+          "total_tokens": 1221,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.422,
+        "model_called": true,
+        "working_context_chars": 5105,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024011200543",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "SEAT 51GF"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "EMERGENCY LIGHT BROKEN"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED EMERGENCY LIGHT SHROUD AT SEAT 51GFIAW B767 AMM 33-51- 10"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024011200543",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "SEAT 51GF"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "EMERGENCY LIGHT BROKEN"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED EMERGENCY LIGHT SHROUD AT SEAT 51GFIAW B767 AMM 33-51- 10"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024011200543",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 9,
+                "end": 18
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 19,
+                "end": 41
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 62,
+                "end": 128
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 119,
+          "prompt_tokens": 1749,
+          "total_tokens": 1868,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.391,
+        "model_called": true,
+        "working_context_chars": 5836,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": {
+            "component": [
+              {
+                "field": "narrative_raw",
+                "start": 9,
+                "end": 18,
+                "quote": "SEAT 51GF",
+                "surrounding_text": "SHIP 196 SEAT 51GF EMERGENCY LIGHT BROKEN. CORRECTIVE ACTION: REPLACED EMERGEN"
+              },
+              {
+                "field": "narrative_raw",
+                "start": 97,
+                "end": 106,
+                "quote": "SEAT 51GF",
+                "surrounding_text": "OKEN. CORRECTIVE ACTION: REPLACED EMERGENCY LIGHT SHROUD AT SEAT 51GFIAW B767 AMM 33-51- 10. OPS CHECK OK (5037816)"
+              }
+            ],
+            "problem": [
+              {
+                "field": "narrative_raw",
+                "start": 19,
+                "end": 41,
+                "quote": "EMERGENCY LIGHT BROKEN",
+                "surrounding_text": "SHIP 196 SEAT 51GF EMERGENCY LIGHT BROKEN. CORRECTIVE ACTION: REPLACED EMERGENCY LIGHT SHROUD AT SEAT"
+              }
+            ],
+            "action": [
+              {
+                "field": "narrative_raw",
+                "start": 62,
+                "end": 128,
+                "quote": "REPLACED EMERGENCY LIGHT SHROUD AT SEAT 51GFIAW B767 AMM 33-51- 10",
+                "surrounding_text": "IP 196 SEAT 51GF EMERGENCY LIGHT BROKEN. CORRECTIVE ACTION: REPLACED EMERGENCY LIGHT SHROUD AT SEAT 51GFIAW B767 AMM 33-51- 10. OPS CHECK OK (5037816)"
+              }
+            ]
+          },
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024011200543",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 9,
+                  "end": 18
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 19,
+                  "end": 41
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 62,
+                  "end": 128
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024011200543",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 9,
+                    "end": 18
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 19,
+                    "end": 41
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 62,
+                    "end": 128
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "DALA2024011200543",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 9,
+              "end": 18,
+              "quote": "SEAT 51GF",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 19,
+              "end": 41,
+              "quote": "EMERGENCY LIGHT BROKEN",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 62,
+              "end": 128,
+              "quote": "REPLACED EMERGENCY LIGHT SHROUD AT SEAT 51GFIAW B767 AMM 33-51- 10",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1325,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DALA2024102810472"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9275,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DALA2024102810472",
+          "event_date": "2024-10-28",
+          "asset_id": "FAA:[\"BOEING\",\"28453\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 51947,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "SHIP 196 ROW 34 RT SEAT EMER LIGHT MISSING BULBS. CORRECTIVE ACTION: REMOVED AND REPLACED ROW 34 RT SIDE SEATS ESCAPE PATH LIGHT ASSEMBLY PER B767 AMM 33-51-10. OP'S TEST GOOD. (6459560)",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024102810472",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "ROW 34 RT SIDE SEATS ESCAPE PATH LIGHT ASSEMBLY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "SHIP 196 ROW 34 RT SEAT EMER LIGHT MISSING BULBS"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED ROW 34 RT SIDE SEATS ESCAPE PATH LIGHT ASSEMBLY PER B767 AMM 33-51-10"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 164,
+          "prompt_tokens": 1088,
+          "total_tokens": 1252,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.828,
+        "model_called": true,
+        "working_context_chars": 5139,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024102810472",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "ROW 34 RT SIDE SEATS ESCAPE PATH LIGHT ASSEMBLY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "SHIP 196 ROW 34 RT SEAT EMER LIGHT MISSING BULBS"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED ROW 34 RT SIDE SEATS ESCAPE PATH LIGHT ASSEMBLY PER B767 AMM 33-51-10"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024102810472",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "ROW 34 RT SIDE SEATS ESCAPE PATH LIGHT ASSEMBLY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "SHIP 196 ROW 34 RT SEAT EMER LIGHT MISSING BULBS"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED ROW 34 RT SIDE SEATS ESCAPE PATH LIGHT ASSEMBLY PER B767 AMM 33-51-10"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "DALA2024102810472",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 90,
+              "end": 137,
+              "quote": "ROW 34 RT SIDE SEATS ESCAPE PATH LIGHT ASSEMBLY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 48,
+              "quote": "SHIP 196 ROW 34 RT SEAT EMER LIGHT MISSING BULBS",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 69,
+              "end": 159,
+              "quote": "REMOVED AND REPLACED ROW 34 RT SIDE SEATS ESCAPE PATH LIGHT ASSEMBLY PER B767 AMM 33-51-10",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 51947,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DALA2024010300097"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 8819,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DALA2024010300097",
+          "event_date": "2024-01-01",
+          "asset_id": "FAA:[\"BOEING\",\"28453\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 96,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "SHIP 196 1R DOOR SLIDE ARMED LIGHT INOP. CORRECTIVE ACTION: FOUND CONNECTOR UNATTACHED. RESECURED, OPS NML B767-300 AMM 52- 73. (5036464)",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024010300097",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "SHIP 196 1R DOOR SLIDE ARMED LIGHT INOP."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "FOUND CONNECTOR UNATTACHED. RESECURED, OPS NML B767-300 AMM 52- 73."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 130,
+          "prompt_tokens": 1334,
+          "total_tokens": 1464,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.39,
+        "model_called": true,
+        "working_context_chars": 5090,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024010300097",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "SHIP 196 1R DOOR SLIDE ARMED LIGHT INOP."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "FOUND CONNECTOR UNATTACHED. RESECURED, OPS NML B767-300 AMM 52- 73."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024010300097",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "SHIP 196 1R DOOR SLIDE ARMED LIGHT INOP."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "FOUND CONNECTOR UNATTACHED. RESECURED, OPS NML B767-300 AMM 52- 73."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "DALA2024010300097",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 40,
+              "quote": "SHIP 196 1R DOOR SLIDE ARMED LIGHT INOP.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 60,
+              "end": 127,
+              "quote": "FOUND CONNECTOR UNATTACHED. RESECURED, OPS NML B767-300 AMM 52- 73.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 96,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DALA2024083008590"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9274,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DALA2024083008590",
+          "event_date": "2024-08-29",
+          "asset_id": "FAA:[\"BOEING\",\"28453\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 41155,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "SHIP 196 EMERGENCY SEAT MOUNTED LIGHTING DAMAGED / INOP / LOCATIONS:32F. CORRECTIVE ACTION: RESECURED LIGHT ASSY AT SEAT 32F,OPS CKS NML. (0528243)",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024083008590",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "LIGHT ASSY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "EMERGENCY SEAT MOUNTED LIGHTING DAMAGED / INOP"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "RESECURED LIGHT ASSY AT SEAT 32F"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 123,
+          "prompt_tokens": 1072,
+          "total_tokens": 1195,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.203,
+        "model_called": true,
+        "working_context_chars": 5100,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024083008590",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "LIGHT ASSY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "EMERGENCY SEAT MOUNTED LIGHTING DAMAGED / INOP"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "RESECURED LIGHT ASSY AT SEAT 32F"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024083008590",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "LIGHT ASSY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "EMERGENCY SEAT MOUNTED LIGHTING DAMAGED / INOP"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "RESECURED LIGHT ASSY AT SEAT 32F"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "DALA2024083008590",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 102,
+              "end": 112,
+              "quote": "LIGHT ASSY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 9,
+              "end": 55,
+              "quote": "EMERGENCY SEAT MOUNTED LIGHTING DAMAGED / INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 92,
+              "end": 124,
+              "quote": "RESECURED LIGHT ASSY AT SEAT 32F",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 41155,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 11,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DALA2024030803160"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 9745,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DALA2024030803160",
+          "event_date": "2024-03-08",
+          "asset_id": "FAA:[\"BOEING\",\"28453\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 10889,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "SHIP 196 48F EMERGENCY FLOOR LIGHTING DAMAGED OR INOPERATIVE. CORRECTIVE ACTION: SECURED 48F FLOOR PROX EMERGENCY LIGHT ASSY AND CHKED NML PER B767 AMM 33-51 (5292705)",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 12,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DALA2024030803160",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "48F FLOOR PROX EMERGENCY LIGHT ASSY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "SHIP 196 48F EMERGENCY FLOOR LIGHTING DAMAGED OR INOPERATIVE"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "SECURED 48F FLOOR PROX EMERGENCY LIGHT ASSY AND CHKED NML PER B767 AMM 33-51 (5292705)"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 170,
+          "prompt_tokens": 1081,
+          "total_tokens": 1251,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.844,
+        "model_called": true,
+        "working_context_chars": 5120,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DALA2024030803160",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "48F FLOOR PROX EMERGENCY LIGHT ASSY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "SHIP 196 48F EMERGENCY FLOOR LIGHTING DAMAGED OR INOPERATIVE"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "SECURED 48F FLOOR PROX EMERGENCY LIGHT ASSY AND CHKED NML PER B767 AMM 33-51 (5292705)"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DALA2024030803160",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "48F FLOOR PROX EMERGENCY LIGHT ASSY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "SHIP 196 48F EMERGENCY FLOOR LIGHTING DAMAGED OR INOPERATIVE"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "SECURED 48F FLOOR PROX EMERGENCY LIGHT ASSY AND CHKED NML PER B767 AMM 33-51 (5292705)"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "DALA2024030803160",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 89,
+              "end": 124,
+              "quote": "48F FLOOR PROX EMERGENCY LIGHT ASSY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 60,
+              "quote": "SHIP 196 48F EMERGENCY FLOOR LIGHTING DAMAGED OR INOPERATIVE",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 81,
+              "end": 167,
+              "quote": "SECURED 48F FLOOR PROX EMERGENCY LIGHT ASSY AND CHKED NML PER B767 AMM 33-51 (5292705)",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 10889,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "context_limit",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 5,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 6,
+    "elapsed_seconds": 15.078,
+    "errors": [
+      {
+        "step": 3,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 6,
+    "responses_received": 6,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 7405,
+    "known_output_tokens": 846,
+    "known_total_tokens": 8251,
+    "known_cached_input_tokens": 4468
+  }
+}

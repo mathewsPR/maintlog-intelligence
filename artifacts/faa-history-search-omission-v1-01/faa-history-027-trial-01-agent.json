@@ -1,0 +1,1059 @@
+{
+  "batch_id": "283cd43f51c83af58ec9fb06b82aaeefa1be4dd5972cb57137b0fb1258852caa",
+  "candidate_id": "faa-history-027",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'BATTERY'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BATTERY",
+  "input_record_ids": [
+    "AALA202402262908",
+    "AALA202405217121",
+    "AALA202407090409",
+    "AALA202407098855"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BATTERY",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'BATTERY'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"AIRBUS\",\"6940\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 9,
+    "model_calls": 9,
+    "elapsed_seconds": 15.125,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v2",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "AALA202405217121",
+          "date": "2024-05-18",
+          "asset_id": "FAA:[\"AIRBUS\",\"6940\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 138,
+              "end": 155,
+              "quote": "AFT FA FLASHLIGHT",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 67,
+              "end": 115,
+              "quote": "AFT OUTBOARD FA FLASHLIGHT DID NOT PASS THE TEST",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 117,
+              "end": 208,
+              "quote": "REMOVED AND REPLACED AFT FA FLASHLIGHT BATTERY PACK PER JOBCARD 26C00025003 OPS CHECH GOOD.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "AALA202405217121",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 23267
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: WHILE ACCOMPLISHING JOBCARD 26C00025003 AFT OUTBOARD FA FLASHLIGHT DID NOT PASS THE TEST. REMOVED AND REPLACED AFT FA FLASHLIGHT BATTERY PACK PER JOBCARD 26C00025003 OPS CHECH GOOD."
+          }
+        },
+        {
+          "record_id": "AALA202407090409",
+          "date": "2024-07-07",
+          "asset_id": "FAA:[\"AIRBUS\",\"6940\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 96,
+              "end": 117,
+              "quote": "EPSU BATTERY FOR 11WL",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 27,
+              "end": 55,
+              "quote": "EPSU BATTERY FAULTS FOR 11WL",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 75,
+              "end": 134,
+              "quote": "REMOVED AND REPLACED EPSU BATTERY FOR 11WL IAW AMM 33-51-38",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "AALA202407090409",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 31784
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: EPSU BATTERY FAULTS FOR 11WL DURING BITE CHECK. REMOVED AND REPLACED EPSU BATTERY FOR 11WL IAW AMM 33-51-38.  OPC GOOD.  BITE CHECK GOOD."
+          }
+        },
+        {
+          "record_id": "AALA202407098855",
+          "date": "2024-07-07",
+          "asset_id": "FAA:[\"AIRBUS\",\"6940\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 27,
+              "end": 39,
+              "quote": "EPSU BATTERY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 27,
+              "end": 55,
+              "quote": "EPSU BATTERY FAULTS FOR 14WL",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 75,
+              "end": 137,
+              "quote": "REMOVED AND REPLACED EPSU BATTERIES FOR 14WL IAW AMM 33-51-38.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "AALA202407098855",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 31743
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: EPSU BATTERY FAULTS FOR 14WL DURING BITE CHECK. REMOVED AND REPLACED EPSU BATTERIES FOR 14WL IAW AMM 33-51-38.  OPC GOOD.  BITE CHECK GOOD."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-05-18 | record AALA202405217121\nSource: SDR-2024.csv, CSV row 23267, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: AFT FA FLASHLIGHT [record=AALA202405217121; field=narrative_raw; offsets=138:155]\nproblem: AFT OUTBOARD FA FLASHLIGHT DID NOT PASS THE TEST [record=AALA202405217121; field=narrative_raw; offsets=67:115]\naction: REMOVED AND REPLACED AFT FA FLASHLIGHT BATTERY PACK PER JOBCARD 26C00025003 OPS CHECH GOOD. [record=AALA202405217121; field=narrative_raw; offsets=117:208]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): AIRCRAFT WAS NOT GROUNDED: WHILE ACCOMPLISHING JOBCARD 26C00025003 AFT OUTBOARD FA FLASHLIGHT DID NOT PASS THE TEST. REMOVED AND REPLACED AFT FA FLASHLIGHT BATTERY PACK PER JOBCARD 26C00025003 OPS CHECH GOOD.\n\n2024-07-07 | record AALA202407090409\nSource: SDR-2024.csv, CSV row 31784, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: EPSU BATTERY FOR 11WL [record=AALA202407090409; field=narrative_raw; offsets=96:117]\nproblem: EPSU BATTERY FAULTS FOR 11WL [record=AALA202407090409; field=narrative_raw; offsets=27:55]\naction: REMOVED AND REPLACED EPSU BATTERY FOR 11WL IAW AMM 33-51-38 [record=AALA202407090409; field=narrative_raw; offsets=75:134]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): AIRCRAFT WAS NOT GROUNDED: EPSU BATTERY FAULTS FOR 11WL DURING BITE CHECK. REMOVED AND REPLACED EPSU BATTERY FOR 11WL IAW AMM 33-51-38.  OPC GOOD.  BITE CHECK GOOD.\n\n2024-07-07 | record AALA202407098855\nSource: SDR-2024.csv, CSV row 31743, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: EPSU BATTERY [record=AALA202407098855; field=narrative_raw; offsets=27:39]\nproblem: EPSU BATTERY FAULTS FOR 14WL [record=AALA202407098855; field=narrative_raw; offsets=27:55]\naction: REMOVED AND REPLACED EPSU BATTERIES FOR 14WL IAW AMM 33-51-38. [record=AALA202407098855; field=narrative_raw; offsets=75:137]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): AIRCRAFT WAS NOT GROUNDED: EPSU BATTERY FAULTS FOR 14WL DURING BITE CHECK. REMOVED AND REPLACED EPSU BATTERIES FOR 14WL IAW AMM 33-51-38.  OPC GOOD.  BITE CHECK GOOD.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "AALA202405217121",
+        "event_date": "2024-05-18",
+        "asset_id": "FAA:[\"AIRBUS\",\"6940\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 23267,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: WHILE ACCOMPLISHING JOBCARD 26C00025003 AFT OUTBOARD FA FLASHLIGHT DID NOT PASS THE TEST. REMOVED AND REPLACED AFT FA FLASHLIGHT BATTERY PACK PER JOBCARD 26C00025003 OPS CHECH GOOD.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "AALA202407090409",
+        "event_date": "2024-07-07",
+        "asset_id": "FAA:[\"AIRBUS\",\"6940\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 31784,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: EPSU BATTERY FAULTS FOR 11WL DURING BITE CHECK. REMOVED AND REPLACED EPSU BATTERY FOR 11WL IAW AMM 33-51-38.  OPC GOOD.  BITE CHECK GOOD.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "AALA202407098855",
+        "event_date": "2024-07-07",
+        "asset_id": "FAA:[\"AIRBUS\",\"6940\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 31743,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: EPSU BATTERY FAULTS FOR 14WL DURING BITE CHECK. REMOVED AND REPLACED EPSU BATTERIES FOR 14WL IAW AMM 33-51-38.  OPC GOOD.  BITE CHECK GOOD.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "AALA202407090409",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 96,
+            "end": 117,
+            "quote": "EPSU BATTERY FOR 11WL",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 27,
+            "end": 55,
+            "quote": "EPSU BATTERY FAULTS FOR 11WL",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 75,
+            "end": 134,
+            "quote": "REMOVED AND REPLACED EPSU BATTERY FOR 11WL IAW AMM 33-51-38",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 31784,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "AALA202407098855",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 27,
+            "end": 39,
+            "quote": "EPSU BATTERY",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 27,
+            "end": 55,
+            "quote": "EPSU BATTERY FAULTS FOR 14WL",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 75,
+            "end": 137,
+            "quote": "REMOVED AND REPLACED EPSU BATTERIES FOR 14WL IAW AMM 33-51-38.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 31743,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "AALA202405217121",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 138,
+            "end": 155,
+            "quote": "AFT FA FLASHLIGHT",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 67,
+            "end": 115,
+            "quote": "AFT OUTBOARD FA FLASHLIGHT DID NOT PASS THE TEST",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 117,
+            "end": 208,
+            "quote": "REMOVED AND REPLACED AFT FA FLASHLIGHT BATTERY PACK PER JOBCARD 26C00025003 OPS CHECH GOOD.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 23267,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 4,
+      "selected_record_count": 4,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 4,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BATTERY",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 1108,
+          "total_tokens": 1132,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.719,
+        "model_called": true,
+        "working_context_chars": 5247,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "AALA202407090409",
+              "asset_id": "FAA:[\"AIRBUS\",\"6940\"]",
+              "date": "2024-07-07",
+              "score": 0.5110426406746215,
+              "excerpt": "AIRCRAFT WAS NOT GROUNDED: EPSU BATTERY FAULTS FOR 11WL DURING BITE CHECK. REMOVED AND REPLACED EPSU BATTERY FOR 11WL IAW AMM 33-51-38.  OPC GOOD.  BITE CHECK GOOD.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "AALA202407098855",
+              "asset_id": "FAA:[\"AIRBUS\",\"6940\"]",
+              "date": "2024-07-07",
+              "score": 0.3581535595515599,
+              "excerpt": "AIRCRAFT WAS NOT GROUNDED: EPSU BATTERY FAULTS FOR 14WL DURING BITE CHECK. REMOVED AND REPLACED EPSU BATTERIES FOR 14WL IAW AMM 33-51-38.  OPC GOOD.  BITE CHECK GOOD.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "AALA202405217121",
+              "asset_id": "FAA:[\"AIRBUS\",\"6940\"]",
+              "date": "2024-05-18",
+              "score": 0.3358753251777264,
+              "excerpt": "AIRCRAFT WAS NOT GROUNDED: WHILE ACCOMPLISHING JOBCARD 26C00025003 AFT OUTBOARD FA FLASHLIGHT DID NOT PASS THE TEST. REMOVED AND REPLACED AFT FA FLASHLIGHT BATTERY PACK PER JOBCARD 26C00025003 OPS CHE",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1798,
+          "total_tokens": 1810,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.687,
+        "model_called": true,
+        "working_context_chars": 6639,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 4,
+          "unstructured_record_count": 4,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202407090409"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 1858,
+          "total_tokens": 1888,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.969,
+        "model_called": true,
+        "working_context_chars": 6866,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202407090409",
+          "event_date": "2024-07-07",
+          "asset_id": "FAA:[\"AIRBUS\",\"6940\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 31784,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: EPSU BATTERY FAULTS FOR 11WL DURING BITE CHECK. REMOVED AND REPLACED EPSU BATTERY FOR 11WL IAW AMM 33-51-38.  OPC GOOD.  BITE CHECK GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "AALA202407090409",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "EPSU BATTERY FOR 11WL"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "EPSU BATTERY FAULTS FOR 11WL"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED EPSU BATTERY FOR 11WL IAW AMM 33-51-38"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 141,
+          "prompt_tokens": 1076,
+          "total_tokens": 1217,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.859,
+        "model_called": true,
+        "working_context_chars": 5116,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "AALA202407090409",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "EPSU BATTERY FOR 11WL"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "EPSU BATTERY FAULTS FOR 11WL"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED EPSU BATTERY FOR 11WL IAW AMM 33-51-38"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "AALA202407090409",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "EPSU BATTERY FOR 11WL"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "EPSU BATTERY FAULTS FOR 11WL"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED EPSU BATTERY FOR 11WL IAW AMM 33-51-38"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "AALA202407090409",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 96,
+              "end": 117,
+              "quote": "EPSU BATTERY FOR 11WL",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 27,
+              "end": 55,
+              "quote": "EPSU BATTERY FAULTS FOR 11WL",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 75,
+              "end": 134,
+              "quote": "REMOVED AND REPLACED EPSU BATTERY FOR 11WL IAW AMM 33-51-38",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 31784,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202407098855"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2286,
+          "total_tokens": 2316,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.188,
+        "model_called": true,
+        "working_context_chars": 7998,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202407098855",
+          "event_date": "2024-07-07",
+          "asset_id": "FAA:[\"AIRBUS\",\"6940\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 31743,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: EPSU BATTERY FAULTS FOR 14WL DURING BITE CHECK. REMOVED AND REPLACED EPSU BATTERIES FOR 14WL IAW AMM 33-51-38.  OPC GOOD.  BITE CHECK GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "AALA202407098855",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "EPSU BATTERY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "EPSU BATTERY FAULTS FOR 14WL"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED EPSU BATTERIES FOR 14WL IAW AMM 33-51-38."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 137,
+          "prompt_tokens": 1077,
+          "total_tokens": 1214,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.688,
+        "model_called": true,
+        "working_context_chars": 5118,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "AALA202407098855",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "EPSU BATTERY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "EPSU BATTERY FAULTS FOR 14WL"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED EPSU BATTERIES FOR 14WL IAW AMM 33-51-38."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "AALA202407098855",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "EPSU BATTERY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "EPSU BATTERY FAULTS FOR 14WL"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED EPSU BATTERIES FOR 14WL IAW AMM 33-51-38."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "AALA202407098855",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 27,
+              "end": 39,
+              "quote": "EPSU BATTERY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 27,
+              "end": 55,
+              "quote": "EPSU BATTERY FAULTS FOR 14WL",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 75,
+              "end": 137,
+              "quote": "REMOVED AND REPLACED EPSU BATTERIES FOR 14WL IAW AMM 33-51-38.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 31743,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202405217121"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2710,
+          "total_tokens": 2740,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.359,
+        "model_called": true,
+        "working_context_chars": 9126,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202405217121",
+          "event_date": "2024-05-18",
+          "asset_id": "FAA:[\"AIRBUS\",\"6940\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 23267,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS NOT GROUNDED: WHILE ACCOMPLISHING JOBCARD 26C00025003 AFT OUTBOARD FA FLASHLIGHT DID NOT PASS THE TEST. REMOVED AND REPLACED AFT FA FLASHLIGHT BATTERY PACK PER JOBCARD 26C00025003 OPS CHECH GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "AALA202405217121",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "AFT FA FLASHLIGHT"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "AFT OUTBOARD FA FLASHLIGHT DID NOT PASS THE TEST"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED AFT FA FLASHLIGHT BATTERY PACK PER JOBCARD 26C00025003 OPS CHECH GOOD."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 143,
+          "prompt_tokens": 1088,
+          "total_tokens": 1231,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.844,
+        "model_called": true,
+        "working_context_chars": 5160,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "AALA202405217121",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "AFT FA FLASHLIGHT"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "AFT OUTBOARD FA FLASHLIGHT DID NOT PASS THE TEST"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED AFT FA FLASHLIGHT BATTERY PACK PER JOBCARD 26C00025003 OPS CHECH GOOD."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "AALA202405217121",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "AFT FA FLASHLIGHT"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "AFT OUTBOARD FA FLASHLIGHT DID NOT PASS THE TEST"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED AFT FA FLASHLIGHT BATTERY PACK PER JOBCARD 26C00025003 OPS CHECH GOOD."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "AALA202405217121",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 138,
+              "end": 155,
+              "quote": "AFT FA FLASHLIGHT",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 67,
+              "end": 115,
+              "quote": "AFT OUTBOARD FA FLASHLIGHT DID NOT PASS THE TEST",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 117,
+              "end": 208,
+              "quote": "REMOVED AND REPLACED AFT FA FLASHLIGHT BATTERY PACK PER JOBCARD 26C00025003 OPS CHECH GOOD.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 23267,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "AALA202405217121",
+              "AALA202407090409",
+              "AALA202407098855"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 63,
+          "prompt_tokens": 2466,
+          "total_tokens": 2529,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.781,
+        "model_called": true,
+        "working_context_chars": 8726,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "AALA202405217121",
+            "AALA202407090409",
+            "AALA202407098855"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "AALA202405217121",
+      "AALA202407090409",
+      "AALA202407098855"
+    ],
+    "proposal_count": 3,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 9,
+    "elapsed_seconds": 15.125,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 9,
+    "responses_received": 9,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 15467,
+    "known_output_tokens": 610,
+    "known_total_tokens": 16077,
+    "known_cached_input_tokens": 7315
+  }
+}

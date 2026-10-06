@@ -1,0 +1,4077 @@
+{
+  "protocol": "faa-history-operational-v3-token-log",
+  "planned_runs": 200,
+  "saved_runs": 200,
+  "batch_complete": true,
+  "workflows": {
+    "agent": {
+      "runs": 100,
+      "workflow_completed": 81,
+      "status_counts": {
+        "context_limit": 3,
+        "ready_for_review": 69,
+        "failed": 16,
+        "no_matches": 12
+      }
+    },
+    "fixed": {
+      "runs": 100,
+      "workflow_completed": 83,
+      "status_counts": {
+        "failed": 15,
+        "ready_for_review": 71,
+        "no_matches": 12,
+        "context_limit": 2
+      }
+    }
+  },
+  "semantic_accuracy": null,
+  "complete_task_success": null,
+  "interpretation": "Unlabelled operational evaluation. Completion, absence of warnings, and valid source spans do not establish answer accuracy. The v2 step budget differs from the earlier 12-step batch.",
+  "runs": [
+    {
+      "candidate_id": "faa-history-001",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "context_limit",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 4,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 11,
+      "elapsed_seconds": 21.578,
+      "errors": [
+        {
+          "step": 10,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-001",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 2,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 4,
+      "elapsed_seconds": 9.546,
+      "errors": [
+        {
+          "step": 5,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 8,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-002",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "IPXA2024081881749",
+        "IPXA2024081881799"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 12.344,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-002",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "IPXA2024081881749",
+        "IPXA2024081881799"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 6.25,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-003",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DALA2024022102434",
+        "DALA2024032503741",
+        "DALA2024101110002"
+      ],
+      "proposal_count": 3,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 9,
+      "elapsed_seconds": 15.672,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-003",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DALA2024101110002",
+        "DALA2024032503741",
+        "DALA2024022102434"
+      ],
+      "proposal_count": 3,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 7.422,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-004",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024042301200"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 9,
+      "elapsed_seconds": 13.093,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-004",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024042301200"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 4.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-005",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "IPXA2024071522094"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 6.422,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-005",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "IPXA2024071522094"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.922,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-006",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202406117351"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 6.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-006",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202406117351"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.781,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-007",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024072918583"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 5.954,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-007",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024072918583"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.75,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-008",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202411084707",
+        "AALA202411089265"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 11.172,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-008",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202411084707",
+        "AALA202411089265"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.578,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-009",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DALA2024101810205"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 5.985,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-009",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DALA2024101810205"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.657,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-010",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 13.187,
+      "errors": [
+        {
+          "step": 4,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 7,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-010",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 8.406,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 6,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-011",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SIMA20240505001"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 6,
+      "elapsed_seconds": 6.11,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-011",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SIMA20240505001"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-012",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 1.766,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-012",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 0,
+      "elapsed_seconds": 0.016,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-013",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 2,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 9,
+      "elapsed_seconds": 17.687,
+      "errors": [
+        {
+          "step": 8,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 9,
+          "error": "action_status='attempted' lacks unnegated explicit support in the selected action quote 'IS ASSOCIATED WITH REPLACEMENT AND TESTING OF EMERGENCY BATTERY PACK M1694 CARD TTG8Q00QS2AQ.'; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-013",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 2,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 4,
+      "elapsed_seconds": 11.391,
+      "errors": [
+        {
+          "step": 7,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 8,
+          "error": "action_status='attempted' lacks unnegated explicit support in the selected action quote 'IS ASSOCIATED WITH REPLACEMENT AND TESTING OF EMERGENCY BATTERY PACK M1694 CARD TTG8Q00QS2AQ.'; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-014",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 6,
+      "elapsed_seconds": 11.157,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 6,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-014",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 7.61,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 6,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-015",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "FDEA202409281388",
+        "FDEA202409281390"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 14.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-015",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "FDEA202409281390",
+        "FDEA202409281388"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 8.047,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-016",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202410042512"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 6,
+      "elapsed_seconds": 8.328,
+      "errors": [
+        {
+          "step": 4,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-016",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202410042512"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.156,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-017",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 1.703,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-017",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 0,
+      "elapsed_seconds": 0.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-018",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202406030664"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 6,
+      "elapsed_seconds": 7.047,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-018",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202406030664"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.703,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-019",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024043080503",
+        "SWAA2024043080504",
+        "SWAA2024070207284"
+      ],
+      "proposal_count": 3,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 9,
+      "elapsed_seconds": 16.14,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-019",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024043080504",
+        "SWAA2024043080503",
+        "SWAA2024070207284"
+      ],
+      "proposal_count": 3,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 8.188,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-020",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "context_limit",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 4,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 10,
+      "elapsed_seconds": 20.265,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-020",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "context_limit",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 4,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 4,
+      "elapsed_seconds": 11.485,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-021",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024091235456"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 6,
+      "elapsed_seconds": 9.469,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-021",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024091235456"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.891,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-022",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "IPXA2024100919572",
+        "IPXA2024101119572",
+        "IPXA2024101144719"
+      ],
+      "proposal_count": 3,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 9,
+      "elapsed_seconds": 14.562,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-022",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "IPXA2024101144719",
+        "IPXA2024101119572",
+        "IPXA2024100919572"
+      ],
+      "proposal_count": 3,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 6.844,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-023",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "ASAA2024082552040"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 9,
+      "elapsed_seconds": 10.453,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-023",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "ASAA2024082552040"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.562,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-024",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 12.016,
+      "errors": [
+        {
+          "step": 4,
+          "error": "planned wording cannot establish completion"
+        },
+        {
+          "step": 5,
+          "error": "planned wording cannot establish completion"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-024",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 9.015,
+      "errors": [
+        {
+          "step": 3,
+          "error": "planned wording cannot establish completion"
+        },
+        {
+          "step": 4,
+          "error": "planned wording cannot establish completion"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-025",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024091637915"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 6.329,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-025",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024091637915"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.969,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-026",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024121676986"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 6,
+      "elapsed_seconds": 8.687,
+      "errors": [
+        {
+          "step": 4,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-026",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024121676986"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.422,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-027",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202405217121",
+        "AALA202407090409",
+        "AALA202407098855"
+      ],
+      "proposal_count": 3,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 9,
+      "elapsed_seconds": 15.125,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-027",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202407090409",
+        "AALA202407098855",
+        "AALA202405217121"
+      ],
+      "proposal_count": 3,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 7.547,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-028",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "G1IA20241015072"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 6,
+      "elapsed_seconds": 8.937,
+      "errors": [
+        {
+          "step": 4,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-028",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "G1IA20241015072"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.718,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-029",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "R61A2024031700115",
+        "R61A2024031700116",
+        "R61A2024031700117",
+        "R61A2024031700119"
+      ],
+      "proposal_count": 4,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 12,
+      "elapsed_seconds": 23.578,
+      "errors": [
+        {
+          "step": 4,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-029",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "R61A2024031700116",
+        "R61A2024031700117",
+        "R61A2024031700119",
+        "R61A2024031700115"
+      ],
+      "proposal_count": 4,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 12.75,
+      "errors": [
+        {
+          "step": 9,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-030",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "FDEA202412301855"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 6.204,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-030",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "FDEA202412301855"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.891,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-031",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SIMA20240125002"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 9.344,
+      "errors": [
+        {
+          "step": 3,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'OPS CHECK GOOD'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-031",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SIMA20240125002"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 4.75,
+      "errors": [
+        {
+          "step": 3,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'OPS CHECK GOOD'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-032",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 6,
+      "elapsed_seconds": 12.094,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 6,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-032",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 8.672,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 6,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-033",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024051301451",
+        "CALA2024053101654",
+        "CALA2024053101655",
+        "CALA2024110401002"
+      ],
+      "proposal_count": 4,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 12,
+      "elapsed_seconds": 22.156,
+      "errors": [
+        {
+          "step": 3,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-033",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024110401002",
+        "CALA2024053101654",
+        "CALA2024051301451",
+        "CALA2024053101655"
+      ],
+      "proposal_count": 4,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 11.656,
+      "errors": [
+        {
+          "step": 3,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'R&R ROW 14ABC EMERGENCY EXIT FLOOR LIGHT REF AMM 33-51-11'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-034",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 1.797,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-034",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 0,
+      "elapsed_seconds": 0.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-035",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "QMLA2024021320016"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 6,
+      "elapsed_seconds": 6.532,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-035",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "QMLA2024021320016"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.235,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-036",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "REXA2024100400837"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 9,
+      "elapsed_seconds": 11.266,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-036",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "REXA2024100400837"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.766,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-037",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 1.875,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-037",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 0,
+      "elapsed_seconds": 0.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-038",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024042901254"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 9,
+      "elapsed_seconds": 11.468,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-038",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024042901254"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 4.141,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-039",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 4,
+      "elapsed_seconds": 2.266,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-039",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 0,
+      "elapsed_seconds": 0.015,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-040",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DALA2024030603109"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 6.344,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-040",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DALA2024030603109"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 3.078,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-041",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024043079874",
+        "SWAA2024072617625"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 11.625,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-041",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024043079874",
+        "SWAA2024072617625"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 6.219,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-042",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202402128975"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 5.89,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-042",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202402128975"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.64,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-043",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SCNA20241007223",
+        "SCNA20241007323"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 10.938,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-043",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SCNA20241007223",
+        "SCNA20241007323"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.281,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-044",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "F3LA2024030500030",
+        "F3LA2024030600032"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 13.297,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-044",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "F3LA2024030500030",
+        "F3LA2024030600032"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 7.485,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-045",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DXTA2024080700122"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 9,
+      "elapsed_seconds": 11.453,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-045",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DXTA2024080700122"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 3.219,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-046",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202409054008",
+        "AALA202409059375"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 11.031,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-046",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202409054008",
+        "AALA202409059375"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.641,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-047",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024040300961"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 11,
+      "elapsed_seconds": 12.531,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-047",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024040300961"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.906,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-048",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "YENA2024021500265",
+        "YENA2024021500266"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 11.844,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-048",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "YENA2024021500265",
+        "YENA2024021500266"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.954,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-049",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWIA202402190109"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 7.203,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-049",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWIA202402190109"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 3.734,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-050",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 4,
+      "elapsed_seconds": 2.375,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-050",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 0,
+      "elapsed_seconds": 0.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-051",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DALA2024121611723",
+        "DALA2024121611727"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 8,
+      "elapsed_seconds": 12.625,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-051",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DALA2024121611723",
+        "DALA2024121611727"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 7.313,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-052",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202404038625",
+        "AALA202404018625"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 9.609,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-052",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202404038625",
+        "AALA202404018625"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 4.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-053",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 1.75,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-053",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 0,
+      "elapsed_seconds": 0.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-054",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 1.672,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-054",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 0,
+      "elapsed_seconds": 0.015,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-055",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DALA2024122411988"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 9,
+      "elapsed_seconds": 14.11,
+      "errors": [
+        {
+          "step": 6,
+          "error": "action_status='attempted' lacks unnegated explicit support in the selected action quote 'R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE.'; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-055",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DALA2024122411988",
+        "DALA2024122411987"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 7.875,
+      "errors": [
+        {
+          "step": 3,
+          "error": "action_status='attempted' lacks unnegated explicit support in the selected action quote 'R/R LIGHT ASSEMBLY AND CABLE PER CMM 33-52-20 NO HELP. REINSTALLED ORIGINAL LIGHT AND CABLE.'; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-056",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 1.766,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-056",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 0,
+      "elapsed_seconds": 0.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-057",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "HNAA2024081200662"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 11.812,
+      "errors": [
+        {
+          "step": 4,
+          "error": "action_status='attempted' lacks unnegated explicit support in the selected action quote \"TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR\"; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-057",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "HNAA2024081200662"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 6.953,
+      "errors": [
+        {
+          "step": 3,
+          "error": "action_status='attempted' lacks unnegated explicit support in the selected action quote \"TROUBLESHOT UTILIZONG FIM TASK 21-31-00-810-809-A R&R'D DIGITAL CONTROLLER IAW AMM 21-31-01. OPS CHECK GOOD A/C OK FOR SERVICE CLEAR\"; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-058",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "GTIA2024050738105",
+        "GTIA2024050738106"
+      ],
+      "proposal_count": 2,
+      "history_status": "needs_evidence_review",
+      "targeted_concern_count": 1,
+      "model_calls": 8,
+      "elapsed_seconds": 12.39,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-058",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "GTIA2024050738105",
+        "GTIA2024050738106"
+      ],
+      "proposal_count": 2,
+      "history_status": "needs_evidence_review",
+      "targeted_concern_count": 1,
+      "model_calls": 3,
+      "elapsed_seconds": 6.843,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-059",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "ASAA2024101153106"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 6.203,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-059",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "ASAA2024101153106"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.969,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-060",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024091700645"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 7.172,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-060",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024091700645"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 3.391,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-061",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "COEA2024013004767",
+        "COEA2024013005767"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 12.125,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-061",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "COEA2024013005767",
+        "COEA2024013004767"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 6.25,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-062",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024071602045"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 10.265,
+      "errors": [
+        {
+          "step": 4,
+          "error": "action_status='planned' lacks unnegated explicit support in the selected action quote 'ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240'; requires explicit planning or scheduling wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-062",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024071602045"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.125,
+      "errors": [
+        {
+          "step": 3,
+          "error": "action_status='planned' lacks unnegated explicit support in the selected action quote 'ACCOMPLISH INSPECTION REQUIREMENTS ON THE LH FWD FUSELAGE FR4-6 SKIN PANEL REPAIR PER PART 2 OF THE LATEST REVISION OF ECRA 5311-03240'; requires explicit planning or scheduling wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-063",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "R61A2024010300774",
+        "R61A2024010300775"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 11.235,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-063",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "R61A2024010300774",
+        "R61A2024010300775"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.782,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-064",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "context_limit",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 5,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 13,
+      "elapsed_seconds": 25.547,
+      "errors": [
+        {
+          "step": 6,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-064",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "context_limit",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 5,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 6,
+      "elapsed_seconds": 15.078,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-065",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 12.172,
+      "errors": [
+        {
+          "step": 6,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 7,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-065",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 7.907,
+      "errors": [
+        {
+          "step": 5,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 6,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-066",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 4,
+      "elapsed_seconds": 2.375,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-066",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 0,
+      "elapsed_seconds": 0.016,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-067",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 11.328,
+      "errors": [
+        {
+          "step": 4,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 7,
+          "error": "action_status='attempted' lacks unnegated explicit support in the selected action quote 'R&R LAMP ASSY PER M/M 33-51-01'; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-067",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 7.86,
+      "errors": [
+        {
+          "step": 3,
+          "error": "action_status='attempted' lacks unnegated explicit support in the selected action quote 'R&R LAMP ASSY PER M/M 33-51-01'; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        },
+        {
+          "step": 6,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-068",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024080500363",
+        "CALA2024090600590"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 8,
+      "elapsed_seconds": 18.156,
+      "errors": [
+        {
+          "step": 3,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote \"R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE.\"; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-068",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024080500363",
+        "CALA2024090600590"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 12.172,
+      "errors": [
+        {
+          "step": 3,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote \"R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE.\"; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-069",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "IPXA2024073101707",
+        "IPXA2024073101942"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 12.188,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-069",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "IPXA2024073101707",
+        "IPXA2024073101942"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 6.187,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-070",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 1.75,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-070",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 0,
+      "elapsed_seconds": 0.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-071",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 8,
+      "elapsed_seconds": 12.312,
+      "errors": [
+        {
+          "step": 4,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'RESECURRED AFT DOOR SLIDE COVER PER SIP'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        },
+        {
+          "step": 8,
+          "error": "invalid abstention reason"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-071",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024082227643"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 4.796,
+      "errors": [
+        {
+          "step": 3,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'RESECURRED AFT DOOR SLIDE COVER PER SIP'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-072",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "VNAA2024031811101"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 6,
+      "elapsed_seconds": 6.968,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-072",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "VNAA2024031811101"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.64,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-073",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202405291320"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 10,
+      "elapsed_seconds": 12.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-073",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202405291320"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.594,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-074",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWIA20240514",
+        "SWIA202405150004"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 11.11,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-074",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWIA20240514",
+        "SWIA202405150004"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.734,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-075",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202410142183"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 6,
+      "elapsed_seconds": 8.36,
+      "errors": [
+        {
+          "step": 4,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-075",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202410142183"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.125,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-076",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024050682636"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 8.328,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-076",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024050682636"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 3.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-077",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 3,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 11,
+      "elapsed_seconds": 19.61,
+      "errors": [
+        {
+          "step": 8,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 11,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-077",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 6.781,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 6,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-078",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 10,
+      "elapsed_seconds": 13.938,
+      "errors": [
+        {
+          "step": 9,
+          "error": "invalid abstention reason"
+        },
+        {
+          "step": 10,
+          "error": "invalid abstention reason"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-078",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DALA2024120211331"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 1.906,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-079",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 11.312,
+      "errors": [
+        {
+          "step": 4,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 7,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-079",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 1,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 7.047,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 6,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-080",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 7.75,
+      "errors": [
+        {
+          "step": 4,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 5,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'MX FOUND LANDING GEAR LEVER DISAGREE AND NO INDICATION ON NOSE LANDING GEAR'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-080",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.047,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 4,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'MX FOUND LANDING GEAR LEVER DISAGREE AND NO INDICATION ON NOSE LANDING GEAR'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-081",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "IPXA2024051315576",
+        "IPXA2024051315578",
+        "IPXA2024052115578",
+        "IPXA2024052815576"
+      ],
+      "proposal_count": 4,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 12,
+      "elapsed_seconds": 22.36,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-081",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "IPXA2024051315578",
+        "IPXA2024051315576",
+        "IPXA2024052815576",
+        "IPXA2024052115578"
+      ],
+      "proposal_count": 4,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 11.203,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-082",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "GTIA2024072938264",
+        "GTIA2024081638311"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 10.015,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-082",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "GTIA2024072938264",
+        "GTIA2024081638311"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 4.75,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-083",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DALA2024020501532"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 9,
+      "elapsed_seconds": 13.641,
+      "errors": [
+        {
+          "step": 6,
+          "error": "action_status='attempted' lacks unnegated explicit support in the selected action quote 'R&R FWD POWER SUPPLY- BATTERY PACK IAW AMM 33-51'; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-083",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DALA2024020501532",
+        "DALA2024051605273"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 7.063,
+      "errors": [
+        {
+          "step": 5,
+          "error": "action_status='attempted' lacks unnegated explicit support in the selected action quote 'R&R FWD POWER SUPPLY- BATTERY PACK IAW AMM 33-51'; requires explicit tried or attempted wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-084",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024070101930",
+        "CALA2024070900178"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 13.375,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-084",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024070900178",
+        "CALA2024070101930"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 7.797,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-085",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "YENA2024011600041"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 7.734,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-085",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "YENA2024011600041"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.156,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-086",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024120601430"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 6,
+      "elapsed_seconds": 7.734,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-086",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024120601430"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 3.093,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-087",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "QXEA2024100300227",
+        "QXEA2024100900233"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 8,
+      "elapsed_seconds": 14.328,
+      "errors": [
+        {
+          "step": 6,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE.'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-087",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "QXEA2024100900233",
+        "QXEA2024100300227"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 8.609,
+      "errors": [
+        {
+          "step": 3,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'REPLACEMENT OF THE LANDING GEAR CONTROL LEVER. CHECKS GOOD. RETURNED TO SERVICE.'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-088",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DXTA2024020510795",
+        "DXTA2024050611682"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 8,
+      "elapsed_seconds": 13.359,
+      "errors": [
+        {
+          "step": 4,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-088",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "DXTA2024020510795",
+        "DXTA2024050611682"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 7.907,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-089",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024041875236"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 6,
+      "elapsed_seconds": 8.25,
+      "errors": [
+        {
+          "step": 4,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-089",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024041875236"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.032,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-090",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024121201479",
+        "CALA2024121201480"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 10.312,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-090",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024121201479",
+        "CALA2024121201480"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 4.641,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-091",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 4,
+      "elapsed_seconds": 6.547,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 4,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'R&R FWD MEGAPHONE IAW AMM 25-64-00'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-091",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 4.641,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 4,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'R&R FWD MEGAPHONE IAW AMM 25-64-00'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-092",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202407224893",
+        "AALA202407307714"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 10.469,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-092",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "AALA202407307714",
+        "AALA202407224893"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 5.235,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-093",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024110801085"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 6.453,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-093",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "CALA2024110801085"
+      ],
+      "proposal_count": 1,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 1,
+      "elapsed_seconds": 2.953,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-094",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "ASAA2024012547993",
+        "ASAA2024012547995",
+        "ASAA2024012547996"
+      ],
+      "proposal_count": 3,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 9,
+      "elapsed_seconds": 17.188,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-094",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "ASAA2024012547993",
+        "ASAA2024012547995",
+        "ASAA2024012547996"
+      ],
+      "proposal_count": 3,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 8.703,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-095",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 3,
+      "elapsed_seconds": 1.812,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-095",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "no_matches",
+      "workflow_complete": true,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 0,
+      "elapsed_seconds": 0.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-096",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 3,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 11,
+      "elapsed_seconds": 21.953,
+      "errors": [
+        {
+          "step": 6,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 11,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-096",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 3,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 13.625,
+      "errors": [
+        {
+          "step": 7,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 10,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-097",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 7.64,
+      "errors": [
+        {
+          "step": 4,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 5,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-097",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 4.969,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 4,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-098",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "YENA2024090301201",
+        "YENA2024121801567"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 7,
+      "elapsed_seconds": 12.875,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-098",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "YENA2024090301201",
+        "YENA2024121801567"
+      ],
+      "proposal_count": 2,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 7.187,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-099",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 5,
+      "elapsed_seconds": 7.219,
+      "errors": [
+        {
+          "step": 4,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 5,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote '000  AND SLOWLY INCREASED TO APPROXIMATELY  12,0'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-099",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "failed",
+      "workflow_complete": false,
+      "selected_record_ids": [],
+      "proposal_count": 0,
+      "history_status": null,
+      "targeted_concern_count": 0,
+      "model_calls": 2,
+      "elapsed_seconds": 4.61,
+      "errors": [
+        {
+          "step": 3,
+          "error": "quote must occur exactly once; use offsets for repeated text"
+        },
+        {
+          "step": 4,
+          "error": "action_status='completed' lacks unnegated explicit support in the selected action quote '000  AND SLOWLY INCREASED TO APPROXIMATELY  12,0'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+        }
+      ],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-100",
+      "trial": 1,
+      "workflow": "agent",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024082729853",
+        "SWAA2024082729854",
+        "SWAA2024082729855",
+        "SWAA2024082729856"
+      ],
+      "proposal_count": 4,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 11,
+      "elapsed_seconds": 20.469,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    },
+    {
+      "candidate_id": "faa-history-100",
+      "trial": 1,
+      "workflow": "fixed",
+      "run_status": "ready_for_review",
+      "workflow_complete": true,
+      "selected_record_ids": [
+        "SWAA2024082729856",
+        "SWAA2024082729853",
+        "SWAA2024082729854",
+        "SWAA2024082729855"
+      ],
+      "proposal_count": 4,
+      "history_status": "available_for_review",
+      "targeted_concern_count": 0,
+      "model_calls": 4,
+      "elapsed_seconds": 10.0,
+      "errors": [],
+      "semantic_accuracy": null,
+      "complete_task_success": null
+    }
+  ],
+  "token_usage": {
+    "requests_started": 882,
+    "responses_received": 882,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 1400222,
+    "known_output_tokens": 70218,
+    "known_total_tokens": 1470440,
+    "known_cached_input_tokens": 719210
+  }
+}

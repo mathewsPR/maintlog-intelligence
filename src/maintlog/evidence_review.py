@@ -2,19 +2,15 @@
 
 import re
 
+from .extraction import CUES, has_unnegated_status_cue
+
 SUBPART = re.compile(
     r"^\s+(?:(?:electrical|hydraulic|pneumatic|mechanical|power|signal)\s+)?"
     r"(?:connector|cable|seal|housing|plug|wire|terminal)\b",
     re.I,
 )
-CORRECTIVE = re.compile(
-    r"\b(?:corrective\s+action|c/a)\s*[:\-]",
-    re.I,
-)
-DIAGNOSTIC = re.compile(
-    r"^\s*(?:found|diagnosed|identified)\b",
-    re.I,
-)
+CORRECTIVE = re.compile(r"\b(?:corrective\s+action|c/a)\s*[:\-]", re.I)
+DIAGNOSTIC = re.compile(r"^\s*(?:found|diagnosed|identified)\b", re.I)
 
 
 def review_evidence(records: list, proposals: list[dict]) -> dict:
@@ -38,7 +34,6 @@ def review_evidence(records: list, proposals: list[dict]) -> dict:
         if component is not None:
             source = getattr(record, component["field"])
             match = SUBPART.match(source[component["end"] :])
-
             if match:
                 concerns.append(
                     {
@@ -58,7 +53,6 @@ def review_evidence(records: list, proposals: list[dict]) -> dict:
         if problem is not None:
             source = getattr(record, problem["field"])
             heading = CORRECTIVE.search(source)
-
             if (
                 heading is not None
                 and problem["start"] >= heading.end()
@@ -78,6 +72,35 @@ def review_evidence(records: list, proposals: list[dict]) -> dict:
                 )
 
         action = fields["action"]
+        if action is None:
+            fields_with_work = [
+                field
+                for field in ("action_raw", "narrative_raw")
+                if any(
+                    has_unnegated_status_cue(clause, "completed")
+                    and not CUES["planned"].search(clause)
+                    and not CUES["attempted"].search(clause)
+                    for clause in re.split(r"[.;!?\n]", getattr(record, field))
+                )
+            ]
+            if fields_with_work:
+                concerns.append(
+                    {
+                        "record_id": rid,
+                        "field": "action",
+                        "code": "possible_omitted_work",
+                        "message": (
+                            "No action excerpt was selected, but the source "
+                            "contains unnegated performed-work wording. "
+                            "Reconsider the relevant action once. Select an "
+                            "exact excerpt or retain null if it does not support "
+                            "the requested maintenance event. Keep unknown "
+                            "status during this evidence-only revision."
+                        ),
+                        "source_fields": fields_with_work,
+                    }
+                )
+
         if action is not None and CORRECTIVE.match(action["quote"].lstrip()):
             concerns.append(
                 {
@@ -93,15 +116,14 @@ def review_evidence(records: list, proposals: list[dict]) -> dict:
             )
 
     return {
-        "method": "targeted_evidence_review_v1",
+        "method": "targeted_evidence_review_v2",
         "status": (
             "concerns_detected" if concerns else "no_targeted_concerns_detected"
         ),
         "concerns": concerns,
         "semantic_accuracy": None,
         "interpretation": (
-            "Advisory checks only. Neither a warning nor its absence "
-            "establishes semantic correctness. Source evidence is never "
-            "rewritten."
+            "Advisory checks only. Neither a warning nor its absence establishes "
+            "semantic correctness. Source evidence is never rewritten."
         ),
     }

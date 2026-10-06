@@ -1,0 +1,1050 @@
+{
+  "batch_id": "283cd43f51c83af58ec9fb06b82aaeefa1be4dd5972cb57137b0fb1258852caa",
+  "candidate_id": "faa-history-020",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'SEAT TRACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "SEAT TRACK",
+  "input_record_ids": [
+    "SWI2024F01034",
+    "SWI2024F01035",
+    "SWI2024F01122",
+    "SWIA20241004",
+    "SWIA2024102500104",
+    "SWIA2024110804",
+    "SWIA20241005",
+    "SWIA2024102505"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "context_limit",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "SEAT TRACK",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'SEAT TRACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"EMB\",\"17000632\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 8,
+    "selected_record_count": 8,
+    "steps": 10,
+    "model_calls": 10,
+    "elapsed_seconds": 20.265,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [
+      {
+        "record_id": "SWI2024F01034",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 164,
+            "end": 182,
+            "quote": "R/H I/B SEAT TRACK",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 81,
+            "quote": "RH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 143,
+            "end": 194,
+            "quote": "REMOVED AND REPLACED R/H I/B SEAT TRACK AT FR 74-84",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 51756,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "SWI2024F01035",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 178,
+            "end": 229,
+            "quote": "CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 120,
+            "quote": "CENTER FUSELAGE II FR 43 TO FR 73 RH I/B SEAT TRACK HAS PITTING (SURFACE CORROSION) IN MULTIPLE LOCATIONS MARKED IN RED.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 157,
+            "end": 255,
+            "quote": "REMOVED AND REPLACED CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK REF EMB 175 SRM 51-40-08.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 51757,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "SWI2024F01122",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 180,
+            "end": 231,
+            "quote": "CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 120,
+            "quote": "CENTER FUSELAGE II FR 43 TO FR 73 RH I/B SEAT TRACK HAS PITTING (SURFACE CORROSION) IN MULTIPLE LOCATIONS MARKED IN RED.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 159,
+            "end": 257,
+            "quote": "REMOVED AND REPLACED CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK REF EMB 175 SRM 51-40-08.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 53689,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "SWIA20241004",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 166,
+            "end": 184,
+            "quote": "L/H I/B SEAT TRACK",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 81,
+            "quote": "LH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 145,
+            "end": 222,
+            "quote": "REMOVED AND REPLACED L/H I/B SEAT TRACK AT FR 74-84 REF EMB 175 SRM 51-40-08.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 53688,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 8,
+      "selected_record_count": 8,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 8,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "SEAT TRACK",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 1113,
+          "total_tokens": 1138,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.796,
+        "model_called": true,
+        "working_context_chars": 5254,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "SWI2024F01035",
+              "asset_id": "FAA:[\"EMB\",\"17000632\"]",
+              "date": "2024-10-04",
+              "score": 0.17445941573638934,
+              "excerpt": "CENTER FUSELAGE II FR 43 TO FR 73 RH I/B SEAT TRACK HAS PITTING (SURFACE CORROSION) IN MULTIPLE LOCATIONS MARKED IN RED. (C-CHECK RO 10/24/2024) (FILED OPEN)REMOVED AND REPLACED CENTER FUSELAGE II FR ",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "SWI2024F01122",
+              "asset_id": "FAA:[\"EMB\",\"17000632\"]",
+              "date": "2024-10-04",
+              "score": 0.17445941573638934,
+              "excerpt": "CENTER FUSELAGE II FR 43 TO FR 73 RH I/B SEAT TRACK HAS PITTING (SURFACE CORROSION) IN MULTIPLE LOCATIONS MARKED IN RED. (C-CHECK RO 10/24/2024) (FILED CLOSED)REMOVED AND REPLACED CENTER FUSELAGE II F",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "SWI2024F01034",
+              "asset_id": "FAA:[\"EMB\",\"17000632\"]",
+              "date": "2024-10-04",
+              "score": 0.17082341532977172,
+              "excerpt": "RH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84. SEE AREAS MARKED IN RED (C-CHECK RO 10/24/2024) (FILED OPEN)REMOVED AND REPLACED R/H I/B SEAT TRACK AT FR 74-84 REF E",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "SWIA20241004",
+              "asset_id": "FAA:[\"EMB\",\"17000632\"]",
+              "date": "2024-10-04",
+              "score": 0.17082341532977172,
+              "excerpt": "LH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84. SEE AREAS MARKED IN RED (C-CHECK RO 10/24/2024) (FILED CLOSED)REMOVED AND REPLACED L/H I/B SEAT TRACK AT FR 74-84 REF",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "SWIA2024102500104",
+              "asset_id": "FAA:[\"EMB\",\"17000632\"]",
+              "date": "2024-10-04",
+              "score": 0.17082341532977172,
+              "excerpt": "LH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84. SEE AREAS MARKED IN RED (C-CHECK RO 10/24/2024) (FILED OPEN)REMOVED AND REPLACED L/H I/B SEAT TRACK AT FR 74-84 REF E",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 2266,
+          "total_tokens": 2278,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.86,
+        "model_called": true,
+        "working_context_chars": 7562,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 8,
+          "unstructured_record_count": 8,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWI2024F01034"
+          }
+        },
+        "usage": {
+          "completion_tokens": 28,
+          "prompt_tokens": 2326,
+          "total_tokens": 2354,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.109,
+        "model_called": true,
+        "working_context_chars": 7789,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWI2024F01034",
+          "event_date": "2024-10-04",
+          "asset_id": "FAA:[\"EMB\",\"17000632\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 51756,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "RH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84. SEE AREAS MARKED IN RED (C-CHECK RO 10/24/2024) (FILED OPEN)REMOVED AND REPLACED R/H I/B SEAT TRACK AT FR 74-84 REF EMB 175 SRM 51-40-08.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWI2024F01034",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "R/H I/B SEAT TRACK"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "RH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED R/H I/B SEAT TRACK AT FR 74-84"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 144,
+          "prompt_tokens": 1104,
+          "total_tokens": 1248,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.813,
+        "model_called": true,
+        "working_context_chars": 5169,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWI2024F01034",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "R/H I/B SEAT TRACK"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "RH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED R/H I/B SEAT TRACK AT FR 74-84"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWI2024F01034",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "R/H I/B SEAT TRACK"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "RH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED R/H I/B SEAT TRACK AT FR 74-84"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWI2024F01034",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 164,
+              "end": 182,
+              "quote": "R/H I/B SEAT TRACK",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 81,
+              "quote": "RH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 143,
+              "end": 194,
+              "quote": "REMOVED AND REPLACED R/H I/B SEAT TRACK AT FR 74-84",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 51756,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWI2024F01035"
+          }
+        },
+        "usage": {
+          "completion_tokens": 28,
+          "prompt_tokens": 2793,
+          "total_tokens": 2821,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.437,
+        "model_called": true,
+        "working_context_chars": 9020,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWI2024F01035",
+          "event_date": "2024-10-04",
+          "asset_id": "FAA:[\"EMB\",\"17000632\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 51757,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CENTER FUSELAGE II FR 43 TO FR 73 RH I/B SEAT TRACK HAS PITTING (SURFACE CORROSION) IN MULTIPLE LOCATIONS MARKED IN RED. (C-CHECK RO 10/24/2024) (FILED OPEN)REMOVED AND REPLACED CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK REF EMB 175 SRM 51-40-08. SEE WO#H9743 SN#00365 CP#28958274-1 FOR WORK ACCOMPLISHED ON RH I/B SEAT TRACK AT FR 60-73.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWI2024F01035",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "CENTER FUSELAGE II FR 43 TO FR 73 RH I/B SEAT TRACK HAS PITTING (SURFACE CORROSION) IN MULTIPLE LOCATIONS MARKED IN RED."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK REF EMB 175 SRM 51-40-08."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 197,
+          "prompt_tokens": 1165,
+          "total_tokens": 1362,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 3.578,
+        "model_called": true,
+        "working_context_chars": 5296,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWI2024F01035",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "CENTER FUSELAGE II FR 43 TO FR 73 RH I/B SEAT TRACK HAS PITTING (SURFACE CORROSION) IN MULTIPLE LOCATIONS MARKED IN RED."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK REF EMB 175 SRM 51-40-08."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWI2024F01035",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "CENTER FUSELAGE II FR 43 TO FR 73 RH I/B SEAT TRACK HAS PITTING (SURFACE CORROSION) IN MULTIPLE LOCATIONS MARKED IN RED."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK REF EMB 175 SRM 51-40-08."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWI2024F01035",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 178,
+              "end": 229,
+              "quote": "CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 120,
+              "quote": "CENTER FUSELAGE II FR 43 TO FR 73 RH I/B SEAT TRACK HAS PITTING (SURFACE CORROSION) IN MULTIPLE LOCATIONS MARKED IN RED.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 157,
+              "end": 255,
+              "quote": "REMOVED AND REPLACED CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK REF EMB 175 SRM 51-40-08.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 51757,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWI2024F01122"
+          }
+        },
+        "usage": {
+          "completion_tokens": 28,
+          "prompt_tokens": 2826,
+          "total_tokens": 2854,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.453,
+        "model_called": true,
+        "working_context_chars": 9318,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWI2024F01122",
+          "event_date": "2024-10-04",
+          "asset_id": "FAA:[\"EMB\",\"17000632\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 53689,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CENTER FUSELAGE II FR 43 TO FR 73 RH I/B SEAT TRACK HAS PITTING (SURFACE CORROSION) IN MULTIPLE LOCATIONS MARKED IN RED. (C-CHECK RO 10/24/2024) (FILED CLOSED)REMOVED AND REPLACED CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK REF EMB 175 SRM 51-40-08. SEE WO#H9743 SN#00365 CP#28958274-1 FOR WORK ACCOMPLISHED ON RH I/B SEAT TRACK AT FR 60-73.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWI2024F01122",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "CENTER FUSELAGE II FR 43 TO FR 73 RH I/B SEAT TRACK HAS PITTING (SURFACE CORROSION) IN MULTIPLE LOCATIONS MARKED IN RED."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK REF EMB 175 SRM 51-40-08."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 197,
+          "prompt_tokens": 1165,
+          "total_tokens": 1362,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 3.579,
+        "model_called": true,
+        "working_context_chars": 5298,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWI2024F01122",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "CENTER FUSELAGE II FR 43 TO FR 73 RH I/B SEAT TRACK HAS PITTING (SURFACE CORROSION) IN MULTIPLE LOCATIONS MARKED IN RED."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK REF EMB 175 SRM 51-40-08."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWI2024F01122",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "CENTER FUSELAGE II FR 43 TO FR 73 RH I/B SEAT TRACK HAS PITTING (SURFACE CORROSION) IN MULTIPLE LOCATIONS MARKED IN RED."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK REF EMB 175 SRM 51-40-08."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWI2024F01122",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 180,
+              "end": 231,
+              "quote": "CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 120,
+              "quote": "CENTER FUSELAGE II FR 43 TO FR 73 RH I/B SEAT TRACK HAS PITTING (SURFACE CORROSION) IN MULTIPLE LOCATIONS MARKED IN RED.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 159,
+              "end": 257,
+              "quote": "REMOVED AND REPLACED CENTER FUSELAGE II FR 43 TO FR 60 RH I/B SEAT TRACK REF EMB 175 SRM 51-40-08.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 53689,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWIA20241004"
+          }
+        },
+        "usage": {
+          "completion_tokens": 26,
+          "prompt_tokens": 3065,
+          "total_tokens": 3091,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.562,
+        "model_called": true,
+        "working_context_chars": 9970,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWIA20241004",
+          "event_date": "2024-10-04",
+          "asset_id": "FAA:[\"EMB\",\"17000632\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 53688,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "LH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84. SEE AREAS MARKED IN RED (C-CHECK RO 10/24/2024) (FILED CLOSED)REMOVED AND REPLACED L/H I/B SEAT TRACK AT FR 74-84 REF EMB 175 SRM 51-40-08.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 10,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWIA20241004",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "L/H I/B SEAT TRACK"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "LH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED L/H I/B SEAT TRACK AT FR 74-84 REF EMB 175 SRM 51-40-08."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 162,
+          "prompt_tokens": 1103,
+          "total_tokens": 1265,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 3.078,
+        "model_called": true,
+        "working_context_chars": 5170,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWIA20241004",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "L/H I/B SEAT TRACK"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "LH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED L/H I/B SEAT TRACK AT FR 74-84 REF EMB 175 SRM 51-40-08."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWIA20241004",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "L/H I/B SEAT TRACK"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "LH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED L/H I/B SEAT TRACK AT FR 74-84 REF EMB 175 SRM 51-40-08."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWIA20241004",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 166,
+              "end": 184,
+              "quote": "L/H I/B SEAT TRACK",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 81,
+              "quote": "LH I/B SEAT TRACK HAS PITTING CORROSION IN MULTIPLE LOCATIONS FROM FR 74 TO FR 84",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 145,
+              "end": 222,
+              "quote": "REMOVED AND REPLACED L/H I/B SEAT TRACK AT FR 74-84 REF EMB 175 SRM 51-40-08.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 53688,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "context_limit",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 4,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 10,
+    "elapsed_seconds": 20.265,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 10,
+    "responses_received": 10,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 18926,
+    "known_output_tokens": 847,
+    "known_total_tokens": 19773,
+    "known_cached_input_tokens": 8578
+  }
+}

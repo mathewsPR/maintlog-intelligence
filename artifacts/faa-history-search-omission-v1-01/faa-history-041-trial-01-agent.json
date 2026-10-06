@@ -1,0 +1,775 @@
+{
+  "batch_id": "283cd43f51c83af58ec9fb06b82aaeefa1be4dd5972cb57137b0fb1258852caa",
+  "candidate_id": "faa-history-041",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'BATTERY PACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BATTERY PACK",
+  "input_record_ids": [
+    "SWAA2024012544642",
+    "SWAA2024043079874",
+    "SWAA2024043079875",
+    "SWAA2024072617625"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BATTERY PACK",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'BATTERY PACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"28013\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 7,
+    "model_calls": 7,
+    "elapsed_seconds": 11.625,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v2",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "SWAA2024043079874",
+          "date": "2024-04-27",
+          "asset_id": "FAA:[\"BOEING\",\"28013\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 48,
+              "quote": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 54,
+              "quote": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS INOP.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 60,
+              "end": 99,
+              "quote": "REPLACED BATTERY PACK AND CHARGER ASSY.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "SWAA2024043079874",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19992
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS INOP.<[01] REPLACED BATTERY PACK AND CHARGER ASSY. REF AMM 33-51-06. OPS CHECK GOOD."
+          }
+        },
+        {
+          "record_id": "SWAA2024072617625",
+          "date": "2024-07-25",
+          "asset_id": "FAA:[\"BOEING\",\"28013\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 49,
+              "quote": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE)",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 54,
+              "quote": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE) INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 69,
+              "end": 259,
+              "quote": "REPLACED AND PERFORMED GOOD FUNCTIONAL TEST OF EMERGENCY BATTERY PACKS M1668 AND M1669 PER AMM 33-51-06-960-805;[02] PARTIAL WORK STEP 1;[03] VERIFIED STEP 1 COMPLETE;[04] VERIFIED ACTION 1.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "verified",
+          "citation": {
+            "record_id": "SWAA2024072617625",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 35742
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE) INOP<[01] REMOVED; REPLACED AND PERFORMED GOOD FUNCTIONAL TEST OF EMERGENCY BATTERY PACKS M1668 AND M1669 PER AMM 33-51-06-960-805;[02] PARTIAL WORK STEP 1;[03] VERIFIED STEP 1 COMPLETE;[04] VERIFIED ACTION 1.<BR>JOB COMPLETE."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-04-27 | record SWAA2024043079874\nSource: SDR-2024.csv, CSV row 19992, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS [record=SWAA2024043079874; field=narrative_raw; offsets=0:48]\nproblem: RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS INOP. [record=SWAA2024043079874; field=narrative_raw; offsets=0:54]\naction: REPLACED BATTERY PACK AND CHARGER ASSY. [record=SWAA2024043079874; field=narrative_raw; offsets=60:99]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS INOP.<[01] REPLACED BATTERY PACK AND CHARGER ASSY. REF AMM 33-51-06. OPS CHECK GOOD.\n\n2024-07-25 | record SWAA2024072617625\nSource: SDR-2024.csv, CSV row 35742, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE) [record=SWAA2024072617625; field=narrative_raw; offsets=0:49]\nproblem: EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE) INOP [record=SWAA2024072617625; field=narrative_raw; offsets=0:54]\naction: REPLACED AND PERFORMED GOOD FUNCTIONAL TEST OF EMERGENCY BATTERY PACKS M1668 AND M1669 PER AMM 33-51-06-960-805;[02] PARTIAL WORK STEP 1;[03] VERIFIED STEP 1 COMPLETE;[04] VERIFIED ACTION 1. [record=SWAA2024072617625; field=narrative_raw; offsets=69:259]\nAction status proposal: verified\nFull source (narrative_raw, verbatim): EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE) INOP<[01] REMOVED; REPLACED AND PERFORMED GOOD FUNCTIONAL TEST OF EMERGENCY BATTERY PACKS M1668 AND M1669 PER AMM 33-51-06-960-805;[02] PARTIAL WORK STEP 1;[03] VERIFIED STEP 1 COMPLETE;[04] VERIFIED ACTION 1.<BR>JOB COMPLETE.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "SWAA2024043079874",
+        "event_date": "2024-04-27",
+        "asset_id": "FAA:[\"BOEING\",\"28013\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 19992,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS INOP.<[01] REPLACED BATTERY PACK AND CHARGER ASSY. REF AMM 33-51-06. OPS CHECK GOOD.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "SWAA2024072617625",
+        "event_date": "2024-07-25",
+        "asset_id": "FAA:[\"BOEING\",\"28013\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 35742,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE) INOP<[01] REMOVED; REPLACED AND PERFORMED GOOD FUNCTIONAL TEST OF EMERGENCY BATTERY PACKS M1668 AND M1669 PER AMM 33-51-06-960-805;[02] PARTIAL WORK STEP 1;[03] VERIFIED STEP 1 COMPLETE;[04] VERIFIED ACTION 1.<BR>JOB COMPLETE.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "SWAA2024043079874",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 48,
+            "quote": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 54,
+            "quote": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS INOP.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 60,
+            "end": 99,
+            "quote": "REPLACED BATTERY PACK AND CHARGER ASSY.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 19992,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "SWAA2024072617625",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 49,
+            "quote": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE)",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 54,
+            "quote": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE) INOP",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 69,
+            "end": 259,
+            "quote": "REPLACED AND PERFORMED GOOD FUNCTIONAL TEST OF EMERGENCY BATTERY PACKS M1668 AND M1669 PER AMM 33-51-06-960-805;[02] PARTIAL WORK STEP 1;[03] VERIFIED STEP 1 COMPLETE;[04] VERIFIED ACTION 1.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "verified",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 35742,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 4,
+      "selected_record_count": 4,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 4,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BATTERY PACK",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 1112,
+          "total_tokens": 1137,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.703,
+        "model_called": true,
+        "working_context_chars": 5258,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "SWAA2024043079874",
+              "asset_id": "FAA:[\"BOEING\",\"28013\"]",
+              "date": "2024-04-27",
+              "score": 2.022008761320375,
+              "excerpt": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS INOP.<[01] REPLACED BATTERY PACK AND CHARGER ASSY. REF AMM 33-51-06. OPS CHECK GOOD.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWAA2024072617625",
+              "asset_id": "FAA:[\"BOEING\",\"28013\"]",
+              "date": "2024-07-25",
+              "score": 0.5225499809099365,
+              "excerpt": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE) INOP<[01] REMOVED; REPLACED AND PERFORMED GOOD FUNCTIONAL TEST OF EMERGENCY BATTERY PACKS M1668 AND M1669 PER AMM 33-51-06-960-805;[02] PARTIAL WORK S",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1590,
+          "total_tokens": 1602,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.64,
+        "model_called": true,
+        "working_context_chars": 6214,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 4,
+          "unstructured_record_count": 4,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024043079874"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1650,
+          "total_tokens": 1681,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.907,
+        "model_called": true,
+        "working_context_chars": 6441,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024043079874",
+          "event_date": "2024-04-27",
+          "asset_id": "FAA:[\"BOEING\",\"28013\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19992,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS INOP.<[01] REPLACED BATTERY PACK AND CHARGER ASSY. REF AMM 33-51-06. OPS CHECK GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024043079874",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS INOP."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACED BATTERY PACK AND CHARGER ASSY."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 136,
+          "prompt_tokens": 1060,
+          "total_tokens": 1196,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.703,
+        "model_called": true,
+        "working_context_chars": 5086,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024043079874",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS INOP."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED BATTERY PACK AND CHARGER ASSY."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024043079874",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS INOP."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED BATTERY PACK AND CHARGER ASSY."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024043079874",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 48,
+              "quote": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 54,
+              "quote": "RH AFT POWER SUPPLY CHARGER FOR EMERGENCY LIGHTS INOP.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 60,
+              "end": 99,
+              "quote": "REPLACED BATTERY PACK AND CHARGER ASSY.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 19992,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024072617625"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2057,
+          "total_tokens": 2088,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.14,
+        "model_called": true,
+        "working_context_chars": 7576,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024072617625",
+          "event_date": "2024-07-25",
+          "asset_id": "FAA:[\"BOEING\",\"28013\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 35742,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE) INOP<[01] REMOVED; REPLACED AND PERFORMED GOOD FUNCTIONAL TEST OF EMERGENCY BATTERY PACKS M1668 AND M1669 PER AMM 33-51-06-960-805;[02] PARTIAL WORK STEP 1;[03] VERIFIED STEP 1 COMPLETE;[04] VERIFIED ACTION 1.<BR>JOB COMPLETE.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024072617625",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE)"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE) INOP"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACED AND PERFORMED GOOD FUNCTIONAL TEST OF EMERGENCY BATTERY PACKS M1668 AND M1669 PER AMM 33-51-06-960-805;[02] PARTIAL WORK STEP 1;[03] VERIFIED STEP 1 COMPLETE;[04] VERIFIED ACTION 1."
+              }
+            },
+            "action_status": "verified"
+          }
+        },
+        "usage": {
+          "completion_tokens": 214,
+          "prompt_tokens": 1126,
+          "total_tokens": 1340,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 3.875,
+        "model_called": true,
+        "working_context_chars": 5229,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024072617625",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE)"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE) INOP"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED AND PERFORMED GOOD FUNCTIONAL TEST OF EMERGENCY BATTERY PACKS M1668 AND M1669 PER AMM 33-51-06-960-805;[02] PARTIAL WORK STEP 1;[03] VERIFIED STEP 1 COMPLETE;[04] VERIFIED ACTION 1."
+                }
+              },
+              "action_status": "verified"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024072617625",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE)"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE) INOP"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED AND PERFORMED GOOD FUNCTIONAL TEST OF EMERGENCY BATTERY PACKS M1668 AND M1669 PER AMM 33-51-06-960-805;[02] PARTIAL WORK STEP 1;[03] VERIFIED STEP 1 COMPLETE;[04] VERIFIED ACTION 1."
+                  }
+                },
+                "action_status": "verified"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "SWAA2024072617625",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 49,
+              "quote": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE)",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 54,
+              "quote": "EMERGENCY LIGHTS AT OVERWING EXITS (LH & RH SIDE) INOP",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 69,
+              "end": 259,
+              "quote": "REPLACED AND PERFORMED GOOD FUNCTIONAL TEST OF EMERGENCY BATTERY PACKS M1668 AND M1669 PER AMM 33-51-06-960-805;[02] PARTIAL WORK STEP 1;[03] VERIFIED STEP 1 COMPLETE;[04] VERIFIED ACTION 1.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "verified",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 35742,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "SWAA2024043079874",
+              "SWAA2024072617625"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 49,
+          "prompt_tokens": 2609,
+          "total_tokens": 2658,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.641,
+        "model_called": true,
+        "working_context_chars": 9009,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "SWAA2024043079874",
+            "SWAA2024072617625"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "SWAA2024043079874",
+      "SWAA2024072617625"
+    ],
+    "proposal_count": 2,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 7,
+    "elapsed_seconds": 11.625,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 7,
+    "responses_received": 7,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 11204,
+    "known_output_tokens": 498,
+    "known_total_tokens": 11702,
+    "known_cached_input_tokens": 5879
+  }
+}

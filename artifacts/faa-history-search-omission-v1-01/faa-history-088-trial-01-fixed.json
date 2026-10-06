@@ -1,0 +1,849 @@
+{
+  "batch_id": "283cd43f51c83af58ec9fb06b82aaeefa1be4dd5972cb57137b0fb1258852caa",
+  "candidate_id": "faa-history-088",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'BATTERY'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BATTERY",
+  "input_record_ids": [
+    "DXTA2024020510795",
+    "DXTA2024041111466",
+    "DXTA2024050611682",
+    "DXTR2024070400001",
+    "DXTR2024070401"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BATTERY",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'BATTERY'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"TEXTRN\",\"7000083\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 5,
+    "selected_record_count": 5,
+    "steps": 8,
+    "model_calls": 3,
+    "elapsed_seconds": 7.907,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v2",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "DXTA2024020510795",
+          "date": "2024-02-02",
+          "asset_id": "FAA:[\"TEXTRN\",\"7000083\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 52,
+              "end": 84,
+              "quote": "MERGENCY LIGHT BATTERY PACKS LEF",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 35,
+              "quote": "EMER LTS DON'T HOLD CHARGE.  REMOVE",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 37,
+              "end": 145,
+              "quote": "DEFECTIVE AFT EMERGENCY LIGHT BATTERY PACKS LEFT  AND RIGHT AND INSTALLED CUSTOMER SUPPLIED REPAIRED LEFT BA",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "DXTA2024020510795",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 4628
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "EMER LTS DON'T HOLD CHARGE.  REMOVED DEFECTIVE AFT EMERGENCY LIGHT BATTERY PACKS LEFT  AND RIGHT AND INSTALLED CUSTOMER SUPPLIED REPAIRED LEFT BATTERY PACK AND RIGHT IAW AMM 33-50-05. OPS CHECK GOOD."
+          }
+        },
+        {
+          "record_id": "DXTA2024050611682",
+          "date": "2024-05-04",
+          "asset_id": "FAA:[\"TEXTRN\",\"7000083\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 494,
+              "end": 520,
+              "quote": "#1 EMERGENCY LIGHT BATTERY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 78,
+              "quote": "EMERGENCY LIGHTING WORKS IN THE ON MODE, BUT DOES NOT WORK IN THE ARMED  MODE.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 522,
+              "end": 623,
+              "quote": "REMOVED AND REPLACED FORWARD(#1) EMERGENCY BATTERY PACK IAW AMM 33-50-07 OPS CHECK GOOD AT THIS TIME.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "DXTA2024050611682",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20563
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "EMERGENCY LIGHTING WORKS IN THE ON MODE, BUT DOES NOT WORK IN THE ARMED  MODE.  ACCOMPLISHED CHECKLIST (25X )TWICE PER THE CHECKLIST. PROBLEM STILL EXISTED, CONTACTED MAINTENANCE. THEY ADVISE THAT THE NUMBER ONE BATTERY IS LOW. PERFORMED EMERGENCY BATTERY ADJUSTMENT TEST IAW CESSNA AMM 33-50-00 SYSTEM OPS CHECK GOOD WITH NO DEFECTS NOTED. NOTIFIED MCC BECKY OFF FINDINGS. SHE STATED THAT CREW HAD COMPLAINED OF THE FAULT PREVIOUSLY, BUT HAD ONLY WRITTEN IT UP TODAY. MCC ELECTS TO CHANGE THE #1 EMERGENCY LIGHT BATTERY. REMOVED AND REPLACED FORWARD(#1) EMERGENCY BATTERY PACK IAW AMM 33-50-07 OPS CHECK GOOD AT THIS TIME."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-02-02 | record DXTA2024020510795\nSource: SDR-2024.csv, CSV row 4628, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: MERGENCY LIGHT BATTERY PACKS LEF [record=DXTA2024020510795; field=narrative_raw; offsets=52:84]\nproblem: EMER LTS DON'T HOLD CHARGE.  REMOVE [record=DXTA2024020510795; field=narrative_raw; offsets=0:35]\naction: DEFECTIVE AFT EMERGENCY LIGHT BATTERY PACKS LEFT  AND RIGHT AND INSTALLED CUSTOMER SUPPLIED REPAIRED LEFT BA [record=DXTA2024020510795; field=narrative_raw; offsets=37:145]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): EMER LTS DON'T HOLD CHARGE.  REMOVED DEFECTIVE AFT EMERGENCY LIGHT BATTERY PACKS LEFT  AND RIGHT AND INSTALLED CUSTOMER SUPPLIED REPAIRED LEFT BATTERY PACK AND RIGHT IAW AMM 33-50-05. OPS CHECK GOOD.\n\n2024-05-04 | record DXTA2024050611682\nSource: SDR-2024.csv, CSV row 20563, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: #1 EMERGENCY LIGHT BATTERY [record=DXTA2024050611682; field=narrative_raw; offsets=494:520]\nproblem: EMERGENCY LIGHTING WORKS IN THE ON MODE, BUT DOES NOT WORK IN THE ARMED  MODE. [record=DXTA2024050611682; field=narrative_raw; offsets=0:78]\naction: REMOVED AND REPLACED FORWARD(#1) EMERGENCY BATTERY PACK IAW AMM 33-50-07 OPS CHECK GOOD AT THIS TIME. [record=DXTA2024050611682; field=narrative_raw; offsets=522:623]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): EMERGENCY LIGHTING WORKS IN THE ON MODE, BUT DOES NOT WORK IN THE ARMED  MODE.  ACCOMPLISHED CHECKLIST (25X )TWICE PER THE CHECKLIST. PROBLEM STILL EXISTED, CONTACTED MAINTENANCE. THEY ADVISE THAT THE NUMBER ONE BATTERY IS LOW. PERFORMED EMERGENCY BATTERY ADJUSTMENT TEST IAW CESSNA AMM 33-50-00 SYSTEM OPS CHECK GOOD WITH NO DEFECTS NOTED. NOTIFIED MCC BECKY OFF FINDINGS. SHE STATED THAT CREW HAD COMPLAINED OF THE FAULT PREVIOUSLY, BUT HAD ONLY WRITTEN IT UP TODAY. MCC ELECTS TO CHANGE THE #1 EMERGENCY LIGHT BATTERY. REMOVED AND REPLACED FORWARD(#1) EMERGENCY BATTERY PACK IAW AMM 33-50-07 OPS CHECK GOOD AT THIS TIME.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "DXTA2024020510795",
+        "event_date": "2024-02-02",
+        "asset_id": "FAA:[\"TEXTRN\",\"7000083\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 4628,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "EMER LTS DON'T HOLD CHARGE.  REMOVED DEFECTIVE AFT EMERGENCY LIGHT BATTERY PACKS LEFT  AND RIGHT AND INSTALLED CUSTOMER SUPPLIED REPAIRED LEFT BATTERY PACK AND RIGHT IAW AMM 33-50-05. OPS CHECK GOOD.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "DXTA2024050611682",
+        "event_date": "2024-05-04",
+        "asset_id": "FAA:[\"TEXTRN\",\"7000083\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 20563,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "EMERGENCY LIGHTING WORKS IN THE ON MODE, BUT DOES NOT WORK IN THE ARMED  MODE.  ACCOMPLISHED CHECKLIST (25X )TWICE PER THE CHECKLIST. PROBLEM STILL EXISTED, CONTACTED MAINTENANCE. THEY ADVISE THAT THE NUMBER ONE BATTERY IS LOW. PERFORMED EMERGENCY BATTERY ADJUSTMENT TEST IAW CESSNA AMM 33-50-00 SYSTEM OPS CHECK GOOD WITH NO DEFECTS NOTED. NOTIFIED MCC BECKY OFF FINDINGS. SHE STATED THAT CREW HAD COMPLAINED OF THE FAULT PREVIOUSLY, BUT HAD ONLY WRITTEN IT UP TODAY. MCC ELECTS TO CHANGE THE #1 EMERGENCY LIGHT BATTERY. REMOVED AND REPLACED FORWARD(#1) EMERGENCY BATTERY PACK IAW AMM 33-50-07 OPS CHECK GOOD AT THIS TIME.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "DXTA2024020510795",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 52,
+            "end": 84,
+            "quote": "MERGENCY LIGHT BATTERY PACKS LEF",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 35,
+            "quote": "EMER LTS DON'T HOLD CHARGE.  REMOVE",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 37,
+            "end": 145,
+            "quote": "DEFECTIVE AFT EMERGENCY LIGHT BATTERY PACKS LEFT  AND RIGHT AND INSTALLED CUSTOMER SUPPLIED REPAIRED LEFT BA",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 4628,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "DXTA2024050611682",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 494,
+            "end": 520,
+            "quote": "#1 EMERGENCY LIGHT BATTERY",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 78,
+            "quote": "EMERGENCY LIGHTING WORKS IN THE ON MODE, BUT DOES NOT WORK IN THE ARMED  MODE.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 522,
+            "end": 623,
+            "quote": "REMOVED AND REPLACED FORWARD(#1) EMERGENCY BATTERY PACK IAW AMM 33-50-07 OPS CHECK GOOD AT THIS TIME.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 20563,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 5,
+      "selected_record_count": 5,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 5,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BATTERY",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5250,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "DXTA2024020510795",
+              "asset_id": "FAA:[\"TEXTRN\",\"7000083\"]",
+              "date": "2024-02-02",
+              "score": 1.4391266915406575,
+              "excerpt": "EMER LTS DON'T HOLD CHARGE.  REMOVED DEFECTIVE AFT EMERGENCY LIGHT BATTERY PACKS LEFT  AND RIGHT AND INSTALLED CUSTOMER SUPPLIED REPAIRED LEFT BATTERY PACK AND RIGHT IAW AMM 33-50-05. OPS CHECK GOOD.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "DXTA2024050611682",
+              "asset_id": "FAA:[\"TEXTRN\",\"7000083\"]",
+              "date": "2024-05-04",
+              "score": 1.3512057682632541,
+              "excerpt": "EMERGENCY LIGHTING WORKS IN THE ON MODE, BUT DOES NOT WORK IN THE ARMED  MODE.  ACCOMPLISHED CHECKLIST (25X )TWICE PER THE CHECKLIST. PROBLEM STILL EXISTED, CONTACTED MAINTENANCE. THEY ADVISE THAT THE",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024020510795"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 6277,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024020510795",
+          "event_date": "2024-02-02",
+          "asset_id": "FAA:[\"TEXTRN\",\"7000083\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 4628,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EMER LTS DON'T HOLD CHARGE.  REMOVED DEFECTIVE AFT EMERGENCY LIGHT BATTERY PACKS LEFT  AND RIGHT AND INSTALLED CUSTOMER SUPPLIED REPAIRED LEFT BATTERY PACK AND RIGHT IAW AMM 33-50-05. OPS CHECK GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DXTA2024020510795",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "AFT EMERGENCY LIGHT BATTERY PACKS"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "EMER LTS DON'T HOLD CHARGE"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED DEFECTIVE AFT EMERGENCY LIGHT BATTERY PACKS LEFT AND RIGHT AND INSTALLED CUSTOMER SUPPLIED REPAIRED LEFT BATTERY PACK AND RIGHT IAW AMM 33-50-05"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 159,
+          "prompt_tokens": 1076,
+          "total_tokens": 1235,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 3.109,
+        "model_called": true,
+        "working_context_chars": 5152,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DXTA2024020510795",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "AFT EMERGENCY LIGHT BATTERY PACKS"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "EMER LTS DON'T HOLD CHARGE"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED DEFECTIVE AFT EMERGENCY LIGHT BATTERY PACKS LEFT AND RIGHT AND INSTALLED CUSTOMER SUPPLIED REPAIRED LEFT BATTERY PACK AND RIGHT IAW AMM 33-50-05"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DXTA2024020510795",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "AFT EMERGENCY LIGHT BATTERY PACKS"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "EMER LTS DON'T HOLD CHARGE"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED DEFECTIVE AFT EMERGENCY LIGHT BATTERY PACKS LEFT AND RIGHT AND INSTALLED CUSTOMER SUPPLIED REPAIRED LEFT BATTERY PACK AND RIGHT IAW AMM 33-50-05"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DXTA2024020510795",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 52,
+                "end": 84
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 35
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 37,
+                "end": 145
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 120,
+          "prompt_tokens": 1308,
+          "total_tokens": 1428,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.078,
+        "model_called": true,
+        "working_context_chars": 5997,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DXTA2024020510795",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 52,
+                  "end": 84
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 35
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 37,
+                  "end": 145
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DXTA2024020510795",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 52,
+                    "end": 84
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 35
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 37,
+                    "end": 145
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "DXTA2024020510795",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 52,
+              "end": 84,
+              "quote": "MERGENCY LIGHT BATTERY PACKS LEF",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 35,
+              "quote": "EMER LTS DON'T HOLD CHARGE.  REMOVE",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 37,
+              "end": 145,
+              "quote": "DEFECTIVE AFT EMERGENCY LIGHT BATTERY PACKS LEFT  AND RIGHT AND INSTALLED CUSTOMER SUPPLIED REPAIRED LEFT BA",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 4628,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "DXTA2024050611682"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 8366,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "DXTA2024050611682",
+          "event_date": "2024-05-04",
+          "asset_id": "FAA:[\"TEXTRN\",\"7000083\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20563,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "EMERGENCY LIGHTING WORKS IN THE ON MODE, BUT DOES NOT WORK IN THE ARMED  MODE.  ACCOMPLISHED CHECKLIST (25X )TWICE PER THE CHECKLIST. PROBLEM STILL EXISTED, CONTACTED MAINTENANCE. THEY ADVISE THAT THE NUMBER ONE BATTERY IS LOW. PERFORMED EMERGENCY BATTERY ADJUSTMENT TEST IAW CESSNA AMM 33-50-00 SYSTEM OPS CHECK GOOD WITH NO DEFECTS NOTED. NOTIFIED MCC BECKY OFF FINDINGS. SHE STATED THAT CREW HAD COMPLAINED OF THE FAULT PREVIOUSLY, BUT HAD ONLY WRITTEN IT UP TODAY. MCC ELECTS TO CHANGE THE #1 EMERGENCY LIGHT BATTERY. REMOVED AND REPLACED FORWARD(#1) EMERGENCY BATTERY PACK IAW AMM 33-50-07 OPS CHECK GOOD AT THIS TIME.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "DXTA2024050611682",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "#1 EMERGENCY LIGHT BATTERY"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "EMERGENCY LIGHTING WORKS IN THE ON MODE, BUT DOES NOT WORK IN THE ARMED  MODE."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED FORWARD(#1) EMERGENCY BATTERY PACK IAW AMM 33-50-07 OPS CHECK GOOD AT THIS TIME."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 159,
+          "prompt_tokens": 1210,
+          "total_tokens": 1369,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.704,
+        "model_called": true,
+        "working_context_chars": 5576,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "DXTA2024050611682",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "#1 EMERGENCY LIGHT BATTERY"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "EMERGENCY LIGHTING WORKS IN THE ON MODE, BUT DOES NOT WORK IN THE ARMED  MODE."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED FORWARD(#1) EMERGENCY BATTERY PACK IAW AMM 33-50-07 OPS CHECK GOOD AT THIS TIME."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "DXTA2024050611682",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "#1 EMERGENCY LIGHT BATTERY"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "EMERGENCY LIGHTING WORKS IN THE ON MODE, BUT DOES NOT WORK IN THE ARMED  MODE."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED FORWARD(#1) EMERGENCY BATTERY PACK IAW AMM 33-50-07 OPS CHECK GOOD AT THIS TIME."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "DXTA2024050611682",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 494,
+              "end": 520,
+              "quote": "#1 EMERGENCY LIGHT BATTERY",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 78,
+              "quote": "EMERGENCY LIGHTING WORKS IN THE ON MODE, BUT DOES NOT WORK IN THE ARMED  MODE.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 522,
+              "end": 623,
+              "quote": "REMOVED AND REPLACED FORWARD(#1) EMERGENCY BATTERY PACK IAW AMM 33-50-07 OPS CHECK GOOD AT THIS TIME.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20563,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 7775,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 5,
+          "unstructured_record_count": 5,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "DXTA2024020510795",
+              "DXTA2024050611682"
+            ]
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 7906,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "DXTA2024020510795",
+            "DXTA2024050611682"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "DXTA2024020510795",
+      "DXTA2024050611682"
+    ],
+    "proposal_count": 2,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 3,
+    "elapsed_seconds": 7.907,
+    "errors": [
+      {
+        "step": 3,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 3,
+    "responses_received": 3,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 3594,
+    "known_output_tokens": 438,
+    "known_total_tokens": 4032,
+    "known_cached_input_tokens": 2856
+  }
+}

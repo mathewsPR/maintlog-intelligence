@@ -1,0 +1,435 @@
+{
+  "batch_id": "283cd43f51c83af58ec9fb06b82aaeefa1be4dd5972cb57137b0fb1258852caa",
+  "candidate_id": "faa-history-005",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'BATTERY PACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BATTERY PACK",
+  "input_record_ids": [
+    "IPXA2024022999856",
+    "IPXA2024071522094",
+    "IPXA2025052636411"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BATTERY PACK",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'BATTERY PACK'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"35665\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 5,
+    "model_calls": 1,
+    "elapsed_seconds": 2.922,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v2",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "IPXA2024071522094",
+          "date": "2024-07-15",
+          "asset_id": "FAA:[\"BOEING\",\"35665\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 82,
+              "end": 135,
+              "quote": "FOUND LIGHTS L1853, L1854 AND L5735 WITHOUT FUNCTION.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 136,
+              "end": 228,
+              "quote": "REPLACED AND TESTED EMERGENCY LIGHT BATTERY PACK M5170 IAW AMM 33-51-04-902-001-001 REV.110.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "IPXA2024071522094",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 32995
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "DURING PS-1 FOUND SEVERAL EMERGENCY LIGHTS WITHOUT FUNCTION. PLEASE INVESTIGATE.  FOUND LIGHTS L1853, L1854 AND L5735 WITHOUT FUNCTION. REPLACED AND TESTED EMERGENCY LIGHT BATTERY PACK M5170 IAW AMM 33-51-04-902-001-001 REV.110. FOUND SATIS."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-07-15 | record IPXA2024071522094\nSource: SDR-2024.csv, CSV row 32995, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: FOUND LIGHTS L1853, L1854 AND L5735 WITHOUT FUNCTION. [record=IPXA2024071522094; field=narrative_raw; offsets=82:135]\naction: REPLACED AND TESTED EMERGENCY LIGHT BATTERY PACK M5170 IAW AMM 33-51-04-902-001-001 REV.110. [record=IPXA2024071522094; field=narrative_raw; offsets=136:228]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): DURING PS-1 FOUND SEVERAL EMERGENCY LIGHTS WITHOUT FUNCTION. PLEASE INVESTIGATE.  FOUND LIGHTS L1853, L1854 AND L5735 WITHOUT FUNCTION. REPLACED AND TESTED EMERGENCY LIGHT BATTERY PACK M5170 IAW AMM 33-51-04-902-001-001 REV.110. FOUND SATIS.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "IPXA2024071522094",
+        "event_date": "2024-07-15",
+        "asset_id": "FAA:[\"BOEING\",\"35665\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 32995,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "DURING PS-1 FOUND SEVERAL EMERGENCY LIGHTS WITHOUT FUNCTION. PLEASE INVESTIGATE.  FOUND LIGHTS L1853, L1854 AND L5735 WITHOUT FUNCTION. REPLACED AND TESTED EMERGENCY LIGHT BATTERY PACK M5170 IAW AMM 33-51-04-902-001-001 REV.110. FOUND SATIS.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "IPXA2024071522094",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 82,
+            "end": 135,
+            "quote": "FOUND LIGHTS L1853, L1854 AND L5735 WITHOUT FUNCTION.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 136,
+            "end": 228,
+            "quote": "REPLACED AND TESTED EMERGENCY LIGHT BATTERY PACK M5170 IAW AMM 33-51-04-902-001-001 REV.110.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 32995,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BATTERY PACK",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5258,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "IPXA2024071522094",
+              "asset_id": "FAA:[\"BOEING\",\"35665\"]",
+              "date": "2024-07-15",
+              "score": 2.014996652712912,
+              "excerpt": "DURING PS-1 FOUND SEVERAL EMERGENCY LIGHTS WITHOUT FUNCTION. PLEASE INVESTIGATE.  FOUND LIGHTS L1853, L1854 AND L5735 WITHOUT FUNCTION. REPLACED AND TESTED EMERGENCY LIGHT BATTERY PACK M5170 IAW AMM 3",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "IPXA2024071522094"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 5825,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "IPXA2024071522094",
+          "event_date": "2024-07-15",
+          "asset_id": "FAA:[\"BOEING\",\"35665\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 32995,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "DURING PS-1 FOUND SEVERAL EMERGENCY LIGHTS WITHOUT FUNCTION. PLEASE INVESTIGATE.  FOUND LIGHTS L1853, L1854 AND L5735 WITHOUT FUNCTION. REPLACED AND TESTED EMERGENCY LIGHT BATTERY PACK M5170 IAW AMM 33-51-04-902-001-001 REV.110. FOUND SATIS.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "IPXA2024071522094",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FOUND LIGHTS L1853, L1854 AND L5735 WITHOUT FUNCTION."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REPLACED AND TESTED EMERGENCY LIGHT BATTERY PACK M5170 IAW AMM 33-51-04-902-001-001 REV.110."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 153,
+          "prompt_tokens": 1361,
+          "total_tokens": 1514,
+          "prompt_tokens_details": {
+            "cached_tokens": 1165
+          }
+        },
+        "model_seconds": 2.922,
+        "model_called": true,
+        "working_context_chars": 5194,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "IPXA2024071522094",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FOUND LIGHTS L1853, L1854 AND L5735 WITHOUT FUNCTION."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REPLACED AND TESTED EMERGENCY LIGHT BATTERY PACK M5170 IAW AMM 33-51-04-902-001-001 REV.110."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "IPXA2024071522094",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FOUND LIGHTS L1853, L1854 AND L5735 WITHOUT FUNCTION."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REPLACED AND TESTED EMERGENCY LIGHT BATTERY PACK M5170 IAW AMM 33-51-04-902-001-001 REV.110."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "IPXA2024071522094",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 82,
+              "end": 135,
+              "quote": "FOUND LIGHTS L1853, L1854 AND L5735 WITHOUT FUNCTION.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 136,
+              "end": 228,
+              "quote": "REPLACED AND TESTED EMERGENCY LIGHT BATTERY PACK M5170 IAW AMM 33-51-04-902-001-001 REV.110.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 32995,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 7041,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "IPXA2024071522094"
+            ]
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 7268,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "IPXA2024071522094"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "IPXA2024071522094"
+    ],
+    "proposal_count": 1,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 1,
+    "elapsed_seconds": 2.922,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 1,
+    "responses_received": 1,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 1361,
+    "known_output_tokens": 153,
+    "known_total_tokens": 1514,
+    "known_cached_input_tokens": 1165
+  }
+}

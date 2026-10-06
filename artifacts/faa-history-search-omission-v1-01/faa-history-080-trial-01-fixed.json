@@ -1,0 +1,414 @@
+{
+  "batch_id": "283cd43f51c83af58ec9fb06b82aaeefa1be4dd5972cb57137b0fb1258852caa",
+  "candidate_id": "faa-history-080",
+  "trial": 1,
+  "workflow": "fixed",
+  "question": "Review this aircraft's reports concerning 'PROXIMITY SWITCH'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "PROXIMITY SWITCH",
+  "input_record_ids": [
+    "4DPA2024031700001",
+    "4DPA2024051900001",
+    "4DPA2024052400001",
+    "4DPA2024090300001"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "fixed-workflow/local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "PROXIMITY SWITCH",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'PROXIMITY SWITCH'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"EMB\",\"145211\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 4,
+    "selected_record_count": 4,
+    "steps": 4,
+    "model_calls": 2,
+    "elapsed_seconds": 5.047,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [],
+    "aggregate": null,
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "PROXIMITY SWITCH",
+            "top_k": 5
+          }
+        },
+        "usage": {},
+        "model_seconds": null,
+        "model_called": false,
+        "working_context_chars": 5264,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "4DPA2024031700001",
+              "asset_id": "FAA:[\"EMB\",\"145211\"]",
+              "date": "2024-03-17",
+              "score": 2.267816632966576,
+              "excerpt": "CREW REPORTED- AFTER TAKEOFF, POSITIVE RATE I CALLED GEAR UP. MOMENTS LATER LDG GEAR LEVER DISAGREE  WITH NOSE GEAR INDICATING NEITHER GEAR UP OR DOWN. RAN QRH AND CYCLED GEAR , NO GOOD. DECLARED EMER",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "4DPA2024052400001",
+              "asset_id": "FAA:[\"EMB\",\"145211\"]",
+              "date": "2024-05-24",
+              "score": 0.6965174261704475,
+              "excerpt": "CREW REPORTED-UPON ROTATION WE RECEIVED A LANDING GEAR AIR TO GROUND FAIL EICAS MESSAGE. TRIED TO MOVE THE LANDING GEAR LEVER UP AND IT WAS STUCK AND WOULD NOT RAISE. WE RAN THE QRH FOR THE EICAS MESS",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "4DPA2024051900001",
+              "asset_id": "FAA:[\"EMB\",\"145211\"]",
+              "date": "2024-05-19",
+              "score": 0.5927603475133325,
+              "excerpt": "CREW REPORTED-LG/ LEVER DISAGREE - WARNING MSG AND TRIPE CHIME DURING CLIMB PASSING 3,000 JUST AFTER TAKE OFF. AFTER SAFE ALTITUDE RAN QRH PER GUIDANCE RECYCLED GEAR. LDG INDICATORS WENT FROM WHITE TO",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "4DPA2024031700001"
+          }
+        },
+        "usage": {},
+        "model_seconds": 0,
+        "model_called": false,
+        "working_context_chars": 6735,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "4DPA2024031700001",
+          "event_date": "2024-03-17",
+          "asset_id": "FAA:[\"EMB\",\"145211\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 13185,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "CREW REPORTED- AFTER TAKEOFF, POSITIVE RATE I CALLED GEAR UP. MOMENTS LATER LDG GEAR LEVER DISAGREE  WITH NOSE GEAR INDICATING NEITHER GEAR UP OR DOWN. RAN QRH AND CYCLED GEAR , NO GOOD. DECLARED EMERGENCY AND RETURNED TO KLAS WITH NO FURTHER INCIDENT. CORR ACTION- MX FOUND LANDING GEAR LEVER DISAGREE AND NO INDICATION ON NOSE LANDING GEAR. DURING INSPECTION OF NLG FOUND ONE PROXIMITY SWITCH ON THE LG UPCLOCK PROXIMITY SWITCH FACE BROKEN, AND THE SECOND LG UPCLOCK PROXIMITY SWITCH GAP DISTANCE WAS O/O/L. OPS CHECK GOOD AT THIS TIME, GEAR SWING WAS COMPLIED WITH, NO FAULTS AT THIS TIME.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "4DPA2024031700001",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "LG UPCLOCK PROXIMITY SWITCH"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "LG UPCLOCK PROXIMITY SWITCH FACE BROKEN"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "MX FOUND LANDING GEAR LEVER DISAGREE AND NO INDICATION ON NOSE LANDING GEAR"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 134,
+          "prompt_tokens": 1190,
+          "total_tokens": 1324,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.547,
+        "model_called": true,
+        "working_context_chars": 5545,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "4DPA2024031700001",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "LG UPCLOCK PROXIMITY SWITCH"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "LG UPCLOCK PROXIMITY SWITCH FACE BROKEN"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "MX FOUND LANDING GEAR LEVER DISAGREE AND NO INDICATION ON NOSE LANDING GEAR"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "4DPA2024031700001",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "LG UPCLOCK PROXIMITY SWITCH"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "LG UPCLOCK PROXIMITY SWITCH FACE BROKEN"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "MX FOUND LANDING GEAR LEVER DISAGREE AND NO INDICATION ON NOSE LANDING GEAR"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "4DPA2024031700001",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 402,
+                "end": 429
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 402,
+                "end": 441
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 266,
+                "end": 341
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 126,
+          "prompt_tokens": 1846,
+          "total_tokens": 1972,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.484,
+        "model_called": true,
+        "working_context_chars": 6320,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": {
+            "component": [
+              {
+                "field": "narrative_raw",
+                "start": 402,
+                "end": 429,
+                "quote": "LG UPCLOCK PROXIMITY SWITCH",
+                "surrounding_text": " DURING INSPECTION OF NLG FOUND ONE PROXIMITY SWITCH ON THE LG UPCLOCK PROXIMITY SWITCH FACE BROKEN, AND THE SECOND LG UPCLOCK PROXIMITY SWITCH GAP"
+              },
+              {
+                "field": "narrative_raw",
+                "start": 458,
+                "end": 485,
+                "quote": "LG UPCLOCK PROXIMITY SWITCH",
+                "surrounding_text": "THE LG UPCLOCK PROXIMITY SWITCH FACE BROKEN, AND THE SECOND LG UPCLOCK PROXIMITY SWITCH GAP DISTANCE WAS O/O/L. OPS CHECK GOOD AT THIS TIME, GEAR S"
+              }
+            ],
+            "problem": [
+              {
+                "field": "narrative_raw",
+                "start": 402,
+                "end": 441,
+                "quote": "LG UPCLOCK PROXIMITY SWITCH FACE BROKEN",
+                "surrounding_text": " DURING INSPECTION OF NLG FOUND ONE PROXIMITY SWITCH ON THE LG UPCLOCK PROXIMITY SWITCH FACE BROKEN, AND THE SECOND LG UPCLOCK PROXIMITY SWITCH GAP DISTANCE WA"
+              }
+            ],
+            "action": [
+              {
+                "field": "narrative_raw",
+                "start": 266,
+                "end": 341,
+                "quote": "MX FOUND LANDING GEAR LEVER DISAGREE AND NO INDICATION ON NOSE LANDING GEAR",
+                "surrounding_text": "AND RETURNED TO KLAS WITH NO FURTHER INCIDENT. CORR ACTION- MX FOUND LANDING GEAR LEVER DISAGREE AND NO INDICATION ON NOSE LANDING GEAR. DURING INSPECTION OF NLG FOUND ONE PROXIMITY SWITCH ON THE"
+              }
+            ]
+          },
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "4DPA2024031700001",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 402,
+                  "end": 429
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 402,
+                  "end": 441
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 266,
+                  "end": 341
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "4DPA2024031700001",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 402,
+                    "end": 429
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 402,
+                    "end": 441
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 266,
+                    "end": 341
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'MX FOUND LANDING GEAR LEVER DISAGREE AND NO INDICATION ON NOSE LANDING GEAR'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 0,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 2,
+    "elapsed_seconds": 5.047,
+    "errors": [
+      {
+        "step": 3,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      },
+      {
+        "step": 4,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'MX FOUND LANDING GEAR LEVER DISAGREE AND NO INDICATION ON NOSE LANDING GEAR'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 2,
+    "responses_received": 2,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 3036,
+    "known_output_tokens": 260,
+    "known_total_tokens": 3296,
+    "known_cached_input_tokens": 1282
+  }
+}

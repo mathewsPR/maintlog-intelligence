@@ -1,0 +1,876 @@
+{
+  "batch_id": "283cd43f51c83af58ec9fb06b82aaeefa1be4dd5972cb57137b0fb1258852caa",
+  "candidate_id": "faa-history-058",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'ACCESS DOOR'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "ACCESS DOOR",
+  "input_record_ids": [
+    "GTIA2024050738105",
+    "GTIA2024050738106",
+    "GTIA2024110838508"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "ACCESS DOOR",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'ACCESS DOOR'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"AIRBUS\",\"8376\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 8,
+    "model_calls": 8,
+    "elapsed_seconds": 12.39,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [
+      "GTIA2024050738106"
+    ],
+    "history_review": {
+      "status": "needs_evidence_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v2",
+        "status": "concerns_detected",
+        "concerns": [
+          {
+            "record_id": "GTIA2024050738106",
+            "field": "action",
+            "code": "possible_omitted_work",
+            "message": "No action excerpt was selected, but the source contains unnegated performed-work wording. Reconsider the relevant action once. Select an exact excerpt or retain null if it does not support the requested maintenance event. Keep unknown status during this evidence-only revision.",
+            "source_fields": [
+              "narrative_raw"
+            ]
+          }
+        ],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "GTIA2024050738105",
+          "date": "2024-05-05",
+          "asset_id": "FAA:[\"AIRBUS\",\"8376\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 33,
+              "quote": "THS MAINTENANCE ACCESS DOOR 314AR",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 34,
+              "end": 53,
+              "quote": "HAS BENT FWD CORNER",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 54,
+              "end": 142,
+              "quote": "ACCOMPLISHED REPAIR OF THS ACCESS DOR 314AR ON HAECO S.O. 122198 OPS 22436 CAT A REPAIR.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "GTIA2024050738105",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20882
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "THS MAINTENANCE ACCESS DOOR 314AR HAS BENT FWD CORNER-ACCOMPLISHED REPAIR OF THS ACCESS DOR 314AR ON HAECO S.O. 122198 OPS 22436 CAT A REPAIR. NO RE-INSPECT REQUIRED PER RDAF 813 93666/010/2024 #A"
+          }
+        },
+        {
+          "record_id": "GTIA2024050738106",
+          "date": "2024-05-05",
+          "asset_id": "FAA:[\"AIRBUS\",\"8376\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 74,
+              "quote": "INSIDE CABIN AFT WET AREA-R-2 DOOR SILL HAS CORROSION AROUND NUTPLATE HOLE",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "citation": {
+            "record_id": "GTIA2024050738106",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20883
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "INSIDE CABIN AFT WET AREA-R-2 DOOR SILL HAS CORROSION AROUND NUTPLATE HOLE. FR 68 STR 23R-REPAIRED AREA INSIDE CABIN AFT WET AREA R-2 DOOR SILL BEAM FR 68 STR 23R IAW A320 SRM 53-41-14-300-001"
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\nEvidence review required: unresolved extraction concerns.\n\n2024-05-05 | record GTIA2024050738105\nSource: SDR-2024.csv, CSV row 20882, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: THS MAINTENANCE ACCESS DOOR 314AR [record=GTIA2024050738105; field=narrative_raw; offsets=0:33]\nproblem: HAS BENT FWD CORNER [record=GTIA2024050738105; field=narrative_raw; offsets=34:53]\naction: ACCOMPLISHED REPAIR OF THS ACCESS DOR 314AR ON HAECO S.O. 122198 OPS 22436 CAT A REPAIR. [record=GTIA2024050738105; field=narrative_raw; offsets=54:142]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): THS MAINTENANCE ACCESS DOOR 314AR HAS BENT FWD CORNER-ACCOMPLISHED REPAIR OF THS ACCESS DOR 314AR ON HAECO S.O. 122198 OPS 22436 CAT A REPAIR. NO RE-INSPECT REQUIRED PER RDAF 813 93666/010/2024 #A\n\n2024-05-05 | record GTIA2024050738106\nSource: SDR-2024.csv, CSV row 20883, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: INSIDE CABIN AFT WET AREA-R-2 DOOR SILL HAS CORROSION AROUND NUTPLATE HOLE [record=GTIA2024050738106; field=narrative_raw; offsets=0:74]\naction: no extracted proposal\nAction status proposal: unknown\nFull source (narrative_raw, verbatim): INSIDE CABIN AFT WET AREA-R-2 DOOR SILL HAS CORROSION AROUND NUTPLATE HOLE. FR 68 STR 23R-REPAIRED AREA INSIDE CABIN AFT WET AREA R-2 DOOR SILL BEAM FR 68 STR 23R IAW A320 SRM 53-41-14-300-001\n\nExtraction concerns:\nGTIA2024050738106 / action: No action excerpt was selected, but the source contains unnegated performed-work wording. Reconsider the relevant action once. Select an exact excerpt or retain null if it does not support the requested maintenance event. Keep unknown status during this evidence-only revision.\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "GTIA2024050738105",
+        "event_date": "2024-05-05",
+        "asset_id": "FAA:[\"AIRBUS\",\"8376\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 20882,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "THS MAINTENANCE ACCESS DOOR 314AR HAS BENT FWD CORNER-ACCOMPLISHED REPAIR OF THS ACCESS DOR 314AR ON HAECO S.O. 122198 OPS 22436 CAT A REPAIR. NO RE-INSPECT REQUIRED PER RDAF 813 93666/010/2024 #A",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "GTIA2024050738106",
+        "event_date": "2024-05-05",
+        "asset_id": "FAA:[\"AIRBUS\",\"8376\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 20883,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "INSIDE CABIN AFT WET AREA-R-2 DOOR SILL HAS CORROSION AROUND NUTPLATE HOLE. FR 68 STR 23R-REPAIRED AREA INSIDE CABIN AFT WET AREA R-2 DOOR SILL BEAM FR 68 STR 23R IAW A320 SRM 53-41-14-300-001",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "GTIA2024050738105",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 33,
+            "quote": "THS MAINTENANCE ACCESS DOOR 314AR",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 34,
+            "end": 53,
+            "quote": "HAS BENT FWD CORNER",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 54,
+            "end": 142,
+            "quote": "ACCOMPLISHED REPAIR OF THS ACCESS DOR 314AR ON HAECO S.O. 122198 OPS 22436 CAT A REPAIR.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 20882,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "GTIA2024050738106",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 74,
+            "quote": "INSIDE CABIN AFT WET AREA-R-2 DOOR SILL HAS CORROSION AROUND NUTPLATE HOLE",
+            "source_column": "Discrepancy"
+          },
+          "action": null
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 20883,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "ACCESS DOOR",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 1110,
+          "total_tokens": 1135,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.75,
+        "model_called": true,
+        "working_context_chars": 5255,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "GTIA2024050738105",
+              "asset_id": "FAA:[\"AIRBUS\",\"8376\"]",
+              "date": "2024-05-05",
+              "score": 1.7730821962547008,
+              "excerpt": "THS MAINTENANCE ACCESS DOOR 314AR HAS BENT FWD CORNER-ACCOMPLISHED REPAIR OF THS ACCESS DOR 314AR ON HAECO S.O. 122198 OPS 22436 CAT A REPAIR. NO RE-INSPECT REQUIRED PER RDAF 813 93666/010/2024 #A",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "GTIA2024050738106",
+              "asset_id": "FAA:[\"AIRBUS\",\"8376\"]",
+              "date": "2024-05-05",
+              "score": 0.6254156509402173,
+              "excerpt": "INSIDE CABIN AFT WET AREA-R-2 DOOR SILL HAS CORROSION AROUND NUTPLATE HOLE. FR 68 STR 23R-REPAIRED AREA INSIDE CABIN AFT WET AREA R-2 DOOR SILL BEAM FR 68 STR 23R IAW A320 SRM 53-41-14-300-001",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1640,
+          "total_tokens": 1652,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.656,
+        "model_called": true,
+        "working_context_chars": 6266,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "GTIA2024050738105"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1700,
+          "total_tokens": 1731,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.969,
+        "model_called": true,
+        "working_context_chars": 6493,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "GTIA2024050738105",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"AIRBUS\",\"8376\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20882,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "THS MAINTENANCE ACCESS DOOR 314AR HAS BENT FWD CORNER-ACCOMPLISHED REPAIR OF THS ACCESS DOR 314AR ON HAECO S.O. 122198 OPS 22436 CAT A REPAIR. NO RE-INSPECT REQUIRED PER RDAF 813 93666/010/2024 #A",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "GTIA2024050738105",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "THS MAINTENANCE ACCESS DOOR 314AR"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "HAS BENT FWD CORNER"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "ACCOMPLISHED REPAIR OF THS ACCESS DOR 314AR ON HAECO S.O. 122198 OPS 22436 CAT A REPAIR."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 155,
+          "prompt_tokens": 1105,
+          "total_tokens": 1260,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 3.156,
+        "model_called": true,
+        "working_context_chars": 5149,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "GTIA2024050738105",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "THS MAINTENANCE ACCESS DOOR 314AR"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "HAS BENT FWD CORNER"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "ACCOMPLISHED REPAIR OF THS ACCESS DOR 314AR ON HAECO S.O. 122198 OPS 22436 CAT A REPAIR."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "GTIA2024050738105",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "THS MAINTENANCE ACCESS DOOR 314AR"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "HAS BENT FWD CORNER"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "ACCOMPLISHED REPAIR OF THS ACCESS DOR 314AR ON HAECO S.O. 122198 OPS 22436 CAT A REPAIR."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "GTIA2024050738105",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 33,
+              "quote": "THS MAINTENANCE ACCESS DOOR 314AR",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 34,
+              "end": 53,
+              "quote": "HAS BENT FWD CORNER",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 54,
+              "end": 142,
+              "quote": "ACCOMPLISHED REPAIR OF THS ACCESS DOR 314AR ON HAECO S.O. 122198 OPS 22436 CAT A REPAIR.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20882,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "GTIA2024050738106"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2170,
+          "total_tokens": 2201,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.203,
+        "model_called": true,
+        "working_context_chars": 7689,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "GTIA2024050738106",
+          "event_date": "2024-05-05",
+          "asset_id": "FAA:[\"AIRBUS\",\"8376\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20883,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "INSIDE CABIN AFT WET AREA-R-2 DOOR SILL HAS CORROSION AROUND NUTPLATE HOLE. FR 68 STR 23R-REPAIRED AREA INSIDE CABIN AFT WET AREA R-2 DOOR SILL BEAM FR 68 STR 23R IAW A320 SRM 53-41-14-300-001",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "GTIA2024050738106",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "INSIDE CABIN AFT WET AREA-R-2 DOOR SILL HAS CORROSION AROUND NUTPLATE HOLE"
+              },
+              "action": null
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 96,
+          "prompt_tokens": 1437,
+          "total_tokens": 1533,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.281,
+        "model_called": true,
+        "working_context_chars": 5145,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "GTIA2024050738106",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "INSIDE CABIN AFT WET AREA-R-2 DOOR SILL HAS CORROSION AROUND NUTPLATE HOLE"
+                },
+                "action": null
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "GTIA2024050738106",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "INSIDE CABIN AFT WET AREA-R-2 DOOR SILL HAS CORROSION AROUND NUTPLATE HOLE"
+                  },
+                  "action": null
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "GTIA2024050738106",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 74,
+              "quote": "INSIDE CABIN AFT WET AREA-R-2 DOOR SILL HAS CORROSION AROUND NUTPLATE HOLE",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20883,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "GTIA2024050738106",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 74
+              },
+              "action": null
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 76,
+          "prompt_tokens": 1661,
+          "total_tokens": 1737,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 1.75,
+        "model_called": true,
+        "working_context_chars": 6584,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "evidence_revision": {
+          "record_id": "GTIA2024050738106",
+          "previous_proposal": {
+            "record_id": "GTIA2024050738106",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 74,
+                "quote": "INSIDE CABIN AFT WET AREA-R-2 DOOR SILL HAS CORROSION AROUND NUTPLATE HOLE",
+                "source_column": "Discrepancy"
+              },
+              "action": null
+            },
+            "action_status_proposal": "unknown",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "SDR-2024.csv",
+              "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+              "csv_row": 20883,
+              "data_kind": "user-supplied",
+              "columns": {
+                "narrative": "Discrepancy"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          },
+          "concerns": [
+            {
+              "record_id": "GTIA2024050738106",
+              "field": "action",
+              "code": "possible_omitted_work",
+              "message": "No action excerpt was selected, but the source contains unnegated performed-work wording. Reconsider the relevant action once. Select an exact excerpt or retain null if it does not support the requested maintenance event. Keep unknown status during this evidence-only revision.",
+              "source_fields": [
+                "narrative_raw"
+              ]
+            }
+          ],
+          "instruction": "Review the flagged fields against the source. Revise only those fields when justified; preserve all other fields and action_status. A warning may be a false alarm: retaining supported evidence is allowed. Do not invent evidence or remove supported fields just to clear a warning."
+        },
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "GTIA2024050738106",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 74
+                },
+                "action": null
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "GTIA2024050738106",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 74
+                  },
+                  "action": null
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "GTIA2024050738106",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 74,
+              "quote": "INSIDE CABIN AFT WET AREA-R-2 DOOR SILL HAS CORROSION AROUND NUTPLATE HOLE",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 20883,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "GTIA2024050738105",
+              "GTIA2024050738106"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 49,
+          "prompt_tokens": 2706,
+          "total_tokens": 2755,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.625,
+        "model_called": true,
+        "working_context_chars": 9134,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "GTIA2024050738105",
+            "GTIA2024050738106"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "GTIA2024050738105",
+      "GTIA2024050738106"
+    ],
+    "proposal_count": 2,
+    "history_status": "needs_evidence_review",
+    "targeted_concern_count": 1,
+    "model_calls": 8,
+    "elapsed_seconds": 12.39,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 8,
+    "responses_received": 8,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 13529,
+    "known_output_tokens": 475,
+    "known_total_tokens": 14004,
+    "known_cached_input_tokens": 5898
+  }
+}

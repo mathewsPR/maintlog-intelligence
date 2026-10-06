@@ -1,0 +1,724 @@
+{
+  "batch_id": "283cd43f51c83af58ec9fb06b82aaeefa1be4dd5972cb57137b0fb1258852caa",
+  "candidate_id": "faa-history-052",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'LANDING GEAR'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "LANDING GEAR",
+  "input_record_ids": [
+    "AALA202404018625",
+    "AALA202404038625",
+    "AALA202404305146",
+    "AALA202405025146",
+    "AALA202407157642",
+    "AALA202410147619",
+    "AALA202410157619"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "LANDING GEAR",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'LANDING GEAR'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"30906\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 7,
+    "selected_record_count": 7,
+    "steps": 7,
+    "model_calls": 7,
+    "elapsed_seconds": 9.609,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v2",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "AALA202404018625",
+          "date": "2024-03-31",
+          "asset_id": "FAA:[\"BOEING\",\"30906\"]",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 61,
+              "end": 101,
+              "quote": "ISSUES WITH MAIN LANDING GEAR RETRACTION",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "citation": {
+            "record_id": "AALA202404018625",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 14639
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "AIRCRAFT WAS GROUNDED: AN EMERGENCY WAS NOT DECLARED DUE TO: ISSUES WITH MAIN LANDING GEAR RETRACTION; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA.**SUPPLEMENTAL REPORT WILL BE SUBMITTED**(OPEN)."
+          }
+        },
+        {
+          "record_id": "AALA202404038625",
+          "date": "2024-03-31",
+          "asset_id": "FAA:[\"BOEING\",\"30906\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 73,
+              "end": 90,
+              "quote": "MAIN LANDING GEAR",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 61,
+              "end": 101,
+              "quote": "ISSUES WITH MAIN LANDING GEAR RETRACTION",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 164,
+              "end": 232,
+              "quote": "PERFORMED OPERTIONAL CHECK OF LANDING GEAR RETRACTION AND EXTENSION.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "AALA202404038625",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 15103
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "AIRCRAFT WAS GROUNDED: AN EMERGENCY WAS NOT DECLARED DUE TO: ISSUES WITH MAIN LANDING GEAR RETRACTION; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA.   PERFORMED OPERTIONAL CHECK OF LANDING GEAR RETRACTION AND EXTENSION. PER J/C 08L00007005, 08L00007004 AND AMM 32-32-00. OPERTIONAL CHECK GOOD, NO FAULT FOUND."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-03-31 | record AALA202404018625\nSource: SDR-2024.csv, CSV row 14639, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: ISSUES WITH MAIN LANDING GEAR RETRACTION [record=AALA202404018625; field=narrative_raw; offsets=61:101]\naction: no extracted proposal\nAction status proposal: unknown\nFull source (narrative_raw, verbatim): AIRCRAFT WAS GROUNDED: AN EMERGENCY WAS NOT DECLARED DUE TO: ISSUES WITH MAIN LANDING GEAR RETRACTION; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA.**SUPPLEMENTAL REPORT WILL BE SUBMITTED**(OPEN).\n\n2024-03-31 | record AALA202404038625\nSource: SDR-2024.csv, CSV row 15103, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: MAIN LANDING GEAR [record=AALA202404038625; field=narrative_raw; offsets=73:90]\nproblem: ISSUES WITH MAIN LANDING GEAR RETRACTION [record=AALA202404038625; field=narrative_raw; offsets=61:101]\naction: PERFORMED OPERTIONAL CHECK OF LANDING GEAR RETRACTION AND EXTENSION. [record=AALA202404038625; field=narrative_raw; offsets=164:232]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): AIRCRAFT WAS GROUNDED: AN EMERGENCY WAS NOT DECLARED DUE TO: ISSUES WITH MAIN LANDING GEAR RETRACTION; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA.   PERFORMED OPERTIONAL CHECK OF LANDING GEAR RETRACTION AND EXTENSION. PER J/C 08L00007005, 08L00007004 AND AMM 32-32-00. OPERTIONAL CHECK GOOD, NO FAULT FOUND.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "AALA202404038625",
+        "event_date": "2024-03-31",
+        "asset_id": "FAA:[\"BOEING\",\"30906\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 15103,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "AIRCRAFT WAS GROUNDED: AN EMERGENCY WAS NOT DECLARED DUE TO: ISSUES WITH MAIN LANDING GEAR RETRACTION; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA.   PERFORMED OPERTIONAL CHECK OF LANDING GEAR RETRACTION AND EXTENSION. PER J/C 08L00007005, 08L00007004 AND AMM 32-32-00. OPERTIONAL CHECK GOOD, NO FAULT FOUND.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "AALA202404018625",
+        "event_date": "2024-03-31",
+        "asset_id": "FAA:[\"BOEING\",\"30906\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 14639,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "AIRCRAFT WAS GROUNDED: AN EMERGENCY WAS NOT DECLARED DUE TO: ISSUES WITH MAIN LANDING GEAR RETRACTION; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA.**SUPPLEMENTAL REPORT WILL BE SUBMITTED**(OPEN).",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "AALA202404038625",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 73,
+            "end": 90,
+            "quote": "MAIN LANDING GEAR",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 61,
+            "end": 101,
+            "quote": "ISSUES WITH MAIN LANDING GEAR RETRACTION",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 164,
+            "end": 232,
+            "quote": "PERFORMED OPERTIONAL CHECK OF LANDING GEAR RETRACTION AND EXTENSION.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 15103,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "AALA202404018625",
+        "fields": {
+          "component": null,
+          "problem": {
+            "field": "narrative_raw",
+            "start": 61,
+            "end": 101,
+            "quote": "ISSUES WITH MAIN LANDING GEAR RETRACTION",
+            "source_column": "Discrepancy"
+          },
+          "action": null
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 14639,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 7,
+      "selected_record_count": 7,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 7,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "LANDING GEAR",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 26,
+          "prompt_tokens": 1114,
+          "total_tokens": 1140,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.719,
+        "model_called": true,
+        "working_context_chars": 5258,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "AALA202404038625",
+              "asset_id": "FAA:[\"BOEING\",\"30906\"]",
+              "date": "2024-03-31",
+              "score": 3.0289468476393204,
+              "excerpt": "AIRCRAFT WAS GROUNDED: AN EMERGENCY WAS NOT DECLARED DUE TO: ISSUES WITH MAIN LANDING GEAR RETRACTION; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA.   PERFORMED OPERTIONAL CHECK OF LANDIN",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "AALA202404018625",
+              "asset_id": "FAA:[\"BOEING\",\"30906\"]",
+              "date": "2024-03-31",
+              "score": 2.472953514049161,
+              "excerpt": "AIRCRAFT WAS GROUNDED: AN EMERGENCY WAS NOT DECLARED DUE TO: ISSUES WITH MAIN LANDING GEAR RETRACTION; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA.**SUPPLEMENTAL REPORT WILL BE SUBMITTED",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202404038625"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 1565,
+          "total_tokens": 1595,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.875,
+        "model_called": true,
+        "working_context_chars": 6270,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202404038625",
+          "event_date": "2024-03-31",
+          "asset_id": "FAA:[\"BOEING\",\"30906\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 15103,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS GROUNDED: AN EMERGENCY WAS NOT DECLARED DUE TO: ISSUES WITH MAIN LANDING GEAR RETRACTION; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA.   PERFORMED OPERTIONAL CHECK OF LANDING GEAR RETRACTION AND EXTENSION. PER J/C 08L00007005, 08L00007004 AND AMM 32-32-00. OPERTIONAL CHECK GOOD, NO FAULT FOUND.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "AALA202404038625",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "MAIN LANDING GEAR"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "ISSUES WITH MAIN LANDING GEAR RETRACTION"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "PERFORMED OPERTIONAL CHECK OF LANDING GEAR RETRACTION AND EXTENSION."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 126,
+          "prompt_tokens": 1131,
+          "total_tokens": 1257,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.671,
+        "model_called": true,
+        "working_context_chars": 5274,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "AALA202404038625",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "MAIN LANDING GEAR"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "ISSUES WITH MAIN LANDING GEAR RETRACTION"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "PERFORMED OPERTIONAL CHECK OF LANDING GEAR RETRACTION AND EXTENSION."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "AALA202404038625",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "MAIN LANDING GEAR"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "ISSUES WITH MAIN LANDING GEAR RETRACTION"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "PERFORMED OPERTIONAL CHECK OF LANDING GEAR RETRACTION AND EXTENSION."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "AALA202404038625",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 73,
+              "end": 90,
+              "quote": "MAIN LANDING GEAR",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 61,
+              "end": 101,
+              "quote": "ISSUES WITH MAIN LANDING GEAR RETRACTION",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 164,
+              "end": 232,
+              "quote": "PERFORMED OPERTIONAL CHECK OF LANDING GEAR RETRACTION AND EXTENSION.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 15103,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "AALA202404018625"
+          }
+        },
+        "usage": {
+          "completion_tokens": 30,
+          "prompt_tokens": 2035,
+          "total_tokens": 2065,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.125,
+        "model_called": true,
+        "working_context_chars": 7578,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "AALA202404018625",
+          "event_date": "2024-03-31",
+          "asset_id": "FAA:[\"BOEING\",\"30906\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 14639,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AIRCRAFT WAS GROUNDED: AN EMERGENCY WAS NOT DECLARED DUE TO: ISSUES WITH MAIN LANDING GEAR RETRACTION; AIRCRAFT AIR INTERRUPTED BACK TO AND LANDED SAFELY AT MIA.**SUPPLEMENTAL REPORT WILL BE SUBMITTED**(OPEN).",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "AALA202404018625",
+            "fields": {
+              "component": null,
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "ISSUES WITH MAIN LANDING GEAR RETRACTION"
+              },
+              "action": null
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 78,
+          "prompt_tokens": 1070,
+          "total_tokens": 1148,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 1.766,
+        "model_called": true,
+        "working_context_chars": 5161,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "AALA202404018625",
+              "fields": {
+                "component": null,
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "ISSUES WITH MAIN LANDING GEAR RETRACTION"
+                },
+                "action": null
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "AALA202404018625",
+                "fields": {
+                  "component": null,
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "ISSUES WITH MAIN LANDING GEAR RETRACTION"
+                  },
+                  "action": null
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "AALA202404018625",
+          "fields": {
+            "component": null,
+            "problem": {
+              "field": "narrative_raw",
+              "start": 61,
+              "end": 101,
+              "quote": "ISSUES WITH MAIN LANDING GEAR RETRACTION",
+              "source_column": "Discrepancy"
+            },
+            "action": null
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 14639,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 2398,
+          "total_tokens": 2410,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.984,
+        "model_called": true,
+        "working_context_chars": 8620,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 7,
+          "unstructured_record_count": 7,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "AALA202404038625",
+              "AALA202404018625"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 47,
+          "prompt_tokens": 2457,
+          "total_tokens": 2504,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.469,
+        "model_called": true,
+        "working_context_chars": 8847,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "AALA202404038625",
+            "AALA202404018625"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "AALA202404038625",
+      "AALA202404018625"
+    ],
+    "proposal_count": 2,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 7,
+    "elapsed_seconds": 9.609,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 7,
+    "responses_received": 7,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 11770,
+    "known_output_tokens": 349,
+    "known_total_tokens": 12119,
+    "known_cached_input_tokens": 5568
+  }
+}

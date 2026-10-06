@@ -1,0 +1,724 @@
+{
+  "batch_id": "283cd43f51c83af58ec9fb06b82aaeefa1be4dd5972cb57137b0fb1258852caa",
+  "candidate_id": "faa-history-082",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'BOTTLE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "BOTTLE",
+  "input_record_ids": [
+    "GTIA2024011237774",
+    "GTIA2024011537779",
+    "GTIA2024061738181",
+    "GTIA2024061738182",
+    "GTIA2024072938264",
+    "GTIA2024081638311",
+    "GTIA2024092438391"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "BOTTLE",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'BOTTLE'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"AIRBUS\",\"7852\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 7,
+    "selected_record_count": 7,
+    "steps": 7,
+    "model_calls": 7,
+    "elapsed_seconds": 10.015,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v2",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "GTIA2024072938264",
+          "date": "2024-07-29",
+          "asset_id": "FAA:[\"AIRBUS\",\"7852\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 34,
+              "end": 55,
+              "quote": "R2 DOOR ASSIST BOTTLE",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 22,
+              "quote": "DOOR ASSIST BOTTLE LOW",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 25,
+              "end": 73,
+              "quote": "SERVICED R2 DOOR ASSIST BOTTLE IAW AMM 52-10-00.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "GTIA2024072938264",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 35190
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "DOOR ASSIST BOTTLE LOW. -SERVICED R2 DOOR ASSIST BOTTLE IAW AMM 52-10-00."
+          }
+        },
+        {
+          "record_id": "GTIA2024081638311",
+          "date": "2024-08-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"7852\"]",
+          "fields": {
+            "component": null,
+            "problem": null,
+            "action": {
+              "field": "narrative_raw",
+              "start": 41,
+              "end": 88,
+              "quote": "R4 DOOR ASSIST BOTTLE SERVICED IAW AMM 52-10-00",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "GTIA2024081638311",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 38793
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "R4 DOOR ASSIST BOTTLE REQUIRES SERVICING-R4 DOOR ASSIST BOTTLE SERVICED IAW AMM 52-10-00"
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-07-29 | record GTIA2024072938264\nSource: SDR-2024.csv, CSV row 35190, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: R2 DOOR ASSIST BOTTLE [record=GTIA2024072938264; field=narrative_raw; offsets=34:55]\nproblem: DOOR ASSIST BOTTLE LOW [record=GTIA2024072938264; field=narrative_raw; offsets=0:22]\naction: SERVICED R2 DOOR ASSIST BOTTLE IAW AMM 52-10-00. [record=GTIA2024072938264; field=narrative_raw; offsets=25:73]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): DOOR ASSIST BOTTLE LOW. -SERVICED R2 DOOR ASSIST BOTTLE IAW AMM 52-10-00.\n\n2024-08-13 | record GTIA2024081638311\nSource: SDR-2024.csv, CSV row 38793, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: no extracted proposal\nproblem: no extracted proposal\naction: R4 DOOR ASSIST BOTTLE SERVICED IAW AMM 52-10-00 [record=GTIA2024081638311; field=narrative_raw; offsets=41:88]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): R4 DOOR ASSIST BOTTLE REQUIRES SERVICING-R4 DOOR ASSIST BOTTLE SERVICED IAW AMM 52-10-00\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "GTIA2024072938264",
+        "event_date": "2024-07-29",
+        "asset_id": "FAA:[\"AIRBUS\",\"7852\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 35190,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "DOOR ASSIST BOTTLE LOW. -SERVICED R2 DOOR ASSIST BOTTLE IAW AMM 52-10-00.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "GTIA2024081638311",
+        "event_date": "2024-08-13",
+        "asset_id": "FAA:[\"AIRBUS\",\"7852\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 38793,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "R4 DOOR ASSIST BOTTLE REQUIRES SERVICING-R4 DOOR ASSIST BOTTLE SERVICED IAW AMM 52-10-00",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "GTIA2024072938264",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 34,
+            "end": 55,
+            "quote": "R2 DOOR ASSIST BOTTLE",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 22,
+            "quote": "DOOR ASSIST BOTTLE LOW",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 25,
+            "end": 73,
+            "quote": "SERVICED R2 DOOR ASSIST BOTTLE IAW AMM 52-10-00.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 35190,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "GTIA2024081638311",
+        "fields": {
+          "component": null,
+          "problem": null,
+          "action": {
+            "field": "narrative_raw",
+            "start": 41,
+            "end": 88,
+            "quote": "R4 DOOR ASSIST BOTTLE SERVICED IAW AMM 52-10-00",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 38793,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 7,
+      "selected_record_count": 7,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 7,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "BOTTLE",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 25,
+          "prompt_tokens": 1110,
+          "total_tokens": 1135,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.75,
+        "model_called": true,
+        "working_context_chars": 5245,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "GTIA2024072938264",
+              "asset_id": "FAA:[\"AIRBUS\",\"7852\"]",
+              "date": "2024-07-29",
+              "score": 1.9127668209890756,
+              "excerpt": "DOOR ASSIST BOTTLE LOW. -SERVICED R2 DOOR ASSIST BOTTLE IAW AMM 52-10-00.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "GTIA2024081638311",
+              "asset_id": "FAA:[\"AIRBUS\",\"7852\"]",
+              "date": "2024-08-13",
+              "score": 1.8785034403458254,
+              "excerpt": "R4 DOOR ASSIST BOTTLE REQUIRES SERVICING-R4 DOOR ASSIST BOTTLE SERVICED IAW AMM 52-10-00",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1519,
+          "total_tokens": 1531,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.609,
+        "model_called": true,
+        "working_context_chars": 6029,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 7,
+          "unstructured_record_count": 7,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "GTIA2024072938264"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1579,
+          "total_tokens": 1610,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.922,
+        "model_called": true,
+        "working_context_chars": 6256,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "GTIA2024072938264",
+          "event_date": "2024-07-29",
+          "asset_id": "FAA:[\"AIRBUS\",\"7852\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 35190,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "DOOR ASSIST BOTTLE LOW. -SERVICED R2 DOOR ASSIST BOTTLE IAW AMM 52-10-00.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "GTIA2024072938264",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "R2 DOOR ASSIST BOTTLE"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "DOOR ASSIST BOTTLE LOW"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "SERVICED R2 DOOR ASSIST BOTTLE IAW AMM 52-10-00."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 132,
+          "prompt_tokens": 1044,
+          "total_tokens": 1176,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.797,
+        "model_called": true,
+        "working_context_chars": 5026,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "GTIA2024072938264",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "R2 DOOR ASSIST BOTTLE"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "DOOR ASSIST BOTTLE LOW"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "SERVICED R2 DOOR ASSIST BOTTLE IAW AMM 52-10-00."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "GTIA2024072938264",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "R2 DOOR ASSIST BOTTLE"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "DOOR ASSIST BOTTLE LOW"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "SERVICED R2 DOOR ASSIST BOTTLE IAW AMM 52-10-00."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "GTIA2024072938264",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 34,
+              "end": 55,
+              "quote": "R2 DOOR ASSIST BOTTLE",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 22,
+              "quote": "DOOR ASSIST BOTTLE LOW",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 25,
+              "end": 73,
+              "quote": "SERVICED R2 DOOR ASSIST BOTTLE IAW AMM 52-10-00.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 35190,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "GTIA2024081638311"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1964,
+          "total_tokens": 1995,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.109,
+        "model_called": true,
+        "working_context_chars": 7280,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "GTIA2024081638311",
+          "event_date": "2024-08-13",
+          "asset_id": "FAA:[\"AIRBUS\",\"7852\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 38793,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "R4 DOOR ASSIST BOTTLE REQUIRES SERVICING-R4 DOOR ASSIST BOTTLE SERVICED IAW AMM 52-10-00",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "GTIA2024081638311",
+            "fields": {
+              "component": null,
+              "problem": null,
+              "action": {
+                "field": "narrative_raw",
+                "quote": "R4 DOOR ASSIST BOTTLE SERVICED IAW AMM 52-10-00"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 93,
+          "prompt_tokens": 1302,
+          "total_tokens": 1395,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.281,
+        "model_called": true,
+        "working_context_chars": 5041,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": true,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "GTIA2024081638311",
+              "fields": {
+                "component": null,
+                "problem": null,
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "R4 DOOR ASSIST BOTTLE SERVICED IAW AMM 52-10-00"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "GTIA2024081638311",
+                "fields": {
+                  "component": null,
+                  "problem": null,
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "R4 DOOR ASSIST BOTTLE SERVICED IAW AMM 52-10-00"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "GTIA2024081638311",
+          "fields": {
+            "component": null,
+            "problem": null,
+            "action": {
+              "field": "narrative_raw",
+              "start": 41,
+              "end": 88,
+              "quote": "R4 DOOR ASSIST BOTTLE SERVICED IAW AMM 52-10-00",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 38793,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "GTIA2024072938264",
+              "GTIA2024081638311"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 49,
+          "prompt_tokens": 2315,
+          "total_tokens": 2364,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.547,
+        "model_called": true,
+        "working_context_chars": 8209,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "GTIA2024072938264",
+            "GTIA2024081638311"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "GTIA2024072938264",
+      "GTIA2024081638311"
+    ],
+    "proposal_count": 2,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 7,
+    "elapsed_seconds": 10.015,
+    "errors": [],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 7,
+    "responses_received": 7,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 10833,
+    "known_output_tokens": 373,
+    "known_total_tokens": 11206,
+    "known_cached_input_tokens": 5257
+  }
+}

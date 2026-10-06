@@ -1,0 +1,479 @@
+{
+  "batch_id": "283cd43f51c83af58ec9fb06b82aaeefa1be4dd5972cb57137b0fb1258852caa",
+  "candidate_id": "faa-history-097",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'LIGHT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "LIGHT",
+  "input_record_ids": [
+    "SWAA2024011738653",
+    "SWAA2024032868525",
+    "SWAA2024070509256",
+    "SWAA2024080723096",
+    "SWAA2024110656052",
+    "SWAA2024120273012",
+    "SWAA2024120974817"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "failed",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "LIGHT",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": false,
+      "semantic_task_success": null,
+      "missing": [
+        "not finished"
+      ]
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'LIGHT'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"29820\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 7,
+    "selected_record_count": 7,
+    "steps": 5,
+    "model_calls": 5,
+    "elapsed_seconds": 7.64,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": null,
+    "records_for_review": [],
+    "extraction_proposals": [],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 7,
+      "selected_record_count": 7,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 7,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "LIGHT",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 23,
+          "prompt_tokens": 1108,
+          "total_tokens": 1131,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.719,
+        "model_called": true,
+        "working_context_chars": 5244,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "SWAA2024011738653",
+              "asset_id": "FAA:[\"BOEING\",\"29820\"]",
+              "date": "2024-01-07",
+              "score": 1.3364177156411863,
+              "excerpt": "AFT LEFT ENTRY DOOR EMERGENCY LIGHT INOP<[01] R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD;[02] VERIFIED THE FOLLOWING:<BR>R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWAA2024120273012",
+              "asset_id": "FAA:[\"BOEING\",\"29820\"]",
+              "date": "2024-12-01",
+              "score": 1.2893287709119228,
+              "excerpt": "2ND FROM FRONT RH AISLE EMERGENCY LIGHT OUT<[01] RE-LAMPED 2ND FROM FRONT RH AISLE EMERGENCY LIGHT IAW SWPM 20-84-10. OPS CHECK GOOD.",
+              "excerpt_truncated": false
+            },
+            {
+              "record_id": "SWAA2024110656052",
+              "asset_id": "FAA:[\"BOEING\",\"29820\"]",
+              "date": "2024-11-02",
+              "score": 1.020475248891359,
+              "excerpt": "L/H OVERWING EMERGENCY LIGHT INOP<[01] REMOVED AND REPLACED LAMP IN REF TO AMM 33-51-04 OPS CHECK GOOD",
+              "excerpt_truncated": false
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1777,
+          "total_tokens": 1789,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.719,
+        "model_called": true,
+        "working_context_chars": 6550,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 7,
+          "unstructured_record_count": 7,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "SWAA2024011738653"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1837,
+          "total_tokens": 1868,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.015,
+        "model_called": true,
+        "working_context_chars": 6777,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "SWAA2024011738653",
+          "event_date": "2024-01-07",
+          "asset_id": "FAA:[\"BOEING\",\"29820\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 1989,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "AFT LEFT ENTRY DOOR EMERGENCY LIGHT INOP<[01] R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD;[02] VERIFIED THE FOLLOWING:<BR>R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024011738653",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "R&R EMERGENCY LIGHT BULB"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "AFT LEFT ENTRY DOOR EMERGENCY LIGHT INOP"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 139,
+          "prompt_tokens": 1088,
+          "total_tokens": 1227,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 2.797,
+        "model_called": true,
+        "working_context_chars": 5144,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024011738653",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "R&R EMERGENCY LIGHT BULB"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "AFT LEFT ENTRY DOOR EMERGENCY LIGHT INOP"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024011738653",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "R&R EMERGENCY LIGHT BULB"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "AFT LEFT ENTRY DOOR EMERGENCY LIGHT INOP"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "quote must occur exactly once; use offsets for repeated text",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "SWAA2024011738653",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 46,
+                "end": 70
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 40
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 46,
+                "end": 102
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 119,
+          "prompt_tokens": 1885,
+          "total_tokens": 2004,
+          "prompt_tokens_details": {
+            "cached_tokens": 641
+          }
+        },
+        "model_seconds": 2.375,
+        "model_called": true,
+        "working_context_chars": 5898,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": {
+            "component": [
+              {
+                "field": "narrative_raw",
+                "start": 46,
+                "end": 70,
+                "quote": "R&R EMERGENCY LIGHT BULB",
+                "surrounding_text": "AFT LEFT ENTRY DOOR EMERGENCY LIGHT INOP<[01] R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD;[02] VERIFIED THE FOLLOWING"
+              },
+              {
+                "field": "narrative_raw",
+                "start": 135,
+                "end": 159,
+                "quote": "R&R EMERGENCY LIGHT BULB",
+                "surrounding_text": "AMM 33-51-04 OPS CHECK GOOD;[02] VERIFIED THE FOLLOWING:<BR>R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD"
+              }
+            ],
+            "problem": [
+              {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 40,
+                "quote": "AFT LEFT ENTRY DOOR EMERGENCY LIGHT INOP",
+                "surrounding_text": "AFT LEFT ENTRY DOOR EMERGENCY LIGHT INOP<[01] R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GO"
+              }
+            ],
+            "action": [
+              {
+                "field": "narrative_raw",
+                "start": 46,
+                "end": 102,
+                "quote": "R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD",
+                "surrounding_text": "AFT LEFT ENTRY DOOR EMERGENCY LIGHT INOP<[01] R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD;[02] VERIFIED THE FOLLOWING:<BR>R&R EMERGENCY LIGHT BULB IA"
+              },
+              {
+                "field": "narrative_raw",
+                "start": 135,
+                "end": 191,
+                "quote": "R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD",
+                "surrounding_text": "AMM 33-51-04 OPS CHECK GOOD;[02] VERIFIED THE FOLLOWING:<BR>R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD"
+              }
+            ]
+          },
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "SWAA2024011738653",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 46,
+                  "end": 70
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 40
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 46,
+                  "end": 102
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "SWAA2024011738653",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 46,
+                    "end": 70
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 40
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 46,
+                    "end": 102
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "failed",
+    "workflow_complete": false,
+    "selected_record_ids": [],
+    "proposal_count": 0,
+    "history_status": null,
+    "targeted_concern_count": 0,
+    "model_calls": 5,
+    "elapsed_seconds": 7.64,
+    "errors": [
+      {
+        "step": 4,
+        "error": "quote must occur exactly once; use offsets for repeated text"
+      },
+      {
+        "step": 5,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote 'R&R EMERGENCY LIGHT BULB IAW AMM 33-51-04 OPS CHECK GOOD'; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 5,
+    "responses_received": 5,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 7695,
+    "known_output_tokens": 324,
+    "known_total_tokens": 8019,
+    "known_cached_input_tokens": 3978
+  }
+}

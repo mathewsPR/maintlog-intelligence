@@ -1,0 +1,876 @@
+{
+  "batch_id": "283cd43f51c83af58ec9fb06b82aaeefa1be4dd5972cb57137b0fb1258852caa",
+  "candidate_id": "faa-history-068",
+  "trial": 1,
+  "workflow": "agent",
+  "question": "Review this aircraft's reports concerning 'CONTROL PANEL'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+  "query": "CONTROL PANEL",
+  "input_record_ids": [
+    "CALA2024012400215",
+    "CALA2024041801133",
+    "CALA2024051301431",
+    "CALA2024080500363",
+    "CALA2024080700382",
+    "CALA2024090600590"
+  ],
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "CONTROL PANEL",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review this aircraft's reports concerning 'CONTROL PANEL'. Identify relevant reported symptoms and corrective work in date order. Cite the supporting reports. Distinguish performed work from repair success, and similar symptoms from a confirmed common fault. Do not infer that an earlier repair failed. State uncertainty and limitations of the available reports.",
+    "scope": {
+      "asset_id": "FAA:[\"BOEING\",\"34003\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 6,
+    "selected_record_count": 6,
+    "steps": 8,
+    "model_calls": 8,
+    "elapsed_seconds": 18.156,
+    "limits": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000,
+      "max_reads_per_record": 2,
+      "record_selection_policy": "retrieved_or_previously_inspected_after_search"
+    },
+    "evidence_revision_attempted": [],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v2",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "CALA2024080500363",
+          "date": "2024-08-05",
+          "asset_id": "FAA:[\"BOEING\",\"34003\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 190,
+              "end": 213,
+              "quote": "WXR RADAR CONTROL PANEL",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 219,
+              "quote": "WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR CONTROL PANEL INOP.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 220,
+              "end": 277,
+              "quote": "R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "citation": {
+            "record_id": "CALA2024080500363",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36135
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR CONTROL PANEL INOP. R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE. 29-3443-9-0007,QTY :1 ROTABLE PARTS CHANGE WAS INDICATED - TT # 1501488 SN OFF 8172"
+          }
+        },
+        {
+          "record_id": "CALA2024090600590",
+          "date": "2024-09-03",
+          "asset_id": "FAA:[\"BOEING\",\"34003\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 1155,
+              "end": 1198,
+              "quote": "RIGHT WING OUTBOARD DEFLECTION UPPER ROLLER",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 1048,
+              "end": 1147,
+              "quote": "NOTICED VIBRATION ON THE RIGHT OUTBOARD TRAILING EDGE FLAP DURING EXTENSION AND RETRACTION OF FLAPS",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 1277,
+              "end": 1350,
+              "quote": "ADJUSTED OUTBOARD DEFLECTION CONTROL ROLLER ASSY REF AMM 27-51-21-820-801",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "CALA2024090600590",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 42370
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "FLAPS WOULD NOT EXTEND BEYOND 15 DEGREES PER TOMC REQUEST, PERFORMED TRAILING EDGE FLAP LOAD RELIEF SYSTE M BITE TEST. ALL TEST PASSED NO FAULTS NOTED ON GROUND. CHK'D TORQUE INDICATORS, NONE POPPED. CYCLED FLAPS SEVERAL TIMES WITH ELEC PMPS. RAN 2 ENG AND CYCLED FLAPS SEVERAL TIMES. FOUND 7 AND 8 TRANSMISSION WITH VIBRATION DURING MOTION. ALSO, FOUND ALL FLAP TRANSMISSION JACKSCREWS DRY REQUIRING LUBRICATION. REMOVED 7 AND 8 CANOES FOR FURTHER INSPECTION. REF LP 9065983 REINSTALLED 7 AND 8 TE FLAP CANOES PER AMM 27-51-28. TEST FLIGHT TO BE PERFORMED REF LP 9150086. CARRIED BY ELB PERFORMED FIM 27-51 TASK 836 PAR F. INSPECTED ALL FLAP TRANSMISSION TORQUE TRIP INDICATORS NO POPPED INDICATORS NOTED. CHECKED AND SERVICED ALL FLAP TRANSMISSION TO FULL. PERFORMED ENGINE RUN AND CYCLED FLAPS TO FULL TRAVEL SEVERAL TIMES. RE-INSPECTED FLAP TRANSMISSION NO POPPED INDICATORS NOTED. PARTS USED: 00-0609-3-8167,QTY :1 00-0586-3-1099,QTY :1 INSP, CW PER AMM 27-51-21 AND GMM 9-25-05 LUBED LEFT AND RIGHT WING TRAIL EDGE FLAP SYS REF AMM 12-22-51. NOTICED VIBRATION ON THE RIGHT OUTBOARD TRAILING EDGE FLAP DURING EXTENSION AND RETRACTION OF FLAPS. FOUND RIGHT WING OUTBOARD DEFLECTION UPPER ROLLER WITH HIGH PRELOAD MAKING HIGH FRICTION VIBRATION ON DEFLECTION CONTROL TRACK. ADJUSTED OUTBOARD DEFLECTION CONTROL ROLLER ASSY REF AMM 27-51-21-820-801. OPS CK GOOD NO VIBRATION OR FAULTS NOTED. PARTS USED: 00-0609-3-7342,QTY 1 TEST FLIGHT TO BE PERFORMED."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-08-05 | record CALA2024080500363\nSource: SDR-2024.csv, CSV row 36135, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: WXR RADAR CONTROL PANEL [record=CALA2024080500363; field=narrative_raw; offsets=190:213]\nproblem: WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR CONTROL PANEL INOP. [record=CALA2024080500363; field=narrative_raw; offsets=0:219]\naction: R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE. [record=CALA2024080500363; field=narrative_raw; offsets=220:277]\nAction status proposal: unknown\nFull source (narrative_raw, verbatim): WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR CONTROL PANEL INOP. R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE. 29-3443-9-0007,QTY :1 ROTABLE PARTS CHANGE WAS INDICATED - TT # 1501488 SN OFF 8172\n\n2024-09-03 | record CALA2024090600590\nSource: SDR-2024.csv, CSV row 42370, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: RIGHT WING OUTBOARD DEFLECTION UPPER ROLLER [record=CALA2024090600590; field=narrative_raw; offsets=1155:1198]\nproblem: NOTICED VIBRATION ON THE RIGHT OUTBOARD TRAILING EDGE FLAP DURING EXTENSION AND RETRACTION OF FLAPS [record=CALA2024090600590; field=narrative_raw; offsets=1048:1147]\naction: ADJUSTED OUTBOARD DEFLECTION CONTROL ROLLER ASSY REF AMM 27-51-21-820-801 [record=CALA2024090600590; field=narrative_raw; offsets=1277:1350]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): FLAPS WOULD NOT EXTEND BEYOND 15 DEGREES PER TOMC REQUEST, PERFORMED TRAILING EDGE FLAP LOAD RELIEF SYSTE M BITE TEST. ALL TEST PASSED NO FAULTS NOTED ON GROUND. CHK'D TORQUE INDICATORS, NONE POPPED. CYCLED FLAPS SEVERAL TIMES WITH ELEC PMPS. RAN 2 ENG AND CYCLED FLAPS SEVERAL TIMES. FOUND 7 AND 8 TRANSMISSION WITH VIBRATION DURING MOTION. ALSO, FOUND ALL FLAP TRANSMISSION JACKSCREWS DRY REQUIRING LUBRICATION. REMOVED 7 AND 8 CANOES FOR FURTHER INSPECTION. REF LP 9065983 REINSTALLED 7 AND 8 TE FLAP CANOES PER AMM 27-51-28. TEST FLIGHT TO BE PERFORMED REF LP 9150086. CARRIED BY ELB PERFORMED FIM 27-51 TASK 836 PAR F. INSPECTED ALL FLAP TRANSMISSION TORQUE TRIP INDICATORS NO POPPED INDICATORS NOTED. CHECKED AND SERVICED ALL FLAP TRANSMISSION TO FULL. PERFORMED ENGINE RUN AND CYCLED FLAPS TO FULL TRAVEL SEVERAL TIMES. RE-INSPECTED FLAP TRANSMISSION NO POPPED INDICATORS NOTED. PARTS USED: 00-0609-3-8167,QTY :1 00-0586-3-1099,QTY :1 INSP, CW PER AMM 27-51-21 AND GMM 9-25-05 LUBED LEFT AND RIGHT WING TRAIL EDGE FLAP SYS REF AMM 12-22-51. NOTICED VIBRATION ON THE RIGHT OUTBOARD TRAILING EDGE FLAP DURING EXTENSION AND RETRACTION OF FLAPS. FOUND RIGHT WING OUTBOARD DEFLECTION UPPER ROLLER WITH HIGH PRELOAD MAKING HIGH FRICTION VIBRATION ON DEFLECTION CONTROL TRACK. ADJUSTED OUTBOARD DEFLECTION CONTROL ROLLER ASSY REF AMM 27-51-21-820-801. OPS CK GOOD NO VIBRATION OR FAULTS NOTED. PARTS USED: 00-0609-3-7342,QTY 1 TEST FLIGHT TO BE PERFORMED.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "CALA2024080500363",
+        "event_date": "2024-08-05",
+        "asset_id": "FAA:[\"BOEING\",\"34003\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 36135,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR CONTROL PANEL INOP. R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE. 29-3443-9-0007,QTY :1 ROTABLE PARTS CHANGE WAS INDICATED - TT # 1501488 SN OFF 8172",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "CALA2024090600590",
+        "event_date": "2024-09-03",
+        "asset_id": "FAA:[\"BOEING\",\"34003\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 42370,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "FLAPS WOULD NOT EXTEND BEYOND 15 DEGREES PER TOMC REQUEST, PERFORMED TRAILING EDGE FLAP LOAD RELIEF SYSTE M BITE TEST. ALL TEST PASSED NO FAULTS NOTED ON GROUND. CHK'D TORQUE INDICATORS, NONE POPPED. CYCLED FLAPS SEVERAL TIMES WITH ELEC PMPS. RAN 2 ENG AND CYCLED FLAPS SEVERAL TIMES. FOUND 7 AND 8 TRANSMISSION WITH VIBRATION DURING MOTION. ALSO, FOUND ALL FLAP TRANSMISSION JACKSCREWS DRY REQUIRING LUBRICATION. REMOVED 7 AND 8 CANOES FOR FURTHER INSPECTION. REF LP 9065983 REINSTALLED 7 AND 8 TE FLAP CANOES PER AMM 27-51-28. TEST FLIGHT TO BE PERFORMED REF LP 9150086. CARRIED BY ELB PERFORMED FIM 27-51 TASK 836 PAR F. INSPECTED ALL FLAP TRANSMISSION TORQUE TRIP INDICATORS NO POPPED INDICATORS NOTED. CHECKED AND SERVICED ALL FLAP TRANSMISSION TO FULL. PERFORMED ENGINE RUN AND CYCLED FLAPS TO FULL TRAVEL SEVERAL TIMES. RE-INSPECTED FLAP TRANSMISSION NO POPPED INDICATORS NOTED. PARTS USED: 00-0609-3-8167,QTY :1 00-0586-3-1099,QTY :1 INSP, CW PER AMM 27-51-21 AND GMM 9-25-05 LUBED LEFT AND RIGHT WING TRAIL EDGE FLAP SYS REF AMM 12-22-51. NOTICED VIBRATION ON THE RIGHT OUTBOARD TRAILING EDGE FLAP DURING EXTENSION AND RETRACTION OF FLAPS. FOUND RIGHT WING OUTBOARD DEFLECTION UPPER ROLLER WITH HIGH PRELOAD MAKING HIGH FRICTION VIBRATION ON DEFLECTION CONTROL TRACK. ADJUSTED OUTBOARD DEFLECTION CONTROL ROLLER ASSY REF AMM 27-51-21-820-801. OPS CK GOOD NO VIBRATION OR FAULTS NOTED. PARTS USED: 00-0609-3-7342,QTY 1 TEST FLIGHT TO BE PERFORMED.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "CALA2024080500363",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 190,
+            "end": 213,
+            "quote": "WXR RADAR CONTROL PANEL",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 219,
+            "quote": "WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR CONTROL PANEL INOP.",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 220,
+            "end": 277,
+            "quote": "R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE.",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "unknown",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 36135,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "CALA2024090600590",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 1155,
+            "end": 1198,
+            "quote": "RIGHT WING OUTBOARD DEFLECTION UPPER ROLLER",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 1048,
+            "end": 1147,
+            "quote": "NOTICED VIBRATION ON THE RIGHT OUTBOARD TRAILING EDGE FLAP DURING EXTENSION AND RETRACTION OF FLAPS",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 1277,
+            "end": 1350,
+            "quote": "ADJUSTED OUTBOARD DEFLECTION CONTROL ROLLER ASSY REF AMM 27-51-21-820-801",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 42370,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 6,
+      "selected_record_count": 6,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 6,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "CONTROL PANEL",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 24,
+          "prompt_tokens": 1110,
+          "total_tokens": 1134,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.734,
+        "model_called": true,
+        "working_context_chars": 5260,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "CALA2024080500363",
+              "asset_id": "FAA:[\"BOEING\",\"34003\"]",
+              "date": "2024-08-05",
+              "score": 4.620043966845955,
+              "excerpt": "WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR ",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "CALA2024090600590",
+              "asset_id": "FAA:[\"BOEING\",\"34003\"]",
+              "date": "2024-09-03",
+              "score": 0.9631612882892032,
+              "excerpt": "FLAPS WOULD NOT EXTEND BEYOND 15 DEGREES PER TOMC REQUEST, PERFORMED TRAILING EDGE FLAP LOAD RELIEF SYSTE M BITE TEST. ALL TEST PASSED NO FAULTS NOTED ON GROUND. CHK'D TORQUE INDICATORS, NONE POPPED. ",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024080500363"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 1631,
+          "total_tokens": 1662,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.938,
+        "model_called": true,
+        "working_context_chars": 6282,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024080500363",
+          "event_date": "2024-08-05",
+          "asset_id": "FAA:[\"BOEING\",\"34003\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36135,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR CONTROL PANEL INOP. R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE. 29-3443-9-0007,QTY :1 ROTABLE PARTS CHANGE WAS INDICATED - TT # 1501488 SN OFF 8172",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024080500363",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "WXR RADAR CONTROL PANEL"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR CONTROL PANEL INOP."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 241,
+          "prompt_tokens": 1199,
+          "total_tokens": 1440,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 4.296,
+        "model_called": true,
+        "working_context_chars": 5314,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024080500363",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "WXR RADAR CONTROL PANEL"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR CONTROL PANEL INOP."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024080500363",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "WXR RADAR CONTROL PANEL"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR CONTROL PANEL INOP."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_error": "action_status='completed' lacks unnegated explicit support in the selected action quote \"R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE.\"; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal.",
+        "repeated_invalid_decision": false
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024080500363",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "WXR RADAR CONTROL PANEL"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR CONTROL PANEL INOP."
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE."
+              }
+            },
+            "action_status": "unknown"
+          }
+        },
+        "usage": {
+          "completion_tokens": 290,
+          "prompt_tokens": 1306,
+          "total_tokens": 1596,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        },
+        "model_seconds": 4.954,
+        "model_called": true,
+        "working_context_chars": 7383,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": true,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024080500363",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "WXR RADAR CONTROL PANEL"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR CONTROL PANEL INOP."
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE."
+                }
+              },
+              "action_status": "unknown"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024080500363",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "WXR RADAR CONTROL PANEL"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR CONTROL PANEL INOP."
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE."
+                  }
+                },
+                "action_status": "unknown"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024080500363",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 190,
+              "end": 213,
+              "quote": "WXR RADAR CONTROL PANEL",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 219,
+              "quote": "WX RADAR FAIL AND CONT STAB DISP ON MFD PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 29-3443-9-0007 5144 PANEL, CONTROL, OFF 29-3443-9-0007 8172 ON 0000 T/S PER FIM TASK 34-43 TASK 822, FOUND WXR RADAR CONTROL PANEL INOP.",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 220,
+              "end": 277,
+              "quote": "R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "unknown",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 36135,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "CALA2024090600590"
+          }
+        },
+        "usage": {
+          "completion_tokens": 31,
+          "prompt_tokens": 2982,
+          "total_tokens": 3013,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.484,
+        "model_called": true,
+        "working_context_chars": 9878,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "CALA2024090600590",
+          "event_date": "2024-09-03",
+          "asset_id": "FAA:[\"BOEING\",\"34003\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 42370,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "FLAPS WOULD NOT EXTEND BEYOND 15 DEGREES PER TOMC REQUEST, PERFORMED TRAILING EDGE FLAP LOAD RELIEF SYSTE M BITE TEST. ALL TEST PASSED NO FAULTS NOTED ON GROUND. CHK'D TORQUE INDICATORS, NONE POPPED. CYCLED FLAPS SEVERAL TIMES WITH ELEC PMPS. RAN 2 ENG AND CYCLED FLAPS SEVERAL TIMES. FOUND 7 AND 8 TRANSMISSION WITH VIBRATION DURING MOTION. ALSO, FOUND ALL FLAP TRANSMISSION JACKSCREWS DRY REQUIRING LUBRICATION. REMOVED 7 AND 8 CANOES FOR FURTHER INSPECTION. REF LP 9065983 REINSTALLED 7 AND 8 TE FLAP CANOES PER AMM 27-51-28. TEST FLIGHT TO BE PERFORMED REF LP 9150086. CARRIED BY ELB PERFORMED FIM 27-51 TASK 836 PAR F. INSPECTED ALL FLAP TRANSMISSION TORQUE TRIP INDICATORS NO POPPED INDICATORS NOTED. CHECKED AND SERVICED ALL FLAP TRANSMISSION TO FULL. PERFORMED ENGINE RUN AND CYCLED FLAPS TO FULL TRAVEL SEVERAL TIMES. RE-INSPECTED FLAP TRANSMISSION NO POPPED INDICATORS NOTED. PARTS USED: 00-0609-3-8167,QTY :1 00-0586-3-1099,QTY :1 INSP, CW PER AMM 27-51-21 AND GMM 9-25-05 LUBED LEFT AND RIGHT WING TRAIL EDGE FLAP SYS REF AMM 12-22-51. NOTICED VIBRATION ON THE RIGHT OUTBOARD TRAILING EDGE FLAP DURING EXTENSION AND RETRACTION OF FLAPS. FOUND RIGHT WING OUTBOARD DEFLECTION UPPER ROLLER WITH HIGH PRELOAD MAKING HIGH FRICTION VIBRATION ON DEFLECTION CONTROL TRACK. ADJUSTED OUTBOARD DEFLECTION CONTROL ROLLER ASSY REF AMM 27-51-21-820-801. OPS CK GOOD NO VIBRATION OR FAULTS NOTED. PARTS USED: 00-0609-3-7342,QTY 1 TEST FLIGHT TO BE PERFORMED.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "CALA2024090600590",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "RIGHT WING OUTBOARD DEFLECTION UPPER ROLLER"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "NOTICED VIBRATION ON THE RIGHT OUTBOARD TRAILING EDGE FLAP DURING EXTENSION AND RETRACTION OF FLAPS"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "ADJUSTED OUTBOARD DEFLECTION CONTROL ROLLER ASSY REF AMM 27-51-21-820-801"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 164,
+          "prompt_tokens": 1570,
+          "total_tokens": 1734,
+          "prompt_tokens_details": {
+            "cached_tokens": 952
+          }
+        },
+        "model_seconds": 3.312,
+        "model_called": true,
+        "working_context_chars": 6408,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "occurrence_repair_options": null,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "CALA2024090600590",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "RIGHT WING OUTBOARD DEFLECTION UPPER ROLLER"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "NOTICED VIBRATION ON THE RIGHT OUTBOARD TRAILING EDGE FLAP DURING EXTENSION AND RETRACTION OF FLAPS"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "ADJUSTED OUTBOARD DEFLECTION CONTROL ROLLER ASSY REF AMM 27-51-21-820-801"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "CALA2024090600590",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "RIGHT WING OUTBOARD DEFLECTION UPPER ROLLER"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "NOTICED VIBRATION ON THE RIGHT OUTBOARD TRAILING EDGE FLAP DURING EXTENSION AND RETRACTION OF FLAPS"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "ADJUSTED OUTBOARD DEFLECTION CONTROL ROLLER ASSY REF AMM 27-51-21-820-801"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "CALA2024090600590",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 1155,
+              "end": 1198,
+              "quote": "RIGHT WING OUTBOARD DEFLECTION UPPER ROLLER",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 1048,
+              "end": 1147,
+              "quote": "NOTICED VIBRATION ON THE RIGHT OUTBOARD TRAILING EDGE FLAP DURING EXTENSION AND RETRACTION OF FLAPS",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 1277,
+              "end": 1350,
+              "quote": "ADJUSTED OUTBOARD DEFLECTION CONTROL ROLLER ASSY REF AMM 27-51-21-820-801",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 42370,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 2189,
+          "total_tokens": 2201,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 0.969,
+        "model_called": true,
+        "working_context_chars": 7908,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 6,
+          "unstructured_record_count": 6,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "CALA2024080500363",
+              "CALA2024090600590"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 49,
+          "prompt_tokens": 2226,
+          "total_tokens": 2275,
+          "prompt_tokens_details": {
+            "cached_tokens": 795
+          }
+        },
+        "model_seconds": 1.453,
+        "model_called": true,
+        "working_context_chars": 8039,
+        "working_context_compacted": true,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "CALA2024080500363",
+            "CALA2024090600590"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  },
+  "summary": {
+    "run_status": "ready_for_review",
+    "workflow_complete": true,
+    "selected_record_ids": [
+      "CALA2024080500363",
+      "CALA2024090600590"
+    ],
+    "proposal_count": 2,
+    "history_status": "available_for_review",
+    "targeted_concern_count": 0,
+    "model_calls": 8,
+    "elapsed_seconds": 18.156,
+    "errors": [
+      {
+        "step": 3,
+        "error": "action_status='completed' lacks unnegated explicit support in the selected action quote \"R/R'D PNL PER AMM 34-43-91, OPS CHK GOOD, OK FOR SERVICE.\"; requires explicit performed or completed work wording. Correct the status using explicit execution evidence, or choose unknown. A persistent problem or unconfirmed repair outcome does not change performed work into attempted work. Do not repeat the rejected proposal."
+      }
+    ],
+    "semantic_accuracy": null,
+    "complete_task_success": null
+  },
+  "token_usage": {
+    "requests_started": 8,
+    "responses_received": 8,
+    "transport_failures": 0,
+    "requests_without_finish": 0,
+    "requests_without_usage": 0,
+    "token_totals_complete": true,
+    "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+    "known_input_tokens": 14213,
+    "known_output_tokens": 842,
+    "known_total_tokens": 15055,
+    "known_cached_input_tokens": 5879
+  }
+}
