@@ -1,4 +1,4 @@
-"""Local model backend and replay fixtures; no automatic connections."""
+"""backends.py Local model backend and replay fixtures; no automatic connections."""
 
 import json
 import subprocess
@@ -16,13 +16,15 @@ from .component_selection import (
     resolve_component_choice,
     selection_schema,
 )
-from .decision_schema import ARGS, DECISION_SCHEMA, obj, validate_decision
+from .decision_schema import ARGS, DECISION_SCHEMA, _valid, obj, validate_decision
 from .evidence_policy import (
     adapt_boundaries,
     status_repair_contract,
     validate_status_repair,
 )
 from .extraction import STATUS_GUIDANCE
+from .revision_component import component_revision_candidate
+from .revision_evidence import excerpt_contract
 
 EXTRACTION_SYSTEM = (
     """Extract maintenance evidence from exactly one supplied record.
@@ -89,6 +91,30 @@ is "CPL-218", not "Replaced CPL-218" or the entire narrative.
 Never copy this illustrative identifier unless it occurs in the supplied record.
 """
 
+
+EXTRACTION_SYSTEM += """
+Evidence selection rules:
+- Select the complete equipment part phrase, including the head noun that names
+  the item found faulty or worked on. A connector, cable, seal, housing or other
+  subpart is not interchangeable with its parent assembly. Do not cut off that
+  head noun merely because the parent name is already recognizable.
+- Preserve location and identifying modifiers belonging to that part phrase.
+  Exclude diagnostic verbs and condition words from component.
+- Action should contain one complete statement of the selected maintenance work
+  and its object. Omit administrative headings and independent preceding
+  diagnostic statements when they are unnecessary to establish the work.
+- A clause that combines the observed condition with the performed work may
+  remain intact when shortening would lose the object or execution meaning.
+- Keep independent subsequent tests and outcomes out of a repair excerpt.
+  If the selected action is itself a test, retain that test and its relevant
+  execution or verification wording. Never remove qualifying evidence needed
+  to support the selected status.
+- Prefer exact quote spans for unique text. Do not calculate offsets merely
+  because component selection mode is unavailable.
+- For quotes, omit a terminal sentence-ending period when it is not part of
+  an abbreviation, identifier or number. Preserve all internal punctuation.
+"""
+
 EXTRACTION_SCHEMA = obj(
     {
         "tool": {"type": "string", "enum": ["extract"]},
@@ -144,6 +170,25 @@ class LocalServer:
             extraction_record = context.get("record")
 
         response_schema = DECISION_SCHEMA
+        if extraction_record is None and "allowed_tools" in context:
+            allowed = context["allowed_tools"]
+            if (
+                not isinstance(allowed, list)
+                or not allowed
+                or any(
+                    not isinstance(name, str) or name not in ARGS for name in allowed
+                )
+                or len(set(allowed)) != len(allowed)
+            ):
+                raise BackendError("invalid allowed_tools contract")
+            response_schema = {
+                "anyOf": [
+                    obj(
+                        {"tool": {"type": "string", "enum": [name]}, "args": ARGS[name]}
+                    )
+                    for name in allowed
+                ]
+            }
         candidates = {}
         repair_contract = None
 
@@ -182,6 +227,15 @@ class LocalServer:
                 focused_context["validation_feedback"] = context["validation_feedback"]
 
             system = EXTRACTION_SYSTEM
+            if "evidence_revision" in context:
+                focused_context["evidence_revision"] = context["evidence_revision"]
+                system += (
+                    "\nThis is the one permitted evidence revision for this record. "
+                    "Use evidence_revision.concerns and the original source. "
+                    "Change only flagged fields when the source supports correction. "
+                    "Preserve unflagged fields and action_status. A warning is "
+                    "advisory; retain evidence if the warning is a false alarm."
+                )
 
             if self.component_selection:
                 candidates = component_candidates(extraction_record)
@@ -272,6 +326,75 @@ planning, verification, or the action's object.
 
             context = focused_context
 
+        corrected_component = None
+        revision = context.get("evidence_revision")
+        if isinstance(extraction_record, dict) and isinstance(revision, dict):
+            corrected_component = component_revision_candidate(
+                extraction_record, revision
+            )
+            if corrected_component is not None:
+                candidates = {}
+                response_schema = deepcopy(EXTRACTION_SCHEMA)
+                args_schema = response_schema["properties"]["args"]
+                args_schema["properties"]["record_id"] = {
+                    "type": "string",
+                    "enum": [extraction_record["record_id"]],
+                }
+
+                previous_component = revision["previous_proposal"]["fields"][
+                    "component"
+                ]
+                original_component = {
+                    key: previous_component[key] for key in ("field", "start", "end")
+                }
+                options = [original_component, corrected_component]
+
+                args_schema["properties"]["fields"]["properties"]["component"] = {
+                    "anyOf": [
+                        obj(
+                            {
+                                key: {
+                                    "type": ("string" if key == "field" else "integer"),
+                                    "enum": [value],
+                                }
+                                for key, value in option.items()
+                            }
+                        )
+                        for option in options
+                    ]
+                }
+
+                context.pop("component_candidates", None)
+                context.pop("component_feedback_note", None)
+                context["component_span_options"] = options
+                system = EXTRACTION_SYSTEM + (
+                    "\nChoose fields.component exactly from component_span_options. "
+                    "They contain the original span and its adjacent source subpart. "
+                    "Retain the original when the warning is a false alarm. "
+                    "Revise other flagged fields using evidence_revision; preserve "
+                    "unflagged fields and action_status. Do not invent offsets."
+                )
+
+        revision = context.get("evidence_revision")
+        if isinstance(extraction_record, dict) and isinstance(revision, dict):
+            contract = excerpt_contract(extraction_record, revision)
+            if contract is not None:
+                candidates = {}
+                response_schema, shown = contract
+                context.pop("component_candidates", None)
+                context.pop("component_feedback_note", None)
+                context.pop("component_span_options", None)
+                context["excerpt_span_options"] = shown
+                system = EXTRACTION_SYSTEM + (
+                    "\nReturn field/start/end from the supplied excerpt_span_options. "
+                    "Quotes are shown for inspection only. Select the reported "
+                    "symptom for problem and corrective work for action. "
+                    "Separate checks remain in the full source history. "
+                    "Alternatives are not verified interpretations. Retain the "
+                    "original if alternatives omit needed evidence. "
+                    "Preserve unchanged fields and action_status."
+                )
+
         self.request_count += 1
         body = {
             "model": self.model,
@@ -315,6 +438,8 @@ planning, verification, or the action's object.
             decoded = json.loads(result.stdout)
             content = decoded["choices"][0]["message"]["content"]
             raw_decision = json.loads(content)
+            if not _valid(raw_decision, response_schema):
+                raise BackendError("model decision violates the requested stage schema")
             decision = deepcopy(raw_decision)
 
             if repair_contract is not None:

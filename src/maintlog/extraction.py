@@ -28,14 +28,14 @@ ORIGINS = {
 }
 # These rules reject a few clear contradictions, not all semantic errors.
 ACTION_PREFIX = re.compile(
-    r"^(?:(?:plan(?:ned)?\s+to\s+)?(?:repl|replace|replaced|lubricated|checked|repaired|installed|removed))\b",
+    r"^(?:(?:plan(?:ned)?\s+to\s+)?(?:repl|replace|replaced|lubricated|checked|repaired|installed|removed|found|resecured|performed))\b",
     re.I,
 )
 CUES = {
     "planned": re.compile(r"\b(?:plan(?:ned)?|scheduled|will|to be)\b", re.I),
     "attempted": re.compile(r"\b(?:attempt(?:ed)?|tried)\b", re.I),
     "completed": re.compile(
-        r"\b(?:completed|replaced|repaired|installed|removed|checked|inspected|lubricated)\b",
+        r"\b(?:completed|replaced|repaired|installed|removed|checked|inspected|lubricated|resecured|performed)\b",
         re.I,
     ),
     "verified": re.compile(r"\b(?:verified|confirmed|passed|validated)\b", re.I),
