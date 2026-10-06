@@ -1,0 +1,149 @@
+{
+  "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+  "configuration": {
+    "component_selection": true,
+    "boundary_adapter": true,
+    "focused_status_repair": true
+  },
+  "case": {
+    "id": "faa-left-main-indication-development-v1",
+    "question": "Review left-main landing-gear indication reports for this aircraft. Identify the reported symptoms and corrective work in date order, and explain what the records establish about recurrence. Distinguish similar symptoms from the same confirmed fault. Do not infer that an earlier repair failed or that the reports have a common cause.",
+    "query": "left main landing gear",
+    "task": "history",
+    "scope": {
+      "asset_id": "FAA:[\"AEROSP\",\"1092\"]"
+    },
+    "relevant_record_ids": [
+      "29GA2024021400001",
+      "29GA2024041800001"
+    ],
+    "expected_fields": {
+      "29GA2024021400001": {
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 112,
+            "end": 133,
+            "quote": "11GB PROXIMITY SWITCH",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 16,
+            "end": 54,
+            "quote": "LEFT MAIN UNLK LIGHT ON OVERHEAD PANEL",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 152,
+            "end": 189,
+            "quote": "REMOVED AND REPLACED 11GB PROX SWITCH",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status": "completed"
+      },
+      "29GA2024041800001": {
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 201,
+            "end": 246,
+            "quote": "FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 79,
+            "quote": "LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 195,
+            "end": 266,
+            "quote": "FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status": "completed"
+      }
+    },
+    "label_provenance": "Development references reviewed from three exposed narratives in this conversation. Single-reviewer, strict excerpt boundaries; not an independent holdout or a representative benchmark.",
+    "written_answer_requirements": [
+      "Describe the February and April reports in date order.",
+      "Describe their reported corrective work and checks.",
+      "Exclude the unrelated March engine report.",
+      "State that similar symptoms do not establish a common cause.",
+      "Do not claim the February repair failed.",
+      "Link each finding to its supporting evidence."
+    ]
+  },
+  "input_records": [
+    {
+      "record_id": "29GA2024021400001",
+      "event_date": "2024-02-14",
+      "asset_id": "FAA:[\"AEROSP\",\"1092\"]",
+      "component": "",
+      "issue_raw": "",
+      "action_raw": "",
+      "issue_normalized": "",
+      "action_normalized": "",
+      "evidence": {
+        "source_file": "SDR-2024.csv",
+        "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+        "csv_row": 6576,
+        "data_kind": "user-supplied",
+        "columns": {
+          "narrative": "Discrepancy"
+        }
+      },
+      "narrative_raw": "ON APPROACH HAD LEFT MAIN UNLK LIGHT ON OVERHEAD PANEL. WENT OFF UPON DOING GO AROUND. CORRECTIVE ACTION: FOUND 11GB PROXIMITY SWITCH AT FAULT ON MCDU, REMOVED AND REPLACED 11GB PROX SWITCH, GEAR SWINGS AND OPS CHECK GOOD.",
+      "normalization_policy": "dictionary_v0"
+    },
+    {
+      "record_id": "29GA2024031200001",
+      "event_date": "2024-03-12",
+      "asset_id": "FAA:[\"AEROSP\",\"1092\"]",
+      "component": "",
+      "issue_raw": "",
+      "action_raw": "",
+      "issue_normalized": "",
+      "action_normalized": "",
+      "evidence": {
+        "source_file": "SDR-2024.csv",
+        "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+        "csv_row": 11591,
+        "data_kind": "user-supplied",
+        "columns": {
+          "narrative": "Discrepancy"
+        }
+      },
+      "narrative_raw": "#2 ENGINE OVER TORQUE ON TAKEOFF (111.1%) AFTER ABORTED TAKEOFF TQ REMAINED AT 70% WITH PL AT GROUND IDLE. TAKEOFF ABORTED BELOW 70 KNOTS.  FOUND PEC SYSTEM FAULTY ON MCDU INSPECTED PVM AND FOUND LOOSE CANNON PLUG, RESECURED CONNECTOR, PERFORMED ERASING OF PEC CODES, OPS CHECK GOOD.",
+      "normalization_policy": "dictionary_v0"
+    },
+    {
+      "record_id": "29GA2024041800001",
+      "event_date": "2024-04-17",
+      "asset_id": "FAA:[\"AEROSP\",\"1092\"]",
+      "component": "",
+      "issue_raw": "",
+      "action_raw": "",
+      "issue_normalized": "",
+      "action_normalized": "",
+      "evidence": {
+        "source_file": "SDR-2024.csv",
+        "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+        "csv_row": 17812,
+        "data_kind": "user-supplied",
+        "columns": {
+          "narrative": "Discrepancy"
+        }
+      },
+      "narrative_raw": "LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH. PRIMARY PANEL INDICATED GREEN. COMPLETED ONE PANEL UNSAFE INDICATION CHECKLIST BEFORE LANDING. CORRECTIVE ACTION- FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED. LIGHT EXTINGUISHED ON SECONDARY PANEL PERFORMED OPERATIONAL TEST OF UNLOCK LANDING GEAR ANNUNCIATORS.",
+      "normalization_policy": "dictionary_v0"
+    }
+  ]
+}

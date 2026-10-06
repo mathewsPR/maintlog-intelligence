@@ -1,0 +1,40 @@
+{
+  "agent": {
+    "status": "ready_for_review",
+    "workflow_complete": true,
+    "final_record_ids": [
+      "29GA2024021400001",
+      "29GA2024041800001"
+    ],
+    "record_precision": 1.0,
+    "record_recall": 1.0,
+    "field_tp": 5,
+    "field_fp": 1,
+    "field_fn": 1,
+    "status_correct": 2,
+    "status_total": 2,
+    "labeled_task_success": false,
+    "model_calls": 9,
+    "elapsed_seconds": 15.656,
+    "errors": []
+  },
+  "fixed": {
+    "status": "ready_for_review",
+    "workflow_complete": true,
+    "final_record_ids": [
+      "29GA2024041800001",
+      "29GA2024021400001"
+    ],
+    "record_precision": 1.0,
+    "record_recall": 1.0,
+    "field_tp": 5,
+    "field_fp": 1,
+    "field_fn": 1,
+    "status_correct": 2,
+    "status_total": 2,
+    "labeled_task_success": false,
+    "model_calls": 4,
+    "elapsed_seconds": 10.437,
+    "errors": []
+  }
+}

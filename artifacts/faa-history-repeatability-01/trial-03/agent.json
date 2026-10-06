@@ -1,0 +1,1145 @@
+{
+  "workflow": "agent",
+  "metrics": {
+    "record_precision": 1.0,
+    "record_recall": 1.0,
+    "exact_record_set": true,
+    "aggregate_correct": null,
+    "field_tp": 5,
+    "field_fp": 1,
+    "field_fn": 1,
+    "required_field_spans": 6,
+    "field_precision": 0.8333333333333334,
+    "field_recall": 0.8333333333333334,
+    "correct_unknown_fields": 0,
+    "status_correct": 2,
+    "status_total": 2,
+    "labeled_task_success": false,
+    "workflow_complete": true,
+    "run_status": "ready_for_review",
+    "model_calls": 9,
+    "invalid_decisions": 0,
+    "elapsed_seconds": 15.954,
+    "reported_completion_tokens": 697,
+    "token_usage_available": true
+  },
+  "written_answer_assessment": {
+    "status": "not_scored",
+    "history_review_present": true,
+    "reason": "The report can contain a source-backed history review. The strict scorer measures selected records, extraction spans, execution statuses and workflow completion. It does not assess the requested explanation or establish semantic correctness."
+  },
+  "report": {
+    "schema_version": 2,
+    "status": "ready_for_review",
+    "backend": "local-llama-server",
+    "task_requirements": {
+      "mode": "history",
+      "initial_query": "left main landing gear",
+      "search_required": true,
+      "aggregate_required": true,
+      "inspect_every_final_record": true,
+      "extract_every_final_record": false,
+      "extract_final_narratives": true
+    },
+    "retrieval_normalization": "noun_alias_v1",
+    "vocabulary": null,
+    "completion": {
+      "requirements_met": true,
+      "missing": [],
+      "outcome": "evidence_selected",
+      "semantic_task_success": null,
+      "interpretation": "Workflow checks do not establish relevance, classification accuracy or complete recall."
+    },
+    "abstention": null,
+    "question": "Review left-main landing-gear indication reports for this aircraft. Identify the reported symptoms and corrective work in date order, and explain what the records establish about recurrence. Distinguish similar symptoms from the same confirmed fault. Do not infer that an earlier repair failed or that the reports have a common cause.",
+    "scope": {
+      "asset_id": "FAA:[\"AEROSP\",\"1092\"]",
+      "start": null,
+      "end": null
+    },
+    "input_record_count": 3,
+    "selected_record_count": 3,
+    "steps": 9,
+    "model_calls": 9,
+    "elapsed_seconds": 15.954,
+    "limits": {
+      "max_steps": 12,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "evidence_revision_attempted": [
+      "29GA2024021400001",
+      "29GA2024041800001"
+    ],
+    "history_review": {
+      "status": "available_for_review",
+      "evidence_review": {
+        "method": "targeted_evidence_review_v1",
+        "status": "no_targeted_concerns_detected",
+        "concerns": [],
+        "semantic_accuracy": null,
+        "interpretation": "Advisory checks only. Neither a warning nor its absence establishes semantic correctness. Source evidence is never rewritten."
+      },
+      "method": "dated_source_excerpts_v1",
+      "entries": [
+        {
+          "record_id": "29GA2024021400001",
+          "date": "2024-02-14",
+          "asset_id": "FAA:[\"AEROSP\",\"1092\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 112,
+              "end": 133,
+              "quote": "11GB PROXIMITY SWITCH",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 54,
+              "quote": "ON APPROACH HAD LEFT MAIN UNLK LIGHT ON OVERHEAD PANEL",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 152,
+              "end": 189,
+              "quote": "REMOVED AND REPLACED 11GB PROX SWITCH",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "29GA2024021400001",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 6576
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "ON APPROACH HAD LEFT MAIN UNLK LIGHT ON OVERHEAD PANEL. WENT OFF UPON DOING GO AROUND. CORRECTIVE ACTION: FOUND 11GB PROXIMITY SWITCH AT FAULT ON MCDU, REMOVED AND REPLACED 11GB PROX SWITCH, GEAR SWINGS AND OPS CHECK GOOD."
+          }
+        },
+        {
+          "record_id": "29GA2024041800001",
+          "date": "2024-04-17",
+          "asset_id": "FAA:[\"AEROSP\",\"1092\"]",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 201,
+              "end": 246,
+              "quote": "FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 79,
+              "quote": "LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 195,
+              "end": 266,
+              "quote": "FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "citation": {
+            "record_id": "29GA2024041800001",
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 17812
+          },
+          "source_text": {
+            "component": "",
+            "issue_raw": "",
+            "action_raw": "",
+            "narrative_raw": "LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH. PRIMARY PANEL INDICATED GREEN. COMPLETED ONE PANEL UNSAFE INDICATION CHECKLIST BEFORE LANDING. CORRECTIVE ACTION- FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED. LIGHT EXTINGUISHED ON SECONDARY PANEL PERFORMED OPERATIONAL TEST OF UNLOCK LANDING GEAR ANNUNCIATORS."
+          }
+        }
+      ],
+      "text": "Maintenance history — unreviewed source evidence\n\n2024-02-14 | record 29GA2024021400001\nSource: SDR-2024.csv, CSV row 6576, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: 11GB PROXIMITY SWITCH [record=29GA2024021400001; field=narrative_raw; offsets=112:133]\nproblem: ON APPROACH HAD LEFT MAIN UNLK LIGHT ON OVERHEAD PANEL [record=29GA2024021400001; field=narrative_raw; offsets=0:54]\naction: REMOVED AND REPLACED 11GB PROX SWITCH [record=29GA2024021400001; field=narrative_raw; offsets=152:189]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): ON APPROACH HAD LEFT MAIN UNLK LIGHT ON OVERHEAD PANEL. WENT OFF UPON DOING GO AROUND. CORRECTIVE ACTION: FOUND 11GB PROXIMITY SWITCH AT FAULT ON MCDU, REMOVED AND REPLACED 11GB PROX SWITCH, GEAR SWINGS AND OPS CHECK GOOD.\n\n2024-04-17 | record 29GA2024041800001\nSource: SDR-2024.csv, CSV row 17812, SHA256 80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e\ncomponent: FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR [record=29GA2024041800001; field=narrative_raw; offsets=201:246]\nproblem: LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH [record=29GA2024041800001; field=narrative_raw; offsets=0:79]\naction: FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED [record=29GA2024041800001; field=narrative_raw; offsets=195:266]\nAction status proposal: completed\nFull source (narrative_raw, verbatim): LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH. PRIMARY PANEL INDICATED GREEN. COMPLETED ONE PANEL UNSAFE INDICATION CHECKLIST BEFORE LANDING. CORRECTIVE ACTION- FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED. LIGHT EXTINGUISHED ON SECONDARY PANEL PERFORMED OPERATIONAL TEST OF UNLOCK LANDING GEAR ANNUNCIATORS.\n\nThese are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "limitations": "These are selected reports, not proof of complete maintenance history. Similar symptoms alone do not establish a common cause or that an earlier repair failed. Completed work does not establish successful repair. Narrative recurrence and causal relationships have not been automatically verified. Component, relevance and status proposals remain unreviewed.",
+      "semantic_task_success": null
+    },
+    "records_for_review": [
+      {
+        "record_id": "29GA2024021400001",
+        "event_date": "2024-02-14",
+        "asset_id": "FAA:[\"AEROSP\",\"1092\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 6576,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "ON APPROACH HAD LEFT MAIN UNLK LIGHT ON OVERHEAD PANEL. WENT OFF UPON DOING GO AROUND. CORRECTIVE ACTION: FOUND 11GB PROXIMITY SWITCH AT FAULT ON MCDU, REMOVED AND REPLACED 11GB PROX SWITCH, GEAR SWINGS AND OPS CHECK GOOD.",
+        "normalization_policy": "dictionary_v0"
+      },
+      {
+        "record_id": "29GA2024041800001",
+        "event_date": "2024-04-17",
+        "asset_id": "FAA:[\"AEROSP\",\"1092\"]",
+        "component": "",
+        "issue_raw": "",
+        "action_raw": "",
+        "issue_normalized": "",
+        "action_normalized": "",
+        "evidence": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 17812,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "narrative_raw": "LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH. PRIMARY PANEL INDICATED GREEN. COMPLETED ONE PANEL UNSAFE INDICATION CHECKLIST BEFORE LANDING. CORRECTIVE ACTION- FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED. LIGHT EXTINGUISHED ON SECONDARY PANEL PERFORMED OPERATIONAL TEST OF UNLOCK LANDING GEAR ANNUNCIATORS.",
+        "normalization_policy": "dictionary_v0"
+      }
+    ],
+    "extraction_proposals": [
+      {
+        "record_id": "29GA2024041800001",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 201,
+            "end": 246,
+            "quote": "FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 79,
+            "quote": "LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 195,
+            "end": 266,
+            "quote": "FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 17812,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      },
+      {
+        "record_id": "29GA2024021400001",
+        "fields": {
+          "component": {
+            "field": "narrative_raw",
+            "start": 112,
+            "end": 133,
+            "quote": "11GB PROXIMITY SWITCH",
+            "source_column": "Discrepancy"
+          },
+          "problem": {
+            "field": "narrative_raw",
+            "start": 0,
+            "end": 54,
+            "quote": "ON APPROACH HAD LEFT MAIN UNLK LIGHT ON OVERHEAD PANEL",
+            "source_column": "Discrepancy"
+          },
+          "action": {
+            "field": "narrative_raw",
+            "start": 152,
+            "end": 189,
+            "quote": "REMOVED AND REPLACED 11GB PROX SWITCH",
+            "source_column": "Discrepancy"
+          }
+        },
+        "action_status_proposal": "completed",
+        "review_status": "unreviewed",
+        "source": {
+          "source_file": "SDR-2024.csv",
+          "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+          "csv_row": 6576,
+          "data_kind": "user-supplied",
+          "columns": {
+            "narrative": "Discrepancy"
+          }
+        },
+        "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+      }
+    ],
+    "aggregate": {
+      "method": "same_asset_component_and_normalized_issue_wording",
+      "data_kinds": [
+        "user-supplied"
+      ],
+      "input_record_count": 3,
+      "selected_record_count": 3,
+      "start": null,
+      "end": null,
+      "asset_id": null,
+      "unstructured_record_count": 3,
+      "recurring_groups": [],
+      "interpretation": "Repeated wording is a candidate for engineer review. Counts describe records, not distinct failures; repairs, root causes, and future failures are not inferred. Synthetic data demonstrates behavior only."
+    },
+    "clarification": null,
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "tool": "search",
+          "args": {
+            "query": "left main landing gear",
+            "top_k": 5
+          }
+        },
+        "usage": {
+          "completion_tokens": 26,
+          "prompt_tokens": 1061,
+          "total_tokens": 1087,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.719,
+        "model_called": true,
+        "working_context_chars": 4995,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "hits": [
+            {
+              "record_id": "29GA2024041800001",
+              "asset_id": "FAA:[\"AEROSP\",\"1092\"]",
+              "date": "2024-04-17",
+              "score": 2.6864372957715097,
+              "excerpt": "LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH. PRIMARY PANEL INDICATED GREEN. COMPLETED ONE PANEL UNSAFE INDICATION CHECKLIST BEFORE LANDING. CORRECTIVE ACTION- FOUND",
+              "excerpt_truncated": true
+            },
+            {
+              "record_id": "29GA2024021400001",
+              "asset_id": "FAA:[\"AEROSP\",\"1092\"]",
+              "date": "2024-02-14",
+              "score": 2.065415603766879,
+              "excerpt": "ON APPROACH HAD LEFT MAIN UNLK LIGHT ON OVERHEAD PANEL. WENT OFF UPON DOING GO AROUND. CORRECTIVE ACTION: FOUND 11GB PROXIMITY SWITCH AT FAULT ON MCDU, REMOVED AND REPLACED 11GB PROX SWITCH, GEAR SWIN",
+              "excerpt_truncated": true
+            }
+          ],
+          "method": "lexical_relevance_not_fault_confirmation"
+        }
+      },
+      {
+        "step": 2,
+        "decision": {
+          "tool": "aggregate",
+          "args": {}
+        },
+        "usage": {
+          "completion_tokens": 12,
+          "prompt_tokens": 1485,
+          "total_tokens": 1497,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.594,
+        "model_called": true,
+        "working_context_chars": 5947,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "selected_record_count": 3,
+          "unstructured_record_count": 3,
+          "total_recurring_groups": 0,
+          "groups": [],
+          "groups_truncated": false,
+          "method": "same_asset_component_and_normalized_issue_wording"
+        }
+      },
+      {
+        "step": 3,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "29GA2024041800001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 1545,
+          "total_tokens": 1577,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 0.953,
+        "model_called": true,
+        "working_context_chars": 6174,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "29GA2024041800001",
+          "event_date": "2024-04-17",
+          "asset_id": "FAA:[\"AEROSP\",\"1092\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 17812,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH. PRIMARY PANEL INDICATED GREEN. COMPLETED ONE PANEL UNSAFE INDICATION CHECKLIST BEFORE LANDING. CORRECTIVE ACTION- FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED. LIGHT EXTINGUISHED ON SECONDARY PANEL PERFORMED OPERATIONAL TEST OF UNLOCK LANDING GEAR ANNUNCIATORS.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 4,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "29GA2024041800001",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "FWD. LH DOWN LOCK SENSOR"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "CORRECTIVE ACTION- FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED. LIGHT EXTINGUISHED ON SECONDARY PANEL PERFORMED OPERATIONAL TEST OF UNLOCK LANDING GEAR ANNUNCIATORS."
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 170,
+          "prompt_tokens": 1103,
+          "total_tokens": 1273,
+          "prompt_tokens_details": {
+            "cached_tokens": 587
+          }
+        },
+        "model_seconds": 3.234,
+        "model_called": true,
+        "working_context_chars": 5322,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "29GA2024041800001",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "FWD. LH DOWN LOCK SENSOR"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "CORRECTIVE ACTION- FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED. LIGHT EXTINGUISHED ON SECONDARY PANEL PERFORMED OPERATIONAL TEST OF UNLOCK LANDING GEAR ANNUNCIATORS."
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "29GA2024041800001",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "FWD. LH DOWN LOCK SENSOR"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "CORRECTIVE ACTION- FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED. LIGHT EXTINGUISHED ON SECONDARY PANEL PERFORMED OPERATIONAL TEST OF UNLOCK LANDING GEAR ANNUNCIATORS."
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "29GA2024041800001",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 201,
+              "end": 225,
+              "quote": "FWD. LH DOWN LOCK SENSOR",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 79,
+              "quote": "LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 176,
+              "end": 369,
+              "quote": "CORRECTIVE ACTION- FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED. LIGHT EXTINGUISHED ON SECONDARY PANEL PERFORMED OPERATIONAL TEST OF UNLOCK LANDING GEAR ANNUNCIATORS.",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 17812,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 5,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "29GA2024041800001",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 201,
+                "end": 246
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 79
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 195,
+                "end": 266
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 123,
+          "prompt_tokens": 2108,
+          "total_tokens": 2231,
+          "prompt_tokens_details": {
+            "cached_tokens": 587
+          }
+        },
+        "model_seconds": 2.532,
+        "model_called": true,
+        "working_context_chars": 7260,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "evidence_revision": {
+          "record_id": "29GA2024041800001",
+          "previous_proposal": {
+            "record_id": "29GA2024041800001",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 201,
+                "end": 225,
+                "quote": "FWD. LH DOWN LOCK SENSOR",
+                "source_column": "Discrepancy"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 79,
+                "quote": "LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH",
+                "source_column": "Discrepancy"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 176,
+                "end": 369,
+                "quote": "CORRECTIVE ACTION- FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED. LIGHT EXTINGUISHED ON SECONDARY PANEL PERFORMED OPERATIONAL TEST OF UNLOCK LANDING GEAR ANNUNCIATORS.",
+                "source_column": "Discrepancy"
+              }
+            },
+            "action_status_proposal": "completed",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "SDR-2024.csv",
+              "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+              "csv_row": 17812,
+              "data_kind": "user-supplied",
+              "columns": {
+                "narrative": "Discrepancy"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          },
+          "concerns": [
+            {
+              "record_id": "29GA2024041800001",
+              "field": "component",
+              "code": "possible_omitted_subpart",
+              "message": "The selected component ends before a following subpart noun; review the complete object involved in the work.",
+              "source_continuation": " ELECTRICAL CONNECTOR"
+            },
+            {
+              "record_id": "29GA2024041800001",
+              "field": "action",
+              "code": "action_contains_administrative_heading",
+              "message": "The action includes a corrective-action heading; review its boundary and whether separate work or checks were combined."
+            }
+          ],
+          "instruction": "Review the flagged fields against the source. Revise only those fields when justified; preserve all other fields and action_status. A warning may be a false alarm: retaining supported evidence is allowed. Do not invent evidence or remove supported fields just to clear a warning."
+        },
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "29GA2024041800001",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 201,
+                  "end": 246
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 79
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 195,
+                  "end": 266
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "29GA2024041800001",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 201,
+                    "end": 246
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 79
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 195,
+                    "end": 266
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "29GA2024041800001",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 201,
+              "end": 246,
+              "quote": "FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 79,
+              "quote": "LT MAIN LANDING GEAR UNSAFE INDICATION ON SECONDARY PANEL DURING FINAL APPROACH",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 195,
+              "end": 266,
+              "quote": "FOUND FWD. LH DOWN LOCK SENSOR ELECTRICAL CONNECTOR LOOSE AND RESECURED",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 17812,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 6,
+        "decision": {
+          "tool": "record",
+          "args": {
+            "record_id": "29GA2024021400001"
+          }
+        },
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 2195,
+          "total_tokens": 2227,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.234,
+        "model_called": true,
+        "working_context_chars": 8279,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_id": "29GA2024021400001",
+          "event_date": "2024-02-14",
+          "asset_id": "FAA:[\"AEROSP\",\"1092\"]",
+          "component": "",
+          "issue_raw": "",
+          "action_raw": "",
+          "issue_normalized": "",
+          "action_normalized": "",
+          "evidence": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 6576,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "narrative_raw": "ON APPROACH HAD LEFT MAIN UNLK LIGHT ON OVERHEAD PANEL. WENT OFF UPON DOING GO AROUND. CORRECTIVE ACTION: FOUND 11GB PROXIMITY SWITCH AT FAULT ON MCDU, REMOVED AND REPLACED 11GB PROX SWITCH, GEAR SWINGS AND OPS CHECK GOOD.",
+          "normalization_policy": "dictionary_v0"
+        }
+      },
+      {
+        "step": 7,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "29GA2024021400001",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "quote": "11GB PROXIMITY SWITCH"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "quote": "FOUND 11GB PROXIMITY SWITCH AT FAULT"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "quote": "REMOVED AND REPLACED 11GB PROX SWITCH"
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 128,
+          "prompt_tokens": 1084,
+          "total_tokens": 1212,
+          "prompt_tokens_details": {
+            "cached_tokens": 587
+          }
+        },
+        "model_seconds": 2.484,
+        "model_called": true,
+        "working_context_chars": 5175,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "29GA2024021400001",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "quote": "11GB PROXIMITY SWITCH"
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "quote": "FOUND 11GB PROXIMITY SWITCH AT FAULT"
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "quote": "REMOVED AND REPLACED 11GB PROX SWITCH"
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "29GA2024021400001",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "quote": "11GB PROXIMITY SWITCH"
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "quote": "FOUND 11GB PROXIMITY SWITCH AT FAULT"
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "quote": "REMOVED AND REPLACED 11GB PROX SWITCH"
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "29GA2024021400001",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 112,
+              "end": 133,
+              "quote": "11GB PROXIMITY SWITCH",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 106,
+              "end": 142,
+              "quote": "FOUND 11GB PROXIMITY SWITCH AT FAULT",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 152,
+              "end": 189,
+              "quote": "REMOVED AND REPLACED 11GB PROX SWITCH",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 6576,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 8,
+        "decision": {
+          "tool": "extract",
+          "args": {
+            "record_id": "29GA2024021400001",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 112,
+                "end": 133
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 0,
+                "end": 54
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 152,
+                "end": 189
+              }
+            },
+            "action_status": "completed"
+          }
+        },
+        "usage": {
+          "completion_tokens": 123,
+          "prompt_tokens": 1908,
+          "total_tokens": 2031,
+          "prompt_tokens_details": {
+            "cached_tokens": 587
+          }
+        },
+        "model_seconds": 2.485,
+        "model_called": true,
+        "working_context_chars": 6653,
+        "working_context_compacted": false,
+        "decision_stage": "focused_extraction",
+        "evidence_revision": {
+          "record_id": "29GA2024021400001",
+          "previous_proposal": {
+            "record_id": "29GA2024021400001",
+            "fields": {
+              "component": {
+                "field": "narrative_raw",
+                "start": 112,
+                "end": 133,
+                "quote": "11GB PROXIMITY SWITCH",
+                "source_column": "Discrepancy"
+              },
+              "problem": {
+                "field": "narrative_raw",
+                "start": 106,
+                "end": 142,
+                "quote": "FOUND 11GB PROXIMITY SWITCH AT FAULT",
+                "source_column": "Discrepancy"
+              },
+              "action": {
+                "field": "narrative_raw",
+                "start": 152,
+                "end": 189,
+                "quote": "REMOVED AND REPLACED 11GB PROX SWITCH",
+                "source_column": "Discrepancy"
+              }
+            },
+            "action_status_proposal": "completed",
+            "review_status": "unreviewed",
+            "source": {
+              "source_file": "SDR-2024.csv",
+              "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+              "csv_row": 6576,
+              "data_kind": "user-supplied",
+              "columns": {
+                "narrative": "Discrepancy"
+              }
+            },
+            "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+          },
+          "concerns": [
+            {
+              "record_id": "29GA2024021400001",
+              "field": "problem",
+              "code": "possible_diagnosis_in_symptom_field",
+              "message": "The problem excerpt is a diagnostic finding after a corrective-action heading; review whether the reported symptom was omitted."
+            }
+          ],
+          "instruction": "Review the flagged fields against the source. Revise only those fields when justified; preserve all other fields and action_status. A warning may be a false alarm: retaining supported evidence is allowed. Do not invent evidence or remove supported fields just to clear a warning."
+        },
+        "extraction_audit": {
+          "component_selection": true,
+          "component_selection_used": false,
+          "boundary_adapter": true,
+          "focused_status_repair": true,
+          "status_repair_used": false,
+          "component_recovery_used": false,
+          "raw_decision": {
+            "tool": "extract",
+            "args": {
+              "record_id": "29GA2024021400001",
+              "fields": {
+                "component": {
+                  "field": "narrative_raw",
+                  "start": 112,
+                  "end": 133
+                },
+                "problem": {
+                  "field": "narrative_raw",
+                  "start": 0,
+                  "end": 54
+                },
+                "action": {
+                  "field": "narrative_raw",
+                  "start": 152,
+                  "end": 189
+                }
+              },
+              "action_status": "completed"
+            }
+          },
+          "boundary": {
+            "policy": "terminal_period_v1",
+            "original_decision": {
+              "tool": "extract",
+              "args": {
+                "record_id": "29GA2024021400001",
+                "fields": {
+                  "component": {
+                    "field": "narrative_raw",
+                    "start": 112,
+                    "end": 133
+                  },
+                  "problem": {
+                    "field": "narrative_raw",
+                    "start": 0,
+                    "end": 54
+                  },
+                  "action": {
+                    "field": "narrative_raw",
+                    "start": 152,
+                    "end": 189
+                  }
+                },
+                "action_status": "completed"
+              }
+            },
+            "changes": []
+          }
+        },
+        "tool_result": {
+          "record_id": "29GA2024021400001",
+          "fields": {
+            "component": {
+              "field": "narrative_raw",
+              "start": 112,
+              "end": 133,
+              "quote": "11GB PROXIMITY SWITCH",
+              "source_column": "Discrepancy"
+            },
+            "problem": {
+              "field": "narrative_raw",
+              "start": 0,
+              "end": 54,
+              "quote": "ON APPROACH HAD LEFT MAIN UNLK LIGHT ON OVERHEAD PANEL",
+              "source_column": "Discrepancy"
+            },
+            "action": {
+              "field": "narrative_raw",
+              "start": 152,
+              "end": 189,
+              "quote": "REMOVED AND REPLACED 11GB PROX SWITCH",
+              "source_column": "Discrepancy"
+            }
+          },
+          "action_status_proposal": "completed",
+          "review_status": "unreviewed",
+          "source": {
+            "source_file": "SDR-2024.csv",
+            "source_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+            "csv_row": 6576,
+            "data_kind": "user-supplied",
+            "columns": {
+              "narrative": "Discrepancy"
+            }
+          },
+          "validation": "source_spans_and_conservative_constraints_not_semantic_correctness"
+        }
+      },
+      {
+        "step": 9,
+        "decision": {
+          "tool": "finish",
+          "args": {
+            "record_ids": [
+              "29GA2024021400001",
+              "29GA2024041800001"
+            ]
+          }
+        },
+        "usage": {
+          "completion_tokens": 51,
+          "prompt_tokens": 2771,
+          "total_tokens": 2822,
+          "prompt_tokens_details": {
+            "cached_tokens": 748
+          }
+        },
+        "model_seconds": 1.719,
+        "model_called": true,
+        "working_context_chars": 9955,
+        "working_context_compacted": false,
+        "decision_stage": "tool_selection",
+        "tool_result": {
+          "record_ids": [
+            "29GA2024021400001",
+            "29GA2024041800001"
+          ],
+          "review_status": "unreviewed"
+        }
+      }
+    ],
+    "review_status": "unreviewed",
+    "interpretation": "Source copying and scope validated. Classification, relevance and action status need human review. Counts describe records, not unique failures. Replay runs test mechanics only."
+  }
+}
