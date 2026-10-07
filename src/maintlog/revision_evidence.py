@@ -3,7 +3,7 @@
 import re
 
 from .evidence_review import CORRECTIVE
-from .extraction import CUES, has_unnegated_status_cue
+from .extraction import has_unnegated_status_cue
 
 ABBREVIATIONS = {"fwd", "aft", "ref", "no", "nos", "approx", "assy", "fig", "dr"}
 BOUNDARY = re.compile(r"[.;!?](?=\s|$)")
@@ -81,8 +81,6 @@ def excerpt_options(source: dict, revision: dict) -> dict:
                 status = previous["action_status_proposal"]
                 if name == "action" and status != "unknown":
                     if not has_unnegated_status_cue(quote, status):
-                        continue
-                    if status == "completed" and CUES["planned"].search(quote):
                         continue
 
                 option = {"field": field, "start": begin, "end": finish}

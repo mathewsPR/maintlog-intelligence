@@ -12,7 +12,14 @@ def obj(properties, required=None):
     }
 
 
+TOOL_TEXT_LIMIT = 500
 TEXT = {"type": "string"}
+TOOL_TEXT = {
+    "type": "string",
+    "minLength": 1,
+    "maxLength": TOOL_TEXT_LIMIT,
+    "description": "Non-empty text, at most 500 characters.",
+}
 SPAN = {
     "anyOf": [
         {"type": "null"},
@@ -40,7 +47,7 @@ SPAN = {
 ARGS = {
     "assets": obj({"offset": {"type": "integer", "minimum": 0}}, []),
     "search": obj(
-        {"query": TEXT, "top_k": {"type": "integer", "minimum": 1, "maximum": 5}},
+        {"query": TOOL_TEXT, "top_k": {"type": "integer", "minimum": 1, "maximum": 5}},
         ["query"],
     ),
     "record": obj({"record_id": TEXT}),
@@ -56,8 +63,8 @@ ARGS = {
         }
     ),
     "aggregate": obj({}),
-    "clarify": obj({"question": TEXT}),
-    "abstain": obj({"reason": TEXT}),
+    "clarify": obj({"question": TOOL_TEXT}),
+    "abstain": obj({"reason": TOOL_TEXT}),
     "finish": obj({"record_ids": {"type": "array", "items": TEXT, "maxItems": 50}}),
 }
 DECISION_SCHEMA = {
@@ -87,6 +94,12 @@ def _valid(value, schema):
         ) and all(_valid(v, schema["properties"][k]) for k, v in value.items())
     if kind == "integer":
         return schema.get("minimum", value) <= value <= schema.get("maximum", value)
+    if kind == "string":
+        return (
+            schema.get("minLength", 0)
+            <= len(value)
+            <= schema.get("maxLength", len(value))
+        )
     if kind == "array":
         return len(value) <= schema.get("maxItems", len(value)) and all(
             _valid(v, schema["items"]) for v in value
