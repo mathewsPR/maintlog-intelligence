@@ -108,6 +108,8 @@ summary. Configuration details for all three batches must be compared before
 claiming a causal improvement. The summary interpretation itself
 warns that the v2 step budget differs from an earlier 12-step batch.
 
+See the [completed agent evaluation review](FINAL_AGENT_REVIEW_20261007.md).
+
 Source integrity (SHA-256 of uploaded summary bytes):
 
 - `summary(20261006-122044).json`: `1cadbfba7d349e13cea9666fa6f5aff39dcfd5ee538addf9d378862a70f21eb2`
