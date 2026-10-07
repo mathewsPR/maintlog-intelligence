@@ -1,7 +1,7 @@
 # CSV user guide
 
 This guide covers installation, company CSV logs, a local-agent run, and review.
-Commands use Bash or Windows Git Bash and run from `AppliedAI_Lab/maintlog-intelligence`.
+Commands use Bash or Windows Git Bash and run from `maintlog-intelligence`.
 Keep inputs and outputs private. Example notes below are invented.
 
 ## Install and activate
@@ -9,8 +9,8 @@ Keep inputs and outputs private. Example notes below are invented.
 Install Git and Python 3.11, then clone the repository:
 
 ```bash
-git clone https://github.com/mathewsPR/AppliedAI_Lab.git
-cd AppliedAI_Lab/maintlog-intelligence
+git clone https://github.com/mathewsPR/maintlog-intelligence.git
+cd maintlog-intelligence
 ```
 
 Choose the environment commands for your operating system.
@@ -370,5 +370,5 @@ Separate organizations' files/databases. The project has no multi-tenant access
 control, automated retention service, or commercial response-time guarantee.
 For bugs, submit a small invented reproduction, version/commit, Python/OS, command,
 backend/model details, expected outcome, and sanitized error. Use the Maintlog issue
-forms in AppliedAI_Lab. For vulnerabilities, follow [the security policy](../../.github/SECURITY.md)
+forms in the Maintlog Intelligence repository. For vulnerabilities, follow [the security policy](../.github/SECURITY.md)
 and its activation status.

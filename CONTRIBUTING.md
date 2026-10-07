@@ -1,16 +1,15 @@
 # Contributing to Maintlog Intelligence
 
 Use a focused issue or change. Follow the
-[code of conduct](../.github/CODE_OF_CONDUCT.md).
-Maintlog is an ordinary folder in AppliedAI_Lab, maintained by @mathewsPR.
+[code of conduct](.github/CODE_OF_CONDUCT.md).
+Maintlog is an independent repository maintained by @mathewsPR.
 
 ## Setup
 
 ```bash
-git clone https://github.com/mathewsPR/AppliedAI_Lab.git
-cd AppliedAI_Lab
-git switch -c fix/maintlog-focused-change
+git clone https://github.com/mathewsPR/maintlog-intelligence.git
 cd maintlog-intelligence
+git switch -c fix/maintlog-focused-change
 ```
 
 Windows Git Bash:
@@ -60,7 +59,7 @@ Replay is a mechanics check, not measured model quality.
 ## Pull requests
 
 Use the Maintlog PR template, explain final behavior, and report checks actually
-run. Select it using `template=maintlog.md` in the PR URL if needed. Update relevant
+run. The template loads automatically. Update relevant
 docs and the Unreleased changelog. Wait for CI and maintainer review; solo-owned
 changes must not depend on an unavailable second reviewer. Discuss substantial
 architecture changes in an issue first.

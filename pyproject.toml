@@ -31,9 +31,9 @@ line-length = 88
 select = ["E4", "E7", "E9", "F", "I", "UP"]
 
 [project.urls]
-Repository = "https://github.com/mathewsPR/AppliedAI_Lab"
-Documentation = "https://github.com/mathewsPR/AppliedAI_Lab/tree/main/maintlog-intelligence/docs"
-Issues = "https://github.com/mathewsPR/AppliedAI_Lab/issues"
+Repository = "https://github.com/mathewsPR/maintlog-intelligence"
+Documentation = "https://github.com/mathewsPR/maintlog-intelligence/tree/main/docs"
+Issues = "https://github.com/mathewsPR/maintlog-intelligence/issues"
 
 [tool.coverage.run]
 branch = true

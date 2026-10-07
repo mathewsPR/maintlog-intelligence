@@ -1,6 +1,6 @@
 # Architecture and code quality
 
-Maintlog is a Python package and CLI inside the AppliedAI_Lab monorepo. Keep its
+Maintlog is a Python package and CLI in its own repository. Keep its
 existing flat module structure; no service framework or new plugin layer is needed.
 
 | Responsibility | Modules |

@@ -1,0 +1,2 @@
+# Preserve exact bytes for hashed datasets and fixtures.
+/data/** -text

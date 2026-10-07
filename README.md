@@ -2,7 +2,7 @@
 
 Review equipment-maintenance CSV logs with a local agent and source-linked evidence.
 
-[![CI](https://github.com/mathewsPR/AppliedAI_Lab/actions/workflows/maintlog-ci.yml/badge.svg)](https://github.com/mathewsPR/AppliedAI_Lab/actions/workflows/maintlog-ci.yml)
+[![CI](https://github.com/mathewsPR/maintlog-intelligence/actions/workflows/maintlog-ci.yml/badge.svg)](https://github.com/mathewsPR/maintlog-intelligence/actions/workflows/maintlog-ci.yml)
 ![Version](https://img.shields.io/badge/version-0.3.0-blue)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
@@ -36,8 +36,8 @@ Requirements: Git and **Python 3.11**. Commands below use Bash or Windows Git Ba
 The bundled search provides a first result without downloading a model.
 
 ```bash
-git clone https://github.com/mathewsPR/AppliedAI_Lab.git
-cd AppliedAI_Lab/maintlog-intelligence
+git clone https://github.com/mathewsPR/maintlog-intelligence.git
+cd maintlog-intelligence
 ```
 
 Create and activate an environment using **one** of these options.
@@ -202,8 +202,8 @@ import, and conversational resume are outside the implemented scope.
 - [Release checks](docs/RELEASE.md)
 
 Maintainer: [@mathewsPR](https://github.com/mathewsPR).
-Report reproducible bugs through the [repository issues](https://github.com/mathewsPR/AppliedAI_Lab/issues).
-Use invented or sanitized examples. Follow [SECURITY.md](../.github/SECURITY.md)
+Report reproducible bugs through the [repository issues](https://github.com/mathewsPR/maintlog-intelligence/issues).
+Use invented or sanitized examples. Follow [SECURITY.md](.github/SECURITY.md)
 for private vulnerability reporting. Never post company logs, prompts, or traces.
 
 ## Contributing

@@ -1,0 +1,30 @@
+name: "Maintlog: feature request"
+description: Propose a focused maintenance-history improvement.
+title: "[Maintlog feature]: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: Who encounters it and what are they trying to do?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Smallest useful change
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Observable success and important failure cases
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope
+      options:
+        - label: This concerns Maintlog and contains no private records.
+          required: true
