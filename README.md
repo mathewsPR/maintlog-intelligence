@@ -1,245 +1,224 @@
 # Maintlog Intelligence
 
-Review exported equipment-maintenance histories with source-linked results and
-a bounded local agent, for maintenance engineers and workflow developers.
+Review equipment-maintenance CSV logs with a local agent and source-linked evidence.
 
 [![CI](https://github.com/mathewsPR/AppliedAI_Lab/actions/workflows/maintlog-ci.yml/badge.svg)](https://github.com/mathewsPR/AppliedAI_Lab/actions/workflows/maintlog-ci.yml)
 ![Version](https://img.shields.io/badge/version-0.3.0-blue)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
-**Experimental.** Outputs require engineering review. Successful execution does
-not prove a correct answer or authorize equipment operation.
+**Experimental software for supervised review.** CSV is the supported input format.
+Outputs are proposals for an engineer to check, not verified maintenance conclusions.
 
-<!-- Demo placeholder: add a short GIF of the synthetic HTML review when available. -->
+<!-- Add an actual screenshot of the bundled HTML review when available. -->
 
 ## Why it exists
 
-Maintenance exports spread evidence across many records. Maintlog helps engineers
-find relevant history, inspect original text, and review proposed extracted fields.
-An agent is a model that chooses tools during a task. Deterministic checks validate
-its requested actions and source references. Python modules handle ingestion,
-search, evidence checks, and review persistence; LangGraph coordinates model tool
-choices. [Architecture](docs/ARCHITECTURE.md) describes these boundaries.
+Maintenance exports spread reported problems and actions across many records.
+Maintlog helps maintenance engineers find relevant records, inspect original notes,
+and review extracted fields without losing their source references.
 
-### Recorded operational evaluation
-
-Maintainer-run FAA-history development evaluations on 6 October 2026 reported:
-
-| Uploaded run summary | Agent completed | Fixed completed | Saved / planned |
-| --- | --- | --- | --- |
-| `summary(20261006-122044).json` | 66/100 (66%) | 83/100 (83%) | 200/200 |
-| `summary(20261006-125614).json` | 74/100 (74%) | 83/100 (83%) | 200/200 |
-| `summary(20261006-135543).json` | 81/100 (81%) | 83/100 (83%) | 200/200 |
-
-These are recorded operational results from the supplied run artifacts. Completion includes `no_matches`; the latest agent batch has 69
-`ready_for_review` and 12 `no_matches` outcomes. Semantic accuracy and complete-task
-success are unmeasured (`null`) in all three summaries. Differences in code,
-prompts, or budgets must be checked in the manifests before causal comparisons.
-Latest recorded setup: Python 3.11.9, `qwen35-4b`, 100 histories, one trial per
-workflow, 20 steps, and 120 seconds. The server advertised 4096 context tokens and
-Q4_K Medium quantization; exact weight-file identity remains unverified.
-
-| Other recorded validation, 6 October 2026 | Result |
-| --- | --- |
-| Combined statement/branch coverage | **75.76%** |
-| Windows build, version 0.3.0 | Wheel and source distribution built |
-| Twine distribution metadata checks | Both distributions **PASSED** |
-
-These checks do not establish fresh installation, independent answer accuracy,
-or acceptance of the proposed CI changes. The latest fixed workflow completed
-more runs than the agent; agent superiority is not established.
-See [evaluation evidence](docs/EVALUATION.md#recorded-operational-results) for
-outcome counts, token accounting, source hashes, and missing evidence.
-[Recorded validation JSON](reports/RECORDED_VALIDATION.json) preserves the curated
-metrics and provenance; the raw uploaded reports are not reproduced here.
+An agent is a model that chooses tools to complete a task. LangGraph coordinates
+those choices; Python code handles CSV import, search, validation, and review storage.
+The default local setup uses llama.cpp to run the model on your computer.
 
 ## Features
 
-- Strict CSV import and explicit source-column mapping.
-- Search restricted by equipment ID and date range.
-- Source hashes and record references in results.
-- Bounded tool selection through a local model server.
-- HTML field review and recorded decisions in SQLite.
-- Comparisons with simpler workflows and explicit evaluation limits.
+- CSV import with explicit mappings for company column names.
+- Search scoped by equipment ID and inclusive dates.
+- Proposed component, problem, action, and action-status fields.
+- Source hashes, record IDs, and quoted excerpts in results.
+- Configurable step and time budgets for agent runs.
+- HTML review and human decisions stored in SQLite, a local database file.
 
 ## Quick start
 
-With Python 3.11 and Git installed, this small search needs no model or agent extra.
-It targets a useful first result within five minutes on a normal connection.
-
-Windows Git Bash:
+Requirements: Git and **Python 3.11**. Commands below use Bash or Windows Git Bash.
+The bundled search provides a first result without downloading a model.
 
 ```bash
 git clone https://github.com/mathewsPR/AppliedAI_Lab.git
 cd AppliedAI_Lab/maintlog-intelligence
+```
+
+Create and activate an environment using **one** of these options.
+
+Windows Git Bash:
+
+```bash
 py -3.11 -m venv .venv
 source .venv/Scripts/activate
-python -m pip install -e .
-maintlog search data/demo/pump_records.csv --data-kind synthetic --query "bearing vibration" --asset-id PUMP-001
 ```
 
 Linux:
 
 ```bash
-git clone https://github.com/mathewsPR/AppliedAI_Lab.git
-cd AppliedAI_Lab/maintlog-intelligence
 python3.11 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e .
-maintlog search data/demo/pump_records.csv --data-kind synthetic --query "bearing vibration" --asset-id PUMP-001
 ```
 
-The JSON result contains `hits`, the requested scope, and source evidence for
-`PUMP-001`. Search is lexical: it ranks matching wording rather than generating
-an answer. No workplace data is included in this example.
+Install and search the invented demo records:
 
-## Installation
+```bash
+python -m pip install --upgrade "pip==26.2.1" "setuptools==83.0.0"
+python -m pip install -e .
+python -m maintlog.cli search data/demo/pump_records.csv --data-kind synthetic --query "bearing vibration" --asset-id PUMP-001
+```
 
-For agent and replay commands, run from the cloned project with the environment
-above active:
+The JSON result lists matching records and their source evidence. Search matches
+wording; it does not generate a model answer. See the next section for agent setup.
+
+## Installation for the agent
+
+From the same project directory, with the environment active:
 
 ```bash
 python -m pip install -r requirements-agent.lock
 python -m pip check
 ```
 
-This installs the editable agent extra and pinned dependencies. The base package
-has no runtime third-party dependencies; agent orchestration uses LangGraph.
-The snapshot has no hashes and records an environment, not a hash-verified lock.
-Python 3.11 is the supported version. Windows examples use Git Bash; PowerShell
-activation is `.\.venv\Scripts\Activate.ps1`.
+This installs the project and pinned agent dependencies. Installation requires
+network access. The dependency snapshot has no package hashes. Model weights and
+llama.cpp are installed separately; the project does not start a model server.
 
-Installation needs network access. Deterministic commands and replay work offline
-afterward. Live runs require a loopback, OpenAI-compatible chat server supporting
-JSON-object replies. No weights are bundled or model server started.
+For the commands below, start an OpenAI-compatible local chat server at
+`http://127.0.0.1:8081/v1` accepting model ID `qwen35-4b` and JSON-object replies.
+The recorded setup used Qwen3.5-4B with a 4096-token context. Model installation,
+server startup, and checks are explained in the [user guide](docs/USAGE.md#local-model-prerequisites).
 
-## Usage
+## Try the review interface
 
-Run these from the project folder with the environment active.
-
-Create a structured-history brief:
+Replay uses saved decisions to demonstrate the interface without a running model.
+It does not evaluate model quality. Agent dependencies must already be installed.
 
 ```bash
-maintlog brief data/demo/pump_records.csv --data-kind synthetic --asset-id PUMP-001 --output artifacts/brief.json
+python -m maintlog.cli agent data/demo/company_export.csv --data-kind synthetic --profile data/demo/company_profile.json --asset-id PUMP-001 --question "Review bearing vibration history" --backend replay --replay data/demo/replay_narrative.json --output artifacts/demo-run.json --html artifacts/demo-review.html
 ```
 
-Generate an HTML review with replay, which uses saved choices instead of a model:
+Open `artifacts/demo-review.html` in your browser. Inspect source notes, proposed
+fields, and action statuses. Download review decisions before closing or refreshing
+the page. See [how to import decisions and create a reviewed brief](docs/USAGE.md#review-lifecycle).
+
+## Use your own CSV
+
+Keep company inputs and generated reports outside the public repository.
+A narrative export can use these columns:
+
+```csv
+Work Order,Date,Equipment,Technician Notes
+WO-1001,2026-01-03,PUMP-17,"Bearing vibration reported. Inspection planned."
+WO-1002,2026-01-08,PUMP-17,"Replaced bearing. Vibration remains high."
+```
+
+These rows are invented. Each row needs a unique record ID, a valid `YYYY-MM-DD`
+date, and an equipment ID. Notes can be free text. Map the headers in `profile.json`:
+
+```json
+{
+  "columns": {
+    "record_id": "Work Order",
+    "event_date": "Date",
+    "asset_id": "Equipment",
+    "narrative": "Technician Notes"
+  }
+}
+```
+
+After placing `maintenance.csv` and `profile.json` in `maintlog-private` under your
+home directory, and starting the server described above, run:
 
 ```bash
-maintlog agent data/demo/company_export.csv --data-kind synthetic --profile data/demo/company_profile.json --asset-id PUMP-001 --question "Review bearing vibration history" --backend replay --replay data/demo/replay_narrative.json --output artifacts/demo-run.json --html artifacts/demo-review.html
+export MAINTLOG_WORKDIR="$(python -c 'from pathlib import Path; print((Path.home() / "maintlog-private").as_posix())')"
+mkdir -p "$MAINTLOG_WORKDIR/results"
+python -m maintlog.cli agent "$MAINTLOG_WORKDIR/maintenance.csv" --data-kind user-supplied --profile "$MAINTLOG_WORKDIR/profile.json" --asset-id PUMP-17 --start 2026-01-01 --end 2026-01-31 --task history --initial-query "bearing vibration" --question "Review bearing vibration history and reported maintenance actions." --backend local --base-url http://127.0.0.1:8081/v1 --model qwen35-4b --max-steps 20 --timeout 120 --output "$MAINTLOG_WORKDIR/results/pump-17.json" --html "$MAINTLOG_WORKDIR/results/pump-17.html"
 ```
 
-Open `artifacts/demo-review.html` in a browser. Inspect each source record and
-proposed field/action status. Download `review-decisions.json` from the page and
-save it in `artifacts/`. Then import the decisions and create a reviewed brief:
+Replace the equipment ID, dates, and question for your task. Scope comes from flags;
+mentioning an ID in the question does not restrict the input.
 
-```bash
-maintlog-review artifacts/demo-run.json --decisions artifacts/review-decisions.json --database artifacts/reviews.sqlite3
-maintlog reviewed-brief data/demo/company_export.csv --data-kind synthetic --profile data/demo/company_profile.json --asset-id PUMP-001 --review-report artifacts/demo-run.json --database artifacts/reviews.sqlite3 --output artifacts/reviewed-brief.json
-```
-
-Reuse requires explicit field and action-status review; record acceptance alone
-is insufficient. The database preserves review events without changing sources.
-Replay measures mechanics, not model quality. See the [review guide](docs/USAGE.md#review-lifecycle).
-
-Use your running llama.cpp server configured with model ID `qwen35-4b`:
-
-```bash
-maintlog agent data/demo/company_export.csv --data-kind synthetic --profile data/demo/company_profile.json --asset-id PUMP-001 --question "Review bearing vibration history" --backend local --base-url http://127.0.0.1:8081/v1 --model qwen35-4b --max-steps 20 --timeout 120 --output artifacts/local-run.json --html artifacts/local-review.html
-```
-
-Use the exact model ID accepted by your server. Scope comes from CLI flags;
-mentioning an equipment ID in the question does not set the scope.
-For your own files, declare `--data-kind user-supplied` and keep exports private.
-Default CSV columns are `record_id,event_date,asset_id,component,issue,action`.
-Dates use YYYY-MM-DD. IDs must be stable and unique; unknown IDs give an empty
-scope. The [input guide](docs/USAGE.md#input-contract) explains required fields,
-column profiles, missing actions, and rejected input.
-
-### Outputs and interpretation
-
-JSON preserves selected records, source references, proposed fields, and workflow
-outcomes. HTML is a review surface; SQLite stores imported human decisions.
-A source hash identifies original bytes, but does not archive them: retain the CSV.
-
-A proposed action is not proof that a repair occurred. Record counts are not
-counts of distinct failures. A source-valid quote can still be misclassified.
-`no_matches` means no selected search matches; it does not prove no relevant
-maintenance history exists. Clarification needs a new run with explicit scope;
-conversational checkpoint resume is not implemented.
-
-### Compare workflows
-
-```bash
-maintlog-compare data/demo/comparison_cases.json --backend replay --trials 3 --output artifacts/replay-comparison.json
-```
-
-The comparison covers deterministic lexical search/brief, a fixed tool sequence,
-and an agent choosing its tools. For this synthetic fixture, repeated replay tests
-mechanics. See [evaluation guidance](docs/EVALUATION.md) for live runs, independent
-labels, scoring, and report acceptance.
+Open `results/pump-17.html` in your private folder. Check every proposal against the
+original records. Keep the original CSV: its hash identifies bytes but does not
+save a backup. Follow the [complete CSV tutorial](docs/USAGE.md#use-your-own-csv)
+for input checks and the review workflow.
 
 ## Settings
 
-| CLI option | Default | Description |
+| Option | Default | Purpose |
 | --- | --- | --- |
-| --data-kind | Required | Declare synthetic or user-supplied input |
-| --profile | None | JSON mapping from source columns to canonical fields |
-| --asset-id | All assets | Restrict to an exact equipment ID |
-| --start / --end | Unbounded | Inclusive dates |
-| --task | history | Agent task: history, search, inspect, or extract |
-| --top-k | 5 | Search result limit; not full-scope aggregate size |
-| --normalization | noun_alias_v1 | Search wording policy; identifiers stay intact |
-| --backend | Must be selected for agent | local or replay |
-| --base-url | http://127.0.0.1:8081/v1 | Loopback model endpoint |
-| --model | local-model | Model ID accepted by the server |
-| --max-steps | 8 for agent | Maximum workflow decisions |
-| --timeout | 120 seconds | Run budget; not a hard real-time guarantee |
-| --max-tokens | 512 | Maximum requested model reply tokens |
-| --output / --html | stdout / no HTML | JSON file; agent HTML review file |
+| `--data-kind` | Required | Declare `synthetic` or `user-supplied` input |
+| `--profile` | None | Map source column names |
+| `--asset-id` | All assets | Restrict to an exact equipment ID |
+| `--start`, `--end` | Unbounded | Inclusive date range |
+| `--task` | `history` | Agent task: history, search, inspect, or extract |
+| `--backend` | Select explicitly for agent examples | Use `local` or `replay` |
+| `--model` | `local-model` | Model ID accepted by the server |
+| `--max-steps` | 8 for agent | Limit workflow decisions; live example sets 20 |
+| `--timeout` | 120 seconds | Run budget; not a hard real-time guarantee |
+| `--max-tokens` | 512 | Maximum requested reply length in tokens |
 
-Agent and comparison commands have different step defaults: 8 and 20 respectively.
-The live example above explicitly selects 20. The recorded batch's 10,000-character
-working-context cap is not a token count and does not guarantee a 4096-token fit.
+A token is a unit of model text. A character cap is not a token count and does not
+guarantee that a request fits a 4096-token context. See [additional settings](docs/USAGE.md#settings).
 
-## Documentation
+## Evaluation and limitations
 
-- [Input, review, troubleshooting, and privacy](docs/USAGE.md)
+A completed local-model development batch on 7 October 2026 used **1,076 adapted
+MaintIE singleton tasks**, one trial each:
 
-- [Architecture and development](docs/ARCHITECTURE.md)
-- [Evaluation and limitations](docs/EVALUATION.md)
+| Measure | Recorded result |
+| --- | --- |
+| Saved / planned | 1,076 / 1,076 |
+| Operational completion, including four no-match runs | 997 / 1,076 (92.7%) |
+| Expected record selected | 993 / 1,076 (92.3%) |
+| Source-valid non-null excerpts | 1,293 / 1,293 (100%) |
+| Requests started / finished | 5,895 / 5,895 |
+
+These are execution and grounding results, **not semantic accuracy**. The tasks use
+artificial equipment/date metadata and development data. 104 ready-for-review runs
+had all-null extraction proposals. Entity-span agreement remains a diagnostic;
+answer, action-status, and chronology correctness are unmeasured.
+
+See the [final agent review](docs/FINAL_AGENT_REVIEW_20261007.md) and
+[curated metrics](reports/MAINTIE_AGENT_REVIEW_20261007.json).
+Earlier FAA-history evaluations used a different protocol: recorded agent completion
+was 66/100, 74/100, and 81/100, versus 83/100 for the fixed workflow in each batch.
+[Evaluation evidence](docs/EVALUATION.md#recorded-operational-results) and
+[recorded validation JSON](reports/RECORDED_VALIDATION.json) preserve those results
+and the earlier 75.76% coverage/build checks. They do not establish agent superiority.
+
+Separate Windows repository-controls checks on 7 October recorded 222 passing
+tests, 75.90% combined statement/branch coverage, successful build/Twine/fresh-wheel
+checks, and passing Bandit and dependency audits. These are code/package checks,
+not model-accuracy measurements.
+
+A source-valid excerpt can still be misclassified. `ready_for_review` is not an
+approval, and `no_matches` does not prove no relevant history exists. Record counts
+are not distinct failure counts. Equipment control, failure prediction, Excel/PDF
+import, and conversational resume are outside the implemented scope.
+
+## Documentation and support
+
+- [CSV tutorial, review, settings, troubleshooting, and privacy](docs/USAGE.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Evaluation](docs/EVALUATION.md)
 - [Release checks](docs/RELEASE.md)
+
+Maintainer: [@mathewsPR](https://github.com/mathewsPR).
+Report reproducible bugs through the [repository issues](https://github.com/mathewsPR/AppliedAI_Lab/issues).
+Use invented or sanitized examples. Follow [SECURITY.md](../.github/SECURITY.md)
+for private vulnerability reporting. Never post company logs, prompts, or traces.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). From the project directory, run the existing
-suite in the active Python 3.11 environment:
-
-```bash
-python -m unittest discover -s tests -v
-```
-
-Maintainer: [@mathewsPR](https://github.com/mathewsPR). Use the Maintlog issue forms
-for sanitized reproducible bugs or focused feature requests. Report security
-problems through [SECURITY.md](../.github/SECURITY.md), not a public issue.
-Never submit private maintenance exports.
-
-Traces and reports may contain raw private records. Keep them out of public
-commits and issues; use separate organization files/databases. There is no
-multi-tenant access-control system.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, checks, and submitting a change.
+The project uses Python 3.11 and the standard-library `unittest` test runner.
 
 ## Roadmap
 
-1. Improve quote recovery without weakening evidence checks.
-2. Evaluate complete-answer accuracy on independent permitted cases and compare
-   the dynamic agent fairly against the fixed workflow.
-3. Validate fresh base/agent installations and Windows/Linux release checks.
-
-Cloud adapters, conversational resume, failure prediction, and equipment control
-are not implemented. No product release is justified by completion rates alone.
+1. Diagnose extraction and action-status errors without weakening source checks.
+2. Validate correctness on independent, permitted multi-record CSV histories.
+3. Preserve reproducible results and improve the supervised review experience.
 
 ## License
 
-Original software uses [Apache-2.0](LICENSE). Third-party code and datasets retain
-their own terms. See [synthetic provenance](data/demo/PROVENANCE.md) and
-[public-data notices](data/public/README.md) before redistribution.
+Original software uses [Apache-2.0](LICENSE). Third-party code, models, and datasets
+retain their own terms. Read the [synthetic provenance](data/demo/PROVENANCE.md)
+and [public-data notices](data/public/README.md) before redistribution.
