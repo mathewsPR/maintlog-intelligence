@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "evidence_kind": "maintainer_supplied_prior_run_results",
+  "interpretation": "Curated from the supplied summaries, manifest, and terminal log; no new execution. Completion is not semantic accuracy.",
+  "operational_batches": [
+    {
+      "source_file": "summary(20261006-122044).json",
+      "source_sha256": "1cadbfba7d349e13cea9666fa6f5aff39dcfd5ee538addf9d378862a70f21eb2",
+      "protocol": "faa-history-operational-v3-token-log",
+      "planned_runs": 200,
+      "saved_runs": 200,
+      "batch_complete": true,
+      "workflows": {
+        "agent": {
+          "runs": 100,
+          "workflow_completed": 66,
+          "status_counts": {
+            "failed": 24,
+            "ready_for_review": 54,
+            "context_limit": 10,
+            "no_matches": 12
+          }
+        },
+        "fixed": {
+          "runs": 100,
+          "workflow_completed": 83,
+          "status_counts": {
+            "failed": 15,
+            "ready_for_review": 71,
+            "no_matches": 12,
+            "context_limit": 2
+          }
+        }
+      },
+      "semantic_accuracy": null,
+      "complete_task_success": null,
+      "token_usage": {
+        "requests_started": 979,
+        "responses_received": 979,
+        "transport_failures": 0,
+        "requests_without_finish": 0,
+        "requests_without_usage": 0,
+        "token_totals_complete": true,
+        "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+        "known_input_tokens": 1539540,
+        "known_output_tokens": 80050,
+        "known_total_tokens": 1619590,
+        "known_cached_input_tokens": 775490
+      }
+    },
+    {
+      "source_file": "summary(20261006-125614).json",
+      "source_sha256": "8066465113a622896af60be2409c0684b4d2ad82c33801a8b8a07458a752456a",
+      "protocol": "faa-history-operational-v3-token-log",
+      "planned_runs": 200,
+      "saved_runs": 200,
+      "batch_complete": true,
+      "workflows": {
+        "agent": {
+          "runs": 100,
+          "workflow_completed": 74,
+          "status_counts": {
+            "context_limit": 8,
+            "ready_for_review": 62,
+            "failed": 16,
+            "no_matches": 12,
+            "abstained": 2
+          }
+        },
+        "fixed": {
+          "runs": 100,
+          "workflow_completed": 83,
+          "status_counts": {
+            "failed": 15,
+            "ready_for_review": 71,
+            "no_matches": 12,
+            "context_limit": 2
+          }
+        }
+      },
+      "semantic_accuracy": null,
+      "complete_task_success": null,
+      "token_usage": {
+        "requests_started": 883,
+        "responses_received": 883,
+        "transport_failures": 0,
+        "requests_without_finish": 0,
+        "requests_without_usage": 0,
+        "token_totals_complete": true,
+        "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+        "known_input_tokens": 1412416,
+        "known_output_tokens": 69865,
+        "known_total_tokens": 1482281,
+        "known_cached_input_tokens": 722849
+      }
+    },
+    {
+      "source_file": "summary(20261006-135543).json",
+      "source_sha256": "13e381c0218a79d4d558c2fb5db076d775ee306330899544242fa5094ebb1553",
+      "protocol": "faa-history-operational-v3-token-log",
+      "planned_runs": 200,
+      "saved_runs": 200,
+      "batch_complete": true,
+      "workflows": {
+        "agent": {
+          "runs": 100,
+          "workflow_completed": 81,
+          "status_counts": {
+            "context_limit": 3,
+            "ready_for_review": 69,
+            "failed": 16,
+            "no_matches": 12
+          }
+        },
+        "fixed": {
+          "runs": 100,
+          "workflow_completed": 83,
+          "status_counts": {
+            "failed": 15,
+            "ready_for_review": 71,
+            "no_matches": 12,
+            "context_limit": 2
+          }
+        }
+      },
+      "semantic_accuracy": null,
+      "complete_task_success": null,
+      "token_usage": {
+        "requests_started": 882,
+        "responses_received": 882,
+        "transport_failures": 0,
+        "requests_without_finish": 0,
+        "requests_without_usage": 0,
+        "token_totals_complete": true,
+        "interpretation": "Known usage includes responses rejected later by decision validation. Missing usage is unknown, never zero. Cached input is a subset of input, not additional tokens.",
+        "known_input_tokens": 1400222,
+        "known_output_tokens": 70218,
+        "known_total_tokens": 1470440,
+        "known_cached_input_tokens": 719210
+      }
+    }
+  ],
+  "supplied_latest_manifest": {
+    "source_file": "manifest(2).json",
+    "source_sha256": "1b0192df43e9642a11faf894ede5bc1b92a3549d68d19345d371eb8ddc9012cd",
+    "batch_id": "283cd43f51c83af58ec9fb06b82aaeefa1be4dd5972cb57137b0fb1258852caa",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "model_alias": "qwen35-4b",
+    "configuration": {
+      "component_selection": true,
+      "boundary_adapter": true,
+      "focused_status_repair": true
+    },
+    "budgets": {
+      "max_steps": 20,
+      "timeout_seconds": 120,
+      "max_context_chars": 10000
+    },
+    "trials": 1,
+    "histories": 100,
+    "source_data_sha256": "80a2d209092d8aab8a3fd96cddf226418105c62f13a5457ce261b8c780df808e",
+    "candidate_sha256": "8a209a32a93927801a1bdc3fa5f9f4f8f9f643c52fabe9cf8ca48c3ac5a257cf",
+    "runner_sha256": "c5880e81d2b0e071e841e0dcd4e3e7f8a819ee9f9600e962af29318f28657773",
+    "server_advertised_metadata": {
+      "vocab_type": 2,
+      "n_vocab": 248320,
+      "n_ctx": 4096,
+      "n_ctx_train": 262144,
+      "n_embd": 2560,
+      "n_params": 4205751296,
+      "size": 2729969664,
+      "ftype": "Q4_K - Medium"
+    },
+    "limitations": "Server alias does not prove loaded model-file identity. Questions are source-derived; relevance and semantic correctness have no reviewed labels."
+  },
+  "packaging_and_coverage": {
+    "source_file": "Pasted text(20261006-131631).txt",
+    "source_sha256": "be6e1aeb85f81d9403b42aa8afaadd6e2ecfdeb88902445794b9850153f96562",
+    "environment": "Windows, Python 3.11 project environment",
+    "branch": "fix/compact-agent-working-context",
+    "version": "0.3.0",
+    "coverage": {
+      "statements": 2349,
+      "missed_statements": 542,
+      "branches": 988,
+      "partial_branches": 149,
+      "combined_percent": 75.76
+    },
+    "build": {
+      "wheel": "maintlog_intelligence-0.3.0-py3-none-any.whl",
+      "sdist": "maintlog_intelligence-0.3.0.tar.gz",
+      "outcome": "success"
+    },
+    "twine": {
+      "wheel": "PASSED",
+      "sdist": "PASSED"
+    },
+    "unit_test_execution_in_this_log": null,
+    "fresh_install_in_this_log": null,
+    "security_scan_in_this_log": null
+  }
+}

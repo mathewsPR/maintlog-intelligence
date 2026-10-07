@@ -1,12 +1,18 @@
+# Merge with current entries. This does not untrack already committed files.
 .venv/
+.venv*/
 __pycache__/
+*.py[cod]
 *.egg-info/
 .pytest_cache/
 .ruff_cache/
+.coverage
+.coverage.*
+build/
+dist/
 artifacts/
 data/private/
 models/
 .env
-
-.venv*/
-*.egg-info/
+.env.*
+!.env.example

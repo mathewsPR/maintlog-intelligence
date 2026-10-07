@@ -1,6 +1,7 @@
-# CI tool pins. Transitive dependencies are not fully locked.
+# Direct CI tool pins; transitive dependencies are not fully locked.
 ruff==0.16.9
-pytest==8.3.5
 coverage[toml]==7.6.12
 build==1.2.2.post1
 twine==6.1.0
+pip==26.2.1
+setuptools==83.0.0
