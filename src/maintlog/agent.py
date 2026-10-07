@@ -7,6 +7,7 @@ from typing import TypedDict
 
 from .backends import EXTRACTION_SYSTEM, DecisionBackend
 from .brief import recurring_brief
+from .decision_schema import TOOL_TEXT_LIMIT
 from .domain import Record
 from .evidence_review import review_evidence
 from .extraction import STATUS_GUIDANCE, validate_fields
@@ -26,6 +27,8 @@ or ambiguous asset or date range.
 
 Return only a JSON object {"tool": name, "args": object}.
 Available tools:
+Search queries, clarification questions, and abstention reasons must be non-empty
+and no longer than 500 characters.
 
 assets {"offset":0}: list exact asset IDs in scope, 30 per page.
 
@@ -113,7 +116,7 @@ def _keys(args: dict, required: set[str], optional: set[str] | None = None):
         )
 
 
-def _string(value, name, limit=500):
+def _string(value, name, limit=TOOL_TEXT_LIMIT):
     if not isinstance(value, str) or not value.strip() or len(value) > limit:
         raise ValueError(f"invalid {name}")
     return value

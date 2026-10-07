@@ -49,7 +49,7 @@ CUES = {
     "completed": re.compile(
         r"\b(?:completed|replaced|repaired|installed|removed|checked|inspected|"
         r"lubricated|resecured|performed|drilled|accomplished|reseated|"
-        r"repositioned|serviced|cleaned|reinstalled|secured|adjusted|tightened|repacked)\b",
+        r"repositioned|serviced|cleaned|reinstalled|secured|adjusted|tightened|repacked|changed|swapped)\b",
         re.I,
     ),
     "verified": re.compile(
@@ -61,7 +61,7 @@ CUES = {
 
 def has_unnegated_status_cue(text: str, status: str) -> bool:
     """Conservative clause-local check, not full semantic verification."""
-    for clause in re.split(r"[.;!?\n]", text):
+    for clause in re.split(r"[,.;!?\n]", text):
         for cue in CUES[status].finditer(clause):
             prefix = clause[: cue.start()]
             suffix = clause[cue.end() :]
@@ -80,7 +80,10 @@ def has_unnegated_status_cue(text: str, status: str) -> bool:
                 re.I,
             )
 
-            if not negated_before and not negated_after:
+            # Planning before the performed-work cue cannot establish completion.
+            # Future work after a completed action does not undo that action.
+            planned_before = status == "completed" and CUES["planned"].search(prefix)
+            if not negated_before and not negated_after and not planned_before:
                 return True
 
     return False
@@ -201,8 +204,5 @@ def validate_fields(
                 "change performed work into attempted work. "
                 "Do not repeat the rejected proposal."
             )
-
-        if status == "completed" and CUES["planned"].search(text):
-            raise ValueError("planned wording cannot establish completion")
 
     return resolved

@@ -5,7 +5,7 @@ from copy import deepcopy
 from types import SimpleNamespace
 
 from .decision_schema import ARGS, obj
-from .extraction import CUES, has_unnegated_status_cue, resolve_span
+from .extraction import has_unnegated_status_cue, resolve_span
 
 BOUNDARY_POLICY = "terminal_period_v1"
 
@@ -167,8 +167,6 @@ def status_repair_contract(
         text = action["quote"]
         for status in ("planned", "attempted", "completed", "verified"):
             if has_unnegated_status_cue(text, status):
-                if status == "completed" and CUES["planned"].search(text):
-                    continue
                 statuses.append(status)
 
     schema = deepcopy(ARGS["extract"])

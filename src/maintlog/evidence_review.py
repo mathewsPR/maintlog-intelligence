@@ -78,7 +78,6 @@ def review_evidence(records: list, proposals: list[dict]) -> dict:
                 for field in ("action_raw", "narrative_raw")
                 if any(
                     has_unnegated_status_cue(clause, "completed")
-                    and not CUES["planned"].search(clause)
                     and not CUES["attempted"].search(clause)
                     for clause in re.split(r"[.;!?\n]", getattr(record, field))
                 )
